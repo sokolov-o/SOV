@@ -197,8 +197,8 @@ namespace SOV.WcfService.Field
 
             // GET FCS CATALOGS 4 POINT CATALOGS
             //
-            // В точках метод прогноза (и записи каталога) является производным от исходного, 
-            // родительского (parent) метода прогноза полей г/м элементов.
+            // Метод прогноза в точке является производным от исходного, 
+            // родительского метода прогноза полей г/м элементов.
 
             List<Catalog> pointCatalogs = _amurClient.GetCatalogListById(_amurServiceHandle, pointCatalogsId)
                 .OrderBy(x => pointCatalogsId.IndexOf(x.Id))
