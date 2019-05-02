@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74411A08-4E8B-463E-8343-108A41ADDDBF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.SGMO</RootNamespace>
+    <AssemblyName>FERHRI.SGMO.SgmoUC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormTracks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTracks.Designer.cs">
+      <DependentUpon>FormTracks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMessageSiteTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMessageSiteTable.Designer.cs">
+      <DependentUpon>UCMessageSiteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCMessageSite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMessageSite.Designer.cs">
+      <DependentUpon>UCMessageSite.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormTracks.resx">
+      <DependentUpon>FormTracks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMessageSite.resx">
+      <DependentUpon>UCMessageSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMessageSiteTable.resx">
+      <DependentUpon>UCMessageSiteTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Amur.20\Common\CommonUC\CommonUC.csproj">
+      <Project>{bb34a841-7cbe-4c0d-8268-6aece9b7271e}</Project>
+      <Name>CommonUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Amur.20\MetaDAL\MetaDAL.csproj">
+      <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
+      <Name>MetaDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Amur.20\Meta\Meta.csproj">
+      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
+      <Name>Meta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DB\Common\Common.DB.csproj">
+      <Project>{22b3167b-ffa8-4081-b5ec-8f45338dc0da}</Project>
+      <Name>Common.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SgmoBL\SgmoBL.csproj">
+      <Project>{f583806c-ba90-4dd8-9044-9ec9c33d83ce}</Project>
+      <Name>SgmoBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SgmoDAL\SgmoDAL.csproj">
+      <Project>{67779067-f033-4759-a94a-df236f999e26}</Project>
+      <Name>SgmoDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\MessageSite.datasource" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
