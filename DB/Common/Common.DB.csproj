@@ -7,8 +7,8 @@
     <ProjectGuid>{22B3167B-FFA8-4081-B5EC-8F45338DC0DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.DB</RootNamespace>
-    <AssemblyName>FERHRI.DB.Common</AssemblyName>
+    <RootNamespace>SOV.DB</RootNamespace>
+    <AssemblyName>SOV.DB.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

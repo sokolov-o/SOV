@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
-using FERHRI.Geo;
+using SOV.Geo;
 
-namespace FERHRI.DB
+namespace SOV.DB
 {
     /// <summary>
     /// Выходная продукция прогностических моделей в виде элементов заданных в узлах сетки.
@@ -25,8 +24,8 @@ namespace FERHRI.DB
         //    ReadPoints(DateTime dateIni, object dataFilter, List<double> leadTimeHours, List<GeoRectangle> grs2Truncate);
 
         Field[/*leadTime*/][/*Georectangle index*/][/*VarFilter index*/] ReadFieldsInRectangles
-            (DateTime dateIni, object dataFilter, List<double> leadTimes,
-            List<GeoRectangle> grs2Truncate);
+           (DateTime dateIni, object dataFilter, List<double> leadTimes,
+           List<GeoRectangle> grs2Truncate);
 
         double[/*leadTime*/][/*GeoPoint index*/][/*VarFilter index*/] ReadValuesAtPoints
             (DateTime dateIni, object dataFilter, List<double> leadTimes,

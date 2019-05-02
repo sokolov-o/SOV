@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public class _DELME_DataFcs1
     {

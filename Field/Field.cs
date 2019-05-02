@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization;
-using FERHRI.Common;
-using FERHRI.Geo;
+using SOV.Common;
+using SOV.Geo;
 
-namespace FERHRI
+namespace SOV
 {
     /// <summary>
     /// Формат поля данных.

@@ -7,8 +7,8 @@
     <ProjectGuid>{4990C383-F03E-496A-A736-DE848F9400F2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FileVanWave</RootNamespace>
-    <AssemblyName>FileVanWave</AssemblyName>
+    <RootNamespace>SOV.DB.FileVanWave</RootNamespace>
+    <AssemblyName>SOV.DB.FileVanWave</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,7 +43,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
+    <ProjectReference Include="..\..\Amur-2.1\Common\Common.csproj">
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
     </ProjectReference>

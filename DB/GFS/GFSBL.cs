@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 using Seaware.GribCS.Grib2;
 using Seaware.GribCS;
-using FERHRI.Geo;
-using FERHRI.Grib;
+using SOV;
+using SOV.Geo;
+using SOV.Grib;
 
-namespace FERHRI.DB
+namespace SOV.DB
 {
     public class GFS
     {
@@ -45,7 +46,7 @@ namespace FERHRI.DB
         /// </summary>
         /// <param name="gfsRecords">Not null.</param>
         /// <returns></returns>
-        static internal List<FERHRI.Field> ToFields(object[][] gfsRecords)
+        static internal List<Field> ToFields(object[][] gfsRecords)
         {
             List<Field> ret = new List<Field>();
             foreach (var item in gfsRecords)

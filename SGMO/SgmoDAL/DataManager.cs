@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public class DataManager : Common.ADbNpgsql
     {
@@ -20,12 +20,12 @@ namespace FERHRI.SGMO
         /// <returns></returns>
         public static DataManager GetInstance()
         {
-            return GetInstance(global::FERHRI.SGMO.Properties.Settings.Default.ConnectionStringSGMO);
+            return GetInstance(global::SOV.SGMO.Properties.Settings.Default.ConnectionStringSGMO);
         }
 
         static public void SetDefaultConnectionString(string cnns)
         {
-            FERHRI.SGMO.Properties.Settings.Default["ConnectionStringSGMO"] = cnns;
+            SOV.SGMO.Properties.Settings.Default["ConnectionStringSGMO"] = cnns;
         }
         /// <summary>
         /// Экземпляр с заданной строкой подключения.

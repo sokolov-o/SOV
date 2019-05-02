@@ -7,8 +7,8 @@
     <ProjectGuid>{E9E8142C-8E1E-4FCE-8FF1-8F32D604A69F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.DB</RootNamespace>
-    <AssemblyName>FERHRI.DB.GFS</AssemblyName>
+    <RootNamespace>SOV.DB</RootNamespace>
+    <AssemblyName>SOV.DB.GFS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -52,7 +52,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
+    <ProjectReference Include="..\..\Amur-2.1\Common\Common.csproj">
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
     </ProjectReference>

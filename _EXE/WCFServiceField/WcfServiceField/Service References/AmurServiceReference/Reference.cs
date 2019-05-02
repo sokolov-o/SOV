@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FERHRI.WcfService.Field.AmurServiceReference {
+namespace SOV.WcfService.Field.AmurServiceReference {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Method", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Method", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class Method : FERHRI.WcfService.Field.AmurServiceReference.IdName {
+    public partial class Method : SOV.WcfService.Field.AmurServiceReference.IdName {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
@@ -102,26 +102,26 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdClass", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdClass", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdNameRus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Station))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableVirtual))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Variable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdName))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DicItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SampleMedium))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.ValueType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.StationType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.OffsetType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Method))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Addr))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNameRus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableVirtual))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdName))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DicItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SampleMedium))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeneralCategory))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ValueType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.StationType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.OffsetType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Method))]
     public partial class IdClass : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -165,12 +165,12 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Addr", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Social")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Addr", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
-    public partial class Addr : FERHRI.WcfService.Field.AmurServiceReference.IdClass {
+    public partial class Addr : SOV.WcfService.Field.AmurServiceReference.IdClass {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr> ChildsField;
+        private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> ChildsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -185,7 +185,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         private int TypeIdField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr> Childs {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> Childs {
             get {
                 return this.ChildsField;
             }
@@ -252,12 +252,12 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdNameRus", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdNameRus", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Station))]
-    public partial class IdNameRus : FERHRI.WcfService.Field.AmurServiceReference.IdClass {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
+    public partial class IdNameRus : SOV.WcfService.Field.AmurServiceReference.IdClass {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameRusField;
@@ -294,11 +294,11 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdNames", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdNames", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Station))]
-    public partial class IdNames : FERHRI.WcfService.Field.AmurServiceReference.IdNameRus {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
+    public partial class IdNames : SOV.WcfService.Field.AmurServiceReference.IdNameRus {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameEngField;
@@ -335,105 +335,105 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LegalEntity", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Social")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LegalEntity", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Org))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Person))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SysObj))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Coef>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Coef))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Point>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Point))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataSource))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdName))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdClass))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdNameRus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DicItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DicItem>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoPoint))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Type))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.MemberInfo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Org))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Person))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Addr))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysObj))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersXSites))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersParams))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataSource))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.AQCDataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdName))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdClass))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNameRus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DicItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoPoint))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Type))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MemberInfo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<double>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoPoint>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoPoint>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoObject>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<double>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, FERHRI.WcfService.Field.AmurServiceReference.DataSource>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<FERHRI.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Method))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Station))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.MethodForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.EntityAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Site))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SampleMedium>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SampleMedium))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.StationType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.StationType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Variable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableVirtual))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoObject>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MeteoZone>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.MeteoZone))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MethodForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.OffsetType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.OffsetType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteXSite))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Unit>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Unit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.ValueType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.ValueType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableCode>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Catalog))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog>))]
-    public partial class LegalEntity : FERHRI.WcfService.Field.AmurServiceReference.IdNames {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<SOV.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Method))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MethodForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Site))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SampleMedium))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.StationType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableVirtual))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeneralCategory))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MeteoZone))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.OffsetType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSite))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Unit))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ValueType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Catalog))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>))]
+    public partial class LegalEntity : SOV.WcfService.Field.AmurServiceReference.IdNames {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AddrAddField;
@@ -582,9 +582,9 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Station", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Station", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class Station : FERHRI.WcfService.Field.AmurServiceReference.IdNames {
+    public partial class Station : SOV.WcfService.Field.AmurServiceReference.IdNames {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> AddrRegionIdField;
@@ -669,10 +669,10 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableVirtual", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VariableVirtual", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Variable))]
-    public partial class VariableVirtual : FERHRI.WcfService.Field.AmurServiceReference.IdClass {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
+    public partial class VariableVirtual : SOV.WcfService.Field.AmurServiceReference.IdClass {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DataTypeIdField;
@@ -789,9 +789,9 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Variable", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Variable", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class Variable : FERHRI.WcfService.Field.AmurServiceReference.VariableVirtual {
+    public partial class Variable : SOV.WcfService.Field.AmurServiceReference.VariableVirtual {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double CodeErrDataField;
@@ -892,105 +892,105 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdName", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdName", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DicItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SampleMedium))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.ValueType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.StationType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.OffsetType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Method))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Org))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Person))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SysObj))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Coef>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Coef))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Point>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Point))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataSource))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdClass))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdNameRus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DicItem>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoPoint))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Type))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.MemberInfo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DicItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SampleMedium))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeneralCategory))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ValueType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.StationType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.OffsetType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Method))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Org))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Person))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Addr))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysObj))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersXSites))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersParams))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataSource))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.AQCDataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdClass))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNameRus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoPoint))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Type))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MemberInfo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<double>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoPoint>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoPoint>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoObject>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<double>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, FERHRI.WcfService.Field.AmurServiceReference.DataSource>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<FERHRI.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Station))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.MethodForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.EntityAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Site))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SampleMedium>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.StationType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Variable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableVirtual))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoObject>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MeteoZone>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.MeteoZone))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MethodForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.OffsetType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteXSite))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Unit>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Unit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.ValueType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableCode>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Catalog))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog>))]
-    public partial class IdName : FERHRI.WcfService.Field.AmurServiceReference.IdClass {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<SOV.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MethodForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Site))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableVirtual))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MeteoZone))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSite))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Unit))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Catalog))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>))]
+    public partial class IdName : SOV.WcfService.Field.AmurServiceReference.IdClass {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private object EntityField;
@@ -1027,108 +1027,108 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DicItem", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DicItem", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SampleMedium))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.ValueType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Org))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Person))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SysObj))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Coef>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Coef))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Point>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Point))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataSource))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.DataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdName))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdClass))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.IdNameRus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DicItem>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoPoint))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Type))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.MemberInfo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SampleMedium))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeneralCategory))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ValueType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Org))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Person))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Addr))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysObj))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersXSites))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersParams))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataSource))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.AQCDataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdName))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdClass))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNameRus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoPoint))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Type))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MemberInfo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<double>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoPoint>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoPoint>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoObject>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<double>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, FERHRI.WcfService.Field.AmurServiceReference.DataSource>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<FERHRI.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Method))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Station))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.MethodForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.EntityAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Site))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SampleMedium>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.StationType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.StationType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Variable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableVirtual))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoObject>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.GeoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MeteoZone>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.MeteoZone))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MethodForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.OffsetType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.OffsetType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteXSite))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Unit>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Unit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.ValueType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableCode>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.VariableCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Catalog))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog>))]
-    public partial class DicItem : FERHRI.WcfService.Field.AmurServiceReference.IdName {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<SOV.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Method))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MethodForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Site))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.StationType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableVirtual))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MeteoZone))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.OffsetType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSite))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Unit))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Catalog))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>))]
+    public partial class DicItem : SOV.WcfService.Field.AmurServiceReference.IdName {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DicItem> ChildsField;
+        private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem> ChildsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
@@ -1143,13 +1143,13 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         private string NameShortField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FERHRI.WcfService.Field.AmurServiceReference.DicItem ParentDicItemField;
+        private SOV.WcfService.Field.AmurServiceReference.DicItem ParentDicItemField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FERHRI.WcfService.Field.AmurServiceReference.Type TypeField;
+        private SOV.WcfService.Field.AmurServiceReference.Type TypeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DicItem> Childs {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem> Childs {
             get {
                 return this.ChildsField;
             }
@@ -1214,7 +1214,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FERHRI.WcfService.Field.AmurServiceReference.DicItem ParentDicItem {
+        public SOV.WcfService.Field.AmurServiceReference.DicItem ParentDicItem {
             get {
                 return this.ParentDicItemField;
             }
@@ -1227,7 +1227,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FERHRI.WcfService.Field.AmurServiceReference.Type Type {
+        public SOV.WcfService.Field.AmurServiceReference.Type Type {
             get {
                 return this.TypeField;
             }
@@ -1242,30 +1242,30 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SampleMedium", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SampleMedium", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class SampleMedium : FERHRI.WcfService.Field.AmurServiceReference.DicItem {
+    public partial class SampleMedium : SOV.WcfService.Field.AmurServiceReference.DicItem {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataType", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class DataType : FERHRI.WcfService.Field.AmurServiceReference.DicItem {
+    public partial class DataType : SOV.WcfService.Field.AmurServiceReference.DicItem {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeneralCategory", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GeneralCategory", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class GeneralCategory : FERHRI.WcfService.Field.AmurServiceReference.DicItem {
+    public partial class GeneralCategory : SOV.WcfService.Field.AmurServiceReference.DicItem {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ValueType", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ValueType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class ValueType : FERHRI.WcfService.Field.AmurServiceReference.DicItem {
+    public partial class ValueType : SOV.WcfService.Field.AmurServiceReference.DicItem {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameEngField;
@@ -1286,9 +1286,9 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableType", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VariableType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class VariableType : FERHRI.WcfService.Field.AmurServiceReference.DicItem {
+    public partial class VariableType : SOV.WcfService.Field.AmurServiceReference.DicItem {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameEngField;
@@ -1309,9 +1309,9 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeoObject", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GeoObject", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class GeoObject : FERHRI.WcfService.Field.AmurServiceReference.IdName {
+    public partial class GeoObject : SOV.WcfService.Field.AmurServiceReference.IdName {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> FallIntoIdField;
@@ -1380,9 +1380,9 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StationType", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StationType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class StationType : FERHRI.WcfService.Field.AmurServiceReference.IdName {
+    public partial class StationType : SOV.WcfService.Field.AmurServiceReference.IdName {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameShortField;
@@ -1403,9 +1403,9 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OffsetType", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OffsetType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class OffsetType : FERHRI.WcfService.Field.AmurServiceReference.IdName {
+    public partial class OffsetType : SOV.WcfService.Field.AmurServiceReference.IdName {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int UnitIdField;
@@ -1426,7 +1426,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Org", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Social")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Org", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
     public partial class Org : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1487,7 +1487,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Social")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
     public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1548,7 +1548,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SysObj", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Parser")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SysObj", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser")]
     [System.SerializableAttribute()]
     public partial class SysObj : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1673,7 +1673,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SysParsersXSites", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Parser")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SysParsersXSites", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser")]
     [System.SerializableAttribute()]
     public partial class SysParsersXSites : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1846,7 +1846,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SysParsersParams", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Parser")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SysParsersParams", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser")]
     [System.SerializableAttribute()]
     public partial class SysParsersParams : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2067,7 +2067,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Curve", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Curve", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
     [System.SerializableAttribute()]
     public partial class Curve : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2087,7 +2087,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria> SeriesField;
+        private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria> SeriesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2152,7 +2152,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria> Series {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria> Series {
             get {
                 return this.SeriesField;
             }
@@ -2175,7 +2175,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         
         [System.Diagnostics.DebuggerStepThroughAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
         [System.SerializableAttribute()]
         public partial class Seria : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
             
@@ -2183,7 +2183,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
             
             [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Coef> CoefsField;
+            private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef> CoefsField;
             
             [System.Runtime.Serialization.OptionalFieldAttribute()]
             private int CurveIdField;
@@ -2201,7 +2201,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             private int IdField;
             
             [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Point> PointsField;
+            private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point> PointsField;
             
             public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
                 get {
@@ -2213,7 +2213,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             }
             
             [System.Runtime.Serialization.DataMemberAttribute()]
-            public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Coef> Coefs {
+            public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef> Coefs {
                 get {
                     return this.CoefsField;
                 }
@@ -2291,7 +2291,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             }
             
             [System.Runtime.Serialization.DataMemberAttribute()]
-            public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve.Seria.Point> Points {
+            public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point> Points {
                 get {
                     return this.PointsField;
                 }
@@ -2314,7 +2314,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             
             [System.Diagnostics.DebuggerStepThroughAttribute()]
             [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-            [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria.Coef", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data")]
+            [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria.Coef", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
             [System.SerializableAttribute()]
             public partial class Coef : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
                 
@@ -2390,7 +2390,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             
             [System.Diagnostics.DebuggerStepThroughAttribute()]
             [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-            [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria.Point", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data")]
+            [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria.Point", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
             [System.SerializableAttribute()]
             public partial class Point : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
                 
@@ -2468,7 +2468,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataForecast", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataForecast", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
     [System.SerializableAttribute()]
     public partial class DataForecast : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2593,7 +2593,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataSource", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataSource", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
     [System.SerializableAttribute()]
     public partial class DataSource : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2750,7 +2750,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataValue", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
     [System.SerializableAttribute()]
     public partial class DataValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2891,7 +2891,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AQCDataValue", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.DataP")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AQCDataValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP")]
     [System.SerializableAttribute()]
     public partial class AQCDataValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2968,7 +2968,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeoPoint", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Geo")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GeoPoint", Namespace="http://schemas.datacontract.org/2004/07/SOV.Geo")]
     [System.SerializableAttribute()]
     public partial class GeoPoint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3031,14 +3031,14 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Type", Namespace="http://schemas.datacontract.org/2004/07/System")]
     [System.SerializableAttribute()]
-    public partial class Type : FERHRI.WcfService.Field.AmurServiceReference.MemberInfo {
+    public partial class Type : SOV.WcfService.Field.AmurServiceReference.MemberInfo {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="MemberInfo", Namespace="http://schemas.datacontract.org/2004/07/System.Reflection")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.Type))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Type))]
     public partial class MemberInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -3066,7 +3066,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Catalog", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Catalog", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class Catalog : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3223,7 +3223,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MethodForecast", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MethodForecast", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class MethodForecast : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3243,7 +3243,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         private System.Collections.Generic.List<double> LeadTimesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FERHRI.WcfService.Field.AmurServiceReference.Method MethodField;
+        private SOV.WcfService.Field.AmurServiceReference.Method MethodField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3308,7 +3308,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FERHRI.WcfService.Field.AmurServiceReference.Method Method {
+        public SOV.WcfService.Field.AmurServiceReference.Method Method {
             get {
                 return this.MethodField;
             }
@@ -3332,16 +3332,16 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SiteAttrType", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SiteAttrType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class SiteAttrType : FERHRI.WcfService.Field.AmurServiceReference.EntityAttrType {
+    public partial class SiteAttrType : SOV.WcfService.Field.AmurServiceReference.EntityAttrType {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityAttrType", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityAttrType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteAttrType))]
     public partial class EntityAttrType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -3417,7 +3417,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Site", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Site", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class Site : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3526,7 +3526,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityAttrValue", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityAttrValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class EntityAttrValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3619,7 +3619,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeoType", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GeoType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class GeoType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3712,7 +3712,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MeteoZone", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MeteoZone", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class MeteoZone : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3789,7 +3789,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SiteXSite", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SiteXSite", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class SiteXSite : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3866,7 +3866,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SiteXSiteType", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SiteXSiteType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class SiteXSiteType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3927,7 +3927,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Unit", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Unit", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class Unit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4068,7 +4068,7 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableCode", Namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VariableCode", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class VariableCode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4192,160 +4192,160 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task CloseAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method>> GetMethodsAsync(long hSvc, System.Collections.Generic.List<int> methodIds);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>> GetMethodsAsync(long hSvc, System.Collections.Generic.List<int> methodIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationsByIndices", ReplyAction="http://tempuri.org/IService/GetStationsByIndicesResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station> GetStationsByIndices(long hSvc, System.Collections.Generic.List<string> stationIndices);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationsByIndices(long hSvc, System.Collections.Generic.List<string> stationIndices);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationsByIndices", ReplyAction="http://tempuri.org/IService/GetStationsByIndicesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station>> GetStationsByIndicesAsync(long hSvc, System.Collections.Generic.List<string> stationIndices);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationsByIndicesAsync(long hSvc, System.Collections.Generic.List<string> stationIndices);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParentFcsMethod", ReplyAction="http://tempuri.org/IService/GetParentFcsMethodResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.MethodForecast GetParentFcsMethod(long hSvc, int methodId);
+        SOV.WcfService.Field.AmurServiceReference.MethodForecast GetParentFcsMethod(long hSvc, int methodId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParentFcsMethod", ReplyAction="http://tempuri.org/IService/GetParentFcsMethodResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.MethodForecast> GetParentFcsMethodAsync(long hSvc, int methodId);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.MethodForecast> GetParentFcsMethodAsync(long hSvc, int methodId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesPoints", ReplyAction="http://tempuri.org/IService/GetSitesPointsResponse")]
-        System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
+        System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesPoints", ReplyAction="http://tempuri.org/IService/GetSitesPointsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoPoint>> GetSitesPointsAsync(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoPoint>> GetSitesPointsAsync(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsByStationIds", ReplyAction="http://tempuri.org/IService/GetGeoObjectsByStationIdsResponse")]
-        System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsByStationIds(long hSvc, System.Collections.Generic.List<int> stationIds);
+        System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsByStationIds(long hSvc, System.Collections.Generic.List<int> stationIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsByStationIds", ReplyAction="http://tempuri.org/IService/GetGeoObjectsByStationIdsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsByStationIdsAsync(long hSvc, System.Collections.Generic.List<int> stationIds);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsByStationIdsAsync(long hSvc, System.Collections.Generic.List<int> stationIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteAttrTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType> GetSiteAttrTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType> GetSiteAttrTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteAttrTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType>> GetSiteAttrTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>> GetSiteAttrTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesInBox", ReplyAction="http://tempuri.org/IService/GetSitesInBoxResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesInBox", ReplyAction="http://tempuri.org/IService/GetSitesInBoxResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesInBoxAsync(long hSvc, double south, double north, double west, double east);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesInBoxAsync(long hSvc, double south, double north, double west, double east);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSampleMediumsAll", ReplyAction="http://tempuri.org/IService/GetSampleMediumsAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SampleMedium> GetSampleMediumsAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium> GetSampleMediumsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSampleMediumsAll", ReplyAction="http://tempuri.org/IService/GetSampleMediumsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SampleMedium>> GetSampleMediumsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>> GetSampleMediumsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValues", ReplyAction="http://tempuri.org/IService/GetSitesAttrValuesResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValues", ReplyAction="http://tempuri.org/IService/GetSitesAttrValuesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValuesAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValuesAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethod", ReplyAction="http://tempuri.org/IService/GetMethodResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.Method GetMethod(long hSvc, int methodId);
+        SOV.WcfService.Field.AmurServiceReference.Method GetMethod(long hSvc, int methodId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethod", ReplyAction="http://tempuri.org/IService/GetMethodResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Method> GetMethodAsync(long hSvc, int methodId);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Method> GetMethodAsync(long hSvc, int methodId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrValue", ReplyAction="http://tempuri.org/IService/GetSiteAttrValueResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
+        SOV.WcfService.Field.AmurServiceReference.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrValue", ReplyAction="http://tempuri.org/IService/GetSiteAttrValueResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSiteAttrValueAsync(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSiteAttrValueAsync(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValue", ReplyAction="http://tempuri.org/IService/GetSitesAttrValueResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValue", ReplyAction="http://tempuri.org/IService/GetSitesAttrValueResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValueAsync(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValueAsync(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByType", ReplyAction="http://tempuri.org/IService/GetSitesByTypeResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesByType(long hSvc, int siteTypeId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByType(long hSvc, int siteTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByType", ReplyAction="http://tempuri.org/IService/GetSitesByTypeResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesByTypeAsync(long hSvc, int siteTypeId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByTypeAsync(long hSvc, int siteTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByGroup", ReplyAction="http://tempuri.org/IService/GetSitesByGroupResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesByGroup(long hSvc, int siteGroupId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByGroup(long hSvc, int siteGroupId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByGroup", ReplyAction="http://tempuri.org/IService/GetSitesByGroupResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesByGroupAsync(long hSvc, int siteGroupId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByGroupAsync(long hSvc, int siteGroupId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationByIndex", ReplyAction="http://tempuri.org/IService/GetStationByIndexResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.Station GetStationByIndex(long hSvc, string index);
+        SOV.WcfService.Field.AmurServiceReference.Station GetStationByIndex(long hSvc, string index);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationByIndex", ReplyAction="http://tempuri.org/IService/GetStationByIndexResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Station> GetStationByIndexAsync(long hSvc, string index);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Station> GetStationByIndexAsync(long hSvc, string index);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationsByList", ReplyAction="http://tempuri.org/IService/GetStationsByListResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station> GetStationsByList(long hSvc, System.Collections.Generic.List<int> stationIdList);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationsByList(long hSvc, System.Collections.Generic.List<int> stationIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationsByList", ReplyAction="http://tempuri.org/IService/GetStationsByListResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station>> GetStationsByListAsync(long hSvc, System.Collections.Generic.List<int> stationIdList);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationsByListAsync(long hSvc, System.Collections.Generic.List<int> stationIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationByAddrRegion", ReplyAction="http://tempuri.org/IService/GetStationByAddrRegionResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station> GetStationByAddrRegion(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationByAddrRegion(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationByAddrRegion", ReplyAction="http://tempuri.org/IService/GetStationByAddrRegionResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station>> GetStationByAddrRegionAsync(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationByAddrRegionAsync(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationTypes", ReplyAction="http://tempuri.org/IService/GetStationTypesResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.StationType> GetStationTypes(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType> GetStationTypes(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationTypes", ReplyAction="http://tempuri.org/IService/GetStationTypesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.StationType>> GetStationTypesAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>> GetStationTypesAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByStation", ReplyAction="http://tempuri.org/IService/GetSitesByStationResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesByStation(long hSvc, int stationId, System.Nullable<int> siteTypeId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByStation(long hSvc, int stationId, System.Nullable<int> siteTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByStation", ReplyAction="http://tempuri.org/IService/GetSitesByStationResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesByStationAsync(long hSvc, int stationId, System.Nullable<int> siteTypeId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByStationAsync(long hSvc, int stationId, System.Nullable<int> siteTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByList", ReplyAction="http://tempuri.org/IService/GetSitesByListResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByList", ReplyAction="http://tempuri.org/IService/GetSitesByListResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesByListAsync(long hSvc, System.Collections.Generic.List<int> siteIdList);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByListAsync(long hSvc, System.Collections.Generic.List<int> siteIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesByList", ReplyAction="http://tempuri.org/IService/GetVariablesByListResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesByList", ReplyAction="http://tempuri.org/IService/GetVariablesByListResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable>> GetVariablesByListAsync(long hSvc, System.Collections.Generic.List<int> variableIdList);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesByListAsync(long hSvc, System.Collections.Generic.List<int> variableIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableById", ReplyAction="http://tempuri.org/IService/GetVariableByIdResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.Variable GetVariableById(long hSvc, int variableId);
+        SOV.WcfService.Field.AmurServiceReference.Variable GetVariableById(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableById", ReplyAction="http://tempuri.org/IService/GetVariableByIdResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariableByIdAsync(long hSvc, int variableId);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariableByIdAsync(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableByKey", ReplyAction="http://tempuri.org/IService/GetVariableByKeyResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
+        SOV.WcfService.Field.AmurServiceReference.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableByKey", ReplyAction="http://tempuri.org/IService/GetVariableByKeyResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariableByKeyAsync(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariableByKeyAsync(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariables", ReplyAction="http://tempuri.org/IService/GetVariablesResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariables", ReplyAction="http://tempuri.org/IService/GetVariablesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAsync(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAsync(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesAll", ReplyAction="http://tempuri.org/IService/GetVariablesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariablesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariablesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesAll", ReplyAction="http://tempuri.org/IService/GetVariablesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataTypesAll", ReplyAction="http://tempuri.org/IService/GetDataTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataType> GetDataTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType> GetDataTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataTypesAll", ReplyAction="http://tempuri.org/IService/GetDataTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataType>> GetDataTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>> GetDataTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetFlagAQCAll", ReplyAction="http://tempuri.org/IService/GetFlagAQCAllResponse")]
         System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>> GetFlagAQCAll(long hSvc);
@@ -4354,88 +4354,88 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>> GetFlagAQCAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeneralCategoryesAll", ReplyAction="http://tempuri.org/IService/GetGeneralCategoryesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory> GetGeneralCategoryesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory> GetGeneralCategoryesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeneralCategoryesAll", ReplyAction="http://tempuri.org/IService/GetGeneralCategoryesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory>> GetGeneralCategoryesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>> GetGeneralCategoryesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectsAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectTypesAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoType> GetGeoObjectTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType> GetGeoObjectTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectTypesAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoType>> GetGeoObjectTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>> GetGeoObjectTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMeteoZonesAll", ReplyAction="http://tempuri.org/IService/GetMeteoZonesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MeteoZone> GetMeteoZonesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone> GetMeteoZonesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMeteoZonesAll", ReplyAction="http://tempuri.org/IService/GetMeteoZonesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MeteoZone>> GetMeteoZonesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>> GetMeteoZonesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodsAll", ReplyAction="http://tempuri.org/IService/GetMethodsAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method> GetMethodsAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method> GetMethodsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodsAll", ReplyAction="http://tempuri.org/IService/GetMethodsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method>> GetMethodsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>> GetMethodsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodForecastsAll", ReplyAction="http://tempuri.org/IService/GetMethodForecastsAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MethodForecast> GetMethodForecastsAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast> GetMethodForecastsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodForecastsAll", ReplyAction="http://tempuri.org/IService/GetMethodForecastsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MethodForecast>> GetMethodForecastsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>> GetMethodForecastsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOffsetTypesAll", ReplyAction="http://tempuri.org/IService/GetOffsetTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.OffsetType> GetOffsetTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType> GetOffsetTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOffsetTypesAll", ReplyAction="http://tempuri.org/IService/GetOffsetTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.OffsetType>> GetOffsetTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>> GetOffsetTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByLeftSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByLeftSiteResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByLeftSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByLeftSiteResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByLeftSiteAsync(long hSvc, int siteId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByLeftSiteAsync(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByRightSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByRightSiteResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByRightSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByRightSiteResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByRightSiteAsync(long hSvc, int siteId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByRightSiteAsync(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSiteTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteXSiteTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSiteTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteXSiteTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType>> GetSiteXSiteTypesAllAsync(long hSvc, int siteId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>> GetSiteXSiteTypesAllAsync(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUnitsAll", ReplyAction="http://tempuri.org/IService/GetUnitsAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Unit> GetUnitsAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit> GetUnitsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUnitsAll", ReplyAction="http://tempuri.org/IService/GetUnitsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Unit>> GetUnitsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>> GetUnitsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValueTypesAll", ReplyAction="http://tempuri.org/IService/GetValueTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.ValueType> GetValueTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType> GetValueTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValueTypesAll", ReplyAction="http://tempuri.org/IService/GetValueTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.ValueType>> GetValueTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>> GetValueTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableCodesAll", ReplyAction="http://tempuri.org/IService/GetVariableCodesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableCode> GetVariableCodesAll(long hSvc, int variableId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode> GetVariableCodesAll(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableCodesAll", ReplyAction="http://tempuri.org/IService/GetVariableCodesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableCode>> GetVariableCodesAllAsync(long hSvc, int variableId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>> GetVariableCodesAllAsync(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableTypesAll", ReplyAction="http://tempuri.org/IService/GetVariableTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableType> GetVariableTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType> GetVariableTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableTypesAll", ReplyAction="http://tempuri.org/IService/GetVariableTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableType>> GetVariableTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>> GetVariableTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ExistsDataForecasts", ReplyAction="http://tempuri.org/IService/ExistsDataForecastsResponse")]
         System.Collections.Generic.Dictionary<int, bool> ExistsDataForecasts(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateIni);
@@ -4444,184 +4444,184 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, bool>> ExistsDataForecastsAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateIni);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCurvesBySites", ReplyAction="http://tempuri.org/IService/GetCurvesBySitesResponse")]
-        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
+        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCurvesBySites", ReplyAction="http://tempuri.org/IService/GetCurvesBySitesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>>> GetCurvesBySitesAsync(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>>> GetCurvesBySitesAsync(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCurveByCatalog", ReplyAction="http://tempuri.org/IService/GetCurveByCatalogResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.Curve GetCurveByCatalog(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
+        SOV.WcfService.Field.AmurServiceReference.Curve GetCurveByCatalog(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCurveByCatalog", ReplyAction="http://tempuri.org/IService/GetCurveByCatalogResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Curve> GetCurveByCatalogAsync(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Curve> GetCurveByCatalogAsync(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataForecastsByIdList", ReplyAction="http://tempuri.org/IService/GetDataForecastsByIdListResponse")]
-        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
+        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataForecastsByIdList", ReplyAction="http://tempuri.org/IService/GetDataForecastsByIdListResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>>> GetDataForecastsByIdListAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>>> GetDataForecastsByIdListAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataSources", ReplyAction="http://tempuri.org/IService/GetDataSourcesResponse")]
-        System.Collections.Generic.Dictionary<long, FERHRI.WcfService.Field.AmurServiceReference.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds);
+        System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataSources", ReplyAction="http://tempuri.org/IService/GetDataSourcesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<long, FERHRI.WcfService.Field.AmurServiceReference.DataSource>> GetDataSourcesAsync(long hSvc, System.Collections.Generic.List<long> dataValueIds);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource>> GetDataSourcesAsync(long hSvc, System.Collections.Generic.List<long> dataValueIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataValues", ReplyAction="http://tempuri.org/IService/GetDataValuesResponse")]
-        System.Collections.Generic.Dictionary<FERHRI.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
+        System.Collections.Generic.Dictionary<SOV.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataValues", ReplyAction="http://tempuri.org/IService/GetDataValuesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<FERHRI.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>>> GetDataValuesAsync(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<SOV.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>>> GetDataValuesAsync(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataForecasts", ReplyAction="http://tempuri.org/IService/GetDataForecastsResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast> GetDataForecasts(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> GetDataForecasts(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataForecasts", ReplyAction="http://tempuri.org/IService/GetDataForecastsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsAsync(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsAsync(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogListById", ReplyAction="http://tempuri.org/IService/GetCatalogListByIdResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogListById", ReplyAction="http://tempuri.org/IService/GetCatalogListByIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListByIdAsync(long hSvc, System.Collections.Generic.List<int> ctlId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListByIdAsync(long hSvc, System.Collections.Generic.List<int> ctlId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogList", ReplyAction="http://tempuri.org/IService/GetCatalogListResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogList", ReplyAction="http://tempuri.org/IService/GetCatalogListResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalog", ReplyAction="http://tempuri.org/IService/GetCatalogResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
+        SOV.WcfService.Field.AmurServiceReference.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalog", ReplyAction="http://tempuri.org/IService/GetCatalogResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Catalog> GetCatalogAsync(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogAsync(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataPDataValueAQC", ReplyAction="http://tempuri.org/IService/GetDataPDataValueAQCResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataPDataValueAQC", ReplyAction="http://tempuri.org/IService/GetDataPDataValueAQCResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue>> GetDataPDataValueAQCAsync(long hSvc, long dvId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue>> GetDataPDataValueAQCAsync(long hSvc, long dvId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParserSysObj", ReplyAction="http://tempuri.org/IService/GetParserSysObjResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.SysObj GetParserSysObj(long hSvc, int sysObjId);
+        SOV.WcfService.Field.AmurServiceReference.SysObj GetParserSysObj(long hSvc, int sysObjId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParserSysObj", ReplyAction="http://tempuri.org/IService/GetParserSysObjResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.SysObj> GetParserSysObjAsync(long hSvc, int sysObjId);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.SysObj> GetParserSysObjAsync(long hSvc, int sysObjId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParserSysParsersXSites", ReplyAction="http://tempuri.org/IService/GetParserSysParsersXSitesResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParserSysParsersXSites", ReplyAction="http://tempuri.org/IService/GetParserSysParsersXSitesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites>> GetParserSysParsersXSitesAsync(long hSvc, int sysObjId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites>> GetParserSysParsersXSitesAsync(long hSvc, int sysObjId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParserSysParsersParams", ReplyAction="http://tempuri.org/IService/GetParserSysParsersParamsResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams> GetParserSysParsersParams(long hSvc, System.Collections.Generic.List<int> sysParsersParamsSetIds);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams> GetParserSysParsersParams(long hSvc, System.Collections.Generic.List<int> sysParsersParamsSetIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParserSysParsersParams", ReplyAction="http://tempuri.org/IService/GetParserSysParsersParamsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams>> GetParserSysParsersParamsAsync(long hSvc, System.Collections.Generic.List<int> sysParsersParamsSetIds);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams>> GetParserSysParsersParamsAsync(long hSvc, System.Collections.Generic.List<int> sysParsersParamsSetIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOrg", ReplyAction="http://tempuri.org/IService/GetOrgResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.Org GetOrg(long hSvc, int orgId);
+        SOV.WcfService.Field.AmurServiceReference.Org GetOrg(long hSvc, int orgId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOrg", ReplyAction="http://tempuri.org/IService/GetOrgResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Org> GetOrgAsync(long hSvc, int orgId);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Org> GetOrgAsync(long hSvc, int orgId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOrgsById", ReplyAction="http://tempuri.org/IService/GetOrgsByIdResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org> GetOrgsById(long hSvc, System.Collections.Generic.List<int> orgIds);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org> GetOrgsById(long hSvc, System.Collections.Generic.List<int> orgIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOrgsById", ReplyAction="http://tempuri.org/IService/GetOrgsByIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org>> GetOrgsByIdAsync(long hSvc, System.Collections.Generic.List<int> orgIds);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>> GetOrgsByIdAsync(long hSvc, System.Collections.Generic.List<int> orgIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOrgsAll", ReplyAction="http://tempuri.org/IService/GetOrgsAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org> GetOrgsAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org> GetOrgsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOrgsAll", ReplyAction="http://tempuri.org/IService/GetOrgsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org>> GetOrgsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>> GetOrgsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPerson", ReplyAction="http://tempuri.org/IService/GetPersonResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.Person GetPerson(long hSvc, int personIds);
+        SOV.WcfService.Field.AmurServiceReference.Person GetPerson(long hSvc, int personIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPerson", ReplyAction="http://tempuri.org/IService/GetPersonResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Person> GetPersonAsync(long hSvc, int personIds);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Person> GetPersonAsync(long hSvc, int personIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPersonsById", ReplyAction="http://tempuri.org/IService/GetPersonsByIdResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person> GetPersonsById(long hSvc, System.Collections.Generic.List<int> personIds);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person> GetPersonsById(long hSvc, System.Collections.Generic.List<int> personIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPersonsById", ReplyAction="http://tempuri.org/IService/GetPersonsByIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person>> GetPersonsByIdAsync(long hSvc, System.Collections.Generic.List<int> personIds);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>> GetPersonsByIdAsync(long hSvc, System.Collections.Generic.List<int> personIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPersonsAll", ReplyAction="http://tempuri.org/IService/GetPersonsAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person> GetPersonsAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person> GetPersonsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPersonsAll", ReplyAction="http://tempuri.org/IService/GetPersonsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person>> GetPersonsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>> GetPersonsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddrs", ReplyAction="http://tempuri.org/IService/GetAddrsResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr> GetAddrs(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> GetAddrs(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddrs", ReplyAction="http://tempuri.org/IService/GetAddrsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr>> GetAddrsAsync(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>> GetAddrsAsync(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddrsAll", ReplyAction="http://tempuri.org/IService/GetAddrsAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr> GetAddrsAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> GetAddrsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddrsAll", ReplyAction="http://tempuri.org/IService/GetAddrsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr>> GetAddrsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>> GetAddrsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntity", ReplyAction="http://tempuri.org/IService/GetLegalEntityResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.LegalEntity GetLegalEntity(long hSvc, int leIds);
+        SOV.WcfService.Field.AmurServiceReference.LegalEntity GetLegalEntity(long hSvc, int leIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntity", ReplyAction="http://tempuri.org/IService/GetLegalEntityResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityAsync(long hSvc, int leIds);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityAsync(long hSvc, int leIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesById", ReplyAction="http://tempuri.org/IService/GetLegalEntityesByIdResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesById(long hSvc, System.Collections.Generic.List<int> leIds);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesById(long hSvc, System.Collections.Generic.List<int> leIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesById", ReplyAction="http://tempuri.org/IService/GetLegalEntityesByIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesByIdAsync(long hSvc, System.Collections.Generic.List<int> leIds);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesByIdAsync(long hSvc, System.Collections.Generic.List<int> leIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesAll", ReplyAction="http://tempuri.org/IService/GetLegalEntityesAllResponse")]
-        System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesAll(long hSvc);
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesAll", ReplyAction="http://tempuri.org/IService/GetLegalEntityesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
-        void SaveVariableCode(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.VariableCode vc);
+        void SaveVariableCode(long hSvc, SOV.WcfService.Field.AmurServiceReference.VariableCode vc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
-        System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.VariableCode vc);
+        System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.VariableCode vc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateStation", ReplyAction="http://tempuri.org/IService/UpdateStationResponse")]
-        void UpdateStation(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Station station);
+        void UpdateStation(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateStation", ReplyAction="http://tempuri.org/IService/UpdateStationResponse")]
-        System.Threading.Tasks.Task UpdateStationAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Station station);
+        System.Threading.Tasks.Task UpdateStationAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
-        void SaveSiteAttribute(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue eav);
+        void SaveSiteAttribute(long hSvc, SOV.WcfService.Field.AmurServiceReference.EntityAttrValue eav);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
-        System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue eav);
+        System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.EntityAttrValue eav);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
-        int SaveSite(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Site site);
+        int SaveSite(long hSvc, SOV.WcfService.Field.AmurServiceReference.Site site);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
-        System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Site site);
+        System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Site site);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveStation", ReplyAction="http://tempuri.org/IService/SaveStationResponse")]
-        int SaveStation(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Station station);
+        int SaveStation(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveStation", ReplyAction="http://tempuri.org/IService/SaveStationResponse")]
-        System.Threading.Tasks.Task<int> SaveStationAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Station station);
+        System.Threading.Tasks.Task<int> SaveStationAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
-        FERHRI.WcfService.Field.AmurServiceReference.Catalog SaveCatalog(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Catalog catalog);
+        SOV.WcfService.Field.AmurServiceReference.Catalog SaveCatalog(long hSvc, SOV.WcfService.Field.AmurServiceReference.Catalog catalog);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
-        System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Catalog catalog);
+        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Catalog catalog);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
         void ActualizeDataValue(long hSvc, long dataValueId);
@@ -4636,10 +4636,10 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task<long> SaveValueAsync(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
-        long SaveDataValue(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.DataValue dv);
+        long SaveDataValue(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
-        System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.DataValue dv);
+        System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
         void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId);
@@ -4648,22 +4648,22 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task SaveDataValueXSourceAsync(long hSvc, int dataValueId, long dataSourceId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
-        long SaveDataSource(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.DataSource dataSource);
+        long SaveDataSource(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
-        System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.DataSource dataSource);
+        System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
-        void SaveDataValueList(long hSvc, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
+        void SaveDataValueList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
-        System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
+        System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
-        void SaveDataForecastList(long hSvc, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast> dvs);
+        void SaveDataForecastList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
-        System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast> dvs);
+        System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
         void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
@@ -4679,12 +4679,12 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceChannel : FERHRI.WcfService.Field.AmurServiceReference.IService, System.ServiceModel.IClientChannel {
+    public interface IServiceChannel : SOV.WcfService.Field.AmurServiceReference.IService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceClient : System.ServiceModel.ClientBase<FERHRI.WcfService.Field.AmurServiceReference.IService>, FERHRI.WcfService.Field.AmurServiceReference.IService {
+    public partial class ServiceClient : System.ServiceModel.ClientBase<SOV.WcfService.Field.AmurServiceReference.IService>, SOV.WcfService.Field.AmurServiceReference.IService {
         
         public ServiceClient() {
         }
@@ -4721,211 +4721,211 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             return base.Channel.CloseAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds) {
             return base.Channel.GetMethods(hSvc, methodIds);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method>> GetMethodsAsync(long hSvc, System.Collections.Generic.List<int> methodIds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>> GetMethodsAsync(long hSvc, System.Collections.Generic.List<int> methodIds) {
             return base.Channel.GetMethodsAsync(hSvc, methodIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station> GetStationsByIndices(long hSvc, System.Collections.Generic.List<string> stationIndices) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationsByIndices(long hSvc, System.Collections.Generic.List<string> stationIndices) {
             return base.Channel.GetStationsByIndices(hSvc, stationIndices);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station>> GetStationsByIndicesAsync(long hSvc, System.Collections.Generic.List<string> stationIndices) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationsByIndicesAsync(long hSvc, System.Collections.Generic.List<string> stationIndices) {
             return base.Channel.GetStationsByIndicesAsync(hSvc, stationIndices);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.MethodForecast GetParentFcsMethod(long hSvc, int methodId) {
+        public SOV.WcfService.Field.AmurServiceReference.MethodForecast GetParentFcsMethod(long hSvc, int methodId) {
             return base.Channel.GetParentFcsMethod(hSvc, methodId);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.MethodForecast> GetParentFcsMethodAsync(long hSvc, int methodId) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.MethodForecast> GetParentFcsMethodAsync(long hSvc, int methodId) {
             return base.Channel.GetParentFcsMethodAsync(hSvc, methodId);
         }
         
-        public System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
+        public System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
             return base.Channel.GetSitesPoints(hSvc, siteIds, dateActual, siteAttrTypeIdLat, siteAttrTypeIdLon);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoPoint>> GetSitesPointsAsync(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoPoint>> GetSitesPointsAsync(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
             return base.Channel.GetSitesPointsAsync(hSvc, siteIds, dateActual, siteAttrTypeIdLat, siteAttrTypeIdLon);
         }
         
-        public System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsByStationIds(long hSvc, System.Collections.Generic.List<int> stationIds) {
+        public System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsByStationIds(long hSvc, System.Collections.Generic.List<int> stationIds) {
             return base.Channel.GetGeoObjectsByStationIds(hSvc, stationIds);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, FERHRI.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsByStationIdsAsync(long hSvc, System.Collections.Generic.List<int> stationIds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsByStationIdsAsync(long hSvc, System.Collections.Generic.List<int> stationIds) {
             return base.Channel.GetGeoObjectsByStationIdsAsync(hSvc, stationIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType> GetSiteAttrTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType> GetSiteAttrTypesAll(long hSvc) {
             return base.Channel.GetSiteAttrTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteAttrType>> GetSiteAttrTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>> GetSiteAttrTypesAllAsync(long hSvc) {
             return base.Channel.GetSiteAttrTypesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east) {
             return base.Channel.GetSitesInBox(hSvc, south, north, west, east);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesInBoxAsync(long hSvc, double south, double north, double west, double east) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesInBoxAsync(long hSvc, double south, double north, double west, double east) {
             return base.Channel.GetSitesInBoxAsync(hSvc, south, north, west, east);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SampleMedium> GetSampleMediumsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium> GetSampleMediumsAll(long hSvc) {
             return base.Channel.GetSampleMediumsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SampleMedium>> GetSampleMediumsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>> GetSampleMediumsAllAsync(long hSvc) {
             return base.Channel.GetSampleMediumsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
             return base.Channel.GetSitesAttrValues(hSvc, siteId, attrTypeId, dateActual);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValuesAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValuesAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
             return base.Channel.GetSitesAttrValuesAsync(hSvc, siteId, attrTypeId, dateActual);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.Method GetMethod(long hSvc, int methodId) {
+        public SOV.WcfService.Field.AmurServiceReference.Method GetMethod(long hSvc, int methodId) {
             return base.Channel.GetMethod(hSvc, methodId);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Method> GetMethodAsync(long hSvc, int methodId) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Method> GetMethodAsync(long hSvc, int methodId) {
             return base.Channel.GetMethodAsync(hSvc, methodId);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public SOV.WcfService.Field.AmurServiceReference.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSiteAttrValue(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSiteAttrValueAsync(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSiteAttrValueAsync(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSiteAttrValueAsync(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSitesAttrValue(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValueAsync(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValueAsync(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSitesAttrValueAsync(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesByType(long hSvc, int siteTypeId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByType(long hSvc, int siteTypeId) {
             return base.Channel.GetSitesByType(hSvc, siteTypeId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesByTypeAsync(long hSvc, int siteTypeId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByTypeAsync(long hSvc, int siteTypeId) {
             return base.Channel.GetSitesByTypeAsync(hSvc, siteTypeId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesByGroup(long hSvc, int siteGroupId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByGroup(long hSvc, int siteGroupId) {
             return base.Channel.GetSitesByGroup(hSvc, siteGroupId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesByGroupAsync(long hSvc, int siteGroupId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByGroupAsync(long hSvc, int siteGroupId) {
             return base.Channel.GetSitesByGroupAsync(hSvc, siteGroupId);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.Station GetStationByIndex(long hSvc, string index) {
+        public SOV.WcfService.Field.AmurServiceReference.Station GetStationByIndex(long hSvc, string index) {
             return base.Channel.GetStationByIndex(hSvc, index);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Station> GetStationByIndexAsync(long hSvc, string index) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Station> GetStationByIndexAsync(long hSvc, string index) {
             return base.Channel.GetStationByIndexAsync(hSvc, index);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station> GetStationsByList(long hSvc, System.Collections.Generic.List<int> stationIdList) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationsByList(long hSvc, System.Collections.Generic.List<int> stationIdList) {
             return base.Channel.GetStationsByList(hSvc, stationIdList);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station>> GetStationsByListAsync(long hSvc, System.Collections.Generic.List<int> stationIdList) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationsByListAsync(long hSvc, System.Collections.Generic.List<int> stationIdList) {
             return base.Channel.GetStationsByListAsync(hSvc, stationIdList);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station> GetStationByAddrRegion(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationByAddrRegion(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId) {
             return base.Channel.GetStationByAddrRegion(hSvc, addrRegionId, stationTypeId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Station>> GetStationByAddrRegionAsync(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationByAddrRegionAsync(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId) {
             return base.Channel.GetStationByAddrRegionAsync(hSvc, addrRegionId, stationTypeId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.StationType> GetStationTypes(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType> GetStationTypes(long hSvc) {
             return base.Channel.GetStationTypes(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.StationType>> GetStationTypesAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>> GetStationTypesAsync(long hSvc) {
             return base.Channel.GetStationTypesAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesByStation(long hSvc, int stationId, System.Nullable<int> siteTypeId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByStation(long hSvc, int stationId, System.Nullable<int> siteTypeId) {
             return base.Channel.GetSitesByStation(hSvc, stationId, siteTypeId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesByStationAsync(long hSvc, int stationId, System.Nullable<int> siteTypeId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByStationAsync(long hSvc, int stationId, System.Nullable<int> siteTypeId) {
             return base.Channel.GetSitesByStationAsync(hSvc, stationId, siteTypeId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList) {
             return base.Channel.GetSitesByList(hSvc, siteIdList);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Site>> GetSitesByListAsync(long hSvc, System.Collections.Generic.List<int> siteIdList) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByListAsync(long hSvc, System.Collections.Generic.List<int> siteIdList) {
             return base.Channel.GetSitesByListAsync(hSvc, siteIdList);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList) {
             return base.Channel.GetVariablesByList(hSvc, variableIdList);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable>> GetVariablesByListAsync(long hSvc, System.Collections.Generic.List<int> variableIdList) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesByListAsync(long hSvc, System.Collections.Generic.List<int> variableIdList) {
             return base.Channel.GetVariablesByListAsync(hSvc, variableIdList);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.Variable GetVariableById(long hSvc, int variableId) {
+        public SOV.WcfService.Field.AmurServiceReference.Variable GetVariableById(long hSvc, int variableId) {
             return base.Channel.GetVariableById(hSvc, variableId);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariableByIdAsync(long hSvc, int variableId) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariableByIdAsync(long hSvc, int variableId) {
             return base.Channel.GetVariableByIdAsync(hSvc, variableId);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
+        public SOV.WcfService.Field.AmurServiceReference.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
             return base.Channel.GetVariableByKey(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariableByKeyAsync(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariableByKeyAsync(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
             return base.Channel.GetVariableByKeyAsync(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
             return base.Channel.GetVariables(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAsync(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAsync(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
             return base.Channel.GetVariablesAsync(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable> GetVariablesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariablesAll(long hSvc) {
             return base.Channel.GetVariablesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAllAsync(long hSvc) {
             return base.Channel.GetVariablesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataType> GetDataTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType> GetDataTypesAll(long hSvc) {
             return base.Channel.GetDataTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataType>> GetDataTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>> GetDataTypesAllAsync(long hSvc) {
             return base.Channel.GetDataTypesAllAsync(hSvc);
         }
         
@@ -4937,115 +4937,115 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             return base.Channel.GetFlagAQCAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory> GetGeneralCategoryesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory> GetGeneralCategoryesAll(long hSvc) {
             return base.Channel.GetGeneralCategoryesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeneralCategory>> GetGeneralCategoryesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>> GetGeneralCategoryesAllAsync(long hSvc) {
             return base.Channel.GetGeneralCategoryesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsAll(long hSvc) {
             return base.Channel.GetGeoObjectsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsAllAsync(long hSvc) {
             return base.Channel.GetGeoObjectsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoType> GetGeoObjectTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType> GetGeoObjectTypesAll(long hSvc) {
             return base.Channel.GetGeoObjectTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.GeoType>> GetGeoObjectTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>> GetGeoObjectTypesAllAsync(long hSvc) {
             return base.Channel.GetGeoObjectTypesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MeteoZone> GetMeteoZonesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone> GetMeteoZonesAll(long hSvc) {
             return base.Channel.GetMeteoZonesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MeteoZone>> GetMeteoZonesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>> GetMeteoZonesAllAsync(long hSvc) {
             return base.Channel.GetMeteoZonesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method> GetMethodsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method> GetMethodsAll(long hSvc) {
             return base.Channel.GetMethodsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Method>> GetMethodsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>> GetMethodsAllAsync(long hSvc) {
             return base.Channel.GetMethodsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MethodForecast> GetMethodForecastsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast> GetMethodForecastsAll(long hSvc) {
             return base.Channel.GetMethodForecastsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.MethodForecast>> GetMethodForecastsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>> GetMethodForecastsAllAsync(long hSvc) {
             return base.Channel.GetMethodForecastsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.OffsetType> GetOffsetTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType> GetOffsetTypesAll(long hSvc) {
             return base.Channel.GetOffsetTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.OffsetType>> GetOffsetTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>> GetOffsetTypesAllAsync(long hSvc) {
             return base.Channel.GetOffsetTypesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByLeftSite(hSvc, siteId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByLeftSiteAsync(long hSvc, int siteId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByLeftSiteAsync(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByLeftSiteAsync(hSvc, siteId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByRightSite(hSvc, siteId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByRightSiteAsync(long hSvc, int siteId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByRightSiteAsync(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByRightSiteAsync(hSvc, siteId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId) {
             return base.Channel.GetSiteXSiteTypesAll(hSvc, siteId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SiteXSiteType>> GetSiteXSiteTypesAllAsync(long hSvc, int siteId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>> GetSiteXSiteTypesAllAsync(long hSvc, int siteId) {
             return base.Channel.GetSiteXSiteTypesAllAsync(hSvc, siteId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Unit> GetUnitsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit> GetUnitsAll(long hSvc) {
             return base.Channel.GetUnitsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Unit>> GetUnitsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>> GetUnitsAllAsync(long hSvc) {
             return base.Channel.GetUnitsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.ValueType> GetValueTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType> GetValueTypesAll(long hSvc) {
             return base.Channel.GetValueTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.ValueType>> GetValueTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>> GetValueTypesAllAsync(long hSvc) {
             return base.Channel.GetValueTypesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableCode> GetVariableCodesAll(long hSvc, int variableId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode> GetVariableCodesAll(long hSvc, int variableId) {
             return base.Channel.GetVariableCodesAll(hSvc, variableId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableCode>> GetVariableCodesAllAsync(long hSvc, int variableId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>> GetVariableCodesAllAsync(long hSvc, int variableId) {
             return base.Channel.GetVariableCodesAllAsync(hSvc, variableId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableType> GetVariableTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType> GetVariableTypesAll(long hSvc) {
             return base.Channel.GetVariableTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.VariableType>> GetVariableTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>> GetVariableTypesAllAsync(long hSvc) {
             return base.Channel.GetVariableTypesAllAsync(hSvc);
         }
         
@@ -5057,243 +5057,243 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             return base.Channel.ExistsDataForecastsAsync(hSvc, catalogIds, dateIni);
         }
         
-        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
+        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
             return base.Channel.GetCurvesBySites(hSvc, sitesIds, variableIdX, variableIdY, curve_seria_type_id, seriaDateSS, seriaDateSF);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Curve>>> GetCurvesBySitesAsync(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>>> GetCurvesBySitesAsync(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
             return base.Channel.GetCurvesBySitesAsync(hSvc, sitesIds, variableIdX, variableIdY, curve_seria_type_id, seriaDateSS, seriaDateSF);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.Curve GetCurveByCatalog(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
+        public SOV.WcfService.Field.AmurServiceReference.Curve GetCurveByCatalog(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
             return base.Channel.GetCurveByCatalog(hSvc, catalog_id_x, catalog_id_y, curve_seria_type_id, seriaDateSS, seriaDateSF);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Curve> GetCurveByCatalogAsync(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Curve> GetCurveByCatalogAsync(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
             return base.Channel.GetCurveByCatalogAsync(hSvc, catalog_id_x, catalog_id_y, curve_seria_type_id, seriaDateSS, seriaDateSF);
         }
         
-        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
+        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
             return base.Channel.GetDataForecastsByIdList(hSvc, catalogIds, dateFcsS, dateFcsF, fcsLag, isDateFcs);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>>> GetDataForecastsByIdListAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>>> GetDataForecastsByIdListAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
             return base.Channel.GetDataForecastsByIdListAsync(hSvc, catalogIds, dateFcsS, dateFcsF, fcsLag, isDateFcs);
         }
         
-        public System.Collections.Generic.Dictionary<long, FERHRI.WcfService.Field.AmurServiceReference.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
+        public System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
             return base.Channel.GetDataSources(hSvc, dataValueIds);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<long, FERHRI.WcfService.Field.AmurServiceReference.DataSource>> GetDataSourcesAsync(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource>> GetDataSourcesAsync(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
             return base.Channel.GetDataSourcesAsync(hSvc, dataValueIds);
         }
         
-        public System.Collections.Generic.Dictionary<FERHRI.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
+        public System.Collections.Generic.Dictionary<SOV.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
             return base.Channel.GetDataValues(hSvc, dateS, dateF, isDateLOC, siteId, variableId, methodId, sourceId, offsetTypeId, offsetValue, flagAQC, isActualValueOnly, isSelectDeleted);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<FERHRI.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue>>> GetDataValuesAsync(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<SOV.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>>> GetDataValuesAsync(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
             return base.Channel.GetDataValuesAsync(hSvc, dateS, dateF, isDateLOC, siteId, variableId, methodId, sourceId, offsetTypeId, offsetValue, flagAQC, isActualValueOnly, isSelectDeleted);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast> GetDataForecasts(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> GetDataForecasts(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
             return base.Channel.GetDataForecasts(hSvc, catalogId, dateFcsS, dateFcsF, fcsLag, isDateFcs);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsAsync(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsAsync(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
             return base.Channel.GetDataForecastsAsync(hSvc, catalogId, dateFcsS, dateFcsF, fcsLag, isDateFcs);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId) {
             return base.Channel.GetCatalogListById(hSvc, ctlId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListByIdAsync(long hSvc, System.Collections.Generic.List<int> ctlId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListByIdAsync(long hSvc, System.Collections.Generic.List<int> ctlId) {
             return base.Channel.GetCatalogListByIdAsync(hSvc, ctlId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
             return base.Channel.GetCatalogList(hSvc, siteId, varId, methodId, sourceId, offsetTypeId, offsetValue);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
             return base.Channel.GetCatalogListAsync(hSvc, siteId, varId, methodId, sourceId, offsetTypeId, offsetValue);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
+        public SOV.WcfService.Field.AmurServiceReference.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
             return base.Channel.GetCatalog(hSvc, siteId, varId, offsetTypeId, methodId, sourceId, offsetValue);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Catalog> GetCatalogAsync(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogAsync(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
             return base.Channel.GetCatalogAsync(hSvc, siteId, varId, offsetTypeId, methodId, sourceId, offsetValue);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId) {
             return base.Channel.GetDataPDataValueAQC(hSvc, dvId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.AQCDataValue>> GetDataPDataValueAQCAsync(long hSvc, long dvId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue>> GetDataPDataValueAQCAsync(long hSvc, long dvId) {
             return base.Channel.GetDataPDataValueAQCAsync(hSvc, dvId);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.SysObj GetParserSysObj(long hSvc, int sysObjId) {
+        public SOV.WcfService.Field.AmurServiceReference.SysObj GetParserSysObj(long hSvc, int sysObjId) {
             return base.Channel.GetParserSysObj(hSvc, sysObjId);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.SysObj> GetParserSysObjAsync(long hSvc, int sysObjId) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.SysObj> GetParserSysObjAsync(long hSvc, int sysObjId) {
             return base.Channel.GetParserSysObjAsync(hSvc, sysObjId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId) {
             return base.Channel.GetParserSysParsersXSites(hSvc, sysObjId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersXSites>> GetParserSysParsersXSitesAsync(long hSvc, int sysObjId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites>> GetParserSysParsersXSitesAsync(long hSvc, int sysObjId) {
             return base.Channel.GetParserSysParsersXSitesAsync(hSvc, sysObjId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams> GetParserSysParsersParams(long hSvc, System.Collections.Generic.List<int> sysParsersParamsSetIds) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams> GetParserSysParsersParams(long hSvc, System.Collections.Generic.List<int> sysParsersParamsSetIds) {
             return base.Channel.GetParserSysParsersParams(hSvc, sysParsersParamsSetIds);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.SysParsersParams>> GetParserSysParsersParamsAsync(long hSvc, System.Collections.Generic.List<int> sysParsersParamsSetIds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams>> GetParserSysParsersParamsAsync(long hSvc, System.Collections.Generic.List<int> sysParsersParamsSetIds) {
             return base.Channel.GetParserSysParsersParamsAsync(hSvc, sysParsersParamsSetIds);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.Org GetOrg(long hSvc, int orgId) {
+        public SOV.WcfService.Field.AmurServiceReference.Org GetOrg(long hSvc, int orgId) {
             return base.Channel.GetOrg(hSvc, orgId);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Org> GetOrgAsync(long hSvc, int orgId) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Org> GetOrgAsync(long hSvc, int orgId) {
             return base.Channel.GetOrgAsync(hSvc, orgId);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org> GetOrgsById(long hSvc, System.Collections.Generic.List<int> orgIds) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org> GetOrgsById(long hSvc, System.Collections.Generic.List<int> orgIds) {
             return base.Channel.GetOrgsById(hSvc, orgIds);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org>> GetOrgsByIdAsync(long hSvc, System.Collections.Generic.List<int> orgIds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>> GetOrgsByIdAsync(long hSvc, System.Collections.Generic.List<int> orgIds) {
             return base.Channel.GetOrgsByIdAsync(hSvc, orgIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org> GetOrgsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org> GetOrgsAll(long hSvc) {
             return base.Channel.GetOrgsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Org>> GetOrgsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>> GetOrgsAllAsync(long hSvc) {
             return base.Channel.GetOrgsAllAsync(hSvc);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.Person GetPerson(long hSvc, int personIds) {
+        public SOV.WcfService.Field.AmurServiceReference.Person GetPerson(long hSvc, int personIds) {
             return base.Channel.GetPerson(hSvc, personIds);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Person> GetPersonAsync(long hSvc, int personIds) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Person> GetPersonAsync(long hSvc, int personIds) {
             return base.Channel.GetPersonAsync(hSvc, personIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person> GetPersonsById(long hSvc, System.Collections.Generic.List<int> personIds) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person> GetPersonsById(long hSvc, System.Collections.Generic.List<int> personIds) {
             return base.Channel.GetPersonsById(hSvc, personIds);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person>> GetPersonsByIdAsync(long hSvc, System.Collections.Generic.List<int> personIds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>> GetPersonsByIdAsync(long hSvc, System.Collections.Generic.List<int> personIds) {
             return base.Channel.GetPersonsByIdAsync(hSvc, personIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person> GetPersonsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person> GetPersonsAll(long hSvc) {
             return base.Channel.GetPersonsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Person>> GetPersonsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>> GetPersonsAllAsync(long hSvc) {
             return base.Channel.GetPersonsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr> GetAddrs(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> GetAddrs(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds) {
             return base.Channel.GetAddrs(hSvc, parentAddrRegionsId, isWithChilds);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr>> GetAddrsAsync(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>> GetAddrsAsync(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds) {
             return base.Channel.GetAddrsAsync(hSvc, parentAddrRegionsId, isWithChilds);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr> GetAddrsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> GetAddrsAll(long hSvc) {
             return base.Channel.GetAddrsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.Addr>> GetAddrsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>> GetAddrsAllAsync(long hSvc) {
             return base.Channel.GetAddrsAllAsync(hSvc);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.LegalEntity GetLegalEntity(long hSvc, int leIds) {
+        public SOV.WcfService.Field.AmurServiceReference.LegalEntity GetLegalEntity(long hSvc, int leIds) {
             return base.Channel.GetLegalEntity(hSvc, leIds);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityAsync(long hSvc, int leIds) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityAsync(long hSvc, int leIds) {
             return base.Channel.GetLegalEntityAsync(hSvc, leIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesById(long hSvc, System.Collections.Generic.List<int> leIds) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesById(long hSvc, System.Collections.Generic.List<int> leIds) {
             return base.Channel.GetLegalEntityesById(hSvc, leIds);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesByIdAsync(long hSvc, System.Collections.Generic.List<int> leIds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesByIdAsync(long hSvc, System.Collections.Generic.List<int> leIds) {
             return base.Channel.GetLegalEntityesByIdAsync(hSvc, leIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesAll(long hSvc) {
             return base.Channel.GetLegalEntityesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc) {
             return base.Channel.GetLegalEntityesAllAsync(hSvc);
         }
         
-        public void SaveVariableCode(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.VariableCode vc) {
+        public void SaveVariableCode(long hSvc, SOV.WcfService.Field.AmurServiceReference.VariableCode vc) {
             base.Channel.SaveVariableCode(hSvc, vc);
         }
         
-        public System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.VariableCode vc) {
+        public System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.VariableCode vc) {
             return base.Channel.SaveVariableCodeAsync(hSvc, vc);
         }
         
-        public void UpdateStation(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Station station) {
+        public void UpdateStation(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station) {
             base.Channel.UpdateStation(hSvc, station);
         }
         
-        public System.Threading.Tasks.Task UpdateStationAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Station station) {
+        public System.Threading.Tasks.Task UpdateStationAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station) {
             return base.Channel.UpdateStationAsync(hSvc, station);
         }
         
-        public void SaveSiteAttribute(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue eav) {
+        public void SaveSiteAttribute(long hSvc, SOV.WcfService.Field.AmurServiceReference.EntityAttrValue eav) {
             base.Channel.SaveSiteAttribute(hSvc, eav);
         }
         
-        public System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.EntityAttrValue eav) {
+        public System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.EntityAttrValue eav) {
             return base.Channel.SaveSiteAttributeAsync(hSvc, eav);
         }
         
-        public int SaveSite(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Site site) {
+        public int SaveSite(long hSvc, SOV.WcfService.Field.AmurServiceReference.Site site) {
             return base.Channel.SaveSite(hSvc, site);
         }
         
-        public System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Site site) {
+        public System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Site site) {
             return base.Channel.SaveSiteAsync(hSvc, site);
         }
         
-        public int SaveStation(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Station station) {
+        public int SaveStation(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station) {
             return base.Channel.SaveStation(hSvc, station);
         }
         
-        public System.Threading.Tasks.Task<int> SaveStationAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Station station) {
+        public System.Threading.Tasks.Task<int> SaveStationAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station) {
             return base.Channel.SaveStationAsync(hSvc, station);
         }
         
-        public FERHRI.WcfService.Field.AmurServiceReference.Catalog SaveCatalog(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Catalog catalog) {
+        public SOV.WcfService.Field.AmurServiceReference.Catalog SaveCatalog(long hSvc, SOV.WcfService.Field.AmurServiceReference.Catalog catalog) {
             return base.Channel.SaveCatalog(hSvc, catalog);
         }
         
-        public System.Threading.Tasks.Task<FERHRI.WcfService.Field.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.Catalog catalog) {
+        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Catalog catalog) {
             return base.Channel.SaveCatalogAsync(hSvc, catalog);
         }
         
@@ -5313,11 +5313,11 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             return base.Channel.SaveValueAsync(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
         }
         
-        public long SaveDataValue(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.DataValue dv) {
+        public long SaveDataValue(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv) {
             return base.Channel.SaveDataValue(hSvc, dv);
         }
         
-        public System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.DataValue dv) {
+        public System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv) {
             return base.Channel.SaveDataValueAsync(hSvc, dv);
         }
         
@@ -5329,27 +5329,27 @@ namespace FERHRI.WcfService.Field.AmurServiceReference {
             return base.Channel.SaveDataValueXSourceAsync(hSvc, dataValueId, dataSourceId);
         }
         
-        public long SaveDataSource(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.DataSource dataSource) {
+        public long SaveDataSource(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource) {
             return base.Channel.SaveDataSource(hSvc, dataSource);
         }
         
-        public System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, FERHRI.WcfService.Field.AmurServiceReference.DataSource dataSource) {
+        public System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource) {
             return base.Channel.SaveDataSourceAsync(hSvc, dataSource);
         }
         
-        public void SaveDataValueList(long hSvc, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
+        public void SaveDataValueList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
             base.Channel.SaveDataValueList(hSvc, dvs, dataSourceId);
         }
         
-        public System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
+        public System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
             return base.Channel.SaveDataValueListAsync(hSvc, dvs, dataSourceId);
         }
         
-        public void SaveDataForecastList(long hSvc, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast> dvs) {
+        public void SaveDataForecastList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs) {
             base.Channel.SaveDataForecastList(hSvc, dvs);
         }
         
-        public System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<FERHRI.WcfService.Field.AmurServiceReference.DataForecast> dvs) {
+        public System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs) {
             return base.Channel.SaveDataForecastListAsync(hSvc, dvs);
         }
         

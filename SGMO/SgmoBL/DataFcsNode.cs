@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public class DataFcsNode0 : IdClass
     {

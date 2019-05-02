@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
+using SOV.Common;
+using SOV.Amur.Meta;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     /// <summary>
     /// 1D и 2D повторяемости значений по градациям.
     /// 
-    /// OSokolov@ferhri.ru, 20171101
+    /// OSokolov@SOV.ru, 20171101
     /// </summary>
     public class Prob : IdClass
     {
@@ -30,8 +30,8 @@ namespace FERHRI.SGMO
         {
             public int Id { get; set; }
             public Prob Prob { get; set; }
-            public FERHRI.Amur.Meta.Catalog Catalog1 { get; set; }
-            public FERHRI.Amur.Meta.Catalog Catalog2 { get; set; }
+            public SOV.Amur.Meta.Catalog Catalog1 { get; set; }
+            public SOV.Amur.Meta.Catalog Catalog2 { get; set; }
             public DateTime Date { get; set; }
             /// <summary>
             /// Кол. элементов в подсчёте повторяемостей по градациям.

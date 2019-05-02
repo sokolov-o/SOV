@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.DB
+namespace SOV.DB
 {
     public class Common
     {

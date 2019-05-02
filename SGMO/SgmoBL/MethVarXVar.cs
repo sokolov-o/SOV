@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     /// <summary>
     /// Соответствие методов и переменных БД Амур переменным других (внешних, ext) баз данных, методам и переменным

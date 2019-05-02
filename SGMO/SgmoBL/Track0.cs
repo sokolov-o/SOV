@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SOV.Common;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
-    public class Track0 : Common.IdName
+    public class Track0 : IdName
     {
         public int SiteId { get; set; }
         public List<Track1> Track1List { get; set; }

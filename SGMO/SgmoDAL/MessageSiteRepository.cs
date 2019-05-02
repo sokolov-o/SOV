@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
+using SOV.Common;
+using SOV.Amur.Meta;
 using Npgsql;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public class MessageSiteRepository : BaseRepository<MessageSite>
     {

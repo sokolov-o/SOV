@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FERHRI.WcfService.Field.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SOV.WcfService.Field.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="SGMOConnectionString" Type="(Connection string)" Scope="Application">
@@ -10,7 +10,7 @@
       <Value Profile="(Default)">Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=sgmo;</Value>
     </Setting>
     <Setting Name="DB_AMUR_NAME" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">ferhri.amur</Value>
+      <Value Profile="(Default)">SOV.amur</Value>
     </Setting>
     <Setting Name="LOG_FILE_PATH" Type="System.String" Scope="Application">
       <Value Profile="(Default)">c:\FERHRI\Log\WCFServiceFieldLog.txt</Value>

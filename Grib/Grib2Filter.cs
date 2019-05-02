@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Seaware.GribCS.Grib2;
 using Seaware.GribCS;
 
-namespace FERHRI.Grib
+namespace SOV.Grib
 {
     public class Grib2Filter
     {

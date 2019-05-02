@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
+using SOV.Common;
 using System.IO;
 using System.Net;
 
-using FERHRI.Geo;
+using SOV.Geo;
 using System.Diagnostics;
 
-namespace FERHRI.DB
+namespace SOV.DB
 {
     public class VanRepository : IFcsGrid
     {
@@ -402,7 +402,7 @@ namespace FERHRI.DB
             //try
             //{
             if (isFTPPath(iniFileName))
-                DB.Common.Download(iniFileName, tempFileName);
+                Common.Download(iniFileName, tempFileName);
             else
                 File.Copy(iniFileName, tempFileName, true);
 
@@ -414,7 +414,7 @@ namespace FERHRI.DB
             //}
         }
 
-        public FERHRI.Field[][][] ReadFieldsInRectangles(DateTime dateIni, object dataFilter, List<double> leadTimeHours, List<GeoRectangle> grs2Truncate)
+        public Field[][][] ReadFieldsInRectangles(DateTime dateIni, object dataFilter, List<double> leadTimeHours, List<GeoRectangle> grs2Truncate)
         {
             // DATA FILTER
             List<int> varIndeces;

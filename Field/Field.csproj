@@ -7,8 +7,8 @@
     <ProjectGuid>{56323A85-FDE4-4A36-8D34-38430CEF22F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI</RootNamespace>
-    <AssemblyName>FERHRI.Field</AssemblyName>
+    <RootNamespace>SOV</RootNamespace>
+    <AssemblyName>SOV.Field</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,7 +44,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Amur.20\Common\Common.csproj">
+    <ProjectReference Include="..\Amur-2.1\Common\Common.csproj">
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
     </ProjectReference>

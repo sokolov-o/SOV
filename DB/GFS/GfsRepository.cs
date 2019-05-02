@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 
-using FERHRI.Common;
-using FERHRI.Grib;
-using FERHRI.Geo;
+using SOV.Common;
+using SOV.Grib;
+using SOV.Geo;
+using SOV;
 using Seaware.GribCS.Grib2;
 using Seaware.GribCS;
 using System.Diagnostics;
 
-namespace FERHRI.DB
+namespace SOV.DB
 {
     public class GfsRepository : IFcsGrid
     {
@@ -210,7 +211,7 @@ namespace FERHRI.DB
                     // Закачиваем файл
                     if (CheckDirForReady(Path.Combine(FileDirectory, GetDirForDate(date))))
                     {
-                        Common.Download(filePath4Lag, tempFileName);
+                        DB.Common.Download(filePath4Lag, tempFileName);
                     }
                 }
                 else
@@ -292,12 +293,12 @@ namespace FERHRI.DB
             return lagMax;
         }
 
-        public Field[/*Grib2Filter index*/] SelectFields(List<Grib2Filter> g2filter, DateTime dateIni, int predictTime, Geo.GeoRectangle gr2Truncate)
+        public Field[/*Grib2Filter index*/] SelectFields(List<Grib2Filter> g2filter, DateTime dateIni, int predictTime, GeoRectangle gr2Truncate)
         {
             Field[][] ret = SelectFields(g2filter, dateIni, predictTime, (object)gr2Truncate == null ? null : new List<GeoRectangle>() { gr2Truncate });
             return ret[0];
         }
-        public Field[/*Georectangle index*/][/*Grib2Filter index*/] SelectFields(List<Grib2Filter> g2filter, DateTime dateIni, int predictTime, List<Geo.GeoRectangle> grs2Truncate)
+        public Field[/*Georectangle index*/][/*Grib2Filter index*/] SelectFields(List<Grib2Filter> g2filter, DateTime dateIni, int predictTime, List<GeoRectangle> grs2Truncate)
         {
             Field[][] ret = null;
 
@@ -368,7 +369,7 @@ namespace FERHRI.DB
         /// <param name="distanceType"></param>
         /// <returns></returns>
         public double[/*g2filter*/][/*points*/] ReadValuesAtPoints(DateTime dateIni, List<Grib2Filter> g2filter, int predictTime,
-            List<Geo.GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
+            List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
             Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] gfsRecords = Select(g2filter, dateIni, predictTime);
 
@@ -390,7 +391,7 @@ namespace FERHRI.DB
         }
 
         public double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/] ReadValuesAtPoints(DateTime dateIni, object dataFilter, List<double> leadTimes,
-            List<Geo.GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
+            List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
             // CHECK INPUT
 
@@ -402,7 +403,7 @@ namespace FERHRI.DB
             // SCAN LEADTIMES
 
             List<Grib2Filter> grib2Filter = (List<Grib2Filter>)dataFilter;
-            double[][][] ret = FERHRI.Common.Support.Allocate(leadTimes.Count, points.Count, grib2Filter.Count, double.NaN);
+            double[][][] ret = SOV.Common.Support.Allocate(leadTimes.Count, points.Count, grib2Filter.Count, double.NaN);
             bool isNull = true;
 
             for (int i = 0; i < leadTimes.Count; i++)

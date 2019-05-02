@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public class MethvarXGrib2Repository
     {
@@ -48,7 +48,7 @@ namespace FERHRI.SGMO
                                 ExcludeFromFcs = (bool)rdr["is_exclude_from_fcs"],
                                 IsActual = (bool)rdr["is_actual"],
 
-                                Grib2Filter = new FERHRI.Grib.Grib2Filter()
+                                Grib2Filter = new SOV.Grib.Grib2Filter()
                                {
                                    id_center_id = (int)rdr["grib2_center_id"],
                                    gds_gdtn = (int)rdr["grib2_gds_gdtn"],

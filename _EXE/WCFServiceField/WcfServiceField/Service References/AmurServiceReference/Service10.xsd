@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://10.11.203.34:8001/Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://10.11.203.34:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Common" />
+  <xs:import schemaLocation="http://10.11.203.34:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
   <xs:complexType name="ArrayOfMethod">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Method" nillable="true" type="tns:Method" />
@@ -10,7 +10,7 @@
   <xs:element name="ArrayOfMethod" nillable="true" type="tns:ArrayOfMethod" />
   <xs:complexType name="Method">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q1:IdName">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Common" base="q1:IdName">
         <xs:sequence>
           <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MethodOutputStoreParameters" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
@@ -30,7 +30,7 @@
   <xs:element name="ArrayOfStation" nillable="true" type="tns:ArrayOfStation" />
   <xs:complexType name="Station">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q3:IdNames">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/SOV.Common" base="q3:IdNames">
         <xs:sequence>
           <xs:element minOccurs="0" name="AddrRegionId" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
@@ -54,7 +54,7 @@
   <xs:element name="MethodForecast" nillable="true" type="tns:MethodForecast" />
   <xs:complexType name="GeoObject">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q7:IdName">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/SOV.Common" base="q7:IdName">
         <xs:sequence>
           <xs:element minOccurs="0" name="FallIntoId" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="GeoTypeId" type="xs:int" />
@@ -111,7 +111,7 @@
   <xs:element name="ArrayOfSampleMedium" nillable="true" type="tns:ArrayOfSampleMedium" />
   <xs:complexType name="SampleMedium">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q10:DicItem">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/SOV.Common" base="q10:DicItem">
         <xs:sequence />
       </xs:extension>
     </xs:complexContent>
@@ -140,7 +140,7 @@
   <xs:element name="ArrayOfStationType" nillable="true" type="tns:ArrayOfStationType" />
   <xs:complexType name="StationType">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q11:IdName">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/SOV.Common" base="q11:IdName">
         <xs:sequence>
           <xs:element minOccurs="0" name="NameShort" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -171,7 +171,7 @@
   <xs:element name="Variable" nillable="true" type="tns:Variable" />
   <xs:complexType name="VariableVirtual">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q12:IdClass">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/SOV.Common" base="q12:IdClass">
         <xs:sequence>
           <xs:element minOccurs="0" name="DataTypeId" type="xs:int" />
           <xs:element minOccurs="0" name="GeneralCategoryId" type="xs:int" />
@@ -193,7 +193,7 @@
   <xs:element name="ArrayOfDataType" nillable="true" type="tns:ArrayOfDataType" />
   <xs:complexType name="DataType">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q13:DicItem">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/SOV.Common" base="q13:DicItem">
         <xs:sequence />
       </xs:extension>
     </xs:complexContent>
@@ -207,7 +207,7 @@
   <xs:element name="ArrayOfGeneralCategory" nillable="true" type="tns:ArrayOfGeneralCategory" />
   <xs:complexType name="GeneralCategory">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q14:DicItem">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/SOV.Common" base="q14:DicItem">
         <xs:sequence />
       </xs:extension>
     </xs:complexContent>
@@ -262,7 +262,7 @@
   <xs:element name="ArrayOfOffsetType" nillable="true" type="tns:ArrayOfOffsetType" />
   <xs:complexType name="OffsetType">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q15:IdName">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/SOV.Common" base="q15:IdName">
         <xs:sequence>
           <xs:element minOccurs="0" name="UnitId" type="xs:int" />
         </xs:sequence>
@@ -323,7 +323,7 @@
   <xs:element name="ArrayOfValueType" nillable="true" type="tns:ArrayOfValueType" />
   <xs:complexType name="ValueType">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q16:DicItem">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/SOV.Common" base="q16:DicItem">
         <xs:sequence>
           <xs:element minOccurs="0" name="NameEng" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -355,7 +355,7 @@
   <xs:element name="ArrayOfVariableType" nillable="true" type="tns:ArrayOfVariableType" />
   <xs:complexType name="VariableType">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q17:DicItem">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/SOV.Common" base="q17:DicItem">
         <xs:sequence>
           <xs:element minOccurs="0" name="NameEng" nillable="true" type="xs:string" />
         </xs:sequence>

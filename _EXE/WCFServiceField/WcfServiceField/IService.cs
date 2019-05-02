@@ -1,21 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
-using FERHRI;
-using FERHRI.Geo;
-using FERHRI.WcfService.Field.AmurServiceReference;
+using SOV.WcfService.Field.AmurServiceReference;
 
-namespace FERHRI.WcfService.Field
+namespace SOV.WcfService.Field
 {
     /// <summary>
     /// Сервис доступа к полям  - к данным в узлах пространственной сетки.
     /// Поддерживаются диагностические и прогностические поля.
     /// 
-    /// OSokolov@ferhri.ru
+    /// OSokolov@SOV.ru
     /// 2017.08 - ...
     /// </summary>
     [ServiceContract]
@@ -48,7 +42,7 @@ namespace FERHRI.WcfService.Field
         /// <param name="leadTimes">Заблаговременности для выборки. Не может быть null.</param>
         /// <returns>Массив полей Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/]</returns>
         [OperationContract]
-        FERHRI.Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/] GetFieldsInRectangles
+        SOV.Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/] GetFieldsInRectangles
             (long hSvc, DateTime dateIni, int methodId, List<SGMO.Varoff> varoffs, List<double> leadTimes, List<Geo.GeoRectangle> grs);
         /// <summary>
         /// Получить прогностические значения переменных для указанных записей каталога и заблаговременностей в указанных точках.

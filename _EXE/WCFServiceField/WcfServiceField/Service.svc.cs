@@ -8,10 +8,10 @@ using System.Text;
 using System.Configuration;
 using System.Diagnostics;
 
-using FERHRI.WcfService.Field.AmurServiceReference;
-//using FERHRI.Amur.Meta;
+using SOV.WcfService.Field.AmurServiceReference;
+//using SOV.Amur.Meta;
 
-namespace FERHRI.WcfService.Field
+namespace SOV.WcfService.Field
 {
     /// <summary>
     /// TODO: !!! перед service-publish убедиться в корректности строки подключения к БД в web.config !!!
@@ -22,10 +22,10 @@ namespace FERHRI.WcfService.Field
         static AmurServiceReference.ServiceClient _amurClient;
         static long _amurServiceHandle = -100;
 
-        static List<FERHRI.Common.User> _usersAllowed;
+        static List<SOV.Common.User> _usersAllowed;
         static Dictionary<Method, List<object>/*MethvarXGrib, MethodForecast*/> _methodsAllowed = new Dictionary<Method, List<object>>();
 
-        static Dictionary<long, FERHRI.Common.User> _usersSessions = new Dictionary<long, Common.User>();
+        static Dictionary<long, SOV.Common.User> _usersSessions = new Dictionary<long, Common.User>();
 
         static string _logFilePath = Properties.Settings.Default.LOG_FILE_PATH;//@"E:\FERHRI\Log\WCFServiceFieldLog.txt";
         static bool _isOpening = false;
@@ -46,8 +46,8 @@ namespace FERHRI.WcfService.Field
             {
                 System.IO.File.AppendAllText(_logFilePath, string.Format("Service initializing started at {0}.\n", DateTime.Now));
 
-                FERHRI.SGMO.DataManager.SetDefaultConnectionString(FERHRI.WcfService.Field.Properties.Settings.Default.SGMOConnectionString);
-                _dbAmurName = FERHRI.WcfService.Field.Properties.Settings.Default.DB_AMUR_NAME;
+                SOV.SGMO.DataManager.SetDefaultConnectionString(SOV.WcfService.Field.Properties.Settings.Default.SGMOConnectionString);
+                _dbAmurName = SOV.WcfService.Field.Properties.Settings.Default.DB_AMUR_NAME;
 
                 // GET METHODS
 
@@ -64,7 +64,7 @@ namespace FERHRI.WcfService.Field
                     // ADD METHOD
                     _methodsAllowed.Add(method, new List<object>
                     {
-                            FERHRI.SGMO.DataManager.GetInstance().MethvarXGrib2Repository.Select(_dbAmurName, method.Id),
+                            SOV.SGMO.DataManager.GetInstance().MethvarXGrib2Repository.Select(_dbAmurName, method.Id),
                         methForecasts.FirstOrDefault(x => x.Method.Id == method.Id)
                     });
                 }
@@ -122,7 +122,7 @@ namespace FERHRI.WcfService.Field
                     return -2;
                 }
 
-                KeyValuePair<long, FERHRI.Common.User> kvp = _usersSessions.FirstOrDefault(x => x.Value.Name == user.Name);
+                KeyValuePair<long, SOV.Common.User> kvp = _usersSessions.FirstOrDefault(x => x.Value.Name == user.Name);
                 if (kvp.Value != null)
                 {
                     //System.IO.File.AppendAllText(_logFilePath,
@@ -155,11 +155,11 @@ namespace FERHRI.WcfService.Field
         /// <param name="userName">Имя пользователя.</param>
         public void CloseByUserName(string userName)
         {
-            KeyValuePair<long, FERHRI.Common.User> kvp = _usersSessions.FirstOrDefault(x => x.Value.Name == userName);
+            KeyValuePair<long, SOV.Common.User> kvp = _usersSessions.FirstOrDefault(x => x.Value.Name == userName);
             if (kvp.Value != null)
                 Close(kvp.Key);
         }
-        public FERHRI.Field[/*LeadTime index*/][/*Georectangle index*/][/*Varoff index*/] GetFieldsInRectangles
+        public SOV.Field[/*LeadTime index*/][/*Georectangle index*/][/*Varoff index*/] GetFieldsInRectangles
             (long hSvc, DateTime dateIni, int methodId, List<SGMO.Varoff> varoffs, List<double> leadTimes, List<Geo.GeoRectangle> grs)
         {
             CheckHandle(hSvc);
@@ -176,7 +176,7 @@ namespace FERHRI.WcfService.Field
                     // GET GRID/FIELD REPOSITORY
                     DB.IFcsGrid db = (DB.IFcsGrid)DB.Factory.GetInstance(method.Key.MethodOutputStoreParameters);
                     if (db == null) throw new Exception(string.Format(
-                        "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе FERHRI.DB.Factory. " +
+                        "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе SOV.DB.Factory. " +
                         "Нужно дополнить код фабрики.\n", methOutInterface, method.Key.Name, this));
                     // GET DATA FILTER 
                     object dataFilter = GetDataFilter(method, varoffs);
@@ -246,7 +246,7 @@ namespace FERHRI.WcfService.Field
                     List<Geo.GeoPoint> points = pointXsites.Values.ToList();
 
                     // GET ENUMS
-                    o = FERHRI.Amur.Meta.Method.GetMethodPostprocessingParams(pointMethod.MethodOutputStoreParameters);
+                    o = SOV.Amur.Meta.Method.GetMethodPostprocessingParams(pointMethod.MethodOutputStoreParameters);
                     if (o == null)
                         throw new Exception("Отсутствуют данные или неизвестное значение параметра [parent_method_data_postprocessing] в поле параметров метода " +
                             (pointMethod.Name + " / " + pointMethod.Id));
@@ -257,7 +257,7 @@ namespace FERHRI.WcfService.Field
 
                     DB.IFcsGrid db = (DB.IFcsGrid)DB.Factory.GetInstance(parentMethod.Key.MethodOutputStoreParameters);
                     if (db == null) throw new Exception(string.Format(
-                        "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе FERHRI.DB.Factory. " +
+                        "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе SOV.DB.Factory. " +
                         "Нужно дополнить код фабрики.\n", methOutInterface, parentMethod.Key.Name));
                     double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/] parentData = db.ReadValuesAtPoints
                         (dateIni, dataFilter, leadTimes, points, nearestType, distanceType);

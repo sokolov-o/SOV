@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public enum EnumVaroff
     {
@@ -31,7 +31,7 @@ namespace FERHRI.SGMO
         public int Id { get; set; }
         /// <summary>
         /// Наименование источника справочника для переменной.
-        /// Например, ferhri.amur, hbr.amur, sakura, etc.
+        /// Например, SOV.amur, hbr.amur, sakura, etc.
         /// </summary>
         public string SrcName { get; set; }
         public int MethodId { get; set; }

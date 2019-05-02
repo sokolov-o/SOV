@@ -7,8 +7,8 @@
     <ProjectGuid>{295E7E63-5C9F-45B2-BABC-EDF38DCA411A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FEERHRI.DB</RootNamespace>
-    <AssemblyName>FEERHRI.DB.Factory</AssemblyName>
+    <RootNamespace>SOV.DB</RootNamespace>
+    <AssemblyName>SOV.DB.Factory</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,16 +43,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
-      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FileVanWave\REP_FileVanWave.csproj">
       <Project>{4990c383-f03e-496a-a736-de848f9400f2}</Project>
       <Name>REP_FileVanWave</Name>
     </ProjectReference>
     <ProjectReference Include="..\GFS\REP_GFS.csproj">
-      <Project>{13b7d38b-4802-4567-b928-20c57a8580a6}</Project>
+      <Project>{e9e8142c-8e1e-4fce-8ff1-8f32d604a69f}</Project>
       <Name>REP_GFS</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">

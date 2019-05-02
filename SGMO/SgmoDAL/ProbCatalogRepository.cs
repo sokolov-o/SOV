@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
+using SOV.Common;
+using SOV.Amur.Meta;
 
 using Npgsql;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public class ProbCatalogRepository : BaseRepository<Prob.Catalog>
     {

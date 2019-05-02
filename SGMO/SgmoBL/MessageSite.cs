@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     /// <summary>
     /// Прогностическое текстовое сообщение для пункта.

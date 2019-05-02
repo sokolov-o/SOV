@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
+using SOV.Common;
+using SOV.Amur.Meta;
 
 using Npgsql;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public class ProbRepository : BaseRepository<Prob>
     {
@@ -51,7 +51,7 @@ namespace FERHRI.SGMO
             ret.ForEach(x => x.PileSet2 = pss.Find(y => y.Id == x.PileSet2.Id));
             ret.ForEach(x => x.PileSet1 = pss.Find(y => y.Id == x.PileSet1.Id));
 
-            List<Unit> us = FERHRI.Amur.Meta.DataManager.GetInstance().UnitRepository.Select();
+            List<Unit> us = SOV.Amur.Meta.DataManager.GetInstance().UnitRepository.Select();
             ret.ForEach(x => x.UnitTime = us.Find(y => y.Id == x.UnitTime.Id));
 
             List<Prob.Catalog> ctls = DataManager.GetInstance().ProbCatalogRepository.SelectByProbs(ret, true);

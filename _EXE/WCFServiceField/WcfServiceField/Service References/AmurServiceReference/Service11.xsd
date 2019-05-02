@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FERHRI.Social" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FERHRI.Social" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SOV.Social" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOV.Social" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://10.11.203.34:8001/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="http://10.11.203.34:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Common" />
+  <xs:import schemaLocation="http://10.11.203.34:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
   <xs:import schemaLocation="http://10.11.203.34:8001/Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="Org">
     <xs:sequence>
@@ -37,7 +37,7 @@
   <xs:element name="ArrayOfAddr" nillable="true" type="tns:ArrayOfAddr" />
   <xs:complexType name="Addr">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q1:IdClass">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Common" base="q1:IdClass">
         <xs:sequence>
           <xs:element minOccurs="0" name="Childs" nillable="true" type="tns:ArrayOfAddr" />
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -51,7 +51,7 @@
   <xs:element name="Addr" nillable="true" type="tns:Addr" />
   <xs:complexType name="LegalEntity">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q2:IdNames">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/SOV.Common" base="q2:IdNames">
         <xs:sequence>
           <xs:element minOccurs="0" name="AddrAdd" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="AddrId" nillable="true" type="xs:int" />

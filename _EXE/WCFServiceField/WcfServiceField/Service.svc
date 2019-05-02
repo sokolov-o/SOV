@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="FERHRI.WcfService.Field.Service" CodeBehind="Service.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SOV.WcfService.Field.Service" CodeBehind="Service.svc.cs" %>

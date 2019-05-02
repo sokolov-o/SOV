@@ -7,8 +7,8 @@
     <ProjectGuid>{F7E8241B-6360-4A7A-8BB3-537288B2A3A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.DB</RootNamespace>
-    <AssemblyName>FERHRI.DB.Interfaces</AssemblyName>
+    <RootNamespace>SOV.DB</RootNamespace>
+    <AssemblyName>SOV.DB.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,10 +43,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
-      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Catalog\Catalog.csproj">
       <Project>{ec1f2118-3eb9-421e-820f-6ea352caef82}</Project>
       <Name>Catalog</Name>
@@ -56,7 +52,7 @@
       <Name>Field</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Geo\Geo.csproj">
-      <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
+      <Project>{3d2d6261-0ec0-43a7-90e3-8fa7bb9dfdca}</Project>
       <Name>Geo</Name>
     </ProjectReference>
   </ItemGroup>

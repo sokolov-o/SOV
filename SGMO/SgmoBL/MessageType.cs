@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
+using SOV.Amur.Meta;
+using SOV.Common;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     /// <summary>
     /// Тип текстового сообщения.

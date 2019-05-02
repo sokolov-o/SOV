@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using FERHRI.WcfService.Field.AmurServiceReference;
+using SOV.WcfService.Field.AmurServiceReference;
 
-namespace FERHRI.WcfService.Field
+namespace SOV.WcfService.Field
 {
     public partial class Service
     {
@@ -60,13 +60,13 @@ namespace FERHRI.WcfService.Field
                 List<Catalog> parentCatalog1 = null;
 
                 // Specific: wind case
-                if (childCatalog.VariableId == (int)FERHRI.Amur.Meta.EnumVariable.WindDirFcs || childCatalog.VariableId == (int)FERHRI.Amur.Meta.EnumVariable.WindSpeedFcs)
+                if (childCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindDirFcs || childCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindSpeedFcs)
                 {
-                    if (!parentCatalogs.Exists(x => x.VariableId == (int)FERHRI.Amur.Meta.EnumVariable.UWindFcs))
+                    if (!parentCatalogs.Exists(x => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs))
                     {
                         // X-component
                         parentCatalog1 = parentMethodCatalogs.FindAll(x =>
-                            x.VariableId == (int)FERHRI.Amur.Meta.EnumVariable.UWindFcs &&
+                            x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs &&
                             x.OffsetTypeId == childCatalog.OffsetTypeId &&
                             x.OffsetValue == childCatalog.OffsetValue
                         );
@@ -75,7 +75,7 @@ namespace FERHRI.WcfService.Field
 
                         // Y-component
                         parentCatalog1 = parentMethodCatalogs.FindAll(x
-                            => x.VariableId == (int)FERHRI.Amur.Meta.EnumVariable.VWindFcs
+                            => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.VWindFcs
                             && x.OffsetTypeId == childCatalog.OffsetTypeId
                             && x.OffsetValue == childCatalog.OffsetValue
                         );
@@ -129,7 +129,7 @@ namespace FERHRI.WcfService.Field
             {
                 case "GRIB2":
 
-                    if ((o = method.Value.FirstOrDefault(x => x.GetType() == typeof(List<FERHRI.SGMO.MethVaroffXGrib2>))) == null)
+                    if ((o = method.Value.FirstOrDefault(x => x.GetType() == typeof(List<SOV.SGMO.MethVaroffXGrib2>))) == null)
                         throw new Exception(string.Format(
                          "Для запрошенного метода <{0}> с форматом выходных данных {1} " +
                          "отсутствует соответствие с переменными Amur, которые д.б. указаны в БД sgmo табл variable_x_grib2." +
@@ -139,7 +139,7 @@ namespace FERHRI.WcfService.Field
 
                     foreach (var varoff in varoffs)
                     {
-                        FERHRI.SGMO.MethVaroffXGrib2 methvarXGrib2 = ((List<FERHRI.SGMO.MethVaroffXGrib2>)o).FirstOrDefault(x =>
+                        SGMO.MethVaroffXGrib2 methvarXGrib2 = ((List<SOV.SGMO.MethVaroffXGrib2>)o).FirstOrDefault(x =>
                             x.SrcName == _dbAmurName
                             && x.MethodId == method.Key.Id
                             && x.VariableId == varoff.VariableId
@@ -297,16 +297,16 @@ namespace FERHRI.WcfService.Field
                         // NOT PRECIPITATION
                         switch (pointCatalog.VariableId)
                         {
-                            case (int)FERHRI.Amur.Meta.EnumVariable.WindDirFcs:
-                            case (int)FERHRI.Amur.Meta.EnumVariable.WindSpeedFcs:
+                            case (int)SOV.Amur.Meta.EnumVariable.WindDirFcs:
+                            case (int)SOV.Amur.Meta.EnumVariable.WindSpeedFcs:
 
                                 int iParentCatalogU = parentCatalogs.IndexOf(parentCatalogs.First(x
-                                    => x.VariableId == (int)FERHRI.Amur.Meta.EnumVariable.UWindFcs
+                                    => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs
                                     && x.OffsetTypeId == pointCatalog.OffsetTypeId
                                     && x.OffsetValue == pointCatalog.OffsetValue
                                 ));
                                 int iParentCatalogV = parentCatalogs.IndexOf(parentCatalogs.First(x
-                                    => x.VariableId == (int)FERHRI.Amur.Meta.EnumVariable.VWindFcs
+                                    => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.VWindFcs
                                     && x.OffsetTypeId == pointCatalog.OffsetTypeId
                                     && x.OffsetValue == pointCatalog.OffsetValue
                                 ));
@@ -318,9 +318,9 @@ namespace FERHRI.WcfService.Field
                                     double dir = Common.Vector.uv2Azimuth(u, v);
                                     double mod = Common.Vector.uv2Module(u, v);
 
-                                    if (pointCatalog.VariableId == (int)FERHRI.Amur.Meta.EnumVariable.WindDirFcs)
+                                    if (pointCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindDirFcs)
                                         ret[iLT][iPC] = dir;
-                                    if (pointCatalog.VariableId == (int)FERHRI.Amur.Meta.EnumVariable.WindSpeedFcs)
+                                    if (pointCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindSpeedFcs)
                                         ret[iLT][iPC] = mod;
                                 }
                                 else
@@ -357,7 +357,7 @@ namespace FERHRI.WcfService.Field
         {
             ////if (leadTimes.Length < 2 || gfsPrecips.Length != leadTimes.Length) return null;
 
-            double[] ret = FERHRI.Common.Support.Allocate(leadTimes.Length, double.NaN);
+            double[] ret = SOV.Common.Support.Allocate(leadTimes.Length, double.NaN);
             double leadTimeStep = leadTimes[1] - leadTimes[0];
 
             if (leadTimes[0] != 0 && ((int)(leadTimes[0] / restTime)) * restTime + leadTimeStep == leadTimes[0])

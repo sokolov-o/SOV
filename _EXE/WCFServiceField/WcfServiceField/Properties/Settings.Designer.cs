@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FERHRI.WcfService.Field.Properties {
+namespace SOV.WcfService.Field.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -35,7 +35,7 @@ namespace FERHRI.WcfService.Field.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ferhri.amur")]
+        [global::System.Configuration.DefaultSettingValueAttribute("SOV.amur")]
         public string DB_AMUR_NAME {
             get {
                 return ((string)(this["DB_AMUR_NAME"]));

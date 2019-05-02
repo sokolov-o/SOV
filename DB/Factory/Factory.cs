@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.DB
+namespace SOV.DB
 {
     public class Factory
     {
