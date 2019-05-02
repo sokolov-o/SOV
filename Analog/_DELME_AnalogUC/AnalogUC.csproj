@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C25E2721-9837-490C-B659-130BE2B34AF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.Analog</RootNamespace>
+    <AssemblyName>FERHRI.AnalogUC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormGeoobsMetricList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeoobsMetricList.Designer.cs">
+      <DependentUpon>FormGeoobsMetricList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeoobsMetric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeoobsMetric.Designer.cs">
+      <DependentUpon>FormGeoobsMetric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UCClimate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCClimate.Designer.cs">
+      <DependentUpon>UCClimate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTaskCalcMetric1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTaskCalcMetric1.Designer.cs">
+      <DependentUpon>UCTaskCalcMetric1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCField.Designer.cs">
+      <DependentUpon>UCField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCGeoobsMetric.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCGeoobsMetric.Designer.cs">
+      <DependentUpon>UCGeoobsMetric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCGeoobsMetricList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCGeoobsMetricList.Designer.cs">
+      <DependentUpon>UCGeoobsMetricList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFieldList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFieldList.Designer.cs">
+      <DependentUpon>UCFieldList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCIntDouble.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCIntDouble.Designer.cs">
+      <DependentUpon>UCIntDouble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFieldGeoList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFieldGeoList.Designer.cs">
+      <DependentUpon>UCFieldGeoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTaskCalcMetricList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTaskCalcMetricList.Designer.cs">
+      <DependentUpon>UCTaskCalcMetricList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UCPrototypeDGV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UCPrototypeDGV.Designer.cs">
+      <DependentUpon>_UCPrototypeDGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTaskCalcMetric.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTaskCalcMetric.Designer.cs">
+      <DependentUpon>UCTaskCalcMetric.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Amur.20\Common\CommonUC\CommonUC.csproj">
+      <Project>{bb34a841-7cbe-4c0d-8268-6aece9b7271e}</Project>
+      <Name>CommonUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Amur.20\MetaDAL\MetaDAL.csproj">
+      <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
+      <Name>MetaDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Amur.20\Meta\Meta.csproj">
+      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
+      <Name>Meta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DB\MetaDb\MetaDb.csproj">
+      <Project>{be1bf21c-ed6e-4c0e-8a9f-457bfb26d7a9}</Project>
+      <Name>MetaDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Analog.csproj">
+      <Project>{64b23018-1e62-474b-96a8-fd012d127f13}</Project>
+      <Name>Analog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnalogDAL\AnalogDAL.csproj">
+      <Project>{cafd129d-066e-4dc0-9ffc-bd38d171add1}</Project>
+      <Name>AnalogDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormGeoobsMetricList.resx">
+      <DependentUpon>FormGeoobsMetricList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeoobsMetric.resx">
+      <DependentUpon>FormGeoobsMetric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCClimate.resx">
+      <DependentUpon>UCClimate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTaskCalcMetric1.resx">
+      <DependentUpon>UCTaskCalcMetric1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCField.resx">
+      <DependentUpon>UCField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCGeoobsMetric.resx">
+      <DependentUpon>UCGeoobsMetric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCGeoobsMetricList.resx">
+      <DependentUpon>UCGeoobsMetricList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFieldList.resx">
+      <DependentUpon>UCFieldList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCIntDouble.resx">
+      <DependentUpon>UCIntDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFieldGeoList.resx">
+      <DependentUpon>UCFieldGeoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTaskCalcMetricList.resx">
+      <DependentUpon>UCTaskCalcMetricList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UCPrototypeDGV.resx">
+      <DependentUpon>_UCPrototypeDGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTaskCalcMetric.resx">
+      <DependentUpon>UCTaskCalcMetric.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Action.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.MathVar.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.Unit.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Common.IdName.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Common.IdNameRE.datasource" />
+    <None Include="Properties\DataSources\Field.datasource" />
+    <None Include="Properties\DataSources\FieldGeo.datasource" />
+    <None Include="Properties\DataSources\FieldGeoobsView.datasource" />
+    <None Include="Properties\DataSources\IdValueCollection.datasource" />
+    <None Include="Properties\DataSources\TaskCalcMetricView.datasource" />
+    <None Include="Properties\DataSources\TimeProcessType.datasource" />
+    <None Include="Resources\action_add_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bitmap_210.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewBox_10697_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy_6524.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\126_Edit_16x16_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_run_16xLG.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

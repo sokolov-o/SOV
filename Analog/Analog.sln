@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analog", "Analog.csproj", "{64B23018-1E62-474B-96A8-FD012D127F13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Amur.20\Common\Common.csproj", "{31660004-130A-4001-A6D0-F8209EE3A3E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Amur", "Amur", "{7EEA72A6-C65A-4C90-A7B0-D750DD4E44E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalogDAL", "AnalogDAL\AnalogDAL.csproj", "{CAFD129D-066E-4DC0-9FFC-BD38D171ADD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaDAL", "..\Amur.20\MetaDAL\MetaDAL.csproj", "{73194647-7254-44FE-86A1-97AAF2B47F88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalogLRFStn", "AnalogLRFStn\AnalogLRFStn.csproj", "{F4E26F8C-C8CB-4708-8153-3C39D4EAF681}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64B23018-1E62-474B-96A8-FD012D127F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64B23018-1E62-474B-96A8-FD012D127F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64B23018-1E62-474B-96A8-FD012D127F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64B23018-1E62-474B-96A8-FD012D127F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAFD129D-066E-4DC0-9FFC-BD38D171ADD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFD129D-066E-4DC0-9FFC-BD38D171ADD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFD129D-066E-4DC0-9FFC-BD38D171ADD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFD129D-066E-4DC0-9FFC-BD38D171ADD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73194647-7254-44FE-86A1-97AAF2B47F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73194647-7254-44FE-86A1-97AAF2B47F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73194647-7254-44FE-86A1-97AAF2B47F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73194647-7254-44FE-86A1-97AAF2B47F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E26F8C-C8CB-4708-8153-3C39D4EAF681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E26F8C-C8CB-4708-8153-3C39D4EAF681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E26F8C-C8CB-4708-8153-3C39D4EAF681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E26F8C-C8CB-4708-8153-3C39D4EAF681}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{31660004-130A-4001-A6D0-F8209EE3A3E6} = {7EEA72A6-C65A-4C90-A7B0-D750DD4E44E7}
+		{73194647-7254-44FE-86A1-97AAF2B47F88} = {7EEA72A6-C65A-4C90-A7B0-D750DD4E44E7}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7A11CE9-B306-4232-BB37-EDAA90445C49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.MetaDb</RootNamespace>
+    <AssemblyName>FERHRI.MetaDb.DataManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Factory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Analog\Analog.csproj">
+      <Project>{64b23018-1e62-474b-96a8-fd012d127f13}</Project>
+      <Name>Analog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Analog\AnalogDAL\AnalogDAL.csproj">
+      <Project>{cafd129d-066e-4dc0-9ffc-bd38d171add1}</Project>
+      <Name>AnalogDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Catalog\Catalog.csproj">
+      <Project>{ec1f2118-3eb9-421e-820f-6ea352caef82}</Project>
+      <Name>Catalog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Field\Field.csproj">
+      <Project>{56323a85-fde4-4a36-8d34-38430cef22f1}</Project>
+      <Name>Field</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Geo\Geo.csproj">
+      <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
+      <Name>Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sakura\DataDAL\DataDAL.csproj">
+      <Project>{b659476a-a6a2-4089-93a3-5df2060520f1}</Project>
+      <Name>DataDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sakura\Enums\Enums.csproj">
+      <Project>{d629f71d-6e70-4643-86cf-7ff114852e2e}</Project>
+      <Name>Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sakura\MetaDAL\SakuraMetaDAL.csproj">
+      <Project>{1ba329af-e668-4ca0-bf8a-480889a0a212}</Project>
+      <Name>SakuraMetaDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sakura\Meta\SakuraMeta.csproj">
+      <Project>{955057a0-70ed-4cb8-9e2f-131785783353}</Project>
+      <Name>SakuraMeta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{f7e8241b-6360-4a7a-8bb3-537288b2a3a1}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaDb\MetaDb.csproj">
+      <Project>{be1bf21c-ed6e-4c0e-8a9f-457bfb26d7a9}</Project>
+      <Name>MetaDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaDb\MetaDbDAL\MetaDbDAL.csproj">
+      <Project>{4fb058db-17ea-4be8-969c-d6049d9b4ae3}</Project>
+      <Name>MetaDbDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
