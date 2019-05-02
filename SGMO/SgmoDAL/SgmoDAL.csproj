@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67779067-F033-4759-A94A-DF236F999E26}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.SGMO</RootNamespace>
+    <AssemblyName>FERHRI.SGMO.SgmoDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\Amur.20\packages\Npgsql.3.2.5\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>..\..\Amur.20\packages\System.Threading.Tasks.Extensions.4.3.0\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataFcsNodeRepository.cs" />
+    <Compile Include="MessageTypeRepository.cs" />
+    <Compile Include="ProbCatalogRepository.cs" />
+    <Compile Include="ProbCatalogPileRepository.cs" />
+    <Compile Include="_DELME_DataFcsRepository.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="ProbRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TrackRepository.cs" />
+    <Compile Include="PileRepository.cs" />
+    <Compile Include="WarningPileCatalogRepository.cs" />
+    <Compile Include="MethvarXGrib2Repository.cs" />
+    <Compile Include="MessageSiteRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Amur.20\MetaDAL\MetaDAL.csproj">
+      <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
+      <Name>MetaDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Amur.20\Meta\Meta.csproj">
+      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
+      <Name>Meta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Geo\Geo.csproj">
+      <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
+      <Name>Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Grib\Grib.csproj">
+      <Project>{b0362c23-4f7a-4a27-91c8-9772f850a3b0}</Project>
+      <Name>Grib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SgmoBL\SgmoBL.csproj">
+      <Project>{f583806c-ba90-4dd8-9044-9ec9c33d83ce}</Project>
+      <Name>SgmoBL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
