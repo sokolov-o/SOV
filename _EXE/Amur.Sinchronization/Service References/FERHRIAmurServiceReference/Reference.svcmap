@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5e905b3e-8e4b-4dc5-9f30-020c9ed91517" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.11.203.34:8001/service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="f23f328a-bc3d-47a6-bb36-23e498153997" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd11" />
+    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="2e23277a-72ad-4aeb-bbca-ef004799d15a" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?disco" />
+    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="922756de-02ae-459c-8964-2a13298a9211" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?wsdl" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="323bd7ce-7f66-4ad9-88fa-d9ca142f4a2a" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd10" />
+    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="6080633b-1e7b-484e-a867-19033dcf33a9" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd8" />
+    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="409b87b1-2bb1-4648-88e6-433ea18c9395" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd9" />
+    <MetadataFile FileName="Service4.xsd" MetadataType="Schema" ID="3f514f6f-9750-4d72-9b1f-0ac1b0225f0e" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd4" />
+    <MetadataFile FileName="Service5.xsd" MetadataType="Schema" ID="32fb289f-2972-4f4b-abf9-b7ce5bd62e06" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd5" />
+    <MetadataFile FileName="Service6.xsd" MetadataType="Schema" ID="16d84336-8b5e-4db5-8b62-e74e7c72398b" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd6" />
+    <MetadataFile FileName="Service7.xsd" MetadataType="Schema" ID="07126c89-61f8-49b5-95aa-c85a35bd8480" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd7" />
+    <MetadataFile FileName="Service8.xsd" MetadataType="Schema" ID="e40cee98-6128-48b0-becf-0228ade9d042" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service9.xsd" MetadataType="Schema" ID="d9d1bff2-0316-406f-83a1-f2cc93e8a907" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service10.xsd" MetadataType="Schema" ID="a6ffddc0-34e4-4c9f-8be4-8b03c0999686" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="07bfee90-0ba0-4abf-91d7-1bf388b8ab36" SourceId="1" SourceUrl="http://10.11.203.34:8001/Service.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

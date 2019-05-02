@@ -1,0 +1,2599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HydroService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.Bulletin" />
+      <xsd:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/HydroLibrary.BL" />
+      <xsd:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.SyncData" />
+      <xsd:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/HydroLibrary.Reports" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHydroService_GetDataSourcesByPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourcesByPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesByPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourcesByPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesByPeriod_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/" name="detail" element="q1:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesByPeriod_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/" name="detail" element="q2:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastDataSources977nn_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastDataSources977nn" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastDataSources977nn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastDataSources977nnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastDataSources977nn_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/" name="detail" element="q3:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastDataSources977nn_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/" name="detail" element="q4:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSource977nnBySiteId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSource977nnBySiteId" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSource977nnBySiteId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSource977nnBySiteIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSource977nnBySiteId_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/" name="detail" element="q5:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSource977nnBySiteId_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/" name="detail" element="q6:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesByKN15Statistic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourcesByKN15Statistic" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesByKN15Statistic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourcesByKN15StatisticResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesByKN15Statistic_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/" name="detail" element="q7:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesByKN15Statistic_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/" name="detail" element="q8:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesKN15ErrorStatistic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourcesKN15ErrorStatistic" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesKN15ErrorStatistic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourcesKN15ErrorStatisticResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesKN15ErrorStatistic_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/" name="detail" element="q9:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSourcesKN15ErrorStatistic_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/" name="detail" element="q10:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetQuailifiers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuailifiers" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetQuailifiers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuailifiersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetQuailifiers_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/" name="detail" element="q11:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCurve_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurve" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCurve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCurve_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/" name="detail" element="q12:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCurve_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/" name="detail" element="q13:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveCurve_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurve" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveCurve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveCurve_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/" name="detail" element="q14:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveCurve_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/" name="detail" element="q15:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategory" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCategory_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/" name="detail" element="q16:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCategory_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/" name="detail" element="q17:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDocTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocTypes" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDocTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDocTypes_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/" name="detail" element="q18:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDoc" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveDoc_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/" name="detail" element="q19:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveDoc_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/" name="detail" element="q20:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDocsBySite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocsBySite" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDocsBySite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocsBySiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDocsBySite_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/" name="detail" element="q21:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDocsBySite_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/" name="detail" element="q22:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCustomers_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/" name="detail" element="q23:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCustomerBulletinConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerBulletinConfig" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCustomerBulletinConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerBulletinConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCustomerBulletinConfig_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/" name="detail" element="q24:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCustomerBulletinConfig_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/" name="detail" element="q25:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveBulletinConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBulletinConfig" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveBulletinConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBulletinConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveBulletinConfig_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/" name="detail" element="q26:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveBulletinConfig_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/" name="detail" element="q27:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetREgionNameById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetREgionNameById" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetREgionNameById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetREgionNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetREgionNameById_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/" name="detail" element="q28:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetREgionNameById_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/" name="detail" element="q29:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllAuthors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAuthors" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllAuthors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllAuthors_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/" name="detail" element="q30:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetTlgErrorTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTlgErrorTypes" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetTlgErrorTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTlgErrorTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetTlgErrorTypes_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/" name="detail" element="q31:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetTlgErrorsByDataSourceID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTlgErrorsByDataSourceID" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetTlgErrorsByDataSourceID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTlgErrorsByDataSourceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetTlgErrorsByDataSourceID_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/" name="detail" element="q32:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetTlgErrorsByDataSourceID_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/" name="detail" element="q33:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAltSiteVariableList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAltSiteVariableList" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAltSiteVariableList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAltSiteVariableListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAltSiteVariableList_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/" name="detail" element="q34:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAltSiteVariableList_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/" name="detail" element="q35:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSyncUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSyncUser" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSyncUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSyncUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSyncUser_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/" name="detail" element="q36:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSyncUser_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/" name="detail" element="q37:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_Sync_GetDataValuesFromCollectDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sync_GetDataValuesFromCollectDate" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_Sync_GetDataValuesFromCollectDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Sync_GetDataValuesFromCollectDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_Sync_GetDataValuesFromCollectDate_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/" name="detail" element="q38:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_Sync_GetDataValuesFromCollectDate_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/" name="detail" element="q39:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteRelation" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteRelation_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/" name="detail" element="q40:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteRelation_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/" name="detail" element="q41:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataByFormDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByFormDate" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataByFormDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByFormDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllVariables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVariables" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllVariables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastClimateInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastClimateInfo" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastClimateInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastClimateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastClimateInfo_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/" name="detail" element="q42:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastClimateInfo_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/" name="detail" element="q43:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetClimateDecadeMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClimateDecadeMonth" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetClimateDecadeMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClimateDecadeMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetClimateDecadeMonth_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/" name="detail" element="q44:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetClimateDecadeMonth_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/" name="detail" element="q45:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveClimateDecadeMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClimateDecadeMonth" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveClimateDecadeMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClimateDecadeMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveClimateDecadeMonth_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/" name="detail" element="q46:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveClimateDecadeMonth_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/" name="detail" element="q47:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetClimateInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClimateInfos" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetClimateInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClimateInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetClimateInfos_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/" name="detail" element="q48:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetClimateInfos_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/" name="detail" element="q49:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastSiteCriteria_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastSiteCriteria" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastSiteCriteria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastSiteCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastSiteCriteria_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/" name="detail" element="q50:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastSiteCriteria_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/" name="detail" element="q51:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteCriterias_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteCriterias" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteCriterias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteCriteriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteCriterias_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/" name="detail" element="q52:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteCriterias_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/" name="detail" element="q53:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveCriteria_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCriteria" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveCriteria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveCriteria_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/" name="detail" element="q54:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveCriteria_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/" name="detail" element="q55:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCriteriaTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriteriaTypes" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCriteriaTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriteriaTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetCriteriaTypes_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/" name="detail" element="q56:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesByWaterObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitesByWaterObject" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesByWaterObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitesByWaterObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesByWaterObject_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/" name="detail" element="q57:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesByWaterObject_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/" name="detail" element="q58:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteList" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteList_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/" name="detail" element="q59:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSite" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSite_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/" name="detail" element="q60:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSite_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/" name="detail" element="q61:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveSiteWithRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSiteWithRelation" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveSiteWithRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSiteWithRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveSiteWithRelation_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.datacontract.org/2004/07/" name="detail" element="q62:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveSiteWithRelation_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/" name="detail" element="q63:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteListWithParent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteListWithParent" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteListWithParent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteListWithParentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteListWithParent_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.datacontract.org/2004/07/" name="detail" element="q64:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteListWithParent_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://schemas.datacontract.org/2004/07/" name="detail" element="q65:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteListByReportName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteListByReportName" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteListByReportName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteListByReportNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteListByReportName_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.datacontract.org/2004/07/" name="detail" element="q66:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteListByReportName_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://schemas.datacontract.org/2004/07/" name="detail" element="q67:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesByIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitesByIds" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesByIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitesByIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesByIds_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.datacontract.org/2004/07/" name="detail" element="q68:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesByIds_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q69="http://schemas.datacontract.org/2004/07/" name="detail" element="q69:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteTypes" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteTypes_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://schemas.datacontract.org/2004/07/" name="detail" element="q70:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteTypes_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q71="http://schemas.datacontract.org/2004/07/" name="detail" element="q71:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetVariablesBySyteTypeId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVariablesBySyteTypeId" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetVariablesBySyteTypeId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVariablesBySyteTypeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetVariablesBySyteTypeId_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q72="http://schemas.datacontract.org/2004/07/" name="detail" element="q72:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetVariablesBySyteTypeId_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q73="http://schemas.datacontract.org/2004/07/" name="detail" element="q73:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetVariable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVariable" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetVariable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVariableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetVariable_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q74="http://schemas.datacontract.org/2004/07/" name="detail" element="q74:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetVariable_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q75="http://schemas.datacontract.org/2004/07/" name="detail" element="q75:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteTypeVariables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteTypeVariables" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteTypeVariables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteTypeVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteTypeVariables_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q76="http://schemas.datacontract.org/2004/07/" name="detail" element="q76:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteTypeVariables_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q77="http://schemas.datacontract.org/2004/07/" name="detail" element="q77:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllSiteGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSiteGroups" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllSiteGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSiteGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllSiteGroups_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q78="http://schemas.datacontract.org/2004/07/" name="detail" element="q78:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAttributesForSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttributesForSite" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAttributesForSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttributesForSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAttributesForSite_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q79="http://schemas.datacontract.org/2004/07/" name="detail" element="q79:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAttributesForSite_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q80="http://schemas.datacontract.org/2004/07/" name="detail" element="q80:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteAttributeTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteAttributeTypes" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteAttributeTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteAttributeTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteAttributeTypes_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q81="http://schemas.datacontract.org/2004/07/" name="detail" element="q81:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteAttributeTypes_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q82="http://schemas.datacontract.org/2004/07/" name="detail" element="q82:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveSiteAttribute_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSiteAttribute" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveSiteAttribute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSiteAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveSiteAttribute_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q83="http://schemas.datacontract.org/2004/07/" name="detail" element="q83:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveSiteAttribute_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q84="http://schemas.datacontract.org/2004/07/" name="detail" element="q84:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteAttribute_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteAttribute" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteAttribute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteAttribute_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q85="http://schemas.datacontract.org/2004/07/" name="detail" element="q85:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSiteAttribute_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q86="http://schemas.datacontract.org/2004/07/" name="detail" element="q86:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSensorDifferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorDifferences" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSensorDifferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorDifferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSensorDifferences_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q87="http://schemas.datacontract.org/2004/07/" name="detail" element="q87:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSensorDifferences_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q88="http://schemas.datacontract.org/2004/07/" name="detail" element="q88:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValueFromId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValueFromId" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValueFromId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValueFromIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValueFromId_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q89="http://schemas.datacontract.org/2004/07/" name="detail" element="q89:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValueFromId_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q90="http://schemas.datacontract.org/2004/07/" name="detail" element="q90:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSource" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSource_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q91="http://schemas.datacontract.org/2004/07/" name="detail" element="q91:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataSource_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q92="http://schemas.datacontract.org/2004/07/" name="detail" element="q92:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveDataSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataSource" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveDataSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveDataSource_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q93="http://schemas.datacontract.org/2004/07/" name="detail" element="q93:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveDataSource_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q94="http://schemas.datacontract.org/2004/07/" name="detail" element="q94:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_Hello_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hello" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_Hello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetData" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SetData_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q95="http://schemas.datacontract.org/2004/07/" name="detail" element="q95:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SetData_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q96="http://schemas.datacontract.org/2004/07/" name="detail" element="q96:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValue" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValue_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q97="http://schemas.datacontract.org/2004/07/" name="detail" element="q97:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValue_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q98="http://schemas.datacontract.org/2004/07/" name="detail" element="q98:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValues" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValues_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q99="http://schemas.datacontract.org/2004/07/" name="detail" element="q99:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValues_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q100="http://schemas.datacontract.org/2004/07/" name="detail" element="q100:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesForReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesForReport" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesForReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesForReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesForReport_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q101="http://schemas.datacontract.org/2004/07/" name="detail" element="q101:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesForReport_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q102="http://schemas.datacontract.org/2004/07/" name="detail" element="q102:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllDataValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataValue" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllDataValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllDataValue_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q103="http://schemas.datacontract.org/2004/07/" name="detail" element="q103:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllDataValue_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q104="http://schemas.datacontract.org/2004/07/" name="detail" element="q104:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllDataValueLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataValueLocal" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllDataValueLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataValueLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllDataValueLocal_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q105="http://schemas.datacontract.org/2004/07/" name="detail" element="q105:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllDataValueLocal_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q106="http://schemas.datacontract.org/2004/07/" name="detail" element="q106:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValueLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValueLocal" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValueLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValueLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValueLocal_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q107="http://schemas.datacontract.org/2004/07/" name="detail" element="q107:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValueLocal_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q108="http://schemas.datacontract.org/2004/07/" name="detail" element="q108:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesLocal" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesLocal_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q109="http://schemas.datacontract.org/2004/07/" name="detail" element="q109:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesLocal_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q110="http://schemas.datacontract.org/2004/07/" name="detail" element="q110:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesForReportLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesForReportLocal" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesForReportLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesForReportLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesForReportLocal_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q111="http://schemas.datacontract.org/2004/07/" name="detail" element="q111:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesForReportLocal_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q112="http://schemas.datacontract.org/2004/07/" name="detail" element="q112:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_DeleteDataValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDataValue" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_DeleteDataValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDataValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_DeleteDataValue_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q113="http://schemas.datacontract.org/2004/07/" name="detail" element="q113:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_DeleteDataValue_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q114="http://schemas.datacontract.org/2004/07/" name="detail" element="q114:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMinValuesForPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinValuesForPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMinValuesForPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinValuesForPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMinValuesForPeriod_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q115="http://schemas.datacontract.org/2004/07/" name="detail" element="q115:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMinValuesForPeriod_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q116="http://schemas.datacontract.org/2004/07/" name="detail" element="q116:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMinValuesForPeriodLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinValuesForPeriodLocal" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMinValuesForPeriodLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinValuesForPeriodLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMinValuesForPeriodLocal_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q117="http://schemas.datacontract.org/2004/07/" name="detail" element="q117:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMinValuesForPeriodLocal_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q118="http://schemas.datacontract.org/2004/07/" name="detail" element="q118:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMaxValuesForPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxValuesForPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMaxValuesForPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxValuesForPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMaxValuesForPeriod_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q119="http://schemas.datacontract.org/2004/07/" name="detail" element="q119:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMaxValuesForPeriod_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q120="http://schemas.datacontract.org/2004/07/" name="detail" element="q120:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMaxValuesForPeriodLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxValuesForPeriodLocal" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMaxValuesForPeriodLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxValuesForPeriodLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMaxValuesForPeriodLocal_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q121="http://schemas.datacontract.org/2004/07/" name="detail" element="q121:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetMaxValuesForPeriodLocal_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q122="http://schemas.datacontract.org/2004/07/" name="detail" element="q122:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesByDataSourceId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesByDataSourceId" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesByDataSourceId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesByDataSourceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesByDataSourceId_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q123="http://schemas.datacontract.org/2004/07/" name="detail" element="q123:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesByDataSourceId_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q124="http://schemas.datacontract.org/2004/07/" name="detail" element="q124:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesByQualifiers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesByQualifiers" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesByQualifiers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesByQualifiersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesByQualifiers_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q125="http://schemas.datacontract.org/2004/07/" name="detail" element="q125:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesByQualifiers_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q126="http://schemas.datacontract.org/2004/07/" name="detail" element="q126:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesCount" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataValuesCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesCount_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q127="http://schemas.datacontract.org/2004/07/" name="detail" element="q127:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetDataValuesCount_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q128="http://schemas.datacontract.org/2004/07/" name="detail" element="q128:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SetForecast_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetForecast" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SetForecast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetForecastResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SetForecast_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q129="http://schemas.datacontract.org/2004/07/" name="detail" element="q129:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SetForecast_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q130="http://schemas.datacontract.org/2004/07/" name="detail" element="q130:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetForecasts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetForecasts" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetForecasts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetForecastsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetForecasts_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q131="http://schemas.datacontract.org/2004/07/" name="detail" element="q131:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetForecasts_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q132="http://schemas.datacontract.org/2004/07/" name="detail" element="q132:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastForecast_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastForecast" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastForecast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastForecastResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastForecast_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q133="http://schemas.datacontract.org/2004/07/" name="detail" element="q133:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetLastForecast_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q134="http://schemas.datacontract.org/2004/07/" name="detail" element="q134:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetWaterObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterObjects" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetWaterObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetWaterObjects_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q135="http://schemas.datacontract.org/2004/07/" name="detail" element="q135:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesWithoutWaterObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitesWithoutWaterObject" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesWithoutWaterObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitesWithoutWaterObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetSitesWithoutWaterObject_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q136="http://schemas.datacontract.org/2004/07/" name="detail" element="q136:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetWaterObjectBySite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterObjectBySite" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetWaterObjectBySite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaterObjectBySiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetWaterObjectBySite_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q137="http://schemas.datacontract.org/2004/07/" name="detail" element="q137:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetWaterObjectBySite_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q138="http://schemas.datacontract.org/2004/07/" name="detail" element="q138:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveWaterObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWaterObject" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveWaterObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWaterObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveWaterObject_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q139="http://schemas.datacontract.org/2004/07/" name="detail" element="q139:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveWaterObject_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q140="http://schemas.datacontract.org/2004/07/" name="detail" element="q140:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveWaterObjectOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWaterObjectOrder" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveWaterObjectOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWaterObjectOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveWaterObjectOrder_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q141="http://schemas.datacontract.org/2004/07/" name="detail" element="q141:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_SaveWaterObjectOrder_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q142="http://schemas.datacontract.org/2004/07/" name="detail" element="q142:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllGeoTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGeoTypes" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllGeoTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGeoTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetAllGeoTypes_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q143="http://schemas.datacontract.org/2004/07/" name="detail" element="q143:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetGeoType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGeoType" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetGeoType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGeoTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetGeoType_InputDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q144="http://schemas.datacontract.org/2004/07/" name="detail" element="q144:InputDataException" />
+  </wsdl:message>
+  <wsdl:message name="IHydroService_GetGeoType_InnerServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q145="http://schemas.datacontract.org/2004/07/" name="detail" element="q145:InnerServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="IHydroService">
+    <wsdl:operation name="GetDataSourcesByPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesByPeriod" message="tns:IHydroService_GetDataSourcesByPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesByPeriodResponse" message="tns:IHydroService_GetDataSourcesByPeriod_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesByPeriodInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataSourcesByPeriod_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesByPeriodInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataSourcesByPeriod_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastDataSources977nn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetLastDataSources977nn" message="tns:IHydroService_GetLastDataSources977nn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetLastDataSources977nnResponse" message="tns:IHydroService_GetLastDataSources977nn_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetLastDataSources977nnInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetLastDataSources977nn_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetLastDataSources977nnInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetLastDataSources977nn_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSource977nnBySiteId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataSource977nnBySiteId" message="tns:IHydroService_GetDataSource977nnBySiteId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataSource977nnBySiteIdResponse" message="tns:IHydroService_GetDataSource977nnBySiteId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSource977nnBySiteIdInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataSource977nnBySiteId_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSource977nnBySiteIdInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataSource977nnBySiteId_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSourcesByKN15Statistic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesByKN15Statistic" message="tns:IHydroService_GetDataSourcesByKN15Statistic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesByKN15StatisticResponse" message="tns:IHydroService_GetDataSourcesByKN15Statistic_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesByKN15StatisticInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataSourcesByKN15Statistic_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesByKN15StatisticInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataSourcesByKN15Statistic_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSourcesKN15ErrorStatistic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesKN15ErrorStatistic" message="tns:IHydroService_GetDataSourcesKN15ErrorStatistic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesKN15ErrorStatisticResponse" message="tns:IHydroService_GetDataSourcesKN15ErrorStatistic_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesKN15ErrorStatisticInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataSourcesKN15ErrorStatistic_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSourcesKN15ErrorStatisticInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataSourcesKN15ErrorStatistic_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuailifiers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetQuailifiers" message="tns:IHydroService_GetQuailifiers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetQuailifiersResponse" message="tns:IHydroService_GetQuailifiers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetQuailifiersInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetQuailifiers_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetCurve" message="tns:IHydroService_GetCurve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetCurveResponse" message="tns:IHydroService_GetCurve_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetCurveInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetCurve_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetCurveInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetCurve_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveCurve" message="tns:IHydroService_SaveCurve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveCurveResponse" message="tns:IHydroService_SaveCurve_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveCurveInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveCurve_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveCurveInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveCurve_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetCategory" message="tns:IHydroService_GetCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetCategoryResponse" message="tns:IHydroService_GetCategory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetCategoryInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetCategory_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetCategoryInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetCategory_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDocTypes" message="tns:IHydroService_GetDocTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDocTypesResponse" message="tns:IHydroService_GetDocTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDocTypesInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDocTypes_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveDoc" message="tns:IHydroService_SaveDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveDocResponse" message="tns:IHydroService_SaveDoc_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveDocInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveDoc_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveDocInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveDoc_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocsBySite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDocsBySite" message="tns:IHydroService_GetDocsBySite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDocsBySiteResponse" message="tns:IHydroService_GetDocsBySite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDocsBySiteInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDocsBySite_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDocsBySiteInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDocsBySite_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetCustomers" message="tns:IHydroService_GetCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetCustomersResponse" message="tns:IHydroService_GetCustomers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetCustomersInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetCustomers_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerBulletinConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetCustomerBulletinConfig" message="tns:IHydroService_GetCustomerBulletinConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetCustomerBulletinConfigResponse" message="tns:IHydroService_GetCustomerBulletinConfig_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetCustomerBulletinConfigInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetCustomerBulletinConfig_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetCustomerBulletinConfigInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetCustomerBulletinConfig_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBulletinConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveBulletinConfig" message="tns:IHydroService_SaveBulletinConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveBulletinConfigResponse" message="tns:IHydroService_SaveBulletinConfig_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveBulletinConfigInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveBulletinConfig_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveBulletinConfigInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveBulletinConfig_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetREgionNameById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetREgionNameById" message="tns:IHydroService_GetREgionNameById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetREgionNameByIdResponse" message="tns:IHydroService_GetREgionNameById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetREgionNameByIdInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetREgionNameById_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetREgionNameByIdInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetREgionNameById_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuthors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetAllAuthors" message="tns:IHydroService_GetAllAuthors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetAllAuthorsResponse" message="tns:IHydroService_GetAllAuthors_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAllAuthorsInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetAllAuthors_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTlgErrorTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetTlgErrorTypes" message="tns:IHydroService_GetTlgErrorTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetTlgErrorTypesResponse" message="tns:IHydroService_GetTlgErrorTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetTlgErrorTypesInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetTlgErrorTypes_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTlgErrorsByDataSourceID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetTlgErrorsByDataSourceID" message="tns:IHydroService_GetTlgErrorsByDataSourceID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetTlgErrorsByDataSourceIDResponse" message="tns:IHydroService_GetTlgErrorsByDataSourceID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetTlgErrorsByDataSourceIDInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetTlgErrorsByDataSourceID_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetTlgErrorsByDataSourceIDInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetTlgErrorsByDataSourceID_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAltSiteVariableList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetAltSiteVariableList" message="tns:IHydroService_GetAltSiteVariableList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetAltSiteVariableListResponse" message="tns:IHydroService_GetAltSiteVariableList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAltSiteVariableListInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetAltSiteVariableList_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAltSiteVariableListInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetAltSiteVariableList_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSyncUser" message="tns:IHydroService_GetSyncUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSyncUserResponse" message="tns:IHydroService_GetSyncUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSyncUserInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSyncUser_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSyncUserInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSyncUser_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sync_GetDataValuesFromCollectDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/Sync_GetDataValuesFromCollectDate" message="tns:IHydroService_Sync_GetDataValuesFromCollectDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/Sync_GetDataValuesFromCollectDateResponse" message="tns:IHydroService_Sync_GetDataValuesFromCollectDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/Sync_GetDataValuesFromCollectDateInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_Sync_GetDataValuesFromCollectDate_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/Sync_GetDataValuesFromCollectDateInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_Sync_GetDataValuesFromCollectDate_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSiteRelation" message="tns:IHydroService_GetSiteRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteRelationResponse" message="tns:IHydroService_GetSiteRelation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteRelationInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSiteRelation_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteRelationInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSiteRelation_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetData" message="tns:IHydroService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataResponse" message="tns:IHydroService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByFormDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataByFormDate" message="tns:IHydroService_GetDataByFormDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataByFormDateResponse" message="tns:IHydroService_GetDataByFormDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVariables">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetAllVariables" message="tns:IHydroService_GetAllVariables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetAllVariablesResponse" message="tns:IHydroService_GetAllVariables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastClimateInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetLastClimateInfo" message="tns:IHydroService_GetLastClimateInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetLastClimateInfoResponse" message="tns:IHydroService_GetLastClimateInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetLastClimateInfoInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetLastClimateInfo_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetLastClimateInfoInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetLastClimateInfo_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClimateDecadeMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetClimateDecadeMonth" message="tns:IHydroService_GetClimateDecadeMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetClimateDecadeMonthResponse" message="tns:IHydroService_GetClimateDecadeMonth_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetClimateDecadeMonthInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetClimateDecadeMonth_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetClimateDecadeMonthInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetClimateDecadeMonth_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveClimateDecadeMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveClimateDecadeMonth" message="tns:IHydroService_SaveClimateDecadeMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveClimateDecadeMonthResponse" message="tns:IHydroService_SaveClimateDecadeMonth_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveClimateDecadeMonthInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveClimateDecadeMonth_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveClimateDecadeMonthInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveClimateDecadeMonth_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClimateInfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetClimateInfos" message="tns:IHydroService_GetClimateInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetClimateInfosResponse" message="tns:IHydroService_GetClimateInfos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetClimateInfosInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetClimateInfos_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetClimateInfosInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetClimateInfos_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSiteCriteria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetLastSiteCriteria" message="tns:IHydroService_GetLastSiteCriteria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetLastSiteCriteriaResponse" message="tns:IHydroService_GetLastSiteCriteria_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetLastSiteCriteriaInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetLastSiteCriteria_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetLastSiteCriteriaInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetLastSiteCriteria_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteCriterias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSiteCriterias" message="tns:IHydroService_GetSiteCriterias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteCriteriasResponse" message="tns:IHydroService_GetSiteCriterias_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteCriteriasInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSiteCriterias_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteCriteriasInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSiteCriterias_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCriteria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveCriteria" message="tns:IHydroService_SaveCriteria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveCriteriaResponse" message="tns:IHydroService_SaveCriteria_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveCriteriaInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveCriteria_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveCriteriaInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveCriteria_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCriteriaTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetCriteriaTypes" message="tns:IHydroService_GetCriteriaTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetCriteriaTypesResponse" message="tns:IHydroService_GetCriteriaTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetCriteriaTypesInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetCriteriaTypes_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSitesByWaterObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSitesByWaterObject" message="tns:IHydroService_GetSitesByWaterObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSitesByWaterObjectResponse" message="tns:IHydroService_GetSitesByWaterObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSitesByWaterObjectInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSitesByWaterObject_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSitesByWaterObjectInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSitesByWaterObject_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSiteList" message="tns:IHydroService_GetSiteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteListResponse" message="tns:IHydroService_GetSiteList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteListInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSiteList_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSite" message="tns:IHydroService_GetSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteResponse" message="tns:IHydroService_GetSite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSite_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSite_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSiteWithRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveSiteWithRelation" message="tns:IHydroService_SaveSiteWithRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveSiteWithRelationResponse" message="tns:IHydroService_SaveSiteWithRelation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveSiteWithRelationInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveSiteWithRelation_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveSiteWithRelationInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveSiteWithRelation_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteListWithParent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSiteListWithParent" message="tns:IHydroService_GetSiteListWithParent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteListWithParentResponse" message="tns:IHydroService_GetSiteListWithParent_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteListWithParentInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSiteListWithParent_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteListWithParentInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSiteListWithParent_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteListByReportName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSiteListByReportName" message="tns:IHydroService_GetSiteListByReportName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteListByReportNameResponse" message="tns:IHydroService_GetSiteListByReportName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteListByReportNameInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSiteListByReportName_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteListByReportNameInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSiteListByReportName_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSitesByIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSitesByIds" message="tns:IHydroService_GetSitesByIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSitesByIdsResponse" message="tns:IHydroService_GetSitesByIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSitesByIdsInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSitesByIds_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSitesByIdsInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSitesByIds_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSiteTypes" message="tns:IHydroService_GetSiteTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteTypesResponse" message="tns:IHydroService_GetSiteTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteTypesInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSiteTypes_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteTypesInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSiteTypes_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVariablesBySyteTypeId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetVariablesBySyteTypeId" message="tns:IHydroService_GetVariablesBySyteTypeId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetVariablesBySyteTypeIdResponse" message="tns:IHydroService_GetVariablesBySyteTypeId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetVariablesBySyteTypeIdInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetVariablesBySyteTypeId_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetVariablesBySyteTypeIdInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetVariablesBySyteTypeId_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVariable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetVariable" message="tns:IHydroService_GetVariable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetVariableResponse" message="tns:IHydroService_GetVariable_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetVariableInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetVariable_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetVariableInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetVariable_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteTypeVariables">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSiteTypeVariables" message="tns:IHydroService_GetSiteTypeVariables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteTypeVariablesResponse" message="tns:IHydroService_GetSiteTypeVariables_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteTypeVariablesInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSiteTypeVariables_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteTypeVariablesInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSiteTypeVariables_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSiteGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetAllSiteGroups" message="tns:IHydroService_GetAllSiteGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetAllSiteGroupsResponse" message="tns:IHydroService_GetAllSiteGroups_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAllSiteGroupsInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetAllSiteGroups_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttributesForSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetAttributesForSite" message="tns:IHydroService_GetAttributesForSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetAttributesForSiteResponse" message="tns:IHydroService_GetAttributesForSite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAttributesForSiteInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetAttributesForSite_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAttributesForSiteInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetAttributesForSite_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteAttributeTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSiteAttributeTypes" message="tns:IHydroService_GetSiteAttributeTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteAttributeTypesResponse" message="tns:IHydroService_GetSiteAttributeTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteAttributeTypesInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSiteAttributeTypes_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteAttributeTypesInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSiteAttributeTypes_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSiteAttribute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveSiteAttribute" message="tns:IHydroService_SaveSiteAttribute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveSiteAttributeResponse" message="tns:IHydroService_SaveSiteAttribute_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveSiteAttributeInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveSiteAttribute_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveSiteAttributeInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveSiteAttribute_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteAttribute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSiteAttribute" message="tns:IHydroService_GetSiteAttribute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSiteAttributeResponse" message="tns:IHydroService_GetSiteAttribute_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteAttributeInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSiteAttribute_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSiteAttributeInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSiteAttribute_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorDifferences">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSensorDifferences" message="tns:IHydroService_GetSensorDifferences_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSensorDifferencesResponse" message="tns:IHydroService_GetSensorDifferences_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSensorDifferencesInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSensorDifferences_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSensorDifferencesInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetSensorDifferences_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValueFromId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValueFromId" message="tns:IHydroService_GetDataValueFromId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValueFromIdResponse" message="tns:IHydroService_GetDataValueFromId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValueFromIdInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValueFromId_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValueFromIdInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValueFromId_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataSource" message="tns:IHydroService_GetDataSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataSourceResponse" message="tns:IHydroService_GetDataSource_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSourceInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataSource_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataSourceInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataSource_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveDataSource" message="tns:IHydroService_SaveDataSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveDataSourceResponse" message="tns:IHydroService_SaveDataSource_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveDataSourceInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveDataSource_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveDataSourceInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveDataSource_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/Hello" message="tns:IHydroService_Hello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/HelloResponse" message="tns:IHydroService_Hello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SetData" message="tns:IHydroService_SetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SetDataResponse" message="tns:IHydroService_SetData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SetDataInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SetData_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SetDataInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SetData_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValue" message="tns:IHydroService_GetDataValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValueResponse" message="tns:IHydroService_GetDataValue_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValueInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValue_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValueInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValue_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValues" message="tns:IHydroService_GetDataValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesResponse" message="tns:IHydroService_GetDataValues_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValues_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValues_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesForReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesForReport" message="tns:IHydroService_GetDataValuesForReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesForReportResponse" message="tns:IHydroService_GetDataValuesForReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesForReportInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValuesForReport_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesForReportInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValuesForReport_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetAllDataValue" message="tns:IHydroService_GetAllDataValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetAllDataValueResponse" message="tns:IHydroService_GetAllDataValue_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAllDataValueInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetAllDataValue_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAllDataValueInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetAllDataValue_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataValueLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetAllDataValueLocal" message="tns:IHydroService_GetAllDataValueLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetAllDataValueLocalResponse" message="tns:IHydroService_GetAllDataValueLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAllDataValueLocalInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetAllDataValueLocal_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAllDataValueLocalInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetAllDataValueLocal_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValueLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValueLocal" message="tns:IHydroService_GetDataValueLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValueLocalResponse" message="tns:IHydroService_GetDataValueLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValueLocalInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValueLocal_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValueLocalInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValueLocal_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesLocal" message="tns:IHydroService_GetDataValuesLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesLocalResponse" message="tns:IHydroService_GetDataValuesLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesLocalInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValuesLocal_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesLocalInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValuesLocal_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesForReportLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesForReportLocal" message="tns:IHydroService_GetDataValuesForReportLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesForReportLocalResponse" message="tns:IHydroService_GetDataValuesForReportLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesForReportLocalInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValuesForReportLocal_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesForReportLocalInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValuesForReportLocal_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDataValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/DeleteDataValue" message="tns:IHydroService_DeleteDataValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/DeleteDataValueResponse" message="tns:IHydroService_DeleteDataValue_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/DeleteDataValueInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_DeleteDataValue_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/DeleteDataValueInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_DeleteDataValue_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinValuesForPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetMinValuesForPeriod" message="tns:IHydroService_GetMinValuesForPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetMinValuesForPeriodResponse" message="tns:IHydroService_GetMinValuesForPeriod_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetMinValuesForPeriodInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetMinValuesForPeriod_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetMinValuesForPeriodInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetMinValuesForPeriod_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinValuesForPeriodLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetMinValuesForPeriodLocal" message="tns:IHydroService_GetMinValuesForPeriodLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetMinValuesForPeriodLocalResponse" message="tns:IHydroService_GetMinValuesForPeriodLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetMinValuesForPeriodLocalInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetMinValuesForPeriodLocal_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetMinValuesForPeriodLocalInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetMinValuesForPeriodLocal_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxValuesForPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetMaxValuesForPeriod" message="tns:IHydroService_GetMaxValuesForPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetMaxValuesForPeriodResponse" message="tns:IHydroService_GetMaxValuesForPeriod_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetMaxValuesForPeriodInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetMaxValuesForPeriod_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetMaxValuesForPeriodInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetMaxValuesForPeriod_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxValuesForPeriodLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetMaxValuesForPeriodLocal" message="tns:IHydroService_GetMaxValuesForPeriodLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetMaxValuesForPeriodLocalResponse" message="tns:IHydroService_GetMaxValuesForPeriodLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetMaxValuesForPeriodLocalInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetMaxValuesForPeriodLocal_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetMaxValuesForPeriodLocalInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetMaxValuesForPeriodLocal_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesByDataSourceId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesByDataSourceId" message="tns:IHydroService_GetDataValuesByDataSourceId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesByDataSourceIdResponse" message="tns:IHydroService_GetDataValuesByDataSourceId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesByDataSourceIdInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValuesByDataSourceId_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesByDataSourceIdInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValuesByDataSourceId_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesByQualifiers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesByQualifiers" message="tns:IHydroService_GetDataValuesByQualifiers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesByQualifiersResponse" message="tns:IHydroService_GetDataValuesByQualifiers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesByQualifiersInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValuesByQualifiers_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesByQualifiersInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValuesByQualifiers_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesCount" message="tns:IHydroService_GetDataValuesCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesCountResponse" message="tns:IHydroService_GetDataValuesCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesCountInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetDataValuesCount_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetDataValuesCountInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetDataValuesCount_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetForecast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SetForecast" message="tns:IHydroService_SetForecast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SetForecastResponse" message="tns:IHydroService_SetForecast_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SetForecastInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SetForecast_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SetForecastInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SetForecast_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForecasts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetForecasts" message="tns:IHydroService_GetForecasts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetForecastsResponse" message="tns:IHydroService_GetForecasts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetForecastsInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetForecasts_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetForecastsInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetForecasts_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastForecast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetLastForecast" message="tns:IHydroService_GetLastForecast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetLastForecastResponse" message="tns:IHydroService_GetLastForecast_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetLastForecastInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetLastForecast_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetLastForecastInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetLastForecast_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetWaterObjects" message="tns:IHydroService_GetWaterObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetWaterObjectsResponse" message="tns:IHydroService_GetWaterObjects_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetWaterObjectsInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetWaterObjects_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSitesWithoutWaterObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetSitesWithoutWaterObject" message="tns:IHydroService_GetSitesWithoutWaterObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetSitesWithoutWaterObjectResponse" message="tns:IHydroService_GetSitesWithoutWaterObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetSitesWithoutWaterObjectInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetSitesWithoutWaterObject_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterObjectBySite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetWaterObjectBySite" message="tns:IHydroService_GetWaterObjectBySite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetWaterObjectBySiteResponse" message="tns:IHydroService_GetWaterObjectBySite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetWaterObjectBySiteInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetWaterObjectBySite_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetWaterObjectBySiteInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetWaterObjectBySite_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveWaterObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveWaterObject" message="tns:IHydroService_SaveWaterObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveWaterObjectResponse" message="tns:IHydroService_SaveWaterObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveWaterObjectInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveWaterObject_InnerServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveWaterObjectInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveWaterObject_InputDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveWaterObjectOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/SaveWaterObjectOrder" message="tns:IHydroService_SaveWaterObjectOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/SaveWaterObjectOrderResponse" message="tns:IHydroService_SaveWaterObjectOrder_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveWaterObjectOrderInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_SaveWaterObjectOrder_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/SaveWaterObjectOrderInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_SaveWaterObjectOrder_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGeoTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetAllGeoTypes" message="tns:IHydroService_GetAllGeoTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetAllGeoTypesResponse" message="tns:IHydroService_GetAllGeoTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetAllGeoTypesInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetAllGeoTypes_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGeoType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHydroService/GetGeoType" message="tns:IHydroService_GetGeoType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHydroService/GetGeoTypeResponse" message="tns:IHydroService_GetGeoType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetGeoTypeInputDataExceptionFault" name="InputDataExceptionFault" message="tns:IHydroService_GetGeoType_InputDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IHydroService/GetGeoTypeInnerServiceExceptionFault" name="InnerServiceExceptionFault" message="tns:IHydroService_GetGeoType_InnerServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IHydroService" type="tns:IHydroService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDataSourcesByPeriod">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataSourcesByPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastDataSources977nn">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetLastDataSources977nn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSource977nnBySiteId">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataSource977nnBySiteId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSourcesByKN15Statistic">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataSourcesByKN15Statistic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSourcesKN15ErrorStatistic">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataSourcesKN15ErrorStatistic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuailifiers">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetQuailifiers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurve">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetCurve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurve">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveCurve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypes">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDocTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDoc">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocsBySite">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDocsBySite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerBulletinConfig">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetCustomerBulletinConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBulletinConfig">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveBulletinConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetREgionNameById">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetREgionNameById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuthors">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetAllAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTlgErrorTypes">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetTlgErrorTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTlgErrorsByDataSourceID">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetTlgErrorsByDataSourceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAltSiteVariableList">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetAltSiteVariableList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncUser">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSyncUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Sync_GetDataValuesFromCollectDate">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/Sync_GetDataValuesFromCollectDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteRelation">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSiteRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByFormDate">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataByFormDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVariables">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetAllVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastClimateInfo">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetLastClimateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClimateDecadeMonth">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetClimateDecadeMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveClimateDecadeMonth">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveClimateDecadeMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClimateInfos">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetClimateInfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSiteCriteria">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetLastSiteCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteCriterias">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSiteCriterias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCriteria">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCriteriaTypes">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetCriteriaTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSitesByWaterObject">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSitesByWaterObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteList">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSiteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSite">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSiteWithRelation">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveSiteWithRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteListWithParent">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSiteListWithParent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteListByReportName">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSiteListByReportName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSitesByIds">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSitesByIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteTypes">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSiteTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVariablesBySyteTypeId">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetVariablesBySyteTypeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVariable">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetVariable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteTypeVariables">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSiteTypeVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSiteGroups">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetAllSiteGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttributesForSite">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetAttributesForSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteAttributeTypes">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSiteAttributeTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSiteAttribute">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveSiteAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteAttribute">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSiteAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorDifferences">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSensorDifferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValueFromId">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValueFromId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSource">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataSource">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveDataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/Hello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetData">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValue">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValues">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesForReport">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValuesForReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataValue">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetAllDataValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataValueLocal">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetAllDataValueLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValueLocal">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValueLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesLocal">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValuesLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesForReportLocal">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValuesForReportLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDataValue">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/DeleteDataValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinValuesForPeriod">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetMinValuesForPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinValuesForPeriodLocal">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetMinValuesForPeriodLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxValuesForPeriod">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetMaxValuesForPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxValuesForPeriodLocal">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetMaxValuesForPeriodLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesByDataSourceId">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValuesByDataSourceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesByQualifiers">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValuesByQualifiers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataValuesCount">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetDataValuesCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetForecast">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SetForecast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetForecasts">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetForecasts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastForecast">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetLastForecast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterObjects">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetWaterObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSitesWithoutWaterObject">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetSitesWithoutWaterObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaterObjectBySite">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetWaterObjectBySite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWaterObject">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveWaterObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWaterObjectOrder">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/SaveWaterObjectOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGeoTypes">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetAllGeoTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGeoType">
+      <soap:operation soapAction="http://tempuri.org/IHydroService/GetGeoType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InputDataExceptionFault">
+        <soap:fault use="literal" name="InputDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InnerServiceExceptionFault">
+        <soap:fault use="literal" name="InnerServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HydroService">
+    <wsdl:port name="BasicHttpBinding_IHydroService" binding="tns:BasicHttpBinding_IHydroService">
+      <soap:address location="http://192.168.116.90:8033/HydroService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfDataSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataSource" nillable="true" type="tns:DataSource" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataSource" nillable="true" type="tns:ArrayOfDataSource" />
+  <xs:complexType name="DataSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeForm" nillable="true" type="tns:CodeForm" />
+      <xs:element minOccurs="0" name="CollectDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateUTC" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmergencyText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmergencyTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Hash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="OptionText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiveDateUTC" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="TlgErrorList" nillable="true" type="tns:ArrayOfTlgError" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataSource" nillable="true" type="tns:DataSource" />
+  <xs:complexType name="CodeForm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodeForm" nillable="true" type="tns:CodeForm" />
+  <xs:complexType name="ArrayOfTlgError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TlgError" nillable="true" type="tns:TlgError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTlgError" nillable="true" type="tns:ArrayOfTlgError" />
+  <xs:complexType name="TlgError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorType" nillable="true" type="tns:TlgErrorType" />
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TlgError" nillable="true" type="tns:TlgError" />
+  <xs:complexType name="TlgErrorType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCritical" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TlgErrorType" nillable="true" type="tns:TlgErrorType" />
+  <xs:complexType name="InputDataException">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HSExceptionOfInputDataExceptionMTRdQN6P">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InvalidParamName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InputDataException" nillable="true" type="tns:InputDataException" />
+  <xs:complexType name="HSExceptionOfInputDataExceptionMTRdQN6P">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="HSExceptionOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InputDataException" Namespace="http://schemas.datacontract.org/2004/07/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HSExceptionOfInputDataExceptionMTRdQN6P" nillable="true" type="tns:HSExceptionOfInputDataExceptionMTRdQN6P" />
+  <xs:complexType name="InnerServiceException">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HSExceptionOfInnerServiceExceptionMTRdQN6P">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Guid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InnerServiceException" nillable="true" type="tns:InnerServiceException" />
+  <xs:complexType name="HSExceptionOfInnerServiceExceptionMTRdQN6P">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="HSExceptionOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InnerServiceException" Namespace="http://schemas.datacontract.org/2004/07/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HSExceptionOfInnerServiceExceptionMTRdQN6P" nillable="true" type="tns:HSExceptionOfInnerServiceExceptionMTRdQN6P" />
+  <xs:complexType name="ArrayOfQualifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Qualifier" nillable="true" type="tns:Qualifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQualifier" nillable="true" type="tns:ArrayOfQualifier" />
+  <xs:complexType name="Qualifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Qualifier" nillable="true" type="tns:Qualifier" />
+  <xs:complexType name="Curve">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Serieses" nillable="true" type="tns:ArrayOfCurveSerie" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteXId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteYId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VariableXId" type="xs:int" />
+      <xs:element minOccurs="0" name="VariableYId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Curve" nillable="true" type="tns:Curve" />
+  <xs:complexType name="ArrayOfCurveSerie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurveSerie" nillable="true" type="tns:CurveSerie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurveSerie" nillable="true" type="tns:ArrayOfCurveSerie" />
+  <xs:complexType name="CurveSerie">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Coeffs" nillable="true" type="tns:ArrayOfCurveSeriesCoeff" />
+      <xs:element minOccurs="0" name="CurveId" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Points" nillable="true" type="tns:ArrayOfCurvePoint" />
+      <xs:element minOccurs="0" name="Values" nillable="true" type="tns:ArrayOfCurveValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurveSerie" nillable="true" type="tns:CurveSerie" />
+  <xs:complexType name="ArrayOfCurveSeriesCoeff">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurveSeriesCoeff" nillable="true" type="tns:CurveSeriesCoeff" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurveSeriesCoeff" nillable="true" type="tns:ArrayOfCurveSeriesCoeff" />
+  <xs:complexType name="CurveSeriesCoeff">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurveSerieId" type="xs:int" />
+      <xs:element minOccurs="0" name="Day" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Month" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurveSeriesCoeff" nillable="true" type="tns:CurveSeriesCoeff" />
+  <xs:complexType name="ArrayOfCurvePoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurvePoint" nillable="true" type="tns:CurvePoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurvePoint" nillable="true" type="tns:ArrayOfCurvePoint" />
+  <xs:complexType name="CurvePoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SerieId" type="xs:int" />
+      <xs:element minOccurs="0" name="X" type="xs:float" />
+      <xs:element minOccurs="0" name="Y" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurvePoint" nillable="true" type="tns:CurvePoint" />
+  <xs:complexType name="ArrayOfCurveValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurveValue" nillable="true" type="tns:CurveValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurveValue" nillable="true" type="tns:ArrayOfCurveValue" />
+  <xs:complexType name="CurveValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataValueIdX" type="xs:int" />
+      <xs:element minOccurs="0" name="DataValueIdY" type="xs:int" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SerieId" type="xs:int" />
+      <xs:element minOccurs="0" name="ValueX" type="xs:float" />
+      <xs:element minOccurs="0" name="ValueY" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurveValue" nillable="true" type="tns:CurveValue" />
+  <xs:complexType name="ArrayOfCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsOption" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" type="xs:int" />
+      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="ArrayOfDocType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocType" nillable="true" type="tns:DocType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocType" nillable="true" type="tns:ArrayOfDocType" />
+  <xs:complexType name="DocType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocType" nillable="true" type="tns:DocType" />
+  <xs:complexType name="Doc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:DocType" />
+      <xs:element minOccurs="0" name="UpdateDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Doc" nillable="true" type="tns:Doc" />
+  <xs:complexType name="ArrayOfDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Doc" nillable="true" type="tns:Doc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDoc" nillable="true" type="tns:ArrayOfDoc" />
+  <xs:complexType name="ArrayOfAuthor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Author" nillable="true" type="tns:Author" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthor" nillable="true" type="tns:ArrayOfAuthor" />
+  <xs:complexType name="Author">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsChief" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Author" nillable="true" type="tns:Author" />
+  <xs:complexType name="ArrayOfTlgErrorType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TlgErrorType" nillable="true" type="tns:TlgErrorType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTlgErrorType" nillable="true" type="tns:ArrayOfTlgErrorType" />
+  <xs:complexType name="DataValueCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataValue" nillable="true" type="tns:DataValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataValueCollection" nillable="true" type="tns:DataValueCollection" />
+  <xs:complexType name="DataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accuracy" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="CensorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CollectDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataSourceId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateUTC" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DerivedFromId" nillable="true" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DerivedFromValues" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MethodId" type="xs:int" />
+      <xs:element minOccurs="0" name="OffsetTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OffsetValue" nillable="true" type="xs:float" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Qualifiers" nillable="true" type="q2:ArrayOfint" />
+      <xs:element minOccurs="0" name="QualityControlLevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+      <xs:element minOccurs="0" name="UTCOffset" type="xs:float" />
+      <xs:element minOccurs="0" name="Value" type="xs:float" />
+      <xs:element minOccurs="0" name="ValueCharacterId" type="xs:int" />
+      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionComment" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataValue" nillable="true" type="tns:DataValue" />
+  <xs:complexType name="VariableCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Variable" nillable="true" type="tns:Variable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VariableCollection" nillable="true" type="tns:VariableCollection" />
+  <xs:complexType name="Variable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsRegular" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoDataValue" type="xs:float" />
+      <xs:element minOccurs="0" name="SampleMedium" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeSupport" type="xs:float" />
+      <xs:element minOccurs="0" name="TimeUnit" nillable="true" type="tns:Unit" />
+      <xs:element minOccurs="0" name="TimeUnitId" type="xs:int" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="tns:Unit" />
+      <xs:element minOccurs="0" name="ValueType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Variable" nillable="true" type="tns:Variable" />
+  <xs:complexType name="Unit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Unit" nillable="true" type="tns:Unit" />
+  <xs:complexType name="ClimateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Day" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Decade" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:ClimateInfoType" />
+      <xs:element minOccurs="0" name="Value" type="xs:float" />
+      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClimateInfo" nillable="true" type="tns:ClimateInfo" />
+  <xs:complexType name="ClimateInfoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClimateInfoType" nillable="true" type="tns:ClimateInfoType" />
+  <xs:complexType name="ArrayOfClimateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClimateInfo" nillable="true" type="tns:ClimateInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClimateInfo" nillable="true" type="tns:ArrayOfClimateInfo" />
+  <xs:complexType name="ArrayOfCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Criteria" nillable="true" type="tns:Criteria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCriteria" nillable="true" type="tns:ArrayOfCriteria" />
+  <xs:complexType name="Criteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BeginValue" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="EndValue" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:CriteriaType" />
+      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Criteria" nillable="true" type="tns:Criteria" />
+  <xs:complexType name="CriteriaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CriteriaType" nillable="true" type="tns:CriteriaType" />
+  <xs:complexType name="ArrayOfCriteriaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CriteriaType" nillable="true" type="tns:CriteriaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCriteriaType" nillable="true" type="tns:ArrayOfCriteriaType" />
+  <xs:complexType name="ArrayOfSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Site" nillable="true" type="tns:Site" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSite" nillable="true" type="tns:ArrayOfSite" />
+  <xs:complexType name="Site">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Border" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="IsComplex" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lat" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LatLonDatumId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LocalProjectionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LocalX" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="LocalY" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="Lon" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentSite" nillable="true" type="tns:Site" />
+      <xs:element minOccurs="0" name="ParentSiteId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PosAccuracy_m" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="RegionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Sites" nillable="true" type="tns:ArrayOfSite" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:SiteType" />
+      <xs:element minOccurs="0" name="UtcOffset" type="xs:float" />
+      <xs:element minOccurs="0" name="WaterObjectId" type="xs:int" />
+      <xs:element minOccurs="0" name="WaterObjectName" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Site" nillable="true" type="tns:Site" />
+  <xs:complexType name="SiteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteType" nillable="true" type="tns:SiteType" />
+  <xs:complexType name="WaterObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FallInto" nillable="true" type="tns:WaterObject" />
+      <xs:element minOccurs="0" name="FallIntoId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="Sites" nillable="true" type="tns:ArrayOfSite" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:GeoType" />
+      <xs:element minOccurs="0" name="WateObjects" nillable="true" type="tns:WaterObjectCollection" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WaterObject" nillable="true" type="tns:WaterObject" />
+  <xs:complexType name="GeoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Definition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="RuName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Term" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoType" nillable="true" type="tns:GeoType" />
+  <xs:complexType name="WaterObjectCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WaterObject" nillable="true" type="tns:WaterObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WaterObjectCollection" nillable="true" type="tns:WaterObjectCollection" />
+  <xs:complexType name="SiteTypeCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteType" nillable="true" type="tns:SiteType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteTypeCollection" nillable="true" type="tns:SiteTypeCollection" />
+  <xs:complexType name="Method">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Method" nillable="true" type="tns:Method" />
+  <xs:complexType name="SiteGroupCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteGroup" nillable="true" type="tns:SiteGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteGroupCollection" nillable="true" type="tns:SiteGroupCollection" />
+  <xs:complexType name="SiteGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Sites" nillable="true" type="tns:ArrayOfSite" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteGroup" nillable="true" type="tns:SiteGroup" />
+  <xs:complexType name="SiteAttributeCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteAttribute" nillable="true" type="tns:SiteAttribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteAttributeCollection" nillable="true" type="tns:SiteAttributeCollection" />
+  <xs:complexType name="SiteAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:SiteAttributeType" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteAttribute" nillable="true" type="tns:SiteAttribute" />
+  <xs:complexType name="SiteAttributeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteAttributeType" nillable="true" type="tns:SiteAttributeType" />
+  <xs:complexType name="ArrayOfSiteAttributeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteAttributeType" nillable="true" type="tns:SiteAttributeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteAttributeType" nillable="true" type="tns:ArrayOfSiteAttributeType" />
+  <xs:complexType name="ArrayOfForecast">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Forecast" nillable="true" type="tns:Forecast" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfForecast" nillable="true" type="tns:ArrayOfForecast" />
+  <xs:complexType name="Forecast">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CollectDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateForecastDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DurationInHours" type="xs:int" />
+      <xs:element minOccurs="0" name="ForecastDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" type="xs:float" />
+      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Forecast" nillable="true" type="tns:Forecast" />
+  <xs:complexType name="ArrayOfGeoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeoType" nillable="true" type="tns:GeoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeoType" nillable="true" type="tns:ArrayOfGeoType" />
+</xs:schema>

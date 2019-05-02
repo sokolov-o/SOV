@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Social.GUI", "_Social.GUI.csproj", "{255C26C1-F5FA-4153-AE26-C7D290155E36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialBL", "..\..\Social\SocialBL\SocialBL.csproj", "{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialDAL", "..\..\Social\SocialDAL\SocialDAL.csproj", "{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialUC", "..\..\Social\SocialUC\SocialUC.csproj", "{AD3354DE-84C3-49B0-BF6F-B3C4D2F381DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\..\Amur.20\Common\Common.csproj", "{31660004-130A-4001-A6D0-F8209EE3A3E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUC", "..\..\Amur.20\Common\CommonUC\CommonUC.csproj", "{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{255C26C1-F5FA-4153-AE26-C7D290155E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{255C26C1-F5FA-4153-AE26-C7D290155E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{255C26C1-F5FA-4153-AE26-C7D290155E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{255C26C1-F5FA-4153-AE26-C7D290155E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD3354DE-84C3-49B0-BF6F-B3C4D2F381DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD3354DE-84C3-49B0-BF6F-B3C4D2F381DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD3354DE-84C3-49B0-BF6F-B3C4D2F381DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD3354DE-84C3-49B0-BF6F-B3C4D2F381DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

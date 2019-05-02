@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="65ea1044-3336-4f29-a156-dad692a01f28" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.116.90:8033/HydroService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HydroService.xsd" MetadataType="Schema" ID="88b24dc7-def0-4820-9982-22867810393e" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?xsd=xsd6" />
+    <MetadataFile FileName="HydroService1.xsd" MetadataType="Schema" ID="dcbd58df-78ea-40d7-90b7-a888b69b4883" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HydroService.disco" MetadataType="Disco" ID="89165650-7b26-4c16-8816-3f8d684d4036" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?disco" />
+    <MetadataFile FileName="HydroService2.xsd" MetadataType="Schema" ID="1968b612-0e01-4542-bda6-5ae52f22c50e" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?xsd=xsd8" />
+    <MetadataFile FileName="HydroService3.xsd" MetadataType="Schema" ID="001d58ed-b35a-42c4-9e30-fc3f185cbb7d" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?xsd=xsd3" />
+    <MetadataFile FileName="HydroService4.xsd" MetadataType="Schema" ID="d161e144-3ba7-43d3-a94e-aa10f0d8d269" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?xsd=xsd5" />
+    <MetadataFile FileName="HydroService5.xsd" MetadataType="Schema" ID="4dcde182-a6d9-47fe-8eec-8a5e2b2dd385" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HydroService6.xsd" MetadataType="Schema" ID="1f8d92d7-9afd-47ec-9ba3-fd67561d836a" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?xsd=xsd7" />
+    <MetadataFile FileName="HydroService7.xsd" MetadataType="Schema" ID="fb56dab0-30a9-4c19-bd6c-14cc4ea6ce67" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HydroService8.xsd" MetadataType="Schema" ID="81490912-c173-453a-a5ec-e69ba926df09" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?xsd=xsd4" />
+    <MetadataFile FileName="HydroService.wsdl" MetadataType="Wsdl" ID="657a7499-7323-47e9-9cba-f29609c894e0" SourceId="1" SourceUrl="http://192.168.116.90:8033/HydroService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.Bulletin" />
+  <xs:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/HydroLibrary.BL" />
+  <xs:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.SyncData" />
+  <xs:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:import schemaLocation="http://192.168.116.90:8033/HydroService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/HydroLibrary.Reports" />
+  <xs:element name="GetDataSourcesByPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codeFormId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDateUTC" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDateUTC" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="isWithError" type="xs:boolean" />
+        <xs:element minOccurs="0" name="siteId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourcesByPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataSourcesByPeriodResult" nillable="true" type="q1:ArrayOfDataSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastDataSources977nn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lastDataSourceId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastDataSources977nnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetLastDataSources977nnResult" nillable="true" type="q2:ArrayOfDataSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSource977nnBySiteId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSource977nnBySiteIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataSource977nnBySiteIdResult" nillable="true" type="q3:ArrayOfDataSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourcesByKN15Statistic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="lBeginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="lEndDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourcesByKN15StatisticResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataSourcesByKN15StatisticResult" nillable="true" type="q4:ArrayOfDataSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourcesKN15ErrorStatistic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="lBeginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="lEndDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourcesKN15ErrorStatisticResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataSourcesKN15ErrorStatisticResult" nillable="true" type="q5:ArrayOfDataSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuailifiers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuailifiersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetQuailifiersResult" nillable="true" type="q6:ArrayOfQualifier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurve">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableXId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableYId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCurveResult" nillable="true" type="q7:Curve" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCurve">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="curve" nillable="true" type="q8:Curve" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCurveResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="datavalue" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCategoryResult" nillable="true" type="q9:ArrayOfCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDocTypesResult" nillable="true" type="q10:ArrayOfDocType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="doc" nillable="true" type="q11:Doc" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocsBySite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocsBySiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDocsBySiteResult" nillable="true" type="q12:ArrayOfDoc" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.Bulletin" minOccurs="0" name="GetCustomersResult" nillable="true" type="q13:ArrayOfCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerBulletinConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.Bulletin" minOccurs="0" name="cust" nillable="true" type="q14:Customer" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.Bulletin" minOccurs="0" name="bul" nillable="true" type="q15:Bulletin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerBulletinConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.Bulletin" minOccurs="0" name="GetCustomerBulletinConfigResult" nillable="true" type="q16:CustomerBulletinConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBulletinConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.Bulletin" minOccurs="0" name="config" nillable="true" type="q17:CustomerBulletinConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBulletinConfigResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetREgionNameById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetREgionNameByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetREgionNameByIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllAuthors">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllAuthorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllAuthorsResult" nillable="true" type="q18:ArrayOfAuthor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTlgErrorTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTlgErrorTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetTlgErrorTypesResult" nillable="true" type="q19:ArrayOfTlgErrorType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTlgErrorsByDataSourceID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTlgErrorsByDataSourceIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetTlgErrorsByDataSourceIDResult" nillable="true" type="q20:ArrayOfTlgError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAltSiteVariableList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAltSiteVariableListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/HydroLibrary.BL" minOccurs="0" name="GetAltSiteVariableListResult" nillable="true" type="q21:ArrayOfAltSiteVariableItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSyncUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSyncUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.SyncData" minOccurs="0" name="GetSyncUserResult" nillable="true" type="q22:SyncUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sync_GetDataValuesFromCollectDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lastCollectDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sync_GetDataValuesFromCollectDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Sync_GetDataValuesFromCollectDateResult" nillable="true" type="q23:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteRelation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parentSites" nillable="true" type="q24:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteRelationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSiteRelationResult" nillable="true" type="q25:ArrayOfKeyValueOfintArrayOfintty7Ep6D1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="sourceTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="utcDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="duration" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataResult" nillable="true" type="q26:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataByFormDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="sourceTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="utcDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="duration" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="dateForm" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataByFormDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataByFormDateResult" nillable="true" type="q27:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllVariables">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllVariablesResult" nillable="true" type="q28:VariableCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastClimateInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="climateInfoTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastClimateInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetLastClimateInfoResult" nillable="true" type="q29:ClimateInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClimateDecadeMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="climateInfoTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="decade" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="month" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClimateDecadeMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetClimateDecadeMonthResult" nillable="true" type="q30:ClimateInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveClimateDecadeMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="climateInfo" nillable="true" type="q31:ClimateInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveClimateDecadeMonthResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClimateInfos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="climateInfoTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClimateInfosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetClimateInfosResult" nillable="true" type="q32:ArrayOfClimateInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastSiteCriteria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="criteriaTypeId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastSiteCriteriaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetLastSiteCriteriaResult" nillable="true" type="q33:ArrayOfCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteCriterias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteCriteriasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSiteCriteriasResult" nillable="true" type="q34:ArrayOfCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCriteria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="criteria" nillable="true" type="q35:Criteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCriteriaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SaveCriteriaResult" nillable="true" type="q36:Criteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCriteriaTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCriteriaTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCriteriaTypesResult" nillable="true" type="q37:ArrayOfCriteriaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByWaterObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="waterObjectId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByWaterObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSitesByWaterObjectResult" nillable="true" type="q38:ArrayOfSite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteTypeId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSiteListResult" nillable="true" type="q39:ArrayOfSite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="typeId" type="xs:int" />
+        <xs:element minOccurs="0" name="withChild" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSiteResult" nillable="true" type="q40:Site" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSiteWithRelation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="site" nillable="true" type="q41:Site" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wo" nillable="true" type="q42:WaterObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSiteWithRelationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SaveSiteWithRelationResult" nillable="true" type="q43:Site" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteListWithParent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteTypeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteListWithParentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSiteListWithParentResult" nillable="true" type="q44:ArrayOfSite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteListByReportName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reportName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteListByReportNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSiteListByReportNameResult" nillable="true" type="q45:ArrayOfSite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q46:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSitesByIdsResult" nillable="true" type="q47:ArrayOfSite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSiteTypesResult" nillable="true" type="q48:SiteTypeCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVariablesBySyteTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteTypeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVariablesBySyteTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="GetVariablesBySyteTypeIdResult" nillable="true" type="q49:ArrayOfKeyValuePairOfVariableMethodaI91Yjnm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVariable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVariableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetVariableResult" nillable="true" type="q50:Variable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteTypeVariables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteTypeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteTypeVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSiteTypeVariablesResult" nillable="true" type="q51:VariableCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSiteGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSiteGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllSiteGroupsResult" nillable="true" type="q52:SiteGroupCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttributesForSite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttributesForSiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAttributesForSiteResult" nillable="true" type="q53:SiteAttributeCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteAttributeTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteTypeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteAttributeTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSiteAttributeTypesResult" nillable="true" type="q54:ArrayOfSiteAttributeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSiteAttribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="attr" nillable="true" type="q55:SiteAttribute" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSiteAttributeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteAttribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="siteAttrTypeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteAttributeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSiteAttributeResult" nillable="true" type="q56:SiteAttribute" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorDifferences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="site1" nillable="true" type="q57:Site" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="site2" nillable="true" type="q58:Site" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="utcBeginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="utcEndDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="delta" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorDifferencesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/HydroLibrary.Reports" minOccurs="0" name="GetSensorDifferencesResult" nillable="true" type="q59:SensorDifference" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValueFromId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="dataValueId" type="xs:int" />
+        <xs:element minOccurs="0" name="isCalc" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValueFromIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataValueFromIdResult" nillable="true" type="q60:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataSourceResult" nillable="true" type="q61:DataSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="site" nillable="true" type="q62:Site" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="dataSource" nillable="true" type="q63:DataSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataSourceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Hello">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HelloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HelloResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="site" nillable="true" type="q64:Site" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="dataValueColl" nillable="true" type="q65:DataValueCollection" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="dataSource" nillable="true" type="q66:DataSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDataResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="utcDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataValueResult" nillable="true" type="q67:DataValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="utcBeginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="utcEndDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+        <xs:element minOccurs="0" name="stepInHours" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataValuesResult" nillable="true" type="q68:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesForReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="utcBeginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="utcEndDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="srokUTC" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="reportId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesForReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataValuesForReportResult" nillable="true" type="q69:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDataValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="utcDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDataValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllDataValueResult" nillable="true" type="q70:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDataValueLocal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDataValueLocalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllDataValueLocalResult" nillable="true" type="q71:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValueLocal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValueLocalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataValueLocalResult" nillable="true" type="q72:DataValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesLocal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+        <xs:element minOccurs="0" name="stepInHours" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesLocalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataValuesLocalResult" nillable="true" type="q73:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesForReportLocal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="srokUTC" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="reportId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesForReportLocalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataValuesForReportLocalResult" nillable="true" type="q74:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDataValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="valueId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDataValueResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMinValuesForPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+        <xs:element minOccurs="0" name="methodId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMinValuesForPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetMinValuesForPeriodResult" nillable="true" type="q75:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMinValuesForPeriodLocal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+        <xs:element minOccurs="0" name="methodId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMinValuesForPeriodLocalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetMinValuesForPeriodLocalResult" nillable="true" type="q76:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxValuesForPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+        <xs:element minOccurs="0" name="methodId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxValuesForPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetMaxValuesForPeriodResult" nillable="true" type="q77:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxValuesForPeriodLocal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+        <xs:element minOccurs="0" name="methodId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxValuesForPeriodLocalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetMaxValuesForPeriodLocalResult" nillable="true" type="q78:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesByDataSourceId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesByDataSourceIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataValuesByDataSourceIdResult" nillable="true" type="q79:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesByQualifiers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="qualifiersList" nillable="true" type="q80:ArrayOfint" />
+        <xs:element minOccurs="0" name="stepInHours" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesByQualifiersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataValuesByQualifiersResult" nillable="true" type="q81:DataValueCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:float" />
+        <xs:element minOccurs="0" name="stepInHours" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataValuesCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetForecast">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="site" nillable="true" type="q82:Site" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="forecastColl" nillable="true" type="q83:ArrayOfForecast" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetForecastResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForecasts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="forecastTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="author" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="beginDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForecastsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetForecastsResult" nillable="true" type="q84:ArrayOfForecast" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastForecast">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="variableId" type="xs:int" />
+        <xs:element minOccurs="0" name="forecastTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="forecastDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastForecastResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetLastForecastResult" nillable="true" type="q85:Forecast" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWaterObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="withTree" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWaterObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetWaterObjectsResult" nillable="true" type="q86:WaterObjectCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesWithoutWaterObject">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesWithoutWaterObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSitesWithoutWaterObjectResult" nillable="true" type="q87:ArrayOfSite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWaterObjectBySite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWaterObjectBySiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetWaterObjectBySiteResult" nillable="true" type="q88:WaterObjectCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWaterObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="waterObject" nillable="true" type="q89:WaterObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWaterObjectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWaterObjectOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="coll" nillable="true" type="q90:WaterObjectCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWaterObjectOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGeoTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllGeoTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllGeoTypesResult" nillable="true" type="q91:ArrayOfGeoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeoType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeoTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetGeoTypeResult" nillable="true" type="q92:GeoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

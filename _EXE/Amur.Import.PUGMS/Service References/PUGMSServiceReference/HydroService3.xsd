@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.Bulletin" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HydroLibrary.BL.Bulletin" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bulletins" nillable="true" type="tns:ArrayOfBulletin" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="ArrayOfBulletin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bulletin" nillable="true" type="tns:Bulletin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBulletin" nillable="true" type="tns:ArrayOfBulletin" />
+  <xs:complexType name="Bulletin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Elements" nillable="true" type="tns:ArrayOfBulletinElement" />
+      <xs:element minOccurs="0" name="Ext" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="enName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bulletin" nillable="true" type="tns:Bulletin" />
+  <xs:complexType name="ArrayOfBulletinElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BulletinElement" nillable="true" type="tns:BulletinElement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBulletinElement" nillable="true" type="tns:ArrayOfBulletinElement" />
+  <xs:complexType name="BulletinElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BulletinElement" nillable="true" type="tns:BulletinElement" />
+  <xs:complexType name="CustomerBulletinConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bulletin" nillable="true" type="tns:Bulletin" />
+      <xs:element minOccurs="0" name="ConfigItems" nillable="true" type="tns:ArrayOfCustomerBulletinConfigItem" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerBulletinConfig" nillable="true" type="tns:CustomerBulletinConfig" />
+  <xs:complexType name="ArrayOfCustomerBulletinConfigItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerBulletinConfigItem" nillable="true" type="tns:CustomerBulletinConfigItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerBulletinConfigItem" nillable="true" type="tns:ArrayOfCustomerBulletinConfigItem" />
+  <xs:complexType name="CustomerBulletinConfigItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ElementId" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerBulletinConfigItem" nillable="true" type="tns:CustomerBulletinConfigItem" />
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FERHRI.Geo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FERHRI.Geo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfGeoRectangle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeoRectangle" nillable="true" type="tns:GeoRectangle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeoRectangle" nillable="true" type="tns:ArrayOfGeoRectangle" />
+  <xs:complexType name="GeoRectangle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NorthWest" nillable="true" type="tns:GeoPoint" />
+      <xs:element minOccurs="0" name="SouthEast" nillable="true" type="tns:GeoPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoRectangle" nillable="true" type="tns:GeoRectangle" />
+  <xs:complexType name="GeoPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LatGrd" type="xs:double" />
+      <xs:element minOccurs="0" name="LonGrd" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoPoint" nillable="true" type="tns:GeoPoint" />
+  <xs:complexType name="Grid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LatStartMin" type="xs:double" />
+      <xs:element minOccurs="0" name="LatStepMin" type="xs:double" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LatsMin" nillable="true" type="q1:ArrayOfdouble" />
+      <xs:element minOccurs="0" name="LonStartMin" type="xs:double" />
+      <xs:element minOccurs="0" name="LonStepMin" type="xs:double" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LonsMin" nillable="true" type="q2:ArrayOfdouble" />
+      <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Grid" nillable="true" type="tns:Grid" />
+</xs:schema>

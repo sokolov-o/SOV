@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61E2F992-D749-49A9-9896-67C1AB879C74}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Amur.Import</RootNamespace>
+    <AssemblyName>_Amur.Import.PUGMSDB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RepositoryAmur.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryPUGMS.cs" />
+    <Compile Include="Service References\AmurServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PUGMSServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Addr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.AQCDataValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Catalog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Curve.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.DataForecast.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.DataSource.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.DataType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.DataValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.EntityAttrValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.GeneralCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.GeoObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.GeoPoint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.GeoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.LegalEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.MeteoZone.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Method.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.MethodForecast.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.OffsetType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Org.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SampleMedium.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Site.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SiteAttrType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SiteXSite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SiteXSiteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Station.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.StationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SysObj.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SysParsersParams.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SysParsersXSites.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Unit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.ValueType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Variable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.VariableCode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.VariableType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service1.wsdl" />
+    <None Include="Service References\AmurServiceReference\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service121.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service1210.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service1211.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service122.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service123.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service124.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service125.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service126.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service127.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service128.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service129.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.AltSiteVariableItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Author.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Category.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.ClimateInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Criteria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.CriteriaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Curve.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.CustomerBulletinConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.DataSource.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.DataValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.DataValueCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Doc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.DocType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Forecast.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.GeoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Method.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Qualifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.SensorDifference.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Site.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.SiteAttribute.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.SiteAttributeCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.SiteAttributeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.SiteGroupCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.SiteTypeCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.SyncUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.TlgError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.TlgErrorType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.Variable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.VariableCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.WaterObjectCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\HydroService.wsdl" />
+    <None Include="Service References\PUGMSServiceReference\HydroService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\HydroService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\HydroService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\HydroService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\HydroService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\HydroService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\HydroService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\HydroService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PUGMSServiceReference\HydroService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AmurServiceReference\" />
+    <WCFMetadataStorage Include="Service References\PUGMSServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PUGMSServiceReference\HydroService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PUGMSServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PUGMSServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PUGMSServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceReference\Service1.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,38 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Sakura.Export.Field" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FieldConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Initial Catalog=hmdgribmonth;user id=sa;password=sqlsrv2-server; Data Source=192.168.203.195&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Initial Catalog=hmdgribmonth;user id=sa;password=sqlsrv2-server; Data Source=192.168.203.195</Value>
+    </Setting>
+    <Setting Name="HmdicConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Initial Catalog=hmdic;user id=sa;password=sqlsrv2-server; Data Source=192.168.203.195&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Initial Catalog=hmdic;user id=sa;password=sqlsrv2-server; Data Source=192.168.203.195</Value>
+    </Setting>
+    <Setting Name="YearS" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1950</Value>
+    </Setting>
+    <Setting Name="YearF" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2017</Value>
+    </Setting>
+    <Setting Name="GeoregIdExtract" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">13</Value>
+    </Setting>
+    <Setting Name="ExportParams" Type="System.String" Scope="User">
+      <Value Profile="(Default)">export_type=BIG_2018;monthes_back=9</Value>
+    </Setting>
+    <Setting Name="OutputDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Temp\FERHRI\Sakura.Export.Field\BIG_2018</Value>
+    </Setting>
+    <Setting Name="OutputDir_SAVE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Temp\FERHRI\Sakura.Export.Field\BIG_2018************C:\Temp\FERHRI\Export\Field\BIG_2018</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
