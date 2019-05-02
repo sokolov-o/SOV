@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.106
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Amur.Service.RW", "_ServiceRW\_Amur.Service.RW.csproj", "{983D54D8-263D-4BD3-A8A5-965CFCB4912D}"
 EndProject
@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialBL", "..\Social\Socia
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialDAL", "..\Social\SocialDAL\SocialDAL.csproj", "{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geo", "..\Geo\Geo.csproj", "{34F63CAA-4627-4434-BE40-16AC1B3D2541}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geo", "..\..\Geo\Geo.csproj", "{34F63CAA-4627-4434-BE40-16AC1B3D2541}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataP", "..\DataP\DataP.csproj", "{66CA86B9-31A3-45A4-BA10-99628678FA71}"
 EndProject
@@ -30,6 +30,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonMath", "..\CommonMath\CommonMath.csproj", "{FFE71285-3013-4590-8130-6D5C559153CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sys", "..\Sys\Sys.csproj", "{D8026D66-63CD-40F2-B07A-224ABFA6AC5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "..\Parser\Parser.csproj", "{6263F638-5182-440A-A9CE-B8FF033171D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserDAL", "..\ParserDAL\ParserDAL.csproj", "{6D9EE84F-A1EB-46EC-A797-A4F6F4DBEE84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,14 @@ Global
 		{D8026D66-63CD-40F2-B07A-224ABFA6AC5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8026D66-63CD-40F2-B07A-224ABFA6AC5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8026D66-63CD-40F2-B07A-224ABFA6AC5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6263F638-5182-440A-A9CE-B8FF033171D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6263F638-5182-440A-A9CE-B8FF033171D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6263F638-5182-440A-A9CE-B8FF033171D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6263F638-5182-440A-A9CE-B8FF033171D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D9EE84F-A1EB-46EC-A797-A4F6F4DBEE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9EE84F-A1EB-46EC-A797-A4F6F4DBEE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9EE84F-A1EB-46EC-A797-A4F6F4DBEE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9EE84F-A1EB-46EC-A797-A4F6F4DBEE84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

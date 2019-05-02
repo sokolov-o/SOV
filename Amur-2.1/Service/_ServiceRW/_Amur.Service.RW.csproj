@@ -44,9 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Npgsql, Version=3.2.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\DLL\Npgsql 3.2.5\net45\Npgsql.dll</HintPath>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\..\DLL\Npgsql 3.2.5\net45\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net" />
@@ -110,13 +109,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Geo\Geo.csproj">
+      <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
+      <Name>Geo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CommonMath\CommonMath.csproj">
       <Project>{ffe71285-3013-4590-8130-6d5c559153ca}</Project>
       <Name>CommonMath</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Geo\Geo.csproj">
-      <Project>{3d2d6261-0ec0-43a7-90e3-8fa7bb9dfdca}</Project>
-      <Name>Geo</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ParserDAL\ParserDAL.csproj">
       <Project>{6d9ee84f-a1eb-46ec-a797-a4f6f4dbee84}</Project>
