@@ -45,7 +45,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialDAL", "..\Social\Soci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialUC", "..\Social\SocialUC\SocialUC.csproj", "{AD3354DE-84C3-49B0-BF6F-B3C4D2F381DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geo", "..\..\..\Geo\Geo.csproj", "{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geo", "..\..\Geo\Geo.csproj", "{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "..\Tests\UnitTest.csproj", "{B821E741-DF7D-4697-8BFB-EDE2EA65F3A7}"
 EndProject
