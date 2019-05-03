@@ -38,8 +38,8 @@ namespace _TestWCFServiceField
                 #region GET FIELDS IN REGION
 
                 DateTime dateIni = DateTime.Today.AddDays(-1);
-                int[] catalogIds = new int[] 
-                { 
+                int[] catalogIds = new int[]
+                {
                       771921 // Ta, NCEP
                     , 962741 // U-wind, NCEP
                     , 962742 // V-wind, NCEP
@@ -49,9 +49,9 @@ namespace _TestWCFServiceField
                     , 962746 // Precipitatio-3h, NCEP
                     , 962745 // Rh-%, NCEP
                 };
-                GeoRectangle[] grs = new GeoRectangle[] 
-                { 
-                    new GeoRectangle() { NorthWest = new GeoPoint() { LatGrd = 60, LonGrd = 110 },  SouthEast = new GeoPoint() { LatGrd = 30, LonGrd = 130 } } 
+                GeoRectangle[] grs = new GeoRectangle[]
+                {
+                    new GeoRectangle() { NorthWest = new GeoPoint() { LatGrd = 60, LonGrd = 110 },  SouthEast = new GeoPoint() { LatGrd = 30, LonGrd = 130 } }
                 };
                 //double[] leadTimeHours = method.MethodForecast.LeadTimesHours;
                 double[] leadTimeHours = new double[] { 0, 12, -24 };
@@ -75,8 +75,8 @@ namespace _TestWCFServiceField
 
                 #region GET VALUES AT POINTS
 
-                catalogIds = new int[] 
-                { 
+                catalogIds = new int[]
+                {
                       962748 // Ta, Владивосток, GFS 0.25
                 };
                 int fcsSiteId = 10344; // Земной шар
@@ -85,7 +85,6 @@ namespace _TestWCFServiceField
 
                 double[/*leadTime*/][/*Catalog index*/] dataP = clientF.GetValuesAtPoints(hf,
                     dateIni, catalogIds, leadTimeHours,
-                    EnumPointNearestType.Nearest, EnumDistanceType.Plane,
                     fcsSiteId, siteSysAttrTypeIdLat, siteSysAttrTypeIdLon);
 
                 PrintDataPoints(dateIni, leadTimeHours, catalogIds, dataP);

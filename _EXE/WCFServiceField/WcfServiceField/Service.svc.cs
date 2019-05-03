@@ -23,7 +23,11 @@ namespace SOV.WcfService.Field
         static long _amurServiceHandle = -100;
 
         static List<SOV.Common.User> _usersAllowed;
-        static Dictionary<Method, List<object>/*MethvarXGrib, MethodForecast*/> _methodsAllowed = new Dictionary<Method, List<object>>();
+        /// <summary>
+        /// Dictionary<Method, List<object>/*MethvarXGrib, MethodForecast*/>
+        /// </summary>
+        static List<MethodExt> _methodsValid = new List<MethodExt>();
+        //static Dictionary<Method, List<object>/*MethvarXGrib, MethodForecast*/> _methodsAllowed = new Dictionary<Method, List<object>>();
 
         static Dictionary<long, SOV.Common.User> _usersSessions = new Dictionary<long, Common.User>();
 
@@ -49,9 +53,8 @@ namespace SOV.WcfService.Field
                 SOV.SGMO.DataManager.SetDefaultConnectionString(SOV.WcfService.Field.Properties.Settings.Default.SGMOConnectionString);
                 _dbAmurName = SOV.WcfService.Field.Properties.Settings.Default.DB_AMUR_NAME;
 
-                // GET METHODS
+                // GET VALID SERVICE METHODS
 
-                //                List<int> iarr = Common.StrVia.ToArray<int>(System.Configuration.ConfigurationManager.AppSettings["AmurMethodAllowed"]).ToList();
                 List<MethodForecast> methForecasts = _amurClient.GetMethodForecastsAll(_amurServiceHandle);
 
                 foreach (Method method in _amurClient.GetMethods(_amurServiceHandle, Common.StrVia.ToArray<int>(System.Configuration.ConfigurationManager.AppSettings["AmurMethodAllowed"]).ToList()))
@@ -61,14 +64,15 @@ namespace SOV.WcfService.Field
                         System.IO.File.AppendAllText(_logFilePath, string.Format("Method removed due to MethodOutputStoreParameters == null. Method: \n", method));
                     }
 
-                    // ADD METHOD
-                    _methodsAllowed.Add(method, new List<object>
+                    _methodsValid.Add(new MethodExt()
                     {
-                            SOV.SGMO.DataManager.GetInstance().MethvarXGrib2Repository.Select(_dbAmurName, method.Id),
-                        methForecasts.FirstOrDefault(x => x.Method.Id == method.Id)
+                        Method = method,
+                        MethVaroffXGrib2 = SOV.SGMO.DataManager.GetInstance().MethvarXGrib2Repository.Select(_dbAmurName, method.Id),
+                        MethodForecast = methForecasts.FirstOrDefault(x => x.Method.Id == method.Id)
                     });
                 }
-                // READ USERS ALLOWED
+
+                // GET VALID USERS READ
                 sarr = System.Configuration.ConfigurationManager.AppSettings["ServiceUsers"].Split(';');
                 _usersAllowed = new List<Common.User>();
                 foreach (var item in sarr)
@@ -87,7 +91,7 @@ namespace SOV.WcfService.Field
         public List<Method> GetMethods(long hSvc)
         {
             CheckHandle(hSvc);
-            return _methodsAllowed.Keys.ToList();
+            return _methodsValid.Select(x => x.Method).ToList();
         }
         /// <summary>
         /// Открытие рабочей сессии.
@@ -165,35 +169,45 @@ namespace SOV.WcfService.Field
             CheckHandle(hSvc);
             Check(leadTimes);
 
-            KeyValuePair<Method, List<object>> method = GetMethod(methodId);
+            MethodExt method = GetMethod(methodId);
 
             // SWITCH METHOD OUTPUT STORAGE INTERFACE
 
-            string methOutInterface = GetOutStoreParameter(method.Key, "INTERFACE", true);
+            string methOutInterface = GetOutStoreParameter(method.Method, "INTERFACE", true);
             switch (methOutInterface)
             {
                 case "IFileFcsGrid":
                     // GET GRID/FIELD REPOSITORY
-                    DB.IFcsGrid db = (DB.IFcsGrid)DB.Factory.GetInstance(method.Key.MethodOutputStoreParameters);
+                    DB.IFcsGrid db = (DB.IFcsGrid)DB.Factory.GetInstance(method.Method.MethodOutputStoreParameters);
                     if (db == null) throw new Exception(string.Format(
                         "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе SOV.DB.Factory. " +
-                        "Нужно дополнить код фабрики.\n", methOutInterface, method.Key.Name, this));
+                        "Нужно дополнить код фабрики.\n", methOutInterface, method.Method.Name, this));
                     // GET DATA FILTER 
                     object dataFilter = GetDataFilter(method, varoffs);
                     // GET DATA IN REGIONS
                     return db.ReadFieldsInRectangles(dateIni, (object)dataFilter, leadTimes, grs);
                 default:
                     throw new Exception(string.Format("Для запрошенного интерфейса {0} метода <{1}> отсутствует обработчик считывания данных в <{2}>.\n",
-                        methOutInterface, method.Key.Name, this));
+                        methOutInterface, method.Method.Name, this));
             }
         }
-
+        /// <summary>
+        /// Получить прогнозы в указанных пунктах.
+        /// </summary>
+        /// <param name="hSvc">Дескриптор сессии сервиса.</param>
+        /// <param name="dateIni">Исходная дата прогноза.</param>
+        /// <param name="leadTimes">Заблаговременности прогноза (не null).</param>
+        /// <param name="pointCatalogsId">Id записей каталогов данных пунктов с разными координатами.</param>
+        /// <param name="amurSiteAttrTypeLatId">Id типа атрибута пункта "широта".</param>
+        /// <param name="amurSiteAttrTypeLonId">Id типа атрибута пункта "долгота".</param>
+        /// <returns></returns>
         public double[/*leadTime*/][/*point Catalog index*/] GetValuesAtPoints
-            (long hSvc, DateTime dateIni, List<int> pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId)
+            (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId)
         {
             // CHECK INPUT
             CheckHandle(hSvc);
             Check(pointCatalogsId);
+            Check(leadTimes);
 
             // GET FCS CATALOGS 4 POINT CATALOGS
             //
@@ -207,19 +221,16 @@ namespace SOV.WcfService.Field
 
             // parentMethod
             Method pointMethod = _amurClient.GetMethod(_amurServiceHandle, pointCatalogs[0].MethodId);
-            object[] o = GetParentFcsCatalogs(pointCatalogs);
-            KeyValuePair<Method, List<object>> parentMethod = (KeyValuePair<Method, List<object>>)o[0];
-            List<Catalog> parentCatalogs = (List<Catalog>)o[1];
+            List<Catalog> parentCatalogs = GetParentFcsCatalogs(pointCatalogs);
+            MethodExt parentMethodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == parentCatalogs[0].MethodId);
 
             // GET parentMethodFcs
-            MethodForecast parentMethodFcs = (MethodForecast)parentMethod.Value[1];
-            List<double> leadTimes = parentMethodFcs.LeadTimes.ToList();
-            Check(leadTimes);
+            //////List<double> leadTimes = parentMethodExt.MethodForecast.LeadTimes;
 
             // GET precipSumResetTime 
             double? precipSumResetTime = null;
             string str = null;
-            if (parentMethodFcs.Attr.TryGetValue("precip_reset_time".ToUpper(), out str))
+            if (parentMethodExt.MethodForecast.Attr.TryGetValue("precip_reset_time".ToUpper(), out str))
                 precipSumResetTime = double.Parse(str);
 
             // GET SITES POINTS 4 DATE_INI
@@ -234,19 +245,19 @@ namespace SOV.WcfService.Field
 
             // SWITCH METHOD OUTPUT STORAGE INTERFACE
 
-            string methOutInterface = GetOutStoreParameter(parentMethod.Key, "INTERFACE", true);
+            string methOutInterface = GetOutStoreParameter(parentMethodExt.Method, "INTERFACE", true);
             switch (methOutInterface)
             {
                 case "IFileFcsGrid":
 
                     // GET DATA FILTER
-                    object dataFilter = GetDataFilter(parentMethod, GetVaroffs(parentCatalogs));
+                    object dataFilter = GetDataFilter(parentMethodExt, GetVaroffs(parentCatalogs));
 
                     // GET DATA 4 POINTS
                     List<Geo.GeoPoint> points = pointXsites.Values.ToList();
 
                     // GET ENUMS
-                    o = SOV.Amur.Meta.Method.GetMethodPostprocessingParams(pointMethod.MethodOutputStoreParameters);
+                    object[] o = SOV.Amur.Meta.Method.GetMethodPostprocessingParams(pointMethod.MethodOutputStoreParameters);
                     if (o == null)
                         throw new Exception("Отсутствуют данные или неизвестное значение параметра [parent_method_data_postprocessing] в поле параметров метода " +
                             (pointMethod.Name + " / " + pointMethod.Id));
@@ -255,10 +266,10 @@ namespace SOV.WcfService.Field
 
                     // GET & READ GRID REPOSITORY
 
-                    DB.IFcsGrid db = (DB.IFcsGrid)DB.Factory.GetInstance(parentMethod.Key.MethodOutputStoreParameters);
+                    DB.IFcsGrid db = (DB.IFcsGrid)DB.Factory.GetInstance(parentMethodExt.Method.MethodOutputStoreParameters);
                     if (db == null) throw new Exception(string.Format(
                         "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе SOV.DB.Factory. " +
-                        "Нужно дополнить код фабрики.\n", methOutInterface, parentMethod.Key.Name));
+                        "Нужно дополнить код фабрики.\n", methOutInterface, parentMethodExt.Method.Name));
                     double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/] parentData = db.ReadValuesAtPoints
                         (dateIni, dataFilter, leadTimes, points, nearestType, distanceType);
 
@@ -274,8 +285,95 @@ namespace SOV.WcfService.Field
                     return null;
                 default:
                     throw new Exception(string.Format("Для запрошенного интерфейса {0} метода <{1}> отсутствует обработчик считывания данных в <{2}>.\n",
-                        methOutInterface, parentMethod.Key.Name, this));
+                        methOutInterface, parentMethodExt.Method.Name, this));
             }
         }
+
+        public double[/*leadTime*/][/*point*/][/*field catalog*/] GetValuesAtCoords(long hSvc,
+            DateTime dateIni, List<GeoPoint> points, List<Catalog> fieldCatalogs,
+            Geo.EnumPointNearestType nearestType, Geo.EnumDistanceType distanceType)
+        {
+            // CHECK INPUT
+            CheckHandle(hSvc);
+            Check(fieldCatalogs);
+
+            // GET FCS CATALOGS 4 POINT CATALOGS
+            //
+            // Метод прогноза в точке является производным от исходного, 
+            // родительского метода прогноза полей г/м элементов.
+
+            //////List<Catalog> pointCatalogs = _amurClient.GetCatalogListById(_amurServiceHandle, geoPoints)
+            //////    .OrderBy(x => geoPoints.IndexOf(x.Id))
+            //////    .ToList();
+            //////Check(pointCatalogs);
+
+            //////// parentMethod
+            //////Method pointMethod = _amurClient.GetMethod(_amurServiceHandle, pointCatalogs[0].MethodId);
+            //////object[] o = GetParentFcsCatalogs(pointCatalogs);
+            //////KeyValuePair<Method, List<object>> parentMethod = (KeyValuePair<Method, List<object>>)o[0];
+            //////List<Catalog> parentCatalogs = (List<Catalog>)o[1];
+
+            // GET parentMethodFcs
+
+            MethodExt methodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == fieldCatalogs[0].MethodId);
+            List<double> leadTimes = methodExt.MethodForecast.LeadTimes.ToList();
+            Check(leadTimes);
+
+            // GET precipSumResetTime 
+            double? precipSumResetTime = null;
+            string str = null;
+            if (methodExt.MethodForecast.Attr.TryGetValue("precip_reset_time".ToUpper(), out str))
+                precipSumResetTime = double.Parse(str);
+
+            //////// GET SITES POINTS 4 DATE_INI
+
+            //////Dictionary<int, AmurServiceReference.GeoPoint> pointXsites1 = _amurClient.GetSitesPoints(_amurServiceHandle,
+            //////    pointCatalogs.Select(x => x.SiteId).Distinct().ToList(), dateIni, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
+            //////Dictionary<int, Geo.GeoPoint> pointXsites = new Dictionary<int, Geo.GeoPoint>();
+            //////foreach (var item in pointXsites1)
+            //////{
+            //////    pointXsites.Add(item.Key, new Geo.GeoPoint(item.Value.LatGrd, item.Value.LonGrd));
+            //////}
+
+            // SWITCH METHOD OUTPUT STORAGE INTERFACE
+
+            string methOutInterface = GetOutStoreParameter(methodExt.Method, "INTERFACE", true);
+            switch (methOutInterface)
+            {
+                case "IFileFcsGrid":
+
+                    // GET DATA FILTER
+                    object dataFilter = GetDataFilter(methodExt, GetVaroffs(fieldCatalogs));
+
+                    //////// GET DATA 4 POINTS
+                    //////List<Geo.GeoPoint> points = pointXsites.Values.ToList();
+
+                    // GET ENUMS
+                    //////o = SOV.Amur.Meta.Method.GetMethodPostprocessingParams(pointMethod.MethodOutputStoreParameters);
+                    //////if (o == null)
+                    //////    throw new Exception("Отсутствуют данные или неизвестное значение параметра [parent_method_data_postprocessing] в поле параметров метода " +
+                    //////        (pointMethod.Name + " / " + pointMethod.Id));
+                    //////Geo.EnumPointNearestType nearestType = (Geo.EnumPointNearestType)o[0];
+                    //////Geo.EnumDistanceType distanceType = (Geo.EnumDistanceType)o[1];
+
+                    // GET & READ GRID REPOSITORY
+
+                    DB.IFcsGrid db = (DB.IFcsGrid)DB.Factory.GetInstance(methodExt.Method.MethodOutputStoreParameters);
+                    ////if (db == null) throw new Exception(string.Format(
+                    ////    "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе SOV.DB.Factory. " +
+                    ////    "Нужно дополнить код фабрики.\n", methOutInterface, methodExt.Method.Name));
+
+                    return db.ReadValuesAtPoints(
+                        dateIni, dataFilter, leadTimes,
+                        points.Select(x => new SOV.Geo.GeoPoint(x.LatGrd, x.LonGrd)).ToList(),
+                        nearestType, distanceType
+                    );
+
+                default:
+                    throw new Exception(string.Format("Для запрошенного интерфейса {0} метода <{1}> отсутствует обработчик считывания данных в <{2}>.\n",
+                        methOutInterface, methodExt.Method.Name, this));
+            }
+        }
+
     }
 }

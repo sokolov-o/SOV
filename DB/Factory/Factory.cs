@@ -8,7 +8,7 @@ namespace SOV.DB
 {
     public class Factory
     {
-        static public object GetInstance(Dictionary<string, string> storeParams)
+        static public object GetInstance(Dictionary<string, string> storeParams, bool throwIfNoInstance = false)
         {
             string storeAttr = "FORMAT";
             string storeFormat;
@@ -51,6 +51,10 @@ namespace SOV.DB
                         storeParams["FILE_NAME_MASK"],
                         storeParams["IS_FILE_ZIPPED"]);
                 default:
+                    if (throwIfNoInstance)
+                        throw new Exception(string.Format(
+                        "Для запрошенных параметров хранилища [{0}] метода отсутствует репозиторий в фабрике SOV.DB.Factory. Нужно дополнить код фабрики.",
+                        storeParams));
                     return null;
             }
         }

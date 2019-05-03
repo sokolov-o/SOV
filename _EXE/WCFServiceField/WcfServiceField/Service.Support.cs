@@ -28,24 +28,24 @@ namespace SOV.WcfService.Field
         /// 
         /// </summary>
         /// <param name="childCatalogs">Записи каталогов метода, производного от исходного.</param>
-        private object[/*Method parentMethod;List<Catalog> parentCatalogs;parentMethodForecast*/] GetParentFcsCatalogs(List<Catalog> childCatalogs)
+        private List<Catalog> GetParentFcsCatalogs(List<Catalog> childCatalogs)
         {
-            List<Catalog> parentCatalogs = new List<Catalog>();
             Check(childCatalogs);
+            List<Catalog> parentCatalogs = new List<Catalog>();
 
             // GET PARENT FCS METHOD
             int? parentMethodId = _amurClient.GetMethod(_amurServiceHandle, childCatalogs[0].MethodId).ParentId;
             if (!parentMethodId.HasValue)
                 throw new Exception(string.Format("Для метода {0} отсутствует родитель.", childCatalogs[0].MethodId));
-            KeyValuePair<Method, List<object>> parentMethod = _methodsAllowed.FirstOrDefault(x => x.Key.Id == parentMethodId);
-            Check(parentMethod.Key);
+            MethodExt parentMethodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == parentMethodId);
+            Check(parentMethodExt.Method);
 
             // GET ALL FCS CATALOGS
             List<Catalog> parentMethodCatalogs = _amurClient.GetCatalogList(_amurServiceHandle,
                 null, // new List<int>() { fcsSiteId },
                 null, // pointCatalogs.Select(x => x.VariableId).Distinct().ToList(),
-                new List<int>() { parentMethod.Key.Id },
-                new List<int>() { parentMethod.Key.SourceLegalEntityId.HasValue ? (int)parentMethod.Key.SourceLegalEntityId : childCatalogs[0].SourceId },
+                new List<int>() { parentMethodExt.Method.Id },
+                new List<int>() { parentMethodExt.Method.SourceLegalEntityId.HasValue ? (int)parentMethodExt.Method.SourceLegalEntityId : childCatalogs[0].SourceId },
                 childCatalogs.Select(x => x.OffsetTypeId).Distinct().ToList(),
                 childCatalogs.Select(x => x.OffsetValue).Distinct().ToList()
                 );
@@ -70,7 +70,7 @@ namespace SOV.WcfService.Field
                             x.OffsetTypeId == childCatalog.OffsetTypeId &&
                             x.OffsetValue == childCatalog.OffsetValue
                         );
-                        Check(parentCatalog1, parentMethod.Key, childCatalog);
+                        Check(parentCatalog1, parentMethodExt.Method, childCatalog);
                         parentCatalogs.Add(parentCatalog1[0]);
 
                         // Y-component
@@ -79,7 +79,7 @@ namespace SOV.WcfService.Field
                             && x.OffsetTypeId == childCatalog.OffsetTypeId
                             && x.OffsetValue == childCatalog.OffsetValue
                         );
-                        Check(parentCatalog1, parentMethod.Key, childCatalog);
+                        Check(parentCatalog1, parentMethodExt.Method, childCatalog);
                     }
                 }
                 // Not vector-type variables
@@ -90,13 +90,84 @@ namespace SOV.WcfService.Field
                         && x.OffsetTypeId == childCatalog.OffsetTypeId
                         && x.OffsetValue == childCatalog.OffsetValue
                     );
-                    Check(parentCatalog1, parentMethod.Key, childCatalog);
+                    Check(parentCatalog1, parentMethodExt.Method, childCatalog);
                 }
                 if (parentCatalog1 != null)
                     parentCatalogs.Add(parentCatalog1[0]);
             }
-            return new object[] { parentMethod, parentCatalogs };
+            return parentCatalogs;
         }
+
+        //////private object[/*Method parentMethod;List<Catalog> parentCatalogs;parentMethodForecast*/] GetParentFcsCatalogs(List<Catalog> childCatalogs)
+        //////{
+        //////    Check(childCatalogs);
+        //////    List<Catalog> parentCatalogs = new List<Catalog>();
+
+        //////    // GET PARENT FCS METHOD
+        //////    int? parentMethodId = _amurClient.GetMethod(_amurServiceHandle, childCatalogs[0].MethodId).ParentId;
+        //////    if (!parentMethodId.HasValue)
+        //////        throw new Exception(string.Format("Для метода {0} отсутствует родитель.", childCatalogs[0].MethodId));
+        //////    MethodExt parentMethodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == parentMethodId);
+        //////    Check(parentMethodExt.Method);
+
+        //////    // GET ALL FCS CATALOGS
+        //////    List<Catalog> parentMethodCatalogs = _amurClient.GetCatalogList(_amurServiceHandle,
+        //////        null, // new List<int>() { fcsSiteId },
+        //////        null, // pointCatalogs.Select(x => x.VariableId).Distinct().ToList(),
+        //////        new List<int>() { parentMethodExt.Method.Id },
+        //////        new List<int>() { parentMethodExt.Method.SourceLegalEntityId.HasValue ? (int)parentMethodExt.Method.SourceLegalEntityId : childCatalogs[0].SourceId },
+        //////        childCatalogs.Select(x => x.OffsetTypeId).Distinct().ToList(),
+        //////        childCatalogs.Select(x => x.OffsetValue).Distinct().ToList()
+        //////        );
+        //////    if (parentMethodCatalogs.Count() == 0)
+        //////        throw new Exception("(parentMethodCatalogs.Count() != 0)");
+        //////    if (parentMethodCatalogs.Select(x => x.SiteId).Distinct().Count() != 1)
+        //////        throw new Exception("(fcsCatalogsAll.Select(x => x.SiteId).Distinct().Count() != 1)");
+
+        //////    // SIFT FCS CATALOGS
+        //////    foreach (var childCatalog in childCatalogs)
+        //////    {
+        //////        List<Catalog> parentCatalog1 = null;
+
+        //////        // Specific: wind case
+        //////        if (childCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindDirFcs || childCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindSpeedFcs)
+        //////        {
+        //////            if (!parentCatalogs.Exists(x => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs))
+        //////            {
+        //////                // X-component
+        //////                parentCatalog1 = parentMethodCatalogs.FindAll(x =>
+        //////                    x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs &&
+        //////                    x.OffsetTypeId == childCatalog.OffsetTypeId &&
+        //////                    x.OffsetValue == childCatalog.OffsetValue
+        //////                );
+        //////                Check(parentCatalog1, parentMethodExt.Method, childCatalog);
+        //////                parentCatalogs.Add(parentCatalog1[0]);
+
+        //////                // Y-component
+        //////                parentCatalog1 = parentMethodCatalogs.FindAll(x
+        //////                    => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.VWindFcs
+        //////                    && x.OffsetTypeId == childCatalog.OffsetTypeId
+        //////                    && x.OffsetValue == childCatalog.OffsetValue
+        //////                );
+        //////                Check(parentCatalog1, parentMethodExt.Method, childCatalog);
+        //////            }
+        //////        }
+        //////        // Not vector-type variables
+        //////        else
+        //////        {
+        //////            parentCatalog1 = parentMethodCatalogs.FindAll(x
+        //////                => x.VariableId == childCatalog.VariableId
+        //////                && x.OffsetTypeId == childCatalog.OffsetTypeId
+        //////                && x.OffsetValue == childCatalog.OffsetValue
+        //////            );
+        //////            Check(parentCatalog1, parentMethodExt.Method, childCatalog);
+        //////        }
+        //////        if (parentCatalog1 != null)
+        //////            parentCatalogs.Add(parentCatalog1[0]);
+        //////    }
+        //////    return new object[] { parentMethodExt, parentCatalogs };
+        //////}
+
         /// <summary>
         /// Проверка набора parentCatalogs на единственный элемент.
         /// </summary>
@@ -106,7 +177,7 @@ namespace SOV.WcfService.Field
         private void Check(List<Catalog> parentCatalogs, Method parentMethod, Catalog childCatalog)
         {
             if (parentCatalogs == null || parentCatalogs.Count == 0)
-               throw new Exception(string.Format("Для записи каталога {0} не найдена соответствующая ей запись каталога метода {1}.", childCatalog.Id, parentMethod.Id));
+                throw new Exception(string.Format("Для записи каталога {0} не найдена соответствующая ей запись каталога метода {1}.", childCatalog.Id, parentMethod.Id));
             if (parentCatalogs.Count != 1)
                 throw new Exception(string.Format("Для записи каталога {0} найдено более одной записи каталога метода {2}. Всего найдено {1} записей, а должно быть 1.", childCatalog.Id, parentCatalogs.Count, parentMethod.Id));
         }
@@ -120,28 +191,23 @@ namespace SOV.WcfService.Field
             return ret;
         }
 
-        private object GetDataFilter(KeyValuePair<Method, List<object>> method, List<SGMO.Varoff> varoffs)//, List<object> methodAttr)
+        private object GetDataFilter(MethodExt methodExt, List<SGMO.Varoff> varoffs)//, List<object> methodAttr)
         {
-            object o;
-
-            string methodFormat = GetOutStoreParameter(method.Key, "FORMAT", true);
+            string methodFormat = GetOutStoreParameter(methodExt.Method, "FORMAT", true);
             switch (methodFormat)
             {
                 case "GRIB2":
 
-                    if ((o = method.Value.FirstOrDefault(x => x.GetType() == typeof(List<SOV.SGMO.MethVaroffXGrib2>))) == null)
-                        throw new Exception(string.Format(
-                         "Для запрошенного метода <{0}> с форматом выходных данных {1} " +
-                         "отсутствует соответствие с переменными Amur, которые д.б. указаны в БД sgmo табл variable_x_grib2." +
-                         " Источник ошибки {2}\n", method, methodFormat, this));
+                    if (methodExt.MethVaroffXGrib2 == null)
+                        throw new Exception(string.Format("Для запрошенного метода <{0}> с форматом выходных данных {1} отсутствует соответствие с переменными Amur, которые д.б. указаны в БД sgmo табл variable_x_grib2. Источник ошибки {2}\n", methodExt, methodFormat, this));
 
                     List<Grib.Grib2Filter> grib2Filters = new List<Grib.Grib2Filter>();
 
                     foreach (var varoff in varoffs)
                     {
-                        SGMO.MethVaroffXGrib2 methvarXGrib2 = ((List<SOV.SGMO.MethVaroffXGrib2>)o).FirstOrDefault(x =>
+                        SGMO.MethVaroffXGrib2 methvarXGrib2 = methodExt.MethVaroffXGrib2.FirstOrDefault(x =>
                             x.SrcName == _dbAmurName
-                            && x.MethodId == method.Key.Id
+                            && x.MethodId == methodExt.Method.Id
                             && x.VariableId == varoff.VariableId
                             && x.OffsetTypeId == varoff.OffsetTypeId
                             && x.OffsetValue == varoff.OffsetValue
@@ -149,7 +215,7 @@ namespace SOV.WcfService.Field
                         if (methvarXGrib2 == null) throw new Exception(string.Format(
                             "Для запрошенного набора varoff [<{0}>]" +
                             " отсутствует соответствие с переменными формата {1} метода {3}, которые д.б. указаны в sgmo.variable_x_grib2." +
-                            "\nИсточник ошибки {2}\n", varoff, methodFormat, this, method));
+                            "\nИсточник ошибки {2}\n", varoff, methodFormat, this, methodExt));
 
                         grib2Filters.Add(methvarXGrib2.Grib2Filter);
                     }
@@ -159,18 +225,18 @@ namespace SOV.WcfService.Field
                     List<int> iClolumns = new List<int>();
                     foreach (var varoff in varoffs)
                     {
-                        o = SGMO.MethVarXVar.GetExtMethodVar(method.Key.Id, varoff);
+                        object o = SGMO.MethVarXVar.GetExtMethodVar(methodExt.Method.Id, varoff);
                         if (o == null) throw new Exception(string.Format(
                             "Для запрошенного набора varoff  отсутствует соответствие с переменными формата {1} метода {3}," +
                             " которые д.б. указаны в классе SGMO.MethVarXVar.\nИсточник ошибки {2}\n",
-                            varoff, methodFormat, this, method));
+                            varoff, methodFormat, this, methodExt));
                         // VAN-file column index
                         iClolumns.Add(int.Parse(o.ToString()));
                     }
                     return (object)iClolumns;
                 default:
                     throw new Exception(string.Format("При попытке получения фильтра данных (GetDataFilter(...)) для запрошенного метода <{0}> обнаружен неизвестный формат данных {1}. " +
-                    "Источник ошибки {2}.\n", method.Key.Name, methodFormat, this));
+                    "Источник ошибки {2}.\n", methodExt.Method.Name, methodFormat, this));
             }
         }
         private List<SGMO.Varoff> GetVaroffs(List<Catalog> catalogs)
@@ -191,10 +257,10 @@ namespace SOV.WcfService.Field
         }
 
 
-        private KeyValuePair<Method, List<object>> GetMethod(int methodId)
+        private MethodExt GetMethod(int methodId)
         {
-            KeyValuePair<Method, List<object>> method = _methodsAllowed.FirstOrDefault(x => x.Key.Id == methodId);
-            Check(method.Key);
+            MethodExt method = _methodsValid.FirstOrDefault(x => x.Method.Id == methodId);
+            Check(method.Method);
 
             return method;
         }

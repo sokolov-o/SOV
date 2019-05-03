@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://10.11.203.34:8010/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FERHRI.SGMO" />
-  <xs:import schemaLocation="http://10.11.203.34:8010/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://10.11.203.34:8010/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Geo" />
-  <xs:import schemaLocation="http://10.11.203.34:8010/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FERHRI" />
-  <xs:import schemaLocation="http://10.11.203.34:8010/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" />
+  <xs:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOV.SGMO" />
+  <xs:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOV.Geo" />
+  <xs:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SOV" />
+  <xs:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
   <xs:element name="Open">
     <xs:complexType>
       <xs:sequence>
@@ -50,16 +50,16 @@
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
         <xs:element minOccurs="0" name="dateIni" type="xs:dateTime" />
         <xs:element minOccurs="0" name="methodId" type="xs:int" />
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FERHRI.SGMO" minOccurs="0" name="varoffs" nillable="true" type="q1:ArrayOfVaroff" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.SGMO" minOccurs="0" name="varoffs" nillable="true" type="q1:ArrayOfVaroff" />
         <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="leadTimes" nillable="true" type="q2:ArrayOfdouble" />
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FERHRI.Geo" minOccurs="0" name="grs" nillable="true" type="q3:ArrayOfGeoRectangle" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOV.Geo" minOccurs="0" name="grs" nillable="true" type="q3:ArrayOfGeoRectangle" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetFieldsInRectanglesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FERHRI" minOccurs="0" name="GetFieldsInRectanglesResult" nillable="true" type="q4:ArrayOfArrayOfArrayOfField" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOV" minOccurs="0" name="GetFieldsInRectanglesResult" nillable="true" type="q4:ArrayOfArrayOfArrayOfField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -91,7 +91,7 @@
   <xs:element name="GetMethodsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetMethodsResult" nillable="true" type="q7:ArrayOfMethod" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodsResult" nillable="true" type="q7:ArrayOfMethod" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -3,21 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_FERHRI.WcfService.Field", "_FERHRI.WcfService.Field.csproj", "{DCFFEF6D-9F9C-4244-AFB2-5A142E7E4FF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_SOV.WcfService.Field", "_SOV.WcfService.Field.csproj", "{DCFFEF6D-9F9C-4244-AFB2-5A142E7E4FF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Field", "..\..\..\Field\Field.csproj", "{56323A85-FDE4-4A36-8D34-38430CEF22F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geo", "..\..\..\Geo\Geo.csproj", "{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geo", "..\..\..\Geo\Geo.csproj", "{34F63CAA-4627-4434-BE40-16AC1B3D2541}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grib", "..\..\..\Grib\Grib.csproj", "{B0362C23-4F7A-4A27-91C8-9772F850A3B0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{39F80387-0769-4DF8-8ECE-3B5B6CDC8296}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "..\..\..\DB\Interfaces\Interfaces.csproj", "{F7E8241B-6360-4A7A-8BB3-537288B2A3A1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgmoBL", "..\..\..\SGMO\SgmoBL\SgmoBL.csproj", "{F583806C-BA90-4DD8-9044-9EC9C33D83CE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgmoDAL", "..\..\..\SGMO\SgmoDAL\SgmoDAL.csproj", "{67779067-F033-4759-A94A-DF236F999E26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "..\..\..\DB\Factory\Factory.csproj", "{295E7E63-5C9F-45B2-BABC-EDF38DCA411A}"
 EndProject
@@ -37,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\..\..\Amur-2.1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog", "..\..\..\Catalog\Catalog.csproj", "{EC1F2118-3EB9-421E-820F-6EA352CAEF82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgmoBL", "..\..\..\SGMO\SgmoBL\SgmoBL.csproj", "{F583806C-BA90-4DD8-9044-9EC9C33D83CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgmoDAL", "..\..\..\SGMO\SgmoDAL\SgmoDAL.csproj", "{67779067-F033-4759-A94A-DF236F999E26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,10 +51,10 @@ Global
 		{56323A85-FDE4-4A36-8D34-38430CEF22F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56323A85-FDE4-4A36-8D34-38430CEF22F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56323A85-FDE4-4A36-8D34-38430CEF22F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B0362C23-4F7A-4A27-91C8-9772F850A3B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B0362C23-4F7A-4A27-91C8-9772F850A3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0362C23-4F7A-4A27-91C8-9772F850A3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,14 +63,6 @@ Global
 		{F7E8241B-6360-4A7A-8BB3-537288B2A3A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7E8241B-6360-4A7A-8BB3-537288B2A3A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7E8241B-6360-4A7A-8BB3-537288B2A3A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F583806C-BA90-4DD8-9044-9EC9C33D83CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F583806C-BA90-4DD8-9044-9EC9C33D83CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F583806C-BA90-4DD8-9044-9EC9C33D83CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F583806C-BA90-4DD8-9044-9EC9C33D83CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67779067-F033-4759-A94A-DF236F999E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67779067-F033-4759-A94A-DF236F999E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67779067-F033-4759-A94A-DF236F999E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67779067-F033-4759-A94A-DF236F999E26}.Release|Any CPU.Build.0 = Release|Any CPU
 		{295E7E63-5C9F-45B2-BABC-EDF38DCA411A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{295E7E63-5C9F-45B2-BABC-EDF38DCA411A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{295E7E63-5C9F-45B2-BABC-EDF38DCA411A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -103,6 +95,14 @@ Global
 		{EC1F2118-3EB9-421E-820F-6EA352CAEF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC1F2118-3EB9-421E-820F-6EA352CAEF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC1F2118-3EB9-421E-820F-6EA352CAEF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F583806C-BA90-4DD8-9044-9EC9C33D83CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F583806C-BA90-4DD8-9044-9EC9C33D83CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F583806C-BA90-4DD8-9044-9EC9C33D83CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F583806C-BA90-4DD8-9044-9EC9C33D83CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67779067-F033-4759-A94A-DF236F999E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67779067-F033-4759-A94A-DF236F999E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67779067-F033-4759-A94A-DF236F999E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67779067-F033-4759-A94A-DF236F999E26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

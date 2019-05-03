@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.WcfService.Field</RootNamespace>
-    <AssemblyName>FERHRI.WcfService.Field</AssemblyName>
+    <RootNamespace>SOV.WcfService.Field</RootNamespace>
+    <AssemblyName>SOV.WcfService.Field</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
@@ -95,12 +95,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.DataForecast.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.DataSource.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.DataValue.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.LegalEntity.datasource">
@@ -187,9 +181,6 @@
     <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.VariableType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.GeoPoint.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Properties\PublishProfiles\FERHRI 10.11.203.34.pubxml" />
     <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.Curve.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -244,6 +235,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeoPoint.cs" />
+    <Compile Include="MethodExt.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -268,6 +261,24 @@
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\AmurServiceReference\SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmurServiceReference\SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmurServiceReference\SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmurServiceReference\SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmurServiceReference\SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmurServiceReference\SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
