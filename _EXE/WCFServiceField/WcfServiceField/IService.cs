@@ -55,7 +55,7 @@ namespace SOV.WcfService.Field
         /// <returns>double[/*leadTime*/][/*Catalog index*/]</returns>
         [OperationContract]
         double[/*leadTime*/][/*Catalog index*/] GetValuesAtPoints
-            (long hSvc, DateTime dateIni, List<int> pointCatalogsId, /*List<double> leadTimes,*/ int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
+            (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
         //(long hSvc, DateTime dateIni, List<int> catalogIds, List<double> leadTimes,
         //EnumPointNearestType nearestType, EnumDistanceType distanceType,
         //int fcsSiteId, /*int fcsMethodId,*/ int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
