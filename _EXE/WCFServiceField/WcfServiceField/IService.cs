@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ServiceModel;
 using SOV.WcfService.Field.AmurServiceReference;
+using SOV.Amur.Meta;
 
 namespace SOV.WcfService.Field
 {

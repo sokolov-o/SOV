@@ -37,7 +37,7 @@ namespace _TestWCFServiceField
             {
                 #region GET FIELDS IN REGION
 
-                DateTime dateIni = DateTime.Today.AddDays(-1);
+                DateTime dateIni = new DateTime(2019, 4, 30, 12, 0, 0); //DateTime.Today.AddDays(-1);
                 int[] catalogIds = new int[]
                 {
                       771921 // Ta, NCEP

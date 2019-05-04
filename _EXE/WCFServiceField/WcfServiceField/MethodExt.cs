@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using SOV.WcfService.Field.AmurServiceReference;
 using SOV.SGMO;
+using SOV.Amur.Meta;
 
 namespace SOV.WcfService.Field
 {

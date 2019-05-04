@@ -15,340 +15,13 @@ namespace SOV.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Method", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Method : SOV.WcfService.Field.AmurServiceReference.IdName {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.Dictionary<string, string> MethodOutputStoreParametersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short OrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> ParentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> SourceLegalEntityIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.Dictionary<string, string> MethodOutputStoreParameters {
-            get {
-                return this.MethodOutputStoreParametersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MethodOutputStoreParametersField, value) != true)) {
-                    this.MethodOutputStoreParametersField = value;
-                    this.RaisePropertyChanged("MethodOutputStoreParameters");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public short Order {
-            get {
-                return this.OrderField;
-            }
-            set {
-                if ((this.OrderField.Equals(value) != true)) {
-                    this.OrderField = value;
-                    this.RaisePropertyChanged("Order");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ParentId {
-            get {
-                return this.ParentIdField;
-            }
-            set {
-                if ((this.ParentIdField.Equals(value) != true)) {
-                    this.ParentIdField = value;
-                    this.RaisePropertyChanged("ParentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> SourceLegalEntityId {
-            get {
-                return this.SourceLegalEntityIdField;
-            }
-            set {
-                if ((this.SourceLegalEntityIdField.Equals(value) != true)) {
-                    this.SourceLegalEntityIdField = value;
-                    this.RaisePropertyChanged("SourceLegalEntityId");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdClass", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNameRus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableVirtual))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdName))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DicItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SampleMedium))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeneralCategory))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ValueType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.StationType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.OffsetType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Method))]
-    public partial class IdClass : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Addr", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
-    [System.SerializableAttribute()]
-    public partial class Addr : SOV.WcfService.Field.AmurServiceReference.IdClass {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> ChildsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameShortField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> ParentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TypeIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> Childs {
-            get {
-                return this.ChildsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChildsField, value) != true)) {
-                    this.ChildsField = value;
-                    this.RaisePropertyChanged("Childs");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameShort {
-            get {
-                return this.NameShortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
-                    this.NameShortField = value;
-                    this.RaisePropertyChanged("NameShort");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ParentId {
-            get {
-                return this.ParentIdField;
-            }
-            set {
-                if ((this.ParentIdField.Equals(value) != true)) {
-                    this.ParentIdField = value;
-                    this.RaisePropertyChanged("ParentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TypeId {
-            get {
-                return this.TypeIdField;
-            }
-            set {
-                if ((this.TypeIdField.Equals(value) != true)) {
-                    this.TypeIdField = value;
-                    this.RaisePropertyChanged("TypeId");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdNameRus", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
-    public partial class IdNameRus : SOV.WcfService.Field.AmurServiceReference.IdClass {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameRusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameRusShortField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameRus {
-            get {
-                return this.NameRusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameRusField, value) != true)) {
-                    this.NameRusField = value;
-                    this.RaisePropertyChanged("NameRus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameRusShort {
-            get {
-                return this.NameRusShortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameRusShortField, value) != true)) {
-                    this.NameRusShortField = value;
-                    this.RaisePropertyChanged("NameRusShort");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdNames", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
-    public partial class IdNames : SOV.WcfService.Field.AmurServiceReference.IdNameRus {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngShortField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
-            get {
-                return this.NameEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEngShort {
-            get {
-                return this.NameEngShortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngShortField, value) != true)) {
-                    this.NameEngShortField = value;
-                    this.RaisePropertyChanged("NameEngShort");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="LegalEntity", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Org))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Person))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysObj))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersXSites))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersParams))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataSource))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataForecast))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria>))]
@@ -357,83 +30,92 @@ namespace SOV.WcfService.Field.AmurServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataSource))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Org))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Person))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Addr))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Reflection.MemberInfo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.VariableCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.EntityAttrValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.Site))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.Catalog))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.Method>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.Method))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.Site>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.MethodForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.GeoObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.SiteAttrType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.SiteAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.EntityAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.SampleMedium>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.SampleMedium))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.SiteType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.SiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.Variable>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.Variable))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.VariableVirtual))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.DataType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.DataType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.GeneralCategory>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.GeneralCategory))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.GeoType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.GeoType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.MeteoZone>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.MeteoZone))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.MethodForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.OffsetType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.OffsetType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.SiteXSite>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.SiteXSite))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.SiteXSiteType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.SiteXSiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.Unit>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.Unit))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.ValueType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.ValueType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.VariableCode>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.VariableType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Meta.VariableType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Meta.Catalog>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysObj))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersXSites))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersParams))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.AQCDataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdName))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdClass))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNameRus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DicItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoPoint))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Type))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MemberInfo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Type))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<double>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.Geo.GeoPoint>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.Amur.Meta.GeoObject>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<double>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Method))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MethodForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Site))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SampleMedium))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.StationType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableVirtual))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeneralCategory))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MeteoZone))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.OffsetType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSite))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSiteType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Unit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ValueType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Catalog))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>))]
-    public partial class LegalEntity : SOV.WcfService.Field.AmurServiceReference.IdNames {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<SOV.Amur.Meta.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Geo.GeoPoint))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNameRus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdClass))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNameParent))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdName))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.DicItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Common.DicItem>))]
+    public partial class LegalEntity : SOV.Common.IdNames, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AddrAddField;
@@ -461,6 +143,16 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WebSiteField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string AddrAdd {
@@ -578,585 +270,496 @@ namespace SOV.WcfService.Field.AmurServiceReference {
                 }
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Station", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Station : SOV.WcfService.Field.AmurServiceReference.IdNames {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> AddrRegionIdField;
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> OrgIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TypeIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> AddrRegionId {
-            get {
-                return this.AddrRegionIdField;
-            }
-            set {
-                if ((this.AddrRegionIdField.Equals(value) != true)) {
-                    this.AddrRegionIdField = value;
-                    this.RaisePropertyChanged("AddrRegionId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> OrgId {
-            get {
-                return this.OrgIdField;
-            }
-            set {
-                if ((this.OrgIdField.Equals(value) != true)) {
-                    this.OrgIdField = value;
-                    this.RaisePropertyChanged("OrgId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TypeId {
-            get {
-                return this.TypeIdField;
-            }
-            set {
-                if ((this.TypeIdField.Equals(value) != true)) {
-                    this.TypeIdField = value;
-                    this.RaisePropertyChanged("TypeId");
-                }
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableVirtual", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
-    public partial class VariableVirtual : SOV.WcfService.Field.AmurServiceReference.IdClass {
+    public partial class DataValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DataTypeIdField;
+        private int CatalogIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GeneralCategoryIdField;
+        private System.DateTime DateLOCField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SampleMediumIdField;
+        private System.DateTime DateUTCField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TimeIdField;
+        private byte FlagAQCField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TimeSupportField;
+        private long IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UnitIdField;
+        private float UTCOffsetField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VariableTypeIdField;
+        private double ValueField;
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DataTypeId {
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
-                return this.DataTypeIdField;
+                return this.extensionDataField;
             }
             set {
-                if ((this.DataTypeIdField.Equals(value) != true)) {
-                    this.DataTypeIdField = value;
-                    this.RaisePropertyChanged("DataTypeId");
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CatalogId {
+            get {
+                return this.CatalogIdField;
+            }
+            set {
+                if ((this.CatalogIdField.Equals(value) != true)) {
+                    this.CatalogIdField = value;
+                    this.RaisePropertyChanged("CatalogId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GeneralCategoryId {
+        public System.DateTime DateLOC {
             get {
-                return this.GeneralCategoryIdField;
+                return this.DateLOCField;
             }
             set {
-                if ((this.GeneralCategoryIdField.Equals(value) != true)) {
-                    this.GeneralCategoryIdField = value;
-                    this.RaisePropertyChanged("GeneralCategoryId");
+                if ((this.DateLOCField.Equals(value) != true)) {
+                    this.DateLOCField = value;
+                    this.RaisePropertyChanged("DateLOC");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SampleMediumId {
+        public System.DateTime DateUTC {
             get {
-                return this.SampleMediumIdField;
+                return this.DateUTCField;
             }
             set {
-                if ((this.SampleMediumIdField.Equals(value) != true)) {
-                    this.SampleMediumIdField = value;
-                    this.RaisePropertyChanged("SampleMediumId");
+                if ((this.DateUTCField.Equals(value) != true)) {
+                    this.DateUTCField = value;
+                    this.RaisePropertyChanged("DateUTC");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TimeId {
+        public byte FlagAQC {
             get {
-                return this.TimeIdField;
+                return this.FlagAQCField;
             }
             set {
-                if ((this.TimeIdField.Equals(value) != true)) {
-                    this.TimeIdField = value;
-                    this.RaisePropertyChanged("TimeId");
+                if ((this.FlagAQCField.Equals(value) != true)) {
+                    this.FlagAQCField = value;
+                    this.RaisePropertyChanged("FlagAQC");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TimeSupport {
+        public long Id {
             get {
-                return this.TimeSupportField;
+                return this.IdField;
             }
             set {
-                if ((this.TimeSupportField.Equals(value) != true)) {
-                    this.TimeSupportField = value;
-                    this.RaisePropertyChanged("TimeSupport");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UnitId {
+        public float UTCOffset {
             get {
-                return this.UnitIdField;
+                return this.UTCOffsetField;
             }
             set {
-                if ((this.UnitIdField.Equals(value) != true)) {
-                    this.UnitIdField = value;
-                    this.RaisePropertyChanged("UnitId");
+                if ((this.UTCOffsetField.Equals(value) != true)) {
+                    this.UTCOffsetField = value;
+                    this.RaisePropertyChanged("UTCOffset");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VariableTypeId {
+        public double Value {
             get {
-                return this.VariableTypeIdField;
+                return this.ValueField;
             }
             set {
-                if ((this.VariableTypeIdField.Equals(value) != true)) {
-                    this.VariableTypeIdField = value;
-                    this.RaisePropertyChanged("VariableTypeId");
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
                 }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Variable", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataSource", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
     [System.SerializableAttribute()]
-    public partial class Variable : SOV.WcfService.Field.AmurServiceReference.VariableVirtual {
+    public partial class DataSource : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double CodeErrDataField;
+        private int CodeFormIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double CodeNoDataField;
+        private System.DateTime DateLOCInsertField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameCField;
+        private System.DateTime DateUTCField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
+        private System.DateTime DateUTCRecieveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameRusField;
+        private string HashField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ValueTypeIdField;
+        private long IdField;
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double CodeErrData {
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SiteIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
-                return this.CodeErrDataField;
+                return this.extensionDataField;
             }
             set {
-                if ((this.CodeErrDataField.Equals(value) != true)) {
-                    this.CodeErrDataField = value;
-                    this.RaisePropertyChanged("CodeErrData");
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CodeFormId {
+            get {
+                return this.CodeFormIdField;
+            }
+            set {
+                if ((this.CodeFormIdField.Equals(value) != true)) {
+                    this.CodeFormIdField = value;
+                    this.RaisePropertyChanged("CodeFormId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double CodeNoData {
+        public System.DateTime DateLOCInsert {
             get {
-                return this.CodeNoDataField;
+                return this.DateLOCInsertField;
             }
             set {
-                if ((this.CodeNoDataField.Equals(value) != true)) {
-                    this.CodeNoDataField = value;
-                    this.RaisePropertyChanged("CodeNoData");
+                if ((this.DateLOCInsertField.Equals(value) != true)) {
+                    this.DateLOCInsertField = value;
+                    this.RaisePropertyChanged("DateLOCInsert");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameC {
+        public System.DateTime DateUTC {
             get {
-                return this.NameCField;
+                return this.DateUTCField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameCField, value) != true)) {
-                    this.NameCField = value;
-                    this.RaisePropertyChanged("NameC");
+                if ((this.DateUTCField.Equals(value) != true)) {
+                    this.DateUTCField = value;
+                    this.RaisePropertyChanged("DateUTC");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
+        public System.DateTime DateUTCRecieve {
             get {
-                return this.NameEngField;
+                return this.DateUTCRecieveField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
+                if ((this.DateUTCRecieveField.Equals(value) != true)) {
+                    this.DateUTCRecieveField = value;
+                    this.RaisePropertyChanged("DateUTCRecieve");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameRus {
+        public string Hash {
             get {
-                return this.NameRusField;
+                return this.HashField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameRusField, value) != true)) {
-                    this.NameRusField = value;
-                    this.RaisePropertyChanged("NameRus");
+                if ((object.ReferenceEquals(this.HashField, value) != true)) {
+                    this.HashField = value;
+                    this.RaisePropertyChanged("Hash");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ValueTypeId {
+        public long Id {
             get {
-                return this.ValueTypeIdField;
+                return this.IdField;
             }
             set {
-                if ((this.ValueTypeIdField.Equals(value) != true)) {
-                    this.ValueTypeIdField = value;
-                    this.RaisePropertyChanged("ValueTypeId");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SiteId {
+            get {
+                return this.SiteIdField;
+            }
+            set {
+                if ((this.SiteIdField.Equals(value) != true)) {
+                    this.SiteIdField = value;
+                    this.RaisePropertyChanged("SiteId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdName", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataForecast", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DicItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SampleMedium))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeneralCategory))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ValueType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.StationType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.OffsetType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Method))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Org))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Person))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysObj))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersXSites))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersParams))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataSource))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.AQCDataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdClass))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNameRus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoPoint))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Type))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MemberInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<double>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<double>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MethodForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Site))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableVirtual))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MeteoZone))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSite))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSiteType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Unit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Catalog))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>))]
-    public partial class IdName : SOV.WcfService.Field.AmurServiceReference.IdClass {
+    public partial class DataForecast : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object EntityField;
+        private int CatalogIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private System.DateTime DateFcsField;
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Entity {
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateIniField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateInsertField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double LagFcsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
-                return this.EntityField;
+                return this.extensionDataField;
             }
             set {
-                if ((object.ReferenceEquals(this.EntityField, value) != true)) {
-                    this.EntityField = value;
-                    this.RaisePropertyChanged("Entity");
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CatalogId {
+            get {
+                return this.CatalogIdField;
+            }
+            set {
+                if ((this.CatalogIdField.Equals(value) != true)) {
+                    this.CatalogIdField = value;
+                    this.RaisePropertyChanged("CatalogId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public System.DateTime DateFcs {
             get {
-                return this.NameField;
+                return this.DateFcsField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((this.DateFcsField.Equals(value) != true)) {
+                    this.DateFcsField = value;
+                    this.RaisePropertyChanged("DateFcs");
                 }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateIni {
+            get {
+                return this.DateIniField;
+            }
+            set {
+                if ((this.DateIniField.Equals(value) != true)) {
+                    this.DateIniField = value;
+                    this.RaisePropertyChanged("DateIni");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateInsert {
+            get {
+                return this.DateInsertField;
+            }
+            set {
+                if ((this.DateInsertField.Equals(value) != true)) {
+                    this.DateInsertField = value;
+                    this.RaisePropertyChanged("DateInsert");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double LagFcs {
+            get {
+                return this.LagFcsField;
+            }
+            set {
+                if ((this.LagFcsField.Equals(value) != true)) {
+                    this.LagFcsField = value;
+                    this.RaisePropertyChanged("LagFcs");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DicItem", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Curve", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SampleMedium))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeneralCategory))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ValueType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Org))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Org>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Person))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Person>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysObj))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersXSites>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersXSites))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SysParsersParams>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SysParsersParams))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataSource))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.DataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.AQCDataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdName))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdClass))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.IdNameRus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoPoint))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Type))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MemberInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<double>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<double>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Method))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Station))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MethodForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Site))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.EntityAttrValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.StationType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Variable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableVirtual))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.GeoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.MeteoZone))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.OffsetType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSite))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteXSiteType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Unit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.VariableCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Catalog))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>))]
-    public partial class DicItem : SOV.WcfService.Field.AmurServiceReference.IdName {
+    public partial class Curve : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem> ChildsField;
+        private int CatalogIdXField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CatalogIdYField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object Entity1Field;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsSelectedField;
+        private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria> SeriesField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameShortField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SOV.WcfService.Field.AmurServiceReference.DicItem ParentDicItemField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SOV.WcfService.Field.AmurServiceReference.Type TypeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DicItem> Childs {
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
-                return this.ChildsField;
+                return this.extensionDataField;
             }
             set {
-                if ((object.ReferenceEquals(this.ChildsField, value) != true)) {
-                    this.ChildsField = value;
-                    this.RaisePropertyChanged("Childs");
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CatalogIdX {
+            get {
+                return this.CatalogIdXField;
+            }
+            set {
+                if ((this.CatalogIdXField.Equals(value) != true)) {
+                    this.CatalogIdXField = value;
+                    this.RaisePropertyChanged("CatalogIdX");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CatalogIdY {
+            get {
+                return this.CatalogIdYField;
+            }
+            set {
+                if ((this.CatalogIdYField.Equals(value) != true)) {
+                    this.CatalogIdYField = value;
+                    this.RaisePropertyChanged("CatalogIdY");
                 }
             }
         }
@@ -1174,251 +777,329 @@ namespace SOV.WcfService.Field.AmurServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Name="Entity")]
-        public object Entity1 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
             get {
-                return this.Entity1Field;
+                return this.IdField;
             }
             set {
-                if ((object.ReferenceEquals(this.Entity1Field, value) != true)) {
-                    this.Entity1Field = value;
-                    this.RaisePropertyChanged("Entity1");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsSelected {
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria> Series {
             get {
-                return this.IsSelectedField;
+                return this.SeriesField;
             }
             set {
-                if ((this.IsSelectedField.Equals(value) != true)) {
-                    this.IsSelectedField = value;
-                    this.RaisePropertyChanged("IsSelected");
+                if ((object.ReferenceEquals(this.SeriesField, value) != true)) {
+                    this.SeriesField = value;
+                    this.RaisePropertyChanged("Series");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameShort {
-            get {
-                return this.NameShortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
-                    this.NameShortField = value;
-                    this.RaisePropertyChanged("NameShort");
-                }
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SOV.WcfService.Field.AmurServiceReference.DicItem ParentDicItem {
-            get {
-                return this.ParentDicItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ParentDicItemField, value) != true)) {
-                    this.ParentDicItemField = value;
-                    this.RaisePropertyChanged("ParentDicItem");
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
+        [System.SerializableAttribute()]
+        public partial class Seria : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+            
+            [System.NonSerializedAttribute()]
+            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef> CoefsField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private int CurveIdField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private int CurveSeriaTypeIdField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private System.DateTime DateSField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private string DescriptionField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private int IdField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point> PointsField;
+            
+            public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+                get {
+                    return this.extensionDataField;
+                }
+                set {
+                    this.extensionDataField = value;
                 }
             }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SOV.WcfService.Field.AmurServiceReference.Type Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef> Coefs {
+                get {
+                    return this.CoefsField;
+                }
+                set {
+                    if ((object.ReferenceEquals(this.CoefsField, value) != true)) {
+                        this.CoefsField = value;
+                        this.RaisePropertyChanged("Coefs");
+                    }
                 }
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SampleMedium", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class SampleMedium : SOV.WcfService.Field.AmurServiceReference.DicItem {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class DataType : SOV.WcfService.Field.AmurServiceReference.DicItem {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeneralCategory", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class GeneralCategory : SOV.WcfService.Field.AmurServiceReference.DicItem {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ValueType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class ValueType : SOV.WcfService.Field.AmurServiceReference.DicItem {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
-            get {
-                return this.NameEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public int CurveId {
+                get {
+                    return this.CurveIdField;
+                }
+                set {
+                    if ((this.CurveIdField.Equals(value) != true)) {
+                        this.CurveIdField = value;
+                        this.RaisePropertyChanged("CurveId");
+                    }
                 }
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class VariableType : SOV.WcfService.Field.AmurServiceReference.DicItem {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
-            get {
-                return this.NameEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public int CurveSeriaTypeId {
+                get {
+                    return this.CurveSeriaTypeIdField;
+                }
+                set {
+                    if ((this.CurveSeriaTypeIdField.Equals(value) != true)) {
+                        this.CurveSeriaTypeIdField = value;
+                        this.RaisePropertyChanged("CurveSeriaTypeId");
+                    }
                 }
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeoObject", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class GeoObject : SOV.WcfService.Field.AmurServiceReference.IdName {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> FallIntoIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GeoTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<System.Collections.Generic.List<double>> Shape2DField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> FallIntoId {
-            get {
-                return this.FallIntoIdField;
-            }
-            set {
-                if ((this.FallIntoIdField.Equals(value) != true)) {
-                    this.FallIntoIdField = value;
-                    this.RaisePropertyChanged("FallIntoId");
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public System.DateTime DateS {
+                get {
+                    return this.DateSField;
+                }
+                set {
+                    if ((this.DateSField.Equals(value) != true)) {
+                        this.DateSField = value;
+                        this.RaisePropertyChanged("DateS");
+                    }
                 }
             }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GeoTypeId {
-            get {
-                return this.GeoTypeIdField;
-            }
-            set {
-                if ((this.GeoTypeIdField.Equals(value) != true)) {
-                    this.GeoTypeIdField = value;
-                    this.RaisePropertyChanged("GeoTypeId");
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public string Description {
+                get {
+                    return this.DescriptionField;
+                }
+                set {
+                    if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                        this.DescriptionField = value;
+                        this.RaisePropertyChanged("Description");
+                    }
                 }
             }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Order {
-            get {
-                return this.OrderField;
-            }
-            set {
-                if ((this.OrderField.Equals(value) != true)) {
-                    this.OrderField = value;
-                    this.RaisePropertyChanged("Order");
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public int Id {
+                get {
+                    return this.IdField;
+                }
+                set {
+                    if ((this.IdField.Equals(value) != true)) {
+                        this.IdField = value;
+                        this.RaisePropertyChanged("Id");
+                    }
                 }
             }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<System.Collections.Generic.List<double>> Shape2D {
-            get {
-                return this.Shape2DField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Shape2DField, value) != true)) {
-                    this.Shape2DField = value;
-                    this.RaisePropertyChanged("Shape2D");
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point> Points {
+                get {
+                    return this.PointsField;
+                }
+                set {
+                    if ((object.ReferenceEquals(this.PointsField, value) != true)) {
+                        this.PointsField = value;
+                        this.RaisePropertyChanged("Points");
+                    }
                 }
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StationType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class StationType : SOV.WcfService.Field.AmurServiceReference.IdName {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameShortField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameShort {
-            get {
-                return this.NameShortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
-                    this.NameShortField = value;
-                    this.RaisePropertyChanged("NameShort");
+            
+            public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+            
+            protected void RaisePropertyChanged(string propertyName) {
+                System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+                if ((propertyChanged != null)) {
+                    propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
                 }
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OffsetType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class OffsetType : SOV.WcfService.Field.AmurServiceReference.IdName {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UnitIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UnitId {
-            get {
-                return this.UnitIdField;
+            
+            [System.Diagnostics.DebuggerStepThroughAttribute()]
+            [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+            [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria.Coef", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
+            [System.SerializableAttribute()]
+            public partial class Coef : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+                
+                [System.NonSerializedAttribute()]
+                private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+                
+                [System.Runtime.Serialization.OptionalFieldAttribute()]
+                private int DayField;
+                
+                [System.Runtime.Serialization.OptionalFieldAttribute()]
+                private int MonthField;
+                
+                [System.Runtime.Serialization.OptionalFieldAttribute()]
+                private double ValueField;
+                
+                public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+                    get {
+                        return this.extensionDataField;
+                    }
+                    set {
+                        this.extensionDataField = value;
+                    }
+                }
+                
+                [System.Runtime.Serialization.DataMemberAttribute()]
+                public int Day {
+                    get {
+                        return this.DayField;
+                    }
+                    set {
+                        if ((this.DayField.Equals(value) != true)) {
+                            this.DayField = value;
+                            this.RaisePropertyChanged("Day");
+                        }
+                    }
+                }
+                
+                [System.Runtime.Serialization.DataMemberAttribute()]
+                public int Month {
+                    get {
+                        return this.MonthField;
+                    }
+                    set {
+                        if ((this.MonthField.Equals(value) != true)) {
+                            this.MonthField = value;
+                            this.RaisePropertyChanged("Month");
+                        }
+                    }
+                }
+                
+                [System.Runtime.Serialization.DataMemberAttribute()]
+                public double Value {
+                    get {
+                        return this.ValueField;
+                    }
+                    set {
+                        if ((this.ValueField.Equals(value) != true)) {
+                            this.ValueField = value;
+                            this.RaisePropertyChanged("Value");
+                        }
+                    }
+                }
+                
+                public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+                
+                protected void RaisePropertyChanged(string propertyName) {
+                    System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+                    if ((propertyChanged != null)) {
+                        propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+                    }
+                }
             }
-            set {
-                if ((this.UnitIdField.Equals(value) != true)) {
-                    this.UnitIdField = value;
-                    this.RaisePropertyChanged("UnitId");
+            
+            [System.Diagnostics.DebuggerStepThroughAttribute()]
+            [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+            [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria.Point", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
+            [System.SerializableAttribute()]
+            public partial class Point : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+                
+                [System.NonSerializedAttribute()]
+                private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+                
+                [System.Runtime.Serialization.OptionalFieldAttribute()]
+                private string NameField;
+                
+                [System.Runtime.Serialization.OptionalFieldAttribute()]
+                private double XField;
+                
+                [System.Runtime.Serialization.OptionalFieldAttribute()]
+                private double YField;
+                
+                public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+                    get {
+                        return this.extensionDataField;
+                    }
+                    set {
+                        this.extensionDataField = value;
+                    }
+                }
+                
+                [System.Runtime.Serialization.DataMemberAttribute()]
+                public string Name {
+                    get {
+                        return this.NameField;
+                    }
+                    set {
+                        if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                            this.NameField = value;
+                            this.RaisePropertyChanged("Name");
+                        }
+                    }
+                }
+                
+                [System.Runtime.Serialization.DataMemberAttribute()]
+                public double X {
+                    get {
+                        return this.XField;
+                    }
+                    set {
+                        if ((this.XField.Equals(value) != true)) {
+                            this.XField = value;
+                            this.RaisePropertyChanged("X");
+                        }
+                    }
+                }
+                
+                [System.Runtime.Serialization.DataMemberAttribute()]
+                public double Y {
+                    get {
+                        return this.YField;
+                    }
+                    set {
+                        if ((this.YField.Equals(value) != true)) {
+                            this.YField = value;
+                            this.RaisePropertyChanged("Y");
+                        }
+                    }
+                }
+                
+                public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+                
+                protected void RaisePropertyChanged(string propertyName) {
+                    System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+                    if ((propertyChanged != null)) {
+                        propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+                    }
                 }
             }
         }
@@ -1434,7 +1115,7 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int LegalEntityIdField;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> StaffIdFirstFaceField;
@@ -1450,14 +1131,14 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int LegalEntityId {
+        public int Id {
             get {
-                return this.LegalEntityIdField;
+                return this.IdField;
             }
             set {
-                if ((this.LegalEntityIdField.Equals(value) != true)) {
-                    this.LegalEntityIdField = value;
-                    this.RaisePropertyChanged("LegalEntityId");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -1532,6 +1213,115 @@ namespace SOV.WcfService.Field.AmurServiceReference {
                 if ((this.SexField.Equals(value) != true)) {
                     this.SexField = value;
                     this.RaisePropertyChanged("Sex");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Addr", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
+    [System.SerializableAttribute()]
+    public partial class Addr : SOV.Common.IdClass, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> ChildsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameShortField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ParentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TypeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Addr> Childs {
+            get {
+                return this.ChildsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChildsField, value) != true)) {
+                    this.ChildsField = value;
+                    this.RaisePropertyChanged("Childs");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameShort {
+            get {
+                return this.NameShortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
+                    this.NameShortField = value;
+                    this.RaisePropertyChanged("NameShort");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ParentId {
+            get {
+                return this.ParentIdField;
+            }
+            set {
+                if ((this.ParentIdField.Equals(value) != true)) {
+                    this.ParentIdField = value;
+                    this.RaisePropertyChanged("ParentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TypeId {
+            get {
+                return this.TypeIdField;
+            }
+            set {
+                if ((this.TypeIdField.Equals(value) != true)) {
+                    this.TypeIdField = value;
+                    this.RaisePropertyChanged("TypeId");
                 }
             }
         }
@@ -2067,830 +1857,6 @@ namespace SOV.WcfService.Field.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Curve", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
-    [System.SerializableAttribute()]
-    public partial class Curve : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CatalogIdXField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CatalogIdYField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria> SeriesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CatalogIdX {
-            get {
-                return this.CatalogIdXField;
-            }
-            set {
-                if ((this.CatalogIdXField.Equals(value) != true)) {
-                    this.CatalogIdXField = value;
-                    this.RaisePropertyChanged("CatalogIdX");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CatalogIdY {
-            get {
-                return this.CatalogIdYField;
-            }
-            set {
-                if ((this.CatalogIdYField.Equals(value) != true)) {
-                    this.CatalogIdYField = value;
-                    this.RaisePropertyChanged("CatalogIdY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria> Series {
-            get {
-                return this.SeriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SeriesField, value) != true)) {
-                    this.SeriesField = value;
-                    this.RaisePropertyChanged("Series");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-        
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
-        [System.SerializableAttribute()]
-        public partial class Seria : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-            
-            [System.NonSerializedAttribute()]
-            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-            
-            [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef> CoefsField;
-            
-            [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private int CurveIdField;
-            
-            [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private int CurveSeriaTypeIdField;
-            
-            [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private System.DateTime DateSField;
-            
-            [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private string DescriptionField;
-            
-            [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private int IdField;
-            
-            [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point> PointsField;
-            
-            public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-                get {
-                    return this.extensionDataField;
-                }
-                set {
-                    this.extensionDataField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute()]
-            public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Coef> Coefs {
-                get {
-                    return this.CoefsField;
-                }
-                set {
-                    if ((object.ReferenceEquals(this.CoefsField, value) != true)) {
-                        this.CoefsField = value;
-                        this.RaisePropertyChanged("Coefs");
-                    }
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute()]
-            public int CurveId {
-                get {
-                    return this.CurveIdField;
-                }
-                set {
-                    if ((this.CurveIdField.Equals(value) != true)) {
-                        this.CurveIdField = value;
-                        this.RaisePropertyChanged("CurveId");
-                    }
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute()]
-            public int CurveSeriaTypeId {
-                get {
-                    return this.CurveSeriaTypeIdField;
-                }
-                set {
-                    if ((this.CurveSeriaTypeIdField.Equals(value) != true)) {
-                        this.CurveSeriaTypeIdField = value;
-                        this.RaisePropertyChanged("CurveSeriaTypeId");
-                    }
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute()]
-            public System.DateTime DateS {
-                get {
-                    return this.DateSField;
-                }
-                set {
-                    if ((this.DateSField.Equals(value) != true)) {
-                        this.DateSField = value;
-                        this.RaisePropertyChanged("DateS");
-                    }
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute()]
-            public string Description {
-                get {
-                    return this.DescriptionField;
-                }
-                set {
-                    if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                        this.DescriptionField = value;
-                        this.RaisePropertyChanged("Description");
-                    }
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute()]
-            public int Id {
-                get {
-                    return this.IdField;
-                }
-                set {
-                    if ((this.IdField.Equals(value) != true)) {
-                        this.IdField = value;
-                        this.RaisePropertyChanged("Id");
-                    }
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute()]
-            public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve.Seria.Point> Points {
-                get {
-                    return this.PointsField;
-                }
-                set {
-                    if ((object.ReferenceEquals(this.PointsField, value) != true)) {
-                        this.PointsField = value;
-                        this.RaisePropertyChanged("Points");
-                    }
-                }
-            }
-            
-            public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-            
-            protected void RaisePropertyChanged(string propertyName) {
-                System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-                if ((propertyChanged != null)) {
-                    propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-                }
-            }
-            
-            [System.Diagnostics.DebuggerStepThroughAttribute()]
-            [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-            [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria.Coef", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
-            [System.SerializableAttribute()]
-            public partial class Coef : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-                
-                [System.NonSerializedAttribute()]
-                private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-                
-                [System.Runtime.Serialization.OptionalFieldAttribute()]
-                private int DayField;
-                
-                [System.Runtime.Serialization.OptionalFieldAttribute()]
-                private int MonthField;
-                
-                [System.Runtime.Serialization.OptionalFieldAttribute()]
-                private double ValueField;
-                
-                public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-                    get {
-                        return this.extensionDataField;
-                    }
-                    set {
-                        this.extensionDataField = value;
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute()]
-                public int Day {
-                    get {
-                        return this.DayField;
-                    }
-                    set {
-                        if ((this.DayField.Equals(value) != true)) {
-                            this.DayField = value;
-                            this.RaisePropertyChanged("Day");
-                        }
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute()]
-                public int Month {
-                    get {
-                        return this.MonthField;
-                    }
-                    set {
-                        if ((this.MonthField.Equals(value) != true)) {
-                            this.MonthField = value;
-                            this.RaisePropertyChanged("Month");
-                        }
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute()]
-                public double Value {
-                    get {
-                        return this.ValueField;
-                    }
-                    set {
-                        if ((this.ValueField.Equals(value) != true)) {
-                            this.ValueField = value;
-                            this.RaisePropertyChanged("Value");
-                        }
-                    }
-                }
-                
-                public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-                
-                protected void RaisePropertyChanged(string propertyName) {
-                    System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-                    if ((propertyChanged != null)) {
-                        propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-                    }
-                }
-            }
-            
-            [System.Diagnostics.DebuggerStepThroughAttribute()]
-            [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-            [System.Runtime.Serialization.DataContractAttribute(Name="Curve.Seria.Point", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
-            [System.SerializableAttribute()]
-            public partial class Point : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-                
-                [System.NonSerializedAttribute()]
-                private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-                
-                [System.Runtime.Serialization.OptionalFieldAttribute()]
-                private string NameField;
-                
-                [System.Runtime.Serialization.OptionalFieldAttribute()]
-                private double XField;
-                
-                [System.Runtime.Serialization.OptionalFieldAttribute()]
-                private double YField;
-                
-                public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-                    get {
-                        return this.extensionDataField;
-                    }
-                    set {
-                        this.extensionDataField = value;
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute()]
-                public string Name {
-                    get {
-                        return this.NameField;
-                    }
-                    set {
-                        if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                            this.NameField = value;
-                            this.RaisePropertyChanged("Name");
-                        }
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute()]
-                public double X {
-                    get {
-                        return this.XField;
-                    }
-                    set {
-                        if ((this.XField.Equals(value) != true)) {
-                            this.XField = value;
-                            this.RaisePropertyChanged("X");
-                        }
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute()]
-                public double Y {
-                    get {
-                        return this.YField;
-                    }
-                    set {
-                        if ((this.YField.Equals(value) != true)) {
-                            this.YField = value;
-                            this.RaisePropertyChanged("Y");
-                        }
-                    }
-                }
-                
-                public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-                
-                protected void RaisePropertyChanged(string propertyName) {
-                    System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-                    if ((propertyChanged != null)) {
-                        propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-                    }
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataForecast", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
-    [System.SerializableAttribute()]
-    public partial class DataForecast : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CatalogIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateFcsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateIniField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateInsertField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LagFcsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CatalogId {
-            get {
-                return this.CatalogIdField;
-            }
-            set {
-                if ((this.CatalogIdField.Equals(value) != true)) {
-                    this.CatalogIdField = value;
-                    this.RaisePropertyChanged("CatalogId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateFcs {
-            get {
-                return this.DateFcsField;
-            }
-            set {
-                if ((this.DateFcsField.Equals(value) != true)) {
-                    this.DateFcsField = value;
-                    this.RaisePropertyChanged("DateFcs");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateIni {
-            get {
-                return this.DateIniField;
-            }
-            set {
-                if ((this.DateIniField.Equals(value) != true)) {
-                    this.DateIniField = value;
-                    this.RaisePropertyChanged("DateIni");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateInsert {
-            get {
-                return this.DateInsertField;
-            }
-            set {
-                if ((this.DateInsertField.Equals(value) != true)) {
-                    this.DateInsertField = value;
-                    this.RaisePropertyChanged("DateInsert");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LagFcs {
-            get {
-                return this.LagFcsField;
-            }
-            set {
-                if ((this.LagFcsField.Equals(value) != true)) {
-                    this.LagFcsField = value;
-                    this.RaisePropertyChanged("LagFcs");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((this.ValueField.Equals(value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataSource", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
-    [System.SerializableAttribute()]
-    public partial class DataSource : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeFormIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateLOCInsertField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateUTCField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateUTCRecieveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string HashField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SiteIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CodeFormId {
-            get {
-                return this.CodeFormIdField;
-            }
-            set {
-                if ((this.CodeFormIdField.Equals(value) != true)) {
-                    this.CodeFormIdField = value;
-                    this.RaisePropertyChanged("CodeFormId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateLOCInsert {
-            get {
-                return this.DateLOCInsertField;
-            }
-            set {
-                if ((this.DateLOCInsertField.Equals(value) != true)) {
-                    this.DateLOCInsertField = value;
-                    this.RaisePropertyChanged("DateLOCInsert");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateUTC {
-            get {
-                return this.DateUTCField;
-            }
-            set {
-                if ((this.DateUTCField.Equals(value) != true)) {
-                    this.DateUTCField = value;
-                    this.RaisePropertyChanged("DateUTC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateUTCRecieve {
-            get {
-                return this.DateUTCRecieveField;
-            }
-            set {
-                if ((this.DateUTCRecieveField.Equals(value) != true)) {
-                    this.DateUTCRecieveField = value;
-                    this.RaisePropertyChanged("DateUTCRecieve");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Hash {
-            get {
-                return this.HashField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.HashField, value) != true)) {
-                    this.HashField = value;
-                    this.RaisePropertyChanged("Hash");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SiteId {
-            get {
-                return this.SiteIdField;
-            }
-            set {
-                if ((this.SiteIdField.Equals(value) != true)) {
-                    this.SiteIdField = value;
-                    this.RaisePropertyChanged("SiteId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
-    [System.SerializableAttribute()]
-    public partial class DataValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CatalogIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateLOCField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateUTCField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte FlagAQCField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float UTCOffsetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CatalogId {
-            get {
-                return this.CatalogIdField;
-            }
-            set {
-                if ((this.CatalogIdField.Equals(value) != true)) {
-                    this.CatalogIdField = value;
-                    this.RaisePropertyChanged("CatalogId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateLOC {
-            get {
-                return this.DateLOCField;
-            }
-            set {
-                if ((this.DateLOCField.Equals(value) != true)) {
-                    this.DateLOCField = value;
-                    this.RaisePropertyChanged("DateLOC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateUTC {
-            get {
-                return this.DateUTCField;
-            }
-            set {
-                if ((this.DateUTCField.Equals(value) != true)) {
-                    this.DateUTCField = value;
-                    this.RaisePropertyChanged("DateUTC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte FlagAQC {
-            get {
-                return this.FlagAQCField;
-            }
-            set {
-                if ((this.FlagAQCField.Equals(value) != true)) {
-                    this.FlagAQCField = value;
-                    this.RaisePropertyChanged("FlagAQC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float UTCOffset {
-            get {
-                return this.UTCOffsetField;
-            }
-            set {
-                if ((this.UTCOffsetField.Equals(value) != true)) {
-                    this.UTCOffsetField = value;
-                    this.RaisePropertyChanged("UTCOffset");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((this.ValueField.Equals(value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AQCDataValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP")]
     [System.SerializableAttribute()]
     public partial class AQCDataValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2966,1260 +1932,93 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeoPoint", Namespace="http://schemas.datacontract.org/2004/07/SOV.Geo")]
-    [System.SerializableAttribute()]
-    public partial class GeoPoint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LatGrdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LonGrdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LatGrd {
-            get {
-                return this.LatGrdField;
-            }
-            set {
-                if ((this.LatGrdField.Equals(value) != true)) {
-                    this.LatGrdField = value;
-                    this.RaisePropertyChanged("LatGrd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LonGrd {
-            get {
-                return this.LonGrdField;
-            }
-            set {
-                if ((this.LonGrdField.Equals(value) != true)) {
-                    this.LonGrdField = value;
-                    this.RaisePropertyChanged("LonGrd");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Type", Namespace="http://schemas.datacontract.org/2004/07/System")]
-    [System.SerializableAttribute()]
-    public partial class Type : SOV.WcfService.Field.AmurServiceReference.MemberInfo {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MemberInfo", Namespace="http://schemas.datacontract.org/2004/07/System.Reflection")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.Type))]
-    public partial class MemberInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfintGeoPointmMEqxbZF", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfintGeoPointmMEqxbZF", KeyName="Key", ValueName="Value")]
-    [System.SerializableAttribute()]
-    public class ArrayOfKeyValueOfintGeoPointmMEqxbZF : System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoPoint> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfintGeoObjectvGMA3cSi", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfintGeoObjectvGMA3cSi", KeyName="Key", ValueName="Value")]
-    [System.SerializableAttribute()]
-    public class ArrayOfKeyValueOfintGeoObjectvGMA3cSi : System.Collections.Generic.Dictionary<int, SOV.WcfService.Field.AmurServiceReference.GeoObject> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfintArrayOfCurvecuBgdOSl", KeyName="Key", ValueName="Value")]
-    [System.SerializableAttribute()]
-    public class ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl : System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfintArrayOfDataForecastcuBgdOSl", KeyName="Key", ValueName="Value")]
-    [System.SerializableAttribute()]
-    public class ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl : System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOflongDataSourcecuBgdOSl", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOflongDataSourcecuBgdOSl", KeyName="Key", ValueName="Value")]
-    [System.SerializableAttribute()]
-    public class ArrayOfKeyValueOflongDataSourcecuBgdOSl : System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfCatalogArrayOfDataValueV1pI2YJr", KeyName="Key", ValueName="Value")]
-    [System.SerializableAttribute()]
-    public class ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr : System.Collections.Generic.Dictionary<SOV.WcfService.Field.AmurServiceReference.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MethodForecast", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class MethodForecast : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.Dictionary<string, string> AttrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<double> DateIniHoursUTCField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int LeadTimeUnitIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<double> LeadTimesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SOV.WcfService.Field.AmurServiceReference.Method MethodField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.Dictionary<string, string> Attr {
-            get {
-                return this.AttrField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AttrField, value) != true)) {
-                    this.AttrField = value;
-                    this.RaisePropertyChanged("Attr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<double> DateIniHoursUTC {
-            get {
-                return this.DateIniHoursUTCField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DateIniHoursUTCField, value) != true)) {
-                    this.DateIniHoursUTCField = value;
-                    this.RaisePropertyChanged("DateIniHoursUTC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int LeadTimeUnitId {
-            get {
-                return this.LeadTimeUnitIdField;
-            }
-            set {
-                if ((this.LeadTimeUnitIdField.Equals(value) != true)) {
-                    this.LeadTimeUnitIdField = value;
-                    this.RaisePropertyChanged("LeadTimeUnitId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<double> LeadTimes {
-            get {
-                return this.LeadTimesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LeadTimesField, value) != true)) {
-                    this.LeadTimesField = value;
-                    this.RaisePropertyChanged("LeadTimes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SOV.WcfService.Field.AmurServiceReference.Method Method {
-            get {
-                return this.MethodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MethodField, value) != true)) {
-                    this.MethodField = value;
-                    this.RaisePropertyChanged("Method");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SiteAttrType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class SiteAttrType : SOV.WcfService.Field.AmurServiceReference.EntityAttrType {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityAttrType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.WcfService.Field.AmurServiceReference.SiteAttrType))]
-    public partial class EntityAttrType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<int> MandatoriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<int> Mandatories {
-            get {
-                return this.MandatoriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MandatoriesField, value) != true)) {
-                    this.MandatoriesField = value;
-                    this.RaisePropertyChanged("Mandatories");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Site", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Site : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SiteCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SiteTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StationIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SiteCode {
-            get {
-                return this.SiteCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SiteCodeField, value) != true)) {
-                    this.SiteCodeField = value;
-                    this.RaisePropertyChanged("SiteCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SiteTypeId {
-            get {
-                return this.SiteTypeIdField;
-            }
-            set {
-                if ((this.SiteTypeIdField.Equals(value) != true)) {
-                    this.SiteTypeIdField = value;
-                    this.RaisePropertyChanged("SiteTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int StationId {
-            get {
-                return this.StationIdField;
-            }
-            set {
-                if ((this.StationIdField.Equals(value) != true)) {
-                    this.StationIdField = value;
-                    this.RaisePropertyChanged("StationId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityAttrValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class EntityAttrValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int AttrTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateSField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int EntityIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AttrTypeId {
-            get {
-                return this.AttrTypeIdField;
-            }
-            set {
-                if ((this.AttrTypeIdField.Equals(value) != true)) {
-                    this.AttrTypeIdField = value;
-                    this.RaisePropertyChanged("AttrTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateS {
-            get {
-                return this.DateSField;
-            }
-            set {
-                if ((this.DateSField.Equals(value) != true)) {
-                    this.DateSField = value;
-                    this.RaisePropertyChanged("DateS");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int EntityId {
-            get {
-                return this.EntityIdField;
-            }
-            set {
-                if ((this.EntityIdField.Equals(value) != true)) {
-                    this.EntityIdField = value;
-                    this.RaisePropertyChanged("EntityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeoType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class GeoType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
-            get {
-                return this.NameEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MeteoZone", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class MeteoZone : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UTCHourDayStartField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UTCHourDayStart {
-            get {
-                return this.UTCHourDayStartField;
-            }
-            set {
-                if ((this.UTCHourDayStartField.Equals(value) != true)) {
-                    this.UTCHourDayStartField = value;
-                    this.RaisePropertyChanged("UTCHourDayStart");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SiteXSite", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class SiteXSite : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RelationTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SiteId1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SiteId2Field;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RelationTypeId {
-            get {
-                return this.RelationTypeIdField;
-            }
-            set {
-                if ((this.RelationTypeIdField.Equals(value) != true)) {
-                    this.RelationTypeIdField = value;
-                    this.RaisePropertyChanged("RelationTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SiteId1 {
-            get {
-                return this.SiteId1Field;
-            }
-            set {
-                if ((this.SiteId1Field.Equals(value) != true)) {
-                    this.SiteId1Field = value;
-                    this.RaisePropertyChanged("SiteId1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SiteId2 {
-            get {
-                return this.SiteId2Field;
-            }
-            set {
-                if ((this.SiteId2Field.Equals(value) != true)) {
-                    this.SiteId2Field = value;
-                    this.RaisePropertyChanged("SiteId2");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SiteXSiteType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class SiteXSiteType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Unit", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Unit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AbbreviationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AbbreviationEngField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> SIConvertionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Abbreviation {
-            get {
-                return this.AbbreviationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AbbreviationField, value) != true)) {
-                    this.AbbreviationField = value;
-                    this.RaisePropertyChanged("Abbreviation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AbbreviationEng {
-            get {
-                return this.AbbreviationEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AbbreviationEngField, value) != true)) {
-                    this.AbbreviationEngField = value;
-                    this.RaisePropertyChanged("AbbreviationEng");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
-            get {
-                return this.NameEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> SIConvertion {
-            get {
-                return this.SIConvertionField;
-            }
-            set {
-                if ((this.SIConvertionField.Equals(value) != true)) {
-                    this.SIConvertionField = value;
-                    this.RaisePropertyChanged("SIConvertion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableCode", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class VariableCode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameShortField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VariableIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameShort {
-            get {
-                return this.NameShortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
-                    this.NameShortField = value;
-                    this.RaisePropertyChanged("NameShort");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VariableId {
-            get {
-                return this.VariableIdField;
-            }
-            set {
-                if ((this.VariableIdField.Equals(value) != true)) {
-                    this.VariableIdField = value;
-                    this.RaisePropertyChanged("VariableId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Catalog", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Catalog : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int MethodIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OffsetTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double OffsetValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ParentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SiteIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SourceIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VariableIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int MethodId {
-            get {
-                return this.MethodIdField;
-            }
-            set {
-                if ((this.MethodIdField.Equals(value) != true)) {
-                    this.MethodIdField = value;
-                    this.RaisePropertyChanged("MethodId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OffsetTypeId {
-            get {
-                return this.OffsetTypeIdField;
-            }
-            set {
-                if ((this.OffsetTypeIdField.Equals(value) != true)) {
-                    this.OffsetTypeIdField = value;
-                    this.RaisePropertyChanged("OffsetTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double OffsetValue {
-            get {
-                return this.OffsetValueField;
-            }
-            set {
-                if ((this.OffsetValueField.Equals(value) != true)) {
-                    this.OffsetValueField = value;
-                    this.RaisePropertyChanged("OffsetValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ParentId {
-            get {
-                return this.ParentIdField;
-            }
-            set {
-                if ((this.ParentIdField.Equals(value) != true)) {
-                    this.ParentIdField = value;
-                    this.RaisePropertyChanged("ParentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SiteId {
-            get {
-                return this.SiteIdField;
-            }
-            set {
-                if ((this.SiteIdField.Equals(value) != true)) {
-                    this.SiteIdField = value;
-                    this.RaisePropertyChanged("SiteId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SourceId {
-            get {
-                return this.SourceIdField;
-            }
-            set {
-                if ((this.SourceIdField.Equals(value) != true)) {
-                    this.SourceIdField = value;
-                    this.RaisePropertyChanged("SourceId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VariableId {
-            get {
-                return this.VariableIdField;
-            }
-            set {
-                if ((this.VariableIdField.Equals(value) != true)) {
-                    this.VariableIdField = value;
-                    this.RaisePropertyChanged("VariableId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AmurServiceReference.IService")]
     public interface IService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesAll", ReplyAction="http://tempuri.org/IService/GetLegalEntityesAllResponse")]
+        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesAll(long hSvc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesAll", ReplyAction="http://tempuri.org/IService/GetLegalEntityesAllResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
+        void SaveVariableCode(long hSvc, SOV.Amur.Meta.VariableCode vc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
+        System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, SOV.Amur.Meta.VariableCode vc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
+        void SaveSiteAttribute(long hSvc, SOV.Amur.Meta.EntityAttrValue eav);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
+        System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, SOV.Amur.Meta.EntityAttrValue eav);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
+        int SaveSite(long hSvc, SOV.Amur.Meta.Site site);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
+        System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, SOV.Amur.Meta.Site site);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
+        SOV.Amur.Meta.Catalog SaveCatalog(long hSvc, SOV.Amur.Meta.Catalog catalog);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
+        System.Threading.Tasks.Task<SOV.Amur.Meta.Catalog> SaveCatalogAsync(long hSvc, SOV.Amur.Meta.Catalog catalog);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
+        void ActualizeDataValue(long hSvc, long dataValueId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
+        System.Threading.Tasks.Task ActualizeDataValueAsync(long hSvc, long dataValueId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveValue", ReplyAction="http://tempuri.org/IService/SaveValueResponse")]
+        long SaveValue(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveValue", ReplyAction="http://tempuri.org/IService/SaveValueResponse")]
+        System.Threading.Tasks.Task<long> SaveValueAsync(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
+        long SaveDataValue(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
+        System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
+        void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
+        System.Threading.Tasks.Task SaveDataValueXSourceAsync(long hSvc, int dataValueId, long dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
+        long SaveDataSource(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
+        System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
+        void SaveDataValueList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
+        System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
+        void SaveDataForecastList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
+        System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
+        void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
+        System.Threading.Tasks.Task SaveDataPRoleAsync(long hSvc, long dvId, int roleId, bool isAQCApplied);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam", ReplyAction="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse")]
+        void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam", ReplyAction="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse")]
+        System.Threading.Tasks.Task SaveParserSysObjLastStartParamAsync(long hSvc, int sysObjId, string lastStartParam);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Open", ReplyAction="http://tempuri.org/IService/OpenResponse")]
         long Open(string userName, string password);
@@ -4234,160 +2033,142 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task CloseAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds);
+        System.Collections.Generic.List<SOV.Amur.Meta.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>> GetMethodsAsync(long hSvc, System.Collections.Generic.List<int> methodIds);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Method>> GetMethodsAsync(long hSvc, System.Collections.Generic.List<int> methodIds);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationsByIndices", ReplyAction="http://tempuri.org/IService/GetStationsByIndicesResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationsByIndices(long hSvc, System.Collections.Generic.List<string> stationIndices);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByCodes", ReplyAction="http://tempuri.org/IService/GetSitesByCodesResponse")]
+        System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByCodes(long hSvc, System.Collections.Generic.List<string> siteIndices);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationsByIndices", ReplyAction="http://tempuri.org/IService/GetStationsByIndicesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationsByIndicesAsync(long hSvc, System.Collections.Generic.List<string> stationIndices);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParentFcsMethod", ReplyAction="http://tempuri.org/IService/GetParentFcsMethodResponse")]
-        SOV.WcfService.Field.AmurServiceReference.MethodForecast GetParentFcsMethod(long hSvc, int methodId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByCodes", ReplyAction="http://tempuri.org/IService/GetSitesByCodesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByCodesAsync(long hSvc, System.Collections.Generic.List<string> siteIndices);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParentFcsMethod", ReplyAction="http://tempuri.org/IService/GetParentFcsMethodResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.MethodForecast> GetParentFcsMethodAsync(long hSvc, int methodId);
+        SOV.Amur.Meta.MethodForecast GetParentFcsMethod(long hSvc, int methodId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParentFcsMethod", ReplyAction="http://tempuri.org/IService/GetParentFcsMethodResponse")]
+        System.Threading.Tasks.Task<SOV.Amur.Meta.MethodForecast> GetParentFcsMethodAsync(long hSvc, int methodId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesPoints", ReplyAction="http://tempuri.org/IService/GetSitesPointsResponse")]
-        SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
+        System.Collections.Generic.Dictionary<int, SOV.Geo.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesPoints", ReplyAction="http://tempuri.org/IService/GetSitesPointsResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF> GetSitesPointsAsync(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, SOV.Geo.GeoPoint>> GetSitesPointsAsync(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsByStationIds", ReplyAction="http://tempuri.org/IService/GetGeoObjectsByStationIdsResponse")]
-        SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi GetGeoObjectsByStationIds(long hSvc, System.Collections.Generic.List<int> stationIds);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsBySiteIds", ReplyAction="http://tempuri.org/IService/GetGeoObjectsBySiteIdsResponse")]
+        System.Collections.Generic.Dictionary<int, SOV.Amur.Meta.GeoObject> GetGeoObjectsBySiteIds(long hSvc, System.Collections.Generic.List<int> stationIds);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsByStationIds", ReplyAction="http://tempuri.org/IService/GetGeoObjectsByStationIdsResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi> GetGeoObjectsByStationIdsAsync(long hSvc, System.Collections.Generic.List<int> stationIds);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteAttrTypesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType> GetSiteAttrTypesAll(long hSvc);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsBySiteIds", ReplyAction="http://tempuri.org/IService/GetGeoObjectsBySiteIdsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, SOV.Amur.Meta.GeoObject>> GetGeoObjectsBySiteIdsAsync(long hSvc, System.Collections.Generic.List<int> stationIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteAttrTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>> GetSiteAttrTypesAllAsync(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.SiteAttrType> GetSiteAttrTypesAll(long hSvc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteAttrTypesAllResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteAttrType>> GetSiteAttrTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesInBox", ReplyAction="http://tempuri.org/IService/GetSitesInBoxResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east);
+        System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesInBox", ReplyAction="http://tempuri.org/IService/GetSitesInBoxResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesInBoxAsync(long hSvc, double south, double north, double west, double east);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesInBoxAsync(long hSvc, double south, double north, double west, double east);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSampleMediumsAll", ReplyAction="http://tempuri.org/IService/GetSampleMediumsAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium> GetSampleMediumsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.SampleMedium> GetSampleMediumsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSampleMediumsAll", ReplyAction="http://tempuri.org/IService/GetSampleMediumsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>> GetSampleMediumsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SampleMedium>> GetSampleMediumsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValues", ReplyAction="http://tempuri.org/IService/GetSitesAttrValuesResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
+        System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValues", ReplyAction="http://tempuri.org/IService/GetSitesAttrValuesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValuesAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrValue>> GetSitesAttrValuesAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethod", ReplyAction="http://tempuri.org/IService/GetMethodResponse")]
-        SOV.WcfService.Field.AmurServiceReference.Method GetMethod(long hSvc, int methodId);
+        SOV.Amur.Meta.Method GetMethod(long hSvc, int methodId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethod", ReplyAction="http://tempuri.org/IService/GetMethodResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Method> GetMethodAsync(long hSvc, int methodId);
+        System.Threading.Tasks.Task<SOV.Amur.Meta.Method> GetMethodAsync(long hSvc, int methodId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrValue", ReplyAction="http://tempuri.org/IService/GetSiteAttrValueResponse")]
-        SOV.WcfService.Field.AmurServiceReference.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
+        SOV.Amur.Meta.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrValue", ReplyAction="http://tempuri.org/IService/GetSiteAttrValueResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSiteAttrValueAsync(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
+        System.Threading.Tasks.Task<SOV.Amur.Meta.EntityAttrValue> GetSiteAttrValueAsync(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValue", ReplyAction="http://tempuri.org/IService/GetSitesAttrValueResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
+        System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValue", ReplyAction="http://tempuri.org/IService/GetSitesAttrValueResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValueAsync(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrValue>> GetSitesAttrValueAsync(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByType", ReplyAction="http://tempuri.org/IService/GetSitesByTypeResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByType(long hSvc, int siteTypeId);
+        System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByType(long hSvc, int siteTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByType", ReplyAction="http://tempuri.org/IService/GetSitesByTypeResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByTypeAsync(long hSvc, int siteTypeId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByTypeAsync(long hSvc, int siteTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByGroup", ReplyAction="http://tempuri.org/IService/GetSitesByGroupResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByGroup(long hSvc, int siteGroupId);
+        System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByGroup(long hSvc, int siteGroupId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByGroup", ReplyAction="http://tempuri.org/IService/GetSitesByGroupResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByGroupAsync(long hSvc, int siteGroupId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByGroupAsync(long hSvc, int siteGroupId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationByIndex", ReplyAction="http://tempuri.org/IService/GetStationByIndexResponse")]
-        SOV.WcfService.Field.AmurServiceReference.Station GetStationByIndex(long hSvc, string index);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByAddrRegionIds", ReplyAction="http://tempuri.org/IService/GetSitesByAddrRegionIdsResponse")]
+        System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByAddrRegionIds(long hSvc, System.Collections.Generic.List<int> addrRegionIds);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationByIndex", ReplyAction="http://tempuri.org/IService/GetStationByIndexResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Station> GetStationByIndexAsync(long hSvc, string index);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByAddrRegionIds", ReplyAction="http://tempuri.org/IService/GetSitesByAddrRegionIdsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByAddrRegionIdsAsync(long hSvc, System.Collections.Generic.List<int> addrRegionIds);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationsByList", ReplyAction="http://tempuri.org/IService/GetStationsByListResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationsByList(long hSvc, System.Collections.Generic.List<int> stationIdList);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteTypes", ReplyAction="http://tempuri.org/IService/GetSiteTypesResponse")]
+        System.Collections.Generic.List<SOV.Amur.Meta.SiteType> GetSiteTypes(long hSvc);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationsByList", ReplyAction="http://tempuri.org/IService/GetStationsByListResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationsByListAsync(long hSvc, System.Collections.Generic.List<int> stationIdList);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationByAddrRegion", ReplyAction="http://tempuri.org/IService/GetStationByAddrRegionResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationByAddrRegion(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationByAddrRegion", ReplyAction="http://tempuri.org/IService/GetStationByAddrRegionResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationByAddrRegionAsync(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationTypes", ReplyAction="http://tempuri.org/IService/GetStationTypesResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType> GetStationTypes(long hSvc);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStationTypes", ReplyAction="http://tempuri.org/IService/GetStationTypesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>> GetStationTypesAsync(long hSvc);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByStation", ReplyAction="http://tempuri.org/IService/GetSitesByStationResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByStation(long hSvc, int stationId, System.Nullable<int> siteTypeId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByStation", ReplyAction="http://tempuri.org/IService/GetSitesByStationResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByStationAsync(long hSvc, int stationId, System.Nullable<int> siteTypeId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteTypes", ReplyAction="http://tempuri.org/IService/GetSiteTypesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteType>> GetSiteTypesAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByList", ReplyAction="http://tempuri.org/IService/GetSitesByListResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList);
+        System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByList", ReplyAction="http://tempuri.org/IService/GetSitesByListResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByListAsync(long hSvc, System.Collections.Generic.List<int> siteIdList);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByListAsync(long hSvc, System.Collections.Generic.List<int> siteIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesByList", ReplyAction="http://tempuri.org/IService/GetVariablesByListResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList);
+        System.Collections.Generic.List<SOV.Amur.Meta.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesByList", ReplyAction="http://tempuri.org/IService/GetVariablesByListResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesByListAsync(long hSvc, System.Collections.Generic.List<int> variableIdList);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Variable>> GetVariablesByListAsync(long hSvc, System.Collections.Generic.List<int> variableIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableById", ReplyAction="http://tempuri.org/IService/GetVariableByIdResponse")]
-        SOV.WcfService.Field.AmurServiceReference.Variable GetVariableById(long hSvc, int variableId);
+        SOV.Amur.Meta.Variable GetVariableById(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableById", ReplyAction="http://tempuri.org/IService/GetVariableByIdResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariableByIdAsync(long hSvc, int variableId);
+        System.Threading.Tasks.Task<SOV.Amur.Meta.Variable> GetVariableByIdAsync(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableByKey", ReplyAction="http://tempuri.org/IService/GetVariableByKeyResponse")]
-        SOV.WcfService.Field.AmurServiceReference.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
+        SOV.Amur.Meta.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableByKey", ReplyAction="http://tempuri.org/IService/GetVariableByKeyResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariableByKeyAsync(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
+        System.Threading.Tasks.Task<SOV.Amur.Meta.Variable> GetVariableByKeyAsync(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariables", ReplyAction="http://tempuri.org/IService/GetVariablesResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
+        System.Collections.Generic.List<SOV.Amur.Meta.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariables", ReplyAction="http://tempuri.org/IService/GetVariablesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAsync(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Variable>> GetVariablesAsync(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesAll", ReplyAction="http://tempuri.org/IService/GetVariablesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariablesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.Variable> GetVariablesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesAll", ReplyAction="http://tempuri.org/IService/GetVariablesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Variable>> GetVariablesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataTypesAll", ReplyAction="http://tempuri.org/IService/GetDataTypesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType> GetDataTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.DataType> GetDataTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataTypesAll", ReplyAction="http://tempuri.org/IService/GetDataTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>> GetDataTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.DataType>> GetDataTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetFlagAQCAll", ReplyAction="http://tempuri.org/IService/GetFlagAQCAllResponse")]
         System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>> GetFlagAQCAll(long hSvc);
@@ -4396,88 +2177,88 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>> GetFlagAQCAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeneralCategoryesAll", ReplyAction="http://tempuri.org/IService/GetGeneralCategoryesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory> GetGeneralCategoryesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.GeneralCategory> GetGeneralCategoryesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeneralCategoryesAll", ReplyAction="http://tempuri.org/IService/GetGeneralCategoryesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>> GetGeneralCategoryesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.GeneralCategory>> GetGeneralCategoryesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectsAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.GeoObject> GetGeoObjectsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.GeoObject>> GetGeoObjectsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectTypesAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectTypesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType> GetGeoObjectTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.GeoType> GetGeoObjectTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectTypesAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>> GetGeoObjectTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.GeoType>> GetGeoObjectTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMeteoZonesAll", ReplyAction="http://tempuri.org/IService/GetMeteoZonesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone> GetMeteoZonesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.MeteoZone> GetMeteoZonesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMeteoZonesAll", ReplyAction="http://tempuri.org/IService/GetMeteoZonesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>> GetMeteoZonesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.MeteoZone>> GetMeteoZonesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodsAll", ReplyAction="http://tempuri.org/IService/GetMethodsAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method> GetMethodsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.Method> GetMethodsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodsAll", ReplyAction="http://tempuri.org/IService/GetMethodsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>> GetMethodsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Method>> GetMethodsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodForecastsAll", ReplyAction="http://tempuri.org/IService/GetMethodForecastsAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast> GetMethodForecastsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.MethodForecast> GetMethodForecastsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodForecastsAll", ReplyAction="http://tempuri.org/IService/GetMethodForecastsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>> GetMethodForecastsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.MethodForecast>> GetMethodForecastsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOffsetTypesAll", ReplyAction="http://tempuri.org/IService/GetOffsetTypesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType> GetOffsetTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.OffsetType> GetOffsetTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOffsetTypesAll", ReplyAction="http://tempuri.org/IService/GetOffsetTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>> GetOffsetTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.OffsetType>> GetOffsetTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByLeftSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByLeftSiteResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId);
+        System.Collections.Generic.List<SOV.Amur.Meta.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByLeftSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByLeftSiteResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByLeftSiteAsync(long hSvc, int siteId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteXSite>> GetSiteXSitesByLeftSiteAsync(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByRightSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByRightSiteResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId);
+        System.Collections.Generic.List<SOV.Amur.Meta.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByRightSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByRightSiteResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByRightSiteAsync(long hSvc, int siteId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteXSite>> GetSiteXSitesByRightSiteAsync(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSiteTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteXSiteTypesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId);
+        System.Collections.Generic.List<SOV.Amur.Meta.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSiteTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteXSiteTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>> GetSiteXSiteTypesAllAsync(long hSvc, int siteId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteXSiteType>> GetSiteXSiteTypesAllAsync(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUnitsAll", ReplyAction="http://tempuri.org/IService/GetUnitsAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit> GetUnitsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.Unit> GetUnitsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUnitsAll", ReplyAction="http://tempuri.org/IService/GetUnitsAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>> GetUnitsAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Unit>> GetUnitsAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValueTypesAll", ReplyAction="http://tempuri.org/IService/GetValueTypesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType> GetValueTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.ValueType> GetValueTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValueTypesAll", ReplyAction="http://tempuri.org/IService/GetValueTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>> GetValueTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.ValueType>> GetValueTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableCodesAll", ReplyAction="http://tempuri.org/IService/GetVariableCodesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode> GetVariableCodesAll(long hSvc, int variableId);
+        System.Collections.Generic.List<SOV.Amur.Meta.VariableCode> GetVariableCodesAll(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableCodesAll", ReplyAction="http://tempuri.org/IService/GetVariableCodesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>> GetVariableCodesAllAsync(long hSvc, int variableId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.VariableCode>> GetVariableCodesAllAsync(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableTypesAll", ReplyAction="http://tempuri.org/IService/GetVariableTypesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType> GetVariableTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Meta.VariableType> GetVariableTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableTypesAll", ReplyAction="http://tempuri.org/IService/GetVariableTypesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>> GetVariableTypesAllAsync(long hSvc);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.VariableType>> GetVariableTypesAllAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ExistsDataForecasts", ReplyAction="http://tempuri.org/IService/ExistsDataForecastsResponse")]
         System.Collections.Generic.Dictionary<int, bool> ExistsDataForecasts(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateIni);
@@ -4486,10 +2267,10 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, bool>> ExistsDataForecastsAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateIni);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCurvesBySites", ReplyAction="http://tempuri.org/IService/GetCurvesBySitesResponse")]
-        SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
+        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCurvesBySites", ReplyAction="http://tempuri.org/IService/GetCurvesBySitesResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl> GetCurvesBySitesAsync(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>>> GetCurvesBySitesAsync(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCurveByCatalog", ReplyAction="http://tempuri.org/IService/GetCurveByCatalogResponse")]
         SOV.WcfService.Field.AmurServiceReference.Curve GetCurveByCatalog(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
@@ -4498,22 +2279,22 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Curve> GetCurveByCatalogAsync(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataForecastsByIdList", ReplyAction="http://tempuri.org/IService/GetDataForecastsByIdListResponse")]
-        SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
+        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataForecastsByIdList", ReplyAction="http://tempuri.org/IService/GetDataForecastsByIdListResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl> GetDataForecastsByIdListAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>>> GetDataForecastsByIdListAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataSources", ReplyAction="http://tempuri.org/IService/GetDataSourcesResponse")]
-        SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds);
+        System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataSources", ReplyAction="http://tempuri.org/IService/GetDataSourcesResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl> GetDataSourcesAsync(long hSvc, System.Collections.Generic.List<long> dataValueIds);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource>> GetDataSourcesAsync(long hSvc, System.Collections.Generic.List<long> dataValueIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataValues", ReplyAction="http://tempuri.org/IService/GetDataValuesResponse")]
-        SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
+        System.Collections.Generic.Dictionary<SOV.Amur.Meta.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataValues", ReplyAction="http://tempuri.org/IService/GetDataValuesResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr> GetDataValuesAsync(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<SOV.Amur.Meta.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>>> GetDataValuesAsync(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataForecasts", ReplyAction="http://tempuri.org/IService/GetDataForecastsResponse")]
         System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> GetDataForecasts(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
@@ -4522,22 +2303,22 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsAsync(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogListById", ReplyAction="http://tempuri.org/IService/GetCatalogListByIdResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId);
+        System.Collections.Generic.List<SOV.Amur.Meta.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogListById", ReplyAction="http://tempuri.org/IService/GetCatalogListByIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListByIdAsync(long hSvc, System.Collections.Generic.List<int> ctlId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Catalog>> GetCatalogListByIdAsync(long hSvc, System.Collections.Generic.List<int> ctlId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogList", ReplyAction="http://tempuri.org/IService/GetCatalogListResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
+        System.Collections.Generic.List<SOV.Amur.Meta.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogList", ReplyAction="http://tempuri.org/IService/GetCatalogListResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Catalog>> GetCatalogListAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalog", ReplyAction="http://tempuri.org/IService/GetCatalogResponse")]
-        SOV.WcfService.Field.AmurServiceReference.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
+        SOV.Amur.Meta.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalog", ReplyAction="http://tempuri.org/IService/GetCatalogResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogAsync(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
+        System.Threading.Tasks.Task<SOV.Amur.Meta.Catalog> GetCatalogAsync(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataPDataValueAQC", ReplyAction="http://tempuri.org/IService/GetDataPDataValueAQCResponse")]
         System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
@@ -4622,102 +2403,6 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesById", ReplyAction="http://tempuri.org/IService/GetLegalEntityesByIdResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesByIdAsync(long hSvc, System.Collections.Generic.List<int> leIds);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesAll", ReplyAction="http://tempuri.org/IService/GetLegalEntityesAllResponse")]
-        System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesAll(long hSvc);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesAll", ReplyAction="http://tempuri.org/IService/GetLegalEntityesAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
-        void SaveVariableCode(long hSvc, SOV.WcfService.Field.AmurServiceReference.VariableCode vc);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
-        System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.VariableCode vc);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateStation", ReplyAction="http://tempuri.org/IService/UpdateStationResponse")]
-        void UpdateStation(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateStation", ReplyAction="http://tempuri.org/IService/UpdateStationResponse")]
-        System.Threading.Tasks.Task UpdateStationAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
-        void SaveSiteAttribute(long hSvc, SOV.WcfService.Field.AmurServiceReference.EntityAttrValue eav);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
-        System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.EntityAttrValue eav);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
-        int SaveSite(long hSvc, SOV.WcfService.Field.AmurServiceReference.Site site);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
-        System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Site site);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveStation", ReplyAction="http://tempuri.org/IService/SaveStationResponse")]
-        int SaveStation(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveStation", ReplyAction="http://tempuri.org/IService/SaveStationResponse")]
-        System.Threading.Tasks.Task<int> SaveStationAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
-        SOV.WcfService.Field.AmurServiceReference.Catalog SaveCatalog(long hSvc, SOV.WcfService.Field.AmurServiceReference.Catalog catalog);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
-        System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Catalog catalog);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
-        void ActualizeDataValue(long hSvc, long dataValueId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
-        System.Threading.Tasks.Task ActualizeDataValueAsync(long hSvc, long dataValueId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveValue", ReplyAction="http://tempuri.org/IService/SaveValueResponse")]
-        long SaveValue(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveValue", ReplyAction="http://tempuri.org/IService/SaveValueResponse")]
-        System.Threading.Tasks.Task<long> SaveValueAsync(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
-        long SaveDataValue(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
-        System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
-        void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
-        System.Threading.Tasks.Task SaveDataValueXSourceAsync(long hSvc, int dataValueId, long dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
-        long SaveDataSource(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
-        System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
-        void SaveDataValueList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
-        System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
-        void SaveDataForecastList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
-        System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
-        void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
-        System.Threading.Tasks.Task SaveDataPRoleAsync(long hSvc, long dvId, int roleId, bool isAQCApplied);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam", ReplyAction="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse")]
-        void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam", ReplyAction="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse")]
-        System.Threading.Tasks.Task SaveParserSysObjLastStartParamAsync(long hSvc, int sysObjId, string lastStartParam);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4747,6 +2432,118 @@ namespace SOV.WcfService.Field.AmurServiceReference {
                 base(binding, remoteAddress) {
         }
         
+        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesAll(long hSvc) {
+            return base.Channel.GetLegalEntityesAll(hSvc);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc) {
+            return base.Channel.GetLegalEntityesAllAsync(hSvc);
+        }
+        
+        public void SaveVariableCode(long hSvc, SOV.Amur.Meta.VariableCode vc) {
+            base.Channel.SaveVariableCode(hSvc, vc);
+        }
+        
+        public System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, SOV.Amur.Meta.VariableCode vc) {
+            return base.Channel.SaveVariableCodeAsync(hSvc, vc);
+        }
+        
+        public void SaveSiteAttribute(long hSvc, SOV.Amur.Meta.EntityAttrValue eav) {
+            base.Channel.SaveSiteAttribute(hSvc, eav);
+        }
+        
+        public System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, SOV.Amur.Meta.EntityAttrValue eav) {
+            return base.Channel.SaveSiteAttributeAsync(hSvc, eav);
+        }
+        
+        public int SaveSite(long hSvc, SOV.Amur.Meta.Site site) {
+            return base.Channel.SaveSite(hSvc, site);
+        }
+        
+        public System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, SOV.Amur.Meta.Site site) {
+            return base.Channel.SaveSiteAsync(hSvc, site);
+        }
+        
+        public SOV.Amur.Meta.Catalog SaveCatalog(long hSvc, SOV.Amur.Meta.Catalog catalog) {
+            return base.Channel.SaveCatalog(hSvc, catalog);
+        }
+        
+        public System.Threading.Tasks.Task<SOV.Amur.Meta.Catalog> SaveCatalogAsync(long hSvc, SOV.Amur.Meta.Catalog catalog) {
+            return base.Channel.SaveCatalogAsync(hSvc, catalog);
+        }
+        
+        public void ActualizeDataValue(long hSvc, long dataValueId) {
+            base.Channel.ActualizeDataValue(hSvc, dataValueId);
+        }
+        
+        public System.Threading.Tasks.Task ActualizeDataValueAsync(long hSvc, long dataValueId) {
+            return base.Channel.ActualizeDataValueAsync(hSvc, dataValueId);
+        }
+        
+        public long SaveValue(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId) {
+            return base.Channel.SaveValue(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
+        }
+        
+        public System.Threading.Tasks.Task<long> SaveValueAsync(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId) {
+            return base.Channel.SaveValueAsync(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
+        }
+        
+        public long SaveDataValue(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv) {
+            return base.Channel.SaveDataValue(hSvc, dv);
+        }
+        
+        public System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv) {
+            return base.Channel.SaveDataValueAsync(hSvc, dv);
+        }
+        
+        public void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId) {
+            base.Channel.SaveDataValueXSource(hSvc, dataValueId, dataSourceId);
+        }
+        
+        public System.Threading.Tasks.Task SaveDataValueXSourceAsync(long hSvc, int dataValueId, long dataSourceId) {
+            return base.Channel.SaveDataValueXSourceAsync(hSvc, dataValueId, dataSourceId);
+        }
+        
+        public long SaveDataSource(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource) {
+            return base.Channel.SaveDataSource(hSvc, dataSource);
+        }
+        
+        public System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource) {
+            return base.Channel.SaveDataSourceAsync(hSvc, dataSource);
+        }
+        
+        public void SaveDataValueList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
+            base.Channel.SaveDataValueList(hSvc, dvs, dataSourceId);
+        }
+        
+        public System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
+            return base.Channel.SaveDataValueListAsync(hSvc, dvs, dataSourceId);
+        }
+        
+        public void SaveDataForecastList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs) {
+            base.Channel.SaveDataForecastList(hSvc, dvs);
+        }
+        
+        public System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs) {
+            return base.Channel.SaveDataForecastListAsync(hSvc, dvs);
+        }
+        
+        public void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied) {
+            base.Channel.SaveDataPRole(hSvc, dvId, roleId, isAQCApplied);
+        }
+        
+        public System.Threading.Tasks.Task SaveDataPRoleAsync(long hSvc, long dvId, int roleId, bool isAQCApplied) {
+            return base.Channel.SaveDataPRoleAsync(hSvc, dvId, roleId, isAQCApplied);
+        }
+        
+        public void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam) {
+            base.Channel.SaveParserSysObjLastStartParam(hSvc, sysObjId, lastStartParam);
+        }
+        
+        public System.Threading.Tasks.Task SaveParserSysObjLastStartParamAsync(long hSvc, int sysObjId, string lastStartParam) {
+            return base.Channel.SaveParserSysObjLastStartParamAsync(hSvc, sysObjId, lastStartParam);
+        }
+        
         public long Open(string userName, string password) {
             return base.Channel.Open(userName, password);
         }
@@ -4763,211 +2560,187 @@ namespace SOV.WcfService.Field.AmurServiceReference {
             return base.Channel.CloseAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds) {
             return base.Channel.GetMethods(hSvc, methodIds);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>> GetMethodsAsync(long hSvc, System.Collections.Generic.List<int> methodIds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Method>> GetMethodsAsync(long hSvc, System.Collections.Generic.List<int> methodIds) {
             return base.Channel.GetMethodsAsync(hSvc, methodIds);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationsByIndices(long hSvc, System.Collections.Generic.List<string> stationIndices) {
-            return base.Channel.GetStationsByIndices(hSvc, stationIndices);
+        public System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByCodes(long hSvc, System.Collections.Generic.List<string> siteIndices) {
+            return base.Channel.GetSitesByCodes(hSvc, siteIndices);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationsByIndicesAsync(long hSvc, System.Collections.Generic.List<string> stationIndices) {
-            return base.Channel.GetStationsByIndicesAsync(hSvc, stationIndices);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByCodesAsync(long hSvc, System.Collections.Generic.List<string> siteIndices) {
+            return base.Channel.GetSitesByCodesAsync(hSvc, siteIndices);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.MethodForecast GetParentFcsMethod(long hSvc, int methodId) {
+        public SOV.Amur.Meta.MethodForecast GetParentFcsMethod(long hSvc, int methodId) {
             return base.Channel.GetParentFcsMethod(hSvc, methodId);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.MethodForecast> GetParentFcsMethodAsync(long hSvc, int methodId) {
+        public System.Threading.Tasks.Task<SOV.Amur.Meta.MethodForecast> GetParentFcsMethodAsync(long hSvc, int methodId) {
             return base.Channel.GetParentFcsMethodAsync(hSvc, methodId);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
+        public System.Collections.Generic.Dictionary<int, SOV.Geo.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
             return base.Channel.GetSitesPoints(hSvc, siteIds, dateActual, siteAttrTypeIdLat, siteAttrTypeIdLon);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF> GetSitesPointsAsync(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, SOV.Geo.GeoPoint>> GetSitesPointsAsync(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
             return base.Channel.GetSitesPointsAsync(hSvc, siteIds, dateActual, siteAttrTypeIdLat, siteAttrTypeIdLon);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi GetGeoObjectsByStationIds(long hSvc, System.Collections.Generic.List<int> stationIds) {
-            return base.Channel.GetGeoObjectsByStationIds(hSvc, stationIds);
+        public System.Collections.Generic.Dictionary<int, SOV.Amur.Meta.GeoObject> GetGeoObjectsBySiteIds(long hSvc, System.Collections.Generic.List<int> stationIds) {
+            return base.Channel.GetGeoObjectsBySiteIds(hSvc, stationIds);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi> GetGeoObjectsByStationIdsAsync(long hSvc, System.Collections.Generic.List<int> stationIds) {
-            return base.Channel.GetGeoObjectsByStationIdsAsync(hSvc, stationIds);
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, SOV.Amur.Meta.GeoObject>> GetGeoObjectsBySiteIdsAsync(long hSvc, System.Collections.Generic.List<int> stationIds) {
+            return base.Channel.GetGeoObjectsBySiteIdsAsync(hSvc, stationIds);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType> GetSiteAttrTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.SiteAttrType> GetSiteAttrTypesAll(long hSvc) {
             return base.Channel.GetSiteAttrTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteAttrType>> GetSiteAttrTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteAttrType>> GetSiteAttrTypesAllAsync(long hSvc) {
             return base.Channel.GetSiteAttrTypesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east) {
             return base.Channel.GetSitesInBox(hSvc, south, north, west, east);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesInBoxAsync(long hSvc, double south, double north, double west, double east) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesInBoxAsync(long hSvc, double south, double north, double west, double east) {
             return base.Channel.GetSitesInBoxAsync(hSvc, south, north, west, east);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium> GetSampleMediumsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.SampleMedium> GetSampleMediumsAll(long hSvc) {
             return base.Channel.GetSampleMediumsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SampleMedium>> GetSampleMediumsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SampleMedium>> GetSampleMediumsAllAsync(long hSvc) {
             return base.Channel.GetSampleMediumsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
             return base.Channel.GetSitesAttrValues(hSvc, siteId, attrTypeId, dateActual);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValuesAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrValue>> GetSitesAttrValuesAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
             return base.Channel.GetSitesAttrValuesAsync(hSvc, siteId, attrTypeId, dateActual);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.Method GetMethod(long hSvc, int methodId) {
+        public SOV.Amur.Meta.Method GetMethod(long hSvc, int methodId) {
             return base.Channel.GetMethod(hSvc, methodId);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Method> GetMethodAsync(long hSvc, int methodId) {
+        public System.Threading.Tasks.Task<SOV.Amur.Meta.Method> GetMethodAsync(long hSvc, int methodId) {
             return base.Channel.GetMethodAsync(hSvc, methodId);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public SOV.Amur.Meta.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSiteAttrValue(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSiteAttrValueAsync(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public System.Threading.Tasks.Task<SOV.Amur.Meta.EntityAttrValue> GetSiteAttrValueAsync(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSiteAttrValueAsync(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSitesAttrValue(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.EntityAttrValue>> GetSitesAttrValueAsync(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrValue>> GetSitesAttrValueAsync(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSitesAttrValueAsync(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByType(long hSvc, int siteTypeId) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByType(long hSvc, int siteTypeId) {
             return base.Channel.GetSitesByType(hSvc, siteTypeId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByTypeAsync(long hSvc, int siteTypeId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByTypeAsync(long hSvc, int siteTypeId) {
             return base.Channel.GetSitesByTypeAsync(hSvc, siteTypeId);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByGroup(long hSvc, int siteGroupId) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByGroup(long hSvc, int siteGroupId) {
             return base.Channel.GetSitesByGroup(hSvc, siteGroupId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByGroupAsync(long hSvc, int siteGroupId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByGroupAsync(long hSvc, int siteGroupId) {
             return base.Channel.GetSitesByGroupAsync(hSvc, siteGroupId);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.Station GetStationByIndex(long hSvc, string index) {
-            return base.Channel.GetStationByIndex(hSvc, index);
+        public System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByAddrRegionIds(long hSvc, System.Collections.Generic.List<int> addrRegionIds) {
+            return base.Channel.GetSitesByAddrRegionIds(hSvc, addrRegionIds);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Station> GetStationByIndexAsync(long hSvc, string index) {
-            return base.Channel.GetStationByIndexAsync(hSvc, index);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByAddrRegionIdsAsync(long hSvc, System.Collections.Generic.List<int> addrRegionIds) {
+            return base.Channel.GetSitesByAddrRegionIdsAsync(hSvc, addrRegionIds);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationsByList(long hSvc, System.Collections.Generic.List<int> stationIdList) {
-            return base.Channel.GetStationsByList(hSvc, stationIdList);
+        public System.Collections.Generic.List<SOV.Amur.Meta.SiteType> GetSiteTypes(long hSvc) {
+            return base.Channel.GetSiteTypes(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationsByListAsync(long hSvc, System.Collections.Generic.List<int> stationIdList) {
-            return base.Channel.GetStationsByListAsync(hSvc, stationIdList);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteType>> GetSiteTypesAsync(long hSvc) {
+            return base.Channel.GetSiteTypesAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station> GetStationByAddrRegion(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId) {
-            return base.Channel.GetStationByAddrRegion(hSvc, addrRegionId, stationTypeId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Station>> GetStationByAddrRegionAsync(long hSvc, int addrRegionId, System.Nullable<int> stationTypeId) {
-            return base.Channel.GetStationByAddrRegionAsync(hSvc, addrRegionId, stationTypeId);
-        }
-        
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType> GetStationTypes(long hSvc) {
-            return base.Channel.GetStationTypes(hSvc);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.StationType>> GetStationTypesAsync(long hSvc) {
-            return base.Channel.GetStationTypesAsync(hSvc);
-        }
-        
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByStation(long hSvc, int stationId, System.Nullable<int> siteTypeId) {
-            return base.Channel.GetSitesByStation(hSvc, stationId, siteTypeId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByStationAsync(long hSvc, int stationId, System.Nullable<int> siteTypeId) {
-            return base.Channel.GetSitesByStationAsync(hSvc, stationId, siteTypeId);
-        }
-        
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList) {
             return base.Channel.GetSitesByList(hSvc, siteIdList);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Site>> GetSitesByListAsync(long hSvc, System.Collections.Generic.List<int> siteIdList) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Site>> GetSitesByListAsync(long hSvc, System.Collections.Generic.List<int> siteIdList) {
             return base.Channel.GetSitesByListAsync(hSvc, siteIdList);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList) {
             return base.Channel.GetVariablesByList(hSvc, variableIdList);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesByListAsync(long hSvc, System.Collections.Generic.List<int> variableIdList) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Variable>> GetVariablesByListAsync(long hSvc, System.Collections.Generic.List<int> variableIdList) {
             return base.Channel.GetVariablesByListAsync(hSvc, variableIdList);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.Variable GetVariableById(long hSvc, int variableId) {
+        public SOV.Amur.Meta.Variable GetVariableById(long hSvc, int variableId) {
             return base.Channel.GetVariableById(hSvc, variableId);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariableByIdAsync(long hSvc, int variableId) {
+        public System.Threading.Tasks.Task<SOV.Amur.Meta.Variable> GetVariableByIdAsync(long hSvc, int variableId) {
             return base.Channel.GetVariableByIdAsync(hSvc, variableId);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
+        public SOV.Amur.Meta.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
             return base.Channel.GetVariableByKey(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariableByKeyAsync(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
+        public System.Threading.Tasks.Task<SOV.Amur.Meta.Variable> GetVariableByKeyAsync(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
             return base.Channel.GetVariableByKeyAsync(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
             return base.Channel.GetVariables(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAsync(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Variable>> GetVariablesAsync(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
             return base.Channel.GetVariablesAsync(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable> GetVariablesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Variable> GetVariablesAll(long hSvc) {
             return base.Channel.GetVariablesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Variable>> GetVariablesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Variable>> GetVariablesAllAsync(long hSvc) {
             return base.Channel.GetVariablesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType> GetDataTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.DataType> GetDataTypesAll(long hSvc) {
             return base.Channel.GetDataTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataType>> GetDataTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.DataType>> GetDataTypesAllAsync(long hSvc) {
             return base.Channel.GetDataTypesAllAsync(hSvc);
         }
         
@@ -4979,115 +2752,115 @@ namespace SOV.WcfService.Field.AmurServiceReference {
             return base.Channel.GetFlagAQCAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory> GetGeneralCategoryesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.GeneralCategory> GetGeneralCategoryesAll(long hSvc) {
             return base.Channel.GetGeneralCategoryesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeneralCategory>> GetGeneralCategoryesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.GeneralCategory>> GetGeneralCategoryesAllAsync(long hSvc) {
             return base.Channel.GetGeneralCategoryesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject> GetGeoObjectsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.GeoObject> GetGeoObjectsAll(long hSvc) {
             return base.Channel.GetGeoObjectsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoObject>> GetGeoObjectsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.GeoObject>> GetGeoObjectsAllAsync(long hSvc) {
             return base.Channel.GetGeoObjectsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType> GetGeoObjectTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.GeoType> GetGeoObjectTypesAll(long hSvc) {
             return base.Channel.GetGeoObjectTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.GeoType>> GetGeoObjectTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.GeoType>> GetGeoObjectTypesAllAsync(long hSvc) {
             return base.Channel.GetGeoObjectTypesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone> GetMeteoZonesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.MeteoZone> GetMeteoZonesAll(long hSvc) {
             return base.Channel.GetMeteoZonesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MeteoZone>> GetMeteoZonesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.MeteoZone>> GetMeteoZonesAllAsync(long hSvc) {
             return base.Channel.GetMeteoZonesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method> GetMethodsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Method> GetMethodsAll(long hSvc) {
             return base.Channel.GetMethodsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Method>> GetMethodsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Method>> GetMethodsAllAsync(long hSvc) {
             return base.Channel.GetMethodsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast> GetMethodForecastsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.MethodForecast> GetMethodForecastsAll(long hSvc) {
             return base.Channel.GetMethodForecastsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.MethodForecast>> GetMethodForecastsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.MethodForecast>> GetMethodForecastsAllAsync(long hSvc) {
             return base.Channel.GetMethodForecastsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType> GetOffsetTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.OffsetType> GetOffsetTypesAll(long hSvc) {
             return base.Channel.GetOffsetTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.OffsetType>> GetOffsetTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.OffsetType>> GetOffsetTypesAllAsync(long hSvc) {
             return base.Channel.GetOffsetTypesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByLeftSite(hSvc, siteId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByLeftSiteAsync(long hSvc, int siteId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteXSite>> GetSiteXSitesByLeftSiteAsync(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByLeftSiteAsync(hSvc, siteId);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByRightSite(hSvc, siteId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSite>> GetSiteXSitesByRightSiteAsync(long hSvc, int siteId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteXSite>> GetSiteXSitesByRightSiteAsync(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByRightSiteAsync(hSvc, siteId);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId) {
             return base.Channel.GetSiteXSiteTypesAll(hSvc, siteId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.SiteXSiteType>> GetSiteXSiteTypesAllAsync(long hSvc, int siteId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.SiteXSiteType>> GetSiteXSiteTypesAllAsync(long hSvc, int siteId) {
             return base.Channel.GetSiteXSiteTypesAllAsync(hSvc, siteId);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit> GetUnitsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Unit> GetUnitsAll(long hSvc) {
             return base.Channel.GetUnitsAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Unit>> GetUnitsAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Unit>> GetUnitsAllAsync(long hSvc) {
             return base.Channel.GetUnitsAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType> GetValueTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.ValueType> GetValueTypesAll(long hSvc) {
             return base.Channel.GetValueTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.ValueType>> GetValueTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.ValueType>> GetValueTypesAllAsync(long hSvc) {
             return base.Channel.GetValueTypesAllAsync(hSvc);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode> GetVariableCodesAll(long hSvc, int variableId) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.VariableCode> GetVariableCodesAll(long hSvc, int variableId) {
             return base.Channel.GetVariableCodesAll(hSvc, variableId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableCode>> GetVariableCodesAllAsync(long hSvc, int variableId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.VariableCode>> GetVariableCodesAllAsync(long hSvc, int variableId) {
             return base.Channel.GetVariableCodesAllAsync(hSvc, variableId);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType> GetVariableTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.VariableType> GetVariableTypesAll(long hSvc) {
             return base.Channel.GetVariableTypesAll(hSvc);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.VariableType>> GetVariableTypesAllAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.VariableType>> GetVariableTypesAllAsync(long hSvc) {
             return base.Channel.GetVariableTypesAllAsync(hSvc);
         }
         
@@ -5099,11 +2872,11 @@ namespace SOV.WcfService.Field.AmurServiceReference {
             return base.Channel.ExistsDataForecastsAsync(hSvc, catalogIds, dateIni);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
+        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
             return base.Channel.GetCurvesBySites(hSvc, sitesIds, variableIdX, variableIdY, curve_seria_type_id, seriaDateSS, seriaDateSF);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl> GetCurvesBySitesAsync(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Curve>>> GetCurvesBySitesAsync(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
             return base.Channel.GetCurvesBySitesAsync(hSvc, sitesIds, variableIdX, variableIdY, curve_seria_type_id, seriaDateSS, seriaDateSF);
         }
         
@@ -5115,27 +2888,27 @@ namespace SOV.WcfService.Field.AmurServiceReference {
             return base.Channel.GetCurveByCatalogAsync(hSvc, catalog_id_x, catalog_id_y, curve_seria_type_id, seriaDateSS, seriaDateSF);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
+        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
             return base.Channel.GetDataForecastsByIdList(hSvc, catalogIds, dateFcsS, dateFcsF, fcsLag, isDateFcs);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl> GetDataForecastsByIdListAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast>>> GetDataForecastsByIdListAsync(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
             return base.Channel.GetDataForecastsByIdListAsync(hSvc, catalogIds, dateFcsS, dateFcsF, fcsLag, isDateFcs);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
+        public System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
             return base.Channel.GetDataSources(hSvc, dataValueIds);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl> GetDataSourcesAsync(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<long, SOV.WcfService.Field.AmurServiceReference.DataSource>> GetDataSourcesAsync(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
             return base.Channel.GetDataSourcesAsync(hSvc, dataValueIds);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
+        public System.Collections.Generic.Dictionary<SOV.Amur.Meta.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
             return base.Channel.GetDataValues(hSvc, dateS, dateF, isDateLOC, siteId, variableId, methodId, sourceId, offsetTypeId, offsetValue, flagAQC, isActualValueOnly, isSelectDeleted);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr> GetDataValuesAsync(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<SOV.Amur.Meta.Catalog, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue>>> GetDataValuesAsync(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
             return base.Channel.GetDataValuesAsync(hSvc, dateS, dateF, isDateLOC, siteId, variableId, methodId, sourceId, offsetTypeId, offsetValue, flagAQC, isActualValueOnly, isSelectDeleted);
         }
         
@@ -5147,27 +2920,27 @@ namespace SOV.WcfService.Field.AmurServiceReference {
             return base.Channel.GetDataForecastsAsync(hSvc, catalogId, dateFcsS, dateFcsF, fcsLag, isDateFcs);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId) {
             return base.Channel.GetCatalogListById(hSvc, ctlId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListByIdAsync(long hSvc, System.Collections.Generic.List<int> ctlId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Catalog>> GetCatalogListByIdAsync(long hSvc, System.Collections.Generic.List<int> ctlId) {
             return base.Channel.GetCatalogListByIdAsync(hSvc, ctlId);
         }
         
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
+        public System.Collections.Generic.List<SOV.Amur.Meta.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
             return base.Channel.GetCatalogList(hSvc, siteId, varId, methodId, sourceId, offsetTypeId, offsetValue);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.Catalog>> GetCatalogListAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.Amur.Meta.Catalog>> GetCatalogListAsync(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
             return base.Channel.GetCatalogListAsync(hSvc, siteId, varId, methodId, sourceId, offsetTypeId, offsetValue);
         }
         
-        public SOV.WcfService.Field.AmurServiceReference.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
+        public SOV.Amur.Meta.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
             return base.Channel.GetCatalog(hSvc, siteId, varId, offsetTypeId, methodId, sourceId, offsetValue);
         }
         
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Catalog> GetCatalogAsync(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
+        public System.Threading.Tasks.Task<SOV.Amur.Meta.Catalog> GetCatalogAsync(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
             return base.Channel.GetCatalogAsync(hSvc, siteId, varId, offsetTypeId, methodId, sourceId, offsetValue);
         }
         
@@ -5281,134 +3054,6 @@ namespace SOV.WcfService.Field.AmurServiceReference {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesByIdAsync(long hSvc, System.Collections.Generic.List<int> leIds) {
             return base.Channel.GetLegalEntityesByIdAsync(hSvc, leIds);
-        }
-        
-        public System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity> GetLegalEntityesAll(long hSvc) {
-            return base.Channel.GetLegalEntityesAll(hSvc);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc) {
-            return base.Channel.GetLegalEntityesAllAsync(hSvc);
-        }
-        
-        public void SaveVariableCode(long hSvc, SOV.WcfService.Field.AmurServiceReference.VariableCode vc) {
-            base.Channel.SaveVariableCode(hSvc, vc);
-        }
-        
-        public System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.VariableCode vc) {
-            return base.Channel.SaveVariableCodeAsync(hSvc, vc);
-        }
-        
-        public void UpdateStation(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station) {
-            base.Channel.UpdateStation(hSvc, station);
-        }
-        
-        public System.Threading.Tasks.Task UpdateStationAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station) {
-            return base.Channel.UpdateStationAsync(hSvc, station);
-        }
-        
-        public void SaveSiteAttribute(long hSvc, SOV.WcfService.Field.AmurServiceReference.EntityAttrValue eav) {
-            base.Channel.SaveSiteAttribute(hSvc, eav);
-        }
-        
-        public System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.EntityAttrValue eav) {
-            return base.Channel.SaveSiteAttributeAsync(hSvc, eav);
-        }
-        
-        public int SaveSite(long hSvc, SOV.WcfService.Field.AmurServiceReference.Site site) {
-            return base.Channel.SaveSite(hSvc, site);
-        }
-        
-        public System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Site site) {
-            return base.Channel.SaveSiteAsync(hSvc, site);
-        }
-        
-        public int SaveStation(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station) {
-            return base.Channel.SaveStation(hSvc, station);
-        }
-        
-        public System.Threading.Tasks.Task<int> SaveStationAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Station station) {
-            return base.Channel.SaveStationAsync(hSvc, station);
-        }
-        
-        public SOV.WcfService.Field.AmurServiceReference.Catalog SaveCatalog(long hSvc, SOV.WcfService.Field.AmurServiceReference.Catalog catalog) {
-            return base.Channel.SaveCatalog(hSvc, catalog);
-        }
-        
-        public System.Threading.Tasks.Task<SOV.WcfService.Field.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.Catalog catalog) {
-            return base.Channel.SaveCatalogAsync(hSvc, catalog);
-        }
-        
-        public void ActualizeDataValue(long hSvc, long dataValueId) {
-            base.Channel.ActualizeDataValue(hSvc, dataValueId);
-        }
-        
-        public System.Threading.Tasks.Task ActualizeDataValueAsync(long hSvc, long dataValueId) {
-            return base.Channel.ActualizeDataValueAsync(hSvc, dataValueId);
-        }
-        
-        public long SaveValue(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId) {
-            return base.Channel.SaveValue(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
-        }
-        
-        public System.Threading.Tasks.Task<long> SaveValueAsync(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId) {
-            return base.Channel.SaveValueAsync(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
-        }
-        
-        public long SaveDataValue(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv) {
-            return base.Channel.SaveDataValue(hSvc, dv);
-        }
-        
-        public System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataValue dv) {
-            return base.Channel.SaveDataValueAsync(hSvc, dv);
-        }
-        
-        public void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId) {
-            base.Channel.SaveDataValueXSource(hSvc, dataValueId, dataSourceId);
-        }
-        
-        public System.Threading.Tasks.Task SaveDataValueXSourceAsync(long hSvc, int dataValueId, long dataSourceId) {
-            return base.Channel.SaveDataValueXSourceAsync(hSvc, dataValueId, dataSourceId);
-        }
-        
-        public long SaveDataSource(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource) {
-            return base.Channel.SaveDataSource(hSvc, dataSource);
-        }
-        
-        public System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, SOV.WcfService.Field.AmurServiceReference.DataSource dataSource) {
-            return base.Channel.SaveDataSourceAsync(hSvc, dataSource);
-        }
-        
-        public void SaveDataValueList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
-            base.Channel.SaveDataValueList(hSvc, dvs, dataSourceId);
-        }
-        
-        public System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
-            return base.Channel.SaveDataValueListAsync(hSvc, dvs, dataSourceId);
-        }
-        
-        public void SaveDataForecastList(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs) {
-            base.Channel.SaveDataForecastList(hSvc, dvs);
-        }
-        
-        public System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<SOV.WcfService.Field.AmurServiceReference.DataForecast> dvs) {
-            return base.Channel.SaveDataForecastListAsync(hSvc, dvs);
-        }
-        
-        public void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied) {
-            base.Channel.SaveDataPRole(hSvc, dvId, roleId, isAQCApplied);
-        }
-        
-        public System.Threading.Tasks.Task SaveDataPRoleAsync(long hSvc, long dvId, int roleId, bool isAQCApplied) {
-            return base.Channel.SaveDataPRoleAsync(hSvc, dvId, roleId, isAQCApplied);
-        }
-        
-        public void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam) {
-            base.Channel.SaveParserSysObjLastStartParam(hSvc, sysObjId, lastStartParam);
-        }
-        
-        public System.Threading.Tasks.Task SaveParserSysObjLastStartParamAsync(long hSvc, int sysObjId, string lastStartParam) {
-            return base.Channel.SaveParserSysObjLastStartParamAsync(hSvc, sysObjId, lastStartParam);
         }
     }
 }

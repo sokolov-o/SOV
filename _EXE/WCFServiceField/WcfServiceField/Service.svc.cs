@@ -8,6 +8,8 @@ using System.Text;
 using System.Configuration;
 using System.Diagnostics;
 using SOV.WcfService.Field.AmurServiceReference;
+using SOV.Amur.Meta;
+
 
 namespace SOV.WcfService.Field
 {
@@ -233,7 +235,7 @@ namespace SOV.WcfService.Field
 
             // GET SITES POINTS 4 DATE_INI
 
-            Dictionary<int, AmurServiceReference.GeoPoint> pointXsites1 = _amurClient.GetSitesPoints(_amurServiceHandle,
+            Dictionary<int,SOV.Geo.GeoPoint> pointXsites1 = _amurClient.GetSitesPoints(_amurServiceHandle,
                 pointCatalogs.Select(x => x.SiteId).Distinct().ToList(), dateIni, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
             Dictionary<int, Geo.GeoPoint> pointXsites = new Dictionary<int, Geo.GeoPoint>();
             foreach (var item in pointXsites1)
@@ -288,7 +290,7 @@ namespace SOV.WcfService.Field
         }
 
         public double[/*leadTime*/][/*point*/][/*field catalog*/] GetValuesAtCoords(long hSvc,
-            DateTime dateIni, List<GeoPoint> points, List<Catalog> fieldCatalogs,
+            DateTime dateIni, List<Geo.GeoPoint> points, List<Catalog> fieldCatalogs,
             Geo.EnumPointNearestType nearestType, Geo.EnumDistanceType distanceType)
         {
             // CHECK INPUT

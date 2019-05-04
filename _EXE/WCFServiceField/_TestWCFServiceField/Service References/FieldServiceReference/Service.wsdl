@@ -10,12 +10,6 @@
       <xsd:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SOV" />
       <xsd:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
       <xsd:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
-      <xsd:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SOV.Social" />
-      <xsd:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" />
-      <xsd:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
-      <xsd:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" />
-      <xsd:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://localhost:8010/Service.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/System.Reflection" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService_Open_InputMessage">

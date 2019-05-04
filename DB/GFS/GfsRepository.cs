@@ -221,7 +221,7 @@ namespace SOV.DB
                 }
                 return File.OpenRead(tempFileName);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return null;
@@ -298,26 +298,29 @@ namespace SOV.DB
             Field[][] ret = SelectFields(g2filter, dateIni, predictTime, (object)gr2Truncate == null ? null : new List<GeoRectangle>() { gr2Truncate });
             return ret[0];
         }
-        public Field[/*Georectangle index*/][/*Grib2Filter index*/] SelectFields(List<Grib2Filter> g2filter, DateTime dateIni, int predictTime, List<GeoRectangle> grs2Truncate)
+        public Field[/*Georectangle index*/][/*Grib2Filter index*/] SelectFields(List<Grib2Filter> g2filter, DateTime dateIni, int leadTime, List<GeoRectangle> grs2Truncate)
         {
+            // READ GRIB FILE 
+            Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] gribData = Select(g2filter, dateIni, leadTime);
+            if (gribData == null)
+                return null;
+
+            List<Field> fields = GFS.ToFields(gribData);
+            if (fields.Count == 0)
+                return null;
+
             Field[][] ret = null;
-
-            List<Field> fields = GFS.ToFields(Select(g2filter, dateIni, predictTime));
-
-            if (fields.Count > 0)
+            if ((object)grs2Truncate != null)
             {
-                if ((object)grs2Truncate != null)
+                ret = new Field[grs2Truncate.Count][];
+                for (int i = 0; i < grs2Truncate.Count; i++)
                 {
-                    ret = new Field[grs2Truncate.Count][];
-                    for (int i = 0; i < grs2Truncate.Count; i++)
-                    {
-                        ret[i] = Field.Truncate(fields, grs2Truncate[i]);
-                    }
+                    ret[i] = Field.Truncate(fields, grs2Truncate[i]);
                 }
-                else
-                {
-                    ret = new Field[][] { fields.ToArray() };
-                }
+            }
+            else
+            {
+                ret = new Field[][] { fields.ToArray() };
             }
             return ret;
         }

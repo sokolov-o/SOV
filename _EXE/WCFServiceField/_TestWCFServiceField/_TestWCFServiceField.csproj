@@ -204,19 +204,10 @@
     <None Include="Service References\FieldServiceReference\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FieldServiceReference\Service10.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\FieldServiceReference\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FieldServiceReference\Service12.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service13.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FieldServiceReference\Service3.xsd">
@@ -225,19 +216,10 @@
     <None Include="Service References\FieldServiceReference\Service4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FieldServiceReference\Service5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service6.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\FieldServiceReference\Service7.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FieldServiceReference\Service8.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service9.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FieldServiceReference\_TestWCFServiceField.FieldServiceReference.Field.datasource">
