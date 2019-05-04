@@ -36,9 +36,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Threading.Tasks.Extensions">
-      <HintPath>..\..\Amur.20\packages\System.Threading.Tasks.Extensions.4.3.0\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,7 +47,6 @@
     <Compile Include="MessageTypeRepository.cs" />
     <Compile Include="ProbCatalogRepository.cs" />
     <Compile Include="ProbCatalogPileRepository.cs" />
-    <Compile Include="_DELME_DataFcsRepository.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="ProbRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

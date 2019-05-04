@@ -111,8 +111,8 @@ namespace SOV.DB
         }
         //////private string GetPath()
         //////{
-        //////    if (_gfsDxDy == 0.5) return FERHRI.DB.Properties.Settings.Default.GFSFTPPath05full;
-        //////    if (_gfsDxDy == 0.25) return FERHRI.DB.Properties.Settings.Default.GFSFTPPath025;
+        //////    if (_gfsDxDy == 0.5) return SOV.DB.Properties.Settings.Default.GFSFTPPath05full;
+        //////    if (_gfsDxDy == 0.25) return SOV.DB.Properties.Settings.Default.GFSFTPPath025;
         //////    throw new Exception("Unknown GFS path for Dx = " + _gfsDxDy);
         //////}
 

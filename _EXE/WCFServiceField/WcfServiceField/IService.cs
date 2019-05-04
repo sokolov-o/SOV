@@ -48,17 +48,14 @@ namespace SOV.WcfService.Field
         /// Получить прогностические значения переменных для указанных записей каталога и заблаговременностей в указанных точках.
         /// </summary>
         /// <param name="dateIni"></param>
-        /// <param name="catalogIds"></param>
+        /// <param name="pointCatalogsId"></param>
         /// <param name="leadTimes"></param>
-        /// <param name="nearestType"></param>
-        /// <param name="distanceType"></param>
+        /// <param name="amurSiteAttrTypeLatId"></param>
+        /// <param name="amurSiteAttrTypeLonId"></param>
         /// <returns>double[/*leadTime*/][/*Catalog index*/]</returns>
         [OperationContract]
         double[/*leadTime*/][/*Catalog index*/] GetValuesAtPoints
             (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
-        //(long hSvc, DateTime dateIni, List<int> catalogIds, List<double> leadTimes,
-        //EnumPointNearestType nearestType, EnumDistanceType distanceType,
-        //int fcsSiteId, /*int fcsMethodId,*/ int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
         /// <summary>
         /// Получить все методы (производства данных и информации), обслуживаемые сервисом.
         /// Методы соответствуют методам технологии ДВНИГМИ "Амур".

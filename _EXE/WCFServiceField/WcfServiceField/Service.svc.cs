@@ -7,9 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using System.Configuration;
 using System.Diagnostics;
-
 using SOV.WcfService.Field.AmurServiceReference;
-//using SOV.Amur.Meta;
 
 namespace SOV.WcfService.Field
 {

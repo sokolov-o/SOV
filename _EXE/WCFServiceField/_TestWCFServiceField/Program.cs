@@ -86,8 +86,7 @@ namespace _TestWCFServiceField
                 int siteSysAttrTypeIdLon = 1001; // Долгота
 
                 double[/*leadTime*/][/*Catalog index*/] dataP = clientF.GetValuesAtPoints(hf,
-                    dateIni, catalogIds, leadTimeHours,
-                    fcsSiteId, siteSysAttrTypeIdLat, siteSysAttrTypeIdLon);
+                    dateIni, leadTimeHours, catalogIds, siteSysAttrTypeIdLat, siteSysAttrTypeIdLon);
 
                 PrintDataPoints(dateIni, leadTimeHours, catalogIds, dataP);
 

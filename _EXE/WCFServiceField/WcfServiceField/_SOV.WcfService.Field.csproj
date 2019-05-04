@@ -19,7 +19,7 @@
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
@@ -32,11 +32,13 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -66,28 +68,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.Catalog.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.DataType.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.EntityAttrValue.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.GeneralCategory.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.GeoObject.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.GeoType.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.MeteoZone.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.Method.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.MethodForecast.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.OffsetType.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.SampleMedium.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.Site.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.SiteAttrType.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.SiteXSite.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.SiteXSiteType.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.Station.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.StationType.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.Unit.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.ValueType.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.Variable.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.VariableCode.datasource" />
-    <Content Include="Properties\DataSources\FERHRI.Amur.Meta.VariableType.datasource" />
     <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.Addr.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -181,7 +161,6 @@
     <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.VariableType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\FERHRI 10.11.203.34.pubxml" />
     <Content Include="Service References\AmurServiceReference\FERHRI.WcfService.Field.AmurServiceReference.Curve.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

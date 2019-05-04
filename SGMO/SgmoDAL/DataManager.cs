@@ -61,16 +61,6 @@ namespace SOV.SGMO
                 return _TrackRepository;
             }
         }
-        private _DELME_DataFcsRepository __DELME_DataFcsRepository;
-        public _DELME_DataFcsRepository _DELME_DataFcsRepository
-        {
-            get
-            {
-                if (__DELME_DataFcsRepository == null)
-                    __DELME_DataFcsRepository = new _DELME_DataFcsRepository(this);
-                return __DELME_DataFcsRepository;
-            }
-        }
         private DataFcsNode0Repository _DataFcsNode0Repository;
         public DataFcsNode0Repository DataFcsNode0Repository
         {

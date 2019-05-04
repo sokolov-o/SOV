@@ -52,8 +52,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Track0.cs" />
     <Compile Include="Track1.cs" />
-    <Compile Include="_DELME_DataFcs0.cs" />
-    <Compile Include="_DELME_DataFcs1.cs" />
     <Compile Include="PileSet.cs" />
     <Compile Include="PileItem.cs" />
     <Compile Include="PileItemValue.cs" />
