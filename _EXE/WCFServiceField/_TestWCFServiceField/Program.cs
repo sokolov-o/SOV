@@ -51,7 +51,9 @@ namespace _TestWCFServiceField
                 };
                 GeoRectangle[] grs = new GeoRectangle[]
                 {
-                    new GeoRectangle() { NorthWest = new GeoPoint() { LatGrd = 60, LonGrd = 110 },  SouthEast = new GeoPoint() { LatGrd = 30, LonGrd = 130 } }
+                    new GeoRectangle() {
+                        NorthWest = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 60, LonGrd = 110 },
+                        SouthEast = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 30, LonGrd = 130 } }
                 };
                 //double[] leadTimeHours = method.MethodForecast.LeadTimesHours;
                 double[] leadTimeHours = new double[] { 0, 12, -24 };

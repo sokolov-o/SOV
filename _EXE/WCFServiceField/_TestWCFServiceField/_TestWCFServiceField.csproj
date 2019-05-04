@@ -197,47 +197,47 @@
     <None Include="Service References\AmurServiceReference\_TestWCFServiceField.AmurServiceReference.VariableType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\FieldServiceReference\Service1.wsdl" />
+    <None Include="Service References\FieldServiceReference\Service.wsdl" />
+    <None Include="Service References\FieldServiceReference\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service7.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\FieldServiceReference\Service8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FieldServiceReference\Service81.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service810.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service811.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service812.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service813.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service82.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service83.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service84.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service85.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service86.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service87.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service88.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service89.xsd">
+    <None Include="Service References\FieldServiceReference\Service9.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FieldServiceReference\_TestWCFServiceField.FieldServiceReference.Field.datasource">
@@ -255,18 +255,6 @@
     <WCFMetadataStorage Include="Service References\FieldServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\FieldServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FieldServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FieldServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\AmurServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -279,10 +267,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\AmurServiceReference\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\FieldServiceReference\Service.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AmurServiceReference\Service1.disco" />
+    <None Include="Service References\FieldServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FieldServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FieldServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
