@@ -763,15 +763,15 @@ namespace _TestWCFServiceField.FieldServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(double[][]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.GeoPoint>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, string[]>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.Curve[]>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.DataForecast[]>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(long[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, _TestWCFServiceField.FieldServiceReference.DataSource>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<_TestWCFServiceField.FieldServiceReference.Catalog, _TestWCFServiceField.FieldServiceReference.DataValue[]>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdName))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdClass))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdNameRus))]
@@ -1427,15 +1427,15 @@ namespace _TestWCFServiceField.FieldServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(double[][]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.GeoPoint>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, string[]>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.Curve[]>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.DataForecast[]>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(long[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, _TestWCFServiceField.FieldServiceReference.DataSource>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<_TestWCFServiceField.FieldServiceReference.Catalog, _TestWCFServiceField.FieldServiceReference.DataValue[]>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdClass))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdNameRus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdNames))]
@@ -1567,15 +1567,15 @@ namespace _TestWCFServiceField.FieldServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(double[][]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.GeoPoint>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintGeoPointmMEqxbZF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintGeoObjectvGMA3cSi))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, string[]>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.Curve[]>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.DataForecast[]>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(long[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, _TestWCFServiceField.FieldServiceReference.DataSource>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<_TestWCFServiceField.FieldServiceReference.Catalog, _TestWCFServiceField.FieldServiceReference.DataValue[]>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOflongDataSourcecuBgdOSl))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdName))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdClass))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdNameRus))]
@@ -1958,6 +1958,170 @@ namespace _TestWCFServiceField.FieldServiceReference {
                     this.UnitIdField = value;
                     this.RaisePropertyChanged("UnitId");
                 }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfintGeoPointmMEqxbZF", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfintGeoPointmMEqxbZF", KeyName="Key", ValueName="Value")]
+    [System.SerializableAttribute()]
+    public class ArrayOfKeyValueOfintGeoPointmMEqxbZF : System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.GeoPoint> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfintGeoObjectvGMA3cSi", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfintGeoObjectvGMA3cSi", KeyName="Key", ValueName="Value")]
+    [System.SerializableAttribute()]
+    public class ArrayOfKeyValueOfintGeoObjectvGMA3cSi : System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.GeoObject> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfintArrayOfCurvecuBgdOSl", KeyName="Key", ValueName="Value")]
+    [System.SerializableAttribute()]
+    public class ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl : System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.Curve[]> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfintArrayOfDataForecastcuBgdOSl", KeyName="Key", ValueName="Value")]
+    [System.SerializableAttribute()]
+    public class ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl : System.Collections.Generic.Dictionary<int, _TestWCFServiceField.FieldServiceReference.DataForecast[]> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOflongDataSourcecuBgdOSl", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOflongDataSourcecuBgdOSl", KeyName="Key", ValueName="Value")]
+    [System.SerializableAttribute()]
+    public class ArrayOfKeyValueOflongDataSourcecuBgdOSl : System.Collections.Generic.Dictionary<long, _TestWCFServiceField.FieldServiceReference.DataSource> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr", Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays", ItemName="KeyValueOfCatalogArrayOfDataValueV1pI2YJr", KeyName="Key", ValueName="Value")]
+    [System.SerializableAttribute()]
+    public class ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr : System.Collections.Generic.Dictionary<_TestWCFServiceField.FieldServiceReference.Catalog, _TestWCFServiceField.FieldServiceReference.DataValue[]> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Org", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
+    [System.SerializableAttribute()]
+    public partial class Org : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LegalEntityIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> StaffIdFirstFaceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LegalEntityId {
+            get {
+                return this.LegalEntityIdField;
+            }
+            set {
+                if ((this.LegalEntityIdField.Equals(value) != true)) {
+                    this.LegalEntityIdField = value;
+                    this.RaisePropertyChanged("LegalEntityId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> StaffIdFirstFace {
+            get {
+                return this.StaffIdFirstFaceField;
+            }
+            set {
+                if ((this.StaffIdFirstFaceField.Equals(value) != true)) {
+                    this.StaffIdFirstFaceField = value;
+                    this.RaisePropertyChanged("StaffIdFirstFace");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
+    [System.SerializableAttribute()]
+    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LegalEntityIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<char> SexField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LegalEntityId {
+            get {
+                return this.LegalEntityIdField;
+            }
+            set {
+                if ((this.LegalEntityIdField.Equals(value) != true)) {
+                    this.LegalEntityIdField = value;
+                    this.RaisePropertyChanged("LegalEntityId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<char> Sex {
+            get {
+                return this.SexField;
+            }
+            set {
+                if ((this.SexField.Equals(value) != true)) {
+                    this.SexField = value;
+                    this.RaisePropertyChanged("Sex");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -2647,163 +2811,6 @@ namespace _TestWCFServiceField.FieldServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Catalog", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Catalog : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int MethodIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OffsetTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double OffsetValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ParentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SiteIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SourceIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VariableIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int MethodId {
-            get {
-                return this.MethodIdField;
-            }
-            set {
-                if ((this.MethodIdField.Equals(value) != true)) {
-                    this.MethodIdField = value;
-                    this.RaisePropertyChanged("MethodId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OffsetTypeId {
-            get {
-                return this.OffsetTypeIdField;
-            }
-            set {
-                if ((this.OffsetTypeIdField.Equals(value) != true)) {
-                    this.OffsetTypeIdField = value;
-                    this.RaisePropertyChanged("OffsetTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double OffsetValue {
-            get {
-                return this.OffsetValueField;
-            }
-            set {
-                if ((this.OffsetValueField.Equals(value) != true)) {
-                    this.OffsetValueField = value;
-                    this.RaisePropertyChanged("OffsetValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ParentId {
-            get {
-                return this.ParentIdField;
-            }
-            set {
-                if ((this.ParentIdField.Equals(value) != true)) {
-                    this.ParentIdField = value;
-                    this.RaisePropertyChanged("ParentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SiteId {
-            get {
-                return this.SiteIdField;
-            }
-            set {
-                if ((this.SiteIdField.Equals(value) != true)) {
-                    this.SiteIdField = value;
-                    this.RaisePropertyChanged("SiteId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SourceId {
-            get {
-                return this.SourceIdField;
-            }
-            set {
-                if ((this.SourceIdField.Equals(value) != true)) {
-                    this.SourceIdField = value;
-                    this.RaisePropertyChanged("SourceId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VariableId {
-            get {
-                return this.VariableIdField;
-            }
-            set {
-                if ((this.VariableIdField.Equals(value) != true)) {
-                    this.VariableIdField = value;
-                    this.RaisePropertyChanged("VariableId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DataValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data")]
     [System.SerializableAttribute()]
     public partial class DataValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2929,128 +2936,6 @@ namespace _TestWCFServiceField.FieldServiceReference {
                 if ((this.ValueField.Equals(value) != true)) {
                     this.ValueField = value;
                     this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Org", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
-    [System.SerializableAttribute()]
-    public partial class Org : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int LegalEntityIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> StaffIdFirstFaceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int LegalEntityId {
-            get {
-                return this.LegalEntityIdField;
-            }
-            set {
-                if ((this.LegalEntityIdField.Equals(value) != true)) {
-                    this.LegalEntityIdField = value;
-                    this.RaisePropertyChanged("LegalEntityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> StaffIdFirstFace {
-            get {
-                return this.StaffIdFirstFaceField;
-            }
-            set {
-                if ((this.StaffIdFirstFaceField.Equals(value) != true)) {
-                    this.StaffIdFirstFaceField = value;
-                    this.RaisePropertyChanged("StaffIdFirstFace");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
-    [System.SerializableAttribute()]
-    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int LegalEntityIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<char> SexField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int LegalEntityId {
-            get {
-                return this.LegalEntityIdField;
-            }
-            set {
-                if ((this.LegalEntityIdField.Equals(value) != true)) {
-                    this.LegalEntityIdField = value;
-                    this.RaisePropertyChanged("LegalEntityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<char> Sex {
-            get {
-                return this.SexField;
-            }
-            set {
-                if ((this.SexField.Equals(value) != true)) {
-                    this.SexField = value;
-                    this.RaisePropertyChanged("Sex");
                 }
             }
         }
@@ -3570,6 +3455,163 @@ namespace _TestWCFServiceField.FieldServiceReference {
                 if ((object.ReferenceEquals(this.VariableNameField, value) != true)) {
                     this.VariableNameField = value;
                     this.RaisePropertyChanged("VariableName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Catalog", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class Catalog : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MethodIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OffsetTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double OffsetValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ParentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SiteIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SourceIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int VariableIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MethodId {
+            get {
+                return this.MethodIdField;
+            }
+            set {
+                if ((this.MethodIdField.Equals(value) != true)) {
+                    this.MethodIdField = value;
+                    this.RaisePropertyChanged("MethodId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OffsetTypeId {
+            get {
+                return this.OffsetTypeIdField;
+            }
+            set {
+                if ((this.OffsetTypeIdField.Equals(value) != true)) {
+                    this.OffsetTypeIdField = value;
+                    this.RaisePropertyChanged("OffsetTypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double OffsetValue {
+            get {
+                return this.OffsetValueField;
+            }
+            set {
+                if ((this.OffsetValueField.Equals(value) != true)) {
+                    this.OffsetValueField = value;
+                    this.RaisePropertyChanged("OffsetValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ParentId {
+            get {
+                return this.ParentIdField;
+            }
+            set {
+                if ((this.ParentIdField.Equals(value) != true)) {
+                    this.ParentIdField = value;
+                    this.RaisePropertyChanged("ParentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SiteId {
+            get {
+                return this.SiteIdField;
+            }
+            set {
+                if ((this.SiteIdField.Equals(value) != true)) {
+                    this.SiteIdField = value;
+                    this.RaisePropertyChanged("SiteId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SourceId {
+            get {
+                return this.SourceIdField;
+            }
+            set {
+                if ((this.SourceIdField.Equals(value) != true)) {
+                    this.SourceIdField = value;
+                    this.RaisePropertyChanged("SourceId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int VariableId {
+            get {
+                return this.VariableIdField;
+            }
+            set {
+                if ((this.VariableIdField.Equals(value) != true)) {
+                    this.VariableIdField = value;
+                    this.RaisePropertyChanged("VariableId");
                 }
             }
         }
@@ -4644,10 +4686,10 @@ namespace _TestWCFServiceField.FieldServiceReference {
         System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Field[][][]> GetFieldsInRectanglesAsync(long hSvc, System.DateTime dateIni, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, double[] leadTimes, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValuesAtPoints", ReplyAction="http://tempuri.org/IService/GetValuesAtPointsResponse")]
-        double[][] GetValuesAtPoints(long hSvc, System.DateTime dateIni, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
+        double[][] GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValuesAtPoints", ReplyAction="http://tempuri.org/IService/GetValuesAtPointsResponse")]
-        System.Threading.Tasks.Task<double[][]> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
+        System.Threading.Tasks.Task<double[][]> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
         _TestWCFServiceField.FieldServiceReference.Method[] GetMethods(long hSvc);
@@ -4715,12 +4757,12 @@ namespace _TestWCFServiceField.FieldServiceReference {
             return base.Channel.GetFieldsInRectanglesAsync(hSvc, dateIni, methodId, varoffs, leadTimes, grs);
         }
         
-        public double[][] GetValuesAtPoints(long hSvc, System.DateTime dateIni, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
-            return base.Channel.GetValuesAtPoints(hSvc, dateIni, pointCatalogsId, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
+        public double[][] GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
+            return base.Channel.GetValuesAtPoints(hSvc, dateIni, leadTimes, pointCatalogsId, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
         }
         
-        public System.Threading.Tasks.Task<double[][]> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
-            return base.Channel.GetValuesAtPointsAsync(hSvc, dateIni, pointCatalogsId, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
+        public System.Threading.Tasks.Task<double[][]> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
+            return base.Channel.GetValuesAtPointsAsync(hSvc, dateIni, leadTimes, pointCatalogsId, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
         }
         
         public _TestWCFServiceField.FieldServiceReference.Method[] GetMethods(long hSvc) {

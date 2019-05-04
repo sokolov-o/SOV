@@ -68,7 +68,8 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
         <xs:element minOccurs="0" name="dateIni" type="xs:dateTime" />
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="pointCatalogsId" nillable="true" type="q5:ArrayOfint" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="leadTimes" nillable="true" type="q5:ArrayOfdouble" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="pointCatalogsId" nillable="true" type="q6:ArrayOfint" />
         <xs:element minOccurs="0" name="amurSiteAttrTypeLatId" type="xs:int" />
         <xs:element minOccurs="0" name="amurSiteAttrTypeLonId" type="xs:int" />
       </xs:sequence>
@@ -77,7 +78,7 @@
   <xs:element name="GetValuesAtPointsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetValuesAtPointsResult" nillable="true" type="q6:ArrayOfArrayOfdouble" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetValuesAtPointsResult" nillable="true" type="q7:ArrayOfArrayOfdouble" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -91,7 +92,7 @@
   <xs:element name="GetMethodsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodsResult" nillable="true" type="q7:ArrayOfMethod" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodsResult" nillable="true" type="q8:ArrayOfMethod" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
