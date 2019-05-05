@@ -12,18 +12,22 @@ namespace _TestWCFServiceField
     {
         static string userName = "OSokolov";
         static string userPassword = "qq";
+        static AmurServiceReference.ServiceClient clientA;
+        static long ha;
+        static FieldServiceReference.ServiceClient clientF;
+        static long hf;
 
         static void Main(string[] args)
         {
             #region OPEN SERVICE'S
 
-            FieldServiceReference.ServiceClient clientF = new FieldServiceReference.ServiceClient();
+            clientF = new FieldServiceReference.ServiceClient();
             clientF.CloseByUserName(userName);
-            long hf = clientF.Open(userName, userPassword);
+            hf = clientF.Open(userName, userPassword);
             Console.WriteLine("ServiceFieldClient handle {0}.", hf);
 
-            AmurServiceReference.ServiceClient clientA = new AmurServiceReference.ServiceClient();
-            long ha = clientA.Open(userName, userPassword);
+            clientA = new AmurServiceReference.ServiceClient();
+            ha = clientA.Open(userName, userPassword);
             Console.WriteLine("AmurServiceFieldClient {0}.", ha);
 
             // INCORRECT OPEN SERVICE
@@ -58,7 +62,7 @@ namespace _TestWCFServiceField
                 //double[] leadTimeHours = method.MethodForecast.LeadTimesHours;
                 double[] leadTimeHours = new double[] { 0, 12, -24 };
 
-                List<AmurServiceReference.Catalog> catalogs = clientA.GetCatalogListById(ha, catalogIds.ToList());
+                List<Catalog> catalogs = clientA.GetCatalogListById(ha, catalogIds.ToList());
                 FieldServiceReference.Method method = clientF.GetMethods(hf).FirstOrDefault(x => x.Id == catalogs[0].MethodId);
                 if (method == null)
                     throw new Exception(string.Format("Запрошенный метод с кодом {0} не обслуживается сервисом."));
@@ -76,18 +80,18 @@ namespace _TestWCFServiceField
                 #endregion
 
                 #region GET VALUES AT POINTS
-
-                catalogIds = new int[]
-                {
-                      962748 // Ta, Владивосток, GFS 0.25
-                };
+                catalogs = clientA.GetCatalogList(ha,
+                    new List<int>() { 332 }, // Владивосток
+                    null,
+                    new List<int>() { 112 }, //Method  "Ближайший узел GFS 0.25"
+                    null, null, null
+                    );
+                catalogIds = catalogs.Select(x => x.Id).ToArray();
                 int fcsSiteId = 10344; // Земной шар
                 int siteSysAttrTypeIdLat = 1000; // Широта
                 int siteSysAttrTypeIdLon = 1001; // Долгота
 
-                double[/*leadTime*/][/*Catalog index*/] dataP = clientF.GetValuesAtPoints(hf,
-                    dateIni, leadTimeHours, catalogIds, siteSysAttrTypeIdLat, siteSysAttrTypeIdLon);
-
+                double[/*leadTime*/][/*Catalog index*/] dataP = clientF.GetValuesAtPoints(hf, dateIni, leadTimeHours, catalogIds, siteSysAttrTypeIdLat, siteSysAttrTypeIdLon);
                 PrintDataPoints(dateIni, leadTimeHours, catalogIds, dataP);
 
                 #endregion
@@ -114,6 +118,9 @@ namespace _TestWCFServiceField
                 Console.WriteLine("... no data.");
             else
             {
+                List<Catalog> catalogs = clientA.GetCatalogListById(ha, catalogIds.ToList());
+                List<Variable> variables = clientA.GetVariablesByList(ha, catalogs.Select(x => x.VariableId).ToList());
+
                 for (int i = 0; i < data.Length; i++)
                 {
                     Console.WriteLine("Lead time {0} h", leadTimeHours[i]);
@@ -123,11 +130,12 @@ namespace _TestWCFServiceField
                     else
                         for (int j = 0; j < data[i].Length; j++)
                         {
-                            Console.WriteLine("\tRegion {0}", grs[j].NorthWest.LatGrd + "x" + grs[j].NorthWest.LonGrd + "x" + grs[j].SouthEast.LatGrd + "x" + grs[j].SouthEast.LonGrd);
+                            Console.WriteLine("Region {0}", grs[j].NorthWest.LatGrd + "x" + grs[j].NorthWest.LonGrd + "x" + grs[j].SouthEast.LatGrd + "x" + grs[j].SouthEast.LonGrd);
                             for (int k = 0; k < data[i][j].Length; k++)
                             {
-                                Console.Write("\t\tCatalog {0}. Field nodes count {1}.", catalogIds[k],
-                                    data[i][j][k] == null ? 0 : data[i][j][k].Value.Length);
+                                Console.Write("Catalog {0} {2}. {1} field values.", catalogIds[k],
+                                    data[i][j][k] == null ? 0 : data[i][j][k].Value.Length,
+                                    variables.FirstOrDefault(y => y.Id == catalogs.FirstOrDefault(x => x.Id == catalogIds[k]).VariableId).NameRus);
                                 if (data[i][j][k] != null && data[i][j][k].Value.Length > 0)
                                     Console.Write(" Avg {0:.00}, max {1:.00}, min {2:.00}", data[i][j][k].Value.Average(), data[i][j][k].Value.Max(), data[i][j][k].Value.Min());
                                 Console.WriteLine();

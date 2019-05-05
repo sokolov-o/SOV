@@ -178,7 +178,12 @@ namespace SOV.WcfService.Field
         private void Check(List<Catalog> parentCatalogs, Method parentMethod, Catalog childCatalog)
         {
             if (parentCatalogs == null || parentCatalogs.Count == 0)
-                throw new Exception(string.Format("Для записи каталога {0} не найдена соответствующая ей запись каталога метода {1}.", childCatalog.Id, parentMethod.Id));
+            {
+                throw new Exception(string.Format("Для записи каталога [{0}] ({1}) не найдена соответствующая ей запись каталога метода [{2}/{3}].",
+                    string.Format("{0}.{1}.{2}.{3}.{4}.{5}.{6}", childCatalog.Id, childCatalog.SiteId, childCatalog.VariableId, childCatalog.MethodId, childCatalog.SourceId, childCatalog.OffsetTypeId, childCatalog.OffsetValue),
+                    _amurClient.GetVariableById(_amurServiceHandle, childCatalog.VariableId).NameRus,
+                    parentMethod.Name, parentMethod.Id));
+            }
             if (parentCatalogs.Count != 1)
                 throw new Exception(string.Format("Для записи каталога {0} найдено более одной записи каталога метода {2}. Всего найдено {1} записей, а должно быть 1.", childCatalog.Id, parentCatalogs.Count, parentMethod.Id));
         }
