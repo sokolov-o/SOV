@@ -20,6 +20,10 @@ namespace SOV.Amur.Meta
         [DataMember]
         public int? AddrRegionId { get; set; }
         [DataMember]
+        public double? Lat { get; set; }
+        [DataMember]
+        public double? Lon { get; set; }
+        [DataMember]
         public string Description { get; set; }
 
         public override string ToString()

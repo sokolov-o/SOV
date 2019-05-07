@@ -27,11 +27,10 @@
     <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="106b9d04-567c-458a-87ad-9c4b1dabb1e6" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?disco" />
     <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="14a3cad1-2e0b-40fa-bb8a-1918d4e175a5" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd6" />
     <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="324517f1-86c2-44d9-81bd-74d978ec5159" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service4.xsd" MetadataType="Schema" ID="557935ae-0b58-40f4-ac12-210308c6d806" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd1" />
     <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="830e1e59-6cc7-4372-a94f-9ceea25b253f" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?wsdl" />
     <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="e52a849c-c521-458e-9b33-efe7a2f2d5f9" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd9" />
     <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="8522df34-6c1f-4bca-9797-b7c4fd0a16b8" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd5" />
-    <MetadataFile FileName="Service4.xsd" MetadataType="Schema" ID="557935ae-0b58-40f4-ac12-210308c6d806" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service5.xsd" MetadataType="Schema" ID="9cd9fab5-a772-4cdf-9c44-03d47f951607" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd11" />
     <MetadataFile FileName="Service6.xsd" MetadataType="Schema" ID="f158827a-c6ac-42b2-8614-29e921942a8f" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd10" />
     <MetadataFile FileName="Service7.xsd" MetadataType="Schema" ID="480e7b93-f413-488a-9f87-9b88c04603e5" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd8" />
     <MetadataFile FileName="Service8.xsd" MetadataType="Schema" ID="a94cc604-adfc-4f2e-8bc1-57751bbb1fd3" SourceId="1" SourceUrl="http://localhost:8001/Service.svc?xsd=xsd4" />

@@ -423,25 +423,25 @@ namespace SOV.Amur.Service
         {
             return DataManagerMeta(hSvc).EntityAttrRepository.SelectAttrValuesActual("site", siteId, new List<int>(new int[] { siteAttrTypeId }), dateActual);
         }
-        public Dictionary<int, Geo.GeoPoint> GetSitesPoints(long hSvc, List<int> siteIds, DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon)
-        {
-            Dictionary<int, Geo.GeoPoint> ret = new Dictionary<int, Geo.GeoPoint>();
+        ////public Dictionary<int, Geo.GeoPoint> GetSitesPoints(long hSvc, List<int> siteIds, DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon)
+        ////{
+        ////    Dictionary<int, Geo.GeoPoint> ret = new Dictionary<int, Geo.GeoPoint>();
 
-            List<EntityAttrValue> eavs = GetSitesAttrValues(hSvc, siteIds, new List<int>() { siteAttrTypeIdLat, siteAttrTypeIdLon }, dateActual);
+        ////    List<EntityAttrValue> eavs = GetSitesAttrValues(hSvc, siteIds, new List<int>() { siteAttrTypeIdLat, siteAttrTypeIdLon }, dateActual);
 
-            foreach (var siteId in siteIds)
-            {
-                EntityAttrValue eavLat = eavs.FirstOrDefault(x => x.EntityId == siteId && x.AttrTypeId == siteAttrTypeIdLat);
-                EntityAttrValue eavLon = eavs.FirstOrDefault(x => x.EntityId == siteId && x.AttrTypeId == siteAttrTypeIdLon);
+        ////    foreach (var siteId in siteIds)
+        ////    {
+        ////        EntityAttrValue eavLat = eavs.FirstOrDefault(x => x.EntityId == siteId && x.AttrTypeId == siteAttrTypeIdLat);
+        ////        EntityAttrValue eavLon = eavs.FirstOrDefault(x => x.EntityId == siteId && x.AttrTypeId == siteAttrTypeIdLon);
 
-                Geo.GeoPoint point = null;
-                if (eavLat != null && eavLon != null)
-                    point = new Geo.GeoPoint(double.Parse(eavLat.Value), double.Parse(eavLon.Value));
+        ////        Geo.GeoPoint point = null;
+        ////        if (eavLat != null && eavLon != null)
+        ////            point = new Geo.GeoPoint(double.Parse(eavLat.Value), double.Parse(eavLon.Value));
 
-                ret.Add(siteId, point);
-            }
-            return ret;
-        }
+        ////        ret.Add(siteId, point);
+        ////    }
+        ////    return ret;
+        ////}
         public List<EntityAttrValue> GetSitesAttrValues(long hSvc, List<int> siteId, List<int> attrTypeId = null, DateTime? dateActual = null)
         {
             return DataManagerMeta(hSvc).EntityAttrRepository.SelectAttrValuesActual("site", siteId, attrTypeId, dateActual);

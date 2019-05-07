@@ -8,7 +8,7 @@ namespace SOV.Amur.Meta
 {
     public class SiteRepository : BaseRepository<Site>
     {
-        internal SiteRepository(Common.ADbNpgsql db) : base(db, "meta.site") { }
+        internal SiteRepository(Common.ADbNpgsql db) : base(db, "meta.site_latlon_view") { }
 
         public static List<Site> GetCash()
         {
@@ -25,7 +25,9 @@ namespace SOV.Amur.Meta
                 Description = ADbNpgsql.GetValueString(rdr, "description"),
                 AddrRegionId = ADbNpgsql.GetValueInt(rdr, "addr_region_id"),
                 Name = rdr["name"].ToString(),
-                OrgId = ADbNpgsql.GetValueInt(rdr, "org_id")
+                OrgId = ADbNpgsql.GetValueInt(rdr, "org_id"),
+                Lat = ADbNpgsql.GetValueDouble(rdr, "latitude"),
+                Lon = ADbNpgsql.GetValueDouble(rdr, "longitude")
             };
         }
 
@@ -36,17 +38,26 @@ namespace SOV.Amur.Meta
         /// <returns>New id.</returns>
         public int Insert(Site site)
         {
-            var fields = new Dictionary<string, object>()
+            string tableNameCur = TableName;
+            try
             {
-                {"parent_id", site.ParentId},
-                {"site_type_id", site.TypeId},
-                {"code", site.Code},
-                {"description", site.Description},
-                {"addr_region_id",site.AddrRegionId },
-                {"org_id" , site.OrgId},
-                {"name",site.Name }
-            };
-            return InsertWithReturn(fields);
+                TableName = "meta.site";
+                var fields = new Dictionary<string, object>()
+                {
+                    {"parent_id", site.ParentId},
+                    {"site_type_id", site.TypeId},
+                    {"code", site.Code},
+                    {"description", site.Description},
+                    {"addr_region_id",site.AddrRegionId },
+                    {"org_id" , site.OrgId},
+                    {"name",site.Name }
+                };
+                return InsertWithReturn(fields);
+            }
+            finally
+            {
+                TableName = tableNameCur;
+            }
         }
         /// <summary>
         /// Изменить тип, привязку к станции и описание пункта.
@@ -55,7 +66,11 @@ namespace SOV.Amur.Meta
         /// <returns></returns>
         public void Update(Site site)
         {
-            var fields = new Dictionary<string, object>()
+            string tableNameCur = TableName;
+            try
+            {
+                TableName = "meta.site";
+                var fields = new Dictionary<string, object>()
             {
                 {"id" , site.Id},
                 {"parent_id", site.ParentId},
@@ -66,7 +81,13 @@ namespace SOV.Amur.Meta
                 {"org_id" , site.OrgId},
                 {"name",site.Name }
             };
-            Update(fields);
+                Update(fields);
+
+            }
+            finally
+            {
+                TableName = tableNameCur;
+            }
         }
 
         public List<Site> Select(SiteFilter siteFilter)
@@ -93,8 +114,7 @@ namespace SOV.Amur.Meta
         public List<Site> SelectExtent(double south, double north, double west, double east)
         {
             var fields = new Dictionary<string, object>() { { "south", south }, { "north", north }, { "west", west }, { "east", east } };
-            string sql = "Select * From meta.select_site_with_actual_attr" +
-                         "(null::integer[], now()::timestamp) " +
+            string sql = "Select * from " + TableName +
                          "Where lat between :south and :north and lon between :west and :east";
             return ExecQuery<Site>(sql, fields);
         }

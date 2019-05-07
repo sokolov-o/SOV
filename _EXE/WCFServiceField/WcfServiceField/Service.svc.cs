@@ -235,13 +235,21 @@ namespace SOV.WcfService.Field
 
             // GET SITES POINTS 4 DATE_INI
 
-            Dictionary<int,SOV.Geo.GeoPoint> pointXsites1 = _amurClient.GetSitesPoints(_amurServiceHandle,
-                pointCatalogs.Select(x => x.SiteId).Distinct().ToList(), dateIni, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
+            List<Site> sites = _amurClient.GetSitesByList(_amurServiceHandle, pointCatalogs.Select(x => x.SiteId).Distinct().ToList());
+            if (sites.Exists(x => !x.Lat.HasValue || !x.Lon.HasValue))
+                throw new Exception("В записях каталога присутствуют пункты без координат (широта, долгота).");
             Dictionary<int, Geo.GeoPoint> pointXsites = new Dictionary<int, Geo.GeoPoint>();
-            foreach (var item in pointXsites1)
+            foreach (var item in sites)
             {
-                pointXsites.Add(item.Key, new Geo.GeoPoint(item.Value.LatGrd, item.Value.LonGrd));
+                pointXsites.Add(item.Id, new Geo.GeoPoint((double)item.Lat, (double)item.Lon));
             }
+
+            //Dictionary<int, Geo.GeoPoint> pointXsites1 = _amurClient.GetSitesPoints(_amurServiceHandle,
+            //    pointCatalogs.Select(x => x.SiteId).Distinct().ToList(), dateIni, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
+            //foreach (var item in pointXsites1)
+            //{
+            //    pointXsites.Add(item.Key, new Geo.GeoPoint(item.Value.LatGrd, item.Value.LonGrd));
+            //}
 
             // SWITCH METHOD OUTPUT STORAGE INTERFACE
 

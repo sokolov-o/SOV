@@ -4,24 +4,17 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOV.Social" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
       <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SOV.Geo" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/System.Reflection" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Reflection" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SOV.Social" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService_GetLegalEntityesAll_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetLegalEntityesAll" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetLegalEntityesAll_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetLegalEntityesAllResponse" />
-  </wsdl:message>
   <wsdl:message name="IService_SaveVariableCode_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveVariableCode" />
   </wsdl:message>
@@ -129,12 +122,6 @@
   </wsdl:message>
   <wsdl:message name="IService_GetParentFcsMethod_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetParentFcsMethodResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetSitesPoints_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSitesPoints" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetSitesPoints_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSitesPointsResponse" />
   </wsdl:message>
   <wsdl:message name="IService_GetGeoObjectsBySiteIds_InputMessage">
     <wsdl:part name="parameters" element="tns:GetGeoObjectsBySiteIds" />
@@ -484,11 +471,13 @@
   <wsdl:message name="IService_GetLegalEntityesById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLegalEntityesByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetLegalEntityesAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLegalEntityesAll" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLegalEntityesAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLegalEntityesAllResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
-    <wsdl:operation name="GetLegalEntityesAll">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAll" message="tns:IService_GetLegalEntityesAll_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAllResponse" message="tns:IService_GetLegalEntityesAll_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="SaveVariableCode">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveVariableCode" message="tns:IService_SaveVariableCode_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveVariableCodeResponse" message="tns:IService_SaveVariableCode_OutputMessage" />
@@ -560,10 +549,6 @@
     <wsdl:operation name="GetParentFcsMethod">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetParentFcsMethod" message="tns:IService_GetParentFcsMethod_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetParentFcsMethodResponse" message="tns:IService_GetParentFcsMethod_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSitesPoints">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSitesPoints" message="tns:IService_GetSitesPoints_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSitesPointsResponse" message="tns:IService_GetSitesPoints_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetGeoObjectsBySiteIds">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGeoObjectsBySiteIds" message="tns:IService_GetGeoObjectsBySiteIds_InputMessage" />
@@ -797,18 +782,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLegalEntityesById" message="tns:IService_GetLegalEntityesById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLegalEntityesByIdResponse" message="tns:IService_GetLegalEntityesById_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetLegalEntityesAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAll" message="tns:IService_GetLegalEntityesAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAllResponse" message="tns:IService_GetLegalEntityesAll_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetLegalEntityesAll">
-      <soap:operation soapAction="http://tempuri.org/IService/GetLegalEntityesAll" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="SaveVariableCode">
       <soap:operation soapAction="http://tempuri.org/IService/SaveVariableCode" style="document" />
       <wsdl:input>
@@ -964,15 +944,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetParentFcsMethod">
       <soap:operation soapAction="http://tempuri.org/IService/GetParentFcsMethod" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSitesPoints">
-      <soap:operation soapAction="http://tempuri.org/IService/GetSitesPoints" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1495,6 +1466,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetLegalEntityesById">
       <soap:operation soapAction="http://tempuri.org/IService/GetLegalEntityesById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalEntityesAll">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLegalEntityesAll" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

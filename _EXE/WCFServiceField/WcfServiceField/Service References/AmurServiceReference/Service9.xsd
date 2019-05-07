@@ -1,30 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOV.Social" />
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" />
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" />
-  <xs:element name="GetLegalEntityesAll">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetLegalEntityesAllResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetLegalEntityesAllResult" nillable="true" type="q1:ArrayOfLegalEntity" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" />
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" />
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SOV.Social" />
   <xs:element name="SaveVariableCode">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="vc" nillable="true" type="q2:VariableCode" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="vc" nillable="true" type="q1:VariableCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -37,7 +23,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="eav" nillable="true" type="q3:EntityAttrValue" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="eav" nillable="true" type="q2:EntityAttrValue" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -50,7 +36,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="site" nillable="true" type="q4:Site" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="site" nillable="true" type="q3:Site" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -65,14 +51,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="catalog" nillable="true" type="q5:Catalog" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="catalog" nillable="true" type="q4:Catalog" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveCatalogResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="SaveCatalogResult" nillable="true" type="q6:Catalog" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="SaveCatalogResult" nillable="true" type="q5:Catalog" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -113,7 +99,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="dv" nillable="true" type="q7:DataValue" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="dv" nillable="true" type="q6:DataValue" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -142,7 +128,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="dataSource" nillable="true" type="q8:DataSource" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="dataSource" nillable="true" type="q7:DataSource" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -157,7 +143,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="dvs" nillable="true" type="q9:ArrayOfDataValue" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="dvs" nillable="true" type="q8:ArrayOfDataValue" />
         <xs:element minOccurs="0" name="dataSourceId" nillable="true" type="xs:long" />
       </xs:sequence>
     </xs:complexType>
@@ -171,7 +157,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="dvs" nillable="true" type="q10:ArrayOfDataForecast" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="dvs" nillable="true" type="q9:ArrayOfDataForecast" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -240,14 +226,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="methodIds" nillable="true" type="q11:ArrayOfint" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="methodIds" nillable="true" type="q10:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetMethodsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodsResult" nillable="true" type="q12:ArrayOfMethod" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodsResult" nillable="true" type="q11:ArrayOfMethod" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -255,14 +241,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteIndices" nillable="true" type="q13:ArrayOfstring" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteIndices" nillable="true" type="q12:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSitesByCodesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByCodesResult" nillable="true" type="q14:ArrayOfSite" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByCodesResult" nillable="true" type="q13:ArrayOfSite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -277,25 +263,7 @@
   <xs:element name="GetParentFcsMethodResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetParentFcsMethodResult" nillable="true" type="q15:MethodForecast" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSitesPoints">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteIds" nillable="true" type="q16:ArrayOfint" />
-        <xs:element minOccurs="0" name="dateActual" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="siteAttrTypeIdLat" type="xs:int" />
-        <xs:element minOccurs="0" name="siteAttrTypeIdLon" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSitesPointsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSitesPointsResult" nillable="true" type="q17:ArrayOfKeyValueOfintGeoPointWRGTqGL6" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetParentFcsMethodResult" nillable="true" type="q14:MethodForecast" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -303,14 +271,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="stationIds" nillable="true" type="q18:ArrayOfint" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="stationIds" nillable="true" type="q15:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetGeoObjectsBySiteIdsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetGeoObjectsBySiteIdsResult" nillable="true" type="q19:ArrayOfKeyValueOfintGeoObjectmdw0AYJD" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetGeoObjectsBySiteIdsResult" nillable="true" type="q16:ArrayOfKeyValueOfintGeoObjectmdw0AYJD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -324,7 +292,7 @@
   <xs:element name="GetSiteAttrTypesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteAttrTypesAllResult" nillable="true" type="q20:ArrayOfSiteAttrType" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteAttrTypesAllResult" nillable="true" type="q17:ArrayOfSiteAttrType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -342,7 +310,7 @@
   <xs:element name="GetSitesInBoxResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesInBoxResult" nillable="true" type="q21:ArrayOfSite" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesInBoxResult" nillable="true" type="q18:ArrayOfSite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -356,7 +324,7 @@
   <xs:element name="GetSampleMediumsAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSampleMediumsAllResult" nillable="true" type="q22:ArrayOfSampleMedium" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSampleMediumsAllResult" nillable="true" type="q19:ArrayOfSampleMedium" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -364,8 +332,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q23:ArrayOfint" />
-        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="attrTypeId" nillable="true" type="q24:ArrayOfint" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q20:ArrayOfint" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="attrTypeId" nillable="true" type="q21:ArrayOfint" />
         <xs:element minOccurs="0" name="dateActual" nillable="true" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
@@ -373,7 +341,7 @@
   <xs:element name="GetSitesAttrValuesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesAttrValuesResult" nillable="true" type="q25:ArrayOfEntityAttrValue" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesAttrValuesResult" nillable="true" type="q22:ArrayOfEntityAttrValue" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -388,7 +356,7 @@
   <xs:element name="GetMethodResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodResult" nillable="true" type="q26:Method" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodResult" nillable="true" type="q23:Method" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -405,7 +373,7 @@
   <xs:element name="GetSiteAttrValueResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteAttrValueResult" nillable="true" type="q27:EntityAttrValue" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteAttrValueResult" nillable="true" type="q24:EntityAttrValue" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -413,7 +381,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q28:ArrayOfint" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q25:ArrayOfint" />
         <xs:element minOccurs="0" name="siteAttrTypeId" type="xs:int" />
         <xs:element minOccurs="0" name="dateActual" type="xs:dateTime" />
       </xs:sequence>
@@ -422,7 +390,7 @@
   <xs:element name="GetSitesAttrValueResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesAttrValueResult" nillable="true" type="q29:ArrayOfEntityAttrValue" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesAttrValueResult" nillable="true" type="q26:ArrayOfEntityAttrValue" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -437,7 +405,7 @@
   <xs:element name="GetSitesByTypeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByTypeResult" nillable="true" type="q30:ArrayOfSite" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByTypeResult" nillable="true" type="q27:ArrayOfSite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -452,7 +420,7 @@
   <xs:element name="GetSitesByGroupResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByGroupResult" nillable="true" type="q31:ArrayOfSite" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByGroupResult" nillable="true" type="q28:ArrayOfSite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -460,14 +428,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="addrRegionIds" nillable="true" type="q32:ArrayOfint" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="addrRegionIds" nillable="true" type="q29:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSitesByAddrRegionIdsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByAddrRegionIdsResult" nillable="true" type="q33:ArrayOfSite" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByAddrRegionIdsResult" nillable="true" type="q30:ArrayOfSite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -481,7 +449,7 @@
   <xs:element name="GetSiteTypesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteTypesResult" nillable="true" type="q34:ArrayOfSiteType" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteTypesResult" nillable="true" type="q31:ArrayOfSiteType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -489,14 +457,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteIdList" nillable="true" type="q35:ArrayOfint" />
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteIdList" nillable="true" type="q32:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSitesByListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByListResult" nillable="true" type="q36:ArrayOfSite" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSitesByListResult" nillable="true" type="q33:ArrayOfSite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -504,14 +472,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="variableIdList" nillable="true" type="q37:ArrayOfint" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="variableIdList" nillable="true" type="q34:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetVariablesByListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariablesByListResult" nillable="true" type="q38:ArrayOfVariable" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariablesByListResult" nillable="true" type="q35:ArrayOfVariable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -526,7 +494,7 @@
   <xs:element name="GetVariableByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariableByIdResult" nillable="true" type="q39:Variable" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariableByIdResult" nillable="true" type="q36:Variable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -548,7 +516,7 @@
   <xs:element name="GetVariableByKeyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariableByKeyResult" nillable="true" type="q40:Variable" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariableByKeyResult" nillable="true" type="q37:Variable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -556,21 +524,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="variableTypeId" nillable="true" type="q41:ArrayOfint" />
-        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="timeId" nillable="true" type="q42:ArrayOfint" />
-        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="unitId" nillable="true" type="q43:ArrayOfint" />
-        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dataTypeId" nillable="true" type="q44:ArrayOfint" />
-        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="generalCategoryId" nillable="true" type="q45:ArrayOfint" />
-        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sampleMediumId" nillable="true" type="q46:ArrayOfint" />
-        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="timeSupport" nillable="true" type="q47:ArrayOfint" />
-        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="valueTypeId" nillable="true" type="q48:ArrayOfint" />
+        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="variableTypeId" nillable="true" type="q38:ArrayOfint" />
+        <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="timeId" nillable="true" type="q39:ArrayOfint" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="unitId" nillable="true" type="q40:ArrayOfint" />
+        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dataTypeId" nillable="true" type="q41:ArrayOfint" />
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="generalCategoryId" nillable="true" type="q42:ArrayOfint" />
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sampleMediumId" nillable="true" type="q43:ArrayOfint" />
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="timeSupport" nillable="true" type="q44:ArrayOfint" />
+        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="valueTypeId" nillable="true" type="q45:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetVariablesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariablesResult" nillable="true" type="q49:ArrayOfVariable" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariablesResult" nillable="true" type="q46:ArrayOfVariable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -584,7 +552,7 @@
   <xs:element name="GetVariablesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariablesAllResult" nillable="true" type="q50:ArrayOfVariable" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariablesAllResult" nillable="true" type="q47:ArrayOfVariable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -598,7 +566,7 @@
   <xs:element name="GetDataTypesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetDataTypesAllResult" nillable="true" type="q51:ArrayOfDataType" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetDataTypesAllResult" nillable="true" type="q48:ArrayOfDataType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -612,7 +580,7 @@
   <xs:element name="GetFlagAQCAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFlagAQCAllResult" nillable="true" type="q52:ArrayOfKeyValueOfshortArrayOfstringty7Ep6D1" />
+        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFlagAQCAllResult" nillable="true" type="q49:ArrayOfKeyValueOfshortArrayOfstringty7Ep6D1" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -626,7 +594,7 @@
   <xs:element name="GetGeneralCategoryesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetGeneralCategoryesAllResult" nillable="true" type="q53:ArrayOfGeneralCategory" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetGeneralCategoryesAllResult" nillable="true" type="q50:ArrayOfGeneralCategory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -640,7 +608,7 @@
   <xs:element name="GetGeoObjectsAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetGeoObjectsAllResult" nillable="true" type="q54:ArrayOfGeoObject" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetGeoObjectsAllResult" nillable="true" type="q51:ArrayOfGeoObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -654,7 +622,7 @@
   <xs:element name="GetGeoObjectTypesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetGeoObjectTypesAllResult" nillable="true" type="q55:ArrayOfGeoType" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetGeoObjectTypesAllResult" nillable="true" type="q52:ArrayOfGeoType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -668,7 +636,7 @@
   <xs:element name="GetMeteoZonesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMeteoZonesAllResult" nillable="true" type="q56:ArrayOfMeteoZone" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMeteoZonesAllResult" nillable="true" type="q53:ArrayOfMeteoZone" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -682,7 +650,7 @@
   <xs:element name="GetMethodsAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodsAllResult" nillable="true" type="q57:ArrayOfMethod" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodsAllResult" nillable="true" type="q54:ArrayOfMethod" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -696,7 +664,7 @@
   <xs:element name="GetMethodForecastsAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodForecastsAllResult" nillable="true" type="q58:ArrayOfMethodForecast" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetMethodForecastsAllResult" nillable="true" type="q55:ArrayOfMethodForecast" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -710,7 +678,7 @@
   <xs:element name="GetOffsetTypesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetOffsetTypesAllResult" nillable="true" type="q59:ArrayOfOffsetType" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetOffsetTypesAllResult" nillable="true" type="q56:ArrayOfOffsetType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -725,7 +693,7 @@
   <xs:element name="GetSiteXSitesByLeftSiteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteXSitesByLeftSiteResult" nillable="true" type="q60:ArrayOfSiteXSite" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteXSitesByLeftSiteResult" nillable="true" type="q57:ArrayOfSiteXSite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -740,7 +708,7 @@
   <xs:element name="GetSiteXSitesByRightSiteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteXSitesByRightSiteResult" nillable="true" type="q61:ArrayOfSiteXSite" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteXSitesByRightSiteResult" nillable="true" type="q58:ArrayOfSiteXSite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -755,7 +723,7 @@
   <xs:element name="GetSiteXSiteTypesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteXSiteTypesAllResult" nillable="true" type="q62:ArrayOfSiteXSiteType" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetSiteXSiteTypesAllResult" nillable="true" type="q59:ArrayOfSiteXSiteType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -769,7 +737,7 @@
   <xs:element name="GetUnitsAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetUnitsAllResult" nillable="true" type="q63:ArrayOfUnit" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetUnitsAllResult" nillable="true" type="q60:ArrayOfUnit" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -783,7 +751,7 @@
   <xs:element name="GetValueTypesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetValueTypesAllResult" nillable="true" type="q64:ArrayOfValueType" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetValueTypesAllResult" nillable="true" type="q61:ArrayOfValueType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -798,7 +766,7 @@
   <xs:element name="GetVariableCodesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariableCodesAllResult" nillable="true" type="q65:ArrayOfVariableCode" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariableCodesAllResult" nillable="true" type="q62:ArrayOfVariableCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -812,7 +780,7 @@
   <xs:element name="GetVariableTypesAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariableTypesAllResult" nillable="true" type="q66:ArrayOfVariableType" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetVariableTypesAllResult" nillable="true" type="q63:ArrayOfVariableType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -820,7 +788,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="catalogIds" nillable="true" type="q67:ArrayOfint" />
+        <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="catalogIds" nillable="true" type="q64:ArrayOfint" />
         <xs:element minOccurs="0" name="dateIni" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
@@ -828,7 +796,7 @@
   <xs:element name="ExistsDataForecastsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExistsDataForecastsResult" nillable="true" type="q68:ArrayOfKeyValueOfintboolean" />
+        <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExistsDataForecastsResult" nillable="true" type="q65:ArrayOfKeyValueOfintboolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -836,7 +804,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sitesIds" nillable="true" type="q69:ArrayOfint" />
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sitesIds" nillable="true" type="q66:ArrayOfint" />
         <xs:element minOccurs="0" name="variableIdX" type="xs:int" />
         <xs:element minOccurs="0" name="variableIdY" type="xs:int" />
         <xs:element minOccurs="0" name="curve_seria_type_id" type="xs:int" />
@@ -848,7 +816,7 @@
   <xs:element name="GetCurvesBySitesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCurvesBySitesResult" nillable="true" type="q70:ArrayOfKeyValueOfintArrayOfCurveG11ZnWqW" />
+        <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCurvesBySitesResult" nillable="true" type="q67:ArrayOfKeyValueOfintArrayOfCurveG11ZnWqW" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -867,7 +835,7 @@
   <xs:element name="GetCurveByCatalogResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="GetCurveByCatalogResult" nillable="true" type="q71:Curve" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="GetCurveByCatalogResult" nillable="true" type="q68:Curve" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -875,7 +843,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="catalogIds" nillable="true" type="q72:ArrayOfint" />
+        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="catalogIds" nillable="true" type="q69:ArrayOfint" />
         <xs:element minOccurs="0" name="dateFcsS" type="xs:dateTime" />
         <xs:element minOccurs="0" name="dateFcsF" type="xs:dateTime" />
         <xs:element minOccurs="0" name="fcsLag" nillable="true" type="xs:double" />
@@ -886,7 +854,7 @@
   <xs:element name="GetDataForecastsByIdListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDataForecastsByIdListResult" nillable="true" type="q73:ArrayOfKeyValueOfintArrayOfDataForecastG11ZnWqW" />
+        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDataForecastsByIdListResult" nillable="true" type="q70:ArrayOfKeyValueOfintArrayOfDataForecastG11ZnWqW" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -894,14 +862,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dataValueIds" nillable="true" type="q74:ArrayOflong" />
+        <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dataValueIds" nillable="true" type="q71:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataSourcesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDataSourcesResult" nillable="true" type="q75:ArrayOfKeyValueOflongDataSourceG11ZnWqW" />
+        <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDataSourcesResult" nillable="true" type="q72:ArrayOfKeyValueOflongDataSourceG11ZnWqW" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -912,12 +880,12 @@
         <xs:element minOccurs="0" name="dateS" type="xs:dateTime" />
         <xs:element minOccurs="0" name="dateF" type="xs:dateTime" />
         <xs:element minOccurs="0" name="isDateLOC" type="xs:boolean" />
-        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q76:ArrayOfint" />
-        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="variableId" nillable="true" type="q77:ArrayOfint" />
-        <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="methodId" nillable="true" type="q78:ArrayOfint" />
-        <xs:element xmlns:q79="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sourceId" nillable="true" type="q79:ArrayOfint" />
-        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offsetTypeId" nillable="true" type="q80:ArrayOfint" />
-        <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offsetValue" nillable="true" type="q81:ArrayOfdouble" />
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q73:ArrayOfint" />
+        <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="variableId" nillable="true" type="q74:ArrayOfint" />
+        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="methodId" nillable="true" type="q75:ArrayOfint" />
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sourceId" nillable="true" type="q76:ArrayOfint" />
+        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offsetTypeId" nillable="true" type="q77:ArrayOfint" />
+        <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offsetValue" nillable="true" type="q78:ArrayOfdouble" />
         <xs:element minOccurs="0" name="flagAQC" nillable="true" type="xs:unsignedByte" />
         <xs:element minOccurs="0" name="isActualValueOnly" type="xs:boolean" />
         <xs:element minOccurs="0" name="isSelectDeleted" type="xs:boolean" />
@@ -927,7 +895,7 @@
   <xs:element name="GetDataValuesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDataValuesResult" nillable="true" type="q82:ArrayOfKeyValueOfCatalogArrayOfDataValue9e82c4_Px" />
+        <xs:element xmlns:q79="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDataValuesResult" nillable="true" type="q79:ArrayOfKeyValueOfCatalogArrayOfDataValue9e82c4_Px" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -946,7 +914,7 @@
   <xs:element name="GetDataForecastsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="GetDataForecastsResult" nillable="true" type="q83:ArrayOfDataForecast" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" minOccurs="0" name="GetDataForecastsResult" nillable="true" type="q80:ArrayOfDataForecast" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -954,14 +922,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q84="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ctlId" nillable="true" type="q84:ArrayOfint" />
+        <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ctlId" nillable="true" type="q81:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetCatalogListByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetCatalogListByIdResult" nillable="true" type="q85:ArrayOfCatalog" />
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetCatalogListByIdResult" nillable="true" type="q82:ArrayOfCatalog" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -969,19 +937,19 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q86:ArrayOfint" />
-        <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="varId" nillable="true" type="q87:ArrayOfint" />
-        <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="methodId" nillable="true" type="q88:ArrayOfint" />
-        <xs:element xmlns:q89="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sourceId" nillable="true" type="q89:ArrayOfint" />
-        <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offsetTypeId" nillable="true" type="q90:ArrayOfint" />
-        <xs:element xmlns:q91="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offsetValue" nillable="true" type="q91:ArrayOfdouble" />
+        <xs:element xmlns:q83="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q83:ArrayOfint" />
+        <xs:element xmlns:q84="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="varId" nillable="true" type="q84:ArrayOfint" />
+        <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="methodId" nillable="true" type="q85:ArrayOfint" />
+        <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sourceId" nillable="true" type="q86:ArrayOfint" />
+        <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offsetTypeId" nillable="true" type="q87:ArrayOfint" />
+        <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offsetValue" nillable="true" type="q88:ArrayOfdouble" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetCatalogListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetCatalogListResult" nillable="true" type="q92:ArrayOfCatalog" />
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetCatalogListResult" nillable="true" type="q89:ArrayOfCatalog" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1001,7 +969,7 @@
   <xs:element name="GetCatalogResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetCatalogResult" nillable="true" type="q93:Catalog" />
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" minOccurs="0" name="GetCatalogResult" nillable="true" type="q90:Catalog" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1016,7 +984,7 @@
   <xs:element name="GetDataPDataValueAQCResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" minOccurs="0" name="GetDataPDataValueAQCResult" nillable="true" type="q94:ArrayOfAQCDataValue" />
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" minOccurs="0" name="GetDataPDataValueAQCResult" nillable="true" type="q91:ArrayOfAQCDataValue" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1031,7 +999,7 @@
   <xs:element name="GetParserSysObjResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" minOccurs="0" name="GetParserSysObjResult" nillable="true" type="q95:SysObj" />
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" minOccurs="0" name="GetParserSysObjResult" nillable="true" type="q92:SysObj" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1046,7 +1014,7 @@
   <xs:element name="GetParserSysParsersXSitesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" minOccurs="0" name="GetParserSysParsersXSitesResult" nillable="true" type="q96:ArrayOfSysParsersXSites" />
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" minOccurs="0" name="GetParserSysParsersXSitesResult" nillable="true" type="q93:ArrayOfSysParsersXSites" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1054,14 +1022,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q97="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sysParsersParamsSetIds" nillable="true" type="q97:ArrayOfint" />
+        <xs:element xmlns:q94="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sysParsersParamsSetIds" nillable="true" type="q94:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetParserSysParsersParamsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" minOccurs="0" name="GetParserSysParsersParamsResult" nillable="true" type="q98:ArrayOfSysParsersParams" />
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" minOccurs="0" name="GetParserSysParsersParamsResult" nillable="true" type="q95:ArrayOfSysParsersParams" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1076,7 +1044,7 @@
   <xs:element name="GetOrgResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetOrgResult" nillable="true" type="q99:Org" />
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetOrgResult" nillable="true" type="q96:Org" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1084,14 +1052,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q100="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="orgIds" nillable="true" type="q100:ArrayOfint" />
+        <xs:element xmlns:q97="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="orgIds" nillable="true" type="q97:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetOrgsByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetOrgsByIdResult" nillable="true" type="q101:ArrayOfOrg" />
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetOrgsByIdResult" nillable="true" type="q98:ArrayOfOrg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1105,7 +1073,7 @@
   <xs:element name="GetOrgsAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetOrgsAllResult" nillable="true" type="q102:ArrayOfOrg" />
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetOrgsAllResult" nillable="true" type="q99:ArrayOfOrg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1120,7 +1088,7 @@
   <xs:element name="GetPersonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetPersonResult" nillable="true" type="q103:Person" />
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetPersonResult" nillable="true" type="q100:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1128,14 +1096,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q104="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="personIds" nillable="true" type="q104:ArrayOfint" />
+        <xs:element xmlns:q101="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="personIds" nillable="true" type="q101:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPersonsByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetPersonsByIdResult" nillable="true" type="q105:ArrayOfPerson" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetPersonsByIdResult" nillable="true" type="q102:ArrayOfPerson" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1149,7 +1117,7 @@
   <xs:element name="GetPersonsAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetPersonsAllResult" nillable="true" type="q106:ArrayOfPerson" />
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetPersonsAllResult" nillable="true" type="q103:ArrayOfPerson" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1157,7 +1125,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q107="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parentAddrRegionsId" nillable="true" type="q107:ArrayOfint" />
+        <xs:element xmlns:q104="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parentAddrRegionsId" nillable="true" type="q104:ArrayOfint" />
         <xs:element minOccurs="0" name="isWithChilds" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
@@ -1165,7 +1133,7 @@
   <xs:element name="GetAddrsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetAddrsResult" nillable="true" type="q108:ArrayOfAddr" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetAddrsResult" nillable="true" type="q105:ArrayOfAddr" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1179,7 +1147,7 @@
   <xs:element name="GetAddrsAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetAddrsAllResult" nillable="true" type="q109:ArrayOfAddr" />
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetAddrsAllResult" nillable="true" type="q106:ArrayOfAddr" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1194,7 +1162,7 @@
   <xs:element name="GetLegalEntityResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetLegalEntityResult" nillable="true" type="q110:LegalEntity" />
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetLegalEntityResult" nillable="true" type="q107:LegalEntity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1202,14 +1170,28 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="hSvc" type="xs:long" />
-        <xs:element xmlns:q111="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="leIds" nillable="true" type="q111:ArrayOfint" />
+        <xs:element xmlns:q108="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="leIds" nillable="true" type="q108:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetLegalEntityesByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetLegalEntityesByIdResult" nillable="true" type="q112:ArrayOfLegalEntity" />
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetLegalEntityesByIdResult" nillable="true" type="q109:ArrayOfLegalEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLegalEntityesAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLegalEntityesAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/SOV.Social" minOccurs="0" name="GetLegalEntityesAllResult" nillable="true" type="q110:ArrayOfLegalEntity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

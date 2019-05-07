@@ -60,17 +60,17 @@ namespace SOV.Amur.Service
         /// <returns>Первый родительский метод прогноза, у которого MethodOutputStoreParameters != null && MethodForecast != null.</returns>
         [OperationContract]
         MethodForecast GetParentFcsMethod(long hSvc, int methodId);
-        /// <summary>
-        /// Получить словарь соответствия кодов пунктов их координатам.
-        /// </summary>
-        /// <param name="hSvc"></param>
-        /// <param name="siteIds">Набор уникальных кодов пунктов.</param>
-        /// <param name="dateActual">Дата актуальности координат.</param>
-        /// <param name="siteAttrTypeIdLat">Код типа атрибута широта.</param>
-        /// <param name="siteAttrTypeIdLon">Код типа атрибута долгота.</param>
-        /// <returns>Cловарь соответствия кодов пунктов их координатам.</returns>
-        [OperationContract]
-        Dictionary<int, Geo.GeoPoint> GetSitesPoints(long hSvc, List<int> siteIds, DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
+        ///////// <summary>
+        ///////// Получить словарь соответствия кодов пунктов их координатам.
+        ///////// </summary>
+        ///////// <param name="hSvc"></param>
+        ///////// <param name="siteIds">Набор уникальных кодов пунктов.</param>
+        ///////// <param name="dateActual">Дата актуальности координат.</param>
+        ///////// <param name="siteAttrTypeIdLat">Код типа атрибута широта.</param>
+        ///////// <param name="siteAttrTypeIdLon">Код типа атрибута долгота.</param>
+        ///////// <returns>Cловарь соответствия кодов пунктов их координатам.</returns>
+        //////[OperationContract]
+        //////Dictionary<int, Geo.GeoPoint> GetSitesPoints(long hSvc, List<int> siteIds, DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
         /// <summary>
         /// Получить набор географических объектов.
         /// </summary>
