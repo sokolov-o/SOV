@@ -98,13 +98,18 @@ namespace SOV.DB
                 Grib2Record rec = (Grib2Record)gi.Records[i];
                 for (int j = 0; j < grib2filters.Count; j++)
                 {
-                    if (grib2filters[j].Equal(rec))
+                    if (grib2filters[j] != null)
                     {
-                        if (ret[j] != null) throw new Exception("More one record founded in grib2-file.");
+                        if (grib2filters[j].Equal(rec))
+                        {
+                            if (ret[j] != null) throw new Exception("More one record founded in grib2-file.");
 
-                        float[] data = (new Grib2Data(fs)).getData(rec.getGdsOffset(), rec.getPdsOffset());
-                        ret[j] = new Object[] { rec, grib2filters[j].AcceptAddMultiply2Value(data) };
+                            float[] data = (new Grib2Data(fs)).getData(rec.getGdsOffset(), rec.getPdsOffset());
+                            ret[j] = new Object[] { rec, grib2filters[j].AcceptAddMultiply2Value(data) };
+                        }
                     }
+                    else
+                        ret[j] = null;
                 }
             }
             return ret;
@@ -300,42 +305,52 @@ namespace SOV.DB
         }
         public Field[/*Georectangle index*/][/*Grib2Filter index*/] SelectFields(List<Grib2Filter> g2filter, DateTime dateIni, int leadTime, List<GeoRectangle> grs2Truncate)
         {
+            Field[][] ret = null;
+
             // READ GRIB FILE 
             Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] gribData = Select(g2filter, dateIni, leadTime);
-            if (gribData == null)
-                return null;
-
-            List<Field> fields = GFS.ToFields(gribData);
-            if (fields.Count == 0)
-                return null;
-
-            Field[][] ret = null;
-            if ((object)grs2Truncate != null)
+            if (gribData != null)
             {
-                ret = new Field[grs2Truncate.Count][];
-                for (int i = 0; i < grs2Truncate.Count; i++)
+                List<Field> fields = GFS.ToFields(gribData);
+                if (fields.Count > 0)
                 {
-                    ret[i] = Field.Truncate(fields, grs2Truncate[i]);
+
+                    if ((object)grs2Truncate != null)
+                    {
+                        ret = new Field[grs2Truncate.Count][];
+                        for (int i = 0; i < grs2Truncate.Count; i++)
+                        {
+                            ret[i] = Field.Truncate(fields, grs2Truncate[i]);
+                        }
+                    }
+                    else
+                    {
+                        ret = new Field[][] { fields.ToArray() };
+                    }
                 }
-            }
-            else
-            {
-                ret = new Field[][] { fields.ToArray() };
             }
             return ret;
         }
-
-        public Field[/*leadTime*/][/*Georectangle index*/][/*Grib2Filter index*/] ReadFieldsInRectangles
-            (DateTime dateIni, object dataFilter, List<double> leadTime, List<GeoRectangle> grs2Truncate)
+        /// <summary>
+        /// Чтение данных в узлах поля указанного региона для указанной даты, заблаговременности и фильтра данных (переменных, уровней и др.).
+        /// </summary>
+        /// <param name="dateIni">Дата или исходная дата прогноза для прогностических полей.</param>
+        /// <param name="dataFilter">Фильтр данных: параметры, высоты и проч. 
+        /// Внимание! Допускаются null значения элементов фильтра. 
+        /// В этом случае отбор данных в этой позиции производиться не должен и на выходе тоже null.</param>
+        /// <param name="grs2Truncate">Регионы, для которых отбираются узлы поля. Все узлы, если null.</param>
+        /// <param name="leadTimes">Заблаговременность прогноза или все, если null. Для полей без заблаговременности - null.</param>
+        /// <returns>Field[/*leadTime*/][/*Georectangle*/][/*Data filter index*/]</returns>
+        public Field[/*leadTime*/][/*Georectangle index*/][/*Grib2Filter index*/] ReadFieldsInRectangles(DateTime dateIni, object dataFilter, List<double> leadTimes, List<GeoRectangle> grs2Truncate)
         {
             List<Grib2Filter> g2Filter = (List<Grib2Filter>)dataFilter;
-            Field[/*leadTime*/][/*Georectangle index*/][/*Grib2Filter index*/] ret = new Field[leadTime.Count][][];//, grs2Truncate.Count, g2Filter.Count];
+            Field[/*leadTime*/][/*Georectangle index*/][/*Grib2Filter index*/] ret = new Field[leadTimes.Count][][];//, grs2Truncate.Count, g2Filter.Count];
             bool isNull = true;
-            for (int i = 0; i < leadTime.Count; i++)
+            for (int i = 0; i < leadTimes.Count; i++)
             {
-                Debug.WriteLine(string.Format("{0}: Read DateIni {1} LeadTime {2}", this, dateIni, (int)leadTime[i]));
+                Debug.WriteLine(string.Format("{0}: Read DateIni {1} LeadTime {2}", this, dateIni, (int)leadTimes[i]));
 
-                ret[i] = SelectFields(g2Filter, dateIni, (int)leadTime[i], grs2Truncate);
+                ret[i] = SelectFields(g2Filter, dateIni, (int)leadTimes[i], grs2Truncate);
 
                 if (ret[i] != null) isNull = false;
             }
@@ -375,22 +390,20 @@ namespace SOV.DB
             List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
             Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] gfsRecords = Select(g2filter, dateIni, predictTime);
+            double[][] ret = null;
 
             if (gfsRecords != null)
             {
                 List<Field> fields = GFS.ToFields(gfsRecords);
+                
+                ret = new double[fields.Count][];
 
-                double[][] ret = new double[g2filter.Count][];
-
-                for (int i = 0; i < g2filter.Count; i++)
+                for (int i = 0; i < fields.Count; i++)
                 {
-                    ret[i] = (fields[i] != null)
-                        ? fields[i].Interpolate(points, nearestType, distanceType)
-                        : Support.Allocate(points.Count, double.NaN);
+                    ret[i] = fields[i]?.Interpolate(points, nearestType, distanceType);// Support.Allocate(points.Count, double.NaN);
                 }
-                return ret;
             }
-            return null;
+            return ret;
         }
 
         public double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/] ReadValuesAtPoints(DateTime dateIni, object dataFilter, List<double> leadTimes,

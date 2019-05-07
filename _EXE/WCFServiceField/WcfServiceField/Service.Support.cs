@@ -218,12 +218,13 @@ namespace SOV.WcfService.Field
                             && x.OffsetTypeId == varoff.OffsetTypeId
                             && x.OffsetValue == varoff.OffsetValue
                             );
-                        if (methvarXGrib2 == null) throw new Exception(string.Format(
-                            "Для запрошенного набора varoff [<{0}>]" +
-                            " отсутствует соответствие с переменными формата {1} метода {3}, которые д.б. указаны в sgmo.variable_x_grib2." +
-                            "\nИсточник ошибки {2}\n", varoff, methodFormat, this, methodExt));
+                        //if (methvarXGrib2 == null)
+                        //    throw new Exception(string.Format(
+                        //    "Для запрошенного набора varoff [<{0}>]" +
+                        //    " отсутствует соответствие с переменными формата {1} метода {3}, которые д.б. указаны в sgmo.variable_x_grib2." +
+                        //    "\nИсточник ошибки {2}\n", varoff, methodFormat, this, methodExt));
 
-                        grib2Filters.Add(methvarXGrib2.Grib2Filter);
+                        grib2Filters.Add(methvarXGrib2?.Grib2Filter);
                     }
                     return (object)grib2Filters;
 

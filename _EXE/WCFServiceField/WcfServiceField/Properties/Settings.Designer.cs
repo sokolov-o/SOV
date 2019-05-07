@@ -26,7 +26,7 @@ namespace SOV.WcfService.Field.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=sgmo;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.11.25.57;Port=5432;User Id=postgres;Password=qq;Database=sgmo;")]
         public string SGMOConnectionString {
             get {
                 return ((string)(this["SGMOConnectionString"]));

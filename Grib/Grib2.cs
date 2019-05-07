@@ -49,18 +49,10 @@ namespace SOV.Grib
         }
         public static Grid GetGrid(Grib2Record rec)
         {
-            //if (rec.GDS.Gdtn != 0) throw new Exception("rec.GDS.Gdtn != 0 = " + rec.GDS.Gdtn);
-            //if (rec.GDS.ScanMode != 0) throw new Exception("Unknown GDS.ScanMode=" + rec.GDS.ScanMode);
-            //if (rec.GDS.Source != 0) throw new Exception("(rec.GDS.Source != 0) = " + rec.GDS.Source);
-
-            //DicItem gridType = gridTypes.FirstOrDefault(x => x.Id == rec.GDS.Gdtn);
-            //Center center = centers.FirstOrDefault(x => (int)x.GribId == rec.ID.Center_id);
-            //if (gridType == null || center == null)
-            //    throw new Exception("(gridType  == null || center== null)");
-
+            // TODO: было -1*GeoPoint.Grd2Min(rec.GDS.Dy)
             return new Grid(null,
                 rec.GDS.Gdtn,
-                rec.GDS.Ny, GeoPoint.Grd2Min(rec.GDS.La1), -1 * GeoPoint.Grd2Min(rec.GDS.Dy),
+                rec.GDS.Ny, GeoPoint.Grd2Min(rec.GDS.La1), GeoPoint.Grd2Min(rec.GDS.Dy),
                 rec.GDS.Nx, GeoPoint.Grd2Min(rec.GDS.Lo1), GeoPoint.Grd2Min(rec.GDS.Dx),
                 "Grid from Grib2 file");
         }

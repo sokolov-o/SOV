@@ -12,24 +12,26 @@ namespace SOV.DB
     /// </summary>
     public interface IFcsGrid
     {
-        ///// <summary>
-        ///// Чтение данных поля для указанной даты, атрибутов данных (параметров, высот и др.), регионов и заблаговременности.
-        ///// </summary>
-        ///// <param name="dateIni">Дата или исходная дата прогноза для прогностических полей.</param>
-        ///// <param name="dataFilter">Все параметры, высоты и проч., если null.</param>
-        ///// <param name="gr">Регионы, для которых отбираются узлы поля. Все узлы, если null.</param>
-        ///// <param name="fcsTime">Заблаговременность прогноза или все, если null. Для полей без заблаговременности - null.</param>
-        ///// <returns></returns>
-        //Dictionary<GeoPoint, Dictionary<double/*FcsTime*/, double[/*WaveParams*/]>>[]
-        //    ReadPoints(DateTime dateIni, object dataFilter, List<double> leadTimeHours, List<GeoRectangle> grs2Truncate);
-
-        Field[/*leadTime*/][/*Georectangle index*/][/*VarFilter index*/] ReadFieldsInRectangles
-           (DateTime dateIni, object dataFilter, List<double> leadTimes,
-           List<GeoRectangle> grs2Truncate);
-
-        double[/*leadTime*/][/*GeoPoint index*/][/*VarFilter index*/] ReadValuesAtPoints
-            (DateTime dateIni, object dataFilter, List<double> leadTimes,
-            List<Geo.GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType);
+        /// <summary>
+        /// Чтение данных в узлах поля указанного региона для указанной даты, заблаговременности и фильтра данных (переменных, уровней и др.).
+        /// </summary>
+        /// <param name="dateIni">Дата или исходная дата прогноза для прогностических полей.</param>
+        /// <param name="dataFilter">Фильтр данных: параметры, высоты и проч. Внимание! Допускаются null значения элементов фильтра. 
+        /// В этом случае отбор данных производиться не будет и на выходе тоже null.</param>
+        /// <param name="grs2Truncate">Регионы, для которых отбираются узлы поля. Все узлы, если null.</param>
+        /// <param name="leadTimes">Заблаговременность прогноза или все, если null. Для полей без заблаговременности - null.</param>
+        /// <returns>Field[/*leadTime*/][/*Georectangle*/][/*Data filter index*/]</returns>
+        Field[/*leadTime*/][/*Georectangle*/][/*Data filter index*/] ReadFieldsInRectangles(DateTime dateIni, object dataFilter, List<double> leadTimes, List<GeoRectangle> grs2Truncate);
+        /// <summary>
+        /// Чтение данных поля в указанных точках для указанной даты, заблаговременности и фильтра данных (переменных, уровней и др.).
+        /// </summary>
+        /// <param name="dateIni">Дата или исходная дата прогноза для прогностических полей.</param>
+        /// <param name="dataFilter">Фильтр данных: параметры, высоты и проч. Внимание! Допускаются null значения элементов фильтра. 
+        /// В этом случае отбор данных производиться не будет и на выходе тоже null.</param>
+        /// <param name="grs2Truncate">Регионы, для которых отбираются узлы поля. Все узлы, если null.</param>
+        /// <param name="leadTimes">Заблаговременность прогноза или все, если null. Для полей без заблаговременности - null.</param>
+        /// <returns>double[/*leadTime*/][/*GeoPoint index*/][/*Data filter index*/]</returns>
+        double[/*leadTime*/][/*GeoPoint index*/][/*Data filter index*/] ReadValuesAtPoints(DateTime dateIni, object dataFilter, List<double> leadTimes, List<Geo.GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType);
 
     }
     public interface ICatalog
