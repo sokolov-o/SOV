@@ -47,8 +47,7 @@ namespace SOV.WcfService.Field
         /// <param name="leadTimes">Заблаговременности для выборки. Не может быть null.</param>
         /// <returns>Массив полей Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/]</returns>
         [OperationContract]
-        SOV.Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/] GetFieldsInRectangles
-            (long hSvc, DateTime dateIni, List<double> leadTimes, int methodId, List<SGMO.Varoff> varoffs, List<Geo.GeoRectangle> grs);
+        SOV.Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/] GetFieldsInRectangles(long hSvc, DateTime dateIni, List<double> leadTimes, int methodId, List<SGMO.Varoff> varoffs, List<Geo.GeoRectangle> grs);
         /// <summary>
         /// Получить прогностические значения переменных для указанных записей каталога и заблаговременностей в указанных точках.
         /// </summary>
@@ -62,8 +61,7 @@ namespace SOV.WcfService.Field
         /// <param name="amurSiteAttrTypeLonId"></param>
         /// <returns>double[/*leadTime*/][/*Catalog index*/]</returns>
         [OperationContract]
-        Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> GetValuesAtPoints
-            (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
+        Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> GetValuesAtPoints(long hSvc, DateTime dateIni, List<double> leadTimes, List<int> pointCatalogsId);
         /// <summary>
         /// Получить все методы (производства данных и информации), обслуживаемые сервисом.
         /// Методы соответствуют методам технологии ДВНИГМИ "Амур".

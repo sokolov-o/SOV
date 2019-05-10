@@ -348,14 +348,6 @@ namespace SOV.WcfService.Field
             //null, null, null,
             //new List<int>() { (int)EnumVariableType.Precipitation }
 
-            // FOR PRECIPITATION
-            //////double leadTimeStep = leadTimes[1] - leadTimes[0];
-            //////int precipVariableId = -1;
-            //////if (leadTimeStep == 3 && precipSumResetTime == 6)
-            //////    precipVariableId = (int)Amur.Meta.EnumVariable.PrecipHour03Fcs;
-            //////else
-            //////    throw new Exception("Не удалось определить код переменной для прогностических осадков: " + leadTimeStep + ";" + precipSumResetTime);
-
             // SCAN POINTS CATALOGS
 
             for (int iPC = 0; iPC < ctlPoints.Count; iPC++)
@@ -369,7 +361,8 @@ namespace SOV.WcfService.Field
                 {
                     pointValues = ConvertPrecipitation(pointVariable, parentData, iPoint, iParentCatalogPrecip, leadTimes, (double)precipSumResetTime);
                 }
-                else if (pointVariable.VariableTypeId == (int)EnumVariableType.Direction || pointVariable.VariableTypeId == (int)EnumVariableType.WindVelocity)
+                else if ((pointVariable.VariableTypeId == (int)EnumVariableType.Direction || pointVariable.VariableTypeId == (int)EnumVariableType.WindVelocity)
+                    && pointVariable.DataTypeId != (int)EnumDataType.Maximum)
                 {
                     pointValues = ConvertUV(ctlParents, parentData, iPoint, pointVariable, pointCatalog.OffsetTypeId, pointCatalog.OffsetValue, leadTimes);
                 }
@@ -380,21 +373,26 @@ namespace SOV.WcfService.Field
                         && x.OffsetTypeId == pointCatalog.OffsetTypeId
                         && x.OffsetValue == pointCatalog.OffsetValue
                     );
-                    if (parentCatalog.Count == 0 || (parentCatalog.Count > 1))
-                    {
-                        pointValues = Common.Support.Allocate(leadTimes.Length, double.NaN);
-                    }
                     if (parentCatalog.Count > 1)
                     {
                         throw new Exception("(parentCatalog.Count > 1)");
                     }
-                    int iParentCatalog = ctlParents.IndexOf(parentCatalog[0]);
-                    for (int iLT = 0; iLT < leadTimes.Length; iLT++)
+
+                    pointValues = Common.Support.Allocate(leadTimes.Length, double.NaN);
+
+                    if (parentCatalog.Count == 1)
                     {
-                        ret[iLT][iPC] = parentData[iLT][iPoint][iParentCatalog];
+                        int iParentCatalog = ctlParents.IndexOf(parentCatalog[0]);
+                        for (int iLT = 0; iLT < leadTimes.Length; iLT++)
+                        {
+                            pointValues[iLT] = parentData[iLT][iPoint][iParentCatalog];
+                        }
                     }
                 }
-
+                for (int iLT = 0; iLT < leadTimes.Length; iLT++)
+                {
+                    ret[iLT][iPC] = pointValues[iLT];
+                }
             }
             return ret;
         }
@@ -418,7 +416,7 @@ namespace SOV.WcfService.Field
             {
                 double u = parentData[iLT][iPoint][iParentCatalogU];
                 double v = parentData[iLT][iPoint][iParentCatalogV];
-                if (!double.IsNaN(u) && !double.IsNaN(v))
+                if (double.IsNaN(u) || double.IsNaN(v))
                     throw new Exception(string.Format("Не число для U,V ветера GFS: {0} {1}", u, v));
 
                 double dir = Common.Vector.uv2Azimuth(u, v);
@@ -561,6 +559,9 @@ namespace SOV.WcfService.Field
 
             for (int i = 1; i < leadTimesHours.Length; i++)
             {
+                string msg = string.Format("GetPrecip4LeadTimeStep: {0} {1}\n", leadTimesHours[i], gfsPrecips[i]);
+                System.IO.File.AppendAllText(_logFilePath, msg);
+
                 leadTimeAccumulated += ((leadTimesHours[i] - leadTimesHours[i - 1]) * 3600);
                 leadTimesQ++;
 

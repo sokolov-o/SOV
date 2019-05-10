@@ -81,6 +81,7 @@ namespace _TestWCFServiceField
                     new List<int>() { 112 }, //Method  "Ближайший узел GFS 0.25"
                     null, null, null
                     );
+                catalogs = catalogs.FindAll(x => x.Id == 10368139).ToList();
                 int siteSysAttrTypeIdLat = 1000; // Широта
                 int siteSysAttrTypeIdLon = 1001; // Долгота
 
@@ -163,6 +164,7 @@ namespace _TestWCFServiceField
                 Console.WriteLine("... no data.");
             else
             {
+                List<Variable> variables = clientA.GetVariablesByList(ha, catalogs.Select(x => x.VariableId).ToList());
                 foreach (KeyValuePair<double, double[]> item in data)
                 {
                     Console.WriteLine("Lead time {0} h", item.Key);
@@ -172,7 +174,7 @@ namespace _TestWCFServiceField
                     else
                         for (int j = 0; j < item.Value.Length; j++)
                         {
-                            Console.WriteLine("\t\tCatalog {0}. Value {1}.", catalogs[j].Id, item.Value[j]);
+                            Console.WriteLine("\t\tCatalog {0} [{2}]  Value {1}.", catalogs[j].Id, item.Value[j], variables.FirstOrDefault(x => x.Id == catalogs[j].VariableId).NameRus);
                         }
                 }
             }
