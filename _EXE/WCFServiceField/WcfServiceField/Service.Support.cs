@@ -328,15 +328,20 @@ namespace SOV.WcfService.Field
 
             double[/*leadTime*/][/*Catalog of point*/] ret = Common.Support.Allocate(leadTimes.Length, ctlPoints.Count, double.NaN);
             List<Geo.GeoPoint> points = siteXpoint.Values.ToList();
-            // GET VARIABLES 
+
+            // GET VARIABLES
             List<Variable> pointVariables = _amurClient.GetVariablesByList(_amurServiceHandle, ctlPoints.Select(x => x.VariableId).Distinct().ToList());
-            List<Variable> parentVariables = _amurClient.GetVariablesByList(_amurServiceHandle, ctlParents.Select(x => x.VariableId).Distinct().ToList());
-            parentVariables = parentVariables.FindAll(x => x.VariableTypeId == (int)EnumVariableType.Precipitation);
-            if (parentVariables.Count != 1)
-                throw new Exception(string.Format("В прогнозах полей присутствует не единственный тип переменной для осадков. Всего их {0}. Ошибка алгоритма.", parentVariables.Count));
-            List<Catalog> parentPrecipitationCatalog = ctlParents.FindAll(x => x.VariableId == parentVariables[0].Id);
-            if (parentPrecipitationCatalog.Count != 1)...
-                throw new Exception("В прогнозах полей присутствует боле одного типа переменной для осадков. Ошибка алгоритма.");
+
+            // GET PARENT FOR PRECIP
+            List<Variable> parentVarPrecip = _amurClient.GetVariablesByList(_amurServiceHandle, ctlParents.Select(x => x.VariableId).Distinct().ToList());
+            parentVarPrecip = parentVarPrecip.FindAll(x => x.VariableTypeId == (int)EnumVariableType.Precipitation);
+            if (parentVarPrecip.Count != 1)
+                throw new Exception(string.Format("В прогнозах полей присутствует не единственный тип переменной для осадков. Всего их {0}. Ошибка алгоритма.", parentVarPrecip.Count));
+            List<Catalog> parentCatalogPrecips = ctlParents.FindAll(x => x.VariableId == parentVarPrecip[0].Id);
+            if (parentCatalogPrecips.Count != 1)
+                throw new Exception(string.Format("В прогнозах полей присутствует не единственная запись каталога для осадков. Всего их {0}. Ошибка алгоритма.", parentCatalogPrecips.Count));
+            int iParentCatalogPrecip = ctlParents.IndexOf(parentCatalogPrecips[0]);
+
             //new List<int>() { (int)EnumTime.Second },
             //null,
             //new List<int>() { (int)EnumDataType.Cumulative },
@@ -361,85 +366,84 @@ namespace SOV.WcfService.Field
                 double[] pointValues;
 
                 if (pointVariable.VariableTypeId == (int)EnumVariableType.Precipitation)
-                    pointValues = ConvertPrecipitation(pointVariable, parentData, iPoint, leadTimes, (double)precipSumResetTime);
-
-                List<Catalog> parentCatalog = ctlParents.FindAll(x
-                    => x.VariableId == pointCatalog.VariableId
-                    && x.OffsetTypeId == pointCatalog.OffsetTypeId
-                    && x.OffsetValue == pointCatalog.OffsetValue
-                );
-                int iParentCatalog = -1;
-                if (parentCatalog.Count == 1)
-                    iParentCatalog = ctlParents.IndexOf(parentCatalog[0]);
-
-                double[] prec = Common.Support.Allocate(leadTimes.Length, double.NaN);
-
-                for (int iLT = 0; iLT < leadTimes.Length; iLT++)
                 {
-                    // IF PRECIPITATION - collect precipitation for further processing
-                    if (pointCatalog.VariableId == precipVariableId)
-                        prec[iLT] = parentData[iLT][iPoint][iParentCatalog];
-                    else
-                        // NOT PRECIPITATION
-                        switch (pointCatalog.VariableId)
-                        {
-                            case (int)SOV.Amur.Meta.EnumVariable.WindDirFcs:
-                            case (int)SOV.Amur.Meta.EnumVariable.WindSpeedFcs:
-
-                                int iParentCatalogU = ctlParents.IndexOf(ctlParents.First(x
-                                    => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs
-                                    && x.OffsetTypeId == pointCatalog.OffsetTypeId
-                                    && x.OffsetValue == pointCatalog.OffsetValue
-                                ));
-                                int iParentCatalogV = ctlParents.IndexOf(ctlParents.First(x
-                                    => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.VWindFcs
-                                    && x.OffsetTypeId == pointCatalog.OffsetTypeId
-                                    && x.OffsetValue == pointCatalog.OffsetValue
-                                ));
-
-                                double u = parentData[iLT][iPoint][iParentCatalogU];
-                                double v = parentData[iLT][iPoint][iParentCatalogV];
-                                if (!double.IsNaN(u) && !double.IsNaN(v))
-                                {
-                                    double dir = Common.Vector.uv2Azimuth(u, v);
-                                    double mod = Common.Vector.uv2Module(u, v);
-
-                                    if (pointCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindDirFcs)
-                                        ret[iLT][iPC] = dir;
-                                    if (pointCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindSpeedFcs)
-                                        ret[iLT][iPC] = mod;
-                                }
-                                else
-                                    throw new Exception(string.Format("Не число для U,V ветера GFS: {0} {1}", u, v));
-                                break;
-                            default:
-                                ret[iLT][iPC] = parentData[iLT][iPoint][iParentCatalog];
-                                break;
-                        }
+                    pointValues = ConvertPrecipitation(pointVariable, parentData, iPoint, iParentCatalogPrecip, leadTimes, (double)precipSumResetTime);
                 }
-                // IF PRECIPITATION - process rest time period
-                if (pointCatalog.VariableId == precipVariableId)
+                else if (pointVariable.VariableTypeId == (int)EnumVariableType.Direction || pointVariable.VariableTypeId == (int)EnumVariableType.WindVelocity)
                 {
-                    if (precipSumResetTime.HasValue)
-                        prec = GetPrecip4LeadTimeStep(prec, leadTimes, (double)precipSumResetTime);
+                    pointValues = ConvertUV(ctlParents, parentData, iPoint, pointVariable, pointCatalog.OffsetTypeId, pointCatalog.OffsetValue, leadTimes);
+                }
+                else
+                {
+                    List<Catalog> parentCatalog = ctlParents.FindAll(x
+                        => x.VariableId == pointCatalog.VariableId
+                        && x.OffsetTypeId == pointCatalog.OffsetTypeId
+                        && x.OffsetValue == pointCatalog.OffsetValue
+                    );
+                    if (parentCatalog.Count == 0 || (parentCatalog.Count > 1))
+                    {
+                        pointValues = Common.Support.Allocate(leadTimes.Length, double.NaN);
+                    }
+                    if (parentCatalog.Count > 1)
+                    {
+                        throw new Exception("(parentCatalog.Count > 1)");
+                    }
+                    int iParentCatalog = ctlParents.IndexOf(parentCatalog[0]);
                     for (int iLT = 0; iLT < leadTimes.Length; iLT++)
                     {
-                        ret[iLT][iPC] = prec[iLT];
+                        ret[iLT][iPC] = parentData[iLT][iPoint][iParentCatalog];
                     }
                 }
+
             }
             return ret;
         }
 
-        private double[] ConvertPrecipitation(Variable pointVariable, double[][][] parentData, int iPoint, double[] leadTimes, double precipSumResetTime)
+        private double[] ConvertUV(List<Catalog> ctlParents, double[][][] parentData, int iPoint, Variable pointVar, int pointOffsetTypeId, double pointOffsetValue, double[] leadTimeHours)
+        {
+            double[] ret = Common.Support.Allocate(leadTimeHours.Length, double.NaN);
+
+            int iParentCatalogU = ctlParents.IndexOf(ctlParents.First(x
+                => x.VariableId == (int)EnumVariable.UWindFcs
+                && x.OffsetTypeId == pointOffsetTypeId
+                && x.OffsetValue == pointOffsetValue
+            ));
+            int iParentCatalogV = ctlParents.IndexOf(ctlParents.First(x
+                => x.VariableId == (int)EnumVariable.VWindFcs
+                && x.OffsetTypeId == pointOffsetTypeId
+                && x.OffsetValue == pointOffsetValue
+            ));
+
+            for (int iLT = 0; iLT < leadTimeHours.Length; iLT++)
+            {
+                double u = parentData[iLT][iPoint][iParentCatalogU];
+                double v = parentData[iLT][iPoint][iParentCatalogV];
+                if (!double.IsNaN(u) && !double.IsNaN(v))
+                    throw new Exception(string.Format("Не число для U,V ветера GFS: {0} {1}", u, v));
+
+                double dir = Common.Vector.uv2Azimuth(u, v);
+                double mod = Common.Vector.uv2Module(u, v);
+
+                if (pointVar.VariableTypeId == (int)EnumVariableType.Direction)
+                    ret[iLT] = dir;
+                if (pointVar.VariableTypeId == (int)EnumVariableType.WindVelocity)
+                    ret[iLT] = mod;
+            }
+            return ret;
+        }
+
+        private double[] ConvertPrecipitation(Variable pointVariable, double[][][] parentData, int iPoint, int iParentCatalogPrecip, double[] leadTimeHours, double resetTimeHours)
         {
             if (pointVariable.TimeId != (int)EnumTime.Second)
                 throw new Exception("(pointVariable.TimeId != (int)EnumTime.Second)");
-            int pointAccumulationSeconds = pointVariable.TimeSupport;
 
+            double[] parentPrecip = Common.Support.Allocate(leadTimeHours.Length, double.NaN);
+            for (int i = 0; i < leadTimeHours.Length; i++)
+            {
+                parentPrecip[i] = parentData[i][iPoint][iParentCatalogPrecip];
+            }
 
-
-            double[] ret = GetPrecip4LeadTimeStep(gfsPrecips, leadTimes, restTime);
+            return GetPrecip4LeadTimeStep(parentPrecip, leadTimeHours, pointVariable.TimeSupport, resetTimeHours);
         }
 
         private double[/*leadTime*/][/*point Catalog index*/] _DELME_ConvertDataParent2Point(double[/*leadTime*/][/*GeoPoint index*/][/*parent Catalog index*/] parentData, List<Catalog> parentCatalogs, List<Catalog> pointCatalogs, Dictionary<int, Geo.GeoPoint> siteXpoint, double[] leadTimes, double? precipSumResetTime)
@@ -528,7 +532,7 @@ namespace SOV.WcfService.Field
                 if (pointCatalog.VariableId == precipVariableId)
                 {
                     if (precipSumResetTime.HasValue)
-                        prec = GetPrecip4LeadTimeStep(prec, leadTimes, (double)precipSumResetTime);
+                        prec = _DELME_GetPrecip4LeadTimeStep(prec, leadTimes, (double)precipSumResetTime);
                     for (int iLT = 0; iLT < leadTimes.Length; iLT++)
                     {
                         ret[iLT][iPC] = prec[iLT];
@@ -544,38 +548,51 @@ namespace SOV.WcfService.Field
         /// 
         /// </summary>
         /// <param name="gfsPrecips">Осадки с заданными заблаговременностями.</param>
-        /// <param name="leadTimes">Заблаговременности с постоянным шагом, например, 3 часа.</param>
-        /// <param name="restTime">Интервал в пределах которого происходит накопление осадков в модели (в ед. изм. прогностического шага).</param>
+        /// <param name="leadTimesHours">Заблаговременности с постоянным шагом, например, 3 часа.</param>
+        /// <param name="restTimeHours">Интервал в пределах которого происходит накопление осадков в модели (в ед. изм. прогностического шага).</param>
         /// <returns>Осадки для указанных заблаговременностей, накопленные между заблаговременностями.</returns>
-        static public double[] GetPrecip4LeadTimeStep(double[] gfsPrecips, double[] leadTimes, double restTime)
+        static public double[] GetPrecip4LeadTimeStep(double[] gfsPrecips, double[] leadTimesHours, int precipAccumSeconds, double restTimeHours)
         {
-            ////if (leadTimes.Length < 2 || gfsPrecips.Length != leadTimes.Length) return null;
+            double[] ret = SOV.Common.Support.Allocate(leadTimesHours.Length, double.NaN);
+            if (leadTimesHours.Length < 2 || gfsPrecips.Length != leadTimesHours.Length || (leadTimesHours[0] != 0)) return ret;
 
-            double[] ret = SOV.Common.Support.Allocate(leadTimes.Length, double.NaN);
-            double leadTimeStep = leadTimes[1] - leadTimes[0];
+            double leadTimeAccumulated = 0;
+            int leadTimesQ = 0;
 
-            if (leadTimes[0] != 0 && ((int)(leadTimes[0] / restTime)) * restTime + leadTimeStep == leadTimes[0])
-                ret[0] = gfsPrecips[0];
-
-            for (int i = 1; i < leadTimes.Length; i++)
+            for (int i = 1; i < leadTimesHours.Length; i++)
             {
-                double precipValue = double.NaN;
-                // Если предыдущая забл кратна времени релаксации осадков
-                if (Math.IEEERemainder(leadTimes[i - 1], restTime) == 0)
+                leadTimeAccumulated += ((leadTimesHours[i] - leadTimesHours[i - 1]) * 3600);
+                leadTimesQ++;
+
+                if (precipAccumSeconds < leadTimeAccumulated)
                 {
-                    precipValue = gfsPrecips[i];
+                    leadTimeAccumulated = 0;
+                    leadTimesQ = 0;
+                    continue;
                 }
-                else
+                if (precipAccumSeconds == leadTimeAccumulated)
                 {
-                    precipValue = gfsPrecips[i] - gfsPrecips[i - 1];
-                    if (precipValue < -0.99)
-                        throw new Exception(string.Format(
-                            "Осадки предыдущей заблаговременности ({0}) больше, чем осадки текущей ({1}) на {2}: {3} vs {4}",
-                            leadTimes[i - 1], leadTimes[i], -precipValue, gfsPrecips[i], gfsPrecips[i - 1]
-                            ));
+                    double precipValue = double.NaN;
+                    // Если предыдущая забл кратна времени релаксации осадков
+                    if (Math.IEEERemainder(leadTimesHours[i - leadTimesQ], restTimeHours) == 0)
+                    {
+                        precipValue = gfsPrecips[i];
+                    }
+                    else
+                    {
+                        precipValue = gfsPrecips[i] - gfsPrecips[i - leadTimesQ];
+                        if (precipValue < -0.99)
+                            throw new Exception(string.Format(
+                                "Осадки предыдущей заблаговременности ({0}) больше, чем осадки текущей ({1}) на {2}: {3} vs {4}",
+                                leadTimesHours[i - 1], leadTimesHours[i], -precipValue, gfsPrecips[i], gfsPrecips[i - 1]
+                                ));
+                    }
+                    precipValue = (precipValue < 0) ? 0 : precipValue;
+                    ret[i] = precipValue;
+
+                    leadTimeAccumulated = 0;
+                    leadTimesQ = 0;
                 }
-                precipValue = (precipValue < 0) ? 0 : precipValue;
-                ret[i] = precipValue;
             }
             return ret;
         }
