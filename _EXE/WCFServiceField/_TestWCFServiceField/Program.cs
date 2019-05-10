@@ -37,7 +37,7 @@ namespace _TestWCFServiceField
             #endregion
 
             DateTime dateIni = new DateTime(2019, 5, 4, 12, 0, 0); //DateTime.Today.AddDays(-1);
-            double[] leadTimeHours = new double[] { 0, 12, -24 }; // = method.MethodForecast.LeadTimesHours;
+            double[] leadTimes = null;
             GeoRectangle[] geoRects = new GeoRectangle[]
                {
                     new GeoRectangle()
@@ -52,32 +52,29 @@ namespace _TestWCFServiceField
 
             try
             {
-                #region GET FIELDS IN REGION
+                ////////
+                //////// GET FIELDS IN REGION
+                ////////
+                //////catalogs = clientA.GetCatalogList(ha,
+                //////    new List<int>() { 10344 },  // Земной шар
+                //////    null,                       // All variables
+                //////    new List<int>() { 111 },    // GFS
+                //////    null,                       // All sources
+                //////    null,                       // All offset types
+                //////    null                        // All offset values
+                //////    );
+                //////FieldServiceReference.Method method = clientF.GetMethods(hf).FirstOrDefault(x => x.Id == catalogs[0].MethodId);
+                //////if (method == null)
+                //////    throw new Exception(string.Format("Запрошенный метод с кодом {0} не обслуживается сервисом."));
+                //////Varoff[] varoffs = catalogs.Select(x => new Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
+                //////Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/] dataF = clientF.GetFieldsInRectangles(hf, dateIni, method.Id, varoffs, leadTimeHours, geoRects);
+                //////PrintDataFields(dateIni, leadTimeHours, geoRects, catalogs, dataF);
+                //////dataF = clientF.GetFieldsInRectangles(hf, dateIni.AddDays(100), method.Id, varoffs, leadTimeHours, geoRects);
+                //////PrintDataFields(dateIni.AddDays(100), geoRects, catalogs, dataF);
 
-                // catalogs = clientA.GetCatalogList(ha,
-                //     new List<int>() { 10344 },  // Земной шар
-                //     null,                       // All variables
-                //     new List<int>() { 111 },    // GFS
-                //     null,                       // All sources
-                //     null,                       // All offset types
-                //     null                        // All offset values
-                //     );
-
-                // FieldServiceReference.Method method = clientF.GetMethods(hf).FirstOrDefault(x => x.Id == catalogs[0].MethodId);
-                // if (method == null)
-                //     throw new Exception(string.Format("Запрошенный метод с кодом {0} не обслуживается сервисом."));
-                // Varoff[] varoffs = catalogs.Select(x => new Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
-
-                // Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/] dataF = clientF.GetFieldsInRectangles(hf, dateIni, method.Id, varoffs, leadTimeHours, geoRects);
-                // PrintDataFields(dateIni, leadTimeHours, geoRects, catalogs, dataF);
-
-                // dataF = clientF.GetFieldsInRectangles(hf, dateIni.AddDays(100), method.Id, varoffs, leadTimeHours, geoRects);
-                // PrintDataFields(dateIni.AddDays(100), leadTimeHours, geoRects, catalogs, dataF);
-
-                #endregion
-
-                #region GET VALUES AT POINTS
-
+                //
+                // GET VALUES AT POINTS
+                //
                 catalogs = clientA.GetCatalogList(ha,
                     new List<int>() { 332 }, // Владивосток
                     null,
@@ -87,10 +84,13 @@ namespace _TestWCFServiceField
                 int siteSysAttrTypeIdLat = 1000; // Широта
                 int siteSysAttrTypeIdLon = 1001; // Долгота
 
-                double[/*leadTime*/][/*Catalog index*/] dataP = clientF.GetValuesAtPoints(hf, dateIni, leadTimeHours, catalogs.Select(x => x.Id).ToArray(), siteSysAttrTypeIdLat, siteSysAttrTypeIdLon);
-                PrintDataPoints(dateIni, leadTimeHours, catalogs, dataP);
+                DateTime dateS = DateTime.Now;
+                Console.Write("GetValuesAtPoints started at {0}...", dateS);
 
-                #endregion
+                Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = clientF.GetValuesAtPoints(hf, dateIni, leadTimes, catalogs.Select(x => x.Id).ToArray(), siteSysAttrTypeIdLat, siteSysAttrTypeIdLon);
+
+                Console.WriteLine("ended at {0}, elapsed {1} minutes.", DateTime.Now, (int)((DateTime.Now - dateS).TotalMinutes));
+                PrintDataPoints(dateIni, catalogs, dataP);
             }
             catch (Exception ex)
             {
@@ -155,7 +155,7 @@ namespace _TestWCFServiceField
             }
         }
 
-        static void PrintDataPoints(DateTime dateIni, double[] leadTimeHours, List<Catalog> catalogs, double[][] data)
+        static void PrintDataPoints(DateTime dateIni, List<Catalog> catalogs, Dictionary<double/*leadTime*/, double[]/*Catalog index*/> data)
         {
             Console.WriteLine("\n-- POINTS Date ini {0:yyyy.MM.dd HH}", dateIni);
 
@@ -163,16 +163,16 @@ namespace _TestWCFServiceField
                 Console.WriteLine("... no data.");
             else
             {
-                for (int i = 0; i < data.Length; i++)
+                foreach (KeyValuePair<double, double[]> item in data)
                 {
-                    Console.WriteLine("Lead time {0} h", leadTimeHours[i]);
+                    Console.WriteLine("Lead time {0} h", item.Key);
 
-                    if (data[i] == null)
+                    if (item.Value == null)
                         Console.WriteLine("... no data.");
                     else
-                        for (int j = 0; j < data[i].Length; j++)
+                        for (int j = 0; j < item.Value.Length; j++)
                         {
-                            Console.WriteLine("\t\tCatalog {0}. Value {1}.", catalogs[j].Id, data[i][j]);
+                            Console.WriteLine("\t\tCatalog {0}. Value {1}.", catalogs[j].Id, item.Value[j]);
                         }
                 }
             }

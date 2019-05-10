@@ -671,12 +671,12 @@ namespace _TestWCFServiceField.FieldServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Field[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Field))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.EnumFieldFormat))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Varoff[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Varoff))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(double[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(int[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(double[][]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<double, double[]>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Varoff[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Varoff))]
     public partial class IdName : _TestWCFServiceField.FieldServiceReference.IdClass {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -735,16 +735,16 @@ namespace _TestWCFServiceField.FieldServiceReference {
         System.Threading.Tasks.Task CloseByUserNameAsync(string userName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetFieldsInRectangles", ReplyAction="http://tempuri.org/IService/GetFieldsInRectanglesResponse")]
-        _TestWCFServiceField.FieldServiceReference.Field[][][] GetFieldsInRectangles(long hSvc, System.DateTime dateIni, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, double[] leadTimes, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs);
+        _TestWCFServiceField.FieldServiceReference.Field[][][] GetFieldsInRectangles(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetFieldsInRectangles", ReplyAction="http://tempuri.org/IService/GetFieldsInRectanglesResponse")]
-        System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Field[][][]> GetFieldsInRectanglesAsync(long hSvc, System.DateTime dateIni, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, double[] leadTimes, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs);
+        System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Field[][][]> GetFieldsInRectanglesAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValuesAtPoints", ReplyAction="http://tempuri.org/IService/GetValuesAtPointsResponse")]
-        double[][] GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
+        System.Collections.Generic.Dictionary<double, double[]> GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValuesAtPoints", ReplyAction="http://tempuri.org/IService/GetValuesAtPointsResponse")]
-        System.Threading.Tasks.Task<double[][]> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
         _TestWCFServiceField.FieldServiceReference.Method[] GetMethods(long hSvc);
@@ -804,19 +804,19 @@ namespace _TestWCFServiceField.FieldServiceReference {
             return base.Channel.CloseByUserNameAsync(userName);
         }
         
-        public _TestWCFServiceField.FieldServiceReference.Field[][][] GetFieldsInRectangles(long hSvc, System.DateTime dateIni, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, double[] leadTimes, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs) {
-            return base.Channel.GetFieldsInRectangles(hSvc, dateIni, methodId, varoffs, leadTimes, grs);
+        public _TestWCFServiceField.FieldServiceReference.Field[][][] GetFieldsInRectangles(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs) {
+            return base.Channel.GetFieldsInRectangles(hSvc, dateIni, leadTimes, methodId, varoffs, grs);
         }
         
-        public System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Field[][][]> GetFieldsInRectanglesAsync(long hSvc, System.DateTime dateIni, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, double[] leadTimes, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs) {
-            return base.Channel.GetFieldsInRectanglesAsync(hSvc, dateIni, methodId, varoffs, leadTimes, grs);
+        public System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Field[][][]> GetFieldsInRectanglesAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs) {
+            return base.Channel.GetFieldsInRectanglesAsync(hSvc, dateIni, leadTimes, methodId, varoffs, grs);
         }
         
-        public double[][] GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
+        public System.Collections.Generic.Dictionary<double, double[]> GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
             return base.Channel.GetValuesAtPoints(hSvc, dateIni, leadTimes, pointCatalogsId, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
         }
         
-        public System.Threading.Tasks.Task<double[][]> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
             return base.Channel.GetValuesAtPointsAsync(hSvc, dateIni, leadTimes, pointCatalogsId, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
         }
         

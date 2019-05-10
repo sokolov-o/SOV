@@ -163,17 +163,35 @@ namespace SOV.WcfService.Field
             if (kvp.Value != null)
                 Close(kvp.Key);
         }
-        public SOV.Field[/*LeadTime index*/][/*Georectangle index*/][/*Varoff index*/] GetFieldsInRectangles
-            (long hSvc, DateTime dateIni, int methodId, List<SGMO.Varoff> varoffs, List<double> leadTimes, List<Geo.GeoRectangle> grs)
+
+        /// <summary>
+        /// Получить прогностические поля для указанных записей каталога и заблаговременностей в указанных регионах.
+        /// Return: Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/]
+        /// </summary>
+        /// <param name="hSvc">Идентификатор рабочей сессии.</param>
+        /// <param name="dateIni">Исходная дата прогноза.</param>
+        /// <param name="catalogIds">Список кодов записей каталога (id), определяющих прогностический набор данных в виде полей г/м элементов. 
+        /// Все записи должны иметь один и тотже метод прогноза. 
+        /// Не может быть null.</param>
+        /// <param name="grs">Регионы отбора данных в узлах поля. Если null, отбираются все узлы.</param>
+        /// <param name="leadTimes">Заблаговременности прогноза. Все, если null.
+        /// Внимание! Если выбираются значения сумм осадков, то при не верном формировании массива заблаговременностей,
+        /// может стать невозможным определение значений осадков (NaN).
+        /// </param>
+        /// <param name="leadTimes">Заблаговременности для выборки. Не может быть null.</param>
+        /// <returns>Массив полей Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/]</returns>
+        public SOV.Field[/*LeadTime index*/][/*Georectangle index*/][/*Varoff index*/] GetFieldsInRectangles(long hSvc, DateTime dateIni, List<double> leadTimes, int methodId, List<SGMO.Varoff> varoffs, List<Geo.GeoRectangle> grs)
         {
             CheckHandle(hSvc);
-            Check(leadTimes);
 
             MethodExt method = GetMethod(methodId);
+            string methOutInterface = GetOutStoreParameter(method.Method, "INTERFACE", true);
+            if (leadTimes == null)
+                leadTimes = method.MethodForecast.LeadTimes.ToList();
+            Check(leadTimes);
 
             // SWITCH METHOD OUTPUT STORAGE INTERFACE
 
-            string methOutInterface = GetOutStoreParameter(method.Method, "INTERFACE", true);
             switch (methOutInterface)
             {
                 case "IFileFcsGrid":
@@ -191,23 +209,25 @@ namespace SOV.WcfService.Field
                         methOutInterface, method.Method.Name, this));
             }
         }
+
         /// <summary>
-        /// Получить прогнозы в указанных пунктах.
+        /// Получить прогностические значения переменных для указанных записей каталога и заблаговременностей в указанных точках.
         /// </summary>
-        /// <param name="hSvc">Дескриптор сессии сервиса.</param>
-        /// <param name="dateIni">Исходная дата прогноза.</param>
-        /// <param name="leadTimes">Заблаговременности прогноза (не null).</param>
-        /// <param name="pointCatalogsId">Id записей каталогов данных пунктов с разными координатами.</param>
-        /// <param name="amurSiteAttrTypeLatId">Id типа атрибута пункта "широта".</param>
-        /// <param name="amurSiteAttrTypeLonId">Id типа атрибута пункта "долгота".</param>
-        /// <returns></returns>
-        public double[/*leadTime*/][/*point Catalog index*/] GetValuesAtPoints
-            (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId)
+        /// <param name="dateIni"></param>
+        /// <param name="pointCatalogsId"></param>
+        /// <param name="leadTimes">Заблаговременности прогноза. Все, если null.
+        /// Внимание! Если выбираются значения сумм осадков, то при не верном формировании массива заблаговременностей,
+        /// может стать невозможным определение значений осадков (NaN).
+        /// </param>
+        /// <param name="amurSiteAttrTypeLatId"></param>
+        /// <param name="amurSiteAttrTypeLonId"></param>
+        /// <returns>double[/*leadTime*/][/*Catalog index*/]</returns>
+        public Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> GetValuesAtPoints
+             (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId)
         {
             // CHECK INPUT
             CheckHandle(hSvc);
             Check(pointCatalogsId);
-            Check(leadTimes);
 
             // GET FCS CATALOGS 4 POINT CATALOGS
             //
@@ -223,9 +243,9 @@ namespace SOV.WcfService.Field
             Method pointMethod = _amurClient.GetMethod(_amurServiceHandle, pointCatalogs[0].MethodId);
             List<Catalog> parentCatalogs = GetParentFcsCatalogs(pointCatalogs);
             MethodExt parentMethodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == parentCatalogs[0].MethodId);
-
-            // GET parentMethodFcs
-            //////List<double> leadTimes = parentMethodExt.MethodForecast.LeadTimes;
+            if (leadTimes == null)
+                leadTimes = parentMethodExt.MethodForecast.LeadTimes.ToList();
+            Check(leadTimes);
 
             // GET precipSumResetTime 
             double? precipSumResetTime = null;
@@ -285,9 +305,15 @@ namespace SOV.WcfService.Field
 
                     if (parentData != null)
                     {
-                        double[/*leadTime*/][/*Catalog index*/] ret = ConvertDataParent2Point(parentData, parentCatalogs, pointCatalogs, pointXsites,
+                        double[/*leadTime*/][/*Catalog index*/] data = ConvertDataParent2Point(parentData, parentCatalogs, pointCatalogs, pointXsites,
                             leadTimes.ToArray(),
                             precipSumResetTime);
+
+                        Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> ret = new Dictionary<double, double[]>();
+                        for (int i = 0; i < leadTimes.Count; i++)
+                        {
+                            ret.Add(leadTimes[i], data[i]);
+                        }
                         return ret;
                     }
                     return null;

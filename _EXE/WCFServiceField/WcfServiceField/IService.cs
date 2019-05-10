@@ -40,22 +40,29 @@ namespace SOV.WcfService.Field
         /// Все записи должны иметь один и тотже метод прогноза. 
         /// Не может быть null.</param>
         /// <param name="grs">Регионы отбора данных в узлах поля. Если null, отбираются все узлы.</param>
+        /// <param name="leadTimes">Заблаговременности прогноза. Все, если null.
+        /// Внимание! Если выбираются значения сумм осадков, то при не верном формировании массива заблаговременностей,
+        /// может стать невозможным определение значений осадков (NaN).
+        /// </param>
         /// <param name="leadTimes">Заблаговременности для выборки. Не может быть null.</param>
         /// <returns>Массив полей Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/]</returns>
         [OperationContract]
         SOV.Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/] GetFieldsInRectangles
-            (long hSvc, DateTime dateIni, int methodId, List<SGMO.Varoff> varoffs, List<double> leadTimes, List<Geo.GeoRectangle> grs);
+            (long hSvc, DateTime dateIni, List<double> leadTimes, int methodId, List<SGMO.Varoff> varoffs, List<Geo.GeoRectangle> grs);
         /// <summary>
         /// Получить прогностические значения переменных для указанных записей каталога и заблаговременностей в указанных точках.
         /// </summary>
         /// <param name="dateIni"></param>
         /// <param name="pointCatalogsId"></param>
-        /// <param name="leadTimes"></param>
+        /// <param name="leadTimes">Заблаговременности прогноза. Все, если null.
+        /// Внимание! Если выбираются значения сумм осадков, то при не верном формировании массива заблаговременностей,
+        /// может стать невозможным определение значений осадков (NaN).
+        /// </param>
         /// <param name="amurSiteAttrTypeLatId"></param>
         /// <param name="amurSiteAttrTypeLonId"></param>
         /// <returns>double[/*leadTime*/][/*Catalog index*/]</returns>
         [OperationContract]
-        double[/*leadTime*/][/*Catalog index*/] GetValuesAtPoints
+        Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> GetValuesAtPoints
             (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
         /// <summary>
         /// Получить все методы (производства данных и информации), обслуживаемые сервисом.

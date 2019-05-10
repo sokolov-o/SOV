@@ -395,7 +395,7 @@ namespace SOV.DB
             if (gfsRecords != null)
             {
                 List<Field> fields = GFS.ToFields(gfsRecords);
-                
+
                 ret = new double[fields.Count][];
 
                 for (int i = 0; i < fields.Count; i++)
@@ -405,7 +405,17 @@ namespace SOV.DB
             }
             return ret;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dateIni"></param>
+        /// <param name="dataFilter"></param>
+        /// <param name="leadTimes"></param>
+        /// <param name="points"></param>
+        /// <param name="nearestType"></param>
+        /// <param name="distanceType"></param>
+        /// <returns>Прогностические значения double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/].
+        /// В случае отсутствия значения, возвражается NaN.</returns>
         public double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/] ReadValuesAtPoints(DateTime dateIni, object dataFilter, List<double> leadTimes,
             List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
@@ -420,25 +430,23 @@ namespace SOV.DB
 
             List<Grib2Filter> grib2Filter = (List<Grib2Filter>)dataFilter;
             double[][][] ret = SOV.Common.Support.Allocate(leadTimes.Count, points.Count, grib2Filter.Count, double.NaN);
-            bool isNull = true;
 
             for (int i = 0; i < leadTimes.Count; i++)
             {
                 double[][] d = ReadValuesAtPoints(dateIni, grib2Filter, (int)leadTimes[i], points, nearestType, distanceType);
+                if (d == null) continue;
 
-                if (d != null)
+                for (int j = 0; j < grib2Filter.Count; j++)
                 {
-                    for (int j = 0; j < grib2Filter.Count; j++)
+                    if (d[j] == null) continue;
+
+                    for (int k = 0; k < points.Count; k++)
                     {
-                        for (int k = 0; k < points.Count; k++)
-                        {
-                            ret[i][k][j] = d[j][k];
-                        }
+                        ret[i][k][j] = d[j][k];
                     }
-                    isNull = false;
                 }
             }
-            return isNull ? null : ret;
+            return ret;
         }
     }
 }
