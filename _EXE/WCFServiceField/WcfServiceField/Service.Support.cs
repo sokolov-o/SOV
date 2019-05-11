@@ -9,35 +9,21 @@ namespace SOV.WcfService.Field
 {
     public partial class Service
     {
-        //private List<Catalog> GetCatalogs(List<int> catalogIds)
-        //{
-        //    if (catalogIds == null || catalogIds.Count == 0) throw new Exception(string.Format("Выборка данных. Список записей каталога пуст."));
-
-        //    List<Catalog> catalogs = _amurClient.GetCatalogListById(_amurServiceHandle, catalogIds);
-
-        //    int methodId = catalogs[0].MethodId;
-        //    if (catalogs.Exists(x => x.MethodId != methodId))
-        //        throw new Exception(string.Format("Запрошенные записи каталога данных относятся к разным методам (Catalog.MethodId), что в данной версии не реализовано."));
-
-        //    return catalogs;
-        //}
-
         /// <summary>
         /// 
         /// Получить записи каталогов исходного метода прогноза 
         /// для записей каталогов прогнозов в точках.
         /// 
         /// </summary>
-        /// <param name="childCatalogs">Записи каталогов метода, производного от исходного.</param>
-        private List<Catalog> GetParentFcsCatalogs(List<Catalog> childCatalogs)
+        /// <param name="siteCatalogs">Записи каталогов метода, производного от исходного.</param>
+        private List<Catalog> GetParentFcsCatalogs(List<Catalog> siteCatalogs)
         {
-            Check(childCatalogs);
-            List<Catalog> parentCatalogs = new List<Catalog>();
-
+            Check(siteCatalogs);
+            List<Variable> variables = _amurClient.GetVariablesByList(_amurServiceHandle, siteCatalogs.Select(x => x.VariableId).ToList());
             // GET PARENT FCS METHOD
-            int? parentMethodId = _amurClient.GetMethod(_amurServiceHandle, childCatalogs[0].MethodId).ParentId;
+            int? parentMethodId = _amurClient.GetMethod(_amurServiceHandle, siteCatalogs[0].MethodId).ParentId;
             if (!parentMethodId.HasValue)
-                throw new Exception(string.Format("Для метода {0} отсутствует родитель.", childCatalogs[0].MethodId));
+                throw new Exception(string.Format("Для метода {0} отсутствует родитель.", siteCatalogs[0].MethodId));
             MethodExt parentMethodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == parentMethodId);
             Check(parentMethodExt.Method);
 
@@ -46,128 +32,77 @@ namespace SOV.WcfService.Field
                 null, // new List<int>() { fcsSiteId },
                 null, // pointCatalogs.Select(x => x.VariableId).Distinct().ToList(),
                 new List<int>() { parentMethodExt.Method.Id },
-                new List<int>() { parentMethodExt.Method.SourceLegalEntityId.HasValue ? (int)parentMethodExt.Method.SourceLegalEntityId : childCatalogs[0].SourceId },
-                childCatalogs.Select(x => x.OffsetTypeId).Distinct().ToList(),
-                childCatalogs.Select(x => x.OffsetValue).Distinct().ToList()
+                new List<int>() { parentMethodExt.Method.SourceLegalEntityId.HasValue ? (int)parentMethodExt.Method.SourceLegalEntityId : siteCatalogs[0].SourceId },
+                siteCatalogs.Select(x => x.OffsetTypeId).Distinct().ToList(),
+                siteCatalogs.Select(x => x.OffsetValue).Distinct().ToList()
                 );
             if (parentMethodCatalogs.Count() == 0)
                 throw new Exception("(parentMethodCatalogs.Count() != 0)");
             if (parentMethodCatalogs.Select(x => x.SiteId).Distinct().Count() != 1)
                 throw new Exception("(fcsCatalogsAll.Select(x => x.SiteId).Distinct().Count() != 1)");
+            variables.AddRange(_amurClient.GetVariablesByList(_amurServiceHandle, parentMethodCatalogs.Select(x => x.VariableId).ToList()));
+
+            List<Catalog> parentCatalogs = new List<Catalog>();
 
             // SIFT FCS CATALOGS
-            foreach (var childCatalog in childCatalogs)
+            foreach (var siteCatalog in siteCatalogs)
             {
                 List<Catalog> parentCatalog1 = null;
+                Variable childVar = variables.Find(x => x.Id == siteCatalog.VariableId);
 
-                // Specific: wind case
-                if (childCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindDirFcs || childCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindSpeedFcs)
+                // 1. PRECIPITATION
+                if (childVar.VariableTypeId == (int)EnumVariableType.Precipitation)
                 {
-                    if (!parentCatalogs.Exists(x => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs))
+                    parentCatalog1 = parentMethodCatalogs
+                        .FindAll(x
+                        => variables.Exists(y => y.Id == x.VariableId && y.VariableTypeId == (int)EnumVariableType.Precipitation)
+                        && x.OffsetTypeId == siteCatalog.OffsetTypeId
+                        && x.OffsetValue == siteCatalog.OffsetValue
+                    );
+                    Check(parentCatalog1, parentMethodExt.Method, siteCatalog);
+                }
+                // 2. WIND (BUT NOT GUST)
+                //else if (childCatalog.VariableId == (int)EnumVariable.WindDirFcs || childCatalog.VariableId == (int)EnumVariable.WindSpeedFcs)
+                else if (childVar.VariableTypeId == (int)EnumVariableType.Direction || childVar.VariableTypeId == (int)EnumVariableType.WindVelocity
+                    && childVar.DataTypeId != (int)EnumDataType.Maximum)
+                {
+                    if (!parentCatalogs.Exists(x => x.VariableId == (int)EnumVariable.UWindFcs))
                     {
                         // X-component
                         parentCatalog1 = parentMethodCatalogs.FindAll(x =>
-                            x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs &&
-                            x.OffsetTypeId == childCatalog.OffsetTypeId &&
-                            x.OffsetValue == childCatalog.OffsetValue
+                            x.VariableId == (int)EnumVariable.UWindFcs &&
+                            x.OffsetTypeId == siteCatalog.OffsetTypeId &&
+                            x.OffsetValue == siteCatalog.OffsetValue
                         );
-                        Check(parentCatalog1, parentMethodExt.Method, childCatalog);
+                        Check(parentCatalog1, parentMethodExt.Method, siteCatalog);
                         parentCatalogs.Add(parentCatalog1[0]);
 
                         // Y-component
                         parentCatalog1 = parentMethodCatalogs.FindAll(x
-                            => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.VWindFcs
-                            && x.OffsetTypeId == childCatalog.OffsetTypeId
-                            && x.OffsetValue == childCatalog.OffsetValue
+                            => x.VariableId == (int)EnumVariable.VWindFcs
+                            && x.OffsetTypeId == siteCatalog.OffsetTypeId
+                            && x.OffsetValue == siteCatalog.OffsetValue
                         );
-                        Check(parentCatalog1, parentMethodExt.Method, childCatalog);
+                        Check(parentCatalog1, parentMethodExt.Method, siteCatalog);
                     }
                 }
-                // Not vector-type variables
+                // 3. OTHER VARS
                 else
                 {
                     parentCatalog1 = parentMethodCatalogs.FindAll(x
-                        => x.VariableId == childCatalog.VariableId
-                        && x.OffsetTypeId == childCatalog.OffsetTypeId
-                        && x.OffsetValue == childCatalog.OffsetValue
+                        => x.VariableId == siteCatalog.VariableId
+                        && x.OffsetTypeId == siteCatalog.OffsetTypeId
+                        && x.OffsetValue == siteCatalog.OffsetValue
                     );
-                    Check(parentCatalog1, parentMethodExt.Method, childCatalog);
+                    Check(parentCatalog1, parentMethodExt.Method, siteCatalog);
                 }
-                if (parentCatalog1 != null)
+
+                // ADD CATALOG
+                if (parentCatalog1 != null && !parentCatalogs.Exists(x => x.Id == parentCatalog1[0].Id))
                     parentCatalogs.Add(parentCatalog1[0]);
             }
             return parentCatalogs;
         }
-
-        //////private object[/*Method parentMethod;List<Catalog> parentCatalogs;parentMethodForecast*/] GetParentFcsCatalogs(List<Catalog> childCatalogs)
-        //////{
-        //////    Check(childCatalogs);
-        //////    List<Catalog> parentCatalogs = new List<Catalog>();
-
-        //////    // GET PARENT FCS METHOD
-        //////    int? parentMethodId = _amurClient.GetMethod(_amurServiceHandle, childCatalogs[0].MethodId).ParentId;
-        //////    if (!parentMethodId.HasValue)
-        //////        throw new Exception(string.Format("Для метода {0} отсутствует родитель.", childCatalogs[0].MethodId));
-        //////    MethodExt parentMethodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == parentMethodId);
-        //////    Check(parentMethodExt.Method);
-
-        //////    // GET ALL FCS CATALOGS
-        //////    List<Catalog> parentMethodCatalogs = _amurClient.GetCatalogList(_amurServiceHandle,
-        //////        null, // new List<int>() { fcsSiteId },
-        //////        null, // pointCatalogs.Select(x => x.VariableId).Distinct().ToList(),
-        //////        new List<int>() { parentMethodExt.Method.Id },
-        //////        new List<int>() { parentMethodExt.Method.SourceLegalEntityId.HasValue ? (int)parentMethodExt.Method.SourceLegalEntityId : childCatalogs[0].SourceId },
-        //////        childCatalogs.Select(x => x.OffsetTypeId).Distinct().ToList(),
-        //////        childCatalogs.Select(x => x.OffsetValue).Distinct().ToList()
-        //////        );
-        //////    if (parentMethodCatalogs.Count() == 0)
-        //////        throw new Exception("(parentMethodCatalogs.Count() != 0)");
-        //////    if (parentMethodCatalogs.Select(x => x.SiteId).Distinct().Count() != 1)
-        //////        throw new Exception("(fcsCatalogsAll.Select(x => x.SiteId).Distinct().Count() != 1)");
-
-        //////    // SIFT FCS CATALOGS
-        //////    foreach (var childCatalog in childCatalogs)
-        //////    {
-        //////        List<Catalog> parentCatalog1 = null;
-
-        //////        // Specific: wind case
-        //////        if (childCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindDirFcs || childCatalog.VariableId == (int)SOV.Amur.Meta.EnumVariable.WindSpeedFcs)
-        //////        {
-        //////            if (!parentCatalogs.Exists(x => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs))
-        //////            {
-        //////                // X-component
-        //////                parentCatalog1 = parentMethodCatalogs.FindAll(x =>
-        //////                    x.VariableId == (int)SOV.Amur.Meta.EnumVariable.UWindFcs &&
-        //////                    x.OffsetTypeId == childCatalog.OffsetTypeId &&
-        //////                    x.OffsetValue == childCatalog.OffsetValue
-        //////                );
-        //////                Check(parentCatalog1, parentMethodExt.Method, childCatalog);
-        //////                parentCatalogs.Add(parentCatalog1[0]);
-
-        //////                // Y-component
-        //////                parentCatalog1 = parentMethodCatalogs.FindAll(x
-        //////                    => x.VariableId == (int)SOV.Amur.Meta.EnumVariable.VWindFcs
-        //////                    && x.OffsetTypeId == childCatalog.OffsetTypeId
-        //////                    && x.OffsetValue == childCatalog.OffsetValue
-        //////                );
-        //////                Check(parentCatalog1, parentMethodExt.Method, childCatalog);
-        //////            }
-        //////        }
-        //////        // Not vector-type variables
-        //////        else
-        //////        {
-        //////            parentCatalog1 = parentMethodCatalogs.FindAll(x
-        //////                => x.VariableId == childCatalog.VariableId
-        //////                && x.OffsetTypeId == childCatalog.OffsetTypeId
-        //////                && x.OffsetValue == childCatalog.OffsetValue
-        //////            );
-        //////            Check(parentCatalog1, parentMethodExt.Method, childCatalog);
-        //////        }
-        //////        if (parentCatalog1 != null)
-        //////            parentCatalogs.Add(parentCatalog1[0]);
-        //////    }
-        //////    return new object[] { parentMethodExt, parentCatalogs };
-        //////}
 
         /// <summary>
         /// Проверка набора parentCatalogs на единственный элемент.
@@ -357,15 +292,18 @@ namespace SOV.WcfService.Field
                 int iPoint = points.IndexOf(siteXpoint[pointCatalog.SiteId]);
                 double[] pointValues;
 
+                // 1. PRECIITATION
                 if (pointVariable.VariableTypeId == (int)EnumVariableType.Precipitation)
                 {
                     pointValues = ConvertPrecipitation(pointVariable, parentData, iPoint, iParentCatalogPrecip, leadTimes, (double)precipSumResetTime);
                 }
+                // 2. WIND SPEED
                 else if ((pointVariable.VariableTypeId == (int)EnumVariableType.Direction || pointVariable.VariableTypeId == (int)EnumVariableType.WindVelocity)
                     && pointVariable.DataTypeId != (int)EnumDataType.Maximum)
                 {
                     pointValues = ConvertUV(ctlParents, parentData, iPoint, pointVariable, pointCatalog.OffsetTypeId, pointCatalog.OffsetValue, leadTimes);
                 }
+                // 3. OTHER VARS
                 else
                 {
                     List<Catalog> parentCatalog = ctlParents.FindAll(x

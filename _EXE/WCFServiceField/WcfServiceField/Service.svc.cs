@@ -214,7 +214,7 @@ namespace SOV.WcfService.Field
         /// Получить прогностические значения переменных для указанных записей каталога и заблаговременностей в указанных точках.
         /// </summary>
         /// <param name="dateIni"></param>
-        /// <param name="pointCatalogIds"></param>
+        /// <param name="siteCatalogIds"></param>
         /// <param name="leadTimes">Заблаговременности прогноза. Все, если null.
         /// Внимание! Если выбираются значения сумм осадков, то при не верном формировании массива заблаговременностей,
         /// может стать невозможным определение значений осадков (NaN).
@@ -223,19 +223,19 @@ namespace SOV.WcfService.Field
         /// <param name="amurSiteAttrTypeLonId"></param>
         /// <returns>double[/*leadTime*/][/*Catalog index*/]</returns>
         public Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> GetValuesAtPoints
-             (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> pointCatalogIds)//, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId)
+             (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> siteCatalogIds)//, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId)
         {
             // CHECK INPUT
             CheckHandle(hSvc);
-            Check(pointCatalogIds);
+            Check(siteCatalogIds);
 
             // GET FCS CATALOGS 4 POINT CATALOGS
             //
             // Метод прогноза в точке является производным от исходного, 
             // родительского метода прогноза полей г/м элементов.
 
-            List<Catalog> pointCatalogs = _amurClient.GetCatalogListById(_amurServiceHandle, pointCatalogIds)
-                .OrderBy(x => pointCatalogIds.IndexOf(x.Id))
+            List<Catalog> pointCatalogs = _amurClient.GetCatalogListById(_amurServiceHandle, siteCatalogIds)
+                .OrderBy(x => siteCatalogIds.IndexOf(x.Id))
                 .ToList();
             Check(pointCatalogs);
 

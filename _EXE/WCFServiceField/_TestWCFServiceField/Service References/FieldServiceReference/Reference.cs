@@ -741,10 +741,10 @@ namespace _TestWCFServiceField.FieldServiceReference {
         System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Field[][][]> GetFieldsInRectanglesAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValuesAtPoints", ReplyAction="http://tempuri.org/IService/GetValuesAtPointsResponse")]
-        System.Collections.Generic.Dictionary<double, double[]> GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
+        System.Collections.Generic.Dictionary<double, double[]> GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValuesAtPoints", ReplyAction="http://tempuri.org/IService/GetValuesAtPointsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
         _TestWCFServiceField.FieldServiceReference.Method[] GetMethods(long hSvc);
@@ -812,12 +812,12 @@ namespace _TestWCFServiceField.FieldServiceReference {
             return base.Channel.GetFieldsInRectanglesAsync(hSvc, dateIni, leadTimes, methodId, varoffs, grs);
         }
         
-        public System.Collections.Generic.Dictionary<double, double[]> GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
-            return base.Channel.GetValuesAtPoints(hSvc, dateIni, leadTimes, pointCatalogsId, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
+        public System.Collections.Generic.Dictionary<double, double[]> GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId) {
+            return base.Channel.GetValuesAtPoints(hSvc, dateIni, leadTimes, pointCatalogsId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId) {
-            return base.Channel.GetValuesAtPointsAsync(hSvc, dateIni, leadTimes, pointCatalogsId, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId) {
+            return base.Channel.GetValuesAtPointsAsync(hSvc, dateIni, leadTimes, pointCatalogsId);
         }
         
         public _TestWCFServiceField.FieldServiceReference.Method[] GetMethods(long hSvc) {

@@ -70,8 +70,6 @@
         <xs:element minOccurs="0" name="dateIni" type="xs:dateTime" />
         <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="leadTimes" nillable="true" type="q5:ArrayOfdouble" />
         <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="pointCatalogsId" nillable="true" type="q6:ArrayOfint" />
-        <xs:element minOccurs="0" name="amurSiteAttrTypeLatId" type="xs:int" />
-        <xs:element minOccurs="0" name="amurSiteAttrTypeLonId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

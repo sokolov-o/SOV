@@ -81,14 +81,12 @@ namespace _TestWCFServiceField
                     new List<int>() { 112 }, //Method  "Ближайший узел GFS 0.25"
                     null, null, null
                     );
-                catalogs = catalogs.FindAll(x => x.Id == 10368139).ToList();
-                int siteSysAttrTypeIdLat = 1000; // Широта
-                int siteSysAttrTypeIdLon = 1001; // Долгота
+                //catalogs = catalogs.FindAll(x => x.Id == 10368139 || x.Id == 71629).ToList(); // Осадки, Владивосток
 
                 DateTime dateS = DateTime.Now;
                 Console.Write("GetValuesAtPoints started at {0}...", dateS);
 
-                Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = clientF.GetValuesAtPoints(hf, dateIni, leadTimes, catalogs.Select(x => x.Id).ToArray(), siteSysAttrTypeIdLat, siteSysAttrTypeIdLon);
+                Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = clientF.GetValuesAtPoints(hf, dateIni, leadTimes, catalogs.Select(x => x.Id).ToArray());
 
                 Console.WriteLine("ended at {0}, elapsed {1} minutes.", DateTime.Now, (int)((DateTime.Now - dateS).TotalMinutes));
                 PrintDataPoints(dateIni, catalogs, dataP);
