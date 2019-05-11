@@ -26,7 +26,7 @@ namespace SOV.WcfService.Field
         /// <summary>
         /// Dictionary<Method, List<object>/*MethvarXGrib, MethodForecast*/>
         /// </summary>
-        static List<MethodExt> _methodsValid = new List<MethodExt>();
+        static List<MethodExt> _methodsExtValid = new List<MethodExt>();
         //static Dictionary<Method, List<object>/*MethvarXGrib, MethodForecast*/> _methodsAllowed = new Dictionary<Method, List<object>>();
 
         static Dictionary<long, SOV.Common.User> _usersSessions = new Dictionary<long, Common.User>();
@@ -64,7 +64,7 @@ namespace SOV.WcfService.Field
                         System.IO.File.AppendAllText(_logFilePath, string.Format("Method removed due to MethodOutputStoreParameters == null. Method: \n", method));
                     }
 
-                    _methodsValid.Add(new MethodExt()
+                    _methodsExtValid.Add(new MethodExt()
                     {
                         Method = method,
                         MethVaroffXGrib2 = SOV.SGMO.DataManager.GetInstance().MethvarXGrib2Repository.Select(_dbAmurName, method.Id),
@@ -91,7 +91,7 @@ namespace SOV.WcfService.Field
         public List<Method> GetMethods(long hSvc)
         {
             CheckHandle(hSvc);
-            return _methodsValid.Select(x => x.Method).ToList();
+            return _methodsExtValid.Select(x => x.Method).ToList();
         }
         /// <summary>
         /// Открытие рабочей сессии.
@@ -222,8 +222,7 @@ namespace SOV.WcfService.Field
         /// <param name="amurSiteAttrTypeLatId"></param>
         /// <param name="amurSiteAttrTypeLonId"></param>
         /// <returns>double[/*leadTime*/][/*Catalog index*/]</returns>
-        public Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> GetValuesAtPoints
-             (long hSvc, DateTime dateIni, List<double> leadTimes, List<int> siteCatalogIds)//, int amurSiteAttrTypeLatId, int amurSiteAttrTypeLonId)
+        public Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> GetValuesAtPoints(long hSvc, DateTime dateIni, List<double> leadTimes, List<int> siteCatalogIds)
         {
             // CHECK INPUT
             CheckHandle(hSvc);
@@ -241,8 +240,8 @@ namespace SOV.WcfService.Field
 
             // parentMethod
             Method pointMethod = _amurClient.GetMethod(_amurServiceHandle, pointCatalogs[0].MethodId);
-            List<Catalog> parentCatalogs = GetParentFcsCatalogs(pointCatalogs);
-            MethodExt parentMethodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == parentCatalogs[0].MethodId);
+            List<Catalog> parentCatalogs = GetFieldFcsCatalogs(pointCatalogs);
+            MethodExt parentMethodExt = _methodsExtValid.FirstOrDefault(x => x.Method.Id == parentCatalogs[0].MethodId);
             if (leadTimes == null)
                 leadTimes = parentMethodExt.MethodForecast.LeadTimes.ToList();
             Check(leadTimes);
@@ -305,7 +304,7 @@ namespace SOV.WcfService.Field
 
                     if (parentData != null)
                     {
-                        double[/*leadTime*/][/*Catalog index*/] data = ConvertDataParent2Point(parentData, parentCatalogs, pointCatalogs, pointXsites,
+                        double[/*leadTime*/][/*Catalog index*/] data = ConvertFieldData2SiteCatalog(parentData, parentCatalogs, pointCatalogs, pointXsites,
                             leadTimes.ToArray(),
                             precipSumResetTime);
 
@@ -323,9 +322,7 @@ namespace SOV.WcfService.Field
             }
         }
 
-        public double[/*leadTime*/][/*point*/][/*field catalog*/] GetValuesAtCoords(long hSvc,
-            DateTime dateIni, List<Geo.GeoPoint> points, List<Catalog> fieldCatalogs,
-            Geo.EnumPointNearestType nearestType, Geo.EnumDistanceType distanceType)
+        public double[/*leadTime*/][/*point*/][/*field catalog*/] GetValuesAtCoords(long hSvc, DateTime dateIni, List<Geo.GeoPoint> points, List<Catalog> fieldCatalogs, Geo.EnumPointNearestType nearestType, Geo.EnumDistanceType distanceType)
         {
             // CHECK INPUT
             CheckHandle(hSvc);
@@ -349,7 +346,7 @@ namespace SOV.WcfService.Field
 
             // GET parentMethodFcs
 
-            MethodExt methodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == fieldCatalogs[0].MethodId);
+            MethodExt methodExt = _methodsExtValid.FirstOrDefault(x => x.Method.Id == fieldCatalogs[0].MethodId);
             List<double> leadTimes = methodExt.MethodForecast.LeadTimes.ToList();
             Check(leadTimes);
 
@@ -409,5 +406,87 @@ namespace SOV.WcfService.Field
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dateIni"></param>
+        /// <param name="track">Точки маршрута. 
+        /// Первая точка соответствует первой заблаговременности метода прогноза.
+        /// Далее точки маршрута идут по-порядку заблаговременностей: точка для следующей заблаговременности и т.д.
+        /// Количество точек может быть меньше количества заблаговременности метода, но не более.</param>
+        /// <param name="pointMethodId"></param>
+        /// <param name="pointVaroffs"></param>
+        /// <returns>Dictionary<double/*leadTimes*/, double[/*varoffs*/]>, где leadtime соответствует по порядку точкам маршрута (track).</returns>
+        public object GetTrackForecast(long hSvc, DateTime dateIni, List<Geo.GeoPoint> track, int pointMethodId, List<SGMO.Varoff> pointVaroffs)
+        {
+            // CHECK INPUT
+            CheckHandle(hSvc);
+            if (pointVaroffs == null || pointVaroffs.Count == 0) return null;
+
+            // GET Field forecast method
+            //
+            // Метод прогноза в точке является производным от исходного, 
+            // родительского метода прогноза полей г/м элементов.
+
+            Method pointMethod = _amurClient.GetMethod(_amurServiceHandle, pointMethodId);
+            List<Catalog> fieldCatalogs = GetFieldFcsCatalogs(pointMethod, pointVaroffs);
+            MethodExt fieldMethodExt = _methodsExtValid.FirstOrDefault(x => x.Method.Id == fieldCatalogs[0].MethodId);
+
+            List<double> leadTimes = fieldMethodExt.MethodForecast.LeadTimes.ToList();
+            if (leadTimes.Count < track.Count) throw new Exception(string.Format("leadTimes.Count < track.Count: {0} < {1}", leadTimes.Count, track.Count));
+            if (leadTimes.Count > track.Count) leadTimes.RemoveRange(track.Count, leadTimes.Count - track.Count);
+            Check(leadTimes);
+
+            // GET precipSumResetTime 
+            double? precipSumResetTime = null;
+            if (fieldMethodExt.MethodForecast.Attr.TryGetValue("precip_reset_time".ToUpper(), out string str))
+                precipSumResetTime = double.Parse(str);
+
+            // SWITCH METHOD OUTPUT STORAGE INTERFACE
+
+            string fieldMethodOutInterface = GetOutStoreParameter(fieldMethodExt.Method, "INTERFACE", true);
+            switch (fieldMethodOutInterface)
+            {
+                case "IFileFcsGrid":
+
+                    // GET DATA FILTER
+                    object dataFilter = GetDataFilter(fieldMethodExt, GetVaroffs(fieldCatalogs));
+
+                    // GET ENUMS
+                    object[] o = Method.GetMethodPostprocessingParams(pointMethod.MethodOutputStoreParameters);
+                    if (o == null)
+                        throw new Exception("Отсутствуют данные или неизвестное значение параметра [parent_method_data_postprocessing] метода прогноза в точке: " +
+                            (pointMethod.Name + " / " + pointMethod.Id));
+                    Geo.EnumPointNearestType nearestType = (Geo.EnumPointNearestType)o[0];
+                    Geo.EnumDistanceType distanceType = (Geo.EnumDistanceType)o[1];
+
+                    // GET & READ GRID REPOSITORY
+
+                    DB.IFcsGrid db = (DB.IFcsGrid)DB.Factory.GetInstance(fieldMethodExt.Method.MethodOutputStoreParameters);
+                    if (db == null) throw new Exception(string.Format(
+                        "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе SOV.DB.Factory. " +
+                        "Нужно дополнить код фабрики.\n", fieldMethodOutInterface, fieldMethodExt.Method.Name));
+                    double[/*leadTime*/][/*GeoPoint index*/][/*dataFilter index*/] fieldData = db.ReadValuesAtPoints
+                        (dateIni, dataFilter, leadTimes, track, nearestType, distanceType);
+
+                    // CONVERT FIELD DATA TO VAROFFS 
+
+                    if (fieldData != null)
+                    {
+                        double[/*leadTimes*/][/*track points*/][/*varoffs*/] varoffData = ConvertFieldData2Varoff(fieldData, fieldCatalogs, pointVaroffs, track, leadTimes.ToArray(), precipSumResetTime);
+
+                        Dictionary<double/*leadTimes*/, double[/*varoffs*/]> ret = new Dictionary<double, double[]>();
+                        for (int i = 0; i < leadTimes.Count; i++)
+                        {
+                            ret.Add(leadTimes[i], varoffData[i][i]);
+                        }
+                        return ret;
+                    }
+                    return null;
+                default:
+                    throw new Exception(string.Format("Для запрошенного интерфейса {0} метода <{1}> отсутствует обработчик считывания данных в <{2}>.\n",
+                        fieldMethodOutInterface, fieldMethodExt.Method.Name, this));
+            }
+        }
     }
 }

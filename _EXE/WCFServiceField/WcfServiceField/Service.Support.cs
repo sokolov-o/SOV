@@ -16,7 +16,7 @@ namespace SOV.WcfService.Field
         /// 
         /// </summary>
         /// <param name="siteCatalogs">Записи каталогов метода, производного от исходного.</param>
-        private List<Catalog> GetParentFcsCatalogs(List<Catalog> siteCatalogs)
+        private List<Catalog> GetFieldFcsCatalogs(List<Catalog> siteCatalogs)
         {
             Check(siteCatalogs);
             List<Variable> variables = _amurClient.GetVariablesByList(_amurServiceHandle, siteCatalogs.Select(x => x.VariableId).ToList());
@@ -24,7 +24,7 @@ namespace SOV.WcfService.Field
             int? parentMethodId = _amurClient.GetMethod(_amurServiceHandle, siteCatalogs[0].MethodId).ParentId;
             if (!parentMethodId.HasValue)
                 throw new Exception(string.Format("Для метода {0} отсутствует родитель.", siteCatalogs[0].MethodId));
-            MethodExt parentMethodExt = _methodsValid.FirstOrDefault(x => x.Method.Id == parentMethodId);
+            MethodExt parentMethodExt = _methodsExtValid.FirstOrDefault(x => x.Method.Id == parentMethodId);
             Check(parentMethodExt.Method);
 
             // GET ALL FCS CATALOGS
@@ -47,8 +47,9 @@ namespace SOV.WcfService.Field
             // SIFT FCS CATALOGS
             foreach (var siteCatalog in siteCatalogs)
             {
+                SGMO.Varoff varoff = new SGMO.Varoff() { VariableId = siteCatalog.VariableId, OffsetTypeId = siteCatalog.OffsetTypeId, OffsetValue = siteCatalog.OffsetValue };
                 List<Catalog> parentCatalog1 = null;
-                Variable childVar = variables.Find(x => x.Id == siteCatalog.VariableId);
+                Variable childVar = variables.Find(x => x.Id == varoff.VariableId);
 
                 // 1. PRECIPITATION
                 if (childVar.VariableTypeId == (int)EnumVariableType.Precipitation)
@@ -56,10 +57,10 @@ namespace SOV.WcfService.Field
                     parentCatalog1 = parentMethodCatalogs
                         .FindAll(x
                         => variables.Exists(y => y.Id == x.VariableId && y.VariableTypeId == (int)EnumVariableType.Precipitation)
-                        && x.OffsetTypeId == siteCatalog.OffsetTypeId
-                        && x.OffsetValue == siteCatalog.OffsetValue
+                        && x.OffsetTypeId == varoff.OffsetTypeId
+                        && x.OffsetValue == varoff.OffsetValue
                     );
-                    Check(parentCatalog1, parentMethodExt.Method, siteCatalog);
+                    Check(parentCatalog1, parentMethodExt.Method, varoff);
                 }
                 // 2. WIND (BUT NOT GUST)
                 //else if (childCatalog.VariableId == (int)EnumVariable.WindDirFcs || childCatalog.VariableId == (int)EnumVariable.WindSpeedFcs)
@@ -71,30 +72,30 @@ namespace SOV.WcfService.Field
                         // X-component
                         parentCatalog1 = parentMethodCatalogs.FindAll(x =>
                             x.VariableId == (int)EnumVariable.UWindFcs &&
-                            x.OffsetTypeId == siteCatalog.OffsetTypeId &&
-                            x.OffsetValue == siteCatalog.OffsetValue
+                            x.OffsetTypeId == varoff.OffsetTypeId &&
+                            x.OffsetValue == varoff.OffsetValue
                         );
-                        Check(parentCatalog1, parentMethodExt.Method, siteCatalog);
+                        Check(parentCatalog1, parentMethodExt.Method, varoff);
                         parentCatalogs.Add(parentCatalog1[0]);
 
                         // Y-component
                         parentCatalog1 = parentMethodCatalogs.FindAll(x
                             => x.VariableId == (int)EnumVariable.VWindFcs
-                            && x.OffsetTypeId == siteCatalog.OffsetTypeId
-                            && x.OffsetValue == siteCatalog.OffsetValue
+                            && x.OffsetTypeId == varoff.OffsetTypeId
+                            && x.OffsetValue == varoff.OffsetValue
                         );
-                        Check(parentCatalog1, parentMethodExt.Method, siteCatalog);
+                        Check(parentCatalog1, parentMethodExt.Method, varoff);
                     }
                 }
                 // 3. OTHER VARS
                 else
                 {
                     parentCatalog1 = parentMethodCatalogs.FindAll(x
-                        => x.VariableId == siteCatalog.VariableId
-                        && x.OffsetTypeId == siteCatalog.OffsetTypeId
-                        && x.OffsetValue == siteCatalog.OffsetValue
+                        => x.VariableId == varoff.VariableId
+                        && x.OffsetTypeId == varoff.OffsetTypeId
+                        && x.OffsetValue == varoff.OffsetValue
                     );
-                    Check(parentCatalog1, parentMethodExt.Method, siteCatalog);
+                    Check(parentCatalog1, parentMethodExt.Method, varoff);
                 }
 
                 // ADD CATALOG
@@ -109,15 +110,28 @@ namespace SOV.WcfService.Field
         /// </summary>
         /// <param name="parentCatalogs"></param>
         /// <param name="parentMethod"></param>
-        /// <param name="childCatalog"></param>
-        private void Check(List<Catalog> parentCatalogs, Method parentMethod, Catalog childCatalog)
+        /// <param name="varoff"></param>
+        private void Check(List<Catalog> parentCatalogs, Method parentMethod, SGMO.Varoff varoff)
         {
             if (parentCatalogs == null || parentCatalogs.Count == 0)
             {
-                throw new Exception(string.Format("Для записи каталога [{0}] ({1}) не найдена соответствующая ей запись каталога метода [{2}/{3}].",
+                throw new Exception(string.Format("Для переменной [{0}] не найдена соответствующая ей запись каталога метода [{2}].",
+                    string.Format("{0}.{1}.{2}.{3}", _amurClient.GetVariableById(_amurServiceHandle, varoff.VariableId).NameRus, varoff.VariableId, varoff.OffsetTypeId, varoff.OffsetValue),
+                    parentMethod));
+            }
+            if (parentCatalogs.Count != 1)
+                throw new Exception(string.Format("Для переменной [{0}] найдено более одной записи каталога метода {2}. Всего найдено {1} записей, а должно быть 1.",
+                    string.Format("{0}.{1}.{2}.{3}", _amurClient.GetVariableById(_amurServiceHandle, varoff.VariableId).NameRus, varoff.VariableId, varoff.OffsetTypeId, varoff.OffsetValue),
+                    parentCatalogs.Count, parentMethod));
+        }
+        private void _DELME_Check(List<Catalog> parentCatalogs, Method parentMethod, Catalog childCatalog)
+        {
+            if (parentCatalogs == null || parentCatalogs.Count == 0)
+            {
+                throw new Exception(string.Format("Для записи каталога [{0}] ({1}) не найдена соответствующая ей запись каталога метода [{2}].",
                     string.Format("{0}.{1}.{2}.{3}.{4}.{5}.{6}", childCatalog.Id, childCatalog.SiteId, childCatalog.VariableId, childCatalog.MethodId, childCatalog.SourceId, childCatalog.OffsetTypeId, childCatalog.OffsetValue),
                     _amurClient.GetVariableById(_amurServiceHandle, childCatalog.VariableId).NameRus,
-                    parentMethod.Name, parentMethod.Id));
+                    parentMethod));
             }
             if (parentCatalogs.Count != 1)
                 throw new Exception(string.Format("Для записи каталога {0} найдено более одной записи каталога метода {2}. Всего найдено {1} записей, а должно быть 1.", childCatalog.Id, parentCatalogs.Count, parentMethod.Id));
@@ -201,7 +215,7 @@ namespace SOV.WcfService.Field
 
         private MethodExt GetMethod(int methodId)
         {
-            MethodExt method = _methodsValid.FirstOrDefault(x => x.Method.Id == methodId);
+            MethodExt method = _methodsExtValid.FirstOrDefault(x => x.Method.Id == methodId);
             Check(method.Method);
 
             return method;
@@ -220,6 +234,8 @@ namespace SOV.WcfService.Field
         {
             if (method == null)
                 throw new Exception(string.Format("Запрошенный метод <{0}> не обслуживается сервисом.", method));
+            if (!method.SourceLegalEntityId.HasValue)
+                throw new Exception(string.Format("Запрошенный метод <{0}> должен иметь источник (SourceLegalEntityId).", method));
         }
         /// <summary>
         /// Проверка на единственность метода прогноза.
@@ -243,39 +259,41 @@ namespace SOV.WcfService.Field
         /// Преобразовать массив данных для записей каталога поля для отдельной точки
         /// в данные для записей каталога пунктов (точек).
         /// 
+        /// TODO: заменить на ConvertFieldData2Varoff! sov@20190511
+        /// 
         /// </summary>
         /// <param name="parentData">Данные, полученные из прогностических полей, для параметров полей.</param>
-        /// <param name="ctlParents">Записи каталога для прогностических полей.</param>
-        /// <param name="ctlPoints">Записи каталога для пунктов.</param>
+        /// <param name="fieldCatalogs">Записи каталога для прогностических полей.</param>
+        /// <param name="pointCatalogs">Записи каталога для пунктов.</param>
         /// <param name="pointXsites">Соответствие координат пунктов их кодам (id).</param>
         /// <param name="leadTimes"></param>
         /// <param name="precipSumResetTime">Временной период накопления осадков. Может быть больше прогностического шага по времени. Если период равен шагу, то значение д.б. равно null.</param>
         /// <returns>Массив прогностических данных для пунктов (точек), соответствующий записям каталога этих точек.</returns>
-        private double[/*leadTime*/][/*point Catalog index*/] ConvertDataParent2Point(
-            double[/*leadTime*/][/*GeoPoint index*/][/*parent Catalog index*/] parentData,
-            List<Catalog> ctlParents,
-            List<Catalog> ctlPoints,
+        private double[/*leadTime*/][/*site Catalog index*/] ConvertFieldData2SiteCatalog(
+            double[/*leadTime*/][/*GeoPoint index*/][/*field Catalog index*/] parentData,
+            List<Catalog> fieldCatalogs,
+            List<Catalog> pointCatalogs,
             Dictionary<int, Geo.GeoPoint> siteXpoint,
             double[] leadTimes,
             double? precipSumResetTime)
         {
             if (parentData.Length != leadTimes.Length) throw new Exception("(parentData.Length != leadHours.Length)");
 
-            double[/*leadTime*/][/*Catalog of point*/] ret = Common.Support.Allocate(leadTimes.Length, ctlPoints.Count, double.NaN);
+            double[/*leadTime*/][/*Catalog of point*/] ret = Common.Support.Allocate(leadTimes.Length, pointCatalogs.Count, double.NaN);
             List<Geo.GeoPoint> points = siteXpoint.Values.ToList();
 
             // GET VARIABLES
-            List<Variable> pointVariables = _amurClient.GetVariablesByList(_amurServiceHandle, ctlPoints.Select(x => x.VariableId).Distinct().ToList());
+            List<Variable> pointVariables = _amurClient.GetVariablesByList(_amurServiceHandle, pointCatalogs.Select(x => x.VariableId).Distinct().ToList());
 
             // GET PARENT FOR PRECIP
-            List<Variable> parentVarPrecip = _amurClient.GetVariablesByList(_amurServiceHandle, ctlParents.Select(x => x.VariableId).Distinct().ToList());
+            List<Variable> parentVarPrecip = _amurClient.GetVariablesByList(_amurServiceHandle, fieldCatalogs.Select(x => x.VariableId).Distinct().ToList());
             parentVarPrecip = parentVarPrecip.FindAll(x => x.VariableTypeId == (int)EnumVariableType.Precipitation);
             if (parentVarPrecip.Count != 1)
                 throw new Exception(string.Format("В прогнозах полей присутствует не единственный тип переменной для осадков. Всего их {0}. Ошибка алгоритма.", parentVarPrecip.Count));
-            List<Catalog> parentCatalogPrecips = ctlParents.FindAll(x => x.VariableId == parentVarPrecip[0].Id);
+            List<Catalog> parentCatalogPrecips = fieldCatalogs.FindAll(x => x.VariableId == parentVarPrecip[0].Id);
             if (parentCatalogPrecips.Count != 1)
                 throw new Exception(string.Format("В прогнозах полей присутствует не единственная запись каталога для осадков. Всего их {0}. Ошибка алгоритма.", parentCatalogPrecips.Count));
-            int iParentCatalogPrecip = ctlParents.IndexOf(parentCatalogPrecips[0]);
+            int iParentCatalogPrecip = fieldCatalogs.IndexOf(parentCatalogPrecips[0]);
 
             //new List<int>() { (int)EnumTime.Second },
             //null,
@@ -285,9 +303,9 @@ namespace SOV.WcfService.Field
 
             // SCAN POINTS CATALOGS
 
-            for (int iPC = 0; iPC < ctlPoints.Count; iPC++)
+            for (int iPC = 0; iPC < pointCatalogs.Count; iPC++)
             {
-                Catalog pointCatalog = ctlPoints[iPC];
+                Catalog pointCatalog = pointCatalogs[iPC];
                 Variable pointVariable = pointVariables.Find(x => x.Id == pointCatalog.VariableId);
                 int iPoint = points.IndexOf(siteXpoint[pointCatalog.SiteId]);
                 double[] pointValues;
@@ -301,12 +319,12 @@ namespace SOV.WcfService.Field
                 else if ((pointVariable.VariableTypeId == (int)EnumVariableType.Direction || pointVariable.VariableTypeId == (int)EnumVariableType.WindVelocity)
                     && pointVariable.DataTypeId != (int)EnumDataType.Maximum)
                 {
-                    pointValues = ConvertUV(ctlParents, parentData, iPoint, pointVariable, pointCatalog.OffsetTypeId, pointCatalog.OffsetValue, leadTimes);
+                    pointValues = ConvertUV(fieldCatalogs, parentData, iPoint, pointVariable, pointCatalog.OffsetTypeId, pointCatalog.OffsetValue, leadTimes);
                 }
                 // 3. OTHER VARS
                 else
                 {
-                    List<Catalog> parentCatalog = ctlParents.FindAll(x
+                    List<Catalog> parentCatalog = fieldCatalogs.FindAll(x
                         => x.VariableId == pointCatalog.VariableId
                         && x.OffsetTypeId == pointCatalog.OffsetTypeId
                         && x.OffsetValue == pointCatalog.OffsetValue
@@ -320,7 +338,7 @@ namespace SOV.WcfService.Field
 
                     if (parentCatalog.Count == 1)
                     {
-                        int iParentCatalog = ctlParents.IndexOf(parentCatalog[0]);
+                        int iParentCatalog = fieldCatalogs.IndexOf(parentCatalog[0]);
                         for (int iLT = 0; iLT < leadTimes.Length; iLT++)
                         {
                             pointValues[iLT] = parentData[iLT][iPoint][iParentCatalog];
@@ -334,6 +352,87 @@ namespace SOV.WcfService.Field
             }
             return ret;
         }
+
+        private double[/*leadTime*/][/*point index*/][/*varoff index*/] ConvertFieldData2Varoff(
+            double[/*leadTime*/][/*point index*/][/*field catalog index*/] parentData,
+            List<Catalog> fieldCatalogs,
+            List<SGMO.Varoff> pointVaroffs,
+            List<Geo.GeoPoint> points,
+            double[] leadTimes,
+            double? precipSumResetTime)
+        {
+            double[/*leadTime*/][/*point index*/][/*varoff index*/] ret = Common.Support.Allocate(leadTimes.Length, points.Count, pointVaroffs.Count, double.NaN);
+
+            // GET VARIABLES
+            List<Variable> pointVariables = _amurClient.GetVariablesByList(_amurServiceHandle, pointVaroffs.Select(x => x.VariableId).Distinct().ToList());
+
+            // GET PARENT FOR PRECIP
+            List<Variable> parentVarPrecip = _amurClient.GetVariablesByList(_amurServiceHandle, fieldCatalogs.Select(x => x.VariableId).Distinct().ToList());
+            parentVarPrecip = parentVarPrecip.FindAll(x => x.VariableTypeId == (int)EnumVariableType.Precipitation);
+            if (parentVarPrecip.Count != 1)
+                throw new Exception(string.Format("В прогнозах полей присутствует не единственный тип переменной для осадков. Всего их {0}. Ошибка алгоритма.", parentVarPrecip.Count));
+            List<Catalog> parentCatalogPrecips = fieldCatalogs.FindAll(x => x.VariableId == parentVarPrecip[0].Id);
+            if (parentCatalogPrecips.Count != 1)
+                throw new Exception(string.Format("В прогнозах полей присутствует не единственная запись каталога для осадков. Всего их {0}. Ошибка алгоритма.", parentCatalogPrecips.Count));
+            int iParentCatalogPrecip = fieldCatalogs.IndexOf(parentCatalogPrecips[0]);
+
+            // SCAN VAROFFS
+
+            for (int iVaroff = 0; iVaroff < pointVaroffs.Count; iVaroff++)
+            {
+                SGMO.Varoff varoff = pointVaroffs[iVaroff];
+                Variable pointVariable = pointVariables.Find(x => x.Id == varoff.VariableId);
+
+                // SCAN POINTS
+
+                for (int iPoint = 0; iPoint < points.Count; iPoint++)
+                {
+                    double[] pointValues;
+
+                    // 1. PRECIITATION
+                    if (pointVariable.VariableTypeId == (int)EnumVariableType.Precipitation)
+                    {
+                        pointValues = ConvertPrecipitation(pointVariable, parentData, iPoint, iParentCatalogPrecip, leadTimes, (double)precipSumResetTime);
+                    }
+                    // 2. WIND SPEED
+                    else if ((pointVariable.VariableTypeId == (int)EnumVariableType.Direction || pointVariable.VariableTypeId == (int)EnumVariableType.WindVelocity)
+                        && pointVariable.DataTypeId != (int)EnumDataType.Maximum)
+                    {
+                        pointValues = ConvertUV(fieldCatalogs, parentData, iPoint, pointVariable, varoff.OffsetTypeId, varoff.OffsetValue, leadTimes);
+                    }
+                    // 3. OTHER VARS
+                    else
+                    {
+                        List<Catalog> fieldCatalog = fieldCatalogs.FindAll(x
+                            => x.VariableId == varoff.VariableId
+                            && x.OffsetTypeId == varoff.OffsetTypeId
+                            && x.OffsetValue == varoff.OffsetValue
+                        );
+                        if (fieldCatalog.Count > 1)
+                        {
+                            throw new Exception("(fieldCatalog.Count > 1)");
+                        }
+
+                        pointValues = Common.Support.Allocate(leadTimes.Length, double.NaN);
+
+                        if (fieldCatalog.Count == 1)
+                        {
+                            int iParentCatalog = fieldCatalogs.IndexOf(fieldCatalog[0]);
+                            for (int iLT = 0; iLT < leadTimes.Length; iLT++)
+                            {
+                                pointValues[iLT] = parentData[iLT][iPoint][iParentCatalog];
+                            }
+                        }
+                    }
+                    for (int iLT = 0; iLT < leadTimes.Length; iLT++)
+                    {
+                        ret[iLT][iPoint][iVaroff] = pointValues[iLT];
+                    } 
+                }
+            }
+            return ret;
+        }
+
 
         private double[] ConvertUV(List<Catalog> ctlParents, double[][][] parentData, int iPoint, Variable pointVar, int pointOffsetTypeId, double pointOffsetValue, double[] leadTimeHours)
         {
@@ -568,6 +667,94 @@ namespace SOV.WcfService.Field
                 }
             }
             return ret;
+        }
+        private List<Catalog> GetFieldFcsCatalogs(Method pointMethod, List<SGMO.Varoff> pointVaroffs)
+        {
+            List<Variable> variables = _amurClient.GetVariablesByList(_amurServiceHandle, pointVaroffs.Select(x => x.VariableId).ToList());
+
+            // GET FIELD FCS METHOD
+
+            if (!pointMethod.ParentId.HasValue)
+                throw new Exception(string.Format("Для метода {0}/{1} отсутствует родитель.", pointMethod.Name, pointMethod.Id));
+            MethodExt fieldMethodExt = _methodsExtValid.FirstOrDefault(x => x.Method.Id == pointMethod.ParentId);
+            Check(fieldMethodExt.Method);
+
+            // GET ALL FCS CATALOGS
+
+            List<Catalog> fieldCatalogs = _amurClient.GetCatalogList(_amurServiceHandle,
+                null, // All sites (must be one Earth-site)
+                null, // All variables
+                new List<int>() { fieldMethodExt.Method.Id },
+                new List<int>() { (int)fieldMethodExt.Method.SourceLegalEntityId },
+                pointVaroffs.Select(x => x.OffsetTypeId).Distinct().ToList(),
+                pointVaroffs.Select(x => x.OffsetValue).Distinct().ToList()
+                );
+            if (fieldCatalogs.Count() == 0)
+                throw new Exception("(parentMethodCatalogs.Count() != 0)");
+            if (fieldCatalogs.Select(x => x.SiteId).Distinct().Count() != 1)
+                throw new Exception("(fcsCatalogsAll.Select(x => x.SiteId).Distinct().Count() != 1)");
+            variables.AddRange(_amurClient.GetVariablesByList(_amurServiceHandle, fieldCatalogs.Select(x => x.VariableId).ToList()));
+
+            List<Catalog> parentCatalogs = new List<Catalog>();
+
+            // SIFT FCS CATALOGS
+            foreach (var pointVaroff in pointVaroffs)
+            {
+                List<Catalog> parentCatalog1 = null;
+                Variable childVar = variables.Find(x => x.Id == pointVaroff.VariableId);
+
+                // 1. PRECIPITATION
+                if (childVar.VariableTypeId == (int)EnumVariableType.Precipitation)
+                {
+                    parentCatalog1 = fieldCatalogs
+                        .FindAll(x
+                        => variables.Exists(y => y.Id == x.VariableId && y.VariableTypeId == (int)EnumVariableType.Precipitation)
+                        && x.OffsetTypeId == pointVaroff.OffsetTypeId
+                        && x.OffsetValue == pointVaroff.OffsetValue
+                    );
+                    Check(parentCatalog1, fieldMethodExt.Method, pointVaroff);
+                }
+                // 2. WIND (BUT NOT GUST)
+                //else if (childCatalog.VariableId == (int)EnumVariable.WindDirFcs || childCatalog.VariableId == (int)EnumVariable.WindSpeedFcs)
+                else if (childVar.VariableTypeId == (int)EnumVariableType.Direction || childVar.VariableTypeId == (int)EnumVariableType.WindVelocity
+                    && childVar.DataTypeId != (int)EnumDataType.Maximum)
+                {
+                    if (!parentCatalogs.Exists(x => x.VariableId == (int)EnumVariable.UWindFcs))
+                    {
+                        // X-component
+                        parentCatalog1 = fieldCatalogs.FindAll(x =>
+                            x.VariableId == (int)EnumVariable.UWindFcs &&
+                            x.OffsetTypeId == pointVaroff.OffsetTypeId &&
+                            x.OffsetValue == pointVaroff.OffsetValue
+                        );
+                        Check(parentCatalog1, fieldMethodExt.Method, pointVaroff);
+                        parentCatalogs.Add(parentCatalog1[0]);
+
+                        // Y-component
+                        parentCatalog1 = fieldCatalogs.FindAll(x
+                            => x.VariableId == (int)EnumVariable.VWindFcs
+                            && x.OffsetTypeId == pointVaroff.OffsetTypeId
+                            && x.OffsetValue == pointVaroff.OffsetValue
+                        );
+                        Check(parentCatalog1, fieldMethodExt.Method, pointVaroff);
+                    }
+                }
+                // 3. OTHER VARS
+                else
+                {
+                    parentCatalog1 = fieldCatalogs.FindAll(x
+                        => x.VariableId == pointVaroff.VariableId
+                        && x.OffsetTypeId == pointVaroff.OffsetTypeId
+                        && x.OffsetValue == pointVaroff.OffsetValue
+                    );
+                    Check(parentCatalog1, fieldMethodExt.Method, pointVaroff);
+                }
+
+                // ADD CATALOG
+                if (parentCatalog1 != null && !parentCatalogs.Exists(x => x.Id == parentCatalog1[0].Id))
+                    parentCatalogs.Add(parentCatalog1[0]);
+            }
+            return parentCatalogs;
         }
     }
 }
