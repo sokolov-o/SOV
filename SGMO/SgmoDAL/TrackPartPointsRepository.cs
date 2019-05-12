@@ -11,7 +11,7 @@ namespace SOV.SGMO
 {
     public class TrackPartPointsRepository : Common.BaseRepository<TrackPartPoint>
     {
-        internal TrackPartPointsRepository(Common.ADbNpgsql db) : base(db, "track_part_points")
+        internal TrackPartPointsRepository(Common.ADbNpgsql db) : base(db, "track_part_point")
         {
         }
         protected override object ParseData(NpgsqlDataReader rdr)

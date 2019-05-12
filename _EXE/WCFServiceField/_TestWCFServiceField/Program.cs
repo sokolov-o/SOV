@@ -51,10 +51,13 @@ namespace _TestWCFServiceField
 
             try
             {
-                // GET TRACK FORECASTS
+                // GET & WRITE 2 DB TRACK FORECASTS
                 LogStarted("TrackForecast.Get");
-                TrackForecast.Get(4/*Тайвань - Корсаков, 2019*/, dateIni, 112 /*Method  "Ближайший узел GFS 0.25"*/);
+                List<SOV.SGMO.DataTrackFcs> dataTrackFcs = TrackForecast.Get(4/*Тайвань - Корсаков, 2019*/, dateIni, 112 /*Method  "Ближайший узел GFS 0.25"*/);
                 LogEnded("TrackForecast.Get");
+
+                SOV.SGMO.DataManager.GetInstance().DataTrackFcsRepository.Insert(dataTrackFcs);
+
 
                 // GET SITES FORECASTS
                 //GetSiteForecast(dateIni, leadTimes);

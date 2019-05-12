@@ -55,6 +55,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="DataTrackFcsRepository.cs" />
     <Compile Include="TrackPartPointsRepository.cs" />
     <Compile Include="TrackPartRepository.cs" />
     <Compile Include="TrackRepository.cs" />

@@ -16,15 +16,38 @@ namespace _TestWCFServiceField
         /// <param name="trackId">Track id.</param>
         /// <param name="dateIni">Track part datetime (and forecast datetime ini).</param>
         /// <param name="pointMethodId">Track part point forecast method id.</param>
-        public static void Get(int trackId, DateTime dateIni, int pointMethodId)
+        public static List<DataTrackFcs> Get(int trackId, DateTime dateIni, int pointMethodId)
         {
+            // GET TRACK
             Track track = GetTrack(trackId, dateIni);
-            FieldServiceReference.GeoPoint[] trackPartPoints = track.TrackParts[0].TrackPartPoints.Select(x => new FieldServiceReference.GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
+            List<TrackPartPoint> trackPartPoints = track.TrackParts[0].TrackPartPoints;
+            FieldServiceReference.GeoPoint[] trackPartPointsGeo = trackPartPoints.Select(x => new FieldServiceReference.GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
 
+            // GET VAROFFS
             List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha, new List<int>() { track.SiteId }, null, new List<int>() { pointMethodId }, null, null, null);
             FieldServiceReference.Varoff[] varoffs = catalogs.Select(x => new FieldServiceReference.Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
 
-            Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = Program.clientF.GetTrackForecast(Program.hf, dateIni, trackPartPoints, pointMethodId, varoffs);
+            // GET FORECAST
+            Dictionary<double/*leadTime*/, double[]/*Catalog index*/> fcsData = Program.clientF.GetTrackForecast(Program.hf, dateIni, trackPartPointsGeo, pointMethodId, varoffs);
+
+            // CONVERT FORECAST
+            List<DataTrackFcs> dataTrackF = new List<DataTrackFcs>();
+            int iPoint = 0;
+            foreach (KeyValuePair<double, double[]> kvp in fcsData)
+            {
+                for (int iCatalog = 0; iCatalog < catalogs.Count; iCatalog++)
+                {
+                    dataTrackF.Add(new DataTrackFcs
+                    {
+                        TrackPartPointId = trackPartPoints[iPoint].Id,
+                        CatalogId = catalogs[iCatalog].Id,
+                        LeadTime = kvp.Key,
+                        Value = kvp.Value[iCatalog]
+                    });
+                }
+                iPoint++;
+            }
+            return dataTrackF;
         }
 
         static Track GetTrack(int trackId, DateTime dateIni)
@@ -38,27 +61,6 @@ namespace _TestWCFServiceField
             Console.WriteLine("Track [{0}], part for {1}. {2} points.", track.Name, trackPart.DateS, trackPartPoints.Count);
 
             return track;
-        }
-
-        static void PrintDataPoints(DateTime dateIni, FieldServiceReference.Varoff[] varoffs, Dictionary<double/*leadTime*/, double[]/*varoff*/> data)
-        {
-            Console.WriteLine("\n-- POINTS Date ini {0:yyyy.MM.dd HH}", dateIni);
-
-            if (data == null) { Console.WriteLine("... no data."); return; }
-
-            List<Variable> variables =Program.clientA.GetVariablesByList(Program.ha, varoffs.Select(x => x.VariableId).ToList());
-            foreach (KeyValuePair<double, double[]> item in data)
-            {
-                Console.WriteLine("Lead time {0} h", item.Key);
-
-                if (item.Value == null)
-                    Console.WriteLine("... no data.");
-                else
-                    for (int j = 0; j < item.Value.Length; j++)
-                    {
-                        Console.WriteLine("{0}  Value {1}.", catalogs[j].Id, item.Value[j], variables.FirstOrDefault(x => x.Id == catalogs[j].VariableId).NameRus);
-                    }
-            }
         }
     }
 }
