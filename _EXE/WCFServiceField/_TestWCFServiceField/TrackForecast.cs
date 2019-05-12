@@ -18,35 +18,43 @@ namespace _TestWCFServiceField
         /// <param name="pointMethodId">Track part point forecast method id.</param>
         public static List<DataTrackFcs> Get(int trackId, DateTime dateIni, int pointMethodId)
         {
-            // GET TRACK
+            // GET SITE TRACK
+
             Track track = GetTrack(trackId, dateIni);
             List<TrackPartPoint> trackPartPoints = track.TrackParts[0].TrackPartPoints;
             FieldServiceReference.GeoPoint[] trackPartPointsGeo = trackPartPoints.Select(x => new FieldServiceReference.GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
 
-            // GET VAROFFS
+            // GET VAROFFS FOR TRACK
+
             List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha, new List<int>() { track.SiteId }, null, new List<int>() { pointMethodId }, null, null, null);
             FieldServiceReference.Varoff[] varoffs = catalogs.Select(x => new FieldServiceReference.Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
 
-            // GET FORECAST
+            // GET TRACK FORECAST
+
             Dictionary<double/*leadTime*/, double[]/*Catalog index*/> fcsData = Program.clientF.GetTrackForecast(Program.hf, dateIni, trackPartPointsGeo, pointMethodId, varoffs);
 
-            // CONVERT FORECAST
+            // CONVERT TRACK FORECAST DATA 2 List<DataTrackFcs> 
+
             List<DataTrackFcs> dataTrackF = new List<DataTrackFcs>();
             int iPoint = 0;
             foreach (KeyValuePair<double, double[]> kvp in fcsData)
             {
                 for (int iCatalog = 0; iCatalog < catalogs.Count; iCatalog++)
                 {
-                    dataTrackF.Add(new DataTrackFcs
-                    {
-                        TrackPartPointId = trackPartPoints[iPoint].Id,
-                        CatalogId = catalogs[iCatalog].Id,
-                        LeadTime = kvp.Key,
-                        Value = kvp.Value[iCatalog]
-                    });
+                    //if (!double.IsNaN(kvp.Value[iCatalog]))
+                    //{
+                        dataTrackF.Add(new DataTrackFcs
+                        {
+                            TrackPartPointId = trackPartPoints[iPoint].Id,
+                            CatalogId = catalogs[iCatalog].Id,
+                            LeadTime = kvp.Key,
+                            Value = kvp.Value[iCatalog]
+                        });
+                    //}
                 }
                 iPoint++;
             }
+
             return dataTrackF;
         }
 
@@ -58,7 +66,7 @@ namespace _TestWCFServiceField
             track.TrackParts = new List<TrackPart> { trackPart };
             trackPart.TrackPartPoints = trackPartPoints;
 
-            Console.WriteLine("Track [{0}], part for {1}. {2} points.", track.Name, trackPart.DateS, trackPartPoints.Count);
+            Console.WriteLine("Track [{0}], part for {1}. {2} points.", track.Name, trackPart.DateSUTC, trackPartPoints.Count);
 
             return track;
         }

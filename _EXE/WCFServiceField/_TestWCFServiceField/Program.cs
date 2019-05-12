@@ -56,7 +56,14 @@ namespace _TestWCFServiceField
                 List<SOV.SGMO.DataTrackFcs> dataTrackFcs = TrackForecast.Get(4/*Тайвань - Корсаков, 2019*/, dateIni, 112 /*Method  "Ближайший узел GFS 0.25"*/);
                 LogEnded("TrackForecast.Get");
 
-                SOV.SGMO.DataManager.GetInstance().DataTrackFcsRepository.Insert(dataTrackFcs);
+                try
+                {
+                    SOV.SGMO.DataManager.GetInstance().DataTrackFcsRepository.Insert(dataTrackFcs);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("\n*** ОШИБКА: DataTrackFcsRepository.Insert(dataTrackFcs)\n");
+                }
 
 
                 // GET SITES FORECASTS

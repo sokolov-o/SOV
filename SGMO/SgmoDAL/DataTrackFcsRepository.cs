@@ -44,10 +44,9 @@ namespace SOV.SGMO
                 fields.Add(new Dictionary<string, object>
                 {
                     { "track_part_point_id", value.TrackPartPointId },
-                    { "catalog_id" , value.TrackPartPointId },
-                    { "lead_time", value.TrackPartPointId },
-                    { "value", value.TrackPartPointId },
-                    { "date_insert", value.TrackPartPointId }
+                    { "catalog_id" , value.CatalogId},
+                    { "lead_time", value.LeadTime},
+                    { "value", value.Value}
                 });
             }
             Insert(fields);

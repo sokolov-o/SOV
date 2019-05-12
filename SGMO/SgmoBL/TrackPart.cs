@@ -13,7 +13,7 @@ namespace SOV.SGMO
     public class TrackPart : IdClass
     {
         public int TrackId { get; set; }
-        public DateTime DateS { get; set; }
+        public DateTime DateSUTC { get; set; }
 
         public List<TrackPartPoint> TrackPartPoints { get; set; }
     }

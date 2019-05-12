@@ -16,7 +16,7 @@ namespace SOV.SGMO
         /// Datetime UTC.
         /// </summary>
         [DataMember]
-        public DateTime Date { get; set; }
+        public DateTime DateUTC { get; set; }
         /// <summary>
         /// Track point.
         /// </summary>

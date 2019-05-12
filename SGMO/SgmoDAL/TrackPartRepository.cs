@@ -20,7 +20,7 @@ namespace SOV.SGMO
             {
                 Id = (int)rdr["id"],  
                 TrackId = (int)rdr["track_id"],
-                DateS = (DateTime)rdr["date_s"]
+                DateSUTC = (DateTime)rdr["date_s_utc"]
             };
         }
 
@@ -29,7 +29,7 @@ namespace SOV.SGMO
             var fields = new Dictionary<string, object>()
                 {
                     {"track_id", trackId},
-                    {"date_s", dateS}
+                    {"date_s_utc", dateS}
                 };
             List<TrackPart> ret = Select(fields);
             return ret == null || ret.Count == 0 ? null : ret[0];

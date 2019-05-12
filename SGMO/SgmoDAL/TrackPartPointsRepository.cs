@@ -20,7 +20,7 @@ namespace SOV.SGMO
             {
                 Id = (int)rdr["id"],
                 TrackPartId = (int)rdr["track_part_id"],
-                Date = (DateTime)rdr["date"],
+                DateUTC = (DateTime)rdr["date_utc"],
                 UTCOffset = (short)rdr["utc_offset"],
                 GeoPoint = new Geo.GeoPoint((double)rdr["lat"], (double)rdr["lon"])
             };
