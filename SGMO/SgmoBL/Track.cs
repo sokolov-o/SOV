@@ -17,6 +17,9 @@ namespace SOV.SGMO
         /// Дата начала маршрута.
         /// </summary>
         public DateTime DateS { get; set; }
+
+        public List<TrackPart> TrackParts { get; set; }
+
         public override string ToString()
         {
             return Name + " - " + Id;

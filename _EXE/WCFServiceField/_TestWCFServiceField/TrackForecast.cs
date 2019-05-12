@@ -10,38 +10,27 @@ namespace _TestWCFServiceField
 {
     public class TrackForecast
     {
-        public static void Get(int trackId, DateTime dateIni, List<double> leadTimes)
+        public static void Get(int trackId, DateTime dateIni, int pointMethodId)
         {
-            Console.WriteLine("PROCESS TrackForecast");
+            Track track = GetTrack(trackId, dateIni);
+            FieldServiceReference.GeoPoint[] trackPartPoints = track.TrackParts[0].TrackPartPoints.Select(x => new FieldServiceReference.GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
 
-            GetTrack(trackId, dateIni);
-
-            //List<FieldServiceReference.GeoPoint> trackPoints;
-            //List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha,
-            //    new List<int>() { 332 }, // Владивосток
-            //    null,
-            //    new List<int>() { 112 }, //Method  "Ближайший узел GFS 0.25"
-            //    null, null, null
-            //    );
-            //List<Varoff> varoffs = new List<Varoff>();
-
-
-
-            //DateTime dateS = DateTime.Now;
-            //Console.Write("GetValuesAtPoints started at {0}...", dateS);
-
-            //Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = Program.clientF.GetTrackForecast(Program.hf, dateIni, trackPoints, varoffs);
-
-            //Console.WriteLine("ended at {0}, elapsed {1} minutes.", DateTime.Now, (int)((DateTime.Now - dateS).TotalMinutes));
-            //PrintDataPoints(dateIni, catalogs, dataP);
+            List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha, new List<int>() { track.SiteId }, null, new List<int>() { pointMethodId }, null, null, null);
+            FieldServiceReference.Varoff[] varoffs = catalogs.Select(x => new FieldServiceReference.Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
+                       
+            Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = Program.clientF.GetTrackForecast(Program.hf, dateIni, trackPartPoints, pointMethodId, varoffs);
         }
-        static void GetTrack(int trackId, DateTime dateIni)
+        static Track GetTrack(int trackId, DateTime dateIni)
         {
             Track track = DataManager.GetInstance().TrackRepository.Select(trackId);
             TrackPart trackPart = DataManager.GetInstance().TrackPartRepository.Select(trackId, dateIni);
             List<TrackPartPoint> trackPartPoints = DataManager.GetInstance().TrackPartPointsRepository.Select(trackPart.Id);
+            track.TrackParts = new List<TrackPart> { trackPart };
+            trackPart.TrackPartPoints = trackPartPoints;
 
             Console.WriteLine("Track [{0}], part for {1}. {2} points.", track.Name, trackPart.DateS, trackPartPoints.Count);
+
+            return track;
         }
     }
 }

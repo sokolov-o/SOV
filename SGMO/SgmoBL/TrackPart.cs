@@ -14,5 +14,7 @@ namespace SOV.SGMO
     {
         public int TrackId { get; set; }
         public DateTime DateS { get; set; }
+
+        public List<TrackPartPoint> TrackPartPoints { get; set; }
     }
 }

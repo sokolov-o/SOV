@@ -38,7 +38,7 @@ namespace _TestWCFServiceField
 
             DateTime dateIni = new DateTime(2019, 5, 4, 12, 0, 0); //DateTime.Today.AddDays(-1);
             List<double> leadTimes = null;
-            List< GeoRectangle > geoRects = new List<GeoRectangle>()
+            List<GeoRectangle> geoRects = new List<GeoRectangle>()
                {
                     new GeoRectangle()
                     {
@@ -52,7 +52,9 @@ namespace _TestWCFServiceField
             try
             {
                 // GET TRACK FORECASTS
-                TrackForecast.Get(4, dateIni, leadTimes);
+                LogStarted("TrackForecast.Get");
+                TrackForecast.Get(4/*Тайвань - Корсаков, 2019*/, dateIni, 112 /*Method  "Ближайший узел GFS 0.25"*/);
+                LogEnded("TrackForecast.Get");
 
                 // GET SITES FORECASTS
                 //GetSiteForecast(dateIni, leadTimes);
@@ -110,7 +112,7 @@ namespace _TestWCFServiceField
             PrintDataPoints(dateIni, catalogs, dataP);
         }
 
-        static void PrintDataFields(DateTime dateIni, double[] leadTimeHours,SOV.Geo.GeoRectangle[] grs, List<Catalog> catalogs, Field[][][] data)
+        static void PrintDataFields(DateTime dateIni, double[] leadTimeHours, SOV.Geo.GeoRectangle[] grs, List<Catalog> catalogs, Field[][][] data)
         {
             Console.WriteLine("\n-- Forecast as FIELD's from {0:yyyy.MM.dd HH}", dateIni);
 
@@ -144,7 +146,7 @@ namespace _TestWCFServiceField
                                 }
                                 else
                                 {
-                                    Console.Write("Catalog {0} [{2}]. {1} points.", catalogs[k].Id, data[i][j][k].Value.Count, variables.FirstOrDefault(y => y.Id == catalogs[k].VariableId).NameRus);
+                                    Console.Write("Catalog {0} [{2}]. {1} points.", catalogs[k].Id, data[i][j][k].Value.Length, variables.FirstOrDefault(y => y.Id == catalogs[k].VariableId).NameRus);
                                     Console.WriteLine("\tAvg {0:.00}, max {1:.00}, min {2:.00}", data[i][j][k].Value.Average(), data[i][j][k].Value.Max(), data[i][j][k].Value.Min());
                                 }
                             }
@@ -182,5 +184,17 @@ namespace _TestWCFServiceField
                 }
             }
         }
+
+        static DateTime dateS = DateTime.Now;
+        static void LogStarted(string name)
+        {
+            dateS = DateTime.Now;
+            Console.Write("{0} started at {1}...", name, dateS);
+        }
+        static void LogEnded(string name)
+        {
+            Console.WriteLine("{0} ended at {1}, elapsed {2} minutes.", name, DateTime.Now, (int)((DateTime.Now - dateS).TotalMinutes));
+        }
+
     }
 }
