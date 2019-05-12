@@ -10,8 +10,8 @@ namespace _TestWCFServiceField
 {
     class Program
     {
-        static string userName = "OSokolov";
-        static string userPassword = "qq";
+        static readonly string userName = "OSokolov";
+        static readonly string userPassword = "qq";
         public static AmurServiceReference.ServiceClient clientA;
         public static long ha;
         public static FieldServiceReference.ServiceClient clientF;
@@ -53,7 +53,11 @@ namespace _TestWCFServiceField
             {
                 // GET & WRITE 2 DB TRACK FORECASTS
                 LogStarted("TrackForecast.Get");
-                List<SOV.SGMO.DataTrackFcs> dataTrackFcs = TrackForecast.Get(4/*Тайвань - Корсаков, 2019*/, dateIni, 112 /*Method  "Ближайший узел GFS 0.25"*/);
+                List<SOV.SGMO.DataTrackFcs> dataTrackFcs = TrackForecast.Get(
+                    4/*Тайвань - Корсаков, 2019*/, 
+                    dateIni, 
+                    new int[] { 112,105 } /*"Ближайший узел GFS 0.25" "WAVE.VVO.PACIFIC.0p5"*/
+                );
                 LogEnded("TrackForecast.Get");
 
                 try

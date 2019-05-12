@@ -15,8 +15,8 @@ namespace _TestWCFServiceField
         /// </summary>
         /// <param name="trackId">Track id.</param>
         /// <param name="dateIni">Track part datetime (and forecast datetime ini).</param>
-        /// <param name="pointMethodId">Track part point forecast method id.</param>
-        public static List<DataTrackFcs> Get(int trackId, DateTime dateIni, int pointMethodId)
+        /// <param name="pointMethodIds">Track part point forecast method id.</param>
+        public static List<DataTrackFcs> Get(int trackId, DateTime dateIni, int[] pointMethodIds)
         {
             // GET SITE TRACK
 
@@ -24,38 +24,41 @@ namespace _TestWCFServiceField
             List<TrackPartPoint> trackPartPoints = track.TrackParts[0].TrackPartPoints;
             FieldServiceReference.GeoPoint[] trackPartPointsGeo = trackPartPoints.Select(x => new FieldServiceReference.GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
 
-            // GET VAROFFS FOR TRACK
+            List<DataTrackFcs> ret = new List<DataTrackFcs>();
 
-            List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha, new List<int>() { track.SiteId }, null, new List<int>() { pointMethodId }, null, null, null);
-            FieldServiceReference.Varoff[] varoffs = catalogs.Select(x => new FieldServiceReference.Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
-
-            // GET TRACK FORECAST
-
-            Dictionary<double/*leadTime*/, double[]/*Catalog index*/> fcsData = Program.clientF.GetTrackForecast(Program.hf, dateIni, trackPartPointsGeo, pointMethodId, varoffs);
-
-            // CONVERT TRACK FORECAST DATA 2 List<DataTrackFcs> 
-
-            List<DataTrackFcs> dataTrackF = new List<DataTrackFcs>();
-            int iPoint = 0;
-            foreach (KeyValuePair<double, double[]> kvp in fcsData)
+            for (int iPointMethodFcs = 0; iPointMethodFcs < pointMethodIds.Length; iPointMethodFcs++)
             {
-                for (int iCatalog = 0; iCatalog < catalogs.Count; iCatalog++)
+                int pointMethodId = pointMethodIds[iPointMethodFcs];
+
+                // GET VAROFFS FOR TRACK
+
+                List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha, new List<int>() { track.SiteId }, null, new List<int>() { pointMethodId }, null, null, null);
+                FieldServiceReference.Varoff[] varoffs = catalogs.Select(x => new FieldServiceReference.Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
+
+                // GET TRACK FORECAST
+
+                Dictionary<double/*leadTime*/, double[]/*Catalog index*/> fcsData = Program.clientF.GetTrackForecast(Program.hf, dateIni, trackPartPointsGeo, pointMethodId, varoffs);
+
+                // CONVERT TRACK FORECAST DATA 2 List<DataTrackFcs> 
+
+                int iPoint = 0;
+                foreach (KeyValuePair<double, double[]> kvp in fcsData)
                 {
-                    //if (!double.IsNaN(kvp.Value[iCatalog]))
-                    //{
-                        dataTrackF.Add(new DataTrackFcs
+                    for (int iCatalog = 0; iCatalog < catalogs.Count; iCatalog++)
+                    {
+                        ret.Add(new DataTrackFcs
                         {
                             TrackPartPointId = trackPartPoints[iPoint].Id,
                             CatalogId = catalogs[iCatalog].Id,
                             LeadTime = kvp.Key,
                             Value = kvp.Value[iCatalog]
                         });
-                    //}
+                    }
+                    iPoint++;
                 }
-                iPoint++;
-            }
 
-            return dataTrackF;
+            }
+            return ret;
         }
 
         static Track GetTrack(int trackId, DateTime dateIni)

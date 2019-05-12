@@ -233,14 +233,14 @@ namespace SOV.WcfService.Field
             // Метод прогноза в точке является производным от исходного, 
             // родительского метода прогноза полей г/м элементов.
 
-            List<Catalog> pointCatalogs = _amurClient.GetCatalogListById(_amurServiceHandle, siteCatalogIds)
+            List<Catalog> siteCatalogs = _amurClient.GetCatalogListById(_amurServiceHandle, siteCatalogIds)
                 .OrderBy(x => siteCatalogIds.IndexOf(x.Id))
                 .ToList();
-            Check(pointCatalogs);
+            Check(siteCatalogs);
 
             // parentMethod
-            Method pointMethod = _amurClient.GetMethod(_amurServiceHandle, pointCatalogs[0].MethodId);
-            List<Catalog> parentCatalogs = GetFieldFcsCatalogs(pointCatalogs);
+            Method pointMethod = _amurClient.GetMethod(_amurServiceHandle, siteCatalogs[0].MethodId);
+            List<Catalog> parentCatalogs = GetFieldFcsCatalogs(siteCatalogs);
             MethodExt parentMethodExt = _methodsExtValid.FirstOrDefault(x => x.Method.Id == parentCatalogs[0].MethodId);
             if (leadTimes == null)
                 leadTimes = parentMethodExt.MethodForecast.LeadTimes.ToList();
@@ -254,7 +254,7 @@ namespace SOV.WcfService.Field
 
             // GET SITES POINTS 4 DATE_INI
 
-            List<Site> sites = _amurClient.GetSitesByList(_amurServiceHandle, pointCatalogs.Select(x => x.SiteId).Distinct().ToList());
+            List<Site> sites = _amurClient.GetSitesByList(_amurServiceHandle, siteCatalogs.Select(x => x.SiteId).Distinct().ToList());
             if (sites.Exists(x => !x.Lat.HasValue || !x.Lon.HasValue))
                 throw new Exception("В записях каталога присутствуют пункты без координат (широта, долгота).");
             Dictionary<int, Geo.GeoPoint> pointXsites = new Dictionary<int, Geo.GeoPoint>();
@@ -304,7 +304,7 @@ namespace SOV.WcfService.Field
 
                     if (parentData != null)
                     {
-                        double[/*leadTime*/][/*Catalog index*/] data = ConvertFieldData2SiteCatalog(parentData, parentCatalogs, pointCatalogs, pointXsites,
+                        double[/*leadTime*/][/*Catalog index*/] data = ConvertFieldData2SiteCatalog(parentData, parentCatalogs, siteCatalogs, pointXsites,
                             leadTimes.ToArray(),
                             precipSumResetTime);
 
