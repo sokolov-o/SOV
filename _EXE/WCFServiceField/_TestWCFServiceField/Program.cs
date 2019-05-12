@@ -54,9 +54,13 @@ namespace _TestWCFServiceField
                 // GET & WRITE 2 DB TRACK FORECASTS
                 LogStarted("TrackForecast.Get");
                 List<SOV.SGMO.DataTrackFcs> dataTrackFcs = TrackForecast.Get(
-                    4/*Тайвань - Корсаков, 2019*/, 
-                    dateIni, 
-                    new int[] { 112,105 } /*"Ближайший узел GFS 0.25" "WAVE.VVO.PACIFIC.0p5"*/
+                    4/*Тайвань - Корсаков, 2019*/,
+                    dateIni,
+                    new int[] 
+                    {
+                        112 /*"Ближайший узел GFS 0.25*/
+                        //,1608  /*"Ближайший узел WAVE.VVO.PACIFIC.0p5"*/
+                    } 
                 );
                 LogEnded("TrackForecast.Get");
 
