@@ -12,8 +12,9 @@ namespace _TestWCFServiceField
     {
         public static void Get(int trackId, DateTime dateIni, List<double> leadTimes)
         {
-            Track track = DataManager.GetInstance().TrackRepository.Select(trackId);
-            Console.WriteLine("Track [{0}]", track.Name);
+            Console.WriteLine("PROCESS TrackForecast");
+
+            GetTrack(trackId, dateIni);
 
             //List<FieldServiceReference.GeoPoint> trackPoints;
             //List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha,
