@@ -11,12 +11,14 @@ namespace SOV.SGMO
     {
         public TrackRepository TrackRepository;
         public TrackPartRepository TrackPartRepository;
+        public TrackPartPointsRepository TrackPartPointsRepository;
 
         DataManager(string connectionString)
             : base(connectionString)
         {
             TrackRepository = new TrackRepository(this);
             TrackPartRepository = new TrackPartRepository(this);
+            TrackPartPointsRepository = new TrackPartPointsRepository(this);
         }
 
         static Dictionary<string, DataManager> _dm = new Dictionary<string, DataManager>();

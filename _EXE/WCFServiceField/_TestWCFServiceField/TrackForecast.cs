@@ -38,11 +38,10 @@ namespace _TestWCFServiceField
         static void GetTrack(int trackId, DateTime dateIni)
         {
             Track track = DataManager.GetInstance().TrackRepository.Select(trackId);
-            Console.WriteLine("Track [{0}].", track.Name);
-
             TrackPart trackPart = DataManager.GetInstance().TrackPartRepository.Select(trackId, dateIni);
-            Console.WriteLine("TrackPart for {0}.", trackPart.DateS);
+            List<TrackPartPoint> trackPartPoints = DataManager.GetInstance().TrackPartPointsRepository.Select(trackPart.Id);
 
+            Console.WriteLine("Track [{0}], part for {1}. {2} points.", track.Name, trackPart.DateS, trackPartPoints.Count);
         }
     }
 }
