@@ -189,7 +189,7 @@ namespace _TestWCFServiceField
         static void LogStarted(string name)
         {
             dateS = DateTime.Now;
-            Console.Write("{0} started at {1}...", name, dateS);
+            Console.WriteLine("{0} started at {1}...", name, dateS);
         }
         static void LogEnded(string name)
         {
