@@ -10,11 +10,13 @@ namespace SOV.SGMO
     public class DataManager : Common.BaseDataManager
     {
         public TrackRepository TrackRepository;
+        public TrackPartRepository TrackPartRepository;
 
         DataManager(string connectionString)
             : base(connectionString)
         {
             TrackRepository = new TrackRepository(this);
+            TrackPartRepository = new TrackPartRepository(this);
         }
 
         static Dictionary<string, DataManager> _dm = new Dictionary<string, DataManager>();

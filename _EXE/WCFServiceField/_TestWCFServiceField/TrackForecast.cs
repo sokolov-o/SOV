@@ -34,5 +34,14 @@ namespace _TestWCFServiceField
             //Console.WriteLine("ended at {0}, elapsed {1} minutes.", DateTime.Now, (int)((DateTime.Now - dateS).TotalMinutes));
             //PrintDataPoints(dateIni, catalogs, dataP);
         }
+        static void GetTrack(int trackId, DateTime dateIni)
+        {
+            Track track = DataManager.GetInstance().TrackRepository.Select(trackId);
+            Console.WriteLine("Track [{0}].", track.Name);
+
+            TrackPart trackPart = DataManager.GetInstance().TrackPartRepository.Select(trackId, dateIni);
+            Console.WriteLine("TrackPart for {0}.", trackPart.DateS);
+
+        }
     }
 }
