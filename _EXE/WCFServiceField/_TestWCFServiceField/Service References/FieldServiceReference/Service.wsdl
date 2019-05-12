@@ -30,23 +30,29 @@
   <wsdl:message name="IService_CloseByUserName_OutputMessage">
     <wsdl:part name="parameters" element="tns:CloseByUserNameResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_GetFieldsInRectangles_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetFieldsInRectangles" />
+  <wsdl:message name="IService_GetExtentForecast_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtentForecast" />
   </wsdl:message>
-  <wsdl:message name="IService_GetFieldsInRectangles_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetFieldsInRectanglesResponse" />
+  <wsdl:message name="IService_GetExtentForecast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtentForecastResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_GetValuesAtPoints_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetValuesAtPoints" />
+  <wsdl:message name="IService_GetSitesForecast_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitesForecast" />
   </wsdl:message>
-  <wsdl:message name="IService_GetValuesAtPoints_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetValuesAtPointsResponse" />
+  <wsdl:message name="IService_GetSitesForecast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitesForecastResponse" />
   </wsdl:message>
   <wsdl:message name="IService_GetMethods_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMethods" />
   </wsdl:message>
   <wsdl:message name="IService_GetMethods_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTrackForecast_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrackForecast" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTrackForecast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrackForecastResponse" />
   </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="Open">
@@ -61,17 +67,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/CloseByUserName" message="tns:IService_CloseByUserName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/CloseByUserNameResponse" message="tns:IService_CloseByUserName_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetFieldsInRectangles">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetFieldsInRectangles" message="tns:IService_GetFieldsInRectangles_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetFieldsInRectanglesResponse" message="tns:IService_GetFieldsInRectangles_OutputMessage" />
+    <wsdl:operation name="GetExtentForecast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetExtentForecast" message="tns:IService_GetExtentForecast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetExtentForecastResponse" message="tns:IService_GetExtentForecast_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetValuesAtPoints">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetValuesAtPoints" message="tns:IService_GetValuesAtPoints_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetValuesAtPointsResponse" message="tns:IService_GetValuesAtPoints_OutputMessage" />
+    <wsdl:operation name="GetSitesForecast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSitesForecast" message="tns:IService_GetSitesForecast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSitesForecastResponse" message="tns:IService_GetSitesForecast_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetMethods">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMethods" message="tns:IService_GetMethods_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMethodsResponse" message="tns:IService_GetMethods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackForecast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTrackForecast" message="tns:IService_GetTrackForecast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTrackForecastResponse" message="tns:IService_GetTrackForecast_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -103,8 +113,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetFieldsInRectangles">
-      <soap:operation soapAction="http://tempuri.org/IService/GetFieldsInRectangles" style="document" />
+    <wsdl:operation name="GetExtentForecast">
+      <soap:operation soapAction="http://tempuri.org/IService/GetExtentForecast" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -112,8 +122,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetValuesAtPoints">
-      <soap:operation soapAction="http://tempuri.org/IService/GetValuesAtPoints" style="document" />
+    <wsdl:operation name="GetSitesForecast">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSitesForecast" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -123,6 +133,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMethods">
       <soap:operation soapAction="http://tempuri.org/IService/GetMethods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackForecast">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTrackForecast" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

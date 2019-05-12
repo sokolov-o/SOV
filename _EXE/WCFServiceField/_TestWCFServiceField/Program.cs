@@ -12,10 +12,10 @@ namespace _TestWCFServiceField
     {
         static string userName = "OSokolov";
         static string userPassword = "qq";
-        static AmurServiceReference.ServiceClient clientA;
-        static long ha;
-        static FieldServiceReference.ServiceClient clientF;
-        static long hf;
+        public static AmurServiceReference.ServiceClient clientA;
+        public static long ha;
+        public static FieldServiceReference.ServiceClient clientF;
+        public static long hf;
 
         static void Main(string[] args)
         {
@@ -37,8 +37,8 @@ namespace _TestWCFServiceField
             #endregion
 
             DateTime dateIni = new DateTime(2019, 5, 4, 12, 0, 0); //DateTime.Today.AddDays(-1);
-            double[] leadTimes = null;
-            GeoRectangle[] geoRects = new GeoRectangle[]
+            List<double> leadTimes = null;
+            List< GeoRectangle > geoRects = new List<GeoRectangle>()
                {
                     new GeoRectangle()
                     {
@@ -46,16 +46,21 @@ namespace _TestWCFServiceField
                         SouthEast = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 30, LonGrd = 130 }
                     }
                 };
-            List<Catalog> catalogs;
 
             // GET & PRINT FORECAST DATA FROM SERVICE
 
             try
             {
+                // GET TRACK FORECASTS
+                TrackForecast.Get(4, dateIni, leadTimes);
+
+                // GET SITES FORECASTS
+                //GetSiteForecast(dateIni, leadTimes);
+
                 ////////
                 //////// GET FIELDS IN REGION
                 ////////
-                //////catalogs = clientA.GetCatalogList(ha,
+                //////List<Catalog> catalogs = clientA.GetCatalogList(ha,
                 //////    new List<int>() { 10344 },  // Земной шар
                 //////    null,                       // All variables
                 //////    new List<int>() { 111 },    // GFS
@@ -71,25 +76,6 @@ namespace _TestWCFServiceField
                 //////PrintDataFields(dateIni, leadTimeHours, geoRects, catalogs, dataF);
                 //////dataF = clientF.GetFieldsInRectangles(hf, dateIni.AddDays(100), method.Id, varoffs, leadTimeHours, geoRects);
                 //////PrintDataFields(dateIni.AddDays(100), geoRects, catalogs, dataF);
-
-                //
-                // GET VALUES AT POINTS
-                //
-                catalogs = clientA.GetCatalogList(ha,
-                    new List<int>() { 332 }, // Владивосток
-                    null,
-                    new List<int>() { 112 }, //Method  "Ближайший узел GFS 0.25"
-                    null, null, null
-                    );
-                //catalogs = catalogs.FindAll(x => x.Id == 10368139 || x.Id == 71629).ToList(); // Осадки, Владивосток
-
-                DateTime dateS = DateTime.Now;
-                Console.Write("GetValuesAtPoints started at {0}...", dateS);
-
-                Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = clientF.GetValuesAtPoints(hf, dateIni, leadTimes, catalogs.Select(x => x.Id).ToArray());
-
-                Console.WriteLine("ended at {0}, elapsed {1} minutes.", DateTime.Now, (int)((DateTime.Now - dateS).TotalMinutes));
-                PrintDataPoints(dateIni, catalogs, dataP);
             }
             catch (Exception ex)
             {
@@ -105,7 +91,26 @@ namespace _TestWCFServiceField
             Console.ReadKey();
         }
 
-        static void PrintDataFields(DateTime dateIni, double[] leadTimeHours, GeoRectangle[] grs, List<Catalog> catalogs, Field[][][] data)
+        static void GetSiteForecast(DateTime dateIni, List<double> leadTimes)
+        {
+            List<Catalog> catalogs = clientA.GetCatalogList(ha,
+                new List<int>() { 332 }, // Владивосток
+                null,
+                new List<int>() { 112 }, //Method  "Ближайший узел GFS 0.25"
+                null, null, null
+                );
+            //catalogs = catalogs.FindAll(x => x.Id == 10368139 || x.Id == 71629).ToList(); // Осадки, Владивосток
+
+            DateTime dateS = DateTime.Now;
+            Console.Write("GetValuesAtPoints started at {0}...", dateS);
+
+            Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = null;//= clientF.GetSitesForecast(hf, dateIni, leadTimes, catalogs.Select(x => x.Id).ToList());
+
+            Console.WriteLine("ended at {0}, elapsed {1} minutes.", DateTime.Now, (int)((DateTime.Now - dateS).TotalMinutes));
+            PrintDataPoints(dateIni, catalogs, dataP);
+        }
+
+        static void PrintDataFields(DateTime dateIni, double[] leadTimeHours,SOV.Geo.GeoRectangle[] grs, List<Catalog> catalogs, Field[][][] data)
         {
             Console.WriteLine("\n-- Forecast as FIELD's from {0:yyyy.MM.dd HH}", dateIni);
 
@@ -139,7 +144,7 @@ namespace _TestWCFServiceField
                                 }
                                 else
                                 {
-                                    Console.Write("Catalog {0} [{2}]. {1} points.", catalogs[k].Id, data[i][j][k].Value.Length, variables.FirstOrDefault(y => y.Id == catalogs[k].VariableId).NameRus);
+                                    Console.Write("Catalog {0} [{2}]. {1} points.", catalogs[k].Id, data[i][j][k].Value.Count, variables.FirstOrDefault(y => y.Id == catalogs[k].VariableId).NameRus);
                                     Console.WriteLine("\tAvg {0:.00}, max {1:.00}, min {2:.00}", data[i][j][k].Value.Average(), data[i][j][k].Value.Max(), data[i][j][k].Value.Min());
                                 }
                             }

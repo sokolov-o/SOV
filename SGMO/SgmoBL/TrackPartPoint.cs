@@ -9,8 +9,9 @@ using SOV.Common;
 namespace SOV.SGMO
 {
     [DataContract]
-    public class TrackPoint : IdClass
+    public class TrackPartPoint : IdClass
     {
+        public int TrackPartId { get; set; }
         /// <summary>
         /// Datetime UTC.
         /// </summary>

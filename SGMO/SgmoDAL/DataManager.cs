@@ -7,12 +7,16 @@ using System.ComponentModel;
 
 namespace SOV.SGMO
 {
-    public class DataManager : Common.ADbNpgsql
+    public class DataManager : Common.BaseDataManager
     {
+        public TrackRepository TrackRepository;
+
         DataManager(string connectionString)
             : base(connectionString)
         {
+            TrackRepository = new TrackRepository(this);
         }
+
         static Dictionary<string, DataManager> _dm = new Dictionary<string, DataManager>();
         /// <summary>
         /// Экземпляр со строкой подключения по умолчанию.
@@ -49,16 +53,6 @@ namespace SOV.SGMO
                 if (_MethvarXGrib2Repository == null)
                     _MethvarXGrib2Repository = new MethvarXGrib2Repository(this);
                 return _MethvarXGrib2Repository;
-            }
-        }
-        private TrackRepository _TrackRepository;
-        public TrackRepository TrackRepository
-        {
-            get
-            {
-                if (_TrackRepository == null)
-                    _TrackRepository = new TrackRepository(this);
-                return _TrackRepository;
             }
         }
         private DataFcsNode0Repository _DataFcsNode0Repository;

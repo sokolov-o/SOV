@@ -51,12 +51,13 @@
     <Compile Include="Prob.cs" />
     <Compile Include="PointLag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Track0.cs" />
+    <Compile Include="TrackPart.cs" />
+    <Compile Include="Track.cs" />
     <Compile Include="Track1.cs" />
     <Compile Include="PileSet.cs" />
     <Compile Include="PileItem.cs" />
     <Compile Include="PileItemValue.cs" />
-    <Compile Include="TrackPoint.cs" />
+    <Compile Include="TrackPartPoint.cs" />
     <Compile Include="Varoff.cs" />
     <Compile Include="WarningPileCatalog.cs" />
     <Compile Include="MethVaroffXGrib2.cs" />
@@ -71,10 +72,6 @@
     <ProjectReference Include="..\..\Amur-2.1\Meta\Meta.csproj">
       <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
       <Name>Meta</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DB\GFS\REP_GFS.csproj">
-      <Project>{e9e8142c-8e1e-4fce-8ff1-8f32d604a69f}</Project>
-      <Name>REP_GFS</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Geo\Geo.csproj">
       <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>

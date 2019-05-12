@@ -173,14 +173,14 @@ namespace SOV.WcfService.Field
         /// <param name="catalogIds">Список кодов записей каталога (id), определяющих прогностический набор данных в виде полей г/м элементов. 
         /// Все записи должны иметь один и тотже метод прогноза. 
         /// Не может быть null.</param>
-        /// <param name="grs">Регионы отбора данных в узлах поля. Если null, отбираются все узлы.</param>
+        /// <param name="extentRegions">Регионы отбора данных в узлах поля. Если null, отбираются все узлы.</param>
         /// <param name="leadTimes">Заблаговременности прогноза. Все, если null.
         /// Внимание! Если выбираются значения сумм осадков, то при не верном формировании массива заблаговременностей,
         /// может стать невозможным определение значений осадков (NaN).
         /// </param>
         /// <param name="leadTimes">Заблаговременности для выборки. Не может быть null.</param>
         /// <returns>Массив полей Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/]</returns>
-        public SOV.Field[/*LeadTime index*/][/*Georectangle index*/][/*Varoff index*/] GetFieldsInRectangles(long hSvc, DateTime dateIni, List<double> leadTimes, int methodId, List<SGMO.Varoff> varoffs, List<Geo.GeoRectangle> grs)
+        public SOV.Field[/*LeadTime index*/][/*Georectangle index*/][/*Varoff index*/] GetExtentForecast(long hSvc, DateTime dateIni, List<double> leadTimes, int methodId, List<SGMO.Varoff> varoffs, List<Geo.GeoRectangle> extentRegions)
         {
             CheckHandle(hSvc);
 
@@ -203,7 +203,7 @@ namespace SOV.WcfService.Field
                     // GET DATA FILTER 
                     object dataFilter = GetDataFilter(method, varoffs);
                     // GET DATA IN REGIONS
-                    return db.ReadFieldsInRectangles(dateIni, (object)dataFilter, leadTimes, grs);
+                    return db.ReadFieldsInRectangles(dateIni, (object)dataFilter, leadTimes, extentRegions);
                 default:
                     throw new Exception(string.Format("Для запрошенного интерфейса {0} метода <{1}> отсутствует обработчик считывания данных в <{2}>.\n",
                         methOutInterface, method.Method.Name, this));
@@ -222,7 +222,7 @@ namespace SOV.WcfService.Field
         /// <param name="amurSiteAttrTypeLatId"></param>
         /// <param name="amurSiteAttrTypeLonId"></param>
         /// <returns>double[/*leadTime*/][/*Catalog index*/]</returns>
-        public Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> GetValuesAtPoints(long hSvc, DateTime dateIni, List<double> leadTimes, List<int> siteCatalogIds)
+        public Dictionary<double/*leadTime*/, double[/*point Catalog index*/]> GetSitesForecast(long hSvc, DateTime dateIni, List<double> leadTimes, List<int> siteCatalogIds)
         {
             // CHECK INPUT
             CheckHandle(hSvc);
@@ -417,7 +417,7 @@ namespace SOV.WcfService.Field
         /// <param name="pointMethodId"></param>
         /// <param name="pointVaroffs"></param>
         /// <returns>Dictionary<double/*leadTimes*/, double[/*varoffs*/]>, где leadtime соответствует по порядку точкам маршрута (track).</returns>
-        public object GetTrackForecast(long hSvc, DateTime dateIni, List<Geo.GeoPoint> track, int pointMethodId, List<SGMO.Varoff> pointVaroffs)
+        public Dictionary<double/*leadTimes*/, double[/*varoffs*/]> GetTrackForecast(long hSvc, DateTime dateIni, List<Geo.GeoPoint> track, int pointMethodId, List<SGMO.Varoff> pointVaroffs)
         {
             // CHECK INPUT
             CheckHandle(hSvc);

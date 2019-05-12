@@ -263,7 +263,7 @@ namespace _TestWCFServiceField.FieldServiceReference {
         private double PredictTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[] ValueField;
+        private System.Collections.Generic.List<double> ValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -315,7 +315,7 @@ namespace _TestWCFServiceField.FieldServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double[] Value {
+        public System.Collections.Generic.List<double> Value {
             get {
                 return this.ValueField;
             }
@@ -359,7 +359,7 @@ namespace _TestWCFServiceField.FieldServiceReference {
         private double LatStepMinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[] LatsMinField;
+        private System.Collections.Generic.List<double> LatsMinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double LonStartMinField;
@@ -368,7 +368,7 @@ namespace _TestWCFServiceField.FieldServiceReference {
         private double LonStepMinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[] LonsMinField;
+        private System.Collections.Generic.List<double> LonsMinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TypeIdField;
@@ -436,7 +436,7 @@ namespace _TestWCFServiceField.FieldServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double[] LatsMin {
+        public System.Collections.Generic.List<double> LatsMin {
             get {
                 return this.LatsMinField;
             }
@@ -475,7 +475,7 @@ namespace _TestWCFServiceField.FieldServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double[] LonsMin {
+        public System.Collections.Generic.List<double> LonsMin {
             get {
                 return this.LonsMinField;
             }
@@ -660,22 +660,23 @@ namespace _TestWCFServiceField.FieldServiceReference {
     [System.Runtime.Serialization.DataContractAttribute(Name="IdName", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Method))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Method[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Method>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.IdClass))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.GeoRectangle[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoRectangle>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.GeoRectangle))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.GeoPoint))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Grid))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Field[][][]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Field[][]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Field[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoPoint>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Field>>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Field>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Field>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Field))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.EnumFieldFormat))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(double[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(int[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<double, double[]>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<double>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<double, System.Collections.Generic.List<double>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Varoff[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Varoff>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(_TestWCFServiceField.FieldServiceReference.Varoff))]
     public partial class IdName : _TestWCFServiceField.FieldServiceReference.IdClass {
         
@@ -734,23 +735,29 @@ namespace _TestWCFServiceField.FieldServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CloseByUserName", ReplyAction="http://tempuri.org/IService/CloseByUserNameResponse")]
         System.Threading.Tasks.Task CloseByUserNameAsync(string userName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetFieldsInRectangles", ReplyAction="http://tempuri.org/IService/GetFieldsInRectanglesResponse")]
-        _TestWCFServiceField.FieldServiceReference.Field[][][] GetFieldsInRectangles(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetExtentForecast", ReplyAction="http://tempuri.org/IService/GetExtentForecastResponse")]
+        System.Collections.Generic.List<System.Collections.Generic.List<System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Field>>> GetExtentForecast(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<double> leadTimes, int methodId, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Varoff> varoffs, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoRectangle> grs);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetFieldsInRectangles", ReplyAction="http://tempuri.org/IService/GetFieldsInRectanglesResponse")]
-        System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Field[][][]> GetFieldsInRectanglesAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetExtentForecast", ReplyAction="http://tempuri.org/IService/GetExtentForecastResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.List<System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Field>>>> GetExtentForecastAsync(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<double> leadTimes, int methodId, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Varoff> varoffs, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoRectangle> grs);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValuesAtPoints", ReplyAction="http://tempuri.org/IService/GetValuesAtPointsResponse")]
-        System.Collections.Generic.Dictionary<double, double[]> GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesForecast", ReplyAction="http://tempuri.org/IService/GetSitesForecastResponse")]
+        System.Collections.Generic.Dictionary<double, System.Collections.Generic.List<double>> GetSitesForecast(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<double> leadTimes, System.Collections.Generic.List<int> pointCatalogsId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValuesAtPoints", ReplyAction="http://tempuri.org/IService/GetValuesAtPointsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
-        _TestWCFServiceField.FieldServiceReference.Method[] GetMethods(long hSvc);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesForecast", ReplyAction="http://tempuri.org/IService/GetSitesForecastResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, System.Collections.Generic.List<double>>> GetSitesForecastAsync(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<double> leadTimes, System.Collections.Generic.List<int> pointCatalogsId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
-        System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Method[]> GetMethodsAsync(long hSvc);
+        System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Method> GetMethods(long hSvc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Method>> GetMethodsAsync(long hSvc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTrackForecast", ReplyAction="http://tempuri.org/IService/GetTrackForecastResponse")]
+        System.Collections.Generic.Dictionary<double, System.Collections.Generic.List<double>> GetTrackForecast(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoPoint> track, int pointMethodId, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Varoff> pointVaroffs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTrackForecast", ReplyAction="http://tempuri.org/IService/GetTrackForecastResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, System.Collections.Generic.List<double>>> GetTrackForecastAsync(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoPoint> track, int pointMethodId, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Varoff> pointVaroffs);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -804,28 +811,36 @@ namespace _TestWCFServiceField.FieldServiceReference {
             return base.Channel.CloseByUserNameAsync(userName);
         }
         
-        public _TestWCFServiceField.FieldServiceReference.Field[][][] GetFieldsInRectangles(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs) {
-            return base.Channel.GetFieldsInRectangles(hSvc, dateIni, leadTimes, methodId, varoffs, grs);
+        public System.Collections.Generic.List<System.Collections.Generic.List<System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Field>>> GetExtentForecast(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<double> leadTimes, int methodId, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Varoff> varoffs, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoRectangle> grs) {
+            return base.Channel.GetExtentForecast(hSvc, dateIni, leadTimes, methodId, varoffs, grs);
         }
         
-        public System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Field[][][]> GetFieldsInRectanglesAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, _TestWCFServiceField.FieldServiceReference.Varoff[] varoffs, _TestWCFServiceField.FieldServiceReference.GeoRectangle[] grs) {
-            return base.Channel.GetFieldsInRectanglesAsync(hSvc, dateIni, leadTimes, methodId, varoffs, grs);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.List<System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Field>>>> GetExtentForecastAsync(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<double> leadTimes, int methodId, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Varoff> varoffs, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoRectangle> grs) {
+            return base.Channel.GetExtentForecastAsync(hSvc, dateIni, leadTimes, methodId, varoffs, grs);
         }
         
-        public System.Collections.Generic.Dictionary<double, double[]> GetValuesAtPoints(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId) {
-            return base.Channel.GetValuesAtPoints(hSvc, dateIni, leadTimes, pointCatalogsId);
+        public System.Collections.Generic.Dictionary<double, System.Collections.Generic.List<double>> GetSitesForecast(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<double> leadTimes, System.Collections.Generic.List<int> pointCatalogsId) {
+            return base.Channel.GetSitesForecast(hSvc, dateIni, leadTimes, pointCatalogsId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetValuesAtPointsAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId) {
-            return base.Channel.GetValuesAtPointsAsync(hSvc, dateIni, leadTimes, pointCatalogsId);
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, System.Collections.Generic.List<double>>> GetSitesForecastAsync(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<double> leadTimes, System.Collections.Generic.List<int> pointCatalogsId) {
+            return base.Channel.GetSitesForecastAsync(hSvc, dateIni, leadTimes, pointCatalogsId);
         }
         
-        public _TestWCFServiceField.FieldServiceReference.Method[] GetMethods(long hSvc) {
+        public System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Method> GetMethods(long hSvc) {
             return base.Channel.GetMethods(hSvc);
         }
         
-        public System.Threading.Tasks.Task<_TestWCFServiceField.FieldServiceReference.Method[]> GetMethodsAsync(long hSvc) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Method>> GetMethodsAsync(long hSvc) {
             return base.Channel.GetMethodsAsync(hSvc);
+        }
+        
+        public System.Collections.Generic.Dictionary<double, System.Collections.Generic.List<double>> GetTrackForecast(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoPoint> track, int pointMethodId, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Varoff> pointVaroffs) {
+            return base.Channel.GetTrackForecast(hSvc, dateIni, track, pointMethodId, pointVaroffs);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, System.Collections.Generic.List<double>>> GetTrackForecastAsync(long hSvc, System.DateTime dateIni, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.GeoPoint> track, int pointMethodId, System.Collections.Generic.List<_TestWCFServiceField.FieldServiceReference.Varoff> pointVaroffs) {
+            return base.Channel.GetTrackForecastAsync(hSvc, dateIni, track, pointMethodId, pointVaroffs);
         }
     }
 }
