@@ -450,7 +450,16 @@ namespace SOV.DB
             }
         }
 
-
+        /// <summary>
+        /// Получить прогнозы в точках.
+        /// </summary>
+        /// <param name="dateIni">Исходная дата выпуска прогноза.</param>
+        /// <param name="dataFilter">int[]: VanRepository.WaveParamNames2011 index of wave parameters</param>
+        /// <param name="leadTimes">Заблаговременности.</param>
+        /// <param name="points">Точки прогноза.</param>
+        /// <param name="nearestType">Тип расчета прогностического значения в точке.</param>
+        /// <param name="distanceType">Тип рассчета расстояния на сфере.</param>
+        /// <returns></returns>
         public double[][][] ReadValuesAtPoints(DateTime dateIni, object dataFilter, List<double> leadTimes, List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
             throw new NotImplementedException();
