@@ -321,30 +321,23 @@ namespace SOV.WcfService.Field
                         methOutInterface, parentMethodExt.Method.Name, this));
             }
         }
-
-        public double[/*leadTime*/][/*point*/][/*field catalog*/] GetValuesAtCoords(long hSvc, DateTime dateIni, List<Geo.GeoPoint> points, List<Catalog> fieldCatalogs, Geo.EnumPointNearestType nearestType, Geo.EnumDistanceType distanceType)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hSvc">Дескриптор сервиса.</param>
+        /// <param name="dateIni">Исх. дата прогноза.</param>
+        /// <param name="points">Точки, в которых требуется прогноз.</param>
+        /// <param name="fieldCatalogs">Записи каталога прогноза в узлах сетки (сайт Earth).</param>
+        /// <param name="nearestType">Тип прогноза в точке по данным прогнозов в окружающих узлах прогностического поля.</param>
+        /// <param name="distanceType">Тип измерения расстояния на сфере.</param>
+        /// <returns></returns>
+        public double[/*leadTime*/][/*point*/][/*field catalog*/] GetPointsForecast(long hSvc, DateTime dateIni, List<Geo.GeoPoint> points, List<Catalog> fieldCatalogs, Geo.EnumPointNearestType nearestType, Geo.EnumDistanceType distanceType)
         {
             // CHECK INPUT
             CheckHandle(hSvc);
             Check(fieldCatalogs);
 
-            // GET FCS CATALOGS 4 POINT CATALOGS
-            //
-            // Метод прогноза в точке является производным от исходного, 
-            // родительского метода прогноза полей г/м элементов.
-
-            //////List<Catalog> pointCatalogs = _amurClient.GetCatalogListById(_amurServiceHandle, geoPoints)
-            //////    .OrderBy(x => geoPoints.IndexOf(x.Id))
-            //////    .ToList();
-            //////Check(pointCatalogs);
-
-            //////// parentMethod
-            //////Method pointMethod = _amurClient.GetMethod(_amurServiceHandle, pointCatalogs[0].MethodId);
-            //////object[] o = GetParentFcsCatalogs(pointCatalogs);
-            //////KeyValuePair<Method, List<object>> parentMethod = (KeyValuePair<Method, List<object>>)o[0];
-            //////List<Catalog> parentCatalogs = (List<Catalog>)o[1];
-
-            // GET parentMethodFcs
+            // GET FORECAST METHOD PARAMETERS
 
             MethodExt methodExt = _methodsExtValid.FirstOrDefault(x => x.Method.Id == fieldCatalogs[0].MethodId);
             List<double> leadTimes = methodExt.MethodForecast.LeadTimes.ToList();
@@ -355,16 +348,6 @@ namespace SOV.WcfService.Field
             string str = null;
             if (methodExt.MethodForecast.Attr.TryGetValue("precip_reset_time".ToUpper(), out str))
                 precipSumResetTime = double.Parse(str);
-
-            //////// GET SITES POINTS 4 DATE_INI
-
-            //////Dictionary<int, AmurServiceReference.GeoPoint> pointXsites1 = _amurClient.GetSitesPoints(_amurServiceHandle,
-            //////    pointCatalogs.Select(x => x.SiteId).Distinct().ToList(), dateIni, amurSiteAttrTypeLatId, amurSiteAttrTypeLonId);
-            //////Dictionary<int, Geo.GeoPoint> pointXsites = new Dictionary<int, Geo.GeoPoint>();
-            //////foreach (var item in pointXsites1)
-            //////{
-            //////    pointXsites.Add(item.Key, new Geo.GeoPoint(item.Value.LatGrd, item.Value.LonGrd));
-            //////}
 
             // SWITCH METHOD OUTPUT STORAGE INTERFACE
 
@@ -439,7 +422,7 @@ namespace SOV.WcfService.Field
 
             // GET precipSumResetTime 
             double? precipSumResetTime = null;
-            if (fieldMethodExt.MethodForecast.Attr.TryGetValue("precip_reset_time".ToUpper(), out string str))
+            if (fieldMethodExt.MethodForecast.Attr != null && fieldMethodExt.MethodForecast.Attr.TryGetValue("precip_reset_time".ToUpper(), out string str))
                 precipSumResetTime = double.Parse(str);
 
             // SWITCH METHOD OUTPUT STORAGE INTERFACE

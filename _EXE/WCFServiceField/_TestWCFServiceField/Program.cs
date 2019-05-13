@@ -56,11 +56,11 @@ namespace _TestWCFServiceField
                 List<SOV.SGMO.DataTrackFcs> dataTrackFcs = TrackForecast.Get(
                     4/*Тайвань - Корсаков, 2019*/,
                     dateIni,
-                    new int[] 
+                    new int[]
                     {
-                        112 /*"Ближайший узел GFS 0.25*/
-                        //,1608  /*"Ближайший узел WAVE.VVO.PACIFIC.0p5"*/
-                    } 
+                        //112 /*"Ближайший узел GFS 0.25*/
+                        1608  /*"Ближайший узел WAVE.VVO.PACIFIC.0p5"*/
+                    }
                 );
                 LogEnded("TrackForecast.Get");
 
@@ -71,6 +71,7 @@ namespace _TestWCFServiceField
                 catch (Exception ex)
                 {
                     Console.WriteLine("\n*** ОШИБКА: DataTrackFcsRepository.Insert(dataTrackFcs)\n");
+                    throw ex;
                 }
 
 

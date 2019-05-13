@@ -29,15 +29,22 @@ namespace _TestWCFServiceField
             for (int iPointMethodFcs = 0; iPointMethodFcs < pointMethodIds.Length; iPointMethodFcs++)
             {
                 int pointMethodId = pointMethodIds[iPointMethodFcs];
+                Console.WriteLine(string.Format("TrackForecast.GET: forecast data for method id={0}...", pointMethodId));
 
                 // GET VAROFFS FOR TRACK
 
                 List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha, new List<int>() { track.SiteId }, null, new List<int>() { pointMethodId }, null, null, null);
+                if (catalogs.Count == 0)
+                {
+                    Console.WriteLine(string.Format("** По данному треку для метода {0} отсутствуют записи каталога мобильного пункта.", pointMethodId));
+                    continue;
+                }
                 FieldServiceReference.Varoff[] varoffs = catalogs.Select(x => new FieldServiceReference.Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
 
                 // GET TRACK FORECAST
 
                 Dictionary<double/*leadTime*/, double[]/*Catalog index*/> fcsData = Program.clientF.GetTrackForecast(Program.hf, dateIni, trackPartPointsGeo, pointMethodId, varoffs);
+                if (fcsData == null) { Console.WriteLine("* Отсутствуют прогнозы..."); continue; }
 
                 // CONVERT TRACK FORECAST DATA 2 List<DataTrackFcs> 
 
@@ -56,7 +63,6 @@ namespace _TestWCFServiceField
                     }
                     iPoint++;
                 }
-
             }
             return ret;
         }

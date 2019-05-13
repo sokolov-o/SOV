@@ -38,19 +38,21 @@ namespace SOV.SGMO
         }
         public void Insert(List<DataTrackFcs> data)
         {
-            List<Dictionary<string, object>> fields = new List<Dictionary<string, object>>();
-            foreach (var value in data)
+            if (data != null && data.Count > 0)
             {
-                fields.Add(new Dictionary<string, object>
+                List<Dictionary<string, object>> fields = new List<Dictionary<string, object>>();
+                foreach (var value in data)
+                {
+                    fields.Add(new Dictionary<string, object>
                 {
                     { "track_part_point_id", value.TrackPartPointId },
                     { "catalog_id" , value.CatalogId},
                     { "lead_time", value.LeadTime},
                     { "value", value.Value}
                 });
+                }
+                Insert(fields);
             }
-            Insert(fields);
         }
-
     }
 }
