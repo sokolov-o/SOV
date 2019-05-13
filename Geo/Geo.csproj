@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeoPointValues.cs" />
     <Compile Include="Geo.cs" />
     <Compile Include="GeoLLString.cs" />
     <Compile Include="GeoPoint.cs" />

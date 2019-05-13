@@ -82,6 +82,12 @@ namespace SOV.Common
                 }
             }
         }
+        /// <summary>
+        /// Линейная взвешеная интерполяция/
+        /// </summary>
+        /// <param name="dist">Веса (расстояния).</param>
+        /// <param name="values">Интерполируемые значения.</param>
+        /// <returns>Интерполированное значение.</returns>
         public static double[/*valueInterp,elemQ*/] InterpolateLine(double[] dist, double[] values)
         {
             double sumDist = 0;
@@ -89,6 +95,8 @@ namespace SOV.Common
             int elemQ = 0;
             for (int i = 0; i < dist.Length; i++)
             {
+                if (double.IsNaN(values[i])) continue;
+
                 if (dist[i] == 0)
                 {
                     sumValueW = values[i];
@@ -178,7 +186,7 @@ namespace SOV.Common
             if (toEventLog) EventLog.WriteEntry(EVENT_LOG_SOURCE, msg, type);
         }
 
-        
+
 
     }
 }

@@ -98,7 +98,7 @@ namespace SOV
                 iLatLon[0].Count, iLatLon[0][0], Grid.LatStepMin,
                 iLatLon[1].Count, iLatLon[1][0], Grid.LonStepMin,
                 "Trancated from grid [" + Grid + "]");
-            
+
             double[] values = null;
             List<int> iNodes = this.Grid.GetNodeIdxs(iLatLon);
             if (iNodes.Count > 0)
@@ -113,23 +113,23 @@ namespace SOV
 
             return new Field(grid, this.FieldFormat, this.PredictTime, values) { MetaInfo = this.MetaInfo };
         }
-        static public double[] Interpolate(List<Field> fields, GeoPoint point, EnumPointNearestType nearestType, EnumDistanceType distanceType)
+        static public double[] GetValuesAtPoint(List<Field> fields, GeoPoint point, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
             double[] ret = new double[fields.Count];
             for (int i = 0; i < fields.Count; i++)
             {
-                ret[i] = fields[i].Interpolate(point, nearestType, distanceType);
+                ret[i] = fields[i].GetValueAtPoint(point, nearestType, distanceType);
             }
             return ret;
         }
-        public double[] Interpolate(List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
+        public double[] GetValuesAtPoints(List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
             double[] ret = new double[points.Count];
             for (int i = 0; i < points.Count; i++)
             {
                 if (points[i] != null)
                 {
-                    ret[i] = Interpolate(points[i], nearestType, distanceType);
+                    ret[i] = GetValueAtPoint(points[i], nearestType, distanceType);
                 }
                 else
                 {
@@ -143,7 +143,24 @@ namespace SOV
         /// </summary>
         /// <param name="point">Точка интерполяции.</param>
         /// <returns>Результат интерполяции, либо double.NaN, если точка не принадлежит региону сетки.</returns>
-        public double Interpolate(GeoPoint point, EnumPointNearestType nearestType, Geo.EnumDistanceType distanceType)
+        public double GetValueAtPoint(GeoPoint point, EnumPointNearestType nearestType, Geo.EnumDistanceType distanceType)
+        {
+            List<int[/*iLat,iLon*/]> iLatLon = Grid.GetNearestPointsIdx(point.LatMin, point.LonMin);
+            if (iLatLon == null) return double.NaN;
+
+            double[] values = new double[iLatLon.Count];
+            List<GeoPoint> nearestPoints = new List<GeoPoint>();
+
+            for (int i = 0; i < iLatLon.Count; i++)
+            {
+                nearestPoints.Add(new GeoPoint(Grid.LatsMin[iLatLon[i][0]] / 60, Grid.LonsMin[iLatLon[i][1]] / 60));
+                values[i] = Value[Grid.GetNodeIdx(iLatLon[i][0], iLatLon[i][1])];
+            }
+
+            return SOV.Geo.Geo.GetValueAtPoint(point, nearestPoints, values, nearestType, distanceType);
+        }
+
+        public double _DELME_GetValueAtPoint(GeoPoint point, EnumPointNearestType nearestType, Geo.EnumDistanceType distanceType)
         {
             List<int[/*latIdx,lonIdx*/]> iLatLon = Grid.GetNearestPointsIdx(point.LatMin, point.LonMin);
             if (iLatLon == null) return double.NaN;
@@ -179,6 +196,7 @@ namespace SOV
             }
 
         }
+
         static public Field[] Truncate(List<Field> fields, GeoRectangle gr2Trancate)
         {
             Field[] ret = new Field[fields.Count];

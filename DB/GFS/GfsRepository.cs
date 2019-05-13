@@ -400,7 +400,7 @@ namespace SOV.DB
 
                 for (int i = 0; i < fields.Count; i++)
                 {
-                    ret[i] = fields[i]?.Interpolate(points, nearestType, distanceType);// Support.Allocate(points.Count, double.NaN);
+                    ret[i] = fields[i]?.GetValuesAtPoints(points, nearestType, distanceType);// Support.Allocate(points.Count, double.NaN);
                 }
             }
             return ret;

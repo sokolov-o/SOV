@@ -8,6 +8,8 @@ using System.IO;
 using System.Net;
 
 using SOV.Geo;
+using SOV.DB.FileVanWave;
+
 using System.Diagnostics;
 
 namespace SOV.DB
@@ -283,19 +285,21 @@ namespace SOV.DB
                 throw new Exception("Неизвестный формат файла прогноза волнения " + FileFormat);
 
             // GET FILE ATTR: GRID & LEADTIMES
-            object[] o = GetFileAttr(fs);
+
+            WaveFileAttr waveFileAttr = GetWaveFileAttr(fs);
             fs.Seek(0, SeekOrigin.Begin);
-            Grid gridSrc = (Grid)o[0];
+
             if (leadTimeHours == null)
-                leadTimeHours = (List<double>)o[1];
+                leadTimeHours = waveFileAttr.LeadTimes;
+
             List<Grid> gridDsts = new List<Grid>();
             if (grs == null)
-                gridDsts.Add(gridSrc);
+                gridDsts.Add(waveFileAttr.Grid);
             else
             {
                 foreach (var gr in grs)
                 {
-                    gridDsts.Add(gridSrc.Truncate2(gr));
+                    gridDsts.Add(waveFileAttr.Grid.Truncate2(gr));
                 }
             }
 
@@ -340,12 +344,14 @@ namespace SOV.DB
             }
             return ret;
         }
+
         /// <summary>
         /// Предполагается регулярная сетка с севера на юг, с запада на восток.
         /// </summary>
         /// <param name="fs"></param>
         /// <returns></returns>
-        public object[] GetFileAttr(FileStream fs)
+        public WaveFileAttr GetWaveFileAttr(FileStream fs)
+        //public object[/*grid;leadTimeHours*/] GetFileAttr(FileStream fs)
         {
             if (FileFormat != "FILE_VAN2011")
                 throw new Exception("Неизвестный формат файла прогноза волнения " + FileFormat);
@@ -387,7 +393,7 @@ namespace SOV.DB
                 lons.Count, lons[0] * 60, dlon * 60,
                 "Generated from FILE_VAN2011");
 
-            return new object[] { grid, leadTimeHours.OrderBy(x => x).ToList() };
+            return new WaveFileAttr() { Grid = grid, LeadTimes = leadTimeHours.OrderBy(x => x).ToList() };
         }
 
         bool isFTPPath(string path)
@@ -416,21 +422,7 @@ namespace SOV.DB
 
         public Field[][][] ReadFieldsInRectangles(DateTime dateIni, object dataFilter, List<double> leadTimeHours, List<GeoRectangle> grs2Truncate)
         {
-            // DATA FILTER
-            List<int> varIndeces;
-            if (dataFilter == null)
-            {
-                if (FileFormat != "FILE_VAN2011")
-                    throw new Exception("Неизвестный формат файла прогноза волнения " + FileFormat);
-
-                varIndeces = new List<int>();
-                for (int i = 0; i < DataRow2011.WaveParamNames2011.Length; i++)
-                {
-                    varIndeces.Add(i);
-                }
-            }
-            else
-                varIndeces = (List<int>)dataFilter;
+            List<int> varIndeces = GetWaveParameterIndeces(dataFilter);
 
             FileStream fs = null;
             try
@@ -449,20 +441,144 @@ namespace SOV.DB
                 }
             }
         }
+        private List<int> GetWaveParameterIndeces(object dataFilter)
+        {
+            List<int> ret;
+            if (dataFilter == null)
+            {
+                if (FileFormat != "FILE_VAN2011")
+                    throw new Exception("Неизвестный формат файла прогноза волнения " + FileFormat);
 
+                ret = new List<int>();
+                for (int i = 0; i < DataRow2011.WaveParamNames2011.Length; i++)
+                {
+                    ret.Add(i);
+                }
+            }
+            else
+                ret = (List<int>)dataFilter;
+            return ret;
+        }
         /// <summary>
         /// Получить прогнозы в точках.
         /// </summary>
         /// <param name="dateIni">Исходная дата выпуска прогноза.</param>
-        /// <param name="dataFilter">int[]: VanRepository.WaveParamNames2011 index of wave parameters</param>
+        /// <param name="dataFilter">int[]: VanRepository.WaveParamNames2011 index of wave parameters.  Mean all parameters if null.</param>
         /// <param name="leadTimes">Заблаговременности.</param>
         /// <param name="points">Точки прогноза.</param>
         /// <param name="nearestType">Тип расчета прогностического значения в точке.</param>
         /// <param name="distanceType">Тип рассчета расстояния на сфере.</param>
         /// <returns></returns>
-        public double[][][] ReadValuesAtPoints(DateTime dateIni, object dataFilter, List<double> leadTimes, List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
+        public double[/*leadTime*/][/*GeoPoint index*/][/*dataFilter index*/] ReadValuesAtPoints
+            (DateTime dateIni, object dataFilter, List<double> leadTimeHours, List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
-            throw new NotImplementedException();
+            double[/*leadTime*/][/*GeoPoint index*/][/*dataFilter index*/] ret = null;
+            FileStream fs = null;
+            try
+            {
+                fs = OpenTempFile(dateIni);
+                if (fs != null)
+                {
+                    List<int> waveParamIndeces = GetWaveParameterIndeces(dataFilter);
+                    fs.Seek(0, SeekOrigin.Begin);
+
+                    return ParseAtPoints(fs, waveParamIndeces, leadTimeHours, points, nearestType, distanceType);
+                }
+            }
+            finally
+            {
+                if (fs != null)
+                {
+                    fs.Close();
+                    File.Delete(fs.Name);
+                }
+            }
+            return ret;
         }
+
+        double[/*leadTime*/][/*Georectangle index*/][/*Variable index*/] ParseAtPoints
+            (FileStream fs, List<int> varIndeces, List<double> leadTimeHours, List<GeoPoint> outPoints, EnumPointNearestType nearestType, EnumDistanceType distanceType)
+        {
+            if (FileFormat != "FILE_VAN2011")
+                throw new Exception("Неизвестный формат файла прогноза волнения " + FileFormat);
+
+            // GET FILE ATTR: GRID & LEADTIMES
+
+            WaveFileAttr waveFileAttr = GetWaveFileAttr(fs);
+            if (leadTimeHours == null)
+                leadTimeHours = waveFileAttr.LeadTimes;
+
+            // GETNEAREST FIELD GRID POINTS FOR EACH OUT POINTS
+
+            Dictionary<int, List<GeoPoint>> nearestPoints = new Dictionary<int, List<GeoPoint>>();
+            for (int iPoint = 0; iPoint < outPoints.Count; iPoint++)
+            {
+                nearestPoints.Add(iPoint, waveFileAttr.Grid.GetNearestPoints(outPoints[iPoint].LatMin, outPoints[iPoint].LonMin));
+            }
+
+            // READ FILE
+
+            fs.Seek(0, SeekOrigin.Begin);
+            StreamReader sr = new StreamReader(fs, Encoding.Default, false, 10000000);
+
+            double[/*leadTime*/][/*point*/][/*nrst point*/][/*varValues*/] buf = new double[leadTimeHours.Count][][][];
+            int iRow = 0;
+            while (!sr.EndOfStream)
+            {
+                // READ LINE
+                DataRow2011 data = DataRow2011.ParseLine(sr.ReadLine());
+                if (data == null) continue;
+
+                // REQUIRED FCS TIME?
+                int iLT = leadTimeHours.IndexOf(data.leadTime);
+                if (iLT < 0) continue;
+
+                if (buf[iLT] == null) buf[iLT] = new double[outPoints.Count][][];
+
+                // REQUIRED FCS POINT/NODE?
+                for (int iPoint = 0; iPoint < outPoints.Count; iPoint++)
+                {
+                    if (nearestPoints[iPoint] == null || GeoPoint.TryGetPointIndex(outPoints[iPoint], nearestPoints[iPoint], out int iPointNearest))
+                        continue;
+
+                    if (buf[iLT][iPoint] == null) buf[iLT][iPoint] = new double[nearestPoints[iPoint].Count][];
+
+                    // BUF NEAREST POINTS VARIABLES VALUES 
+                    double[] values = new double[varIndeces.Count];
+                    for (int iVar = 0; iVar < varIndeces.Count; iVar++)
+                    {
+                        values[iVar] = data.values[varIndeces[iVar]];
+                    }
+                    buf[iLT][iPoint][iPointNearest] = values;
+                }
+
+                iRow++;
+            }
+
+            double[/*leadTime*/][/*point*/][/*variable*/] ret = new double[leadTimeHours.Count][][];
+
+            for (int iLT = 0; iLT < leadTimeHours.Count; iLT++)
+            {
+                ret[iLT] = new double[outPoints.Count][];
+                for (int iPoint = 0; iPoint < outPoints.Count; iPoint++)
+                {
+                    if (buf[iLT][iPoint] == null) continue;
+
+                    ret[iLT][iPoint] = new double[varIndeces.Count];
+
+                    for (int iVar = 0; iVar < varIndeces.Count; iVar++)
+                    {
+                        double[] values = new double[nearestPoints[iPoint].Count];
+                        for (int iPointNearest = 0; iPointNearest < nearestPoints[iPoint].Count; iPointNearest++)
+                        {
+                            values[iPointNearest] = buf[iLT][iPoint][iPointNearest][iVar];
+                        }
+                        ret[iLT][iPoint][iVar] = Geo.Geo.GetValueAtPoint(outPoints[iPoint], nearestPoints[iPoint], values, nearestType, distanceType);
+                    }
+                }
+            }
+            return ret;
+        }
+
     }
 }

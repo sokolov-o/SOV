@@ -277,5 +277,19 @@ namespace SOV.Geo
             //Calculate the hash code for the product. 
             return hashGeoPointsLatGrd ^ hashGeoPointsLonGrd;
         }
+
+        public static bool TryGetPointIndex(GeoPoint point, List<GeoPoint> gpv, out int iPointNearest)
+        {
+            iPointNearest = -1;
+            for (int i = 0; i < gpv.Count; i++)
+            {
+                if (point.LatGrd == gpv[i].LatGrd && point.LonGrd == gpv[i].LonGrd)
+                {
+                    iPointNearest = i;
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

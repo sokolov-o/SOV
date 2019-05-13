@@ -46,7 +46,7 @@ namespace SOV.DB
         /// </summary>
         /// <param name="gfsRecords">Not null.</param>
         /// <returns></returns>
-        static internal List<Field> ToFields(object[][] gfsRecords)
+        static internal List<Field> ToFields(object[/*grib2filter index*/][/*Grib2Record;float[] data*/] gfsRecords)
         {
             List<Field> ret = new List<Field>();
             foreach (var item in gfsRecords)

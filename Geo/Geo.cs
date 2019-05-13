@@ -109,6 +109,45 @@ namespace SOV.Geo
 
             }
         }
+
+        /// <summary>
+        /// Получить значение в точке на основе значений в окружающих точках.
+        /// </summary>
+        /// <param name="point">Точка, в которой требуется значение.</param>
+        /// <param name="nearestPoints">Ближайщие к заданной точки.</param>
+        /// <param name="values">Значения в ближайших точках (по-порядку точек).</param>
+        /// <param name="nearestType">Тип значения.</param>
+        /// <param name="distanceType">Тип расчета расстояния на сфере.</param>
+        /// <returns>Значение в заданной точке.</returns>
+        static public double GetValueAtPoint(GeoPoint point, List<GeoPoint> nearestPoints, double[] values, EnumPointNearestType nearestType, EnumDistanceType distanceType)
+        {
+            double[] dists = new double[nearestPoints.Count];
+            double latrad0 = Vector.grad2Radians(point.LatGrd);
+            double lonrad0 = Vector.grad2Radians(point.LonGrd);
+
+            for (int i = 0; i < nearestPoints.Count; i++)
+            {
+                dists[i] = Geo.SphereDistance(
+                    lonrad0, Vector.grad2Radians(nearestPoints[i].LonGrd),
+                    latrad0, Vector.grad2Radians(nearestPoints[i].LatGrd),
+                    distanceType
+                );
+            }
+
+            switch (nearestType)
+            {
+                // Берем значение в точке с минимальным расстоянием
+                case EnumPointNearestType.Nearest:
+                    return values[Array.IndexOf(dists, dists.Min())];
+
+                // Линейная взвешеная интерполяция
+                case EnumPointNearestType.Interpolate:
+                    return Support.InterpolateLine(dists, values)[0];
+                default:
+                    throw new Exception("UNKNOWN GeoPoint.NearestType=" + nearestType);
+            }
+        }
+
         ///// <summary>
         ///// Средневзвешенная линейная интерполяция в заданную координату между точками. Веса - расстояния от заданной до соответствующей точки.
         ///// </summary>
@@ -137,3 +176,4 @@ namespace SOV.Geo
         //}
     }
 }
+
