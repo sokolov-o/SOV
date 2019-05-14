@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public partial class FormTracks : Form
     {
@@ -40,12 +40,12 @@ namespace FERHRI.SGMO
                 }
             }
         }
-        public SGMO.Track0 CurrentTrack0
+        public SGMO.Track CurrentTrack
         {
             get
             {
-                object curItem = ucTrack0.GetSelectedItem();
-                return curItem == null ? null : (SGMO.Track0)curItem;
+                object curItem = ucTrack.GetSelectedItem();
+                return curItem == null ? null : (SGMO.Track)curItem;
             }
         }
 
@@ -53,8 +53,8 @@ namespace FERHRI.SGMO
         {
             try
             {
-                List<Track0> tracks = DataManager.GetInstance().TrackRepository.SelectTrack0(null, true);
-                ucTrack0.SetDataSource(tracks.ToList<object>(), "Name");
+                List<Track> tracks = DataManager.GetInstance().TrackRepository.Select();
+                ucTrack.SetDataSource(tracks.ToList<object>(), "Name");
             }
             catch (Exception ex)
             {

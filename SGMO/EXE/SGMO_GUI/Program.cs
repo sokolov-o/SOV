@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SGMO_GUI
+namespace SOV.SGMO
 {
     static class Program
     {

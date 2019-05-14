@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SOV.Amur;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public partial class UCMessageSite : UserControl
     {
@@ -40,14 +41,10 @@ namespace FERHRI.SGMO
                 messageTypeComboBox.SetSelectedId((int)value.MessageType);
                 langTypeComboBox.SetSelectedId((int)value.Language);
 
-                siteTextBox.Text = FERHRI.Amur.Meta.Site.GetName(
-                    FERHRI.Amur.Meta.DataManager.GetInstance().SiteRepository.Select(value.SiteId),
-                    FERHRI.Amur.Meta.StationRepository.GetCash(),
-                    FERHRI.Amur.Meta.StationTypeRepository.GetCash(),
-                    2);
+                siteTextBox.Text = Amur.Meta.Site.GetName(Amur.Meta.DataManager.GetInstance().SiteRepository.Select(value.SiteId), 2);
                 siteTextBox.Tag = value.SiteId;
 
-                methodTextBox.Text = FERHRI.Amur.Meta.DataManager.GetInstance().MethodRepository.Select(value.MethodId).Name;
+                methodTextBox.Text = SOV.Amur.Meta.DataManager.GetInstance().MethodRepository.Select(value.MethodId).Name;
                 methodTextBox.Tag = value.MethodId;
 
                 messageTextBox.Text = value.Text;
@@ -66,12 +63,12 @@ namespace FERHRI.SGMO
 
         private void UCMessageSite_Load(object sender, EventArgs e)
         {
-            messageTypeComboBox.DataSource(FERHRI.SGMO.MessageTypeRepository.GetCash()
+            messageTypeComboBox.DataSource(SOV.SGMO.MessageTypeRepository.GetCash()
                 .Select(x => new Common.IdName() { Id = x.Id, Name = x.Name })
                 .OrderBy(x => x.Name).ToArray());
 
-            List<FERHRI.Common.IdName> langs = new List<Common.IdName>();
-            foreach (var i in Enum.GetValues(typeof(FERHRI.Amur.Meta.EnumLanguage)))
+            List<SOV.Common.IdName> langs = new List<Common.IdName>();
+            foreach (var i in Enum.GetValues(typeof(SOV.Amur.Meta.EnumLanguage)))
             {
                 langs.Add(new Common.IdName() { Id = (int)i, Name = ((Amur.Meta.EnumLanguage)i).ToString() });
             }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,10 +7,11 @@
     <ProjectGuid>{0BEF5D62-EA9E-45A8-AF34-2543EC69BA10}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SGMO_GUI</RootNamespace>
-    <AssemblyName>SGMO_GUI</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>SOV.SGMO</RootNamespace>
+    <AssemblyName>SOV.SGMO.GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>..\..\..\DLL\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +86,22 @@
     <None Include="Resources\fire-128x128.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Amur-2.1\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Amur-2.1\Common\CommonUC\CommonUC.csproj">
+      <Project>{bb34a841-7cbe-4c0d-8268-6aece9b7271e}</Project>
+      <Name>CommonUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Amur-2.1\MetaDAL\MetaDAL.csproj">
+      <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
+      <Name>MetaDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Amur-2.1\Meta\Meta.csproj">
+      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
+      <Name>Meta</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SgmoBL\SgmoBL.csproj">
       <Project>{f583806c-ba90-4dd8-9044-9ec9c33d83ce}</Project>
       <Name>SgmoBL</Name>

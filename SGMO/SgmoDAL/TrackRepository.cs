@@ -43,7 +43,7 @@ namespace SOV.SGMO
 
         ////    using (NpgsqlConnection cnn = _db.Connection)
         ////    {
-        ////        using (NpgsqlCommand cmd = new NpgsqlCommand("select * from track0 where :id is null or id=any(:id)", cnn))
+        ////        using (NpgsqlCommand cmd = new NpgsqlCommand("select * from Track where :id is null or id=any(:id)", cnn))
         ////        {
         ////            cmd.Parameters.AddWithValue("id", trackIds);
         ////            using (NpgsqlDataReader rdr = cmd.ExecuteReader())
@@ -80,9 +80,9 @@ namespace SOV.SGMO
 
         ////    using (NpgsqlConnection cnn = _db.Connection)
         ////    {
-        ////        using (NpgsqlCommand cmd = new NpgsqlCommand("select * from track1 where track0_id =:track0id", cnn))
+        ////        using (NpgsqlCommand cmd = new NpgsqlCommand("select * from track1 where Track_id =:Trackid", cnn))
         ////        {
-        ////            cmd.Parameters.AddWithValue("track0id", trackPartId);
+        ////            cmd.Parameters.AddWithValue("Trackid", trackPartId);
         ////            using (NpgsqlDataReader rdr = cmd.ExecuteReader())
         ////            {
         ////                while (rdr.Read())
@@ -90,7 +90,7 @@ namespace SOV.SGMO
         ////                    ret.Add(new Track1()
         ////                    {
         ////                        Id = (int)rdr["id"],
-        ////                        Track0Id = (int)rdr["track0_id"],
+        ////                        TrackId = (int)rdr["Track_id"],
         ////                        Date = (DateTime)rdr["date"],
         ////                        UTCOffset = (Int16)rdr["utc_offset"],
         ////                        Lat = (double)rdr["lat"],

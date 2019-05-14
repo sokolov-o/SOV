@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.SGMO
+namespace SOV.SGMO
 {
     public partial class UCMessageSiteTable : UserControl
     {
@@ -38,7 +38,7 @@ namespace FERHRI.SGMO
                 {
                     DataGridViewRow row = dgv.Rows[dgv.Rows.Add(new object[]
                     {
-                        Amur.Meta.SiteRepository.GetCash().First(x=>x.Id== msg.SiteId).GetName(Amur.Meta.StationRepository.GetCash(), Amur.Meta.StationTypeRepository.GetCash(),0),
+                        Amur.Meta.SiteRepository.GetCash().First(x=>x.Id== msg.SiteId).GetName(0,Amur.Meta.SiteTypeRepository.GetCash()),
                         Amur.Meta.MethodRepository.GetCash().First(x=>x.Id== msg.MethodId),
                         SGMO.MessageTypeRepository.GetCash().First(x=>x.Id== (int)msg.MessageType).Name,
                         msg.Language.ToString(),

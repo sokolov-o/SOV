@@ -84,7 +84,7 @@ namespace SOV
         }
         /// <summary>
         /// Выделение узлов сетки, относящихся к региону.
-        /// OSokolov@ferhri.ru
+        /// OSokolov@SOV.ru
         /// </summary>
         /// <param name="geoReg">Регион.</param>
         /// <returns>Выделенное поле, возможно с отсутствием точек, или null, если сетка не задана.</returns>

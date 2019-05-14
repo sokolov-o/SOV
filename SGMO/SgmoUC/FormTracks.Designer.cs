@@ -1,4 +1,4 @@
-﻿namespace FERHRI.SGMO
+﻿namespace SOV.SGMO
 {
     partial class FormTracks
     {
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTracks));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.ucTrack0 = new FERHRI.Common.UCList();
+            this.ucTrack = new SOV.Common.UCList();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -49,39 +49,39 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.ucTrack0);
+            this.splitContainer1.Panel1.Controls.Add(this.ucTrack);
             this.splitContainer1.Size = new System.Drawing.Size(445, 292);
             this.splitContainer1.SplitterDistance = 148;
             this.splitContainer1.TabIndex = 0;
             // 
-            // ucTrack0
+            // ucTrack
             // 
-            //this.ucTrack0.AllowMultiSelect = false;
-            //this.ucTrack0.CheckedId = ((System.Collections.Generic.List<int>)(resources.GetObject("ucTrack0.CheckedId")));
-            this.ucTrack0.ColumnsHeadersVisible = false;
-            //this.ucTrack0.CurrentDicItemId = null;
-            //this.ucTrack0.DicItemName = null;
-            this.ucTrack0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucTrack0.Location = new System.Drawing.Point(0, 0);
-            this.ucTrack0.Name = "ucTrack0";
-            //this.ucTrack0.SelectedRowId = -1;
-            this.ucTrack0.ShowAddNewToolbarButton = false;
-            //this.ucTrack0.ShowCheckBox = false;
-            this.ucTrack0.ShowColumnHeaders = false;
-            this.ucTrack0.ShowDeleteToolbarButton = false;
-            this.ucTrack0.ShowFindItemToolbarButton = false;
-            this.ucTrack0.ShowId = true;
-            this.ucTrack0.ShowOrderControls = false;
-            this.ucTrack0.ShowOrderToolbarButton = false;
-            this.ucTrack0.ShowSaveToolbarButton = false;
-            this.ucTrack0.ShowSelectAllToolbarButton = false;
-            this.ucTrack0.ShowSelectedOnly = false;
-            this.ucTrack0.ShowSelectedOnlyToolbarButton = false;
-            this.ucTrack0.ShowToolbar = false;
-            this.ucTrack0.ShowUnselectAllToolbarButton = false;
-            this.ucTrack0.ShowUpdateToolbarButton = false;
-            this.ucTrack0.Size = new System.Drawing.Size(148, 292);
-            this.ucTrack0.TabIndex = 0;
+            //this.ucTrack.AllowMultiSelect = false;
+            //this.ucTrack.CheckedId = ((System.Collections.Generic.List<int>)(resources.GetObject("ucTrack.CheckedId")));
+            this.ucTrack.ColumnsHeadersVisible = false;
+            //this.ucTrack.CurrentDicItemId = null;
+            //this.ucTrack.DicItemName = null;
+            this.ucTrack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTrack.Location = new System.Drawing.Point(0, 0);
+            this.ucTrack.Name = "ucTrack";
+            //this.ucTrack.SelectedRowId = -1;
+            this.ucTrack.ShowAddNewToolbarButton = false;
+            //this.ucTrack.ShowCheckBox = false;
+            this.ucTrack.ShowColumnHeaders = false;
+            this.ucTrack.ShowDeleteToolbarButton = false;
+            this.ucTrack.ShowFindItemToolbarButton = false;
+            this.ucTrack.ShowId = true;
+            this.ucTrack.ShowOrderControls = false;
+            this.ucTrack.ShowOrderToolbarButton = false;
+            this.ucTrack.ShowSaveToolbarButton = false;
+            this.ucTrack.ShowSelectAllToolbarButton = false;
+            this.ucTrack.ShowSelectedOnly = false;
+            this.ucTrack.ShowSelectedOnlyToolbarButton = false;
+            this.ucTrack.ShowToolbar = false;
+            this.ucTrack.ShowUnselectAllToolbarButton = false;
+            this.ucTrack.ShowUpdateToolbarButton = false;
+            this.ucTrack.Size = new System.Drawing.Size(148, 292);
+            this.ucTrack.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -143,7 +143,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private Common.UCList ucTrack0;
+        private Common.UCList ucTrack;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

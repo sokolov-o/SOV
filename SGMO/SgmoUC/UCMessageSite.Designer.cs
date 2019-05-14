@@ -1,4 +1,4 @@
-﻿namespace FERHRI.SGMO
+﻿namespace SOV.SGMO
 {
     partial class UCMessageSite
     {
@@ -45,8 +45,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.messageTypeComboBox = new FERHRI.Common.UCComboBox();
-            this.langTypeComboBox = new FERHRI.Common.UCComboBox();
+            this.messageTypeComboBox = new SOV.Common.UCComboBox();
+            this.langTypeComboBox = new SOV.Common.UCComboBox();
             this.messageTextBox = new System.Windows.Forms.RichTextBox();
             this.leadHoursTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();

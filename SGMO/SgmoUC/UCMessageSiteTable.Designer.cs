@@ -1,4 +1,4 @@
-﻿namespace FERHRI.SGMO
+﻿namespace SOV.SGMO
 {
     partial class UCMessageSiteTable
     {
@@ -50,7 +50,7 @@
             // 
             // messageSiteBindingSource
             // 
-            this.messageSiteBindingSource.DataSource = typeof(FERHRI.SGMO.MessageSite);
+            this.messageSiteBindingSource.DataSource = typeof(SOV.SGMO.MessageSite);
             // 
             // UCMessageSiteTable
             // 

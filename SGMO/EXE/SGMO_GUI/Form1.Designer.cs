@@ -1,4 +1,4 @@
-﻿namespace SGMO_GUI
+﻿namespace SOV.SGMO
 {
     partial class Form1
     {
@@ -28,17 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDicWarningPileCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.tv = new System.Windows.Forms.TreeView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -49,8 +55,7 @@
             this.mnuDicToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(14, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1797, 51);
+            this.menuStrip1.Size = new System.Drawing.Size(770, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,15 +64,15 @@
             this.mnuFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFileExitToolStripMenuItem});
             this.mnuFileToolStripMenuItem.Name = "mnuFileToolStripMenuItem";
-            this.mnuFileToolStripMenuItem.Size = new System.Drawing.Size(93, 43);
+            this.mnuFileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.mnuFileToolStripMenuItem.Text = "Файл";
             // 
             // mnuFileExitToolStripMenuItem
             // 
             this.mnuFileExitToolStripMenuItem.Name = "mnuFileExitToolStripMenuItem";
-            this.mnuFileExitToolStripMenuItem.Size = new System.Drawing.Size(201, 42);
+            this.mnuFileExitToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.mnuFileExitToolStripMenuItem.Text = "Выход";
-            this.mnuFileExitToolStripMenuItem.Click += new System.EventHandler(this.mnuFileExitToolStripMenuItem_Click);
+            this.mnuFileExitToolStripMenuItem.Click += new System.EventHandler(this.MnuFileExitToolStripMenuItem_Click);
             // 
             // mnuDicToolStripMenuItem
             // 
@@ -75,50 +80,84 @@
             this.mnuDicToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuDicWarningPileCatalogToolStripMenuItem});
             this.mnuDicToolStripMenuItem.Name = "mnuDicToolStripMenuItem";
-            this.mnuDicToolStripMenuItem.Size = new System.Drawing.Size(198, 43);
+            this.mnuDicToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.mnuDicToolStripMenuItem.Text = "Справочники";
             // 
             // mnuDicWarningPileCatalogToolStripMenuItem
             // 
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Image = global::SGMO_GUI.Properties.Resources.fire_128x128;
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Image = global::SOV.SGMO.Properties.Resources.fire_128x128;
             this.mnuDicWarningPileCatalogToolStripMenuItem.Name = "mnuDicWarningPileCatalogToolStripMenuItem";
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Size = new System.Drawing.Size(711, 42);
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
             this.mnuDicWarningPileCatalogToolStripMenuItem.Text = "Предупреждения для записей каталога данных";
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Click += new System.EventHandler(this.mnuDicWarningPileCatalogToolStripMenuItem_Click);
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Click += new System.EventHandler(this.MnuDicWarningPileCatalogToolStripMenuItem_Click);
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 51);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tv);
-            this.splitContainer1.Size = new System.Drawing.Size(1797, 966);
-            this.splitContainer1.SplitterDistance = 597;
-            this.splitContainer1.SplitterWidth = 9;
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer1.Size = new System.Drawing.Size(770, 432);
+            this.splitContainer1.SplitterDistance = 255;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RefreshButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip1.Size = new System.Drawing.Size(255, 25);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.RefreshButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshButton.Image")));
+            this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(50, 22);
+            this.RefreshButton.Text = "Refresh";
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // tv
             // 
             this.tv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tv.Location = new System.Drawing.Point(0, 0);
-            this.tv.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tv.Location = new System.Drawing.Point(3, 28);
             this.tv.Name = "tv";
-            this.tv.Size = new System.Drawing.Size(597, 966);
+            this.tv.Size = new System.Drawing.Size(249, 401);
             this.tv.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tv, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(255, 432);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1797, 1017);
+            this.ClientSize = new System.Drawing.Size(770, 456);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
@@ -126,6 +165,10 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +183,9 @@
         private System.Windows.Forms.TreeView tv;
         private System.Windows.Forms.ToolStripMenuItem mnuDicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuDicWarningPileCatalogToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton RefreshButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

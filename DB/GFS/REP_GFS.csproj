@@ -68,10 +68,6 @@
       <Project>{b0362c23-4f7a-4a27-91c8-9772f850a3b0}</Project>
       <Name>Grib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{22b3167b-ffa8-4081-b5ec-8f45338dc0da}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common\Common.DB.csproj">
       <Project>{22b3167b-ffa8-4081-b5ec-8f45338dc0da}</Project>
       <Name>Common.DB</Name>

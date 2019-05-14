@@ -18,7 +18,7 @@ namespace SOV.SGMO
         {
             return new TrackPart()
             {
-                Id = (int)rdr["id"],  
+                Id = (int)rdr["id"],
                 TrackId = (int)rdr["track_id"],
                 DateSUTC = (DateTime)rdr["date_s_utc"]
             };
@@ -33,6 +33,15 @@ namespace SOV.SGMO
                 };
             List<TrackPart> ret = Select(fields);
             return ret == null || ret.Count == 0 ? null : ret[0];
+
+        }
+        public List<TrackPart> SelectByTrack(int trackId)
+        {
+            var fields = new Dictionary<string, object>()
+                {
+                    {"track_id", trackId}
+                };
+            return Select(fields);
 
         }
     }
