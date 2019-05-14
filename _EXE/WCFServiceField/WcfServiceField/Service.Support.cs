@@ -354,7 +354,7 @@ namespace SOV.WcfService.Field
         }
 
         private double[/*leadTime*/][/*point index*/][/*varoff index*/] ConvertFieldData2Varoff(
-            double[/*leadTime*/][/*point index*/][/*field catalog index*/] parentData,
+            double[/*leadTime*/][/*point index*/][/*field catalog index*/] fieldData,
             List<Catalog> fieldCatalogs,
             List<SGMO.Varoff> pointVaroffs,
             List<Geo.GeoPoint> points,
@@ -367,15 +367,18 @@ namespace SOV.WcfService.Field
             List<Variable> pointVariables = _amurClient.GetVariablesByList(_amurServiceHandle, pointVaroffs.Select(x => x.VariableId).Distinct().ToList());
 
             // GET PARENT FOR PRECIP
-            List<Variable> parentVarPrecip = _amurClient.GetVariablesByList(_amurServiceHandle, fieldCatalogs.Select(x => x.VariableId).Distinct().ToList());
-            parentVarPrecip = parentVarPrecip.FindAll(x => x.VariableTypeId == (int)EnumVariableType.Precipitation);
-            if (parentVarPrecip.Count != 1)
-                throw new Exception(string.Format("В прогнозах полей присутствует не единственный тип переменной для осадков. Всего их {0}. Ошибка алгоритма.", parentVarPrecip.Count));
-            List<Catalog> parentCatalogPrecips = fieldCatalogs.FindAll(x => x.VariableId == parentVarPrecip[0].Id);
-            if (parentCatalogPrecips.Count != 1)
-                throw new Exception(string.Format("В прогнозах полей присутствует не единственная запись каталога для осадков. Всего их {0}. Ошибка алгоритма.", parentCatalogPrecips.Count));
-            int iParentCatalogPrecip = fieldCatalogs.IndexOf(parentCatalogPrecips[0]);
-
+            int iFieldCatalogPrecip = -1;
+            if (pointVariables.Exists(x => x.VariableTypeId == (int)EnumVariableType.Precipitation))
+            {
+                List<Variable> fieldVar = _amurClient.GetVariablesByList(_amurServiceHandle, fieldCatalogs.Select(x => x.VariableId).Distinct().ToList());
+                fieldVar = fieldVar.FindAll(x => x.VariableTypeId == (int)EnumVariableType.Precipitation);
+                if (fieldVar.Count != 1)
+                    throw new Exception(string.Format("В прогнозах полей присутствует не единственный тип переменной для осадков. Всего их {0}. Ошибка алгоритма.", fieldVar.Count));
+                List<Catalog> fieldCatalogPrecips = fieldCatalogs.FindAll(x => x.VariableId == fieldVar[0].Id);
+                if (fieldCatalogPrecips.Count != 1)
+                    throw new Exception(string.Format("В прогнозах полей присутствует не единственная запись каталога для осадков. Всего их {0}. Ошибка алгоритма.", fieldCatalogPrecips.Count));
+                iFieldCatalogPrecip = fieldCatalogs.IndexOf(fieldCatalogPrecips[0]);
+            }
             // SCAN VAROFFS
 
             for (int iVaroff = 0; iVaroff < pointVaroffs.Count; iVaroff++)
@@ -392,13 +395,13 @@ namespace SOV.WcfService.Field
                     // 1. PRECIITATION
                     if (pointVariable.VariableTypeId == (int)EnumVariableType.Precipitation)
                     {
-                        pointValues = ConvertPrecipitation(pointVariable, parentData, iPoint, iParentCatalogPrecip, leadTimes, (double)precipSumResetTime);
+                        pointValues = ConvertPrecipitation(pointVariable, fieldData, iPoint, iFieldCatalogPrecip, leadTimes, (double)precipSumResetTime);
                     }
                     // 2. WIND SPEED
                     else if ((pointVariable.VariableTypeId == (int)EnumVariableType.Direction || pointVariable.VariableTypeId == (int)EnumVariableType.WindVelocity)
                         && pointVariable.DataTypeId != (int)EnumDataType.Maximum)
                     {
-                        pointValues = ConvertUV(fieldCatalogs, parentData, iPoint, pointVariable, varoff.OffsetTypeId, varoff.OffsetValue, leadTimes);
+                        pointValues = ConvertUV(fieldCatalogs, fieldData, iPoint, pointVariable, varoff.OffsetTypeId, varoff.OffsetValue, leadTimes);
                     }
                     // 3. OTHER VARS
                     else
@@ -420,14 +423,14 @@ namespace SOV.WcfService.Field
                             int iParentCatalog = fieldCatalogs.IndexOf(fieldCatalog[0]);
                             for (int iLT = 0; iLT < leadTimes.Length; iLT++)
                             {
-                                pointValues[iLT] = parentData[iLT][iPoint][iParentCatalog];
+                                pointValues[iLT] = fieldData[iLT][iPoint] == null ? double.NaN : fieldData[iLT][iPoint][iParentCatalog];
                             }
                         }
                     }
                     for (int iLT = 0; iLT < leadTimes.Length; iLT++)
                     {
                         ret[iLT][iPoint][iVaroff] = pointValues[iLT];
-                    } 
+                    }
                 }
             }
             return ret;

@@ -58,8 +58,8 @@ namespace _TestWCFServiceField
                     dateIni,
                     new int[]
                     {
-                        //112 /*"Ближайший узел GFS 0.25*/
-                        1608  /*"Ближайший узел WAVE.VVO.PACIFIC.0p5"*/
+                        112 /*"Ближайший узел GFS 0.25*/
+                        //1608  /*"Ближайший узел WAVE.VVO.PACIFIC.0p5"*/
                     }
                 );
                 LogEnded("TrackForecast.Get");
@@ -73,7 +73,6 @@ namespace _TestWCFServiceField
                     Console.WriteLine("\n*** ОШИБКА: DataTrackFcsRepository.Insert(dataTrackFcs)\n");
                     throw ex;
                 }
-
 
                 // GET SITES FORECASTS
                 //GetSiteForecast(dateIni, leadTimes);
@@ -122,12 +121,11 @@ namespace _TestWCFServiceField
                 );
             //catalogs = catalogs.FindAll(x => x.Id == 10368139 || x.Id == 71629).ToList(); // Осадки, Владивосток
 
-            DateTime dateS = DateTime.Now;
-            Console.Write("GetValuesAtPoints started at {0}...", dateS);
+            LogStarted("GetValuesAtPoints");
 
-            Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = null;//= clientF.GetSitesForecast(hf, dateIni, leadTimes, catalogs.Select(x => x.Id).ToList());
+            Dictionary<double/*leadTime*/, double[]/*Catalog index*/> dataP = clientF.GetSitesForecast(hf, dateIni, leadTimes?.ToArray(), catalogs.Select(x => x.Id).ToArray());
 
-            Console.WriteLine("ended at {0}, elapsed {1} minutes.", DateTime.Now, (int)((DateTime.Now - dateS).TotalMinutes));
+            LogEnded("GetValuesAtPoints");
             PrintDataPoints(dateIni, catalogs, dataP);
         }
 

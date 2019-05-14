@@ -513,7 +513,11 @@ namespace SOV.DB
             Dictionary<int, List<GeoPoint>> nearestPoints = new Dictionary<int, List<GeoPoint>>();
             for (int iPoint = 0; iPoint < outPoints.Count; iPoint++)
             {
-                nearestPoints.Add(iPoint, waveFileAttr.Grid.GetNearestPoints(outPoints[iPoint].LatMin, outPoints[iPoint].LonMin));
+                List<GeoPoint> gps = waveFileAttr.Grid.GetNearestPoints(outPoints[iPoint].LatMin, outPoints[iPoint].LonMin);
+                if (gps == null)
+                    throw new Exception("(gps==null for point " + outPoints[iPoint]);
+
+                nearestPoints.Add(iPoint, gps);
             }
 
             // READ FILE
@@ -535,23 +539,23 @@ namespace SOV.DB
 
                 if (buf[iLT] == null) buf[iLT] = new double[outPoints.Count][][];
 
-                // REQUIRED FCS POINT/NODE?
+                // FIND FIELD POINTS FOR OUTPOINTS
                 for (int iPoint = 0; iPoint < outPoints.Count; iPoint++)
                 {
-                    if (nearestPoints[iPoint] == null || GeoPoint.TryGetPointIndex(outPoints[iPoint], nearestPoints[iPoint], out int iPointNearest))
-                        continue;
-
-                    if (buf[iLT][iPoint] == null) buf[iLT][iPoint] = new double[nearestPoints[iPoint].Count][];
-
-                    // BUF NEAREST POINTS VARIABLES VALUES 
-                    double[] values = new double[varIndeces.Count];
-                    for (int iVar = 0; iVar < varIndeces.Count; iVar++)
+                    if (Geo.Geo.TryGetPointIndex(data.geoPoint, nearestPoints[iPoint], out int iPointNearest))
                     {
-                        values[iVar] = data.values[varIndeces[iVar]];
-                    }
-                    buf[iLT][iPoint][iPointNearest] = values;
-                }
+                        if (buf[iLT][iPoint] == null) buf[iLT][iPoint] = new double[nearestPoints[iPoint].Count][];
 
+                        // BUF NEAREST POINTS VARIABLES VALUES 
+                        double[] values = new double[varIndeces.Count];
+                        for (int iVar = 0; iVar < varIndeces.Count; iVar++)
+                        {
+                            values[iVar] = data.values[varIndeces[iVar]];
+                            if (values[iVar] == -999.9) values[iVar] = double.NaN;
+                        }
+                        buf[iLT][iPoint][iPointNearest] = values;
+                    }
+                }
                 iRow++;
             }
 
@@ -568,12 +572,18 @@ namespace SOV.DB
 
                     for (int iVar = 0; iVar < varIndeces.Count; iVar++)
                     {
-                        double[] values = new double[nearestPoints[iPoint].Count];
+                        // Для ближ. точек может не быть значений, т.к. точки могут лежать на суше.
+                        List<double> values = new List<double>(4);
+                        List<GeoPoint> points = new List<GeoPoint>(4);
                         for (int iPointNearest = 0; iPointNearest < nearestPoints[iPoint].Count; iPointNearest++)
                         {
-                            values[iPointNearest] = buf[iLT][iPoint][iPointNearest][iVar];
+                            if (buf[iLT][iPoint][iPointNearest] != null)
+                            {
+                                values.Add(buf[iLT][iPoint][iPointNearest][iVar]);
+                                points.Add(nearestPoints[iPoint][iPointNearest]);
+                            }
                         }
-                        ret[iLT][iPoint][iVar] = Geo.Geo.GetValueAtPoint(outPoints[iPoint], nearestPoints[iPoint], values, nearestType, distanceType);
+                        ret[iLT][iPoint][iVar] = Geo.Geo.GetValueAtPoint(outPoints[iPoint], points, values.ToArray(), nearestType, distanceType);
                     }
                 }
             }

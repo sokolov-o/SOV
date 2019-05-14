@@ -71,7 +71,9 @@ namespace _TestWCFServiceField
         {
             Track track = DataManager.GetInstance().TrackRepository.Select(trackId);
             TrackPart trackPart = DataManager.GetInstance().TrackPartRepository.Select(trackId, dateIni);
-            List<TrackPartPoint> trackPartPoints = DataManager.GetInstance().TrackPartPointsRepository.Select(trackPart.Id);
+            if (trackPart == null)
+                throw new Exception(string.Format("Отсутствует часть трека [{0}] для даты {1}.",track, dateIni));
+                List<TrackPartPoint> trackPartPoints = DataManager.GetInstance().TrackPartPointsRepository.Select(trackPart.Id);
             track.TrackParts = new List<TrackPart> { trackPart };
             trackPart.TrackPartPoints = trackPartPoints;
 

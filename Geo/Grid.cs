@@ -636,7 +636,7 @@ namespace SOV.Geo
         /// Ближайщие к точке узлы сетки (максимально 4 шт) или null, если точка не лежит в пределах региона сетки.
         /// </summary>
         /// <param name="geoPoint">Точка.</param>
-        /// <returns>  List<GeoPoint> </returns>
+        /// <returns>  List<GeoPoint> or null </returns>
         public List<GeoPoint> GetNearestPoints(double latMin, double lonMin)
         {
             List<int[/*latIdx,lonIdx*/]> ll = GetNearestPointsIdx(latMin, lonMin);

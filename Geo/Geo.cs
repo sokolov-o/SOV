@@ -147,33 +147,32 @@ namespace SOV.Geo
                     throw new Exception("UNKNOWN GeoPoint.NearestType=" + nearestType);
             }
         }
-
-        ///// <summary>
-        ///// Средневзвешенная линейная интерполяция в заданную координату между точками. Веса - расстояния от заданной до соответствующей точки.
-        ///// </summary>
-        ///// <param name="lonrad">Долгота искомой точки (рад).</param>
-        ///// <param name="latrad">Широта искомой точки (рад).</param>
-        ///// <param name="values">Значения в точках (рад).</param>
-        ///// <param name="lonsrad">Долготы точек (рад).</param>
-        ///// <param name="latsrad">Широты точек (рад).</param>
-        ///// <param name="distanceType">Тип расчёта расстояния, необходимого для весов.</param>
-        ///// <returns>Интерполированное значение.</returns>
-        //static public double Interpolate(double lonrad, double latrad, double[] values, double[] lonsrad, double[] latsrad, EnumDistanceType distanceType)
-        //{
-        //    double ret = 0, weightSum = 0;
-
-        //    for (int i = 0; i < values.Length; i++)
-        //    {
-        //        if (lonrad == lonsrad[i] && latrad == latsrad[i])
-        //            return values[i];
-
-        //        double w = SphereDistance(lonrad, lonsrad[i], latrad, latsrad[i], distanceType);
-        //        //w = w * w;
-        //        ret += (values[i] / w);
-        //        weightSum += (1 / w);
-        //    }
-        //    return ret / weightSum;
-        //}
+        /// <summary>
+        /// Получить индекс заданной точки из списка точек.
+        /// </summary>
+        /// <param name="point">Точка, индекс которой определяется..</param>
+        /// <param name="gps">Список точек.</param>
+        /// <param name="iPoint">Искомый индекс.</param>
+        /// <returns>true, если индекс точки определен, false, если такой точки в списке нет.</returns>
+        public static bool TryGetPointIndex(GeoPoint point, List<GeoPoint> gps, out int iPoint)
+        {
+            iPoint = -1;
+            for (int i = 0; i < gps.Count; i++)
+            {
+                if (point.LatGrd == gps[i].LatGrd && point.LonGrd == gps[i].LonGrd)
+                {
+                    iPoint = i;
+                    return true;
+                }
+            }
+            return false;
+        }
+        //////public static int GetPointIndex(GeoPoint point, List<GeoPoint> points)
+        //////{
+        //////    if (TryGetPointIndex(point, points, out int iPoint))
+        //////        return iPoint;
+        //////    return -1;
+        //////}
     }
 }
 
