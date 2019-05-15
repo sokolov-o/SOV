@@ -42,11 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormTracks.cs">
+    <Compile Include="FormNewTrackPart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTracks.Designer.cs">
-      <DependentUpon>FormTracks.cs</DependentUpon>
+    <Compile Include="FormNewTrackPart.Designer.cs">
+      <DependentUpon>FormNewTrackPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_DELME_FormTracks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_DELME_FormTracks.Designer.cs">
+      <DependentUpon>_DELME_FormTracks.cs</DependentUpon>
     </Compile>
     <Compile Include="UCMessageSiteTable.cs">
       <SubType>UserControl</SubType>
@@ -63,8 +69,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormTracks.resx">
-      <DependentUpon>FormTracks.cs</DependentUpon>
+    <EmbeddedResource Include="FormNewTrackPart.resx">
+      <DependentUpon>FormNewTrackPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_DELME_FormTracks.resx">
+      <DependentUpon>_DELME_FormTracks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMessageSite.resx">
       <DependentUpon>UCMessageSite.cs</DependentUpon>
@@ -93,6 +102,10 @@
     <ProjectReference Include="..\..\DB\Common\Common.DB.csproj">
       <Project>{22b3167b-ffa8-4081-b5ec-8f45338dc0da}</Project>
       <Name>Common.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Geo\Geo.csproj">
+      <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
+      <Name>Geo</Name>
     </ProjectReference>
     <ProjectReference Include="..\SgmoBL\SgmoBL.csproj">
       <Project>{f583806c-ba90-4dd8-9044-9ec9c33d83ce}</Project>

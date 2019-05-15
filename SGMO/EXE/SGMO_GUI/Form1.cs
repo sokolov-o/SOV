@@ -36,21 +36,20 @@ namespace SOV.SGMO
 
             try
             {
-                TreeNode node = new TreeNode("Маршруты") { Name = "traks" };
-                foreach (Track track in DataManager.GetInstance().TrackRepository.Select())
+                List<Track> tracks = DataManager.GetInstance().TrackRepository.Select();
+
+                TreeNode nodeRoot = new TreeNode("Маршруты") { Name = "traks" };
+                foreach (Track track in tracks.Where(x => !x.ParentId.HasValue))
                 {
-                    TreeNode nodeTrack = new TreeNode(track.Name) { Name = track.Id.ToString(), Tag = track };
+                    TreeNode nodeParentTrack = new TreeNode(track.Name) { Name = track.Id.ToString(), Tag = track };
+                    nodeParentTrack.ContextMenuStrip = contextMenuStripTrackPart;
 
-                    foreach (TrackPart trackPart in DataManager.GetInstance().TrackPartRepository.SelectByTrack(track.Id))
-                    {
-                        TreeNode nodeTrackPart = new TreeNode(trackPart.DateSUTC.ToString("dd.mm.yyyy HH")) { Name = trackPart.Id.ToString(), Tag = trackPart };
-                        nodeTrack.Nodes.Add(nodeTrackPart);
-                    }
+                    AddChildTracks(nodeParentTrack, tracks);
 
-                    node.Nodes.Add(nodeTrack);
+                    nodeRoot.Nodes.Add(nodeParentTrack);
                 }
 
-                tv.Nodes.Add(node);
+                tv.Nodes.Add(nodeRoot);
 
             }
             catch (Exception ex)
@@ -60,6 +59,32 @@ namespace SOV.SGMO
             finally
             {
                 this.Cursor = cs;
+            }
+        }
+
+        void AddChildTracks(TreeNode parentTrack, List<Track> tracks)
+        {
+            foreach (Track childTrack in tracks.Where(x => x.ParentId == ((Track)parentTrack.Tag).Id))
+            {
+                parentTrack.Nodes.Add(new TreeNode(childTrack.DateSUTC.ToString("dd.mm.yyyy HH")) { Name = childTrack.Id.ToString(), Tag = childTrack });
+            }
+        }
+
+        private void Tv_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                tv.SelectedNode = e.Node;
+            }
+        }
+
+        private void AddTrackPartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNewTrackPart frm = new FormNewTrackPart((Track)tv.SelectedNode.Tag);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                tv.SelectedNode.Nodes.Clear();
+                AddChildTracks(tv.SelectedNode, DataManager.GetInstance().TrackRepository.SelectChilds(((Track)tv.SelectedNode.Tag).Id));
             }
         }
     }

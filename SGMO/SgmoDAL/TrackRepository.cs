@@ -22,85 +22,31 @@ namespace SOV.SGMO
                 SiteId = (int)rdr["site_id"],
                 NameRus = rdr["name"].ToString(),
                 NameEng = rdr["name_eng"].ToString(),
-                DateS = (DateTime)rdr["date_s"]
+                DateSUTC = (DateTime)rdr["date_s_utc"],
+                ParentId = ADbNpgsql.GetValueInt(rdr, "parent_id")
             };
         }
+        public List<Track> SelectChilds(int parentTrackId)
+        {
+            var fields = new Dictionary<string, object>()
+                {
+                    {"parent_id", parentTrackId}
+                };
+            return Select(fields);
 
-        /// <summary>
-        /// Выбрать маршрут.
-        /// </summary>
-        ////public Track SelectTrack(int trackId, bool fillFK = false)
-        ////{
-        ////    List<Track> ret = SelectTrack(new List<int>() { trackId }, fillFK);
-        ////    return ret.Count == 0 ? null : ret[0];
-        ////}
-        /// <summary>
-        /// Выбрать маршруты.
-        /// </summary>
-        ////public List<Track> SelectTrack(List<int> trackIds, bool fillFK = false)
-        ////{
-        ////    List<Track> ret = new List<Track>();
+        }
+        public int Insert(Track newTrack)
+        {
+            var fields = new Dictionary<string, object>()
+            {
+                {"site_id", newTrack.SiteId},
+                {"name", newTrack.NameRus},
+                {"name_eng", newTrack.NameEng},
+                {"date_s_utc", newTrack.DateSUTC},
+                {"parent_id", newTrack.ParentId}
+            };
+            return InsertWithReturn(fields);
 
-        ////    using (NpgsqlConnection cnn = _db.Connection)
-        ////    {
-        ////        using (NpgsqlCommand cmd = new NpgsqlCommand("select * from Track where :id is null or id=any(:id)", cnn))
-        ////        {
-        ////            cmd.Parameters.AddWithValue("id", trackIds);
-        ////            using (NpgsqlDataReader rdr = cmd.ExecuteReader())
-        ////            {
-        ////                while (rdr.Read())
-        ////                {
-        ////                    ret.Add(new Track()
-        ////                    {
-        ////                        Id = (int)rdr["id"],
-        ////                        Name = (string)rdr["name"],
-        ////                        SiteId = (int)rdr["site_id"]
-        ////                    });
-        ////                }
-        ////            }
-        ////        }
-        ////    }
-        ////    if (fillFK)
-        ////    {
-        ////        foreach (var item in ret)
-        ////        {
-        ////            item.Track1List = SelectTrackPartPoints(item.Id);
-        ////        }
-        ////    }
-        ////    return ret;
-        ////}
-        /// <summary>
-        /// Получить координаты и время для трека.
-        /// </summary>
-        /// <param name="trackPartId"></param>
-        /// <returns>Отсортированные по времени координаты трека.</returns>
-        ////public List<Track1> SelectTrackPartPoints(int trackPartId)
-        ////{
-        ////    List<Track1> ret = new List<Track1>();
-
-        ////    using (NpgsqlConnection cnn = _db.Connection)
-        ////    {
-        ////        using (NpgsqlCommand cmd = new NpgsqlCommand("select * from track1 where Track_id =:Trackid", cnn))
-        ////        {
-        ////            cmd.Parameters.AddWithValue("Trackid", trackPartId);
-        ////            using (NpgsqlDataReader rdr = cmd.ExecuteReader())
-        ////            {
-        ////                while (rdr.Read())
-        ////                {
-        ////                    ret.Add(new Track1()
-        ////                    {
-        ////                        Id = (int)rdr["id"],
-        ////                        TrackId = (int)rdr["Track_id"],
-        ////                        Date = (DateTime)rdr["date"],
-        ////                        UTCOffset = (Int16)rdr["utc_offset"],
-        ////                        Lat = (double)rdr["lat"],
-        ////                        Lon = (double)rdr["lon"]
-        ////                    });
-        ////                }
-        ////            }
-        ////        }
-        ////    }
-        ////    return ret.OrderBy(x => x.Date).ToList();
-        ////}
+        }
     }
 }

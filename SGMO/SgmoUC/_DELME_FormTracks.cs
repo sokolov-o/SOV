@@ -11,7 +11,7 @@ using SOV.Common;
 
 namespace SOV.SGMO
 {
-    public partial class FormTracks : Form
+    public partial class _DELME_FormTracks : Form
     {
         public enum EnumMode
         {
@@ -20,7 +20,7 @@ namespace SOV.SGMO
             /// </summary>
             SelectOne = 1
         }
-        public FormTracks()
+        public _DELME_FormTracks()
         {
             InitializeComponent();
         }

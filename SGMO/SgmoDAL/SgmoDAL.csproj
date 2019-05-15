@@ -56,8 +56,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="DataTrackFcsRepository.cs" />
-    <Compile Include="TrackPartPointsRepository.cs" />
-    <Compile Include="TrackPartRepository.cs" />
+    <Compile Include="TrackPointRepository.cs" />
     <Compile Include="TrackRepository.cs" />
     <Compile Include="PileRepository.cs" />
     <Compile Include="WarningPileCatalogRepository.cs" />

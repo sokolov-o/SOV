@@ -10,16 +10,14 @@ namespace SOV.SGMO
     public class DataManager : Common.BaseDataManager
     {
         public TrackRepository TrackRepository;
-        public TrackPartRepository TrackPartRepository;
-        public TrackPartPointsRepository TrackPartPointsRepository;
+        public TrackPointRepository TrackPointsRepository;
         public DataTrackFcsRepository DataTrackFcsRepository;
 
         DataManager(string connectionString)
             : base(connectionString)
         {
             TrackRepository = new TrackRepository(this);
-            TrackPartRepository = new TrackPartRepository(this);
-            TrackPartPointsRepository = new TrackPartPointsRepository(this);
+            TrackPointsRepository = new TrackPointRepository(this);
             DataTrackFcsRepository = new DataTrackFcsRepository(this);
         }
 

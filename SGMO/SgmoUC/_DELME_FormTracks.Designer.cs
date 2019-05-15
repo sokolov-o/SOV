@@ -1,6 +1,6 @@
 ﻿namespace SOV.SGMO
 {
-    partial class FormTracks
+    partial class _DELME_FormTracks
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTracks));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_DELME_FormTracks));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.ucTrack = new SOV.Common.UCList();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();

@@ -9,28 +9,28 @@ using Npgsql;
 
 namespace SOV.SGMO
 {
-    public class TrackPartPointsRepository : Common.BaseRepository<TrackPartPoint>
+    public class TrackPointRepository : Common.BaseRepository<TrackPoint>
     {
-        internal TrackPartPointsRepository(Common.ADbNpgsql db) : base(db, "track_part_point")
+        internal TrackPointRepository(Common.ADbNpgsql db) : base(db, "track_point")
         {
         }
         protected override object ParseData(NpgsqlDataReader rdr)
         {
-            return new TrackPartPoint()
+            return new TrackPoint()
             {
                 Id = (int)rdr["id"],
-                TrackPartId = (int)rdr["track_part_id"],
+                TrackId = (int)rdr["track_id"],
                 DateUTC = (DateTime)rdr["date_utc"],
                 UTCOffset = (short)rdr["utc_offset"],
                 GeoPoint = new Geo.GeoPoint((double)rdr["lat"], (double)rdr["lon"])
             };
         }
 
-        public List<TrackPartPoint> Select(int trackPartId)
+        public List<TrackPoint> SelectByTrackId(int trackId)
         {
             var fields = new Dictionary<string, object>()
                 {
-                    {"track_part_id", trackPartId}
+                    {"track_id", trackId}
                 };
             return Select(fields);
 
