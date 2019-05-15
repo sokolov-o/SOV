@@ -97,6 +97,7 @@
     <Content Include="Properties\DataSources\SOV.Amur.Meta.VariableCode.datasource" />
     <Content Include="Properties\DataSources\SOV.Amur.Meta.VariableType.datasource" />
     <Content Include="Properties\DataSources\SOV.Geo.GeoPoint.datasource" />
+    <None Include="Properties\PublishProfiles\PUGMS.pubxml" />
     <None Include="Service References\AmurServiceReference\Service.disco" />
     <None Include="Service References\AmurServiceReference\configuration91.svcinfo" />
     <None Include="Service References\AmurServiceReference\configuration.svcinfo" />

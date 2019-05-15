@@ -26,7 +26,7 @@
     <ProductName>Amur.Importer.GisMeteo</ProductName>
     <PublisherName>SOV</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>83</ApplicationRevision>
+    <ApplicationRevision>84</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -130,6 +130,9 @@
     <None Include="Service References\AmurService\Service16.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\AmurService\Service17.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\AmurService\Service18.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -140,9 +143,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmurService\Service21.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurService\Service22.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Addr.datasource">
@@ -176,9 +176,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.GeoObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.GeoPoint.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.GeoType.datasource">
@@ -221,6 +218,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.SiteXSiteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.SysObj.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.SysParsersParams.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.SysParsersXSites.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Unit.datasource">

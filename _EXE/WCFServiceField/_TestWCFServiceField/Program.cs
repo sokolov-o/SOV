@@ -38,14 +38,6 @@ namespace _TestWCFServiceField
 
             DateTime dateIni = new DateTime(2019, 5, 4, 12, 0, 0); //DateTime.Today.AddDays(-1);
             List<double> leadTimes = null;
-            List<GeoRectangle> geoRects = new List<GeoRectangle>()
-               {
-                    new GeoRectangle()
-                    {
-                        NorthWest = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 60, LonGrd = 110 },
-                        SouthEast = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 30, LonGrd = 130 }
-                    }
-                };
 
             // GET & PRINT FORECAST DATA FROM SERVICE
 
@@ -80,6 +72,14 @@ namespace _TestWCFServiceField
                 ////////
                 //////// GET FIELDS IN REGION
                 ////////
+                //////List<GeoRectangle> geoRects = new List<GeoRectangle>()
+                //////{
+                //////    new GeoRectangle()
+                //////    {
+                //////        NorthWest = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 60, LonGrd = 110 },
+                //////        SouthEast = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 30, LonGrd = 130 }
+                //////    }
+                ////// };
                 //////List<Catalog> catalogs = clientA.GetCatalogList(ha,
                 //////    new List<int>() { 10344 },  // Земной шар
                 //////    null,                       // All variables
