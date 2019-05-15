@@ -35,5 +35,24 @@ namespace SOV.SGMO
             return Select(fields);
 
         }
+        public void Insert(List<TrackPoint> trackPoints)
+        {
+            List<Dictionary<string, object>> fields = new List<Dictionary<string, object>>(200);
+            foreach (TrackPoint trackPoint in trackPoints)
+            {
+                fields.Add(
+                    new Dictionary<string, object>()
+                    {
+                        {"track_id", trackPoint.TrackId},
+                        {"date_utc", trackPoint.DateUTC},
+                        {"utc_offset", trackPoint.UTCOffset},
+                        {"lat", trackPoint.GeoPoint.LatGrd},
+                        {"lon", trackPoint.GeoPoint.LonGrd}
+                    }
+                    );
+
+            }
+            Insert(fields);
+        }
     }
 }

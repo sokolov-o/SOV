@@ -89,6 +89,7 @@ namespace SOV.SGMO
                 return _ProbRepository;
             }
         }
+
         private ProbCatalogRepository _ProbCatalogRepository;
         public ProbCatalogRepository ProbCatalogRepository
         {

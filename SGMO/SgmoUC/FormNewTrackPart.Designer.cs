@@ -40,6 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.utcOffsetTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dateSUTCDateTimePicker
@@ -86,7 +88,6 @@
             this.lonTextBox.Size = new System.Drawing.Size(100, 20);
             this.lonTextBox.TabIndex = 4;
             this.lonTextBox.Text = "139";
-            this.lonTextBox.TextChanged += new System.EventHandler(this.LonTextBox_TextChanged);
             // 
             // speedTextBox
             // 
@@ -129,7 +130,6 @@
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Долгота (градусы)";
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label3
             // 
@@ -149,6 +149,23 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Часов вперед:";
             // 
+            // utcOffsetTextBox
+            // 
+            this.utcOffsetTextBox.Location = new System.Drawing.Point(157, 162);
+            this.utcOffsetTextBox.Name = "utcOffsetTextBox";
+            this.utcOffsetTextBox.Size = new System.Drawing.Size(100, 20);
+            this.utcOffsetTextBox.TabIndex = 12;
+            this.utcOffsetTextBox.Text = "11";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(38, 162);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "ВСВ смещение (час):";
+            // 
             // FormNewTrackPart
             // 
             this.AcceptButton = this.button1;
@@ -156,6 +173,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.utcOffsetTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -190,5 +209,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox utcOffsetTextBox;
+        private System.Windows.Forms.Label label5;
     }
 }

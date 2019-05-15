@@ -51,20 +51,22 @@ namespace SOV.SGMO
             {
                 // CALC POINTS
                 List<GeoPoint> refPoints = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(TrackParent.Id).Select(x => x.GeoPoint).ToList();
-                GeoPoint startPoint = new GeoPoint(double.Parse(latTextBox.Text), double.Parse(latTextBox.Text));
+                GeoPoint startPoint = new GeoPoint(double.Parse(latTextBox.Text), double.Parse(lonTextBox.Text));
 
+                int hourStart = 1;
+                int hourStep = 1;
                 List<GeoPoint> points = Track.GetTrackPoints(
                     refPoints,
                     dateSUTCDateTimePicker.Value,
                     startPoint,
                     double.Parse(speedTextBox.Text) * 1000 / 3600,
                     refPointsListBox.SelectedIndex,
-                    1,
+                    hourStart,
                     int.Parse(hoursCountTextBox.Text),
-                    1
+                    hourStep
                 );
 
-                // INSERT POINTS
+                // INSERT TRACK
                 Track childTrack = new Track()
                 {
                     Id = -1,
@@ -74,28 +76,34 @@ namespace SOV.SGMO
                     NameEng = string.Format("{0} [{1}]", dateSUTCDateTimePicker.Value.ToString("dd.MM.yyyy HH"), TrackParent.NameEng),
                     ParentId = TrackParent.Id
                 };
-                DataManager.GetInstance().TrackRepository.Insert(childTrack);
+                childTrack.Id = DataManager.GetInstance().TrackRepository.Insert(childTrack);
 
-                //List<TrackPoint> trackPoints = points.Select(x => new TrackPoint() { GeoPoint = x, TrackId = TrackParent }).ToList();
-                //DataManager.GetInstance().Insert()
+                // INSERT TRACK POINTS
+                int utcOffset = int.Parse(utcOffsetTextBox.Text);
+                List<TrackPoint> trackPoints = new List<TrackPoint>(200);
+                int i = 1;
+
+                foreach (GeoPoint point in points)
+                {
+                    trackPoints.Add(
+                        new TrackPoint()
+                        {
+                            TrackId = childTrack.Id,
+                            DateUTC = dateSUTCDateTimePicker.Value.AddHours(hourStep * i++),
+                            UTCOffset = utcOffset,
+                            GeoPoint = point
+                        }
+                    );
+                }
+
+                DataManager.GetInstance().TrackPointsRepository.Insert(trackPoints);
 
                 DialogResult = DialogResult.OK;
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LonTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -48,6 +48,12 @@
     <Compile Include="FormNewTrackPart.Designer.cs">
       <DependentUpon>FormNewTrackPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCTrackPoints.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTrackPoints.Designer.cs">
+      <DependentUpon>UCTrackPoints.cs</DependentUpon>
+    </Compile>
     <Compile Include="_DELME_FormTracks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormNewTrackPart.resx">
       <DependentUpon>FormNewTrackPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTrackPoints.resx">
+      <DependentUpon>UCTrackPoints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_DELME_FormTracks.resx">
       <DependentUpon>_DELME_FormTracks.cs</DependentUpon>
@@ -118,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\MessageSite.datasource" />
+    <None Include="Properties\DataSources\TrackPoint.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

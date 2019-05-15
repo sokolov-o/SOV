@@ -87,5 +87,12 @@ namespace SOV.SGMO
                 AddChildTracks(tv.SelectedNode, DataManager.GetInstance().TrackRepository.SelectChilds(((Track)tv.SelectedNode.Tag).Id));
             }
         }
+
+        private void Tv_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            ucTrackPoints.Items = null;
+            if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
+                ucTrackPoints.Items = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(((Track)tv.SelectedNode.Tag).Id);
+        }
     }
 }

@@ -42,9 +42,11 @@
             this.tv = new System.Windows.Forms.TreeView();
             this.contextMenuStripTrackPart = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addTrackPartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ucTrackPoints = new SOV.SGMO.UCTrackPoints();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -74,7 +76,7 @@
             // mnuFileExitToolStripMenuItem
             // 
             this.mnuFileExitToolStripMenuItem.Name = "mnuFileExitToolStripMenuItem";
-            this.mnuFileExitToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.mnuFileExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mnuFileExitToolStripMenuItem.Text = "Выход";
             this.mnuFileExitToolStripMenuItem.Click += new System.EventHandler(this.MnuFileExitToolStripMenuItem_Click);
             // 
@@ -91,7 +93,7 @@
             // 
             this.mnuDicWarningPileCatalogToolStripMenuItem.Image = global::SOV.SGMO.Properties.Resources.fire_128x128;
             this.mnuDicWarningPileCatalogToolStripMenuItem.Name = "mnuDicWarningPileCatalogToolStripMenuItem";
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Size = new System.Drawing.Size(352, 42);
             this.mnuDicWarningPileCatalogToolStripMenuItem.Text = "Предупреждения для записей каталога данных";
             this.mnuDicWarningPileCatalogToolStripMenuItem.Click += new System.EventHandler(this.MnuDicWarningPileCatalogToolStripMenuItem_Click);
             // 
@@ -104,6 +106,10 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.ucTrackPoints);
             this.splitContainer1.Size = new System.Drawing.Size(770, 432);
             this.splitContainer1.SplitterDistance = 255;
             this.splitContainer1.TabIndex = 1;
@@ -153,6 +159,7 @@
             this.tv.Name = "tv";
             this.tv.Size = new System.Drawing.Size(249, 401);
             this.tv.TabIndex = 0;
+            this.tv.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tv_AfterSelect);
             this.tv.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tv_NodeMouseClick);
             // 
             // contextMenuStripTrackPart
@@ -160,7 +167,7 @@
             this.contextMenuStripTrackPart.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addTrackPartToolStripMenuItem});
             this.contextMenuStripTrackPart.Name = "contextMenuStripTrackPart";
-            this.contextMenuStripTrackPart.Size = new System.Drawing.Size(211, 48);
+            this.contextMenuStripTrackPart.Size = new System.Drawing.Size(211, 26);
             // 
             // addTrackPartToolStripMenuItem
             // 
@@ -168,6 +175,15 @@
             this.addTrackPartToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.addTrackPartToolStripMenuItem.Text = "Создать часть маршрута";
             this.addTrackPartToolStripMenuItem.Click += new System.EventHandler(this.AddTrackPartToolStripMenuItem_Click);
+            // 
+            // ucTrackPoints
+            // 
+            this.ucTrackPoints.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTrackPoints.Items = null;
+            this.ucTrackPoints.Location = new System.Drawing.Point(0, 0);
+            this.ucTrackPoints.Name = "ucTrackPoints";
+            this.ucTrackPoints.Size = new System.Drawing.Size(511, 432);
+            this.ucTrackPoints.TabIndex = 0;
             // 
             // Form1
             // 
@@ -182,6 +198,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -208,6 +225,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripTrackPart;
         private System.Windows.Forms.ToolStripMenuItem addTrackPartToolStripMenuItem;
+        private UCTrackPoints ucTrackPoints;
     }
 }
 
