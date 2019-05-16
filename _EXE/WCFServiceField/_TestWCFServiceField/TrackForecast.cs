@@ -13,16 +13,17 @@ namespace _TestWCFServiceField
         /// <summary>
         /// Get forecast for track part points.
         /// </summary>
-        /// <param name="trackId">Track id.</param>
-        /// <param name="dateIni">Track part datetime (and forecast datetime ini).</param>
+        /// <param name="parentTrackId">Track id.</param>
+        /// <param name="fcsDateIni">Track part datetime (and forecast datetime ini).</param>
         /// <param name="pointMethodIds">Track part point forecast method id.</param>
-        public static List<DataTrackFcs> Get(int trackId, DateTime dateIni, int[] pointMethodIds)
+        public static List<DataTrackFcs> Get(int parentTrackId, DateTime fcsDateIni, int[] pointMethodIds)
         {
             // GET SITE TRACK
 
-            Track track = GetTrack(trackId, dateIni);
-            List<TrackPartPoint> trackPartPoints = track.TrackParts[0].TrackPartPoints;
-            FieldServiceReference.GeoPoint[] trackPartPointsGeo = trackPartPoints.Select(x => new FieldServiceReference.GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
+            Track parentTrack = GetTrack(parentTrackId, fcsDateIni);
+            Track childTrack = parentTrack.ChildTracks[0];
+
+            FieldServiceReference.GeoPoint[] childTreckPoints = childTrack.Points.Select(x => new FieldServiceReference.GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
 
             List<DataTrackFcs> ret = new List<DataTrackFcs>();
 
@@ -33,7 +34,7 @@ namespace _TestWCFServiceField
 
                 // GET VAROFFS FOR TRACK
 
-                List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha, new List<int>() { track.SiteId }, null, new List<int>() { pointMethodId }, null, null, null);
+                List<Catalog> catalogs = Program.clientA.GetCatalogList(Program.ha, new List<int>() { parentTrack.SiteId }, null, new List<int>() { pointMethodId }, null, null, null);
                 if (catalogs.Count == 0)
                 {
                     Console.WriteLine(string.Format("** По данному треку для метода {0} отсутствуют записи каталога мобильного пункта.", pointMethodId));
@@ -43,7 +44,7 @@ namespace _TestWCFServiceField
 
                 // GET TRACK FORECAST
 
-                Dictionary<double/*leadTime*/, double[]/*Catalog index*/> fcsData = Program.clientF.GetTrackForecast(Program.hf, dateIni, trackPartPointsGeo, pointMethodId, varoffs);
+                Dictionary<double/*leadTime*/, double[]/*Catalog index*/> fcsData = Program.clientF.GetTrackForecast(Program.hf, fcsDateIni, childTreckPoints, pointMethodId, varoffs);
                 if (fcsData == null) { Console.WriteLine("* Отсутствуют прогнозы..."); continue; }
 
                 // CONVERT TRACK FORECAST DATA 2 List<DataTrackFcs> 
@@ -55,7 +56,7 @@ namespace _TestWCFServiceField
                     {
                         ret.Add(new DataTrackFcs
                         {
-                            TrackPartPointId = trackPartPoints[iPoint].Id,
+                            TrackPartPointId = childTrack.Points[iPoint].Id,
                             CatalogId = catalogs[iCatalog].Id,
                             LeadTime = kvp.Key,
                             Value = kvp.Value[iCatalog]
@@ -66,20 +67,26 @@ namespace _TestWCFServiceField
             }
             return ret;
         }
-
-        static Track GetTrack(int trackId, DateTime dateIni)
+        /// <summary>
+        /// Получить корневой маршрут с наследником (частью маршрута) за дату.
+        /// </summary>
+        /// <param name="parentTrackId"></param>
+        /// <param name="dateIni"></param>
+        /// <returns></returns>
+        static Track GetTrack(int parentTrackId, DateTime dateIni)
         {
-            Track track = DataManager.GetInstance().TrackRepository.Select(trackId);
-            TrackPart trackPart = DataManager.GetInstance().TrackPartRepository.Select(trackId, dateIni);
-            if (trackPart == null)
-                throw new Exception(string.Format("Отсутствует часть трека [{0}] для даты {1}.",track, dateIni));
-                List<TrackPartPoint> trackPartPoints = DataManager.GetInstance().TrackPartPointsRepository.Select(trackPart.Id);
-            track.TrackParts = new List<TrackPart> { trackPart };
-            trackPart.TrackPartPoints = trackPartPoints;
+            Track parentTrack = DataManager.GetInstance().TrackRepository.Select(parentTrackId);
+            parentTrack.Points = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(parentTrack.Id);
 
-            Console.WriteLine("Track [{0}], part for {1}. {2} points.", track.Name, trackPart.DateSUTC, trackPartPoints.Count);
+            Track childTrack = DataManager.GetInstance().TrackRepository.SelectChilds(parentTrackId, dateIni);
+            if (childTrack == null)
+                throw new Exception(string.Format("Отсутствует часть трека за дату {1} для трека id=[{1}].", dateIni, parentTrackId));
+            childTrack.Points = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(childTrack.Id);
+            parentTrack.ChildTracks = new List<Track> { childTrack };
 
-            return track;
+            Console.WriteLine("Track [{0}], part for {1}. {2} points.", childTrack.Name, childTrack.DateSUTC, childTrack.Points.Count);
+
+            return childTrack;
         }
     }
 }

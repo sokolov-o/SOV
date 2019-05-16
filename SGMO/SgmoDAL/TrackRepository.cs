@@ -35,6 +35,17 @@ namespace SOV.SGMO
             return Select(fields);
 
         }
+        public Track SelectChilds(int parentTrackId, DateTime childDateSUTC)
+        {
+            var fields = new Dictionary<string, object>()
+                {
+                    {"parent_id", parentTrackId},
+                    {"date_s_utc", childDateSUTC}
+                };
+            List<Track> ret = Select(fields);
+            return ret.Count == 0 ? null : ret[0];
+
+        }
         public int Insert(Track newTrack)
         {
             var fields = new Dictionary<string, object>()

@@ -19,7 +19,8 @@ namespace SOV.SGMO
         public DateTime DateSUTC { get; set; }
         public int? ParentId { get; set; }
 
-        public List<TrackPoint> TrackPoints { get; set; }
+        public List<Track> ChildTracks { get; set; }
+        public List<TrackPoint> Points { get; set; }
 
         public override string ToString()
         {
