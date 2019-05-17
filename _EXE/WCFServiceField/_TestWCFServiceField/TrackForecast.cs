@@ -86,7 +86,7 @@ namespace _TestWCFServiceField
 
             Console.WriteLine("Track [{0}], part for {1}. {2} points.", childTrack.Name, childTrack.DateSUTC, childTrack.Points.Count);
 
-            return childTrack;
+            return parentTrack;
         }
     }
 }

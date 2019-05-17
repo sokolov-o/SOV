@@ -36,7 +36,7 @@ namespace _TestWCFServiceField
 
             #endregion
 
-            DateTime dateIni = new DateTime(2019, 5, 4, 12, 0, 0); //DateTime.Today.AddDays(-1);
+            DateTime dateIni = new DateTime(2019, 5, 15, 12, 0, 0); //DateTime.Today.AddDays(-1);
             List<double> leadTimes = null;
 
             // GET & PRINT FORECAST DATA FROM SERVICE
@@ -50,8 +50,8 @@ namespace _TestWCFServiceField
                     dateIni,
                     new int[]
                     {
-                        112 /*"Ближайший узел GFS 0.25*/
-                        //1608  /*"Ближайший узел WAVE.VVO.PACIFIC.0p5"*/
+                        112, /*"Ближайший узел GFS 0.25*/
+                        1608  /*"Ближайший узел WAVE.VVO.PACIFIC.0p5"*/
                     }
                 );
                 LogEnded("TrackForecast.Get");

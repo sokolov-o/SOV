@@ -98,13 +98,13 @@
     <Content Include="Properties\DataSources\SOV.Amur.Meta.VariableType.datasource" />
     <Content Include="Properties\DataSources\SOV.Geo.GeoPoint.datasource" />
     <None Include="Properties\PublishProfiles\PUGMS.pubxml" />
-    <None Include="Service References\AmurServiceReference\Service.disco" />
     <None Include="Service References\AmurServiceReference\configuration91.svcinfo" />
     <None Include="Service References\AmurServiceReference\configuration.svcinfo" />
     <None Include="Service References\AmurServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\AmurServiceReference\Service1.disco" />
     <Content Include="Service.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -137,40 +137,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
-    <None Include="Service References\AmurServiceReference\Service.wsdl" />
-    <None Include="Service References\AmurServiceReference\Service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service10.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service6.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service7.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service8.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service9.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\AmurServiceReference\SOV.WcfService.Field.AmurServiceReference.Addr.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -207,6 +173,40 @@
     <Content Include="Service References\AmurServiceReference\SOV.WcfService.Field.AmurServiceReference.SysParsersXSites.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\AmurServiceReference\Service1.wsdl" />
+    <None Include="Service References\AmurServiceReference\Service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service510.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceReference\Service59.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SOV.Geo" />
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
+  <xs:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
+  <xs:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
   <xs:complexType name="ArrayOfint">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
@@ -39,24 +38,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfdouble" nillable="true" type="tns:ArrayOfdouble" />
-  <xs:complexType name="ArrayOfKeyValueOfintGeoPointWRGTqGL6">
-    <xs:annotation>
-      <xs:appinfo>
-        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintGeoPointWRGTqGL6">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="Key" type="xs:int" />
-            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Geo" name="Value" nillable="true" type="q1:GeoPoint" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOfintGeoPointWRGTqGL6" nillable="true" type="tns:ArrayOfKeyValueOfintGeoPointWRGTqGL6" />
   <xs:complexType name="ArrayOfKeyValueOfintGeoObjectmdw0AYJD">
     <xs:annotation>
       <xs:appinfo>
@@ -68,7 +49,7 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="Key" type="xs:int" />
-            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" name="Value" nillable="true" type="q2:GeoObject" />
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" name="Value" nillable="true" type="q1:GeoObject" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -128,7 +109,7 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="Key" type="xs:int" />
-            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q3:ArrayOfCurve" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q2:ArrayOfCurve" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -146,7 +127,7 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="Key" type="xs:int" />
-            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q4:ArrayOfDataForecast" />
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q3:ArrayOfDataForecast" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -170,7 +151,7 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="Key" type="xs:long" />
-            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q5:DataSource" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q4:DataSource" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -187,8 +168,8 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfCatalogArrayOfDataValue9e82c4_Px">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" name="Key" nillable="true" type="q6:Catalog" />
-            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q7:ArrayOfDataValue" />
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" name="Key" nillable="true" type="q5:Catalog" />
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q6:ArrayOfDataValue" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>

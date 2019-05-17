@@ -64,41 +64,38 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Properties\DataSources\SOV.Amur.Meta.Method.datasource" />
-    <None Include="Service References\AmurServiceReference\Service1.wsdl" />
-    <None Include="Service References\AmurServiceReference\Service11.xsd">
+    <None Include="Service References\AmurServiceReference\Service.wsdl" />
+    <None Include="Service References\AmurServiceReference\Service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service111.xsd">
+    <None Include="Service References\AmurServiceReference\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service1110.xsd">
+    <None Include="Service References\AmurServiceReference\Service10.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service1111.xsd">
+    <None Include="Service References\AmurServiceReference\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service112.xsd">
+    <None Include="Service References\AmurServiceReference\Service3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service113.xsd">
+    <None Include="Service References\AmurServiceReference\Service4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service114.xsd">
+    <None Include="Service References\AmurServiceReference\Service5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service115.xsd">
+    <None Include="Service References\AmurServiceReference\Service6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service116.xsd">
+    <None Include="Service References\AmurServiceReference\Service7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service117.xsd">
+    <None Include="Service References\AmurServiceReference\Service8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service118.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service119.xsd">
+    <None Include="Service References\AmurServiceReference\Service9.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmurServiceReference\_TestWCFServiceField.AmurServiceReference.Addr.datasource">
@@ -132,9 +129,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurServiceReference\_TestWCFServiceField.AmurServiceReference.GeoObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurServiceReference\_TestWCFServiceField.AmurServiceReference.GeoPoint.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurServiceReference\_TestWCFServiceField.AmurServiceReference.GeoType.datasource">
@@ -210,10 +204,7 @@
     <None Include="Service References\FieldServiceReference\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FieldServiceReference\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FieldServiceReference\Service12.xsd">
+    <None Include="Service References\FieldServiceReference\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FieldServiceReference\Service3.xsd">
@@ -222,10 +213,13 @@
     <None Include="Service References\FieldServiceReference\Service4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FieldServiceReference\Service7.xsd">
+    <None Include="Service References\FieldServiceReference\Service5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FieldServiceReference\Service8.xsd">
+    <None Include="Service References\FieldServiceReference\Service6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FieldServiceReference\Service7.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FieldServiceReference\_TestWCFServiceField.FieldServiceReference.Field.datasource">
@@ -253,12 +247,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AmurServiceReference\Service1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FieldServiceReference\Service.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\FieldServiceReference\configuration91.svcinfo" />
@@ -301,6 +289,12 @@
       <Project>{67779067-f033-4759-a94a-df236f999e26}</Project>
       <Name>SgmoDAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceReference\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FieldServiceReference\Service.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

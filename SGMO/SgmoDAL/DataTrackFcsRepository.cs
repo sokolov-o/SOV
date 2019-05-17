@@ -19,7 +19,7 @@ namespace SOV.SGMO
             return new DataTrackFcs()
             {
                 Id = (int)rdr["id"],
-                TrackPartPointId = (int)rdr["track_part_point_id"],
+                TrackPartPointId = (int)rdr["track_point_id"],
                 CatalogId = (int)rdr["catalog_id"],
                 LeadTime = (double)rdr["lead_time"],
                 Value = (double)rdr["value"],
@@ -31,7 +31,7 @@ namespace SOV.SGMO
         {
             var fields = new Dictionary<string, object>()
                 {
-                    {"track_part_point_id", trackPartPointId}
+                    {"track_point_id", trackPartPointId}
                 };
             return Select(fields);
 
@@ -45,7 +45,7 @@ namespace SOV.SGMO
                 {
                     fields.Add(new Dictionary<string, object>
                 {
-                    { "track_part_point_id", value.TrackPartPointId },
+                    { "track_point_id", value.TrackPartPointId },
                     { "catalog_id" , value.CatalogId},
                     { "lead_time", value.LeadTime},
                     { "value", value.Value}
