@@ -10,7 +10,6 @@ namespace SOV.Amur.Meta
 {
     public class VariableCodeRepository : BaseRepository<VariableCode>
     {
-        Common.ADbNpgsql _db;
         internal VariableCodeRepository(Common.ADbNpgsql db) : base(db, "meta.variable_code")
         {
             _db = db;
@@ -93,21 +92,21 @@ namespace SOV.Amur.Meta
                 };
                 Update(new List<Dictionary<string, object>>() { fields }, new List<string>() { "variable_id", "code" });
             }
-            else
+            else 
                 Insert(item);
         }
 
-        public void Delete(VariableCode item)
-        {
-            var fields = new Dictionary<string, object>()
-                {
-                    {"variable_id", item.VariableId},
-                    {"code", item.Code},
-                    {"name", item.Name},
-                    {"name_short", item.NameShort},
-                    {"description", item.Description}
-                };
-            ExecSimpleQuery("delete from " + base.TableName + " where variable_id=:variable_id and code=:code", new List<Dictionary<string, object>>() { fields });
-        }
+        //public void Delete(VariableCode item)
+        //{
+        //    var fields = new Dictionary<string, object>()
+        //        {
+        //            {"variable_id", item.VariableId},
+        //            {"code", item.Code},
+        //            {"name", item.Name},
+        //            {"name_short", item.NameShort},
+        //            {"description", item.Description}
+        //        };
+        //    ExecSimpleQuery("delete from " + base.TableName + " where variable_id=:variable_id and code=:code", new List<Dictionary<string, object>>() { fields });
+        //}
     }
 }

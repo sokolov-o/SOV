@@ -219,10 +219,6 @@
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Amur-2.1\Meta\Meta.csproj">
-      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
-      <Name>Meta</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\DB\Common\Common.DB.csproj">
       <Project>{22b3167b-ffa8-4081-b5ec-8f45338dc0da}</Project>
       <Name>Common.DB</Name>

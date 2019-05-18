@@ -115,7 +115,7 @@ namespace SOV.WcfService.Field
         {
             if (parentCatalogs == null || parentCatalogs.Count == 0)
             {
-                throw new Exception(string.Format("Для переменной [{0}] не найдена соответствующая ей запись каталога метода [{2}].",
+                throw new Exception(string.Format("Для переменной [{0}] не найдена соответствующая ей запись каталога метода [{1}].",
                     string.Format("{0}.{1}.{2}.{3}", _amurClient.GetVariableById(_amurServiceHandle, varoff.VariableId).NameRus, varoff.VariableId, varoff.OffsetTypeId, varoff.OffsetValue),
                     parentMethod));
             }

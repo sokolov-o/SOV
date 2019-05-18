@@ -35,7 +35,8 @@ namespace SOV.Geo
         /// <summary>
         /// Линейная интерполяция
         /// </summary>
-        Interpolate = 5
+        Interpolate = 5,
+        Unknown = 6
     }
 
     public enum EnumProjection : long
@@ -121,28 +122,40 @@ namespace SOV.Geo
         /// <returns>Значение в заданной точке.</returns>
         static public double GetValueAtPoint(GeoPoint point, List<GeoPoint> nearestPoints, double[] values, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
-            double[] dists = new double[nearestPoints.Count];
+            List<double> dists = new List<double>();// double[nearestPoints.Count];
+            List<double> values1 = new List<double>();// double[nearestPoints.Count];
             double latrad0 = Vector.grad2Radians(point.LatGrd);
             double lonrad0 = Vector.grad2Radians(point.LonGrd);
 
+            // DROP NaN & CREATE DISTNS
+
             for (int i = 0; i < nearestPoints.Count; i++)
             {
-                dists[i] = Geo.SphereDistance(
-                    lonrad0, Vector.grad2Radians(nearestPoints[i].LonGrd),
-                    latrad0, Vector.grad2Radians(nearestPoints[i].LatGrd),
-                    distanceType
-                );
+                if (!double.IsNaN(values[i]))
+                {
+                    dists.Add(Geo.SphereDistance(
+                        lonrad0, Vector.grad2Radians(nearestPoints[i].LonGrd),
+                        latrad0, Vector.grad2Radians(nearestPoints[i].LatGrd),
+                        distanceType
+                    ));
+                    values1.Add(values[i]);
+                }
             }
+            if (values1.Count == 0)
+                return double.NaN;
+
+            // PROCESS NEAREST TYPE
 
             switch (nearestType)
             {
                 // Берем значение в точке с минимальным расстоянием
                 case EnumPointNearestType.Nearest:
-                    return values[Array.IndexOf(dists, dists.Min())];
+                    //return values[Array.IndexOf(dists, dists.Min())];
+                    return values1[dists.IndexOf(dists.Min())];
 
                 // Линейная взвешеная интерполяция
                 case EnumPointNearestType.Interpolate:
-                    return Support.InterpolateLine(dists, values)[0];
+                    return Support.InterpolateLine(dists.ToArray(), values1.ToArray())[0];
                 default:
                     throw new Exception("UNKNOWN GeoPoint.NearestType=" + nearestType);
             }

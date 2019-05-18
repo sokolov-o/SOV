@@ -75,9 +75,8 @@ namespace SOV.Amur.Meta
                 switch (s)
                 {
                     case "interpolation_linear": nearestType = Geo.EnumPointNearestType.Interpolate; break;
-                    case "nearest_node": nearestType = Geo.EnumPointNearestType.Interpolate; break;
-                    default: return null;
-                        //throw new Exception("Неизвестное значение параметра [parent_method_data_postprocessing] = " + s + " в поле параметров метода.");
+                    case "nearest_node": nearestType = Geo.EnumPointNearestType.Nearest; break;
+                    default: nearestType = Geo.EnumPointNearestType.Unknown; break;
                 }
                 ret = new object[] { nearestType, Geo.EnumDistanceType.TheoremCos };
             }
