@@ -55,7 +55,7 @@ namespace SOV.Amur.Meta
             }
             return ret;
         }
-        public List<Catalog> Select(List<int> siteId, List<int> varId, List<int> methodId, List<int> sourceId, List<int> offsetTypeId, double? offsetValue)
+        public List<Catalog> Select1(List<int> siteId, List<int> varId, List<int> methodId, List<int> sourceId, List<int> offsetTypeId, double? offsetValue)
         {
             return Select(siteId, varId, methodId, sourceId, offsetTypeId,
                 offsetValue.HasValue ? new List<double>() { (double)offsetValue } : null);

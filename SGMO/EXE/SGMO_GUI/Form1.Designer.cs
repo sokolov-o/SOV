@@ -49,6 +49,7 @@
             this.addTrackPartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripTrackChild = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteTrackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeFcsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -249,16 +250,24 @@
             // contextMenuStripTrackChild
             // 
             this.contextMenuStripTrackChild.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.makeFcsToolStripMenuItem,
             this.deleteTrackToolStripMenuItem});
             this.contextMenuStripTrackChild.Name = "contextMenuStripTrackPart";
-            this.contextMenuStripTrackChild.Size = new System.Drawing.Size(173, 26);
+            this.contextMenuStripTrackChild.Size = new System.Drawing.Size(181, 70);
             // 
             // deleteTrackToolStripMenuItem
             // 
             this.deleteTrackToolStripMenuItem.Name = "deleteTrackToolStripMenuItem";
-            this.deleteTrackToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.deleteTrackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteTrackToolStripMenuItem.Text = "Удалить маршрут";
             this.deleteTrackToolStripMenuItem.Click += new System.EventHandler(this.deleteTrackToolStripMenuItem_Click_1);
+            // 
+            // makeFcsToolStripMenuItem
+            // 
+            this.makeFcsToolStripMenuItem.Name = "makeFcsToolStripMenuItem";
+            this.makeFcsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.makeFcsToolStripMenuItem.Text = "Прогноз!";
+            this.makeFcsToolStripMenuItem.Click += new System.EventHandler(this.MakeFcsToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -314,6 +323,7 @@
         private UCDataTrackForecasts ucDataTrackForecasts;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripTrackChild;
         private System.Windows.Forms.ToolStripMenuItem deleteTrackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem makeFcsToolStripMenuItem;
     }
 }
 

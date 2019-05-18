@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A8D5C5B6-6600-4D89-8F91-32BFA36DE86E}</ProjectGuid>
+    <ProjectGuid>{5FABDF16-646A-4C5E-99AC-5DEAB96C1B29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.SGMO</RootNamespace>
-    <AssemblyName>FERHRI.SGMO.SiteForecast</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>SOV.SGMO</RootNamespace>
+    <AssemblyName>SOV.SGMO.SgmoPL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,55 +32,50 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Renci.SshNet, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DLL\Renci.SshNet.dll</HintPath>
-    </Reference>
+    <Reference Include="SOV.Amur.Meta, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SOV.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FcsGFS.cs" />
-    <Compile Include="FcsWave.cs" />
-    <Compile Include="FcsWaveDanger.cs" />
-    <Compile Include="TrackFcs.cs" />
+    <Compile Include="Connected Services\AmurServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\FieldServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FcsSinopsis.cs" />
-    <Compile Include="SgmoException.cs" />
+    <Compile Include="ServiceClient.cs" />
+    <Compile Include="TrackForecast.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
+    <ProjectReference Include="..\..\Amur-2.1\Common\Common.csproj">
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Amur.20\MetaDAL\MetaDAL.csproj">
+    <ProjectReference Include="..\..\Amur-2.1\MetaDAL\MetaDAL.csproj">
       <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
       <Name>MetaDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Amur.20\Meta\Meta.csproj">
+    <ProjectReference Include="..\..\Amur-2.1\Meta\Meta.csproj">
       <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
       <Name>Meta</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DB\GFS\REP_GFS.csproj">
-      <Project>{e9e8142c-8e1e-4fce-8ff1-8f32d604a69f}</Project>
-      <Name>REP_GFS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Field\Field.csproj">
-      <Project>{56323a85-fde4-4a36-8d34-38430cef22f1}</Project>
-      <Name>Field</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Geo\Geo.csproj">
       <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
       <Name>Geo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Grib\Grib.csproj">
-      <Project>{b0362c23-4f7a-4a27-91c8-9772f850a3b0}</Project>
-      <Name>Grib</Name>
     </ProjectReference>
     <ProjectReference Include="..\SgmoBL\SgmoBL.csproj">
       <Project>{f583806c-ba90-4dd8-9044-9ec9c33d83ce}</Project>
@@ -89,12 +86,167 @@
       <Name>SgmoDAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\AmurServiceReference\Service.wsdl" />
+    <None Include="Connected Services\AmurServiceReference\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\Service9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.Addr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.AQCDataValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.Curve.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.DataForecast.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.DataSource.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.DataValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.LegalEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.Org.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.SysObj.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.SysParsersParams.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AmurServiceReference\SOV.SGMO.AmurServiceReference.SysParsersXSites.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\Service.wsdl" />
+    <None Include="Connected Services\FieldServiceReference\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\Service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\Service6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\Service7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\SOV.SGMO.FieldServiceReference.Field.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FieldServiceReference\SOV.SGMO.FieldServiceReference.Method.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\SOV.Amur.Meta.Catalog.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.DataType.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.EntityAttrValue.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.GeneralCategory.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.GeoObject.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.GeoType.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.MeteoZone.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.Method.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.MethodForecast.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.OffsetType.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.SampleMedium.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.Site.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.SiteAttrType.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.SiteType.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.SiteXSite.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.SiteXSiteType.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.Unit.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.ValueType.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.Variable.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.VariableCode.datasource" />
+    <None Include="Properties\DataSources\SOV.Amur.Meta.VariableType.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AmurServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\FieldServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FieldServiceReference\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FieldServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FieldServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FieldServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AmurServiceReference\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AmurServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AmurServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AmurServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

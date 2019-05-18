@@ -19,10 +19,6 @@ namespace SOV.SGMO
 
         public List<DataTrackFcsExt> Items
         {
-            //get
-            //{
-            //    return dgv.DataSource == null ? null : (List<DataTrackFcsExt>)dgv.DataSource;
-            //}
             set
             {
                 dgv.DataSource = value?.OrderBy(x => x.DateFcsUTC).ToList();

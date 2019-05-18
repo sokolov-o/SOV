@@ -48,6 +48,12 @@
     <Compile Include="FormNewTrackPart.Designer.cs">
       <DependentUpon>FormNewTrackPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTrackForecastParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrackForecastParameters.Designer.cs">
+      <DependentUpon>FormTrackForecastParameters.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCDataTrackForecasts.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -77,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormNewTrackPart.resx">
       <DependentUpon>FormNewTrackPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrackForecastParameters.resx">
+      <DependentUpon>FormTrackForecastParameters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCDataTrackForecasts.resx">
       <DependentUpon>UCDataTrackForecasts.cs</DependentUpon>

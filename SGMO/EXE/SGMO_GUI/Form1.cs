@@ -124,5 +124,44 @@ namespace SOV.SGMO
             }
             RefreshUC();
         }
+
+        private void MakeFcsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
+            {
+                Track track = (Track)tv.SelectedNode.Tag;
+                if (!track.ParentId.HasValue)
+                {
+                    MessageBox.Show("Маршрут не является наследником.", "Отмена действия");
+                    return;
+                }
+
+                List<int> methodIds = Properties.Settings.Default.TrackForeacstMethodsAvailable.Split(new char[] { ';' }).Select(x => int.Parse(x)).ToList();
+                FormTrackForecastParameters frm = new FormTrackForecastParameters(Amur.Meta.DataManager.GetInstance().MethodRepository.Select(methodIds));
+                Common.User user = Common.User.Parse(Properties.Settings.Default.User);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    Cursor cs = this.Cursor;
+                    this.Cursor = Cursors.WaitCursor;
+                    try
+                    {
+                        List<DataTrackFcs> dataTrackFcs = TrackForecast.Get(user, (int)track.ParentId, track.DateSUTC, frm.Methods.Select(x => x.Id).ToArray());
+
+                        DataManager.GetInstance().DataTrackFcsRepository.Insert(dataTrackFcs);
+
+                        RefreshUC();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    finally
+                    {
+                        this.Cursor = cs;
+                    }
+                }
+            }
+        }
     }
 }

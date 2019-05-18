@@ -22,5 +22,29 @@ namespace SOV.SGMO.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("112;113;1608;1609")]
+        public string TrackForeacstMethodsAvailable {
+            get {
+                return ((string)(this["TrackForeacstMethodsAvailable"]));
+            }
+            set {
+                this["TrackForeacstMethodsAvailable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("OSokolov;qq")]
+        public string User {
+            get {
+                return ((string)(this["User"]));
+            }
+            set {
+                this["User"] = value;
+            }
+        }
     }
 }

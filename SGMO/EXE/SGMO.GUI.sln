@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaDAL", "..\..\Amur-2.1\M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUC", "..\..\Amur-2.1\Common\CommonUC\CommonUC.csproj", "{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgmoPL", "..\SgmoPL\SgmoPL.csproj", "{5FABDF16-646A-4C5E-99AC-5DEAB96C1B29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FABDF16-646A-4C5E-99AC-5DEAB96C1B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FABDF16-646A-4C5E-99AC-5DEAB96C1B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FABDF16-646A-4C5E-99AC-5DEAB96C1B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FABDF16-646A-4C5E-99AC-5DEAB96C1B29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
