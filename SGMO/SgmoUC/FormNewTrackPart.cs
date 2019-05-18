@@ -50,7 +50,10 @@ namespace SOV.SGMO
             try
             {
                 // CALC POINTS
-                List<GeoPoint> refPoints = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(TrackParent.Id).Select(x => x.GeoPoint).ToList();
+                List<GeoPoint> refPoints = DataManager.GetInstance().TrackPointsRepository
+                    .SelectByTrackId(TrackParent.Id)
+                    .OrderBy(x=>x.DateUTC)
+                    .Select(x => x.GeoPoint).ToList();
                 GeoPoint startPoint = new GeoPoint(double.Parse(latTextBox.Text), double.Parse(lonTextBox.Text));
 
                 int hourStart = 1;
