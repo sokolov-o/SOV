@@ -42,7 +42,11 @@
             this.tv = new System.Windows.Forms.TreeView();
             this.contextMenuStripTrackPart = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addTrackPartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ucTrackPoints = new SOV.SGMO.UCTrackPoints();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ucDataTrackForecasts = new SOV.SGMO.UCDataTrackForecasts();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -51,6 +55,12 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStripTrackPart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,7 +86,7 @@
             // mnuFileExitToolStripMenuItem
             // 
             this.mnuFileExitToolStripMenuItem.Name = "mnuFileExitToolStripMenuItem";
-            this.mnuFileExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileExitToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.mnuFileExitToolStripMenuItem.Text = "Выход";
             this.mnuFileExitToolStripMenuItem.Click += new System.EventHandler(this.MnuFileExitToolStripMenuItem_Click);
             // 
@@ -93,7 +103,7 @@
             // 
             this.mnuDicWarningPileCatalogToolStripMenuItem.Image = global::SOV.SGMO.Properties.Resources.fire_128x128;
             this.mnuDicWarningPileCatalogToolStripMenuItem.Name = "mnuDicWarningPileCatalogToolStripMenuItem";
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Size = new System.Drawing.Size(352, 42);
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
             this.mnuDicWarningPileCatalogToolStripMenuItem.Text = "Предупреждения для записей каталога данных";
             this.mnuDicWarningPileCatalogToolStripMenuItem.Click += new System.EventHandler(this.MnuDicWarningPileCatalogToolStripMenuItem_Click);
             // 
@@ -109,7 +119,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.ucTrackPoints);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(770, 432);
             this.splitContainer1.SplitterDistance = 255;
             this.splitContainer1.TabIndex = 1;
@@ -176,14 +186,63 @@
             this.addTrackPartToolStripMenuItem.Text = "Создать часть маршрута";
             this.addTrackPartToolStripMenuItem.Click += new System.EventHandler(this.AddTrackPartToolStripMenuItem_Click);
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer2.Size = new System.Drawing.Size(511, 432);
+            this.splitContainer2.SplitterDistance = 216;
+            this.splitContainer2.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ucTrackPoints);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(511, 216);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Точки маршрута";
+            // 
             // ucTrackPoints
             // 
             this.ucTrackPoints.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucTrackPoints.Items = null;
-            this.ucTrackPoints.Location = new System.Drawing.Point(0, 0);
+            this.ucTrackPoints.Location = new System.Drawing.Point(3, 16);
             this.ucTrackPoints.Name = "ucTrackPoints";
-            this.ucTrackPoints.Size = new System.Drawing.Size(511, 432);
+            this.ucTrackPoints.Size = new System.Drawing.Size(505, 197);
             this.ucTrackPoints.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ucDataTrackForecasts);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(511, 212);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Прогноз";
+            // 
+            // ucDataTrackForecasts
+            // 
+            this.ucDataTrackForecasts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDataTrackForecasts.Items = null;
+            this.ucDataTrackForecasts.Location = new System.Drawing.Point(3, 16);
+            this.ucDataTrackForecasts.Name = "ucDataTrackForecasts";
+            this.ucDataTrackForecasts.Size = new System.Drawing.Size(505, 193);
+            this.ucDataTrackForecasts.TabIndex = 0;
             // 
             // Form1
             // 
@@ -206,6 +265,12 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStripTrackPart.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,6 +291,10 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStripTrackPart;
         private System.Windows.Forms.ToolStripMenuItem addTrackPartToolStripMenuItem;
         private UCTrackPoints ucTrackPoints;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private UCDataTrackForecasts ucDataTrackForecasts;
     }
 }
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Odbc;
 using SOV.Common;
 using Npgsql;
+using SOV.Amur.Meta;
 
 namespace SOV.SGMO
 {
@@ -19,7 +20,7 @@ namespace SOV.SGMO
             return new DataTrackFcs()
             {
                 Id = (int)rdr["id"],
-                TrackPartPointId = (int)rdr["track_point_id"],
+                TrackPointId = (int)rdr["track_point_id"],
                 CatalogId = (int)rdr["catalog_id"],
                 LeadTime = (double)rdr["lead_time"],
                 Value = (double)rdr["value"],
@@ -27,11 +28,28 @@ namespace SOV.SGMO
             };
         }
 
-        public List<DataTrackFcs> SelectByTrackPartPointId(int trackPartPointId)
+        public List<DataTrackFcsExt> SelectExtByTrackPartPointId(List<int> trackPointIds)
         {
-            var fields = new Dictionary<string, object>()
+            List<DataTrackFcs> dtf = SelectByTrackPointIds(trackPointIds);
+
+            List<int> catalogIds = dtf.Select(x => x.CatalogId).ToList();
+
+            List<CatalogExt> catalogs = Amur.Meta.DataManager.GetInstance().CatalogRepository.SelectExt(catalogIds);
+            List<TrackPoint> trackPoints = DataManager.GetInstance().TrackPointsRepository.Select(trackPointIds); ;
+
+            List<DataTrackFcsExt> ret = new List<DataTrackFcsExt>();
+            foreach (var item in dtf)
+            {
+                ret.Add(new DataTrackFcsExt() { DataTrackFcs = item, CatalogExt = catalogs.FirstOrDefault(x => x.Catalog.Id == item.CatalogId), TrackPoint = trackPoints.FirstOrDefault(x => x.Id == item.TrackPointId) });
+            }
+
+            return ret;
+        }
+        public List<DataTrackFcs> SelectByTrackPointIds(List<int> trackPointIds)
+        {
+            Dictionary<string, object> fields = new Dictionary<string, object>()
                 {
-                    {"track_point_id", trackPartPointId}
+                    {"track_point_id", trackPointIds}
                 };
             return Select(fields);
 
@@ -45,7 +63,7 @@ namespace SOV.SGMO
                 {
                     fields.Add(new Dictionary<string, object>
                 {
-                    { "track_point_id", value.TrackPartPointId },
+                    { "track_point_id", value.TrackPointId },
                     { "catalog_id" , value.CatalogId},
                     { "lead_time", value.LeadTime},
                     { "value", value.Value}

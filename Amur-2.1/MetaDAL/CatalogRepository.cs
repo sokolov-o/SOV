@@ -31,20 +31,30 @@ namespace SOV.Amur.Meta
             );
         }
 
-        //static internal Catalog Parse(Npgsql.NpgsqlDataReader rdr)
-        //{
-        //    return new Catalog(
-        //        (int)rdr["id"],
-        //        (int)rdr["site_id"],
-        //        (int)rdr["variable_id"],
-        //        (int)rdr["method_id"],
-        //        (int)rdr["source_id"],
-        //        (int)rdr["offset_type_id"],
-        //        (double)rdr["offset_value"],
-        //        (int)rdr["parent_id"]
-        //        );
-        //}
+        public List<CatalogExt> SelectExt(List<int> catalogIds)
+        {
+            List<Catalog> catalogs = Select(catalogIds);
 
+            List<Site> sites = DataManager.GetInstance().SiteRepository.Select(catalogs.Select(x => x.SiteId).ToList());
+            List<Variable> variables = DataManager.GetInstance().VariableRepository.Select(catalogs.Select(x => x.VariableId).ToList());
+            List<Method> methods = DataManager.GetInstance().MethodRepository.Select(catalogs.Select(x => x.MethodId).ToList());
+            List<OffsetType> offsetTypes = DataManager.GetInstance().OffsetTypeRepository.Select(catalogs.Select(x => x.OffsetTypeId).ToList());
+
+            List<CatalogExt> ret = new List<CatalogExt>();
+
+            foreach (var item in catalogs)
+            {
+                ret.Add(new CatalogExt()
+                {
+                    Catalog = item,
+                    Site = sites.FirstOrDefault(x=>x.Id==item.SiteId),
+                     Variable = variables.FirstOrDefault(x => x.Id == item.VariableId),
+                     Method = methods.FirstOrDefault(x => x.Id == item.MethodId),
+                     OffsetType = offsetTypes.FirstOrDefault(x => x.Id == item.OffsetTypeId)
+                });
+            }
+            return ret;
+        }
         public List<Catalog> Select(List<int> siteId, List<int> varId, List<int> methodId, List<int> sourceId, List<int> offsetTypeId, double? offsetValue)
         {
             return Select(siteId, varId, methodId, sourceId, offsetTypeId,

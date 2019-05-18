@@ -92,7 +92,14 @@ namespace SOV.SGMO
         {
             ucTrackPoints.Items = null;
             if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
-                ucTrackPoints.Items = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(((Track)tv.SelectedNode.Tag).Id);
+            {
+                Track track = (Track)tv.SelectedNode.Tag;
+                ucTrackPoints.Items = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
+
+                List<TrackPoint> trackPoints = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
+                ucDataTrackForecasts.Items = DataManager.GetInstance().DataTrackFcsRepository.SelectExtByTrackPartPointId(
+                    trackPoints.Select(x => x.Id).ToList());
+            }
         }
     }
 }

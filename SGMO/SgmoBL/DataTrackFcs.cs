@@ -8,7 +8,7 @@ namespace SOV.SGMO
 {
     public class DataTrackFcs : Common.IdClass
     {
-        public int TrackPartPointId { get; set; }
+        public int TrackPointId { get; set; }
         public int CatalogId { get; set; }
         public double LeadTime { get; set; }
         public double Value { get; set; }

@@ -48,17 +48,17 @@
     <Compile Include="FormNewTrackPart.Designer.cs">
       <DependentUpon>FormNewTrackPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCDataTrackForecasts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataTrackForecasts.Designer.cs">
+      <DependentUpon>UCDataTrackForecasts.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCTrackPoints.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCTrackPoints.Designer.cs">
       <DependentUpon>UCTrackPoints.cs</DependentUpon>
-    </Compile>
-    <Compile Include="_DELME_FormTracks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="_DELME_FormTracks.Designer.cs">
-      <DependentUpon>_DELME_FormTracks.cs</DependentUpon>
     </Compile>
     <Compile Include="UCMessageSiteTable.cs">
       <SubType>UserControl</SubType>
@@ -78,11 +78,11 @@
     <EmbeddedResource Include="FormNewTrackPart.resx">
       <DependentUpon>FormNewTrackPart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCDataTrackForecasts.resx">
+      <DependentUpon>UCDataTrackForecasts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCTrackPoints.resx">
       <DependentUpon>UCTrackPoints.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="_DELME_FormTracks.resx">
-      <DependentUpon>_DELME_FormTracks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMessageSite.resx">
       <DependentUpon>UCMessageSite.cs</DependentUpon>
@@ -126,6 +126,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\DataTrackFcs.datasource" />
+    <None Include="Properties\DataSources\DataTrackFcsExt.datasource" />
     <None Include="Properties\DataSources\MessageSite.datasource" />
     <None Include="Properties\DataSources\TrackPoint.datasource" />
   </ItemGroup>

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalog.cs" />
+    <Compile Include="CatalogExt.cs" />
     <Compile Include="CatalogFilter.cs" />
     <Compile Include="CategorySet.cs" />
     <Compile Include="ChartsFilter.cs" />

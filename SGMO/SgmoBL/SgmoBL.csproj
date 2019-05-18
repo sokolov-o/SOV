@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="DataFcsNode.cs" />
     <Compile Include="DataTrackFcs.cs" />
+    <Compile Include="DataTrackFcsExt.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="MessageType.cs" />
     <Compile Include="MethVarXVar.cs" />
