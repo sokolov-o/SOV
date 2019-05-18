@@ -56,7 +56,7 @@ namespace _TestWCFServiceField
                     {
                         ret.Add(new DataTrackFcs
                         {
-                            TrackPartPointId = childTrack.Points[iPoint].Id,
+                            TrackPointId = childTrack.Points[iPoint].Id,
                             CatalogId = catalogs[iCatalog].Id,
                             LeadTime = kvp.Key,
                             Value = kvp.Value[iCatalog]

@@ -41,12 +41,12 @@ namespace SOV.SGMO
                 TreeNode nodeRoot = new TreeNode("Маршруты") { Name = "traks" };
                 foreach (Track track in tracks.Where(x => !x.ParentId.HasValue))
                 {
-                    TreeNode nodeParentTrack = new TreeNode(track.Name) { Name = track.Id.ToString(), Tag = track };
-                    nodeParentTrack.ContextMenuStrip = contextMenuStripTrackPart;
+                    TreeNode nodeTrackRoot = new TreeNode(track.Name) { Name = track.Id.ToString(), Tag = track };
+                    nodeTrackRoot.ContextMenuStrip = contextMenuStripTrackRoot;
 
-                    AddChildTracks(nodeParentTrack, tracks);
+                    AddChildTracks(nodeTrackRoot, tracks);
 
-                    nodeRoot.Nodes.Add(nodeParentTrack);
+                    nodeRoot.Nodes.Add(nodeTrackRoot);
                 }
 
                 tv.Nodes.Add(nodeRoot);
@@ -66,7 +66,9 @@ namespace SOV.SGMO
         {
             foreach (Track childTrack in tracks.Where(x => x.ParentId == ((Track)parentTrack.Tag).Id))
             {
-                parentTrack.Nodes.Add(new TreeNode(childTrack.DateSUTC.ToString("dd.mm.yyyy HH")) { Name = childTrack.Id.ToString(), Tag = childTrack });
+                TreeNode childNode = new TreeNode(childTrack.DateSUTC.ToString("dd.mm.yyyy HH")) { Name = childTrack.Id.ToString(), Tag = childTrack };
+                childNode.ContextMenuStrip = contextMenuStripTrackChild;
+                parentTrack.Nodes.Add(childNode);
             }
         }
 
@@ -90,7 +92,12 @@ namespace SOV.SGMO
 
         private void Tv_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            RefreshUC();
+        }
+        private void RefreshUC()
+        {
             ucTrackPoints.Items = null;
+            ucDataTrackForecasts.Items = null;
             if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
             {
                 Track track = (Track)tv.SelectedNode.Tag;
@@ -100,6 +107,22 @@ namespace SOV.SGMO
                 ucDataTrackForecasts.Items = DataManager.GetInstance().DataTrackFcsRepository.SelectExtByTrackPartPointId(
                     trackPoints.Select(x => x.Id).ToList());
             }
+        }
+
+        private void deleteTrackToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
+            {
+                Track track = (Track)tv.SelectedNode.Tag;
+                if (DataManager.GetInstance().TrackRepository.SelectChilds(track.Id).Count > 0)
+                {
+                    MessageBox.Show("Маршрут имеет наследников. Сначала нужно удалить наследников.", "Отмена действия");
+                    return;
+                }
+
+                DataManager.GetInstance().TrackRepository.Delete(track.Id);
+            }
+            RefreshUC();
         }
     }
 }

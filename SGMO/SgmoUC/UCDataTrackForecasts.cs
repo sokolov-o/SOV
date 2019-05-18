@@ -17,16 +17,16 @@ namespace SOV.SGMO
             InitializeComponent();
         }
 
-        List<DataTrackFcsExt> items;
         public List<DataTrackFcsExt> Items
         {
-            get
-            {
-                return items;
-            }
+            //get
+            //{
+            //    return dgv.DataSource == null ? null : (List<DataTrackFcsExt>)dgv.DataSource;
+            //}
             set
             {
-                dgv.DataSource = value?.OrderBy(x => x.DataTrackFcs.LeadTime).ToList();
+                dgv.DataSource = value?.OrderBy(x => x.DateFcsUTC).ToList();
+                infoLabel.Text = (value == null ? 0 : value.Count).ToString();
             }
         }
     }

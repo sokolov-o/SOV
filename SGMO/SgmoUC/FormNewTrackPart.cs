@@ -65,9 +65,10 @@ namespace SOV.SGMO
                     double.Parse(speedTextBox.Text) * 1000 / 3600,
                     refPointsListBox.SelectedIndex,
                     hourStart,
-                    int.Parse(hoursCountTextBox.Text),
+                    int.Parse(hoursCountTextBox.Text) + 1,
                     hourStep
                 );
+                //////points.Insert(0, startPoint); // Для leadTime = 0
 
                 // INSERT TRACK
                 Track childTrack = new Track()
@@ -84,7 +85,7 @@ namespace SOV.SGMO
                 // INSERT TRACK POINTS
                 int utcOffset = int.Parse(utcOffsetTextBox.Text);
                 List<TrackPoint> trackPoints = new List<TrackPoint>(200);
-                int i = 1;
+                int i = 0;
 
                 foreach (GeoPoint point in points)
                 {
