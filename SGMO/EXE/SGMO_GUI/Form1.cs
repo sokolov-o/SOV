@@ -64,9 +64,9 @@ namespace SOV.SGMO
 
         void AddChildTracks(TreeNode parentTrack, List<Track> tracks)
         {
-            foreach (Track childTrack in tracks.Where(x => x.ParentId == ((Track)parentTrack.Tag).Id))
+            foreach (Track childTrack in tracks.Where(x => x.ParentId == ((Track)parentTrack.Tag).Id).OrderBy(x => x.DateSUTC))
             {
-                TreeNode childNode = new TreeNode(childTrack.DateSUTC.ToString("dd.mm.yyyy HH")) { Name = childTrack.Id.ToString(), Tag = childTrack };
+                TreeNode childNode = new TreeNode(childTrack.DateSUTC.ToString("dd.MM.yyyy HH")) { Name = childTrack.Id.ToString(), Tag = childTrack };
                 childNode.ContextMenuStrip = contextMenuStripTrackChild;
                 parentTrack.Nodes.Add(childNode);
             }
@@ -96,16 +96,31 @@ namespace SOV.SGMO
         }
         private void RefreshUC()
         {
-            ucTrackPoints.Items = null;
-            ucDataTrackForecasts.Items = null;
-            if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
-            {
-                Track track = (Track)tv.SelectedNode.Tag;
-                ucTrackPoints.Items = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
+            Cursor cs = this.Cursor;
+            this.Cursor = Cursors.WaitCursor;
 
-                List<TrackPoint> trackPoints = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
-                ucDataTrackForecasts.Items = DataManager.GetInstance().DataTrackFcsRepository.SelectExtByTrackPartPointId(
-                    trackPoints.Select(x => x.Id).ToList());
+            try
+            {
+                ucTrackPoints.Items = null;
+                ucDataTrackForecasts.Items = null;
+                if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
+                {
+                    Track track = (Track)tv.SelectedNode.Tag;
+                    ucTrackPoints.Items = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
+
+                    List<TrackPoint> trackPoints = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
+                    ucDataTrackForecasts.Items = DataManager.GetInstance().DataTrackFcsRepository.SelectExtByTrackPartPointId(
+                        trackPoints.Select(x => x.Id).ToList());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                this.Cursor = cs;
             }
         }
 
