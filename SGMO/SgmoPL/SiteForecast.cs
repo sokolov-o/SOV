@@ -18,15 +18,25 @@ namespace SOV.SGMO
         public static List<DataFcs> Get(User user, List<int> siteIds, DateTime dateIniUTC, List<int> methodIds1)
         {
             AmurServiceClient amurClient = new AmurServiceClient(user);
-            FieldServiceClient fieldClient = new FieldServiceClient(user);
 
             // GET CATALOGS
 
             List<Catalog> allCatalogs = amurClient.client.GetCatalogList(amurClient.h, siteIds, null, methodIds1, null, null, null);
             List<Amur.Meta.Method> methods = amurClient.client.GetMethods(amurClient.h, methodIds1);
+            List<int> siteUTCs = new List<int>();
+            for (int iSite = 0; iSite < siteIds.Count; iSite++)
+            {
+                EntityAttrValue eav = amurClient.client.GetSiteAttrValue(amurClient.h, siteIds[iSite], 1003, DateTime.Today);
+                if (eav == null || string.IsNullOrEmpty(eav.Value))
+                    throw new Exception("В БД Амур у пункта id={} отсутствует атрибут UTCOffset.");
+                siteUTCs.Add(int.Parse(eav.Value));
+            }
+
             List<DataFcs> ret = new List<DataFcs>();
 
             // SCAN METHODS
+
+            FieldServiceClient fieldClient = new FieldServiceClient(user);
 
             for (int iMethod = 0; iMethod < methods.Count; iMethod++)
             {
@@ -50,12 +60,15 @@ namespace SOV.SGMO
                 {
                     for (int iCatalog = 0; iCatalog < catalogIds.Count; iCatalog++)
                     {
+                        int siteId = allCatalogs.FirstOrDefault(x => x.Id == catalogIds[iCatalog]).SiteId;
+
                         ret.Add(new DataFcs
                         {
                             DateIniUTC = dateIniUTC,
                             CatalogId = catalogIds[iCatalog],
                             LeadTime = kvp.Key,
-                            Value = kvp.Value[iCatalog]
+                            Value = kvp.Value[iCatalog],
+                            UTCOffsetHours = siteUTCs[siteIds.IndexOf(siteId)]
                         });
                     }
                     iPoint++;
