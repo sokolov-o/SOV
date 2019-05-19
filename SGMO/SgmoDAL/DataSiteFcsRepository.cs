@@ -24,6 +24,17 @@ namespace SOV.SGMO
                 Value = (double)rdr["value"]
             };
         }
+        protected object ParseData4DateIni(NpgsqlDataReader rdr)
+        {
+            return new DataSiteFcs()
+            {
+                Id = (int)rdr["id"],
+                CatalogId = (int)rdr["catalog_id"],
+                LeadTime = (double)rdr["lead_time"],
+                DateIniUTC = (DateTime)rdr["date_ini_utc"],
+                Value = (double)rdr["value"]
+            };
+        }
 
         public List<DataSiteFcs> Select(List<int> catalogIds, DateTime dateIniUTC)
         {
@@ -34,6 +45,17 @@ namespace SOV.SGMO
             };
             return Select(fields);
         }
+
+        public List<DateTime> SelectDateIniUTC4Sites(List<int> siteIds)
+        {
+            var fields = new Dictionary<string, object>()
+            {
+                {"catalog_id", catalogIds},
+                {"date_ini_utc", dateIniUTC}
+            };
+            return Select(fields);
+        }
+
         public void Insert(List<DataSiteFcs> data)
         {
             if (data != null && data.Count > 0)

@@ -206,6 +206,8 @@ namespace SOV.SGMO
                     TreeNode node = new TreeNode(site.Name) { Name = site.Id.ToString(), Tag = site, ImageIndex = 1, SelectedImageIndex = 1 };
                     node.ContextMenuStrip = siteContextMenuStrip;
 
+                    AddSiteChildNodes(node);
+
                     tvSites.Nodes.Add(node);
                 }
             }
@@ -217,6 +219,11 @@ namespace SOV.SGMO
             {
                 this.Cursor = cs;
             }
+        }
+
+        private void AddSiteChildNodes(TreeNode siteNode)
+        {
+            
         }
 
         private void NewSiteFcsToolStripMenuItem_Click(object sender, EventArgs e)
