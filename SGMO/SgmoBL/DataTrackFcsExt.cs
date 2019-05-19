@@ -20,6 +20,7 @@ namespace SOV.SGMO
         public string SiteName { get { return CatalogExt.Site.Name; } }
         public string VariableName { get { return CatalogExt.Variable.NameRus; } }
         public string MethodName { get { return CatalogExt.Method.Name; } }
-
+        public string OffsetTypeName { get { return CatalogExt.OffsetType.Name; } }
+        public double OffsetValue { get { return CatalogExt.Catalog.OffsetValue; } }
     }
 }
