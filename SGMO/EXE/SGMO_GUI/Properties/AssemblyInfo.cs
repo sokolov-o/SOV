@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("SOV.SGMO")]
+[assembly: AssemblyTitle("СГМО")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SOV.SGMO")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("Примгидромет")]
+[assembly: AssemblyProduct("Спецгидрометобслуживание")]
+[assembly: AssemblyCopyright("SOV©  2017")]
+[assembly: AssemblyTrademark("SOV")]
 [assembly: AssemblyCulture("")]
 
 // Параметр ComVisible со значением FALSE делает типы в сборке невидимыми 

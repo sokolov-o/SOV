@@ -15,6 +15,8 @@ namespace SOV.SGMO
         public Form1()
         {
             InitializeComponent();
+
+            Text = Application.ProductName + " (" + Application.CompanyName + ", v. " + Application.ProductVersion + ")";
         }
 
         private void MnuFileExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace SOV.SGMO
 
         void AddChildTracks(TreeNode parentTrack, List<Track> tracks)
         {
-            foreach (Track childTrack in tracks.Where(x => x.ParentId == ((Track)parentTrack.Tag).Id).OrderBy(x => x.DateSUTC))
+            foreach (Track childTrack in tracks.Where(x => x.ParentId == ((Track)parentTrack.Tag).Id).OrderByDescending(x => x.DateSUTC))
             {
                 TreeNode childNode = new TreeNode(childTrack.DateSUTC.ToString("dd.MM.yyyy HH")) { Name = childTrack.Id.ToString(), Tag = childTrack };
                 childNode.ContextMenuStrip = contextMenuStripTrackChild;
