@@ -40,6 +40,8 @@
             // 
             // dgv
             // 
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoGenerateColumns = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -50,6 +52,7 @@
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 0);
             this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
             this.dgv.Size = new System.Drawing.Size(318, 432);
             this.dgv.TabIndex = 0;
             // 
@@ -60,20 +63,23 @@
             // dateUTCDataGridViewTextBoxColumn
             // 
             this.dateUTCDataGridViewTextBoxColumn.DataPropertyName = "DateUTC";
-            this.dateUTCDataGridViewTextBoxColumn.HeaderText = "DateUTC";
+            this.dateUTCDataGridViewTextBoxColumn.HeaderText = "Дата (ВСВ)";
             this.dateUTCDataGridViewTextBoxColumn.Name = "dateUTCDataGridViewTextBoxColumn";
+            this.dateUTCDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // geoPointDataGridViewTextBoxColumn
             // 
             this.geoPointDataGridViewTextBoxColumn.DataPropertyName = "GeoPoint";
-            this.geoPointDataGridViewTextBoxColumn.HeaderText = "GeoPoint";
+            this.geoPointDataGridViewTextBoxColumn.HeaderText = "Координаты";
             this.geoPointDataGridViewTextBoxColumn.Name = "geoPointDataGridViewTextBoxColumn";
+            this.geoPointDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // uTCOffsetDataGridViewTextBoxColumn
             // 
             this.uTCOffsetDataGridViewTextBoxColumn.DataPropertyName = "UTCOffset";
-            this.uTCOffsetDataGridViewTextBoxColumn.HeaderText = "UTCOffset";
+            this.uTCOffsetDataGridViewTextBoxColumn.HeaderText = "+ВСВ";
             this.uTCOffsetDataGridViewTextBoxColumn.Name = "uTCOffsetDataGridViewTextBoxColumn";
+            this.uTCOffsetDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // UCTrackPoints
             // 

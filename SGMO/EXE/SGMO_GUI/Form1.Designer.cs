@@ -34,11 +34,9 @@
             this.mnuFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuDicWarningPileCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.tv = new System.Windows.Forms.TreeView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,8 +46,12 @@
             this.contextMenuStripTrackRoot = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addTrackPartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripTrackChild = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteTrackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeFcsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteTrackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.RefreshButton = new System.Windows.Forms.ToolStripButton();
+            this.mnuDicWarningPileCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -65,6 +67,7 @@
             this.groupBox2.SuspendLayout();
             this.contextMenuStripTrackRoot.SuspendLayout();
             this.contextMenuStripTrackChild.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -102,14 +105,7 @@
             this.mnuDicToolStripMenuItem.Name = "mnuDicToolStripMenuItem";
             this.mnuDicToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.mnuDicToolStripMenuItem.Text = "Справочники";
-            // 
-            // mnuDicWarningPileCatalogToolStripMenuItem
-            // 
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Image = global::SOV.SGMO.Properties.Resources.fire_128x128;
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Name = "mnuDicWarningPileCatalogToolStripMenuItem";
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Text = "Предупреждения для записей каталога данных";
-            this.mnuDicWarningPileCatalogToolStripMenuItem.Click += new System.EventHandler(this.MnuDicWarningPileCatalogToolStripMenuItem_Click);
+            this.mnuDicToolStripMenuItem.Visible = false;
             // 
             // splitContainer1
             // 
@@ -119,7 +115,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox3);
             // 
             // splitContainer1.Panel2
             // 
@@ -135,12 +131,12 @@
             this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tv, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(255, 432);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(249, 413);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // toolStrip1
@@ -152,26 +148,19 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(255, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(249, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // RefreshButton
-            // 
-            this.RefreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.RefreshButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshButton.Image")));
-            this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(50, 22);
-            this.RefreshButton.Text = "Refresh";
-            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // tv
             // 
             this.tv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tv.ImageIndex = 0;
+            this.tv.ImageList = this.imageList1;
             this.tv.Location = new System.Drawing.Point(3, 28);
             this.tv.Name = "tv";
-            this.tv.Size = new System.Drawing.Size(249, 401);
+            this.tv.SelectedImageIndex = 0;
+            this.tv.Size = new System.Drawing.Size(243, 382);
             this.tv.TabIndex = 0;
             this.tv.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tv_AfterSelect);
             this.tv.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tv_NodeMouseClick);
@@ -253,21 +242,61 @@
             this.makeFcsToolStripMenuItem,
             this.deleteTrackToolStripMenuItem});
             this.contextMenuStripTrackChild.Name = "contextMenuStripTrackPart";
-            this.contextMenuStripTrackChild.Size = new System.Drawing.Size(181, 70);
-            // 
-            // deleteTrackToolStripMenuItem
-            // 
-            this.deleteTrackToolStripMenuItem.Name = "deleteTrackToolStripMenuItem";
-            this.deleteTrackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteTrackToolStripMenuItem.Text = "Удалить маршрут";
-            this.deleteTrackToolStripMenuItem.Click += new System.EventHandler(this.deleteTrackToolStripMenuItem_Click_1);
+            this.contextMenuStripTrackChild.Size = new System.Drawing.Size(173, 48);
             // 
             // makeFcsToolStripMenuItem
             // 
             this.makeFcsToolStripMenuItem.Name = "makeFcsToolStripMenuItem";
-            this.makeFcsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.makeFcsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.makeFcsToolStripMenuItem.Text = "Прогноз!";
             this.makeFcsToolStripMenuItem.Click += new System.EventHandler(this.MakeFcsToolStripMenuItem_Click);
+            // 
+            // deleteTrackToolStripMenuItem
+            // 
+            this.deleteTrackToolStripMenuItem.Name = "deleteTrackToolStripMenuItem";
+            this.deleteTrackToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.deleteTrackToolStripMenuItem.Text = "Удалить маршрут";
+            this.deleteTrackToolStripMenuItem.Click += new System.EventHandler(this.deleteTrackToolStripMenuItem_Click_1);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "anchor.png");
+            this.imageList1.Images.SetKeyName(1, "flag.png");
+            this.imageList1.Images.SetKeyName(2, "ruler.png");
+            this.imageList1.Images.SetKeyName(3, "DateTime.png");
+            this.imageList1.Images.SetKeyName(4, "podcasts.png");
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RefreshButton.Image = global::SOV.SGMO.Properties.Resources.Refresh;
+            this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(23, 22);
+            this.RefreshButton.Text = "Обновить";
+            this.RefreshButton.ToolTipText = "Обновить";
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
+            // mnuDicWarningPileCatalogToolStripMenuItem
+            // 
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Image = global::SOV.SGMO.Properties.Resources.fire_128x128;
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Name = "mnuDicWarningPileCatalogToolStripMenuItem";
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Text = "Предупреждения для записей каталога данных";
+            this.mnuDicWarningPileCatalogToolStripMenuItem.Click += new System.EventHandler(this.MnuDicWarningPileCatalogToolStripMenuItem_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(255, 432);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Маршруты";
             // 
             // Form1
             // 
@@ -276,9 +305,11 @@
             this.ClientSize = new System.Drawing.Size(770, 456);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -297,6 +328,7 @@
             this.groupBox2.ResumeLayout(false);
             this.contextMenuStripTrackRoot.ResumeLayout(false);
             this.contextMenuStripTrackChild.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,6 +356,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStripTrackChild;
         private System.Windows.Forms.ToolStripMenuItem deleteTrackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem makeFcsToolStripMenuItem;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

@@ -40,18 +40,19 @@ namespace SOV.SGMO
             {
                 List<Track> tracks = DataManager.GetInstance().TrackRepository.Select();
 
-                TreeNode nodeRoot = new TreeNode("Маршруты") { Name = "traks" };
+                //TreeNode nodeRoot = new TreeNode("Маршруты") { Name = "traks" };
                 foreach (Track track in tracks.Where(x => !x.ParentId.HasValue))
                 {
-                    TreeNode nodeTrackRoot = new TreeNode(track.Name) { Name = track.Id.ToString(), Tag = track };
+                    TreeNode nodeTrackRoot = new TreeNode(track.Name) { Name = track.Id.ToString(), Tag = track, ImageIndex = 0 };
                     nodeTrackRoot.ContextMenuStrip = contextMenuStripTrackRoot;
 
                     AddChildTracks(nodeTrackRoot, tracks);
 
-                    nodeRoot.Nodes.Add(nodeTrackRoot);
+                    //nodeRoot.Nodes.Add(nodeTrackRoot);
+                    tv.Nodes.Add(nodeTrackRoot);
                 }
 
-                tv.Nodes.Add(nodeRoot);
+                //tv.Nodes.Add(nodeRoot);
 
             }
             catch (Exception ex)
@@ -68,7 +69,13 @@ namespace SOV.SGMO
         {
             foreach (Track childTrack in tracks.Where(x => x.ParentId == ((Track)parentTrack.Tag).Id).OrderByDescending(x => x.DateSUTC))
             {
-                TreeNode childNode = new TreeNode(childTrack.DateSUTC.ToString("dd.MM.yyyy HH")) { Name = childTrack.Id.ToString(), Tag = childTrack };
+                TreeNode childNode = new TreeNode(childTrack.DateSUTC.ToString("dd.MM.yyyy HH"))
+                {
+                    Name = childTrack.Id.ToString(),
+                    Tag = childTrack,
+                    ImageIndex = 3,
+                    SelectedImageIndex = 4
+                };
                 childNode.ContextMenuStrip = contextMenuStripTrackChild;
                 parentTrack.Nodes.Add(childNode);
             }
@@ -179,6 +186,11 @@ namespace SOV.SGMO
                     }
                 }
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            RefreshButton_Click(sender, e);
         }
     }
 }
