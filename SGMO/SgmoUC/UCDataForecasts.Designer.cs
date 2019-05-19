@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCDataForecasts));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.leadTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +50,12 @@
             this.trackPointBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.filterToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dgvFilter = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.acceptFilterButton = new System.Windows.Forms.Button();
+            this.deleteFilterButton = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFcsExtBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -59,6 +65,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilter)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv
@@ -229,18 +237,76 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Size = new System.Drawing.Size(615, 432);
             this.splitContainer1.SplitterDistance = 339;
             this.splitContainer1.TabIndex = 2;
             // 
-            // flowLayoutPanel1
+            // dgvFilter
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(272, 432);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.dgvFilter.AllowUserToAddRows = false;
+            this.dgvFilter.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvFilter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFilter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFilter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.tableLayoutPanel2.SetColumnSpan(this.dgvFilter, 2);
+            this.dgvFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFilter.Location = new System.Drawing.Point(3, 3);
+            this.dgvFilter.Name = "dgvFilter";
+            this.dgvFilter.RowHeadersVisible = false;
+            this.dgvFilter.Size = new System.Drawing.Size(266, 397);
+            this.dgvFilter.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.dgvFilter, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.acceptFilterButton, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.deleteFilterButton, 1, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(272, 432);
+            this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // acceptFilterButton
+            // 
+            this.acceptFilterButton.Location = new System.Drawing.Point(3, 406);
+            this.acceptFilterButton.Name = "acceptFilterButton";
+            this.acceptFilterButton.Size = new System.Drawing.Size(118, 23);
+            this.acceptFilterButton.TabIndex = 1;
+            this.acceptFilterButton.Text = "Применить фильтр";
+            this.acceptFilterButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteFilterButton
+            // 
+            this.deleteFilterButton.Location = new System.Drawing.Point(127, 406);
+            this.deleteFilterButton.Name = "deleteFilterButton";
+            this.deleteFilterButton.Size = new System.Drawing.Size(97, 23);
+            this.deleteFilterButton.TabIndex = 2;
+            this.deleteFilterButton.Text = "Убрать фильтр";
+            this.deleteFilterButton.UseVisualStyleBackColor = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "Столбец таблицы";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 110;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Like";
+            this.Column2.Name = "Column2";
             // 
             // UCDataForecasts
             // 
@@ -260,6 +326,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilter)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -288,6 +356,11 @@
         private System.Windows.Forms.BindingSource dataFcsExtBindingSource;
         private System.Windows.Forms.ToolStripButton filterToolStripButton;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.DataGridView dgvFilter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button acceptFilterButton;
+        private System.Windows.Forms.Button deleteFilterButton;
     }
 }

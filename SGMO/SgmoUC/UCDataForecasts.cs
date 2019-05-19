@@ -28,14 +28,14 @@ namespace SOV.SGMO
 
         private void FilterToolStripButton_Click(object sender, EventArgs e)
         {
-            if(splitContainer1.Panel2.Controls.Count==0)
+            splitContainer1.Panel2Collapsed = !splitContainer1.Panel2Collapsed;
+            if (!splitContainer1.Panel2Collapsed)
             {
-                System.Windows.Forms.Label label1 = new Label();
-                label1.AutoSize = true;
-                label1.Location = new System.Drawing.Point(3, 0);
-                label1.Name = "label1";
-                label1.Size = new System.Drawing.Size(0, 13);
-                label1.TabIndex = 0;
+                if (dgvFilter.RowCount == 0)
+                {
+                    int i = dgvFilter.Rows.Add(new DataGridViewRow());
+                    dgvFilter.Rows[i].Cells[0].Value = "Переменная";
+                }
             }
         }
     }
