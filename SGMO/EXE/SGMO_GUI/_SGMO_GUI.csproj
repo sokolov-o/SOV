@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GeographicLib">
+      <HintPath>..\..\..\DLL\GeographicLib.dll</HintPath>
+    </Reference>
     <Reference Include="SOV.Amur.Meta, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="SOV.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="SOV.SGMO.SgmoBL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
