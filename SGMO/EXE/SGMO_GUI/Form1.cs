@@ -97,9 +97,9 @@ namespace SOV.SGMO
 
         private void Tv_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            RefreshUC();
+            RefreshTrackUC();
         }
-        private void RefreshUC()
+        private void RefreshTrackUC()
         {
             Cursor cs = this.Cursor;
             this.Cursor = Cursors.WaitCursor;
@@ -114,8 +114,8 @@ namespace SOV.SGMO
                     ucTrackPoints.Items = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
 
                     List<TrackPoint> trackPoints = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
-                    ucDataTrackForecasts.Items = DataManager.GetInstance().DataTrackFcsRepository.SelectExtByTrackPartPointId(
-                        trackPoints.Select(x => x.Id).ToList());
+                    List<DataTrackFcsExt> data = DataManager.GetInstance().DataTrackFcsRepository.SelectExtByTrackPartPointId(trackPoints.Select(x => x.Id).ToList());
+                    ucDataTrackForecasts.Items = data;
                 }
 
             }
@@ -142,7 +142,7 @@ namespace SOV.SGMO
 
                 DataManager.GetInstance().TrackRepository.Delete(track.Id);
             }
-            RefreshUC();
+            RefreshTrackUC();
         }
 
         private void NewTrackFcsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -170,7 +170,7 @@ namespace SOV.SGMO
 
                         DataManager.GetInstance().DataTrackFcsRepository.Insert(dataTrackFcs);
 
-                        RefreshUC();
+                        RefreshTrackUC();
                     }
                     catch (Exception ex)
                     {
@@ -203,12 +203,16 @@ namespace SOV.SGMO
 
                 foreach (Site site in sites.OrderBy(x => x.Name))
                 {
-                    TreeNode node = new TreeNode(site.Name) { Name = site.Id.ToString(), Tag = site, ImageIndex = 1, SelectedImageIndex = 1 };
-                    node.ContextMenuStrip = siteContextMenuStrip;
+                    TreeNode siteNode = new TreeNode(site.Name) { Name = site.Id.ToString(), Tag = site, ImageIndex = 1, SelectedImageIndex = 1 };
+                    siteNode.ContextMenuStrip = siteContextMenuStrip;
 
-                    AddSiteChildNodes(node);
+                    foreach (KeyValuePair<int, DateTime> item in DataManager.GetInstance().DataSiteFcsRepository.SelectDateIniUTC4Sites(new List<int> { site.Id }))
+                    {
+                        TreeNode dateNode = new TreeNode(item.Value.ToString("dd.MM.yyyy HH")) { Name = site.Id.ToString(), Tag = item, ImageIndex = 3, SelectedImageIndex = 3 };
+                        siteNode.Nodes.Add(dateNode);
+                    }
 
-                    tvSites.Nodes.Add(node);
+                    tvSites.Nodes.Add(siteNode);
                 }
             }
             catch (Exception ex)
@@ -223,7 +227,12 @@ namespace SOV.SGMO
 
         private void AddSiteChildNodes(TreeNode siteNode)
         {
-            
+            Site site = (Site)siteNode.Tag;
+            foreach (KeyValuePair<int, DateTime> item in DataManager.GetInstance().DataSiteFcsRepository.SelectDateIniUTC4Sites(new List<int> { site.Id }))
+            {
+                TreeNode node = new TreeNode(item.Value.ToString("dd.MM.yyyy HH")) { Name = site.Id.ToString(), Tag = item, ImageIndex = 3, SelectedImageIndex = 3 };
+                siteNode.Nodes.Add(node);
+            }
         }
 
         private void NewSiteFcsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -242,11 +251,11 @@ namespace SOV.SGMO
                     this.Cursor = Cursors.WaitCursor;
                     try
                     {
-                        List<DataSiteFcs> dataFcs = SiteForecast.Get(user, new List<int> { site.Id }, frm.DateIniUTC, frm.Methods.Select(x => x.Id).ToList());
+                        List<DataFcs> dataFcs = SiteForecast.Get(user, new List<int> { site.Id }, frm.DateIniUTC, frm.Methods.Select(x => x.Id).ToList());
 
                         DataManager.GetInstance().DataSiteFcsRepository.Insert(dataFcs);
 
-                        RefreshUC();
+                        RefreshSiteUC();
                     }
                     catch (Exception ex)
                     {
@@ -257,6 +266,40 @@ namespace SOV.SGMO
                         this.Cursor = cs;
                     }
                 }
+            }
+        }
+
+        private void TvSites_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            RefreshSiteUC();
+        }
+        private void RefreshSiteUC()
+        {
+            Cursor cs = this.Cursor;
+            this.Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                //ucTrackPoints.Visible = false;
+                //ucDataTrackForecasts.Items = null;
+                //if (tvTracks.SelectedNode != null && tvTracks.SelectedNode.Tag != null && tvTracks.SelectedNode.Tag.GetType() == typeof(Track))
+                //{
+                //    Track track = (Track)tvTracks.SelectedNode.Tag;
+                //    ucTrackPoints.Items = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
+
+                //    List<TrackPoint> trackPoints = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
+                //    ucDataTrackForecasts.Items = DataManager.GetInstance().DataTrackFcsRepository.SelectExtByTrackPartPointId(
+                //        trackPoints.Select(x => x.Id).ToList());
+                //}
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                this.Cursor = cs;
             }
         }
     }

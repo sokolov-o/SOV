@@ -26,6 +26,6 @@ namespace SOV.SGMO
         /// UTC offset.
         /// </summary>
         [DataMember]
-        public int UTCOffset { get; set; }
+        public int UTCOffsetHours { get; set; }
     }
 }

@@ -135,6 +135,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\DataFcsExt.datasource" />
     <None Include="Properties\DataSources\DataTrackFcs.datasource" />
     <None Include="Properties\DataSources\DataTrackFcsExt.datasource" />
     <None Include="Properties\DataSources\MessageSite.datasource" />

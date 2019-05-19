@@ -15,7 +15,7 @@ namespace SOV.SGMO
         /// <summary>
         /// Get forecast for sites.
         /// </summary>
-        public static List<DataSiteFcs> Get(User user, List<int> siteIds, DateTime dateIniUTC, List<int> methodIds1)
+        public static List<DataFcs> Get(User user, List<int> siteIds, DateTime dateIniUTC, List<int> methodIds1)
         {
             AmurServiceClient amurClient = new AmurServiceClient(user);
             FieldServiceClient fieldClient = new FieldServiceClient(user);
@@ -24,7 +24,7 @@ namespace SOV.SGMO
 
             List<Catalog> allCatalogs = amurClient.client.GetCatalogList(amurClient.h, siteIds, null, methodIds1, null, null, null);
             List<Amur.Meta.Method> methods = amurClient.client.GetMethods(amurClient.h, methodIds1);
-            List<DataSiteFcs> ret = new List<DataSiteFcs>();
+            List<DataFcs> ret = new List<DataFcs>();
 
             // SCAN METHODS
 
@@ -50,7 +50,7 @@ namespace SOV.SGMO
                 {
                     for (int iCatalog = 0; iCatalog < catalogIds.Count; iCatalog++)
                     {
-                        ret.Add(new DataSiteFcs
+                        ret.Add(new DataFcs
                         {
                             DateIniUTC = dateIniUTC,
                             CatalogId = catalogIds[iCatalog],

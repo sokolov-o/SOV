@@ -44,6 +44,11 @@
             this.tvTracks = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tvSites = new System.Windows.Forms.TreeView();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.refreshSitesButton = new System.Windows.Forms.ToolStripButton();
+            this.infoSitesLabel = new System.Windows.Forms.ToolStripLabel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ucTrackPoints = new SOV.SGMO.UCTrackPoints();
@@ -54,11 +59,6 @@
             this.contextMenuStripTrackChild = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.makeFcsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteTrackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.refreshSitesButton = new System.Windows.Forms.ToolStripButton();
-            this.infoSitesLabel = new System.Windows.Forms.ToolStripLabel();
-            this.tvSites = new System.Windows.Forms.TreeView();
             this.siteContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newSiteFcsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -71,6 +71,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -79,8 +81,6 @@
             this.groupBox2.SuspendLayout();
             this.contextMenuStripTrackRoot.SuspendLayout();
             this.contextMenuStripTrackChild.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
             this.siteContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -241,6 +241,63 @@
             this.tabPage2.Text = "Пункты";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.tvSites, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.toolStrip2, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(241, 400);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tvSites
+            // 
+            this.tvSites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvSites.ImageIndex = 0;
+            this.tvSites.ImageList = this.imageList1;
+            this.tvSites.Location = new System.Drawing.Point(3, 28);
+            this.tvSites.Name = "tvSites";
+            this.tvSites.SelectedImageIndex = 0;
+            this.tvSites.Size = new System.Drawing.Size(235, 369);
+            this.tvSites.TabIndex = 1;
+            this.tvSites.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TvSites_AfterSelect);
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshSitesButton,
+            this.infoSitesLabel});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip2.Size = new System.Drawing.Size(241, 25);
+            this.toolStrip2.TabIndex = 0;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // refreshSitesButton
+            // 
+            this.refreshSitesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.refreshSitesButton.Image = global::SOV.SGMO.Properties.Resources.Refresh;
+            this.refreshSitesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refreshSitesButton.Name = "refreshSitesButton";
+            this.refreshSitesButton.Size = new System.Drawing.Size(23, 22);
+            this.refreshSitesButton.Text = "toolStripButton1";
+            this.refreshSitesButton.Click += new System.EventHandler(this.RefreshSitesButton_Click);
+            // 
+            // infoSitesLabel
+            // 
+            this.infoSitesLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.infoSitesLabel.Name = "infoSitesLabel";
+            this.infoSitesLabel.Size = new System.Drawing.Size(16, 22);
+            this.infoSitesLabel.Text = "...";
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -334,73 +391,17 @@
             this.deleteTrackToolStripMenuItem.Text = "Удалить маршрут";
             this.deleteTrackToolStripMenuItem.Click += new System.EventHandler(this.deleteTrackToolStripMenuItem_Click_1);
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.tvSites, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.toolStrip2, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(241, 400);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshSitesButton,
-            this.infoSitesLabel});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip2.Size = new System.Drawing.Size(241, 25);
-            this.toolStrip2.TabIndex = 0;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // refreshSitesButton
-            // 
-            this.refreshSitesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshSitesButton.Image = global::SOV.SGMO.Properties.Resources.Refresh;
-            this.refreshSitesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refreshSitesButton.Name = "refreshSitesButton";
-            this.refreshSitesButton.Size = new System.Drawing.Size(23, 22);
-            this.refreshSitesButton.Text = "toolStripButton1";
-            this.refreshSitesButton.Click += new System.EventHandler(this.RefreshSitesButton_Click);
-            // 
-            // infoSitesLabel
-            // 
-            this.infoSitesLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.infoSitesLabel.Name = "infoSitesLabel";
-            this.infoSitesLabel.Size = new System.Drawing.Size(16, 22);
-            this.infoSitesLabel.Text = "...";
-            // 
-            // tvSites
-            // 
-            this.tvSites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvSites.ImageIndex = 0;
-            this.tvSites.ImageList = this.imageList1;
-            this.tvSites.Location = new System.Drawing.Point(3, 28);
-            this.tvSites.Name = "tvSites";
-            this.tvSites.SelectedImageIndex = 0;
-            this.tvSites.Size = new System.Drawing.Size(235, 369);
-            this.tvSites.TabIndex = 1;
-            // 
             // siteContextMenuStrip
             // 
             this.siteContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newSiteFcsToolStripMenuItem});
             this.siteContextMenuStrip.Name = "contextMenuStripTrackPart";
-            this.siteContextMenuStrip.Size = new System.Drawing.Size(181, 48);
+            this.siteContextMenuStrip.Size = new System.Drawing.Size(125, 26);
             // 
             // newSiteFcsToolStripMenuItem
             // 
             this.newSiteFcsToolStripMenuItem.Name = "newSiteFcsToolStripMenuItem";
-            this.newSiteFcsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newSiteFcsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.newSiteFcsToolStripMenuItem.Text = "Прогноз!";
             this.newSiteFcsToolStripMenuItem.Click += new System.EventHandler(this.NewSiteFcsToolStripMenuItem_Click);
             // 
@@ -429,6 +430,10 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -437,10 +442,6 @@
             this.groupBox2.ResumeLayout(false);
             this.contextMenuStripTrackRoot.ResumeLayout(false);
             this.contextMenuStripTrackChild.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
             this.siteContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

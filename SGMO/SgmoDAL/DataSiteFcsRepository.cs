@@ -9,24 +9,13 @@ using Npgsql;
 
 namespace SOV.SGMO
 {
-    public class DataSiteFcsRepository : BaseRepository<DataSiteFcs>
+    public class DataSiteFcsRepository : BaseRepository<DataFcs>
     {
         internal DataSiteFcsRepository(Common.ADbNpgsql db) : base(db, "data_site_fcs") { }
 
         protected override object ParseData(NpgsqlDataReader rdr)
         {
-            return new DataSiteFcs()
-            {
-                Id = (int)rdr["id"],
-                CatalogId = (int)rdr["catalog_id"],
-                LeadTime = (double)rdr["lead_time"],
-                DateIniUTC = (DateTime)rdr["date_ini_utc"],
-                Value = (double)rdr["value"]
-            };
-        }
-        protected object ParseData4DateIni(NpgsqlDataReader rdr)
-        {
-            return new DataSiteFcs()
+            return new DataFcs()
             {
                 Id = (int)rdr["id"],
                 CatalogId = (int)rdr["catalog_id"],
@@ -36,7 +25,7 @@ namespace SOV.SGMO
             };
         }
 
-        public List<DataSiteFcs> Select(List<int> catalogIds, DateTime dateIniUTC)
+        public List<DataFcs> Select(List<int> catalogIds, DateTime dateIniUTC)
         {
             var fields = new Dictionary<string, object>()
             {
@@ -46,17 +35,38 @@ namespace SOV.SGMO
             return Select(fields);
         }
 
-        public List<DateTime> SelectDateIniUTC4Sites(List<int> siteIds)
+        public Dictionary<int, DateTime> SelectDateIniUTC4Sites(List<int> siteIds)
         {
             var fields = new Dictionary<string, object>()
             {
-                {"catalog_id", catalogIds},
-                {"date_ini_utc", dateIniUTC}
+                {"site_id", siteIds}
             };
-            return Select(fields);
+            Dictionary<int, DateTime> res = new Dictionary<int, DateTime>();
+            try
+            {
+                using (NpgsqlConnection cnn = _db.Connection)
+                using (NpgsqlCommand cmd = new NpgsqlCommand("select distinct site_id, date_ini_utc from data_site_fcs_view", cnn))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    foreach (var field in fields)
+                    {
+                        cmd.Parameters.AddWithValue(field.Key, field.Value ?? DBNull.Value);
+                    }
+                    using (NpgsqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                            res.Add((int)rdr["site_id"], (DateTime)rdr["date_ini_utc"]);
+                        return res;
+                    }
+                }
+            }
+            catch (System.Data.Common.DbException e)
+            {
+                throw new RuDbException(e);
+            }
         }
 
-        public void Insert(List<DataSiteFcs> data)
+        public void Insert(List<DataFcs> data)
         {
             if (data != null && data.Count > 0)
             {

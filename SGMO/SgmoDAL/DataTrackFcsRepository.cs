@@ -40,7 +40,12 @@ namespace SOV.SGMO
             List<DataTrackFcsExt> ret = new List<DataTrackFcsExt>();
             foreach (var item in dtf)
             {
-                ret.Add(new DataTrackFcsExt() { DataTrackFcs = item, CatalogExt = catalogs.FirstOrDefault(x => x.Catalog.Id == item.CatalogId), TrackPoint = trackPoints.FirstOrDefault(x => x.Id == item.TrackPointId) });
+                ret.Add(new DataTrackFcsExt()
+                {
+                    DataTrackFcs = item,
+                    CatalogExt = catalogs.FirstOrDefault(x => x.Catalog.Id == item.CatalogId),
+                    TrackPoint = trackPoints.FirstOrDefault(x => x.Id == item.TrackPointId)
+                });
             }
 
             return ret;

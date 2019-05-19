@@ -7,17 +7,12 @@ using SOV.Amur.Meta;
 
 namespace SOV.SGMO
 {
-    public class DataTrackFcsExt
+    public class DataFcsExt : DataFcs
     {
-        public DataTrackFcs DataTrackFcs { get; set; }
-        public TrackPoint TrackPoint { get; set; }
         public CatalogExt CatalogExt { get; set; }
 
-        public double LeadTime { get { return DataTrackFcs.LeadTime; } }
-        public double Value { get { return DataTrackFcs.Value; } }
-        public DateTime DateIniUTC { get { return DataTrackFcs.DateIniUTC; } }
-        public DateTime DateFcsUTC { get { return TrackPoint.DateUTC; } }
-        public DateTime DateFcsLOC { get { return TrackPoint.DateUTC.AddHours(TrackPoint.UTCOffsetHours); } }
+        public DateTime DateFcsUTC { get { return DateIniUTC.AddHours(LeadTime); } }
+        public DateTime DateFcsLOC { get { return DateFcsUTC.AddHours(UTCOffsetHours); } }
 
         public string SiteName { get { return CatalogExt.Site.Name; } }
         public string VariableName { get { return CatalogExt.Variable.NameRus; } }

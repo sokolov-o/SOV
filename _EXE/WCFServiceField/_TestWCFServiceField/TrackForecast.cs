@@ -50,13 +50,14 @@ namespace _TestWCFServiceField
                 // CONVERT TRACK FORECAST DATA 2 List<DataTrackFcs> 
 
                 int iPoint = 0;
-                foreach (KeyValuePair<double, double[]> kvp in fcsData)
+                foreach (KeyValuePair<double, double[]> kvp in fcsData.OrderBy(x=>x.Key))
                 {
                     for (int iCatalog = 0; iCatalog < catalogs.Count; iCatalog++)
                     {
                         ret.Add(new DataTrackFcs
                         {
                             TrackPointId = childTrack.Points[iPoint].Id,
+                            //TrackPointId = childTrack.Points[(int)kvp.Key].Id,
                             CatalogId = catalogs[iCatalog].Id,
                             LeadTime = kvp.Key,
                             Value = kvp.Value[iCatalog]

@@ -94,7 +94,7 @@ namespace SOV.SGMO
                         {
                             TrackId = childTrack.Id,
                             DateUTC = dateSUTCDateTimePicker.Value.AddHours(hourStep * i++),
-                            UTCOffset = utcOffset,
+                            UTCOffsetHours = utcOffset,
                             GeoPoint = point
                         }
                     );

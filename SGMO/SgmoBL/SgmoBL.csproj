@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="DataSiteFcs.cs" />
     <Compile Include="DataTrackFcs.cs" />
+    <Compile Include="DataFcsExt.cs" />
     <Compile Include="DataTrackFcsExt.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="MessageType.cs" />

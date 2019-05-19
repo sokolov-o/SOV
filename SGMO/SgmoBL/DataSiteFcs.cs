@@ -7,11 +7,12 @@ using SOV.Common;
 
 namespace SOV.SGMO
 {
-    public class DataSiteFcs : IdClass
+    public class DataFcs : IdClass
     {
         public int CatalogId { get; set; }
         public DateTime DateIniUTC { get; set; }
         public double LeadTime { get; set; }
         public double Value { get; set; }
+        public int UTCOffsetHours { get; set; }
     }
 }

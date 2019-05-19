@@ -30,25 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.dataTrackFcsExtBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.infoLabel = new System.Windows.Forms.ToolStripLabel();
-            this.dataTrackFcsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trackPointBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTrackFcsExtBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.leadTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siteNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateFcsUTCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VariableName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OffsetTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OffsetValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.variableNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.methodNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.offsetTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.offsetValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uTCOffsetHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateInsertDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTrackFcsExtBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTrackFcsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackPointBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTrackFcsExtBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
@@ -59,12 +60,15 @@
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.leadTimeDataGridViewTextBoxColumn,
+            this.siteNameDataGridViewTextBoxColumn,
             this.dateFcsUTCDataGridViewTextBoxColumn,
-            this.VariableName,
+            this.variableNameDataGridViewTextBoxColumn,
+            this.methodNameDataGridViewTextBoxColumn,
+            this.offsetTypeNameDataGridViewTextBoxColumn,
+            this.offsetValueDataGridViewTextBoxColumn,
             this.valueDataGridViewTextBoxColumn,
-            this.OffsetTypeName,
-            this.OffsetValue,
-            this.methodNameDataGridViewTextBoxColumn});
+            this.uTCOffsetHoursDataGridViewTextBoxColumn,
+            this.dateInsertDataGridViewTextBoxColumn});
             this.dgv.DataSource = this.dataTrackFcsExtBindingSource;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(3, 28);
@@ -72,10 +76,6 @@
             this.dgv.ReadOnly = true;
             this.dgv.Size = new System.Drawing.Size(609, 401);
             this.dgv.TabIndex = 0;
-            // 
-            // dataTrackFcsExtBindingSource
-            // 
-            this.dataTrackFcsExtBindingSource.DataSource = typeof(SOV.SGMO.DataTrackFcsExt);
             // 
             // tableLayoutPanel1
             // 
@@ -111,67 +111,83 @@
             this.infoLabel.Size = new System.Drawing.Size(16, 22);
             this.infoLabel.Text = "...";
             // 
-            // dataTrackFcsBindingSource
-            // 
-            this.dataTrackFcsBindingSource.DataSource = typeof(SOV.SGMO.DataTrackFcs);
-            // 
             // trackPointBindingSource
             // 
             this.trackPointBindingSource.DataSource = typeof(SOV.SGMO.TrackPoint);
             // 
+            // dataTrackFcsExtBindingSource
+            // 
+            this.dataTrackFcsExtBindingSource.DataSource = typeof(SOV.SGMO.DataTrackFcsExt);
+            // 
             // leadTimeDataGridViewTextBoxColumn
             // 
-            this.leadTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.leadTimeDataGridViewTextBoxColumn.DataPropertyName = "LeadTime";
-            this.leadTimeDataGridViewTextBoxColumn.HeaderText = "Забл";
+            this.leadTimeDataGridViewTextBoxColumn.HeaderText = "LeadTime";
             this.leadTimeDataGridViewTextBoxColumn.Name = "leadTimeDataGridViewTextBoxColumn";
             this.leadTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.leadTimeDataGridViewTextBoxColumn.Width = 5;
+            // 
+            // siteNameDataGridViewTextBoxColumn
+            // 
+            this.siteNameDataGridViewTextBoxColumn.DataPropertyName = "SiteName";
+            this.siteNameDataGridViewTextBoxColumn.HeaderText = "SiteName";
+            this.siteNameDataGridViewTextBoxColumn.Name = "siteNameDataGridViewTextBoxColumn";
+            this.siteNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dateFcsUTCDataGridViewTextBoxColumn
             // 
             this.dateFcsUTCDataGridViewTextBoxColumn.DataPropertyName = "DateFcsUTC";
-            this.dateFcsUTCDataGridViewTextBoxColumn.HeaderText = "Дата прог (ВСВ)";
+            this.dateFcsUTCDataGridViewTextBoxColumn.HeaderText = "DateFcsUTC";
             this.dateFcsUTCDataGridViewTextBoxColumn.Name = "dateFcsUTCDataGridViewTextBoxColumn";
             this.dateFcsUTCDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // VariableName
+            // variableNameDataGridViewTextBoxColumn
             // 
-            this.VariableName.DataPropertyName = "VariableName";
-            this.VariableName.HeaderText = "Переменная";
-            this.VariableName.Name = "VariableName";
-            this.VariableName.ReadOnly = true;
+            this.variableNameDataGridViewTextBoxColumn.DataPropertyName = "VariableName";
+            this.variableNameDataGridViewTextBoxColumn.HeaderText = "VariableName";
+            this.variableNameDataGridViewTextBoxColumn.Name = "variableNameDataGridViewTextBoxColumn";
+            this.variableNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // methodNameDataGridViewTextBoxColumn
+            // 
+            this.methodNameDataGridViewTextBoxColumn.DataPropertyName = "MethodName";
+            this.methodNameDataGridViewTextBoxColumn.HeaderText = "MethodName";
+            this.methodNameDataGridViewTextBoxColumn.Name = "methodNameDataGridViewTextBoxColumn";
+            this.methodNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // offsetTypeNameDataGridViewTextBoxColumn
+            // 
+            this.offsetTypeNameDataGridViewTextBoxColumn.DataPropertyName = "OffsetTypeName";
+            this.offsetTypeNameDataGridViewTextBoxColumn.HeaderText = "OffsetTypeName";
+            this.offsetTypeNameDataGridViewTextBoxColumn.Name = "offsetTypeNameDataGridViewTextBoxColumn";
+            this.offsetTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // offsetValueDataGridViewTextBoxColumn
+            // 
+            this.offsetValueDataGridViewTextBoxColumn.DataPropertyName = "OffsetValue";
+            this.offsetValueDataGridViewTextBoxColumn.HeaderText = "OffsetValue";
+            this.offsetValueDataGridViewTextBoxColumn.Name = "offsetValueDataGridViewTextBoxColumn";
+            this.offsetValueDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // valueDataGridViewTextBoxColumn
             // 
             this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
-            this.valueDataGridViewTextBoxColumn.HeaderText = "Значение";
+            this.valueDataGridViewTextBoxColumn.HeaderText = "Value";
             this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
             this.valueDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // OffsetTypeName
+            // uTCOffsetHoursDataGridViewTextBoxColumn
             // 
-            this.OffsetTypeName.DataPropertyName = "OffsetTypeName";
-            this.OffsetTypeName.HeaderText = "Тип смещения";
-            this.OffsetTypeName.Name = "OffsetTypeName";
-            this.OffsetTypeName.ReadOnly = true;
+            this.uTCOffsetHoursDataGridViewTextBoxColumn.DataPropertyName = "UTCOffsetHours";
+            this.uTCOffsetHoursDataGridViewTextBoxColumn.HeaderText = "UTCOffsetHours";
+            this.uTCOffsetHoursDataGridViewTextBoxColumn.Name = "uTCOffsetHoursDataGridViewTextBoxColumn";
+            this.uTCOffsetHoursDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // OffsetValue
+            // dateInsertDataGridViewTextBoxColumn
             // 
-            this.OffsetValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.OffsetValue.DataPropertyName = "OffsetValue";
-            this.OffsetValue.HeaderText = "Смещение";
-            this.OffsetValue.Name = "OffsetValue";
-            this.OffsetValue.ReadOnly = true;
-            this.OffsetValue.Width = 5;
-            // 
-            // methodNameDataGridViewTextBoxColumn
-            // 
-            this.methodNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.methodNameDataGridViewTextBoxColumn.DataPropertyName = "MethodName";
-            this.methodNameDataGridViewTextBoxColumn.HeaderText = "Метод прогноза";
-            this.methodNameDataGridViewTextBoxColumn.Name = "methodNameDataGridViewTextBoxColumn";
-            this.methodNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateInsertDataGridViewTextBoxColumn.DataPropertyName = "DateInsert";
+            this.dateInsertDataGridViewTextBoxColumn.HeaderText = "DateInsert";
+            this.dateInsertDataGridViewTextBoxColumn.Name = "dateInsertDataGridViewTextBoxColumn";
+            this.dateInsertDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // UCDataTrackForecasts
             // 
@@ -181,33 +197,34 @@
             this.Name = "UCDataTrackForecasts";
             this.Size = new System.Drawing.Size(615, 432);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTrackFcsExtBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTrackFcsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackPointBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTrackFcsExtBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.BindingSource trackPointBindingSource;
-        private System.Windows.Forms.BindingSource dataTrackFcsBindingSource;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn catalogExtDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource dataTrackFcsExtBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn trackPointDataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel infoLabel;
+        private System.Windows.Forms.BindingSource dataTrackFcsExtBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn leadTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn siteNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateFcsUTCDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VariableName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OffsetTypeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OffsetValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn variableNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn methodNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn offsetTypeNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn offsetValueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uTCOffsetHoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateInsertDataGridViewTextBoxColumn;
     }
 }

@@ -21,7 +21,7 @@ namespace SOV.SGMO
                 Id = (int)rdr["id"],
                 TrackId = (int)rdr["track_id"],
                 DateUTC = (DateTime)rdr["date_utc"],
-                UTCOffset = (short)rdr["utc_offset"],
+                UTCOffsetHours = (short)rdr["utc_offset"],
                 GeoPoint = new Geo.GeoPoint((double)rdr["lat"], (double)rdr["lon"])
             };
         }
@@ -45,7 +45,7 @@ namespace SOV.SGMO
                     {
                         {"track_id", trackPoint.TrackId},
                         {"date_utc", trackPoint.DateUTC},
-                        {"utc_offset", trackPoint.UTCOffset},
+                        {"utc_offset", trackPoint.UTCOffsetHours},
                         {"lat", trackPoint.GeoPoint.LatGrd},
                         {"lon", trackPoint.GeoPoint.LonGrd}
                     }
