@@ -52,8 +52,8 @@ namespace _TestWCFServiceField
                         //112, /*"Ближайший узел GFS 0.25*/
                         //1608  /*"Ближайший узел WAVE.VVO.PACIFIC.0p5"*/
 
-                        113 /*"Интерполяция GFS 0.25*/
-                        //1609  /*Интерполяция WAVE.VVO.PACIFIC.0p5*/
+                        113, /*"Интерполяция GFS 0.25*/
+                        1609  /*Интерполяция WAVE.VVO.PACIFIC.0p5*/
 
                     }
                 );
