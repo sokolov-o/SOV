@@ -26,6 +26,7 @@ namespace SOV.SGMO
 
             Track parentTrack = GetTrack(parentTrackId, fcsDateIni);
             Track childTrack = parentTrack.ChildTracks[0];
+            childTrack.Points = childTrack.Points.OrderBy(x => x.DateUTC).ToList(); // !
 
             GeoPoint[] childTrackPoints = childTrack.Points.Select(x => new GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
 
@@ -53,20 +54,21 @@ namespace SOV.SGMO
 
                 // CONVERT TRACK FORECAST DATA 2 List<DataTrackFcs> 
 
-                int iPoint = 0;
-                foreach (KeyValuePair<double, double[]> kvp in fcsData)
+                if (fcsData.Keys.Min() != 0)
+                    throw new Exception("(fcsData.Keys.Min() != 0)");
+
+                foreach (KeyValuePair<double, double[]> kvp in fcsData.OrderBy(x => x.Key))
                 {
                     for (int iCatalog = 0; iCatalog < catalogs.Count; iCatalog++)
                     {
                         ret.Add(new DataTrackFcs
                         {
-                            TrackPointId = childTrack.Points[iPoint].Id,
+                            TrackPointId = childTrack.Points[(int)kvp.Key].Id,
                             CatalogId = catalogs[iCatalog].Id,
                             LeadTime = kvp.Key,
                             Value = kvp.Value[iCatalog]
                         });
                     }
-                    iPoint++;
                 }
             }
             return ret;

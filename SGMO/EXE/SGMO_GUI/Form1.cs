@@ -106,6 +106,7 @@ namespace SOV.SGMO
 
             try
             {
+                ucTrackPoints.Visible = true;
                 ucTrackPoints.Items = null;
                 ucDataTrackForecasts.Items = null;
                 if (tvTracks.SelectedNode != null && tvTracks.SelectedNode.Tag != null && tvTracks.SelectedNode.Tag.GetType() == typeof(Track))
@@ -280,17 +281,14 @@ namespace SOV.SGMO
 
             try
             {
-                //ucTrackPoints.Visible = false;
-                //ucDataTrackForecasts.Items = null;
-                //if (tvTracks.SelectedNode != null && tvTracks.SelectedNode.Tag != null && tvTracks.SelectedNode.Tag.GetType() == typeof(Track))
-                //{
-                //    Track track = (Track)tvTracks.SelectedNode.Tag;
-                //    ucTrackPoints.Items = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
+                ucDataForecasts.Items = null;
+                if (tvSites.SelectedNode != null && tvSites.SelectedNode.Tag != null && tvSites.SelectedNode.Tag.GetType() == typeof(KeyValuePair<int, DateTime>))
+                {
+                    KeyValuePair<int, DateTime> siteDateIni = (KeyValuePair<int, DateTime>)tvSites.SelectedNode.Tag;
 
-                //    List<TrackPoint> trackPoints = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
-                //    ucDataTrackForecasts.Items = DataManager.GetInstance().DataTrackFcsRepository.SelectExtByTrackPartPointId(
-                //        trackPoints.Select(x => x.Id).ToList());
-                //}
+                    List<Catalog> catalogs = Amur.Meta.DataManager.GetInstance().CatalogRepository.Select(new List<int> { siteDateIni.Key }, null, null, null, null, null);
+                    ucDataForecasts.Items = DataManager.GetInstance().DataSiteFcsRepository.SelectExt(catalogs.Select(x => x.Id).ToList(), siteDateIni.Value);
+                }
 
             }
             catch (Exception ex)

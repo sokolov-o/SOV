@@ -54,6 +54,12 @@
     <Compile Include="FormTrackForecastParameters.Designer.cs">
       <DependentUpon>FormTrackForecastParameters.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCDataForecasts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataForecasts.Designer.cs">
+      <DependentUpon>UCDataForecasts.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCDataTrackForecasts.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrackForecastParameters.resx">
       <DependentUpon>FormTrackForecastParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataForecasts.resx">
+      <DependentUpon>UCDataForecasts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCDataTrackForecasts.resx">
       <DependentUpon>UCDataTrackForecasts.cs</DependentUpon>

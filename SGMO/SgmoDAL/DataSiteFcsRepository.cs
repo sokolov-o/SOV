@@ -35,6 +35,20 @@ namespace SOV.SGMO
             return Select(fields);
         }
 
+        public List<DataFcsExt> SelectExt(List<int> catalogIds, DateTime dateIniUTC)
+        {
+            List<DataFcs> datas = Select(catalogIds, dateIniUTC);
+
+            List<Amur.Meta.CatalogExt> catalogs = Amur.Meta.DataManager.GetInstance().CatalogRepository.SelectExt(datas.Select(x => x.CatalogId).ToList());
+
+            List<DataFcsExt> ret = new List<DataFcsExt>();
+            foreach (var data in datas)
+            {
+                ret.Add(new DataFcsExt(data, catalogs.FirstOrDefault(x => x.Catalog.Id == data.CatalogId)));
+            }
+            return ret;
+        }
+
         public Dictionary<int, DateTime> SelectDateIniUTC4Sites(List<int> siteIds)
         {
             var fields = new Dictionary<string, object>()

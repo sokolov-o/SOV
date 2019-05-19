@@ -9,6 +9,11 @@ namespace SOV.SGMO
 {
     public class DataFcsExt : DataFcs
     {
+        public DataFcsExt(DataFcs dataFcs, CatalogExt catalogExt) : base(dataFcs)
+        {
+            CatalogExt = catalogExt;
+        }
+
         public CatalogExt CatalogExt { get; set; }
 
         public DateTime DateFcsUTC { get { return DateIniUTC.AddHours(LeadTime); } }
