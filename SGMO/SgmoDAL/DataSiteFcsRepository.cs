@@ -21,7 +21,8 @@ namespace SOV.SGMO
                 CatalogId = (int)rdr["catalog_id"],
                 LeadTime = (double)rdr["lead_time"],
                 DateIniUTC = (DateTime)rdr["date_ini_utc"],
-                Value = (double)rdr["value"]
+                Value = (double)rdr["value"],
+                UTCOffsetHours=(int)rdr["utc_offset"]
             };
         }
 
@@ -92,7 +93,8 @@ namespace SOV.SGMO
                         { "date_ini_utc" , value.DateIniUTC},
                         { "catalog_id" , value.CatalogId},
                         { "lead_time", value.LeadTime},
-                        { "value", value.Value}
+                        { "value", value.Value},
+                        { "utc_offset", value.UTCOffsetHours}
                     });
                 }
                 Insert(fields);
