@@ -12,6 +12,8 @@ namespace SOV.SGMO
         public TrackRepository TrackRepository;
         public TrackPointRepository TrackPointsRepository;
         public DataTrackFcsRepository DataTrackFcsRepository;
+        public DataSiteFcsRepository DataSiteFcsRepository;
+        public SiteRepository SiteRepository;
 
         DataManager(string connectionString)
             : base(connectionString)
@@ -19,6 +21,8 @@ namespace SOV.SGMO
             TrackRepository = new TrackRepository(this);
             TrackPointsRepository = new TrackPointRepository(this);
             DataTrackFcsRepository = new DataTrackFcsRepository(this);
+            DataSiteFcsRepository = new DataSiteFcsRepository(this);
+            SiteRepository = new SiteRepository(this);
         }
 
         static Dictionary<string, DataManager> _dm = new Dictionary<string, DataManager>();
@@ -59,24 +63,14 @@ namespace SOV.SGMO
                 return _MethvarXGrib2Repository;
             }
         }
-        private DataFcsNode0Repository _DataFcsNode0Repository;
-        public DataFcsNode0Repository DataFcsNode0Repository
+        private DataSiteFcsRepository _DataFcsNode0Repository;
+        public DataSiteFcsRepository DataFcsNode0Repository
         {
             get
             {
                 if (_DataFcsNode0Repository == null)
-                    _DataFcsNode0Repository = new DataFcsNode0Repository(this);
+                    _DataFcsNode0Repository = new DataSiteFcsRepository(this);
                 return _DataFcsNode0Repository;
-            }
-        }
-        private DataFcsNode1Repository _DataFcsNode1Repository;
-        public DataFcsNode1Repository DataFcsNode1Repository
-        {
-            get
-            {
-                if (_DataFcsNode1Repository == null)
-                    _DataFcsNode1Repository = new DataFcsNode1Repository(this);
-                return _DataFcsNode1Repository;
             }
         }
         public ProbRepository _ProbRepository;

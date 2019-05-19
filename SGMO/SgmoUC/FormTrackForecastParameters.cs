@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace SOV.SGMO
 {
-    public partial class FormTrackForecastParameters : Form
+    public partial class FormForecastParameters : Form
     {
         List<Amur.Meta.Method> _methods;
-        public FormTrackForecastParameters(List<Amur.Meta.Method> methods)
+        DateTime? _dateIniUTC;
+        public FormForecastParameters(DateTime? dateIniUTC, List<Amur.Meta.Method> methods)
         {
             InitializeComponent();
 
@@ -23,6 +24,15 @@ namespace SOV.SGMO
         private void FormTrackForecastParameters_Load(object sender, EventArgs e)
         {
             methodsListBox.Items.AddRange(_methods.ToArray());
+            dateIniUTC.Value = _dateIniUTC.HasValue ? (DateTime)_dateIniUTC : DateTime.Today;
+        }
+
+        public DateTime DateIniUTC
+        {
+            get
+            {
+                return dateIniUTC.Value;
+            }
         }
 
         public List<Amur.Meta.Method> Methods

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SOV.Amur.Meta;
 
 namespace SOV.SGMO
 {
@@ -29,9 +30,9 @@ namespace SOV.SGMO
             MessageBox.Show("Не реализовано. OSokolov@2017.08");
         }
 
-        private void RefreshButton_Click(object sender, EventArgs e)
+        private void RefreshTracksButton_Click(object sender, EventArgs e)
         {
-            tv.Nodes.Clear();
+            tvTracks.Nodes.Clear();
 
             Cursor cs = this.Cursor;
             this.Cursor = Cursors.WaitCursor;
@@ -40,7 +41,6 @@ namespace SOV.SGMO
             {
                 List<Track> tracks = DataManager.GetInstance().TrackRepository.Select();
 
-                //TreeNode nodeRoot = new TreeNode("Маршруты") { Name = "traks" };
                 foreach (Track track in tracks.Where(x => !x.ParentId.HasValue))
                 {
                     TreeNode nodeTrackRoot = new TreeNode(track.Name) { Name = track.Id.ToString(), Tag = track, ImageIndex = 0 };
@@ -48,12 +48,8 @@ namespace SOV.SGMO
 
                     AddChildTracks(nodeTrackRoot, tracks);
 
-                    //nodeRoot.Nodes.Add(nodeTrackRoot);
-                    tv.Nodes.Add(nodeTrackRoot);
+                    tvTracks.Nodes.Add(nodeTrackRoot);
                 }
-
-                //tv.Nodes.Add(nodeRoot);
-
             }
             catch (Exception ex)
             {
@@ -85,17 +81,17 @@ namespace SOV.SGMO
         {
             if (e.Button == MouseButtons.Right)
             {
-                tv.SelectedNode = e.Node;
+                tvTracks.SelectedNode = e.Node;
             }
         }
 
         private void AddTrackPartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormNewTrackPart frm = new FormNewTrackPart((Track)tv.SelectedNode.Tag);
+            FormNewTrackPart frm = new FormNewTrackPart((Track)tvTracks.SelectedNode.Tag);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                tv.SelectedNode.Nodes.Clear();
-                AddChildTracks(tv.SelectedNode, DataManager.GetInstance().TrackRepository.SelectChilds(((Track)tv.SelectedNode.Tag).Id));
+                tvTracks.SelectedNode.Nodes.Clear();
+                AddChildTracks(tvTracks.SelectedNode, DataManager.GetInstance().TrackRepository.SelectChilds(((Track)tvTracks.SelectedNode.Tag).Id));
             }
         }
 
@@ -112,9 +108,9 @@ namespace SOV.SGMO
             {
                 ucTrackPoints.Items = null;
                 ucDataTrackForecasts.Items = null;
-                if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
+                if (tvTracks.SelectedNode != null && tvTracks.SelectedNode.Tag != null && tvTracks.SelectedNode.Tag.GetType() == typeof(Track))
                 {
-                    Track track = (Track)tv.SelectedNode.Tag;
+                    Track track = (Track)tvTracks.SelectedNode.Tag;
                     ucTrackPoints.Items = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
 
                     List<TrackPoint> trackPoints = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(track.Id);
@@ -135,9 +131,9 @@ namespace SOV.SGMO
 
         private void deleteTrackToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
+            if (tvTracks.SelectedNode != null && tvTracks.SelectedNode.Tag != null && tvTracks.SelectedNode.Tag.GetType() == typeof(Track))
             {
-                Track track = (Track)tv.SelectedNode.Tag;
+                Track track = (Track)tvTracks.SelectedNode.Tag;
                 if (DataManager.GetInstance().TrackRepository.SelectChilds(track.Id).Count > 0)
                 {
                     MessageBox.Show("Маршрут имеет наследников. Сначала нужно удалить наследников.", "Отмена действия");
@@ -149,19 +145,19 @@ namespace SOV.SGMO
             RefreshUC();
         }
 
-        private void MakeFcsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NewTrackFcsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tv.SelectedNode != null && tv.SelectedNode.Tag != null && tv.SelectedNode.Tag.GetType() == typeof(Track))
+            if (tvTracks.SelectedNode != null && tvTracks.SelectedNode.Tag != null && tvTracks.SelectedNode.Tag.GetType() == typeof(Track))
             {
-                Track track = (Track)tv.SelectedNode.Tag;
+                Track track = (Track)tvTracks.SelectedNode.Tag;
                 if (!track.ParentId.HasValue)
                 {
                     MessageBox.Show("Маршрут не является наследником.", "Отмена действия");
                     return;
                 }
 
-                List<int> methodIds = Properties.Settings.Default.TrackForeacstMethodsAvailable.Split(new char[] { ';' }).Select(x => int.Parse(x)).ToList();
-                FormTrackForecastParameters frm = new FormTrackForecastParameters(Amur.Meta.DataManager.GetInstance().MethodRepository.Select(methodIds));
+                List<int> methodIds = Properties.Settings.Default.ForeacstMethodsAvailable.Split(new char[] { ';' }).Select(x => int.Parse(x)).ToList();
+                FormForecastParameters frm = new FormForecastParameters(track.DateSUTC, Amur.Meta.DataManager.GetInstance().MethodRepository.Select(methodIds));
                 Common.User user = Common.User.Parse(Properties.Settings.Default.User);
 
                 if (frm.ShowDialog() == DialogResult.OK)
@@ -190,7 +186,71 @@ namespace SOV.SGMO
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            RefreshButton_Click(sender, e);
+            RefreshTracksButton_Click(sender, e);
+            RefreshSitesButton_Click(sender, e);
+        }
+
+        private void RefreshSitesButton_Click(object sender, EventArgs e)
+        {
+            tvSites.Nodes.Clear();
+
+            Cursor cs = this.Cursor;
+            this.Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                List<Site> sites = DataManager.GetInstance().SiteRepository.SelectAmurSites();
+
+                foreach (Site site in sites.OrderBy(x => x.Name))
+                {
+                    TreeNode node = new TreeNode(site.Name) { Name = site.Id.ToString(), Tag = site, ImageIndex = 1, SelectedImageIndex = 1 };
+                    node.ContextMenuStrip = siteContextMenuStrip;
+
+                    tvSites.Nodes.Add(node);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                this.Cursor = cs;
+            }
+        }
+
+        private void NewSiteFcsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tvSites.SelectedNode != null && tvSites.SelectedNode.Tag != null && tvSites.SelectedNode.Tag.GetType() == typeof(Site))
+            {
+                Site site = (Site)tvSites.SelectedNode.Tag;
+
+                List<int> methodIds = Properties.Settings.Default.ForeacstMethodsAvailable.Split(new char[] { ';' }).Select(x => int.Parse(x)).ToList();
+                FormForecastParameters frm = new FormForecastParameters(null, Amur.Meta.DataManager.GetInstance().MethodRepository.Select(methodIds));
+                Common.User user = Common.User.Parse(Properties.Settings.Default.User);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    Cursor cs = this.Cursor;
+                    this.Cursor = Cursors.WaitCursor;
+                    try
+                    {
+                        List<DataSiteFcs> dataFcs = SiteForecast.Get(user, new List<int> { site.Id }, frm.DateIniUTC, frm.Methods.Select(x => x.Id).ToList());
+
+                        DataManager.GetInstance().DataSiteFcsRepository.Insert(dataFcs);
+
+                        RefreshUC();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    finally
+                    {
+                        this.Cursor = cs;
+                    }
+                }
+            }
         }
     }
 }

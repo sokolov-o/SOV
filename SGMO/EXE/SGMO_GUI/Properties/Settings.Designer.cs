@@ -26,12 +26,12 @@ namespace SOV.SGMO.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("112;113;1608;1609")]
-        public string TrackForeacstMethodsAvailable {
+        public string ForeacstMethodsAvailable {
             get {
-                return ((string)(this["TrackForeacstMethodsAvailable"]));
+                return ((string)(this["ForeacstMethodsAvailable"]));
             }
             set {
-                this["TrackForeacstMethodsAvailable"] = value;
+                this["ForeacstMethodsAvailable"] = value;
             }
         }
         

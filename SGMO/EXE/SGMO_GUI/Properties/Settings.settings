@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SOV.SGMO.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="TrackForeacstMethodsAvailable" Type="System.String" Scope="User">
+    <Setting Name="ForeacstMethodsAvailable" Type="System.String" Scope="User">
       <Value Profile="(Default)">112;113;1608;1609</Value>
     </Setting>
     <Setting Name="User" Type="System.String" Scope="User">

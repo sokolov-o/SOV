@@ -1,6 +1,6 @@
 ﻿namespace SOV.SGMO
 {
-    partial class FormTrackForecastParameters
+    partial class FormForecastParameters
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.methodsListBox = new System.Windows.Forms.ListBox();
+            this.dateIniUTC = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // button1
@@ -63,17 +64,27 @@
             this.methodsListBox.Size = new System.Drawing.Size(345, 212);
             this.methodsListBox.TabIndex = 3;
             // 
-            // FormTrackForecastParameters
+            // dateIniUTC
+            // 
+            this.dateIniUTC.CustomFormat = "dd.MM.yyyy HH:mm";
+            this.dateIniUTC.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateIniUTC.Location = new System.Drawing.Point(12, 12);
+            this.dateIniUTC.Name = "dateIniUTC";
+            this.dateIniUTC.Size = new System.Drawing.Size(133, 20);
+            this.dateIniUTC.TabIndex = 4;
+            // 
+            // FormForecastParameters
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(430, 450);
+            this.Controls.Add(this.dateIniUTC);
             this.Controls.Add(this.methodsListBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "FormTrackForecastParameters";
+            this.Name = "FormForecastParameters";
             this.Text = "FormTrackForecastParameters";
             this.Load += new System.EventHandler(this.FormTrackForecastParameters_Load);
             this.ResumeLayout(false);
@@ -84,5 +95,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListBox methodsListBox;
+        private System.Windows.Forms.DateTimePicker dateIniUTC;
     }
 }

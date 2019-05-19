@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceClient.cs" />
+    <Compile Include="SiteForecast.cs" />
     <Compile Include="TrackForecast.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataFcsNode.cs" />
+    <Compile Include="DataSiteFcs.cs" />
     <Compile Include="DataTrackFcs.cs" />
     <Compile Include="DataTrackFcsExt.cs" />
     <Compile Include="Enums.cs" />

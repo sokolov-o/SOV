@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataFcsNodeRepository.cs" />
+    <Compile Include="DataSiteFcsRepository.cs" />
     <Compile Include="MessageTypeRepository.cs" />
     <Compile Include="ProbCatalogRepository.cs" />
     <Compile Include="ProbCatalogPileRepository.cs" />
@@ -57,6 +57,7 @@
     </Compile>
     <Compile Include="DataTrackFcsRepository.cs" />
     <Compile Include="TrackPointRepository.cs" />
+    <Compile Include="SiteRepository.cs" />
     <Compile Include="TrackRepository.cs" />
     <Compile Include="PileRepository.cs" />
     <Compile Include="WarningPileCatalogRepository.cs" />
