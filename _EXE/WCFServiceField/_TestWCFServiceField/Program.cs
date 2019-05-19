@@ -36,8 +36,7 @@ namespace _TestWCFServiceField
 
             #endregion
 
-            DateTime dateIni = new DateTime(2019, 5, 18, 00, 0, 0); //DateTime.Today.AddDays(-1);
-            List<double> leadTimes = null;
+            DateTime dateIni = new DateTime(2019, 5, 18, 12, 0, 0); //DateTime.Today.AddDays(-1);
 
             // GET & PRINT FORECAST DATA FROM SERVICE
 
