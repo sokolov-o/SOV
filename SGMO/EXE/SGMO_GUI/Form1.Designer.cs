@@ -37,21 +37,27 @@
             this.mnuDicWarningPileCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Tracks = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.RefreshTracksButton = new System.Windows.Forms.ToolStripButton();
             this.tvTracks = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Sites = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tvSites = new System.Windows.Forms.TreeView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.refreshSitesButton = new System.Windows.Forms.ToolStripButton();
             this.infoSitesLabel = new System.Windows.Forms.ToolStripLabel();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.Track = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ucTrackPoints = new SOV.SGMO.UCTrackPoints();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ucDataTrackForecasts = new SOV.SGMO.UCDataTrackForecasts();
+            this.Site = new System.Windows.Forms.TabPage();
+            this.ucDataForecasts = new SOV.SGMO.UCDataForecasts();
             this.contextMenuStripTrackRoot = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addTrackPartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripTrackChild = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -59,36 +65,30 @@
             this.deleteTrackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.siteContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newSiteFcsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.ucTrackPoints = new SOV.SGMO.UCTrackPoints();
-            this.ucDataTrackForecasts = new SOV.SGMO.UCDataTrackForecasts();
-            this.ucDataForecasts = new SOV.SGMO.UCDataForecasts();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.Tracks.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.Sites.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.Track.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.Site.SuspendLayout();
             this.contextMenuStripTrackRoot.SuspendLayout();
             this.contextMenuStripTrackChild.SuspendLayout();
             this.siteContextMenuStrip.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -155,25 +155,26 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.Tracks);
+            this.tabControl1.Controls.Add(this.Sites);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(255, 432);
             this.tabControl1.TabIndex = 4;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // tabPage1
+            // Tracks
             // 
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(247, 406);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Маршруты";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.Tracks.Controls.Add(this.tableLayoutPanel1);
+            this.Tracks.Location = new System.Drawing.Point(4, 22);
+            this.Tracks.Name = "Tracks";
+            this.Tracks.Padding = new System.Windows.Forms.Padding(3);
+            this.Tracks.Size = new System.Drawing.Size(247, 406);
+            this.Tracks.TabIndex = 0;
+            this.Tracks.Text = "Маршруты";
+            this.Tracks.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -237,16 +238,16 @@
             this.imageList1.Images.SetKeyName(3, "DateTime.png");
             this.imageList1.Images.SetKeyName(4, "podcasts.png");
             // 
-            // tabPage2
+            // Sites
             // 
-            this.tabPage2.Controls.Add(this.tableLayoutPanel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(247, 406);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Пункты";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Sites.Controls.Add(this.tableLayoutPanel2);
+            this.Sites.Location = new System.Drawing.Point(4, 22);
+            this.Sites.Name = "Sites";
+            this.Sites.Padding = new System.Windows.Forms.Padding(3);
+            this.Sites.Size = new System.Drawing.Size(247, 406);
+            this.Sites.TabIndex = 1;
+            this.Sites.Text = "Пункты";
+            this.Sites.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -305,6 +306,29 @@
             this.infoSitesLabel.Size = new System.Drawing.Size(16, 22);
             this.infoSitesLabel.Text = "...";
             // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.Track);
+            this.tabControl2.Controls.Add(this.Site);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(511, 432);
+            this.tabControl2.TabIndex = 2;
+            this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
+            // 
+            // Track
+            // 
+            this.Track.Controls.Add(this.splitContainer2);
+            this.Track.Location = new System.Drawing.Point(4, 22);
+            this.Track.Name = "Track";
+            this.Track.Padding = new System.Windows.Forms.Padding(3);
+            this.Track.Size = new System.Drawing.Size(503, 406);
+            this.Track.TabIndex = 0;
+            this.Track.Text = "Маршрут";
+            this.Track.UseVisualStyleBackColor = true;
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -334,6 +358,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Точки маршрута";
             // 
+            // ucTrackPoints
+            // 
+            this.ucTrackPoints.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTrackPoints.Items = null;
+            this.ucTrackPoints.Location = new System.Drawing.Point(3, 16);
+            this.ucTrackPoints.Name = "ucTrackPoints";
+            this.ucTrackPoints.Size = new System.Drawing.Size(491, 181);
+            this.ucTrackPoints.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.ucDataTrackForecasts);
@@ -344,6 +377,33 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Прогноз по маршруту";
+            // 
+            // ucDataTrackForecasts
+            // 
+            this.ucDataTrackForecasts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDataTrackForecasts.Location = new System.Drawing.Point(3, 16);
+            this.ucDataTrackForecasts.Name = "ucDataTrackForecasts";
+            this.ucDataTrackForecasts.Size = new System.Drawing.Size(491, 177);
+            this.ucDataTrackForecasts.TabIndex = 0;
+            // 
+            // Site
+            // 
+            this.Site.Controls.Add(this.ucDataForecasts);
+            this.Site.Location = new System.Drawing.Point(4, 22);
+            this.Site.Name = "Site";
+            this.Site.Padding = new System.Windows.Forms.Padding(3);
+            this.Site.Size = new System.Drawing.Size(503, 406);
+            this.Site.TabIndex = 1;
+            this.Site.Text = "Пункт";
+            this.Site.UseVisualStyleBackColor = true;
+            // 
+            // ucDataForecasts
+            // 
+            this.ucDataForecasts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDataForecasts.Location = new System.Drawing.Point(3, 3);
+            this.ucDataForecasts.Name = "ucDataForecasts";
+            this.ucDataForecasts.Size = new System.Drawing.Size(497, 400);
+            this.ucDataForecasts.TabIndex = 0;
             // 
             // contextMenuStripTrackRoot
             // 
@@ -395,64 +455,6 @@
             this.newSiteFcsToolStripMenuItem.Text = "Прогноз!";
             this.newSiteFcsToolStripMenuItem.Click += new System.EventHandler(this.NewSiteFcsToolStripMenuItem_Click);
             // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(511, 432);
-            this.tabControl2.TabIndex = 2;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.splitContainer2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(503, 406);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Маршрут";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.ucDataForecasts);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(503, 406);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Пункт";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // ucTrackPoints
-            // 
-            this.ucTrackPoints.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucTrackPoints.Items = null;
-            this.ucTrackPoints.Location = new System.Drawing.Point(3, 16);
-            this.ucTrackPoints.Name = "ucTrackPoints";
-            this.ucTrackPoints.Size = new System.Drawing.Size(491, 181);
-            this.ucTrackPoints.TabIndex = 0;
-            // 
-            // ucDataTrackForecasts
-            // 
-            this.ucDataTrackForecasts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucDataTrackForecasts.Location = new System.Drawing.Point(3, 16);
-            this.ucDataTrackForecasts.Name = "ucDataTrackForecasts";
-            this.ucDataTrackForecasts.Size = new System.Drawing.Size(491, 177);
-            this.ucDataTrackForecasts.TabIndex = 0;
-            // 
-            // ucDataForecasts
-            // 
-            this.ucDataForecasts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucDataForecasts.Location = new System.Drawing.Point(3, 3);
-            this.ucDataForecasts.Name = "ucDataForecasts";
-            this.ucDataForecasts.Size = new System.Drawing.Size(497, 400);
-            this.ucDataForecasts.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,28 +474,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.Tracks.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.Sites.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.Track.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.Site.ResumeLayout(false);
             this.contextMenuStripTrackRoot.ResumeLayout(false);
             this.contextMenuStripTrackChild.ResumeLayout(false);
             this.siteContextMenuStrip.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,8 +525,8 @@
         private System.Windows.Forms.ToolStripMenuItem makeFcsToolStripMenuItem;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage Tracks;
+        private System.Windows.Forms.TabPage Sites;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton refreshSitesButton;
@@ -533,8 +535,8 @@
         private System.Windows.Forms.ContextMenuStrip siteContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem newSiteFcsToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage Track;
+        private System.Windows.Forms.TabPage Site;
         private UCDataForecasts ucDataForecasts;
     }
 }

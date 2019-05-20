@@ -300,5 +300,17 @@ namespace SOV.SGMO
                 this.Cursor = cs;
             }
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (((TabControl)sender).SelectedTab.Name == "Tracks") tabControl2.SelectTab("Track");
+            else if (((TabControl)sender).SelectedTab.Name == "Sites") tabControl2.SelectTab("Site");
+        }
+
+        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (((TabControl)sender).SelectedTab.Name == "Track") tabControl1.SelectTab("Tracks");
+            else if (((TabControl)sender).SelectedTab.Name == "Site") tabControl1.SelectTab("Sites");
+        }
     }
 }

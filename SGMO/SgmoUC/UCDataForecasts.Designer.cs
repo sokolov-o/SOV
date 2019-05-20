@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCDataForecasts));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvData = new System.Windows.Forms.DataGridView();
             this.leadTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateIniUTCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,16 +47,16 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.infoLabel = new System.Windows.Forms.ToolStripLabel();
-            this.trackPointBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.filterToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.trackPointBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dgvFilter = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvFilter = new System.Windows.Forms.DataGridView();
             this.acceptFilterButton = new System.Windows.Forms.Button();
             this.deleteFilterButton = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Like = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFcsExtBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -65,17 +65,17 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFilter)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilter)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
             // 
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.AutoGenerateColumns = false;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
+            this.dgvData.AutoGenerateColumns = false;
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.leadTimeDataGridViewTextBoxColumn,
             this.siteNameDataGridViewTextBoxColumn,
             this.dateIniUTCDataGridViewTextBoxColumn,
@@ -87,13 +87,13 @@
             this.methodNameDataGridViewTextBoxColumn,
             this.valueDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn2});
-            this.dgv.DataSource = this.dataFcsExtBindingSource;
-            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv.Location = new System.Drawing.Point(3, 28);
-            this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
-            this.dgv.Size = new System.Drawing.Size(333, 401);
-            this.dgv.TabIndex = 0;
+            this.dgvData.DataSource = this.dataFcsExtBindingSource;
+            this.dgvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvData.Location = new System.Drawing.Point(3, 28);
+            this.dgvData.Name = "dgv";
+            this.dgvData.ReadOnly = true;
+            this.dgvData.Size = new System.Drawing.Size(333, 401);
+            this.dgvData.TabIndex = 0;
             // 
             // leadTimeDataGridViewTextBoxColumn
             // 
@@ -181,7 +181,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dgv, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dgvData, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -211,10 +211,6 @@
             this.infoLabel.Size = new System.Drawing.Size(16, 22);
             this.infoLabel.Text = "...";
             // 
-            // trackPointBindingSource
-            // 
-            this.trackPointBindingSource.DataSource = typeof(SOV.SGMO.TrackPoint);
-            // 
             // filterToolStripButton
             // 
             this.filterToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -224,6 +220,10 @@
             this.filterToolStripButton.Size = new System.Drawing.Size(95, 22);
             this.filterToolStripButton.Text = "Фильтр данных";
             this.filterToolStripButton.Click += new System.EventHandler(this.FilterToolStripButton_Click);
+            // 
+            // trackPointBindingSource
+            // 
+            this.trackPointBindingSource.DataSource = typeof(SOV.SGMO.TrackPoint);
             // 
             // splitContainer1
             // 
@@ -242,24 +242,6 @@
             this.splitContainer1.SplitterDistance = 339;
             this.splitContainer1.TabIndex = 2;
             // 
-            // dgvFilter
-            // 
-            this.dgvFilter.AllowUserToAddRows = false;
-            this.dgvFilter.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvFilter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvFilter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFilter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.tableLayoutPanel2.SetColumnSpan(this.dgvFilter, 2);
-            this.dgvFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvFilter.Location = new System.Drawing.Point(3, 3);
-            this.dgvFilter.Name = "dgvFilter";
-            this.dgvFilter.RowHeadersVisible = false;
-            this.dgvFilter.Size = new System.Drawing.Size(266, 397);
-            this.dgvFilter.TabIndex = 0;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -277,6 +259,24 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(272, 432);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
+            // dgvFilter
+            // 
+            this.dgvFilter.AllowUserToAddRows = false;
+            this.dgvFilter.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvFilter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvFilter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFilter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnName,
+            this.Like});
+            this.tableLayoutPanel2.SetColumnSpan(this.dgvFilter, 2);
+            this.dgvFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFilter.Location = new System.Drawing.Point(3, 3);
+            this.dgvFilter.Name = "dgvFilter";
+            this.dgvFilter.RowHeadersVisible = false;
+            this.dgvFilter.Size = new System.Drawing.Size(266, 397);
+            this.dgvFilter.TabIndex = 0;
+            // 
             // acceptFilterButton
             // 
             this.acceptFilterButton.Location = new System.Drawing.Point(3, 406);
@@ -285,28 +285,31 @@
             this.acceptFilterButton.TabIndex = 1;
             this.acceptFilterButton.Text = "Применить фильтр";
             this.acceptFilterButton.UseVisualStyleBackColor = true;
+            this.acceptFilterButton.Click += new System.EventHandler(this.AcceptFilterButton_Click);
             // 
             // deleteFilterButton
             // 
             this.deleteFilterButton.Location = new System.Drawing.Point(127, 406);
             this.deleteFilterButton.Name = "deleteFilterButton";
-            this.deleteFilterButton.Size = new System.Drawing.Size(97, 23);
+            this.deleteFilterButton.Size = new System.Drawing.Size(110, 23);
             this.deleteFilterButton.TabIndex = 2;
-            this.deleteFilterButton.Text = "Убрать фильтр";
+            this.deleteFilterButton.Text = "Очистить фильтр";
             this.deleteFilterButton.UseVisualStyleBackColor = true;
+            this.deleteFilterButton.Click += new System.EventHandler(this.DeleteFilterButton_Click);
             // 
-            // Column1
+            // ColumnName
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "Столбец таблицы";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 110;
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnName.HeaderText = "Столбец таблицы";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 110;
             // 
-            // Column2
+            // Like
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Like";
-            this.Column2.Name = "Column2";
+            this.Like.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Like.HeaderText = "Like";
+            this.Like.Name = "Like";
             // 
             // UCDataForecasts
             // 
@@ -315,7 +318,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "UCDataForecasts";
             this.Size = new System.Drawing.Size(615, 432);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFcsExtBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -326,15 +329,15 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFilter)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilter)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.BindingSource trackPointBindingSource;
-        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.DataGridViewTextBoxColumn catalogExtDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trackPointDataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -358,9 +361,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridView dgvFilter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button acceptFilterButton;
         private System.Windows.Forms.Button deleteFilterButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Like;
     }
 }
