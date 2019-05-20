@@ -32,6 +32,7 @@ namespace SOV.SGMO
 
         private void RefreshTracksButton_Click(object sender, EventArgs e)
         {
+            log.AppendLine("RefreshTracksButton_Click");
             tvTracks.Nodes.Clear();
 
             Cursor cs = this.Cursor;
@@ -101,6 +102,8 @@ namespace SOV.SGMO
         }
         private void RefreshTrackUC()
         {
+            log.AppendLine("RefreshTrackUC");
+
             Cursor cs = this.Cursor;
             this.Cursor = Cursors.WaitCursor;
 
@@ -157,6 +160,9 @@ namespace SOV.SGMO
                     return;
                 }
 
+                tabControl2.SelectTab("LogPage");
+                log.AppendLine(string.Format("Make new track forecast started at {0}", DateTime.Now));
+
                 List<int> methodIds = Properties.Settings.Default.ForeacstMethodsAvailable.Split(new char[] { ';' }).Select(x => int.Parse(x)).ToList();
                 FormForecastParameters frm = new FormForecastParameters(track.DateSUTC, Amur.Meta.DataManager.GetInstance().MethodRepository.Select(methodIds));
                 Common.User user = Common.User.Parse(Properties.Settings.Default.User);
@@ -183,6 +189,7 @@ namespace SOV.SGMO
                     }
                 }
             }
+            log.AppendLine(string.Format("Make new track forecast ended at {0}", DateTime.Now));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -193,6 +200,8 @@ namespace SOV.SGMO
 
         private void RefreshSitesButton_Click(object sender, EventArgs e)
         {
+            log.AppendLine("RefreshSitesButton_Click");
+
             tvSites.Nodes.Clear();
 
             Cursor cs = this.Cursor;
@@ -238,6 +247,7 @@ namespace SOV.SGMO
 
         private void NewSiteFcsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            log.AppendLine(string.Format("Make new site forecast started at {0}", DateTime.Now));
             if (tvSites.SelectedNode != null && tvSites.SelectedNode.Tag != null && tvSites.SelectedNode.Tag.GetType() == typeof(Site))
             {
                 Site site = (Site)tvSites.SelectedNode.Tag;
@@ -268,6 +278,7 @@ namespace SOV.SGMO
                     }
                 }
             }
+            log.AppendLine(string.Format("Make new site forecast ended at {0}", DateTime.Now));
         }
 
         private void TvSites_AfterSelect(object sender, TreeViewEventArgs e)
@@ -301,16 +312,22 @@ namespace SOV.SGMO
             }
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        void SelectedTabPageChanged(TabPage tabPage)
         {
-            if (((TabControl)sender).SelectedTab.Name == "Tracks") tabControl2.SelectTab("Track");
-            else if (((TabControl)sender).SelectedTab.Name == "Sites") tabControl2.SelectTab("Site");
+            if (tabPage.Name == "Track") tabControl1.SelectTab("Tracks");
+            else if (tabPage.Name == "Site") tabControl1.SelectTab("Sites");
+            else if (tabPage.Name == "Tracks") tabControl2.SelectTab("Track");
+            else if (tabPage.Name == "Sites") tabControl2.SelectTab("Site");
         }
 
-        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        private void TabControl1_Click(object sender, EventArgs e)
         {
-            if (((TabControl)sender).SelectedTab.Name == "Track") tabControl1.SelectTab("Tracks");
-            else if (((TabControl)sender).SelectedTab.Name == "Site") tabControl1.SelectTab("Sites");
+            SelectedTabPageChanged(((TabControl)sender).SelectedTab);
+        }
+
+        private void TabControl2_Click(object sender, EventArgs e)
+        {
+            SelectedTabPageChanged(((TabControl)sender).SelectedTab);
         }
     }
 }

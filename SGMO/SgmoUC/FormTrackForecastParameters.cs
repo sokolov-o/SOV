@@ -19,6 +19,7 @@ namespace SOV.SGMO
             InitializeComponent();
 
             _methods = methods;
+            _dateIniUTC = dateIniUTC;
         }
 
         private void FormTrackForecastParameters_Load(object sender, EventArgs e)

@@ -58,6 +58,8 @@
             this.ucDataTrackForecasts = new SOV.SGMO.UCDataTrackForecasts();
             this.Site = new System.Windows.Forms.TabPage();
             this.ucDataForecasts = new SOV.SGMO.UCDataForecasts();
+            this.LogPage = new System.Windows.Forms.TabPage();
+            this.log = new SOV.Common.UCLogger();
             this.contextMenuStripTrackRoot = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addTrackPartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripTrackChild = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -86,6 +88,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.Site.SuspendLayout();
+            this.LogPage.SuspendLayout();
             this.contextMenuStripTrackRoot.SuspendLayout();
             this.contextMenuStripTrackChild.SuspendLayout();
             this.siteContextMenuStrip.SuspendLayout();
@@ -163,7 +166,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(255, 432);
             this.tabControl1.TabIndex = 4;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabControl1.Click += new System.EventHandler(this.TabControl1_Click);
             // 
             // Tracks
             // 
@@ -310,13 +313,14 @@
             // 
             this.tabControl2.Controls.Add(this.Track);
             this.tabControl2.Controls.Add(this.Site);
+            this.tabControl2.Controls.Add(this.LogPage);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(511, 432);
             this.tabControl2.TabIndex = 2;
-            this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
+            this.tabControl2.Click += new System.EventHandler(this.TabControl2_Click);
             // 
             // Track
             // 
@@ -404,6 +408,25 @@
             this.ucDataForecasts.Name = "ucDataForecasts";
             this.ucDataForecasts.Size = new System.Drawing.Size(497, 400);
             this.ucDataForecasts.TabIndex = 0;
+            // 
+            // LogPage
+            // 
+            this.LogPage.Controls.Add(this.log);
+            this.LogPage.Location = new System.Drawing.Point(4, 22);
+            this.LogPage.Name = "LogPage";
+            this.LogPage.Size = new System.Drawing.Size(503, 406);
+            this.LogPage.TabIndex = 2;
+            this.LogPage.Text = "Log";
+            this.LogPage.UseVisualStyleBackColor = true;
+            // 
+            // log
+            // 
+            this.log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.log.Location = new System.Drawing.Point(0, 0);
+            this.log.MaxLines = 1000;
+            this.log.Name = "log";
+            this.log.Size = new System.Drawing.Size(503, 406);
+            this.log.TabIndex = 0;
             // 
             // contextMenuStripTrackRoot
             // 
@@ -493,6 +516,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.Site.ResumeLayout(false);
+            this.LogPage.ResumeLayout(false);
             this.contextMenuStripTrackRoot.ResumeLayout(false);
             this.contextMenuStripTrackChild.ResumeLayout(false);
             this.siteContextMenuStrip.ResumeLayout(false);
@@ -538,6 +562,8 @@
         private System.Windows.Forms.TabPage Track;
         private System.Windows.Forms.TabPage Site;
         private UCDataForecasts ucDataForecasts;
+        private System.Windows.Forms.TabPage LogPage;
+        private Common.UCLogger log;
     }
 }
 

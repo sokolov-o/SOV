@@ -15,160 +15,6 @@ namespace SOV.SGMO.FieldServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeoRectangle", Namespace="http://schemas.datacontract.org/2004/07/SOV.Geo")]
-    [System.SerializableAttribute()]
-    public partial class GeoRectangle : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SOV.SGMO.FieldServiceReference.GeoPoint NorthWestField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SOV.SGMO.FieldServiceReference.GeoPoint SouthEastField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SOV.SGMO.FieldServiceReference.GeoPoint NorthWest {
-            get {
-                return this.NorthWestField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NorthWestField, value) != true)) {
-                    this.NorthWestField = value;
-                    this.RaisePropertyChanged("NorthWest");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SOV.SGMO.FieldServiceReference.GeoPoint SouthEast {
-            get {
-                return this.SouthEastField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SouthEastField, value) != true)) {
-                    this.SouthEastField = value;
-                    this.RaisePropertyChanged("SouthEast");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeoPoint", Namespace="http://schemas.datacontract.org/2004/07/SOV.Geo")]
-    [System.SerializableAttribute()]
-    public partial class GeoPoint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LatGrdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LonGrdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LatGrd {
-            get {
-                return this.LatGrdField;
-            }
-            set {
-                if ((this.LatGrdField.Equals(value) != true)) {
-                    this.LatGrdField = value;
-                    this.RaisePropertyChanged("LatGrd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LonGrd {
-            get {
-                return this.LonGrdField;
-            }
-            set {
-                if ((this.LonGrdField.Equals(value) != true)) {
-                    this.LonGrdField = value;
-                    this.RaisePropertyChanged("LonGrd");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Field", Namespace="http://schemas.datacontract.org/2004/07/SOV")]
     [System.SerializableAttribute()]
     public partial class Field : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -180,7 +26,7 @@ namespace SOV.SGMO.FieldServiceReference {
         private SOV.SGMO.FieldServiceReference.EnumFieldFormat FieldFormatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SOV.SGMO.FieldServiceReference.Grid GridField;
+        private SOV.Geo.Grid GridField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PredictTimeField;
@@ -212,7 +58,7 @@ namespace SOV.SGMO.FieldServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SOV.SGMO.FieldServiceReference.Grid Grid {
+        public SOV.Geo.Grid Grid {
             get {
                 return this.GridField;
             }
@@ -260,179 +106,6 @@ namespace SOV.SGMO.FieldServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Grid", Namespace="http://schemas.datacontract.org/2004/07/SOV.Geo")]
-    [System.SerializableAttribute()]
-    public partial class Grid : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LatStartMinField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LatStepMinField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[] LatsMinField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LonStartMinField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double LonStepMinField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[] LonsMinField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TypeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LatStartMin {
-            get {
-                return this.LatStartMinField;
-            }
-            set {
-                if ((this.LatStartMinField.Equals(value) != true)) {
-                    this.LatStartMinField = value;
-                    this.RaisePropertyChanged("LatStartMin");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LatStepMin {
-            get {
-                return this.LatStepMinField;
-            }
-            set {
-                if ((this.LatStepMinField.Equals(value) != true)) {
-                    this.LatStepMinField = value;
-                    this.RaisePropertyChanged("LatStepMin");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double[] LatsMin {
-            get {
-                return this.LatsMinField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LatsMinField, value) != true)) {
-                    this.LatsMinField = value;
-                    this.RaisePropertyChanged("LatsMin");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LonStartMin {
-            get {
-                return this.LonStartMinField;
-            }
-            set {
-                if ((this.LonStartMinField.Equals(value) != true)) {
-                    this.LonStartMinField = value;
-                    this.RaisePropertyChanged("LonStartMin");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double LonStepMin {
-            get {
-                return this.LonStepMinField;
-            }
-            set {
-                if ((this.LonStepMinField.Equals(value) != true)) {
-                    this.LonStepMinField = value;
-                    this.RaisePropertyChanged("LonStepMin");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double[] LonsMin {
-            get {
-                return this.LonsMinField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LonsMinField, value) != true)) {
-                    this.LonsMinField = value;
-                    this.RaisePropertyChanged("LonsMin");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TypeId {
-            get {
-                return this.TypeIdField;
-            }
-            set {
-                if ((this.TypeIdField.Equals(value) != true)) {
-                    this.TypeIdField = value;
-                    this.RaisePropertyChanged("TypeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EnumFieldFormat", Namespace="http://schemas.datacontract.org/2004/07/SOV")]
     public enum EnumFieldFormat : long {
@@ -442,115 +115,6 @@ namespace SOV.SGMO.FieldServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         XYZ = 2,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Method", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Method : SOV.Common.IdName, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.Dictionary<string, string> MethodOutputStoreParametersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short OrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> ParentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> SourceLegalEntityIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.Dictionary<string, string> MethodOutputStoreParameters {
-            get {
-                return this.MethodOutputStoreParametersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MethodOutputStoreParametersField, value) != true)) {
-                    this.MethodOutputStoreParametersField = value;
-                    this.RaisePropertyChanged("MethodOutputStoreParameters");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public short Order {
-            get {
-                return this.OrderField;
-            }
-            set {
-                if ((this.OrderField.Equals(value) != true)) {
-                    this.OrderField = value;
-                    this.RaisePropertyChanged("Order");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ParentId {
-            get {
-                return this.ParentIdField;
-            }
-            set {
-                if ((this.ParentIdField.Equals(value) != true)) {
-                    this.ParentIdField = value;
-                    this.RaisePropertyChanged("ParentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> SourceLegalEntityId {
-            get {
-                return this.SourceLegalEntityIdField;
-            }
-            set {
-                if ((this.SourceLegalEntityIdField.Equals(value) != true)) {
-                    this.SourceLegalEntityIdField = value;
-                    this.RaisePropertyChanged("SourceLegalEntityId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -576,10 +140,10 @@ namespace SOV.SGMO.FieldServiceReference {
         System.Threading.Tasks.Task CloseByUserNameAsync(string userName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetExtentForecast", ReplyAction="http://tempuri.org/IService/GetExtentForecastResponse")]
-        SOV.SGMO.FieldServiceReference.Field[][][] GetExtentForecast(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, SOV.SGMO.Varoff[] varoffs, SOV.SGMO.FieldServiceReference.GeoRectangle[] grs);
+        SOV.SGMO.FieldServiceReference.Field[][][] GetExtentForecast(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, SOV.SGMO.Varoff[] varoffs, SOV.Geo.GeoRectangle[] grs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetExtentForecast", ReplyAction="http://tempuri.org/IService/GetExtentForecastResponse")]
-        System.Threading.Tasks.Task<SOV.SGMO.FieldServiceReference.Field[][][]> GetExtentForecastAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, SOV.SGMO.Varoff[] varoffs, SOV.SGMO.FieldServiceReference.GeoRectangle[] grs);
+        System.Threading.Tasks.Task<SOV.SGMO.FieldServiceReference.Field[][][]> GetExtentForecastAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, SOV.SGMO.Varoff[] varoffs, SOV.Geo.GeoRectangle[] grs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesForecast", ReplyAction="http://tempuri.org/IService/GetSitesForecastResponse")]
         System.Collections.Generic.Dictionary<double, double[]> GetSitesForecast(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId);
@@ -588,16 +152,16 @@ namespace SOV.SGMO.FieldServiceReference {
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetSitesForecastAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int[] pointCatalogsId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
-        SOV.SGMO.FieldServiceReference.Method[] GetMethods(long hSvc);
+        SOV.Amur.Meta.Method[] GetMethods(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
-        System.Threading.Tasks.Task<SOV.SGMO.FieldServiceReference.Method[]> GetMethodsAsync(long hSvc);
+        System.Threading.Tasks.Task<SOV.Amur.Meta.Method[]> GetMethodsAsync(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTrackForecast", ReplyAction="http://tempuri.org/IService/GetTrackForecastResponse")]
-        System.Collections.Generic.Dictionary<double, double[]> GetTrackForecast(long hSvc, System.DateTime dateIni, SOV.SGMO.FieldServiceReference.GeoPoint[] track, int pointMethodId, SOV.SGMO.Varoff[] pointVaroffs);
+        System.Collections.Generic.Dictionary<double, double[]> GetTrackForecast(long hSvc, System.DateTime dateIni, SOV.Geo.GeoPoint[] track, int pointMethodId, SOV.SGMO.Varoff[] pointVaroffs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTrackForecast", ReplyAction="http://tempuri.org/IService/GetTrackForecastResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetTrackForecastAsync(long hSvc, System.DateTime dateIni, SOV.SGMO.FieldServiceReference.GeoPoint[] track, int pointMethodId, SOV.SGMO.Varoff[] pointVaroffs);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetTrackForecastAsync(long hSvc, System.DateTime dateIni, SOV.Geo.GeoPoint[] track, int pointMethodId, SOV.SGMO.Varoff[] pointVaroffs);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -651,11 +215,11 @@ namespace SOV.SGMO.FieldServiceReference {
             return base.Channel.CloseByUserNameAsync(userName);
         }
         
-        public SOV.SGMO.FieldServiceReference.Field[][][] GetExtentForecast(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, SOV.SGMO.Varoff[] varoffs, SOV.SGMO.FieldServiceReference.GeoRectangle[] grs) {
+        public SOV.SGMO.FieldServiceReference.Field[][][] GetExtentForecast(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, SOV.SGMO.Varoff[] varoffs, SOV.Geo.GeoRectangle[] grs) {
             return base.Channel.GetExtentForecast(hSvc, dateIni, leadTimes, methodId, varoffs, grs);
         }
         
-        public System.Threading.Tasks.Task<SOV.SGMO.FieldServiceReference.Field[][][]> GetExtentForecastAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, SOV.SGMO.Varoff[] varoffs, SOV.SGMO.FieldServiceReference.GeoRectangle[] grs) {
+        public System.Threading.Tasks.Task<SOV.SGMO.FieldServiceReference.Field[][][]> GetExtentForecastAsync(long hSvc, System.DateTime dateIni, double[] leadTimes, int methodId, SOV.SGMO.Varoff[] varoffs, SOV.Geo.GeoRectangle[] grs) {
             return base.Channel.GetExtentForecastAsync(hSvc, dateIni, leadTimes, methodId, varoffs, grs);
         }
         
@@ -667,19 +231,19 @@ namespace SOV.SGMO.FieldServiceReference {
             return base.Channel.GetSitesForecastAsync(hSvc, dateIni, leadTimes, pointCatalogsId);
         }
         
-        public SOV.SGMO.FieldServiceReference.Method[] GetMethods(long hSvc) {
+        public SOV.Amur.Meta.Method[] GetMethods(long hSvc) {
             return base.Channel.GetMethods(hSvc);
         }
         
-        public System.Threading.Tasks.Task<SOV.SGMO.FieldServiceReference.Method[]> GetMethodsAsync(long hSvc) {
+        public System.Threading.Tasks.Task<SOV.Amur.Meta.Method[]> GetMethodsAsync(long hSvc) {
             return base.Channel.GetMethodsAsync(hSvc);
         }
         
-        public System.Collections.Generic.Dictionary<double, double[]> GetTrackForecast(long hSvc, System.DateTime dateIni, SOV.SGMO.FieldServiceReference.GeoPoint[] track, int pointMethodId, SOV.SGMO.Varoff[] pointVaroffs) {
+        public System.Collections.Generic.Dictionary<double, double[]> GetTrackForecast(long hSvc, System.DateTime dateIni, SOV.Geo.GeoPoint[] track, int pointMethodId, SOV.SGMO.Varoff[] pointVaroffs) {
             return base.Channel.GetTrackForecast(hSvc, dateIni, track, pointMethodId, pointVaroffs);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetTrackForecastAsync(long hSvc, System.DateTime dateIni, SOV.SGMO.FieldServiceReference.GeoPoint[] track, int pointMethodId, SOV.SGMO.Varoff[] pointVaroffs) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<double, double[]>> GetTrackForecastAsync(long hSvc, System.DateTime dateIni, SOV.Geo.GeoPoint[] track, int pointMethodId, SOV.SGMO.Varoff[] pointVaroffs) {
             return base.Channel.GetTrackForecastAsync(hSvc, dateIni, track, pointMethodId, pointVaroffs);
         }
     }

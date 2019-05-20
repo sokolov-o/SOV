@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="SOV.Amur.Meta, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="SOV.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SOV.Geo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SOV.SGMO.SgmoBL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -188,9 +190,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\FieldServiceReference\SOV.SGMO.FieldServiceReference.Field.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\FieldServiceReference\SOV.SGMO.FieldServiceReference.Method.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\DataSources\SOV.Amur.Meta.Catalog.datasource" />

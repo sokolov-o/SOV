@@ -58,6 +58,12 @@
     <Compile Include="FormDateTimePeriod.Designer.cs">
       <DependentUpon>FormDateTimePeriod.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCLogger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCLogger.Designer.cs">
+      <DependentUpon>UCLogger.cs</DependentUpon>
+    </Compile>
     <Compile Include="__DELME_FormDicSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormDateTimePeriod.resx">
       <DependentUpon>FormDateTimePeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCLogger.resx">
+      <DependentUpon>UCLogger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="__DELME_FormDicSelect.resx">
       <DependentUpon>__DELME_FormDicSelect.cs</DependentUpon>

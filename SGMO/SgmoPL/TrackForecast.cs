@@ -25,10 +25,10 @@ namespace SOV.SGMO
             // GET SITE TRACK
 
             Track parentTrack = GetTrack(parentTrackId, fcsDateIni);
+
             Track childTrack = parentTrack.ChildTracks[0];
             childTrack.Points = childTrack.Points.OrderBy(x => x.DateUTC).ToList(); // !
-
-            GeoPoint[] childTrackPoints = childTrack.Points.Select(x => new GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
+            Geo.GeoPoint[] childTrackPoints = childTrack.Points.Select(x => new Geo.GeoPoint(x.GeoPoint.LatGrd, x.GeoPoint.LonGrd)).ToArray();
 
             List<DataTrackFcs> ret = new List<DataTrackFcs>();
 
