@@ -36,7 +36,7 @@ namespace _TestWCFServiceField
 
             #endregion
 
-            DateTime dateIni = new DateTime(2019, 5, 20, 00, 0, 0); 
+            DateTime dateIni = new DateTime(2019, 5, 20, 12, 0, 0); 
 
             // GET & PRINT FORECAST DATA FROM SERVICE
 

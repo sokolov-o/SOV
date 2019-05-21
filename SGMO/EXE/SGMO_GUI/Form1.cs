@@ -216,10 +216,13 @@ namespace SOV.SGMO
                     TreeNode siteNode = new TreeNode(site.Name) { Name = site.Id.ToString(), Tag = site, ImageIndex = 1, SelectedImageIndex = 1 };
                     siteNode.ContextMenuStrip = siteContextMenuStrip;
 
-                    foreach (KeyValuePair<int, DateTime> item in DataManager.GetInstance().DataSiteFcsRepository.SelectDateIniUTC4Sites(new List<int> { site.Id }))
+                    foreach (KeyValuePair<int, List<DateTime>> item in DataManager.GetInstance().DataSiteFcsRepository.SelectDateIniUTC4Sites(new List<int> { site.Id }))
                     {
-                        TreeNode dateNode = new TreeNode(item.Value.ToString("dd.MM.yyyy HH")) { Name = site.Id.ToString(), Tag = item, ImageIndex = 3, SelectedImageIndex = 3 };
-                        siteNode.Nodes.Add(dateNode);
+                        foreach (var date in item.Value.OrderBy(x => x))
+                        {
+                            TreeNode dateNode = new TreeNode(date.ToString("dd.MM.yyyy HH")) { Name = site.Id.ToString(), Tag = new KeyValuePair<int, DateTime>(site.Id, date), ImageIndex = 3, SelectedImageIndex = 3 };
+                            siteNode.Nodes.Add(dateNode);
+                        }
                     }
 
                     tvSites.Nodes.Add(siteNode);
@@ -238,10 +241,19 @@ namespace SOV.SGMO
         private void AddSiteChildNodes(TreeNode siteNode)
         {
             Site site = (Site)siteNode.Tag;
-            foreach (KeyValuePair<int, DateTime> item in DataManager.GetInstance().DataSiteFcsRepository.SelectDateIniUTC4Sites(new List<int> { site.Id }))
+            foreach (KeyValuePair<int, List<DateTime>> item in DataManager.GetInstance().DataSiteFcsRepository.SelectDateIniUTC4Sites(new List<int> { site.Id }))
             {
-                TreeNode node = new TreeNode(item.Value.ToString("dd.MM.yyyy HH")) { Name = site.Id.ToString(), Tag = item, ImageIndex = 3, SelectedImageIndex = 3 };
-                siteNode.Nodes.Add(node);
+                foreach (var date in item.Value.OrderBy(x => x))
+                {
+                    TreeNode node = new TreeNode(date.ToString("dd.MM.yyyy HH"))
+                    {
+                        Name = site.Id.ToString(),
+                        Tag = new KeyValuePair<int, DateTime>(site.Id, date),
+                        ImageIndex = 3,
+                        SelectedImageIndex = 3
+                    };
+                    siteNode.Nodes.Add(node);
+                }
             }
         }
 

@@ -52,10 +52,10 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvFilter = new System.Windows.Forms.DataGridView();
-            this.acceptFilterButton = new System.Windows.Forms.Button();
-            this.deleteFilterButton = new System.Windows.Forms.Button();
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Like = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acceptFilterButton = new System.Windows.Forms.Button();
+            this.deleteFilterButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFcsExtBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -69,7 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFilter)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgv
+            // dgvData
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
@@ -90,7 +90,7 @@
             this.dgvData.DataSource = this.dataFcsExtBindingSource;
             this.dgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvData.Location = new System.Drawing.Point(3, 28);
-            this.dgvData.Name = "dgv";
+            this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.Size = new System.Drawing.Size(333, 401);
             this.dgvData.TabIndex = 0;
@@ -277,6 +277,20 @@
             this.dgvFilter.Size = new System.Drawing.Size(266, 397);
             this.dgvFilter.TabIndex = 0;
             // 
+            // ColumnName
+            // 
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnName.HeaderText = "Столбец таблицы";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 110;
+            // 
+            // Like
+            // 
+            this.Like.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Like.HeaderText = "Like";
+            this.Like.Name = "Like";
+            // 
             // acceptFilterButton
             // 
             this.acceptFilterButton.Location = new System.Drawing.Point(3, 406);
@@ -296,20 +310,6 @@
             this.deleteFilterButton.Text = "Очистить фильтр";
             this.deleteFilterButton.UseVisualStyleBackColor = true;
             this.deleteFilterButton.Click += new System.EventHandler(this.DeleteFilterButton_Click);
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnName.HeaderText = "Столбец таблицы";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 110;
-            // 
-            // Like
-            // 
-            this.Like.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Like.HeaderText = "Like";
-            this.Like.Name = "Like";
             // 
             // UCDataForecasts
             // 

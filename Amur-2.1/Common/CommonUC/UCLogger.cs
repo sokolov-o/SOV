@@ -42,7 +42,7 @@ namespace SOV.Common
             {
                 nl += '\n';
             }
-            AppendLine(nl);
+            rtb.AppendText(nl);
         }
     }
 }

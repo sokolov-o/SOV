@@ -192,6 +192,9 @@
     <None Include="Connected Services\FieldServiceReference\SOV.SGMO.FieldServiceReference.Field.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\FieldServiceReference\SOV.SGMO.FieldServiceReference.Method.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\SOV.Amur.Meta.Catalog.datasource" />
     <None Include="Properties\DataSources\SOV.Amur.Meta.DataType.datasource" />
     <None Include="Properties\DataSources\SOV.Amur.Meta.EntityAttrValue.datasource" />

@@ -15,6 +15,8 @@ namespace SOV.SGMO
         public UCDataForecasts()
         {
             InitializeComponent();
+
+            splitContainer1.Panel2Collapsed = true;
         }
 
         public List<DataFcsExt> Items
@@ -71,7 +73,6 @@ namespace SOV.SGMO
                                     if (rowData.Cells["variableNameDataGridViewTextBoxColumn"].Value.ToString().ToUpper().IndexOf(like.ToString().ToUpper()) < 0)
                                         visible = false;
                                     break;
-
                             }
                         }
                     }

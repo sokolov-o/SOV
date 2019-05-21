@@ -22,7 +22,7 @@ namespace SOV.SGMO
                 LeadTime = (double)rdr["lead_time"],
                 DateIniUTC = (DateTime)rdr["date_ini_utc"],
                 Value = (double)rdr["value"],
-                UTCOffsetHours=(int)rdr["utc_offset"]
+                UTCOffsetHours = (int)rdr["utc_offset"]
             };
         }
 
@@ -50,13 +50,13 @@ namespace SOV.SGMO
             return ret;
         }
 
-        public Dictionary<int, DateTime> SelectDateIniUTC4Sites(List<int> siteIds)
+        public Dictionary<int, List<DateTime>> SelectDateIniUTC4Sites(List<int> siteIds)
         {
             var fields = new Dictionary<string, object>()
             {
                 {"site_id", siteIds}
             };
-            Dictionary<int, DateTime> res = new Dictionary<int, DateTime>();
+            Dictionary<int, List<DateTime>> ret = new Dictionary<int, List<DateTime>>();
             try
             {
                 using (NpgsqlConnection cnn = _db.Connection)
@@ -70,8 +70,14 @@ namespace SOV.SGMO
                     using (NpgsqlDataReader rdr = cmd.ExecuteReader())
                     {
                         while (rdr.Read())
-                            res.Add((int)rdr["site_id"], (DateTime)rdr["date_ini_utc"]);
-                        return res;
+                        {
+                            int siteId = (int)rdr["site_id"];
+                            if (ret.ContainsKey(siteId))
+                                ret[siteId].Add((DateTime)rdr["date_ini_utc"]);
+                            else
+                                ret.Add(siteId, new List<DateTime> { (DateTime)rdr["date_ini_utc"] });
+                        }
+                        return ret;
                     }
                 }
             }

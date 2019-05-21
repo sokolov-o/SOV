@@ -28,7 +28,7 @@ namespace SOV.SGMO
 
             Track childTrack = parentTrack.ChildTracks[0];
             childTrack.Points = childTrack.Points.OrderBy(x => x.DateUTC).ToList(); // !
-            Geo.GeoPoint[] childTrackPoints = childTrack.Points.Select(x => new Geo.GeoPoint(x.GeoPoint.LatGrd, x.GeoPoint.LonGrd)).ToArray();
+            GeoPoint[] childTrackPoints = childTrack.Points.Select(x => new GeoPoint() { LatGrd = x.GeoPoint.LatGrd, LonGrd = x.GeoPoint.LonGrd }).ToArray();
 
             List<DataTrackFcs> ret = new List<DataTrackFcs>();
 
@@ -45,7 +45,7 @@ namespace SOV.SGMO
                     Console.WriteLine(string.Format("** По данному треку для метода {0} отсутствуют записи каталога данных мобильного пункта.", pointMethodId));
                     continue;
                 }
-                Varoff[] varoffs = catalogs.Select(x => new Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
+                FieldServiceReference.Varoff[] varoffs = catalogs.Select(x => new FieldServiceReference.Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
 
                 // GET TRACK FORECAST
 
