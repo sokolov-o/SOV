@@ -469,7 +469,7 @@ namespace SOV.DB
         /// <param name="nearestType">Тип расчета прогностического значения в точке.</param>
         /// <param name="distanceType">Тип рассчета расстояния на сфере.</param>
         /// <returns></returns>
-        public double[/*leadTime*/][/*GeoPoint index*/][/*dataFilter index*/] ReadValuesAtPoints
+        public double[/*leadTime*/][/*GeoPoint index*/][/*dataFilter index*/] ReadValuesInPoints
             (DateTime dateIni, object dataFilter, List<double> leadTimeHours, List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
             double[/*leadTime*/][/*GeoPoint index*/][/*dataFilter index*/] ret = null;

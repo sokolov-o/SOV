@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
-using System.Configuration;
 using System.Diagnostics;
-using SOV.WcfService.Field.AmurServiceReference;
 using SOV.Amur.Meta;
+using SOV.Geo;
+using SOV.Grib;
 
 
 namespace SOV.WcfService.Field
@@ -297,7 +293,7 @@ namespace SOV.WcfService.Field
                     if (db == null) throw new Exception(string.Format(
                         "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе SOV.DB.Factory. " +
                         "Нужно дополнить код фабрики.\n", methOutInterface, parentMethodExt.Method.Name));
-                    double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/] parentData = db.ReadValuesAtPoints
+                    double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/] parentData = db.ReadValuesInPoints
                         (dateIni, dataFilter, leadTimes, points, nearestType, distanceType);
 
                     // CONVERT GRID POINT DATA TO POINT DATA CATALOGS
@@ -377,7 +373,7 @@ namespace SOV.WcfService.Field
                     ////    "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе SOV.DB.Factory. " +
                     ////    "Нужно дополнить код фабрики.\n", methOutInterface, methodExt.Method.Name));
 
-                    return db.ReadValuesAtPoints(
+                    return db.ReadValuesInPoints(
                         dateIni, dataFilter, leadTimes,
                         points.Select(x => new SOV.Geo.GeoPoint(x.LatGrd, x.LonGrd)).ToList(),
                         nearestType, distanceType
@@ -393,14 +389,14 @@ namespace SOV.WcfService.Field
         /// 
         /// </summary>
         /// <param name="dateIni"></param>
-        /// <param name="track">Точки маршрута. 
+        /// <param name="trackPoints">Точки маршрута. 
         /// Первая точка соответствует первой заблаговременности метода прогноза.
         /// Далее точки маршрута идут по-порядку заблаговременностей: точка для следующей заблаговременности и т.д.
         /// Количество точек может быть меньше количества заблаговременности метода, но не более.</param>
         /// <param name="pointMethodId"></param>
         /// <param name="pointVaroffs"></param>
         /// <returns>Dictionary<double/*leadTimes*/, double[/*varoffs*/]>, где leadtime соответствует по порядку точкам маршрута (track).</returns>
-        public Dictionary<double/*leadTimes*/, double[/*varoffs*/]> GetTrackForecast(long hSvc, DateTime dateIni, List<Geo.GeoPoint> track, int pointMethodId, List<SGMO.Varoff> pointVaroffs)
+        public Dictionary<double/*leadTimes*/, double[/*varoffs*/]> GetTrackForecast(long hSvc, DateTime dateIni, List<GeoPoint> trackPoints, int pointMethodId, List<SGMO.Varoff> pointVaroffs)
         {
             // CHECK INPUT
             CheckHandle(hSvc);
@@ -416,8 +412,8 @@ namespace SOV.WcfService.Field
             MethodExt fieldMethodExt = _methodsExtValid.FirstOrDefault(x => x.Method.Id == fieldCatalogs[0].MethodId);
 
             List<double> leadTimes = fieldMethodExt.MethodForecast.LeadTimes.ToList();
-            if (leadTimes.Count < track.Count) throw new Exception(string.Format("leadTimes.Count < track.Count: {0} < {1}", leadTimes.Count, track.Count));
-            if (leadTimes.Count > track.Count) leadTimes.RemoveRange(track.Count, leadTimes.Count - track.Count);
+            if (leadTimes.Count < trackPoints.Count) throw new Exception(string.Format("leadTimes.Count < track.Count: {0} < {1}", leadTimes.Count, trackPoints.Count));
+            if (leadTimes.Count > trackPoints.Count) leadTimes.RemoveRange(trackPoints.Count, leadTimes.Count - trackPoints.Count);
             Check(leadTimes);
 
             // GET precipSumResetTime 
@@ -449,14 +445,14 @@ namespace SOV.WcfService.Field
                     if (db == null) throw new Exception(string.Format(
                         "Для запрошенного интерфейса {0} метода <{1}> отсутствует репозиторий в классе SOV.DB.Factory. " +
                         "Нужно дополнить код фабрики.\n", fieldMethodOutInterface, fieldMethodExt.Method.Name));
-                    double[/*leadTime*/][/*GeoPoint index*/][/*dataFilter index*/] fieldData = db.ReadValuesAtPoints
-                        (dateIni, dataFilter, leadTimes, track, nearestType, distanceType);
+
+                    double[/*leadTime*/][/*GeoPoint index*/][/*dataFilter index*/] fieldData = db.ReadValuesInPoints(dateIni, dataFilter, leadTimes, trackPoints, nearestType, distanceType);
 
                     // CONVERT FIELD DATA TO VAROFFS 
 
                     if (fieldData != null)
                     {
-                        double[/*leadTimes*/][/*track points*/][/*varoffs*/] varoffData = ConvertFieldData2Varoff(fieldData, fieldCatalogs, pointVaroffs, track, leadTimes.ToArray(), precipSumResetTime);
+                        double[/*leadTimes*/][/*track points*/][/*varoffs*/] varoffData = ConvertFieldData2Varoff(fieldData, fieldCatalogs, pointVaroffs, trackPoints, leadTimes.ToArray(), precipSumResetTime);
 
                         Dictionary<double/*leadTimes*/, double[/*varoffs*/]> ret = new Dictionary<double, double[]>();
                         for (int i = 0; i < leadTimes.Count; i++)
@@ -470,6 +466,22 @@ namespace SOV.WcfService.Field
                     throw new Exception(string.Format("Для запрошенного интерфейса {0} метода <{1}> отсутствует обработчик считывания данных в <{2}>.\n",
                         fieldMethodOutInterface, fieldMethodExt.Method.Name, this));
             }
+        }
+        /// <summary>
+        /// 
+        /// Чтение данных поля в указанных точках для указанной даты, заблаговременности и фильтра данных (переменных, уровней и др.).
+        /// 
+        /// </summary>
+        /// <param name="dateIni">Дата или исходная дата прогноза для прогностических полей.</param>
+        /// <param name="dataFilter">Фильтр данных: г/м параметры, высоты наблюдений и проч. 
+        /// Внимание! Допускаются null значения элементов фильтра. 
+        /// В этом случае отбор данных производиться не будет и на выходе тоже null.</param>
+        /// <param name="grs2Truncate">Регионы, для которых отбираются узлы поля. Все узлы, если null.</param>
+        /// <param name="leadTimeHours">Заблаговременность прогноза или все, если null. Для полей без заблаговременности - null.</param>
+        /// <returns>double[/*leadTime*/][/*GeoPoint index*/][/*Data filter index*/]</returns>
+        public double[/*leadTimeHours*/][/*GeoPoint index*/][/*Data filter index*/] ReadValuesInPointsGFS(int fcsMethodId, DateTime dateIni, List<Grib2Filter> fcsDataFilter, List<double> leadTimeHours, List<GeoPoint> points)
+        {
+            throw new NotImplementedException();
         }
     }
 }

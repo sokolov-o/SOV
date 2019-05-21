@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ServiceModel;
-using SOV.WcfService.Field.AmurServiceReference;
 using SOV.Amur.Meta;
+using SOV.Geo;
+using SOV.Grib;
 
 namespace SOV.WcfService.Field
 {
@@ -72,5 +73,18 @@ namespace SOV.WcfService.Field
         List<Method> GetMethods(long hSvc);
         [OperationContract]
         Dictionary<double/*leadTimes*/, double[/*varoffs*/]> GetTrackForecast(long hSvc, DateTime dateIni, List<Geo.GeoPoint> track, int pointMethodId, List<SGMO.Varoff> pointVaroffs);
+        /// <summary>
+        /// Чтение данных прогностических GRIB2-полей в указанных точках для указанной даты, заблаговременности и фильтра данных (переменных, уровней и др.).
+        /// </summary>
+        /// <param name="dateIni">Дата или исходная дата прогноза для прогностических полей.</param>
+        /// <param name="dataFilter">Фильтр данных: г/м параметры, высоты наблюдений и проч. 
+        /// Внимание! Допускаются null значения элементов фильтра. 
+        /// В этом случае отбор данных производиться не будет и на выходе тоже null.</param>
+        /// <param name="grs2Truncate">Регионы, для которых отбираются узлы поля. Все узлы, если null.</param>
+        /// <param name="leadTimes">Заблаговременность прогноза или все, если null. Для полей без заблаговременности - null.</param>
+        /// <returns>double[/*leadTime*/][/*GeoPoint index*/][/*Data filter index*/]</returns>
+        [OperationContract]
+        double[/*leadTimeHours*/][/*GeoPoint index*/][/*Data filter index*/] ReadValuesInPointsGFS(int fcsMethodId, DateTime dateIni, List<Grib2Filter> fcsDataFilter, List<double> leadTimeHours, List<GeoPoint> points);
+
     }
 }

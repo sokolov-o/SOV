@@ -372,7 +372,6 @@ namespace SOV.DB
             }
             return isNull ? null : ret;
         }
-
         /// <summary>
         /// Прочитать значения заданных в фильтре переменных в указанных точках.
         /// Значения в точках м.б. интерполированными или взятыми из ближайшего узла.
@@ -386,7 +385,7 @@ namespace SOV.DB
         /// <param name="nearestType"></param>
         /// <param name="distanceType"></param>
         /// <returns></returns>
-        public double[/*g2filter*/][/*points*/] ReadValuesAtPoints(DateTime dateIni, List<Grib2Filter> g2filter, int predictTime,
+        public double[/*g2filter*/][/*points*/] ReadValuesInPoints(DateTime dateIni, List<Grib2Filter> g2filter, int predictTime,
             List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
             Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] gfsRecords = Select(g2filter, dateIni, predictTime);
@@ -416,7 +415,7 @@ namespace SOV.DB
         /// <param name="distanceType"></param>
         /// <returns>Прогностические значения double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/].
         /// В случае отсутствия значения, возвражается NaN.</returns>
-        public double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/] ReadValuesAtPoints(DateTime dateIni, object dataFilter, List<double> leadTimes,
+        public double[/*leadTime*/][/*GeoPoint index*/][/*Grib2Filter index*/] ReadValuesInPoints(DateTime dateIni, object dataFilter, List<double> leadTimes,
             List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType)
         {
             // CHECK INPUT
@@ -433,7 +432,7 @@ namespace SOV.DB
 
             for (int i = 0; i < leadTimes.Count; i++)
             {
-                double[][] d = ReadValuesAtPoints(dateIni, grib2Filter, (int)leadTimes[i], points, nearestType, distanceType);
+                double[][] d = ReadValuesInPoints(dateIni, grib2Filter, (int)leadTimes[i], points, nearestType, distanceType);
                 if (d == null) continue;
 
                 for (int j = 0; j < grib2Filter.Count; j++)
@@ -448,46 +447,5 @@ namespace SOV.DB
             }
             return ret;
         }
-        ///////// <summary>
-        ///////// Последовательно каждой точке трека соответствует заблаговременность.
-        ///////// </summary>
-        ///////// <param name="dateIni">Исх. дата прогноза.</param>
-        ///////// <param name="dataFilter">Фильтр прогностических данных поля.</param>
-        ///////// <param name="leadTimes">Заблаговременности для точек трека.</param>
-        ///////// <param name="track">Трек.</param>
-        ///////// <param name="nearestType">Тип прогноза в точке (ближайший узел или интерполяция).</param>
-        ///////// <param name="distanceType">Тип расчета расстояний на сфере.</param>
-        ///////// <returns>Прогнозы в точках трека с соответствующими заблаговременностями.</returns>
-        //////public double[/*track point (eq. lead time)*/][/*Grib2Filter index*/] ReadTrackForecast
-        //////    (DateTime dateIni, object dataFilter, List<double> leadTimes, List<GeoPoint> track, EnumPointNearestType nearestType, EnumDistanceType distanceType)
-        //////{
-        //////    // CHECK INPUT
-
-        //////    if (leadTimes.Count != track.Count) throw new Exception(string.Format("leadTimes.Count != track.Count: {0} != {1}", leadTimes.Count, track.Count));
-        //////    if (dataFilter == null) throw new Exception("Не определён фильтр при вызове метода чтения данных из полей GRIB2.");
-        //////    if (dataFilter.GetType() != typeof(List<Grib2Filter>)) throw new Exception(string.Format("Указан фильтр типа {0}. Должен быть типа {1}.", dataFilter.GetType(), typeof(List<Grib2Filter>)));
-
-        //////    // SCAN LEADTIMES
-
-        //////    List<Grib2Filter> grib2Filter = (List<Grib2Filter>)dataFilter;
-        //////    double[][] ret = Support.Allocate(leadTimes.Count, grib2Filter.Count, double.NaN);
-
-        //////    for (int i = 0; i < leadTimes.Count; i++)
-        //////    {
-        //////        double[][] d = ReadValuesAtPoints(dateIni, grib2Filter, (int)leadTimes[i], new List<GeoPoint>() { track[i] }, nearestType, distanceType);
-        //////        if (d == null) continue;
-
-        //////        for (int j = 0; j < grib2Filter.Count; j++)
-        //////        {
-        //////            if (d[j] == null) continue;
-
-        //////            for (int k = 0; k < track.Count; k++)
-        //////            {
-        //////                ret[i][k][j] = d[j][k];
-        //////            }
-        //////        }
-        //////    }
-        //////    return ret;
-        //////}
     }
 }

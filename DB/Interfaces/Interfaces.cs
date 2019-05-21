@@ -26,12 +26,13 @@ namespace SOV.DB
         /// Чтение данных поля в указанных точках для указанной даты, заблаговременности и фильтра данных (переменных, уровней и др.).
         /// </summary>
         /// <param name="dateIni">Дата или исходная дата прогноза для прогностических полей.</param>
-        /// <param name="dataFilter">Фильтр данных: параметры, высоты и проч. Внимание! Допускаются null значения элементов фильтра. 
+        /// <param name="dataFilter">Фильтр данных: г/м параметры, высоты наблюдений и проч. 
+        /// Внимание! Допускаются null значения элементов фильтра. 
         /// В этом случае отбор данных производиться не будет и на выходе тоже null.</param>
         /// <param name="grs2Truncate">Регионы, для которых отбираются узлы поля. Все узлы, если null.</param>
         /// <param name="leadTimes">Заблаговременность прогноза или все, если null. Для полей без заблаговременности - null.</param>
         /// <returns>double[/*leadTime*/][/*GeoPoint index*/][/*Data filter index*/]</returns>
-        double[/*leadTime*/][/*GeoPoint index*/][/*Data filter index*/] ReadValuesAtPoints(DateTime dateIni, object dataFilter, List<double> leadTimes, List<Geo.GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType);
+        double[/*leadTime*/][/*GeoPoint index*/][/*Data filter index*/] ReadValuesInPoints(DateTime dateIni, object dataFilter, List<double> leadTimes, List<GeoPoint> points, EnumPointNearestType nearestType, EnumDistanceType distanceType);
 
     }
     public interface ICatalog

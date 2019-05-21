@@ -8,20 +8,59 @@ using Seaware.GribCS;
 
 namespace SOV.Grib
 {
+    /// <summary>
+    /// Фильтр для выборки данных из grib2-файла.
+    /// </summary>
     public class Grib2Filter
     {
+        /// <summary>
+        /// Дисциплина (секция IS).
+        /// </summary>
         public int is_discipline;
+        /// <summary>
+        /// Код центра (секция ID).
+        /// </summary>
         public int id_center_id;
+        /// <summary>
+        /// Код продукта (секция PDS).
+        /// </summary>
         public int pds_product_definition;
+        /// <summary>
+        /// Код категории (секция PDS).
+        /// </summary>
         public int pds_parameter_category;
+        /// <summary>
+        /// Код параметра/переменной (секция PDS).
+        /// </summary>
         public int pds_parameter_number;
+        /// <summary>
+        /// Код типа первой поверхности переменной (секция PDS).
+        /// </summary>
         public int pds_type_first_fixed_surface;
+        /// <summary>
+        /// Код типа второй поверхности переменной (секция PDS).
+        /// </summary>
         public int pds_type_second_fixed_surface;
+        /// <summary>
+        /// Значение первой поверхности переменной (секция PDS).
+        /// </summary>
         public float pds_value_first_fixed_surface;
+        /// <summary>
+        /// Значение второй поверхности переменной (секция PDS).
+        /// </summary>
         public float pds_value_second_fixed_surface;
+        /// <summary>
+        /// Код gdtn (секция GDS).
+        /// </summary>
         public int gds_gdtn;
 
+        /// <summary>
+        /// Значение для приведения переменной к реальному виду по формуле (value + value_add) * value_multiply.
+        /// </summary>
         public double value_add;
+        /// <summary>
+        /// Значение для приведения переменной к реальному виду по формуле (value + value_add) * value_multiply.
+        /// </summary>
         public double value_multiply;
 
         public double AcceptAddMultiply2Value(double value)
