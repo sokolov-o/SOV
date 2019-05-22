@@ -218,7 +218,7 @@ namespace SOV.SGMO
 
                     foreach (KeyValuePair<int, List<DateTime>> item in DataManager.GetInstance().DataSiteFcsRepository.SelectDateIniUTC4Sites(new List<int> { site.Id }))
                     {
-                        foreach (var date in item.Value.OrderBy(x => x))
+                        foreach (var date in item.Value.OrderByDescending(x => x))
                         {
                             TreeNode dateNode = new TreeNode(date.ToString("dd.MM.yyyy HH")) { Name = site.Id.ToString(), Tag = new KeyValuePair<int, DateTime>(site.Id, date), ImageIndex = 3, SelectedImageIndex = 3 };
                             siteNode.Nodes.Add(dateNode);
@@ -310,7 +310,8 @@ namespace SOV.SGMO
                     KeyValuePair<int, DateTime> siteDateIni = (KeyValuePair<int, DateTime>)tvSites.SelectedNode.Tag;
 
                     List<Catalog> catalogs = Amur.Meta.DataManager.GetInstance().CatalogRepository.Select(new List<int> { siteDateIni.Key }, null, null, null, null, null);
-                    ucDataForecasts.Items = DataManager.GetInstance().DataSiteFcsRepository.SelectExt(catalogs.Select(x => x.Id).ToList(), siteDateIni.Value);
+                    ucDataForecasts.Items = DataManager.GetInstance().DataSiteFcsRepository
+                        .SelectExt(catalogs.Select(x => x.Id).ToList(), siteDateIni.Value);
                 }
 
             }
