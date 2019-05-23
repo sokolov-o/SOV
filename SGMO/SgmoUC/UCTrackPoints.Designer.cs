@@ -33,7 +33,7 @@
             this.trackPointBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateUTCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.geoPointDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uTCOffsetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UTCOffsetHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackPointBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +47,7 @@
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dateUTCDataGridViewTextBoxColumn,
             this.geoPointDataGridViewTextBoxColumn,
-            this.uTCOffsetDataGridViewTextBoxColumn});
+            this.UTCOffsetHours});
             this.dgv.DataSource = this.trackPointBindingSource;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 0);
@@ -74,12 +74,12 @@
             this.geoPointDataGridViewTextBoxColumn.Name = "geoPointDataGridViewTextBoxColumn";
             this.geoPointDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // uTCOffsetDataGridViewTextBoxColumn
+            // UTCOffsetHours
             // 
-            this.uTCOffsetDataGridViewTextBoxColumn.DataPropertyName = "UTCOffset";
-            this.uTCOffsetDataGridViewTextBoxColumn.HeaderText = "+ВСВ";
-            this.uTCOffsetDataGridViewTextBoxColumn.Name = "uTCOffsetDataGridViewTextBoxColumn";
-            this.uTCOffsetDataGridViewTextBoxColumn.ReadOnly = true;
+            this.UTCOffsetHours.DataPropertyName = "UTCOffsetHours";
+            this.UTCOffsetHours.HeaderText = "+ВСВ";
+            this.UTCOffsetHours.Name = "UTCOffsetHours";
+            this.UTCOffsetHours.ReadOnly = true;
             // 
             // UCTrackPoints
             // 
@@ -98,8 +98,9 @@
 
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.BindingSource trackPointBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uTCOffsetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateUTCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn geoPointDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uTCOffsetDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UTCOffsetHours;
     }
 }

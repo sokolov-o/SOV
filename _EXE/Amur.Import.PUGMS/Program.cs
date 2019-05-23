@@ -27,6 +27,15 @@ namespace Amur.Import
 
         static void Main(string[] args)
         {
+            AMSDataImport.Run();
+
+            // UpdateCurve(); // 2017
+
+            Console.WriteLine("Press ENTER...");
+            Console.ReadLine();
+        }
+        static void UpdateCurve()
+        {
             AmurServiceReference.Curve acurve = Program.aClient.GetCurveByCatalog(Program.aHandle, 1191420, 1191421,
                 new List<DateTime> { DateTime.Parse("9.08.2016"), DateTime.Parse("11.08.2016") });
 
@@ -41,9 +50,6 @@ namespace Amur.Import
 
             // Обновить кривые БД Амур
             AMURDB.RepositoryAmur.InsertUpdateDbAmur(asitesCurves);
-
-            Console.WriteLine("Press ENTER...");
-            Console.ReadLine();
         }
     }
 }
