@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SOV.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -43,7 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AMSDataImport.cs" />
+    <Compile Include="AMSData.cs" />
+    <Compile Include="AMSDataRepository.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="RepositoryAmur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Addr.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -92,9 +103,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.GeoObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.GeoPoint.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.GeoType.datasource">
@@ -130,16 +138,13 @@
     <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SiteAttrType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SiteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SiteXSite.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SiteXSiteType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.Station.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.StationType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.SysObj.datasource">
@@ -166,41 +171,38 @@
     <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.VariableType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AmurServiceReference\Service1.wsdl" />
-    <None Include="Service References\AmurServiceReference\Service12.xsd">
+    <None Include="Service References\AmurServiceReference\Service.wsdl" />
+    <None Include="Service References\AmurServiceReference\Service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service121.xsd">
+    <None Include="Service References\AmurServiceReference\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service1210.xsd">
+    <None Include="Service References\AmurServiceReference\Service10.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service1211.xsd">
+    <None Include="Service References\AmurServiceReference\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service122.xsd">
+    <None Include="Service References\AmurServiceReference\Service3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service123.xsd">
+    <None Include="Service References\AmurServiceReference\Service4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service124.xsd">
+    <None Include="Service References\AmurServiceReference\Service5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service125.xsd">
+    <None Include="Service References\AmurServiceReference\Service6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service126.xsd">
+    <None Include="Service References\AmurServiceReference\Service7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service127.xsd">
+    <None Include="Service References\AmurServiceReference\Service8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service128.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceReference\Service129.xsd">
+    <None Include="Service References\AmurServiceReference\Service9.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.AltSiteVariableItem.datasource">
@@ -360,7 +362,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AmurServiceReference\Service1.disco" />
+    <ProjectReference Include="..\..\Amur-2.1\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceReference\Service.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

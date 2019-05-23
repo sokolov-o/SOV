@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Geo" />
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" />
-  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" />
+  <xs:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
+  <xs:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
   <xs:complexType name="ArrayOfint">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
-  <xs:complexType name="ArrayOfstring">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
-  <xs:complexType name="ArrayOfdouble">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="double" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfdouble" nillable="true" type="tns:ArrayOfdouble" />
   <xs:complexType name="ArrayOfKeyValueOfstringstring">
     <xs:annotation>
       <xs:appinfo>
@@ -39,42 +26,36 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfKeyValueOfstringstring" nillable="true" type="tns:ArrayOfKeyValueOfstringstring" />
-  <xs:complexType name="ArrayOfKeyValueOfintGeoPointmMEqxbZF">
+  <xs:complexType name="ArrayOfstring">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+  <xs:complexType name="ArrayOfdouble">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="double" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdouble" nillable="true" type="tns:ArrayOfdouble" />
+  <xs:complexType name="ArrayOfKeyValueOfintGeoObjectmdw0AYJD">
     <xs:annotation>
       <xs:appinfo>
         <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintGeoPointmMEqxbZF">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintGeoObjectmdw0AYJD">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="Key" type="xs:int" />
-            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FERHRI.Geo" name="Value" nillable="true" type="q1:GeoPoint" />
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" name="Value" nillable="true" type="q1:GeoObject" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOfintGeoPointmMEqxbZF" nillable="true" type="tns:ArrayOfKeyValueOfintGeoPointmMEqxbZF" />
-  <xs:complexType name="ArrayOfKeyValueOfintGeoObjectvGMA3cSi">
-    <xs:annotation>
-      <xs:appinfo>
-        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintGeoObjectvGMA3cSi">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="Key" type="xs:int" />
-            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" name="Value" nillable="true" type="q2:GeoObject" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOfintGeoObjectvGMA3cSi" nillable="true" type="tns:ArrayOfKeyValueOfintGeoObjectvGMA3cSi" />
+  <xs:element name="ArrayOfKeyValueOfintGeoObjectmdw0AYJD" nillable="true" type="tns:ArrayOfKeyValueOfintGeoObjectmdw0AYJD" />
   <xs:complexType name="ArrayOfArrayOfdouble">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfdouble" nillable="true" type="tns:ArrayOfdouble" />
@@ -99,88 +80,100 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfKeyValueOfshortArrayOfstringty7Ep6D1" nillable="true" type="tns:ArrayOfKeyValueOfshortArrayOfstringty7Ep6D1" />
-  <xs:complexType name="ArrayOfdateTime">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="dateTime" type="xs:dateTime" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfdateTime" nillable="true" type="tns:ArrayOfdateTime" />
-  <xs:complexType name="ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl">
+  <xs:complexType name="ArrayOfKeyValueOfintboolean">
     <xs:annotation>
       <xs:appinfo>
         <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintArrayOfCurvecuBgdOSl">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintboolean">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="Key" type="xs:int" />
-            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" name="Value" nillable="true" type="q3:ArrayOfCurve" />
+            <xs:element name="Value" type="xs:boolean" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl" nillable="true" type="tns:ArrayOfKeyValueOfintArrayOfCurvecuBgdOSl" />
-  <xs:complexType name="ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl">
+  <xs:element name="ArrayOfKeyValueOfintboolean" nillable="true" type="tns:ArrayOfKeyValueOfintboolean" />
+  <xs:complexType name="ArrayOfKeyValueOfintArrayOfCurveG11ZnWqW">
     <xs:annotation>
       <xs:appinfo>
         <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintArrayOfDataForecastcuBgdOSl">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintArrayOfCurveG11ZnWqW">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="Key" type="xs:int" />
-            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" name="Value" nillable="true" type="q4:ArrayOfDataForecast" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q2:ArrayOfCurve" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl" nillable="true" type="tns:ArrayOfKeyValueOfintArrayOfDataForecastcuBgdOSl" />
+  <xs:element name="ArrayOfKeyValueOfintArrayOfCurveG11ZnWqW" nillable="true" type="tns:ArrayOfKeyValueOfintArrayOfCurveG11ZnWqW" />
+  <xs:complexType name="ArrayOfKeyValueOfintArrayOfDataForecastG11ZnWqW">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintArrayOfDataForecastG11ZnWqW">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:int" />
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q3:ArrayOfDataForecast" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfintArrayOfDataForecastG11ZnWqW" nillable="true" type="tns:ArrayOfKeyValueOfintArrayOfDataForecastG11ZnWqW" />
   <xs:complexType name="ArrayOflong">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="long" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOflong" nillable="true" type="tns:ArrayOflong" />
-  <xs:complexType name="ArrayOfKeyValueOflongDataSourcecuBgdOSl">
+  <xs:complexType name="ArrayOfKeyValueOflongDataSourceG11ZnWqW">
     <xs:annotation>
       <xs:appinfo>
         <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongDataSourcecuBgdOSl">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongDataSourceG11ZnWqW">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="Key" type="xs:long" />
-            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" name="Value" nillable="true" type="q5:DataSource" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q4:DataSource" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOflongDataSourcecuBgdOSl" nillable="true" type="tns:ArrayOfKeyValueOflongDataSourcecuBgdOSl" />
-  <xs:complexType name="ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr">
+  <xs:element name="ArrayOfKeyValueOflongDataSourceG11ZnWqW" nillable="true" type="tns:ArrayOfKeyValueOflongDataSourceG11ZnWqW" />
+  <xs:complexType name="ArrayOfKeyValueOfCatalogArrayOfDataValue9e82c4_Px">
     <xs:annotation>
       <xs:appinfo>
         <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfCatalogArrayOfDataValueV1pI2YJr">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfCatalogArrayOfDataValue9e82c4_Px">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" name="Key" nillable="true" type="q6:Catalog" />
-            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" name="Value" nillable="true" type="q7:ArrayOfDataValue" />
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" name="Key" nillable="true" type="q5:Catalog" />
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" name="Value" nillable="true" type="q6:ArrayOfDataValue" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr" nillable="true" type="tns:ArrayOfKeyValueOfCatalogArrayOfDataValueV1pI2YJr" />
+  <xs:element name="ArrayOfKeyValueOfCatalogArrayOfDataValue9e82c4_Px" nillable="true" type="tns:ArrayOfKeyValueOfCatalogArrayOfDataValue9e82c4_Px" />
 </xs:schema>
