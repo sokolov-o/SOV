@@ -69,6 +69,7 @@
             // 
             // geoPointDataGridViewTextBoxColumn
             // 
+            this.geoPointDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.geoPointDataGridViewTextBoxColumn.DataPropertyName = "GeoPoint";
             this.geoPointDataGridViewTextBoxColumn.HeaderText = "Координаты";
             this.geoPointDataGridViewTextBoxColumn.Name = "geoPointDataGridViewTextBoxColumn";
@@ -76,10 +77,12 @@
             // 
             // UTCOffsetHours
             // 
+            this.UTCOffsetHours.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.UTCOffsetHours.DataPropertyName = "UTCOffsetHours";
             this.UTCOffsetHours.HeaderText = "+ВСВ";
             this.UTCOffsetHours.Name = "UTCOffsetHours";
             this.UTCOffsetHours.ReadOnly = true;
+            this.UTCOffsetHours.Width = 59;
             // 
             // UCTrackPoints
             // 
