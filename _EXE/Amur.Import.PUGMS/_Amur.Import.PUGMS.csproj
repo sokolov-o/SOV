@@ -171,38 +171,38 @@
     <None Include="Service References\AmurServiceReference\Amur.Import.AmurServiceReference.VariableType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AmurServiceReference\Service.wsdl" />
-    <None Include="Service References\AmurServiceReference\Service.xsd">
+    <None Include="Service References\AmurServiceReference\Service1.wsdl" />
+    <None Include="Service References\AmurServiceReference\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service1.xsd">
+    <None Include="Service References\AmurServiceReference\Service111.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service10.xsd">
+    <None Include="Service References\AmurServiceReference\Service1110.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service2.xsd">
+    <None Include="Service References\AmurServiceReference\Service112.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service3.xsd">
+    <None Include="Service References\AmurServiceReference\Service113.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service4.xsd">
+    <None Include="Service References\AmurServiceReference\Service114.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service5.xsd">
+    <None Include="Service References\AmurServiceReference\Service115.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service6.xsd">
+    <None Include="Service References\AmurServiceReference\Service116.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service7.xsd">
+    <None Include="Service References\AmurServiceReference\Service117.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service8.xsd">
+    <None Include="Service References\AmurServiceReference\Service118.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmurServiceReference\Service9.xsd">
+    <None Include="Service References\AmurServiceReference\Service119.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\PUGMSServiceReference\Amur.Import.PUGMSServiceReference.AltSiteVariableItem.datasource">
@@ -368,7 +368,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AmurServiceReference\Service.disco" />
+    <None Include="Service References\AmurServiceReference\Service1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

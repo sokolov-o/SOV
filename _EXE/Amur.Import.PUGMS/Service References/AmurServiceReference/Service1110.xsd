@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOV.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOV.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="IdNameParent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdNameParent" nillable="true" type="tns:IdNameParent" />
   <xs:complexType name="IdName">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:IdClass">
@@ -18,16 +28,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="IdClass" nillable="true" type="tns:IdClass" />
-  <xs:complexType name="IdNameParent">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:IdName">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="IdNameParent" nillable="true" type="tns:IdNameParent" />
   <xs:complexType name="DicItem">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:IdName">

@@ -24,7 +24,7 @@ namespace Amur.Import
                 cnn.Open();
                 using (SqlCommand cmd = new SqlCommand(
                     "select d.stationID station_id, s.name station_name, d.meteoElementTypeID variable_id," +
-                    " d.observationdate date_obs, d._value value" +
+                    " d.observationdate date_obs, d._value value," +
                     " cast(ssLat.Value as float) lat," +
                     " cast(ssLon.Value as float) lon" +
                     " from meteoelement d" +

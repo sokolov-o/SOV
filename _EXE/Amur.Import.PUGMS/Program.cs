@@ -28,7 +28,8 @@ namespace Amur.Import
         static void Main(string[] args)
         {
             // SOV.2019
-            ImportAMSData(13/*Пыль*/, new DateTime(2019, 1, 1), new DateTime(2019, 1, 2));
+            DateTime dateS = new DateTime(2019, 1, 1);
+            ImportAMSData(13/*Пыль*/, dateS, dateS.AddHours(1));
 
             // UpdateCurve(); // 2017
 
@@ -38,16 +39,21 @@ namespace Amur.Import
 
         private static void ImportAMSData(int siteTypeId, DateTime dateS, DateTime dateF)
         {
+            DateTime dateSS = DateTime.Now;
+            Console.WriteLine("ImportAMSData started at {0}", dateSS);
+
             // READ AMSDATA FROM PUGMS DB
             AMSDataRepository amsDb = new AMSDataRepository(Amur.Import.Properties.Settings.Default.AMSDataConnectionString);
-            List<AMSData> dataAMS = amsDb.Select(AMSData.CrossSiteTypeId[siteTypeId], dateS, dateF);
+            List<AMSData> amsDatas = amsDb.Select(AMSData.CrossSiteTypeId[siteTypeId], dateS, dateF);
 
             // CONVERT AMSDATA 2 AMUR DATA VALUE
 
             List<AmurServiceReference.Site> sites = aClient.GetSitesByType(aHandle, siteTypeId);
+            Dictionary<int, int> siteUTSOffsets = new Dictionary<int, int>();
+            List<AmurServiceReference.Catalog> catalogs = new List<Catalog>();
 
             List<AmurServiceReference.DataValue> dataAmur = new List<AmurServiceReference.DataValue>();
-            foreach (AMSData amsData in dataAMS)
+            foreach (AMSData amsData in amsDatas)
             {
                 // GET OR CREATE SITE
                 string code = amsData.StationId + "AMS";
@@ -68,8 +74,26 @@ namespace Amur.Import
                         Lon = amsData.Lon
                     };
 
-                    // TODO: Insert new site!
-                    // TODO: SITE UTC OFFSET!
+                    // Insert the new site
+
+                    site.Id = aClient.SaveSite(aHandle, site);
+                    aClient.SaveSiteAttribute(aHandle, new EntityAttrValue() // UTSOffset
+                    { EntityId = site.Id, DateS = new DateTime(2014, 1, 1), AttrTypeId = 1003, Value = "10" });
+
+                    sites.Add(site);
+                    siteUTSOffsets.Add(site.Id, 10);
+                }
+                else if (sites1.Count == 1)
+                {
+                    site = sites1[0];
+                }
+                else
+                    throw new Exception("(sites1.Count != 1)");
+
+                if (!siteUTSOffsets.TryGetValue(site.Id, out int siteUTSOffset))
+                {
+                    siteUTSOffset = int.Parse(aClient.GetSiteAttrValue(aHandle, site.Id, 1003, DateTime.Now).Value);
+                    siteUTSOffsets.Add(site.Id, siteUTSOffset);
                 }
 
                 // GET OR CREATE CATALOG
@@ -84,31 +108,49 @@ namespace Amur.Import
                     OffsetValue = varoff[2]
 
                 };
-                AmurServiceReference.Catalog catalog1 = aClient.GetCatalog(aHandle,
-                    catalog.SiteId,
-                    catalog.VariableId,
-                    catalog.OffsetTypeId,
-                    catalog.MethodId,
-                    catalog.SourceId,
-                    catalog.OffsetValue
-                );
-                if (catalog1 == null)
+                List<Catalog> catalogs1 = catalogs.FindAll(x =>
+                    x.SiteId == catalog.SiteId
+                    && x.VariableId == catalog.VariableId
+                    && x.MethodId == catalog.MethodId
+                    && x.SourceId == catalog.SourceId
+                    && x.OffsetTypeId == catalog.OffsetTypeId
+                    && x.OffsetValue == catalog.OffsetValue
+                    );
+
+                if (catalogs1.Count == 0)
                 {
-                    catalog = aClient.SaveCatalog(aHandle, catalog);
-                } else
-                {
-                    catalog = catalog1;
+                    Catalog catalog1 = aClient.GetCatalog(aHandle, catalog.SiteId, catalog.VariableId, catalog.OffsetTypeId, catalog.MethodId, catalog.SourceId, catalog.OffsetValue);
+                    if (catalog1 == null)
+                        catalog = aClient.SaveCatalog(aHandle, catalog);
+                    else
+                        catalog = catalog1;
+
+                    catalogs.Add(catalog);
                 }
+                else if (catalogs1.Count == 1)
+                {
+                    catalog = catalogs1[0];
+                }
+                else
+                    throw new Exception("(catalog1.Count > 1)");
 
                 // CREATE DATA VALUE
 
                 dataAmur.Add(new AmurServiceReference.DataValue()
                 {
-                     CatalogId=catalog.Id, 
-                      
+                    CatalogId = catalog.Id,
+                    UTCOffset = siteUTSOffset,
+                    DateLOC = amsData.DateObs,
+                    DateUTC = amsData.DateObs.AddHours(-siteUTSOffset),
+                    FlagAQC = 0,
+                    Value = amsData.Value
                 }
-            );
+                );
             }
+            if (dataAmur.Count > 0)
+                aClient.SaveDataValueList(aHandle, dataAmur, null);
+
+            Console.WriteLine("ImportAMSData ended at {0}, {1} min elapsed.", DateTime.Now, (DateTime.Now - dateSS).TotalMinutes);
         }
 
         static void UpdateCurve()

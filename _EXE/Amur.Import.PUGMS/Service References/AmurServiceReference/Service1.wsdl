@@ -2,19 +2,97 @@
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Reflection" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" />
-      <xsd:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SOV.Social" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Reflection" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SOV.Social" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService_SaveVariableCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVariableCode" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveVariableCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVariableCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveSiteAttribute_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSiteAttribute" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveSiteAttribute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSiteAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSite" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCatalog" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizeDataValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizeDataValue" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizeDataValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizeDataValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveValue" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataValue" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataValueXSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataValueXSource" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataValueXSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataValueXSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataSource" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataValueList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataValueList" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataValueList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataValueListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataForecastList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataForecastList" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataForecastList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataForecastListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataPRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataPRole" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDataPRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataPRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveParserSysObjLastStartParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveParserSysObjLastStartParam" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveParserSysObjLastStartParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveParserSysObjLastStartParamResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_Open_InputMessage">
     <wsdl:part name="parameters" element="tns:Open" />
   </wsdl:message>
@@ -399,85 +477,59 @@
   <wsdl:message name="IService_GetLegalEntityesAll_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLegalEntityesAllResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_SaveVariableCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveVariableCode" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveVariableCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveVariableCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveSiteAttribute_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveSiteAttribute" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveSiteAttribute_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveSiteAttributeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveSite_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveSite" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveSite_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveSiteResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveCatalog_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveCatalog" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveCatalog_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveCatalogResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_ActualizeDataValue_InputMessage">
-    <wsdl:part name="parameters" element="tns:ActualizeDataValue" />
-  </wsdl:message>
-  <wsdl:message name="IService_ActualizeDataValue_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ActualizeDataValueResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveValue_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveValue" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveValue_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveValueResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataValue_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataValue" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataValue_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataValueResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataValueXSource_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataValueXSource" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataValueXSource_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataValueXSourceResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataSource_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataSource" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataSource_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataSourceResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataValueList_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataValueList" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataValueList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataValueListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataForecastList_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataForecastList" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataForecastList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataForecastListResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataPRole_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataPRole" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveDataPRole_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveDataPRoleResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveParserSysObjLastStartParam_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveParserSysObjLastStartParam" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveParserSysObjLastStartParam_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveParserSysObjLastStartParamResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService">
+    <wsdl:operation name="SaveVariableCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveVariableCode" message="tns:IService_SaveVariableCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveVariableCodeResponse" message="tns:IService_SaveVariableCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSiteAttribute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveSiteAttribute" message="tns:IService_SaveSiteAttribute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveSiteAttributeResponse" message="tns:IService_SaveSiteAttribute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveSite" message="tns:IService_SaveSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveSiteResponse" message="tns:IService_SaveSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveCatalog" message="tns:IService_SaveCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveCatalogResponse" message="tns:IService_SaveCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizeDataValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizeDataValue" message="tns:IService_ActualizeDataValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizeDataValueResponse" message="tns:IService_ActualizeDataValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveValue" message="tns:IService_SaveValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveValueResponse" message="tns:IService_SaveValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataValue" message="tns:IService_SaveDataValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataValueResponse" message="tns:IService_SaveDataValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataValueXSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataValueXSource" message="tns:IService_SaveDataValueXSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataValueXSourceResponse" message="tns:IService_SaveDataValueXSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataSource" message="tns:IService_SaveDataSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataSourceResponse" message="tns:IService_SaveDataSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataValueList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataValueList" message="tns:IService_SaveDataValueList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataValueListResponse" message="tns:IService_SaveDataValueList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataForecastList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataForecastList" message="tns:IService_SaveDataForecastList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataForecastListResponse" message="tns:IService_SaveDataForecastList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataPRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataPRole" message="tns:IService_SaveDataPRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataPRoleResponse" message="tns:IService_SaveDataPRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveParserSysObjLastStartParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam" message="tns:IService_SaveParserSysObjLastStartParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse" message="tns:IService_SaveParserSysObjLastStartParam_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Open">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Open" message="tns:IService_Open_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/OpenResponse" message="tns:IService_Open_OutputMessage" />
@@ -734,61 +786,126 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAll" message="tns:IService_GetLegalEntityesAll_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAllResponse" message="tns:IService_GetLegalEntityesAll_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SaveVariableCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveVariableCode" message="tns:IService_SaveVariableCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveVariableCodeResponse" message="tns:IService_SaveVariableCode_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveSiteAttribute">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveSiteAttribute" message="tns:IService_SaveSiteAttribute_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveSiteAttributeResponse" message="tns:IService_SaveSiteAttribute_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveSite">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveSite" message="tns:IService_SaveSite_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveSiteResponse" message="tns:IService_SaveSite_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveCatalog">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveCatalog" message="tns:IService_SaveCatalog_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveCatalogResponse" message="tns:IService_SaveCatalog_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ActualizeDataValue">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizeDataValue" message="tns:IService_ActualizeDataValue_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizeDataValueResponse" message="tns:IService_ActualizeDataValue_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveValue">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveValue" message="tns:IService_SaveValue_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveValueResponse" message="tns:IService_SaveValue_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataValue">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataValue" message="tns:IService_SaveDataValue_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataValueResponse" message="tns:IService_SaveDataValue_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataValueXSource">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataValueXSource" message="tns:IService_SaveDataValueXSource_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataValueXSourceResponse" message="tns:IService_SaveDataValueXSource_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataSource">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataSource" message="tns:IService_SaveDataSource_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataSourceResponse" message="tns:IService_SaveDataSource_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataValueList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataValueList" message="tns:IService_SaveDataValueList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataValueListResponse" message="tns:IService_SaveDataValueList_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataForecastList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataForecastList" message="tns:IService_SaveDataForecastList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataForecastListResponse" message="tns:IService_SaveDataForecastList_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataPRole">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataPRole" message="tns:IService_SaveDataPRole_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataPRoleResponse" message="tns:IService_SaveDataPRole_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveParserSysObjLastStartParam">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam" message="tns:IService_SaveParserSysObjLastStartParam_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse" message="tns:IService_SaveParserSysObjLastStartParam_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveVariableCode">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveVariableCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSiteAttribute">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveSiteAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSite">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCatalog">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveCatalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizeDataValue">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizeDataValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveValue">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataValue">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveDataValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataValueXSource">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveDataValueXSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataSource">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveDataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataValueList">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveDataValueList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataForecastList">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveDataForecastList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDataPRole">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveDataPRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveParserSysObjLastStartParam">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveParserSysObjLastStartParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Open">
       <soap:operation soapAction="http://tempuri.org/IService/Open" style="document" />
       <wsdl:input>
@@ -1365,127 +1482,10 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SaveVariableCode">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveVariableCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveSiteAttribute">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveSiteAttribute" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveSite">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveSite" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveCatalog">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveCatalog" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ActualizeDataValue">
-      <soap:operation soapAction="http://tempuri.org/IService/ActualizeDataValue" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveValue">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveValue" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataValue">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveDataValue" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataValueXSource">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveDataValueXSource" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataSource">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveDataSource" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataValueList">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveDataValueList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataForecastList">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveDataForecastList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveDataPRole">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveDataPRole" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveParserSysObjLastStartParam">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveParserSysObjLastStartParam" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
-      <soap:address location="http://192.168.116.90:8001/Service.svc" />
+      <soap:address location="http://localhost:8001/Service.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

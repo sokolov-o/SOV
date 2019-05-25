@@ -53,6 +53,7 @@ namespace SOV.Amur.Meta
                     {"name",site.Name }
                 };
                 int siteId = InsertWithReturn(fields);
+
                 if (site.Lat.HasValue && site.Lon.HasValue)
                     UpdateLatLon(siteId, (double)site.Lat, (double)site.Lon);
 
@@ -66,7 +67,7 @@ namespace SOV.Amur.Meta
 
         private void UpdateLatLon(int siteId, double lat, double lon)
         {
-            string sql = "update meta.site set geom_latlon = ST_MakePoint(@lon,@lat)";
+            string sql = "update meta.site set geom_latlon = ST_MakePoint(:lon,:lat) where id = :id";
             var fields = new Dictionary<string, object>()
                 {
                     {"id", siteId},

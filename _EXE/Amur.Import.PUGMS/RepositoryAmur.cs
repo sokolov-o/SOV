@@ -86,75 +86,77 @@ namespace Amur.Import.AMURDB
         /// <returns></returns>
         public static Dictionary<AmurServiceReference.Site, PUGMSServiceReference.Curve> GetSitesCurves(Dictionary<PUGMSServiceReference.Site, PUGMSServiceReference.Curve> psiteCurves)
         {
-            Console.Write("RepositoryAmur.GetSitesCurves...");
-            Dictionary<AmurServiceReference.Site, PUGMSServiceReference.Curve> ret = new Dictionary<AmurServiceReference.Site, PUGMSServiceReference.Curve>();
-            List<PUGMSServiceReference.Site> psitesNotInAmur = new List<PUGMSServiceReference.Site>();
+            throw new Exception("Рабочий код, но нужно подкорректировать для исключения station");
+            ////Console.Write("RepositoryAmur.GetSitesCurves...");
+            ////Dictionary<AmurServiceReference.Site, PUGMSServiceReference.Curve> ret = new Dictionary<AmurServiceReference.Site, PUGMSServiceReference.Curve>();
+            ////List<PUGMSServiceReference.Site> psitesNotInAmur = new List<PUGMSServiceReference.Site>();
 
-            List<AmurServiceReference.Station> astations = Program.aClient.GetStationsByIndices(Program.aHandle, psiteCurves.Select(x => x.Key.SiteCode).Distinct().ToList());
-            foreach (KeyValuePair<PUGMSServiceReference.Site, PUGMSServiceReference.Curve> psiteCurve in psiteCurves)
-            {
-                if (psiteCurve.Value != null)
-                {
-                    List<AmurServiceReference.Site> asite = Program.aClient.GetSitesByStation(Program.aHandle, astations.First(x => x.Code == psiteCurve.Key.SiteCode).Id, (int)EnumStationType.HydroPost);
-                    if (asite == null)
-                    {
-                        psitesNotInAmur.Add(psiteCurve.Key);
-                        string msg = string.Format("В БД Амур отсутствует станция {0} {1}.", psiteCurve.Key.SiteCode, psiteCurve.Key.Name);
-                        continue;
-                    }
-                    if (asite.Count != 1)
-                    {
-                        string msg = string.Format("В БД Амур для станции {0} {1} обнаружено {1} пунктов.", psiteCurve.Key.SiteCode, psiteCurve.Key.Name, asite.Count);
-                        throw new Exception(msg);
-                    }
-                    ret.Add(asite[0], psiteCurve.Value);
-                }
-            }
-            Console.WriteLine(" {0} sites with curves.", ret.Count);
-            if (psitesNotInAmur.Count > 0)
-                throw new Exception("(psitesNotInAmur.Count > 0)");
-            return ret;
+            ////List<AmurServiceReference.Station> astations = Program.aClient.GetStationsByIndices(Program.aHandle, psiteCurves.Select(x => x.Key.SiteCode).Distinct().ToList());
+            ////foreach (KeyValuePair<PUGMSServiceReference.Site, PUGMSServiceReference.Curve> psiteCurve in psiteCurves)
+            ////{
+            ////    if (psiteCurve.Value != null)
+            ////    {
+            ////        List<AmurServiceReference.Site> asite = Program.aClient.GetSitesByStation(Program.aHandle, astations.First(x => x.Code == psiteCurve.Key.SiteCode).Id, (int)EnumStationType.HydroPost);
+            ////        if (asite == null)
+            ////        {
+            ////            psitesNotInAmur.Add(psiteCurve.Key);
+            ////            string msg = string.Format("В БД Амур отсутствует станция {0} {1}.", psiteCurve.Key.SiteCode, psiteCurve.Key.Name);
+            ////            continue;
+            ////        }
+            ////        if (asite.Count != 1)
+            ////        {
+            ////            string msg = string.Format("В БД Амур для станции {0} {1} обнаружено {1} пунктов.", psiteCurve.Key.SiteCode, psiteCurve.Key.Name, asite.Count);
+            ////            throw new Exception(msg);
+            ////        }
+            ////        ret.Add(asite[0], psiteCurve.Value);
+            ////    }
+            ////}
+            ////Console.WriteLine(" {0} sites with curves.", ret.Count);
+            ////if (psitesNotInAmur.Count > 0)
+            ////    throw new Exception("(psitesNotInAmur.Count > 0)");
+            ////return ret;
         }
 
         public static void InsertUpdateDbAmur(Dictionary<AmurServiceReference.Site, PUGMSServiceReference.Curve> asitesCurves)
         {
-            foreach (KeyValuePair<AmurServiceReference.Site, PUGMSServiceReference.Curve> asitesCurve in asitesCurves)
-            {
-                // PUGMS CURVE -> AMUR CURVE
-                Curve pcurve = Parse(asitesCurve.Key, asitesCurve.Value);
+            throw new Exception("Рабочий код, но нужно подкорректировать сервис");
+            //////foreach (KeyValuePair<AmurServiceReference.Site, PUGMSServiceReference.Curve> asitesCurve in asitesCurves)
+            //////{
+            //////    // PUGMS CURVE -> AMUR CURVE
+            //////    Curve pcurve = Parse(asitesCurve.Key, asitesCurve.Value);
 
-                // Создать или выбрать кривую из БД АМУР
-                Curve acurve = Program.aClient.GetCurveByCatalog(Program.aHandle, pcurve.CatalogIdX, pcurve.CatalogIdY, null);
-                if (acurve == null)
-                {
-                    Program.aClient.SaveCurve(Program.aHandle, pcurve);
-                    acurve = Program.aClient.GetCurveByCatalog(Program.aHandle, pcurve.CatalogIdX, pcurve.CatalogIdY, null);
-                }
+            //////    // Создать или выбрать кривую из БД АМУР
+            //////    Curve acurve = Program.aClient.GetCurveByCatalog(Program.aHandle, pcurve.CatalogIdX, pcurve.CatalogIdY, null);
+            //////    if (acurve == null)
+            //////    {
+            //////        Program.aClient.SaveCurve(Program.aHandle, pcurve);
+            //////        acurve = Program.aClient.GetCurveByCatalog(Program.aHandle, pcurve.CatalogIdX, pcurve.CatalogIdY, null);
+            //////    }
 
-                foreach (var pseria in pcurve.Series)
-                {
-                    Curve.Seria aseria = acurve.Series == null ? null : acurve.Series.FirstOrDefault(x => x.DateS == pseria.DateS);
-                    if (aseria == null)
-                    {
-                        aseria = new Curve.Seria()
-                        {
-                            CurveId = acurve.Id,
-                            DateS = pseria.DateS,
-                            Description = pseria.Description,
-                            Coefs = pseria.Coefs,
-                            Points = pseria.Points
-                        };
-                        Program.aClient.SaveCurveSeries(Program.aHandle, new List<Curve.Seria>() { aseria });
-                    }
-                    else
-                    {
-                        Program.aClient.UpdateCurveSeria(Program.aHandle,
-                            aseria.Id, pseria.DateS,
-                            string.IsNullOrEmpty(pseria.Description) ? aseria.Description : pseria.Description,
-                            pseria.Points, pseria.Coefs);
-                    }
-                }
-            }
+            //////    foreach (var pseria in pcurve.Series)
+            //////    {
+            //////        Curve.Seria aseria = acurve.Series == null ? null : acurve.Series.FirstOrDefault(x => x.DateS == pseria.DateS);
+            //////        if (aseria == null)
+            //////        {
+            //////            aseria = new Curve.Seria()
+            //////            {
+            //////                CurveId = acurve.Id,
+            //////                DateS = pseria.DateS,
+            //////                Description = pseria.Description,
+            //////                Coefs = pseria.Coefs,
+            //////                Points = pseria.Points
+            //////            };
+            //////            Program.aClient.SaveCurveSeries(Program.aHandle, new List<Curve.Seria>() { aseria });
+            //////        }
+            //////        else
+            //////        {
+            //////            Program.aClient.UpdateCurveSeria(Program.aHandle,
+            //////                aseria.Id, pseria.DateS,
+            //////                string.IsNullOrEmpty(pseria.Description) ? aseria.Description : pseria.Description,
+            //////                pseria.Points, pseria.Coefs);
+            //////        }
+            //////    }
+            //////}
         }
 
         private static bool Equal(List<Curve.Seria.Point> points1, List<Curve.Seria.Point> points2)

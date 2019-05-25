@@ -1,7 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://192.168.116.90:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="VariableCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameShort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VariableCode" nillable="true" type="tns:VariableCode" />
+  <xs:complexType name="EntityAttrValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttrTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateS" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EntityId" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityAttrValue" nillable="true" type="tns:EntityAttrValue" />
+  <xs:complexType name="Site">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Common" base="q1:IdNameParent">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddrRegionId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Lat" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Lon" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="OrgId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Site" nillable="true" type="tns:Site" />
+  <xs:complexType name="Catalog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MethodId" type="xs:int" />
+      <xs:element minOccurs="0" name="OffsetTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="OffsetValue" type="xs:double" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Catalog" nillable="true" type="tns:Catalog" />
   <xs:complexType name="ArrayOfMethod">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Method" nillable="true" type="tns:Method" />
@@ -10,10 +58,10 @@
   <xs:element name="ArrayOfMethod" nillable="true" type="tns:ArrayOfMethod" />
   <xs:complexType name="Method">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Common" base="q1:IdName">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/SOV.Common" base="q2:IdName">
         <xs:sequence>
           <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MethodOutputStoreParameters" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MethodOutputStoreParameters" nillable="true" type="q3:ArrayOfKeyValueOfstringstring" />
           <xs:element minOccurs="0" name="Order" type="xs:short" />
           <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="SourceLegalEntityId" nillable="true" type="xs:int" />
@@ -28,22 +76,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfSite" nillable="true" type="tns:ArrayOfSite" />
-  <xs:complexType name="Site">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/SOV.Common" base="q3:IdNameParent">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="AddrRegionId" nillable="true" type="xs:int" />
-          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Lat" nillable="true" type="xs:double" />
-          <xs:element minOccurs="0" name="Lon" nillable="true" type="xs:double" />
-          <xs:element minOccurs="0" name="OrgId" nillable="true" type="xs:int" />
-          <xs:element minOccurs="0" name="TypeId" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Site" nillable="true" type="tns:Site" />
   <xs:complexType name="MethodForecast">
     <xs:sequence>
       <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Attr" nillable="true" type="q4:ArrayOfKeyValueOfstringstring" />
@@ -109,15 +141,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfEntityAttrValue" nillable="true" type="tns:ArrayOfEntityAttrValue" />
-  <xs:complexType name="EntityAttrValue">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AttrTypeId" type="xs:int" />
-      <xs:element minOccurs="0" name="DateS" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="EntityId" type="xs:int" />
-      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="EntityAttrValue" nillable="true" type="tns:EntityAttrValue" />
   <xs:complexType name="ArrayOfSiteType">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteType" nillable="true" type="tns:SiteType" />
@@ -323,16 +346,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfVariableCode" nillable="true" type="tns:ArrayOfVariableCode" />
-  <xs:complexType name="VariableCode">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Code" type="xs:int" />
-      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NameShort" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="VariableCode" nillable="true" type="tns:VariableCode" />
   <xs:complexType name="ArrayOfVariableType">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="VariableType" nillable="true" type="tns:VariableType" />
@@ -349,19 +362,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="VariableType" nillable="true" type="tns:VariableType" />
-  <xs:complexType name="Catalog">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="MethodId" type="xs:int" />
-      <xs:element minOccurs="0" name="OffsetTypeId" type="xs:int" />
-      <xs:element minOccurs="0" name="OffsetValue" type="xs:double" />
-      <xs:element minOccurs="0" name="ParentId" type="xs:int" />
-      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
-      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
-      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Catalog" nillable="true" type="tns:Catalog" />
   <xs:complexType name="ArrayOfCatalog">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Catalog" nillable="true" type="tns:Catalog" />

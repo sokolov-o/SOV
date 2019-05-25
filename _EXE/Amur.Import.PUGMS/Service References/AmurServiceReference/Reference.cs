@@ -15,27 +15,27 @@ namespace Amur.Import.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Method", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VariableCode", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class Method : SOV.Common.IdName, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class VariableCode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.Dictionary<string, string> MethodOutputStoreParametersField;
+        private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short OrderField;
+        private string NameShortField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> ParentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> SourceLegalEntityIdField;
+        private int VariableIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -44,6 +44,19 @@ namespace Amur.Import.AmurServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((this.CodeField.Equals(value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
             }
         }
         
@@ -61,27 +74,602 @@ namespace Amur.Import.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.Dictionary<string, string> MethodOutputStoreParameters {
+        public string Name {
             get {
-                return this.MethodOutputStoreParametersField;
+                return this.NameField;
             }
             set {
-                if ((object.ReferenceEquals(this.MethodOutputStoreParametersField, value) != true)) {
-                    this.MethodOutputStoreParametersField = value;
-                    this.RaisePropertyChanged("MethodOutputStoreParameters");
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public short Order {
+        public string NameShort {
             get {
-                return this.OrderField;
+                return this.NameShortField;
             }
             set {
-                if ((this.OrderField.Equals(value) != true)) {
-                    this.OrderField = value;
-                    this.RaisePropertyChanged("Order");
+                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
+                    this.NameShortField = value;
+                    this.RaisePropertyChanged("NameShort");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int VariableId {
+            get {
+                return this.VariableIdField;
+            }
+            set {
+                if ((this.VariableIdField.Equals(value) != true)) {
+                    this.VariableIdField = value;
+                    this.RaisePropertyChanged("VariableId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityAttrValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class EntityAttrValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AttrTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EntityIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AttrTypeId {
+            get {
+                return this.AttrTypeIdField;
+            }
+            set {
+                if ((this.AttrTypeIdField.Equals(value) != true)) {
+                    this.AttrTypeIdField = value;
+                    this.RaisePropertyChanged("AttrTypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateS {
+            get {
+                return this.DateSField;
+            }
+            set {
+                if ((this.DateSField.Equals(value) != true)) {
+                    this.DateSField = value;
+                    this.RaisePropertyChanged("DateS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int EntityId {
+            get {
+                return this.EntityIdField;
+            }
+            set {
+                if ((this.EntityIdField.Equals(value) != true)) {
+                    this.EntityIdField = value;
+                    this.RaisePropertyChanged("EntityId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Site", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class Site : SOV.Common.IdNameParent, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> AddrRegionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> LatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> LonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> OrgIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TypeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> AddrRegionId {
+            get {
+                return this.AddrRegionIdField;
+            }
+            set {
+                if ((this.AddrRegionIdField.Equals(value) != true)) {
+                    this.AddrRegionIdField = value;
+                    this.RaisePropertyChanged("AddrRegionId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Lat {
+            get {
+                return this.LatField;
+            }
+            set {
+                if ((this.LatField.Equals(value) != true)) {
+                    this.LatField = value;
+                    this.RaisePropertyChanged("Lat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Lon {
+            get {
+                return this.LonField;
+            }
+            set {
+                if ((this.LonField.Equals(value) != true)) {
+                    this.LonField = value;
+                    this.RaisePropertyChanged("Lon");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> OrgId {
+            get {
+                return this.OrgIdField;
+            }
+            set {
+                if ((this.OrgIdField.Equals(value) != true)) {
+                    this.OrgIdField = value;
+                    this.RaisePropertyChanged("OrgId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TypeId {
+            get {
+                return this.TypeIdField;
+            }
+            set {
+                if ((this.TypeIdField.Equals(value) != true)) {
+                    this.TypeIdField = value;
+                    this.RaisePropertyChanged("TypeId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VariableVirtual", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Variable))]
+    public partial class VariableVirtual : SOV.Common.IdClass, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DataTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GeneralCategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SampleMediumIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeSupportField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UnitIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int VariableTypeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DataTypeId {
+            get {
+                return this.DataTypeIdField;
+            }
+            set {
+                if ((this.DataTypeIdField.Equals(value) != true)) {
+                    this.DataTypeIdField = value;
+                    this.RaisePropertyChanged("DataTypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int GeneralCategoryId {
+            get {
+                return this.GeneralCategoryIdField;
+            }
+            set {
+                if ((this.GeneralCategoryIdField.Equals(value) != true)) {
+                    this.GeneralCategoryIdField = value;
+                    this.RaisePropertyChanged("GeneralCategoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SampleMediumId {
+            get {
+                return this.SampleMediumIdField;
+            }
+            set {
+                if ((this.SampleMediumIdField.Equals(value) != true)) {
+                    this.SampleMediumIdField = value;
+                    this.RaisePropertyChanged("SampleMediumId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TimeId {
+            get {
+                return this.TimeIdField;
+            }
+            set {
+                if ((this.TimeIdField.Equals(value) != true)) {
+                    this.TimeIdField = value;
+                    this.RaisePropertyChanged("TimeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TimeSupport {
+            get {
+                return this.TimeSupportField;
+            }
+            set {
+                if ((this.TimeSupportField.Equals(value) != true)) {
+                    this.TimeSupportField = value;
+                    this.RaisePropertyChanged("TimeSupport");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UnitId {
+            get {
+                return this.UnitIdField;
+            }
+            set {
+                if ((this.UnitIdField.Equals(value) != true)) {
+                    this.UnitIdField = value;
+                    this.RaisePropertyChanged("UnitId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int VariableTypeId {
+            get {
+                return this.VariableTypeIdField;
+            }
+            set {
+                if ((this.VariableTypeIdField.Equals(value) != true)) {
+                    this.VariableTypeIdField = value;
+                    this.RaisePropertyChanged("VariableTypeId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Variable", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class Variable : Amur.Import.AmurServiceReference.VariableVirtual {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CodeErrDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CodeNoDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameCField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameEngField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameRusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ValueTypeIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CodeErrData {
+            get {
+                return this.CodeErrDataField;
+            }
+            set {
+                if ((this.CodeErrDataField.Equals(value) != true)) {
+                    this.CodeErrDataField = value;
+                    this.RaisePropertyChanged("CodeErrData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CodeNoData {
+            get {
+                return this.CodeNoDataField;
+            }
+            set {
+                if ((this.CodeNoDataField.Equals(value) != true)) {
+                    this.CodeNoDataField = value;
+                    this.RaisePropertyChanged("CodeNoData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameC {
+            get {
+                return this.NameCField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameCField, value) != true)) {
+                    this.NameCField = value;
+                    this.RaisePropertyChanged("NameC");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameEng {
+            get {
+                return this.NameEngField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
+                    this.NameEngField = value;
+                    this.RaisePropertyChanged("NameEng");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameRus {
+            get {
+                return this.NameRusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameRusField, value) != true)) {
+                    this.NameRusField = value;
+                    this.RaisePropertyChanged("NameRus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ValueTypeId {
+            get {
+                return this.ValueTypeIdField;
+            }
+            set {
+                if ((this.ValueTypeIdField.Equals(value) != true)) {
+                    this.ValueTypeIdField = value;
+                    this.RaisePropertyChanged("ValueTypeId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Addr", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
+    [System.SerializableAttribute()]
+    public partial class Addr : SOV.Common.IdClass, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<Amur.Import.AmurServiceReference.Addr> ChildsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameShortField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ParentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TypeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<Amur.Import.AmurServiceReference.Addr> Childs {
+            get {
+                return this.ChildsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChildsField, value) != true)) {
+                    this.ChildsField = value;
+                    this.RaisePropertyChanged("Childs");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameShort {
+            get {
+                return this.NameShortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
+                    this.NameShortField = value;
+                    this.RaisePropertyChanged("NameShort");
                 }
             }
         }
@@ -100,14 +688,14 @@ namespace Amur.Import.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> SourceLegalEntityId {
+        public int TypeId {
             get {
-                return this.SourceLegalEntityIdField;
+                return this.TypeIdField;
             }
             set {
-                if ((this.SourceLegalEntityIdField.Equals(value) != true)) {
-                    this.SourceLegalEntityIdField = value;
-                    this.RaisePropertyChanged("SourceLegalEntityId");
+                if ((this.TypeIdField.Equals(value) != true)) {
+                    this.TypeIdField = value;
+                    this.RaisePropertyChanged("TypeId");
                 }
             }
         }
@@ -126,25 +714,14 @@ namespace Amur.Import.AmurServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="LegalEntity", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdName))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdClass))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNameParent))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.DicItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Common.DicItem>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNameRus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Org))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Org>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Person))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Person>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Addr>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.LegalEntity>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Type))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.VariableCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.EntityAttrValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Site))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Catalog))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Method>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Method))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Site>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Site))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.MethodForecast))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.GeoObject))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.SiteAttrType>))]
@@ -153,7 +730,6 @@ namespace Amur.Import.AmurServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.SampleMedium>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.SampleMedium))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.EntityAttrValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.EntityAttrValue))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.SiteType>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.SiteType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Variable>))]
@@ -180,24 +756,14 @@ namespace Amur.Import.AmurServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.ValueType>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.ValueType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.VariableCode>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.VariableCode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.VariableType>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Catalog))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Catalog>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Curve>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Curve))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Curve.Seria>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Curve.Seria))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Curve.Seria.Coef>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Curve.Seria.Coef))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Curve.Seria.Point>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Curve.Seria.Point))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.DataForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.DataSource))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.DataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.SysObj))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.SysParsersXSites>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.SysParsersXSites))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.SysParsersParams>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.SysParsersParams))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
@@ -211,14 +777,36 @@ namespace Amur.Import.AmurServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, Amur.Import.AmurServiceReference.DataSource>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<Amur.Import.AmurServiceReference.Catalog, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.SysObj))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.SysParsersXSites>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.SysParsersXSites))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.SysParsersParams>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.SysParsersParams))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Org))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Org>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Person))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Person>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Addr>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Addr))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.LegalEntity>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.AQCDataValue>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.AQCDataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.DataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.DataSource))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.DataForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Curve>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Curve))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Curve.Seria>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Curve.Seria))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Curve.Seria.Coef>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Curve.Seria.Coef))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<Amur.Import.AmurServiceReference.Curve.Seria.Point>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Curve.Seria.Point))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Reflection.MemberInfo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNameParent))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdName))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdClass))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.DicItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Common.DicItem>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNameRus))]
     public partial class LegalEntity : SOV.Common.IdNames, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -390,9 +978,9 @@ namespace Amur.Import.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Org", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Catalog", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class Org : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Catalog : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -401,7 +989,25 @@ namespace Amur.Import.AmurServiceReference {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> StaffIdFirstFaceField;
+        private int MethodIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OffsetTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double OffsetValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ParentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SiteIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SourceIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int VariableIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -427,14 +1033,92 @@ namespace Amur.Import.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> StaffIdFirstFace {
+        public int MethodId {
             get {
-                return this.StaffIdFirstFaceField;
+                return this.MethodIdField;
             }
             set {
-                if ((this.StaffIdFirstFaceField.Equals(value) != true)) {
-                    this.StaffIdFirstFaceField = value;
-                    this.RaisePropertyChanged("StaffIdFirstFace");
+                if ((this.MethodIdField.Equals(value) != true)) {
+                    this.MethodIdField = value;
+                    this.RaisePropertyChanged("MethodId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OffsetTypeId {
+            get {
+                return this.OffsetTypeIdField;
+            }
+            set {
+                if ((this.OffsetTypeIdField.Equals(value) != true)) {
+                    this.OffsetTypeIdField = value;
+                    this.RaisePropertyChanged("OffsetTypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double OffsetValue {
+            get {
+                return this.OffsetValueField;
+            }
+            set {
+                if ((this.OffsetValueField.Equals(value) != true)) {
+                    this.OffsetValueField = value;
+                    this.RaisePropertyChanged("OffsetValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ParentId {
+            get {
+                return this.ParentIdField;
+            }
+            set {
+                if ((this.ParentIdField.Equals(value) != true)) {
+                    this.ParentIdField = value;
+                    this.RaisePropertyChanged("ParentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SiteId {
+            get {
+                return this.SiteIdField;
+            }
+            set {
+                if ((this.SiteIdField.Equals(value) != true)) {
+                    this.SiteIdField = value;
+                    this.RaisePropertyChanged("SiteId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SourceId {
+            get {
+                return this.SourceIdField;
+            }
+            set {
+                if ((this.SourceIdField.Equals(value) != true)) {
+                    this.SourceIdField = value;
+                    this.RaisePropertyChanged("SourceId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int VariableId {
+            get {
+                return this.VariableIdField;
+            }
+            set {
+                if ((this.VariableIdField.Equals(value) != true)) {
+                    this.VariableIdField = value;
+                    this.RaisePropertyChanged("VariableId");
                 }
             }
         }
@@ -451,88 +1135,27 @@ namespace Amur.Import.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Method", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Method : SOV.Common.IdName, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int LegalEntityIdField;
+        private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<char> SexField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int LegalEntityId {
-            get {
-                return this.LegalEntityIdField;
-            }
-            set {
-                if ((this.LegalEntityIdField.Equals(value) != true)) {
-                    this.LegalEntityIdField = value;
-                    this.RaisePropertyChanged("LegalEntityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<char> Sex {
-            get {
-                return this.SexField;
-            }
-            set {
-                if ((this.SexField.Equals(value) != true)) {
-                    this.SexField = value;
-                    this.RaisePropertyChanged("Sex");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Addr", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
-    [System.SerializableAttribute()]
-    public partial class Addr : SOV.Common.IdClass, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        private System.Collections.Generic.Dictionary<string, string> MethodOutputStoreParametersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Amur.Import.AmurServiceReference.Addr> ChildsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameShortField;
+        private short OrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> ParentIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TypeIdField;
+        private System.Nullable<int> SourceLegalEntityIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -545,40 +1168,40 @@ namespace Amur.Import.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Amur.Import.AmurServiceReference.Addr> Childs {
+        public string Description {
             get {
-                return this.ChildsField;
+                return this.DescriptionField;
             }
             set {
-                if ((object.ReferenceEquals(this.ChildsField, value) != true)) {
-                    this.ChildsField = value;
-                    this.RaisePropertyChanged("Childs");
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public System.Collections.Generic.Dictionary<string, string> MethodOutputStoreParameters {
             get {
-                return this.NameField;
+                return this.MethodOutputStoreParametersField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((object.ReferenceEquals(this.MethodOutputStoreParametersField, value) != true)) {
+                    this.MethodOutputStoreParametersField = value;
+                    this.RaisePropertyChanged("MethodOutputStoreParameters");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameShort {
+        public short Order {
             get {
-                return this.NameShortField;
+                return this.OrderField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
-                    this.NameShortField = value;
-                    this.RaisePropertyChanged("NameShort");
+                if ((this.OrderField.Equals(value) != true)) {
+                    this.OrderField = value;
+                    this.RaisePropertyChanged("Order");
                 }
             }
         }
@@ -597,155 +1220,14 @@ namespace Amur.Import.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TypeId {
+        public System.Nullable<int> SourceLegalEntityId {
             get {
-                return this.TypeIdField;
+                return this.SourceLegalEntityIdField;
             }
             set {
-                if ((this.TypeIdField.Equals(value) != true)) {
-                    this.TypeIdField = value;
-                    this.RaisePropertyChanged("TypeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Site", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Site : SOV.Common.IdNameParent, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> AddrRegionIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> LatField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> LonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> OrgIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TypeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> AddrRegionId {
-            get {
-                return this.AddrRegionIdField;
-            }
-            set {
-                if ((this.AddrRegionIdField.Equals(value) != true)) {
-                    this.AddrRegionIdField = value;
-                    this.RaisePropertyChanged("AddrRegionId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Lat {
-            get {
-                return this.LatField;
-            }
-            set {
-                if ((this.LatField.Equals(value) != true)) {
-                    this.LatField = value;
-                    this.RaisePropertyChanged("Lat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Lon {
-            get {
-                return this.LonField;
-            }
-            set {
-                if ((this.LonField.Equals(value) != true)) {
-                    this.LonField = value;
-                    this.RaisePropertyChanged("Lon");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> OrgId {
-            get {
-                return this.OrgIdField;
-            }
-            set {
-                if ((this.OrgIdField.Equals(value) != true)) {
-                    this.OrgIdField = value;
-                    this.RaisePropertyChanged("OrgId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TypeId {
-            get {
-                return this.TypeIdField;
-            }
-            set {
-                if ((this.TypeIdField.Equals(value) != true)) {
-                    this.TypeIdField = value;
-                    this.RaisePropertyChanged("TypeId");
+                if ((this.SourceLegalEntityIdField.Equals(value) != true)) {
+                    this.SourceLegalEntityIdField = value;
+                    this.RaisePropertyChanged("SourceLegalEntityId");
                 }
             }
         }
@@ -1078,99 +1560,6 @@ namespace Amur.Import.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityAttrValue", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class EntityAttrValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int AttrTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateSField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int EntityIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AttrTypeId {
-            get {
-                return this.AttrTypeIdField;
-            }
-            set {
-                if ((this.AttrTypeIdField.Equals(value) != true)) {
-                    this.AttrTypeIdField = value;
-                    this.RaisePropertyChanged("AttrTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateS {
-            get {
-                return this.DateSField;
-            }
-            set {
-                if ((this.DateSField.Equals(value) != true)) {
-                    this.DateSField = value;
-                    this.RaisePropertyChanged("DateS");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int EntityId {
-            get {
-                return this.EntityIdField;
-            }
-            set {
-                if ((this.EntityIdField.Equals(value) != true)) {
-                    this.EntityIdField = value;
-                    this.RaisePropertyChanged("EntityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SiteType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class SiteType : SOV.Common.IdName, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1200,251 +1589,6 @@ namespace Amur.Import.AmurServiceReference {
                 if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
                     this.NameShortField = value;
                     this.RaisePropertyChanged("NameShort");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Variable", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Variable : Amur.Import.AmurServiceReference.VariableVirtual {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double CodeErrDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double CodeNoDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameCField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameRusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ValueTypeIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double CodeErrData {
-            get {
-                return this.CodeErrDataField;
-            }
-            set {
-                if ((this.CodeErrDataField.Equals(value) != true)) {
-                    this.CodeErrDataField = value;
-                    this.RaisePropertyChanged("CodeErrData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double CodeNoData {
-            get {
-                return this.CodeNoDataField;
-            }
-            set {
-                if ((this.CodeNoDataField.Equals(value) != true)) {
-                    this.CodeNoDataField = value;
-                    this.RaisePropertyChanged("CodeNoData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameC {
-            get {
-                return this.NameCField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameCField, value) != true)) {
-                    this.NameCField = value;
-                    this.RaisePropertyChanged("NameC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
-            get {
-                return this.NameEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameRus {
-            get {
-                return this.NameRusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameRusField, value) != true)) {
-                    this.NameRusField = value;
-                    this.RaisePropertyChanged("NameRus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ValueTypeId {
-            get {
-                return this.ValueTypeIdField;
-            }
-            set {
-                if ((this.ValueTypeIdField.Equals(value) != true)) {
-                    this.ValueTypeIdField = value;
-                    this.RaisePropertyChanged("ValueTypeId");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableVirtual", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Amur.Import.AmurServiceReference.Variable))]
-    public partial class VariableVirtual : SOV.Common.IdClass, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DataTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GeneralCategoryIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SampleMediumIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TimeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TimeSupportField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UnitIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VariableTypeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DataTypeId {
-            get {
-                return this.DataTypeIdField;
-            }
-            set {
-                if ((this.DataTypeIdField.Equals(value) != true)) {
-                    this.DataTypeIdField = value;
-                    this.RaisePropertyChanged("DataTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GeneralCategoryId {
-            get {
-                return this.GeneralCategoryIdField;
-            }
-            set {
-                if ((this.GeneralCategoryIdField.Equals(value) != true)) {
-                    this.GeneralCategoryIdField = value;
-                    this.RaisePropertyChanged("GeneralCategoryId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SampleMediumId {
-            get {
-                return this.SampleMediumIdField;
-            }
-            set {
-                if ((this.SampleMediumIdField.Equals(value) != true)) {
-                    this.SampleMediumIdField = value;
-                    this.RaisePropertyChanged("SampleMediumId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TimeId {
-            get {
-                return this.TimeIdField;
-            }
-            set {
-                if ((this.TimeIdField.Equals(value) != true)) {
-                    this.TimeIdField = value;
-                    this.RaisePropertyChanged("TimeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TimeSupport {
-            get {
-                return this.TimeSupportField;
-            }
-            set {
-                if ((this.TimeSupportField.Equals(value) != true)) {
-                    this.TimeSupportField = value;
-                    this.RaisePropertyChanged("TimeSupport");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UnitId {
-            get {
-                return this.UnitIdField;
-            }
-            set {
-                if ((this.UnitIdField.Equals(value) != true)) {
-                    this.UnitIdField = value;
-                    this.RaisePropertyChanged("UnitId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VariableTypeId {
-            get {
-                return this.VariableTypeIdField;
-            }
-            set {
-                if ((this.VariableTypeIdField.Equals(value) != true)) {
-                    this.VariableTypeIdField = value;
-                    this.RaisePropertyChanged("VariableTypeId");
                 }
             }
         }
@@ -2058,115 +2202,6 @@ namespace Amur.Import.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableCode", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class VariableCode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameShortField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VariableIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameShort {
-            get {
-                return this.NameShortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
-                    this.NameShortField = value;
-                    this.RaisePropertyChanged("NameShort");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VariableId {
-            get {
-                return this.VariableIdField;
-            }
-            set {
-                if ((this.VariableIdField.Equals(value) != true)) {
-                    this.VariableIdField = value;
-                    this.RaisePropertyChanged("VariableId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="VariableType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class VariableType : SOV.Common.DicItem, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2212,36 +2247,30 @@ namespace Amur.Import.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Catalog", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SysObj", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser")]
     [System.SerializableAttribute()]
-    public partial class Catalog : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class SysObj : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HeapField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int MethodIdField;
+        private string LastStartParamField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OffsetTypeIdField;
+        private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double OffsetValueField;
+        private string NotesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ParentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SiteIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SourceIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VariableIdField;
+        private int SysObjTypeIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2250,6 +2279,19 @@ namespace Amur.Import.AmurServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Heap {
+            get {
+                return this.HeapField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HeapField, value) != true)) {
+                    this.HeapField = value;
+                    this.RaisePropertyChanged("Heap");
+                }
             }
         }
         
@@ -2267,53 +2309,148 @@ namespace Amur.Import.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int MethodId {
+        public string LastStartParam {
             get {
-                return this.MethodIdField;
+                return this.LastStartParamField;
             }
             set {
-                if ((this.MethodIdField.Equals(value) != true)) {
-                    this.MethodIdField = value;
-                    this.RaisePropertyChanged("MethodId");
+                if ((object.ReferenceEquals(this.LastStartParamField, value) != true)) {
+                    this.LastStartParamField = value;
+                    this.RaisePropertyChanged("LastStartParam");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OffsetTypeId {
+        public string Name {
             get {
-                return this.OffsetTypeIdField;
+                return this.NameField;
             }
             set {
-                if ((this.OffsetTypeIdField.Equals(value) != true)) {
-                    this.OffsetTypeIdField = value;
-                    this.RaisePropertyChanged("OffsetTypeId");
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double OffsetValue {
+        public string Notes {
             get {
-                return this.OffsetValueField;
+                return this.NotesField;
             }
             set {
-                if ((this.OffsetValueField.Equals(value) != true)) {
-                    this.OffsetValueField = value;
-                    this.RaisePropertyChanged("OffsetValue");
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ParentId {
+        public int SysObjTypeId {
             get {
-                return this.ParentIdField;
+                return this.SysObjTypeIdField;
             }
             set {
-                if ((this.ParentIdField.Equals(value) != true)) {
-                    this.ParentIdField = value;
-                    this.RaisePropertyChanged("ParentId");
+                if ((this.SysObjTypeIdField.Equals(value) != true)) {
+                    this.SysObjTypeIdField = value;
+                    this.RaisePropertyChanged("SysObjTypeId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SysParsersXSites", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser")]
+    [System.SerializableAttribute()]
+    public partial class SysParsersXSites : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExtSiteIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SiteCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SiteIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SiteNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SiteTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SysObjIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SysParsersParamsSetIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool isActualField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExtSiteId {
+            get {
+                return this.ExtSiteIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtSiteIdField, value) != true)) {
+                    this.ExtSiteIdField = value;
+                    this.RaisePropertyChanged("ExtSiteId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SiteCode {
+            get {
+                return this.SiteCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SiteCodeField, value) != true)) {
+                    this.SiteCodeField = value;
+                    this.RaisePropertyChanged("SiteCode");
                 }
             }
         }
@@ -2332,27 +2469,287 @@ namespace Amur.Import.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SourceId {
+        public string SiteName {
             get {
-                return this.SourceIdField;
+                return this.SiteNameField;
             }
             set {
-                if ((this.SourceIdField.Equals(value) != true)) {
-                    this.SourceIdField = value;
-                    this.RaisePropertyChanged("SourceId");
+                if ((object.ReferenceEquals(this.SiteNameField, value) != true)) {
+                    this.SiteNameField = value;
+                    this.RaisePropertyChanged("SiteName");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VariableId {
+        public int SiteTypeId {
             get {
-                return this.VariableIdField;
+                return this.SiteTypeIdField;
             }
             set {
-                if ((this.VariableIdField.Equals(value) != true)) {
-                    this.VariableIdField = value;
-                    this.RaisePropertyChanged("VariableId");
+                if ((this.SiteTypeIdField.Equals(value) != true)) {
+                    this.SiteTypeIdField = value;
+                    this.RaisePropertyChanged("SiteTypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SysObjId {
+            get {
+                return this.SysObjIdField;
+            }
+            set {
+                if ((this.SysObjIdField.Equals(value) != true)) {
+                    this.SysObjIdField = value;
+                    this.RaisePropertyChanged("SysObjId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SysParsersParamsSetId {
+            get {
+                return this.SysParsersParamsSetIdField;
+            }
+            set {
+                if ((this.SysParsersParamsSetIdField.Equals(value) != true)) {
+                    this.SysParsersParamsSetIdField = value;
+                    this.RaisePropertyChanged("SysParsersParamsSetId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool isActual {
+            get {
+                return this.isActualField;
+            }
+            set {
+                if ((this.isActualField.Equals(value) != true)) {
+                    this.isActualField = value;
+                    this.RaisePropertyChanged("isActual");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SysParsersParams", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser")]
+    [System.SerializableAttribute()]
+    public partial class SysParsersParams : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CodeFormIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ExtLevelIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExtParamField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IntOffsetIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IntVariableIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MultiplierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OffsetDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OffsetUnitsIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SysParsersParamsSetIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double VarErrorDataValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double VarNoDataValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VariableNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CodeFormId {
+            get {
+                return this.CodeFormIdField;
+            }
+            set {
+                if ((this.CodeFormIdField.Equals(value) != true)) {
+                    this.CodeFormIdField = value;
+                    this.RaisePropertyChanged("CodeFormId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ExtLevelId {
+            get {
+                return this.ExtLevelIdField;
+            }
+            set {
+                if ((this.ExtLevelIdField.Equals(value) != true)) {
+                    this.ExtLevelIdField = value;
+                    this.RaisePropertyChanged("ExtLevelId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExtParam {
+            get {
+                return this.ExtParamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtParamField, value) != true)) {
+                    this.ExtParamField = value;
+                    this.RaisePropertyChanged("ExtParam");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IntOffsetId {
+            get {
+                return this.IntOffsetIdField;
+            }
+            set {
+                if ((this.IntOffsetIdField.Equals(value) != true)) {
+                    this.IntOffsetIdField = value;
+                    this.RaisePropertyChanged("IntOffsetId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IntVariableId {
+            get {
+                return this.IntVariableIdField;
+            }
+            set {
+                if ((this.IntVariableIdField.Equals(value) != true)) {
+                    this.IntVariableIdField = value;
+                    this.RaisePropertyChanged("IntVariableId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Multiplier {
+            get {
+                return this.MultiplierField;
+            }
+            set {
+                if ((this.MultiplierField.Equals(value) != true)) {
+                    this.MultiplierField = value;
+                    this.RaisePropertyChanged("Multiplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OffsetDescription {
+            get {
+                return this.OffsetDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OffsetDescriptionField, value) != true)) {
+                    this.OffsetDescriptionField = value;
+                    this.RaisePropertyChanged("OffsetDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OffsetUnitsId {
+            get {
+                return this.OffsetUnitsIdField;
+            }
+            set {
+                if ((this.OffsetUnitsIdField.Equals(value) != true)) {
+                    this.OffsetUnitsIdField = value;
+                    this.RaisePropertyChanged("OffsetUnitsId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SysParsersParamsSetId {
+            get {
+                return this.SysParsersParamsSetIdField;
+            }
+            set {
+                if ((this.SysParsersParamsSetIdField.Equals(value) != true)) {
+                    this.SysParsersParamsSetIdField = value;
+                    this.RaisePropertyChanged("SysParsersParamsSetId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double VarErrorDataValue {
+            get {
+                return this.VarErrorDataValueField;
+            }
+            set {
+                if ((this.VarErrorDataValueField.Equals(value) != true)) {
+                    this.VarErrorDataValueField = value;
+                    this.RaisePropertyChanged("VarErrorDataValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double VarNoDataValue {
+            get {
+                return this.VarNoDataValueField;
+            }
+            set {
+                if ((this.VarNoDataValueField.Equals(value) != true)) {
+                    this.VarNoDataValueField = value;
+                    this.RaisePropertyChanged("VarNoDataValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VariableName {
+            get {
+                return this.VariableNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VariableNameField, value) != true)) {
+                    this.VariableNameField = value;
+                    this.RaisePropertyChanged("VariableName");
                 }
             }
         }
@@ -3193,30 +3590,18 @@ namespace Amur.Import.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SysObj", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Org", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
-    public partial class SysObj : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Org : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string HeapField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastStartParamField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NotesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SysObjTypeIdField;
+        private System.Nullable<int> StaffIdFirstFaceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3225,19 +3610,6 @@ namespace Amur.Import.AmurServiceReference {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Heap {
-            get {
-                return this.HeapField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.HeapField, value) != true)) {
-                    this.HeapField = value;
-                    this.RaisePropertyChanged("Heap");
-                }
             }
         }
         
@@ -3255,53 +3627,14 @@ namespace Amur.Import.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastStartParam {
+        public System.Nullable<int> StaffIdFirstFace {
             get {
-                return this.LastStartParamField;
+                return this.StaffIdFirstFaceField;
             }
             set {
-                if ((object.ReferenceEquals(this.LastStartParamField, value) != true)) {
-                    this.LastStartParamField = value;
-                    this.RaisePropertyChanged("LastStartParam");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SysObjTypeId {
-            get {
-                return this.SysObjTypeIdField;
-            }
-            set {
-                if ((this.SysObjTypeIdField.Equals(value) != true)) {
-                    this.SysObjTypeIdField = value;
-                    this.RaisePropertyChanged("SysObjTypeId");
+                if ((this.StaffIdFirstFaceField.Equals(value) != true)) {
+                    this.StaffIdFirstFaceField = value;
+                    this.RaisePropertyChanged("StaffIdFirstFace");
                 }
             }
         }
@@ -3318,39 +3651,18 @@ namespace Amur.Import.AmurServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SysParsersXSites", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
-    public partial class SysParsersXSites : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExtSiteIdField;
+        private int LegalEntityIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SiteCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SiteIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SiteNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SiteTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SysObjIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SysParsersParamsSetIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool isActualField;
+        private System.Nullable<char> SexField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3363,339 +3675,27 @@ namespace Amur.Import.AmurServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ExtSiteId {
+        public int LegalEntityId {
             get {
-                return this.ExtSiteIdField;
+                return this.LegalEntityIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.ExtSiteIdField, value) != true)) {
-                    this.ExtSiteIdField = value;
-                    this.RaisePropertyChanged("ExtSiteId");
+                if ((this.LegalEntityIdField.Equals(value) != true)) {
+                    this.LegalEntityIdField = value;
+                    this.RaisePropertyChanged("LegalEntityId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
+        public System.Nullable<char> Sex {
             get {
-                return this.IdField;
+                return this.SexField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SiteCode {
-            get {
-                return this.SiteCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SiteCodeField, value) != true)) {
-                    this.SiteCodeField = value;
-                    this.RaisePropertyChanged("SiteCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SiteId {
-            get {
-                return this.SiteIdField;
-            }
-            set {
-                if ((this.SiteIdField.Equals(value) != true)) {
-                    this.SiteIdField = value;
-                    this.RaisePropertyChanged("SiteId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SiteName {
-            get {
-                return this.SiteNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SiteNameField, value) != true)) {
-                    this.SiteNameField = value;
-                    this.RaisePropertyChanged("SiteName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SiteTypeId {
-            get {
-                return this.SiteTypeIdField;
-            }
-            set {
-                if ((this.SiteTypeIdField.Equals(value) != true)) {
-                    this.SiteTypeIdField = value;
-                    this.RaisePropertyChanged("SiteTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SysObjId {
-            get {
-                return this.SysObjIdField;
-            }
-            set {
-                if ((this.SysObjIdField.Equals(value) != true)) {
-                    this.SysObjIdField = value;
-                    this.RaisePropertyChanged("SysObjId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SysParsersParamsSetId {
-            get {
-                return this.SysParsersParamsSetIdField;
-            }
-            set {
-                if ((this.SysParsersParamsSetIdField.Equals(value) != true)) {
-                    this.SysParsersParamsSetIdField = value;
-                    this.RaisePropertyChanged("SysParsersParamsSetId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool isActual {
-            get {
-                return this.isActualField;
-            }
-            set {
-                if ((this.isActualField.Equals(value) != true)) {
-                    this.isActualField = value;
-                    this.RaisePropertyChanged("isActual");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SysParsersParams", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser")]
-    [System.SerializableAttribute()]
-    public partial class SysParsersParams : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeFormIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ExtLevelIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExtParamField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IntOffsetIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IntVariableIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MultiplierField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OffsetDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OffsetUnitsIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SysParsersParamsSetIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double VarErrorDataValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double VarNoDataValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string VariableNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CodeFormId {
-            get {
-                return this.CodeFormIdField;
-            }
-            set {
-                if ((this.CodeFormIdField.Equals(value) != true)) {
-                    this.CodeFormIdField = value;
-                    this.RaisePropertyChanged("CodeFormId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ExtLevelId {
-            get {
-                return this.ExtLevelIdField;
-            }
-            set {
-                if ((this.ExtLevelIdField.Equals(value) != true)) {
-                    this.ExtLevelIdField = value;
-                    this.RaisePropertyChanged("ExtLevelId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ExtParam {
-            get {
-                return this.ExtParamField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExtParamField, value) != true)) {
-                    this.ExtParamField = value;
-                    this.RaisePropertyChanged("ExtParam");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IntOffsetId {
-            get {
-                return this.IntOffsetIdField;
-            }
-            set {
-                if ((this.IntOffsetIdField.Equals(value) != true)) {
-                    this.IntOffsetIdField = value;
-                    this.RaisePropertyChanged("IntOffsetId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IntVariableId {
-            get {
-                return this.IntVariableIdField;
-            }
-            set {
-                if ((this.IntVariableIdField.Equals(value) != true)) {
-                    this.IntVariableIdField = value;
-                    this.RaisePropertyChanged("IntVariableId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Multiplier {
-            get {
-                return this.MultiplierField;
-            }
-            set {
-                if ((this.MultiplierField.Equals(value) != true)) {
-                    this.MultiplierField = value;
-                    this.RaisePropertyChanged("Multiplier");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OffsetDescription {
-            get {
-                return this.OffsetDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OffsetDescriptionField, value) != true)) {
-                    this.OffsetDescriptionField = value;
-                    this.RaisePropertyChanged("OffsetDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OffsetUnitsId {
-            get {
-                return this.OffsetUnitsIdField;
-            }
-            set {
-                if ((this.OffsetUnitsIdField.Equals(value) != true)) {
-                    this.OffsetUnitsIdField = value;
-                    this.RaisePropertyChanged("OffsetUnitsId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SysParsersParamsSetId {
-            get {
-                return this.SysParsersParamsSetIdField;
-            }
-            set {
-                if ((this.SysParsersParamsSetIdField.Equals(value) != true)) {
-                    this.SysParsersParamsSetIdField = value;
-                    this.RaisePropertyChanged("SysParsersParamsSetId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double VarErrorDataValue {
-            get {
-                return this.VarErrorDataValueField;
-            }
-            set {
-                if ((this.VarErrorDataValueField.Equals(value) != true)) {
-                    this.VarErrorDataValueField = value;
-                    this.RaisePropertyChanged("VarErrorDataValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double VarNoDataValue {
-            get {
-                return this.VarNoDataValueField;
-            }
-            set {
-                if ((this.VarNoDataValueField.Equals(value) != true)) {
-                    this.VarNoDataValueField = value;
-                    this.RaisePropertyChanged("VarNoDataValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string VariableName {
-            get {
-                return this.VariableNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VariableNameField, value) != true)) {
-                    this.VariableNameField = value;
-                    this.RaisePropertyChanged("VariableName");
+                if ((this.SexField.Equals(value) != true)) {
+                    this.SexField = value;
+                    this.RaisePropertyChanged("Sex");
                 }
             }
         }
@@ -3790,6 +3790,84 @@ namespace Amur.Import.AmurServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AmurServiceReference.IService")]
     public interface IService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
+        void SaveVariableCode(long hSvc, Amur.Import.AmurServiceReference.VariableCode vc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
+        System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, Amur.Import.AmurServiceReference.VariableCode vc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
+        void SaveSiteAttribute(long hSvc, Amur.Import.AmurServiceReference.EntityAttrValue eav);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
+        System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, Amur.Import.AmurServiceReference.EntityAttrValue eav);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
+        int SaveSite(long hSvc, Amur.Import.AmurServiceReference.Site site);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
+        System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, Amur.Import.AmurServiceReference.Site site);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
+        Amur.Import.AmurServiceReference.Catalog SaveCatalog(long hSvc, Amur.Import.AmurServiceReference.Catalog catalog);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
+        System.Threading.Tasks.Task<Amur.Import.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, Amur.Import.AmurServiceReference.Catalog catalog);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
+        void ActualizeDataValue(long hSvc, long dataValueId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
+        System.Threading.Tasks.Task ActualizeDataValueAsync(long hSvc, long dataValueId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveValue", ReplyAction="http://tempuri.org/IService/SaveValueResponse")]
+        long SaveValue(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveValue", ReplyAction="http://tempuri.org/IService/SaveValueResponse")]
+        System.Threading.Tasks.Task<long> SaveValueAsync(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
+        long SaveDataValue(long hSvc, Amur.Import.AmurServiceReference.DataValue dv);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
+        System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, Amur.Import.AmurServiceReference.DataValue dv);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
+        void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
+        System.Threading.Tasks.Task SaveDataValueXSourceAsync(long hSvc, int dataValueId, long dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
+        long SaveDataSource(long hSvc, Amur.Import.AmurServiceReference.DataSource dataSource);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
+        System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, Amur.Import.AmurServiceReference.DataSource dataSource);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
+        void SaveDataValueList(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
+        System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
+        void SaveDataForecastList(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast> dvs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
+        System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast> dvs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
+        void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
+        System.Threading.Tasks.Task SaveDataPRoleAsync(long hSvc, long dvId, int roleId, bool isAQCApplied);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam", ReplyAction="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse")]
+        void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam", ReplyAction="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse")]
+        System.Threading.Tasks.Task SaveParserSysObjLastStartParamAsync(long hSvc, int sysObjId, string lastStartParam);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Open", ReplyAction="http://tempuri.org/IService/OpenResponse")]
         long Open(string userName, string password);
@@ -4174,84 +4252,6 @@ namespace Amur.Import.AmurServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesAll", ReplyAction="http://tempuri.org/IService/GetLegalEntityesAllResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Amur.Import.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
-        void SaveVariableCode(long hSvc, Amur.Import.AmurServiceReference.VariableCode vc);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
-        System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, Amur.Import.AmurServiceReference.VariableCode vc);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
-        void SaveSiteAttribute(long hSvc, Amur.Import.AmurServiceReference.EntityAttrValue eav);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
-        System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, Amur.Import.AmurServiceReference.EntityAttrValue eav);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
-        int SaveSite(long hSvc, Amur.Import.AmurServiceReference.Site site);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
-        System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, Amur.Import.AmurServiceReference.Site site);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
-        Amur.Import.AmurServiceReference.Catalog SaveCatalog(long hSvc, Amur.Import.AmurServiceReference.Catalog catalog);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
-        System.Threading.Tasks.Task<Amur.Import.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, Amur.Import.AmurServiceReference.Catalog catalog);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
-        void ActualizeDataValue(long hSvc, long dataValueId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
-        System.Threading.Tasks.Task ActualizeDataValueAsync(long hSvc, long dataValueId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveValue", ReplyAction="http://tempuri.org/IService/SaveValueResponse")]
-        long SaveValue(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveValue", ReplyAction="http://tempuri.org/IService/SaveValueResponse")]
-        System.Threading.Tasks.Task<long> SaveValueAsync(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
-        long SaveDataValue(long hSvc, Amur.Import.AmurServiceReference.DataValue dv);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
-        System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, Amur.Import.AmurServiceReference.DataValue dv);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
-        void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
-        System.Threading.Tasks.Task SaveDataValueXSourceAsync(long hSvc, int dataValueId, long dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
-        long SaveDataSource(long hSvc, Amur.Import.AmurServiceReference.DataSource dataSource);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
-        System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, Amur.Import.AmurServiceReference.DataSource dataSource);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
-        void SaveDataValueList(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
-        System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
-        void SaveDataForecastList(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast> dvs);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
-        System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast> dvs);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
-        void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
-        System.Threading.Tasks.Task SaveDataPRoleAsync(long hSvc, long dvId, int roleId, bool isAQCApplied);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam", ReplyAction="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse")]
-        void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveParserSysObjLastStartParam", ReplyAction="http://tempuri.org/IService/SaveParserSysObjLastStartParamResponse")]
-        System.Threading.Tasks.Task SaveParserSysObjLastStartParamAsync(long hSvc, int sysObjId, string lastStartParam);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4279,6 +4279,110 @@ namespace Amur.Import.AmurServiceReference {
         
         public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public void SaveVariableCode(long hSvc, Amur.Import.AmurServiceReference.VariableCode vc) {
+            base.Channel.SaveVariableCode(hSvc, vc);
+        }
+        
+        public System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, Amur.Import.AmurServiceReference.VariableCode vc) {
+            return base.Channel.SaveVariableCodeAsync(hSvc, vc);
+        }
+        
+        public void SaveSiteAttribute(long hSvc, Amur.Import.AmurServiceReference.EntityAttrValue eav) {
+            base.Channel.SaveSiteAttribute(hSvc, eav);
+        }
+        
+        public System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, Amur.Import.AmurServiceReference.EntityAttrValue eav) {
+            return base.Channel.SaveSiteAttributeAsync(hSvc, eav);
+        }
+        
+        public int SaveSite(long hSvc, Amur.Import.AmurServiceReference.Site site) {
+            return base.Channel.SaveSite(hSvc, site);
+        }
+        
+        public System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, Amur.Import.AmurServiceReference.Site site) {
+            return base.Channel.SaveSiteAsync(hSvc, site);
+        }
+        
+        public Amur.Import.AmurServiceReference.Catalog SaveCatalog(long hSvc, Amur.Import.AmurServiceReference.Catalog catalog) {
+            return base.Channel.SaveCatalog(hSvc, catalog);
+        }
+        
+        public System.Threading.Tasks.Task<Amur.Import.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, Amur.Import.AmurServiceReference.Catalog catalog) {
+            return base.Channel.SaveCatalogAsync(hSvc, catalog);
+        }
+        
+        public void ActualizeDataValue(long hSvc, long dataValueId) {
+            base.Channel.ActualizeDataValue(hSvc, dataValueId);
+        }
+        
+        public System.Threading.Tasks.Task ActualizeDataValueAsync(long hSvc, long dataValueId) {
+            return base.Channel.ActualizeDataValueAsync(hSvc, dataValueId);
+        }
+        
+        public long SaveValue(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId) {
+            return base.Channel.SaveValue(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
+        }
+        
+        public System.Threading.Tasks.Task<long> SaveValueAsync(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId) {
+            return base.Channel.SaveValueAsync(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
+        }
+        
+        public long SaveDataValue(long hSvc, Amur.Import.AmurServiceReference.DataValue dv) {
+            return base.Channel.SaveDataValue(hSvc, dv);
+        }
+        
+        public System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, Amur.Import.AmurServiceReference.DataValue dv) {
+            return base.Channel.SaveDataValueAsync(hSvc, dv);
+        }
+        
+        public void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId) {
+            base.Channel.SaveDataValueXSource(hSvc, dataValueId, dataSourceId);
+        }
+        
+        public System.Threading.Tasks.Task SaveDataValueXSourceAsync(long hSvc, int dataValueId, long dataSourceId) {
+            return base.Channel.SaveDataValueXSourceAsync(hSvc, dataValueId, dataSourceId);
+        }
+        
+        public long SaveDataSource(long hSvc, Amur.Import.AmurServiceReference.DataSource dataSource) {
+            return base.Channel.SaveDataSource(hSvc, dataSource);
+        }
+        
+        public System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, Amur.Import.AmurServiceReference.DataSource dataSource) {
+            return base.Channel.SaveDataSourceAsync(hSvc, dataSource);
+        }
+        
+        public void SaveDataValueList(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
+            base.Channel.SaveDataValueList(hSvc, dvs, dataSourceId);
+        }
+        
+        public System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
+            return base.Channel.SaveDataValueListAsync(hSvc, dvs, dataSourceId);
+        }
+        
+        public void SaveDataForecastList(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast> dvs) {
+            base.Channel.SaveDataForecastList(hSvc, dvs);
+        }
+        
+        public System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast> dvs) {
+            return base.Channel.SaveDataForecastListAsync(hSvc, dvs);
+        }
+        
+        public void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied) {
+            base.Channel.SaveDataPRole(hSvc, dvId, roleId, isAQCApplied);
+        }
+        
+        public System.Threading.Tasks.Task SaveDataPRoleAsync(long hSvc, long dvId, int roleId, bool isAQCApplied) {
+            return base.Channel.SaveDataPRoleAsync(hSvc, dvId, roleId, isAQCApplied);
+        }
+        
+        public void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam) {
+            base.Channel.SaveParserSysObjLastStartParam(hSvc, sysObjId, lastStartParam);
+        }
+        
+        public System.Threading.Tasks.Task SaveParserSysObjLastStartParamAsync(long hSvc, int sysObjId, string lastStartParam) {
+            return base.Channel.SaveParserSysObjLastStartParamAsync(hSvc, sysObjId, lastStartParam);
         }
         
         public long Open(string userName, string password) {
@@ -4791,110 +4895,6 @@ namespace Amur.Import.AmurServiceReference {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Amur.Import.AmurServiceReference.LegalEntity>> GetLegalEntityesAllAsync(long hSvc) {
             return base.Channel.GetLegalEntityesAllAsync(hSvc);
-        }
-        
-        public void SaveVariableCode(long hSvc, Amur.Import.AmurServiceReference.VariableCode vc) {
-            base.Channel.SaveVariableCode(hSvc, vc);
-        }
-        
-        public System.Threading.Tasks.Task SaveVariableCodeAsync(long hSvc, Amur.Import.AmurServiceReference.VariableCode vc) {
-            return base.Channel.SaveVariableCodeAsync(hSvc, vc);
-        }
-        
-        public void SaveSiteAttribute(long hSvc, Amur.Import.AmurServiceReference.EntityAttrValue eav) {
-            base.Channel.SaveSiteAttribute(hSvc, eav);
-        }
-        
-        public System.Threading.Tasks.Task SaveSiteAttributeAsync(long hSvc, Amur.Import.AmurServiceReference.EntityAttrValue eav) {
-            return base.Channel.SaveSiteAttributeAsync(hSvc, eav);
-        }
-        
-        public int SaveSite(long hSvc, Amur.Import.AmurServiceReference.Site site) {
-            return base.Channel.SaveSite(hSvc, site);
-        }
-        
-        public System.Threading.Tasks.Task<int> SaveSiteAsync(long hSvc, Amur.Import.AmurServiceReference.Site site) {
-            return base.Channel.SaveSiteAsync(hSvc, site);
-        }
-        
-        public Amur.Import.AmurServiceReference.Catalog SaveCatalog(long hSvc, Amur.Import.AmurServiceReference.Catalog catalog) {
-            return base.Channel.SaveCatalog(hSvc, catalog);
-        }
-        
-        public System.Threading.Tasks.Task<Amur.Import.AmurServiceReference.Catalog> SaveCatalogAsync(long hSvc, Amur.Import.AmurServiceReference.Catalog catalog) {
-            return base.Channel.SaveCatalogAsync(hSvc, catalog);
-        }
-        
-        public void ActualizeDataValue(long hSvc, long dataValueId) {
-            base.Channel.ActualizeDataValue(hSvc, dataValueId);
-        }
-        
-        public System.Threading.Tasks.Task ActualizeDataValueAsync(long hSvc, long dataValueId) {
-            return base.Channel.ActualizeDataValueAsync(hSvc, dataValueId);
-        }
-        
-        public long SaveValue(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId) {
-            return base.Channel.SaveValue(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
-        }
-        
-        public System.Threading.Tasks.Task<long> SaveValueAsync(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId) {
-            return base.Channel.SaveValueAsync(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
-        }
-        
-        public long SaveDataValue(long hSvc, Amur.Import.AmurServiceReference.DataValue dv) {
-            return base.Channel.SaveDataValue(hSvc, dv);
-        }
-        
-        public System.Threading.Tasks.Task<long> SaveDataValueAsync(long hSvc, Amur.Import.AmurServiceReference.DataValue dv) {
-            return base.Channel.SaveDataValueAsync(hSvc, dv);
-        }
-        
-        public void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId) {
-            base.Channel.SaveDataValueXSource(hSvc, dataValueId, dataSourceId);
-        }
-        
-        public System.Threading.Tasks.Task SaveDataValueXSourceAsync(long hSvc, int dataValueId, long dataSourceId) {
-            return base.Channel.SaveDataValueXSourceAsync(hSvc, dataValueId, dataSourceId);
-        }
-        
-        public long SaveDataSource(long hSvc, Amur.Import.AmurServiceReference.DataSource dataSource) {
-            return base.Channel.SaveDataSource(hSvc, dataSource);
-        }
-        
-        public System.Threading.Tasks.Task<long> SaveDataSourceAsync(long hSvc, Amur.Import.AmurServiceReference.DataSource dataSource) {
-            return base.Channel.SaveDataSourceAsync(hSvc, dataSource);
-        }
-        
-        public void SaveDataValueList(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
-            base.Channel.SaveDataValueList(hSvc, dvs, dataSourceId);
-        }
-        
-        public System.Threading.Tasks.Task SaveDataValueListAsync(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataValue> dvs, System.Nullable<long> dataSourceId) {
-            return base.Channel.SaveDataValueListAsync(hSvc, dvs, dataSourceId);
-        }
-        
-        public void SaveDataForecastList(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast> dvs) {
-            base.Channel.SaveDataForecastList(hSvc, dvs);
-        }
-        
-        public System.Threading.Tasks.Task SaveDataForecastListAsync(long hSvc, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast> dvs) {
-            return base.Channel.SaveDataForecastListAsync(hSvc, dvs);
-        }
-        
-        public void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied) {
-            base.Channel.SaveDataPRole(hSvc, dvId, roleId, isAQCApplied);
-        }
-        
-        public System.Threading.Tasks.Task SaveDataPRoleAsync(long hSvc, long dvId, int roleId, bool isAQCApplied) {
-            return base.Channel.SaveDataPRoleAsync(hSvc, dvId, roleId, isAQCApplied);
-        }
-        
-        public void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam) {
-            base.Channel.SaveParserSysObjLastStartParam(hSvc, sysObjId, lastStartParam);
-        }
-        
-        public System.Threading.Tasks.Task SaveParserSysObjLastStartParamAsync(long hSvc, int sysObjId, string lastStartParam) {
-            return base.Channel.SaveParserSysObjLastStartParamAsync(hSvc, sysObjId, lastStartParam);
         }
     }
 }
