@@ -49,10 +49,11 @@ namespace SOV.SGMO
             resultPoints.Add(currentLocation); //начальная точка с заблаговременностью 0
                                                //рассчёт точек
             Geodesic geod = Geodesic.WGS84;
-            double distanceInHourStep = objectSpeed * 3600 * hourStep;
+            
 
             for (int hour = hourStart; hour < hourFinish; hour += hourStep)
             {
+                double distanceInHourStep = objectSpeed * 3600 * hourStep;
                 var refPoint = refPoints[nextRefPointIndex];
                 //проверяем достигание опорной точки, в случае достигания изменяем следующую опорную точку
                 while (GetDistanceTo(currentLocation, refPoint) < distanceInHourStep)

@@ -17,16 +17,21 @@ namespace SOV.SGMO
             InitializeComponent();
         }
 
-        List<TrackPoint> items;
         public List<TrackPoint> Items
         {
             get
             {
-                return items;
+                return (List<TrackPoint>)dgv.DataSource;
             }
             set
             {
-                dgv.DataSource = value?.OrderBy(x => x.DateUTC).ToList();
+                dgv.DataSource = null;
+                infoLabel.Text = "...";
+                if (value != null)
+                {
+                    dgv.DataSource = value?.OrderBy(x => x.DateUTC).ToList();
+                    infoLabel.Text = "id=" + value[0].TrackId + " (" + value.Count + ")";
+                }
             }
         }
     }
