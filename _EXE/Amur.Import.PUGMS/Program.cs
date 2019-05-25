@@ -15,7 +15,7 @@ namespace Amur.Import
     /// 
     /// Нотация префикса наименований в коде: 
     ///     p - Hydro DB ПУГМС , 
-    ///     a - Amur DB ДВНИГМИ.
+    ///     a - Amur DB.
     /// 
     /// OSokolov@201709
     /// </summary>
@@ -29,7 +29,7 @@ namespace Amur.Import
         {
             // SOV.2019
             DateTime dateS = new DateTime(2019, 1, 1);
-            ImportAMSData(13/*Пыль*/, dateS, dateS.AddHours(1));
+            ImportAMSData(13/*Пыль*/, dateS, dateS.AddHours(24));
 
             // UpdateCurve(); // 2017
 
@@ -45,6 +45,7 @@ namespace Amur.Import
             // READ AMSDATA FROM PUGMS DB
             AMSDataRepository amsDb = new AMSDataRepository(Amur.Import.Properties.Settings.Default.AMSDataConnectionString);
             List<AMSData> amsDatas = amsDb.Select(AMSData.CrossSiteTypeId[siteTypeId], dateS, dateF);
+            Console.WriteLine("{0} AMS Data items readed.", amsDatas.Count);
 
             // CONVERT AMSDATA 2 AMUR DATA VALUE
 
