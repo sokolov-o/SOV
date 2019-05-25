@@ -52,13 +52,30 @@ namespace SOV.Amur.Meta
                     {"org_id" , site.OrgId},
                     {"name",site.Name }
                 };
-                return InsertWithReturn(fields);
+                int siteId = InsertWithReturn(fields);
+                if (site.Lat.HasValue && site.Lon.HasValue)
+                    UpdateLatLon(siteId, (double)site.Lat, (double)site.Lon);
+
+                return siteId;
             }
             finally
             {
                 TableName = tableNameCur;
             }
         }
+
+        private void UpdateLatLon(int siteId, double lat, double lon)
+        {
+            string sql = "update meta.site set geom_latlon = ST_MakePoint(@lon,@lat)";
+            var fields = new Dictionary<string, object>()
+                {
+                    {"id", siteId},
+                    {"lat", lat},
+                    {"lon", lon}
+                };
+            ExecSimpleQuery(sql, fields);
+        }
+
         /// <summary>
         /// Изменить тип, привязку к станции и описание пункта.
         /// </summary>
