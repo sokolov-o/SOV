@@ -200,7 +200,7 @@ namespace SOV.Amur.Meta
                 frmFilterMethod = CurrentMethod;
 
                 DataManager dmm = DataManager.GetInstance();
-                List<Catalog> catalogs = dmm.CatalogRepository.Select(null, null, new List<int>() { CurrentMethod.Id }, null, null, (double?)null);
+                List<Catalog> catalogs = dmm.CatalogRepository.Select1(null, null, new List<int>() { CurrentMethod.Id }, null, null, (double?)null);
                 frmFilter.SitesOnly = dmm.SiteRepository.Select(catalogs.Select(x => x.SiteId).Distinct().ToList());
                 frmFilter.VariablesOnly = dmm.VariableRepository.Select(catalogs.Select(x => x.VariableId).Distinct().ToList());
                 frmFilter.MethodsOnly = dmm.MethodRepository.Select(catalogs.Select(x => x.MethodId).Distinct().ToList());

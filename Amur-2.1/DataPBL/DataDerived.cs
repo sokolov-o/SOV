@@ -25,7 +25,7 @@ namespace SOV.Amur.DataP
             Dictionary<Variable, Catalog> ctlDic = new Dictionary<Variable, Catalog>();
             foreach (var v in varDst)
             {
-                var ctls = cr.Select(
+                List<Catalog> ctls = cr.Select1(
                     new List<int> { siteId }, new List<int> { v.Id },
                     new List<int> { methodId }, new List<int> { sourceId },
                     new List<int> { offsetTypeId }, offsetValue);
@@ -342,17 +342,17 @@ namespace SOV.Amur.DataP
                 return;
             }
 
-            Dictionary<int/*siteId*/, Catalog> catalogSrcTA = metaDM.CatalogRepository.Select(
+            Dictionary<int/*siteId*/, Catalog> catalogSrcTA = metaDM.CatalogRepository.Select1(
                 Sites.Select(t => t.Id).ToList(), new List<int>() { varTA.Id },
                 new List<int>() { MethodSrcId }, new List<int>() { SourceSrcId },
                     new List<int>() { OffsetTypeId }, OffsetValue).ToDictionary(t => t.SiteId);
 
-            Dictionary<int/*siteId*/, Catalog> catalogSrcTD = metaDM.CatalogRepository.Select(
+            Dictionary<int/*siteId*/, Catalog> catalogSrcTD = metaDM.CatalogRepository.Select1(
                 Sites.Select(t => t.Id).ToList(), new List<int>() { varTD.Id },
                 new List<int>() { MethodSrcId }, new List<int>() { SourceSrcId },
                 new List<int>() { OffsetTypeId }, OffsetValue).ToDictionary(t => t.SiteId);
 
-            Dictionary<int/*siteId*/, Catalog> catalogDst = metaDM.CatalogRepository.Select(
+            Dictionary<int/*siteId*/, Catalog> catalogDst = metaDM.CatalogRepository.Select1(
                 Sites.Select(t => t.Id).ToList(), new List<int>() { varDst.Id },
                 new List<int>() { MethodDstId }, new List<int>() { SourceDstId },
                 new List<int>() { OffsetTypeId }, OffsetValue).ToDictionary(t => t.SiteId);
@@ -472,21 +472,21 @@ namespace SOV.Amur.DataP
                 return;
             }
 
-            Dictionary<int/*siteId*/, Catalog> catalogSrcH = metaDM.CatalogRepository.Select(
+            Dictionary<int/*siteId*/, Catalog> catalogSrcH = metaDM.CatalogRepository.Select1(
                 Sites.Select(t => t.Id).ToList(), new List<int>() { varH.Id },
                 new List<int>() { MethodSrcId }, new List<int>() { SourceSrcId },
                     new List<int>() { OffsetTypeId }, OffsetValue).ToDictionary(t => t.SiteId);
-            Dictionary<int/*siteId*/, Catalog> catalogSrcQ = metaDM.CatalogRepository.Select(
+            Dictionary<int/*siteId*/, Catalog> catalogSrcQ = metaDM.CatalogRepository.Select1(
                 Sites.Select(t => t.Id).ToList(), new List<int>() { varQ.Id },
                 new List<int>() { MethodSrcId }, new List<int>() { SourceSrcId },
                     new List<int>() { OffsetTypeId }, OffsetValue).ToDictionary(t => t.SiteId);
 
-            Dictionary<int/*siteId*/, Catalog> catalogDst = metaDM.CatalogRepository.Select(
+            Dictionary<int/*siteId*/, Catalog> catalogDst = metaDM.CatalogRepository.Select1(
                 Sites.Select(t => t.Id).ToList(), new List<int>() { varDst.Id },
                 new List<int>() { MethodDstId }, new List<int>() { SourceDstId },
                 new List<int>() { OffsetTypeId }, OffsetValue).ToDictionary(t => t.SiteId);
 
-            Dictionary<int/*siteId*/, List<Catalog>> catalogSrcHData = metaDM.CatalogRepository.Select(
+            Dictionary<int/*siteId*/, List<Catalog>> catalogSrcHData = metaDM.CatalogRepository.Select1(
                Sites.Select(t => t.Id).ToList(), new List<int>() { varH.Id },
                new List<int>() { MethodSrcId }, null,
                    new List<int>() { OffsetTypeId }, OffsetValue).GroupBy(t => t.SiteId).ToDictionary(t => t.Key, q => q.ToList());
@@ -990,7 +990,7 @@ namespace SOV.Amur.DataP
             Dictionary<Variable, Catalog> ctlDstDic = new Dictionary<Variable, Catalog>();
             foreach (var v in varDst)
             {
-                var ctls = metaDM.CatalogRepository.Select(
+                List<Catalog> ctls = metaDM.CatalogRepository.Select1(
                     new List<int> { SiteId }, new List<int> { v.Id },
                     new List<int> { MethodDstId }, new List<int> { SourceDstId },
                     new List<int> { OffsetTypeId }, OffsetValue);
@@ -1127,7 +1127,7 @@ namespace SOV.Amur.DataP
             }
 
             Data.DataForecastRepository dfr = Data.DataManager.GetInstance().DataForecastRepository;
-            List<Catalog> catalogList = metaDM.CatalogRepository.Select(
+            List<Catalog> catalogList = metaDM.CatalogRepository.Select1(
                 new List<int>() { SiteId }, new List<int>() { VariableId },
                  new List<int>() { MethodSrcSetId }, new List<int>() { SourceDstId },
                  new List<int>() { OffsetTypeId }, OffsetValue);

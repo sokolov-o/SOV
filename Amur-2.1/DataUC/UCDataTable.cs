@@ -581,7 +581,7 @@ namespace SOV.Amur.Data
                             Catalog ctl0 = Meta.DataManager.GetInstance().CatalogRepository.Select(dv.CatalogId);
                             ctl0.MethodId = (int)EnumMethod.Operator;
                             ctl0.SourceId = UserOrganisationId;
-                            List<Catalog> ctl = Meta.DataManager.GetInstance().CatalogRepository.Select(
+                            List<Catalog> ctl = Meta.DataManager.GetInstance().CatalogRepository.Select1(
                                 new List<int> { ctl0.SiteId }, new List<int> { ctl0.VariableId },
                                 new List<int> { ctl0.MethodId }, new List<int> { ctl0.SourceId },
                                 new List<int> { ctl0.OffsetTypeId }, ctl0.OffsetValue);

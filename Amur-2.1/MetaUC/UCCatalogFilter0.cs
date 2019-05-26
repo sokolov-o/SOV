@@ -194,6 +194,48 @@ namespace SOV.Amur.Meta
                 _isFilled = false;
             }
         }
+        public bool VisibleTypes
+        {
+            get
+            {
+                return !(tlp1.ColumnStyles[3].SizeType == SizeType.Absolute && tlp1.ColumnStyles[3].Width == 0);
+            }
+            set
+            {
+                tlp1.SuspendLayout();
+                tlp0.SuspendLayout();
+
+                if (value)
+                {
+                    tlp1.ColumnStyles[3].SizeType = SizeType.AutoSize;
+                    tlp0.RowStyles[3].SizeType = SizeType.AutoSize;
+                }
+                else
+                {
+                    tlp1.ColumnStyles[3].SizeType = SizeType.Absolute;
+                    tlp0.RowStyles[3].SizeType = SizeType.Absolute;
+                    tlp1.ColumnStyles[3].Width = 0;
+                    tlp0.RowStyles[3].Height = 0;
+                }
+                comboTypes.Enabled = value;
+                tlp1.ResumeLayout();
+                tlp0.ResumeLayout();
+            }
+        }
+        public void SetTypes(List<Common.IdName> items)
+        {
+            _isFilled = true;
+            try
+            {
+                comboTypes.Items.Clear();
+                if (items != null)
+                    comboTypes.Items.AddRange(items.ToArray());
+            }
+            finally
+            {
+                _isFilled = false;
+            }
+        }
 
         private void allRadioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -215,16 +257,25 @@ namespace SOV.Amur.Meta
             if (allRadioButton.Checked)
             {
                 comboGroups.Enabled = false;
+                VisibleTypes = false;
                 ucList.Enabled = false;
             }
             else if (groupRadioButton.Checked)
             {
                 comboGroups.Enabled = true;
+                VisibleTypes = false;
+                ucList.Enabled = false;
+            }
+            else if (typeRadioButton.Checked)
+            {
+                VisibleTypes = true;
+                comboGroups.Enabled = false;
                 ucList.Enabled = false;
             }
             else
             {
                 comboGroups.Enabled = false;
+                VisibleTypes = false;
                 ucList.Enabled = true;
             }
         }
@@ -278,6 +329,11 @@ namespace SOV.Amur.Meta
         private void combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             RaiseUCGroupChangedEvent();
+        }
+
+        private void TypeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            EnableControls();
         }
     }
 }
