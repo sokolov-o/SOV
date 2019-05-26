@@ -30,7 +30,7 @@ namespace Amur.Import
             // SOV.2019
             DateTime dateS = new DateTime(2019, 1, 20);
 
-            ImportAMSData(13/*Пыль*/, dateS, dateS.AddDays(10));
+            ImportAMSData(13/*Пыль*/);//, dateS, dateS.AddDays(10));
 
             // UpdateCurve(); // 2017
 
