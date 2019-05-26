@@ -16,10 +16,11 @@ namespace Amur.Import
             {new int[]{1227,100,2  },181},
             {new int[]{1226,100,2  },182},
             {new int[]{1225,100,2  },180},
-            {new int[]{10,  100,2  }  ,5},
-            { new int[]{7,  100,10 }  ,2},
-            {new int[]{1,   100,10 }  ,1},
-            {new int[]{8,   100,10 }  ,3}
+            {new int[]{3   ,100,2  }, 11},
+            { new int[]{10 ,100,2  }  ,5},
+            { new int[]{7  ,100,10 }  ,2},
+            {new int[]{1   ,100,10 }  ,1},
+            {new int[]{8   ,100,10 }  ,3}
         };
         /// <summary>
         /// Amur <-> AMSData

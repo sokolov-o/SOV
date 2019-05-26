@@ -249,6 +249,12 @@
   <wsdl:message name="IService_GetVariableTypesAll_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetVariableTypesAllResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetDateUTCPeriod4Catalogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateUTCPeriod4Catalogs" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDateUTCPeriod4Catalogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateUTCPeriod4CatalogsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_ExistsDataForecasts_InputMessage">
     <wsdl:part name="parameters" element="tns:ExistsDataForecasts" />
   </wsdl:message>
@@ -633,6 +639,10 @@
     <wsdl:operation name="GetVariableTypesAll">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetVariableTypesAll" message="tns:IService_GetVariableTypesAll_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetVariableTypesAllResponse" message="tns:IService_GetVariableTypesAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateUTCPeriod4Catalogs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDateUTCPeriod4Catalogs" message="tns:IService_GetDateUTCPeriod4Catalogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDateUTCPeriod4CatalogsResponse" message="tns:IService_GetDateUTCPeriod4Catalogs_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ExistsDataForecasts">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ExistsDataForecasts" message="tns:IService_ExistsDataForecasts_InputMessage" />
@@ -1133,6 +1143,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetVariableTypesAll">
       <soap:operation soapAction="http://tempuri.org/IService/GetVariableTypesAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateUTCPeriod4Catalogs">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDateUTCPeriod4Catalogs" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

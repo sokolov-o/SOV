@@ -637,6 +637,32 @@ namespace SOV.Amur.Data
             }
         }
 
+        public Dictionary<int, DateTime[]> SelectDateUTCPeriod4Catalogs(List<int> catalogIds)
+        {
+            Dictionary<string, object> fields = new Dictionary<string, object> { { "catalog_id", catalogIds } };
+
+            Dictionary<int, DateTime[]> ret = new Dictionary<int, DateTime[]>();
+            using (var cnn = _db.Connection)
+            {
+                using (Npgsql.NpgsqlCommand cmd = new Npgsql.NpgsqlCommand("select catalog_id, min(date_utc), max(date_utc), count(*) from data.data_value d" +
+                " where catalog_id = any(:catalog_id)"+
+                " group by catalog_id", cnn))
+                {
+                    cmd.Parameters.AddWithValue("catalog_id", catalogIds);
+
+                    using (Npgsql.NpgsqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            ret.Add((int)rdr["catalog_id"],
+                               rdr.IsDBNull(1) ? null : new DateTime[] { (DateTime)rdr[1], (DateTime)rdr[2] });
+                        }
+                        return ret;
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Выборка синхронных данных для двух записей каталога за период времени.
         /// Для выборки данных каждой записи каталога используется функция data.select_data_value_b.

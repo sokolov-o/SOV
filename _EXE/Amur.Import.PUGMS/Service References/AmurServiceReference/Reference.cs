@@ -205,6 +205,8 @@ namespace Amur.Import.AmurServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, Amur.Import.AmurServiceReference.GeoObject>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<double>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<System.DateTime>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.DateTime>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<Amur.Import.AmurServiceReference.Curve>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<Amur.Import.AmurServiceReference.DataForecast>>))]
@@ -4025,6 +4027,12 @@ namespace Amur.Import.AmurServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableTypesAll", ReplyAction="http://tempuri.org/IService/GetVariableTypesAllResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Amur.Import.AmurServiceReference.VariableType>> GetVariableTypesAllAsync(long hSvc);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDateUTCPeriod4Catalogs", ReplyAction="http://tempuri.org/IService/GetDateUTCPeriod4CatalogsResponse")]
+        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<System.DateTime>> GetDateUTCPeriod4Catalogs(long hSvc, System.Collections.Generic.List<int> catalogIds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDateUTCPeriod4Catalogs", ReplyAction="http://tempuri.org/IService/GetDateUTCPeriod4CatalogsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<System.DateTime>>> GetDateUTCPeriod4CatalogsAsync(long hSvc, System.Collections.Generic.List<int> catalogIds);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ExistsDataForecasts", ReplyAction="http://tempuri.org/IService/ExistsDataForecastsResponse")]
         System.Collections.Generic.Dictionary<int, bool> ExistsDataForecasts(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateIni);
         
@@ -4591,6 +4599,14 @@ namespace Amur.Import.AmurServiceReference {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Amur.Import.AmurServiceReference.VariableType>> GetVariableTypesAllAsync(long hSvc) {
             return base.Channel.GetVariableTypesAllAsync(hSvc);
+        }
+        
+        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<System.DateTime>> GetDateUTCPeriod4Catalogs(long hSvc, System.Collections.Generic.List<int> catalogIds) {
+            return base.Channel.GetDateUTCPeriod4Catalogs(hSvc, catalogIds);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<System.DateTime>>> GetDateUTCPeriod4CatalogsAsync(long hSvc, System.Collections.Generic.List<int> catalogIds) {
+            return base.Channel.GetDateUTCPeriod4CatalogsAsync(hSvc, catalogIds);
         }
         
         public System.Collections.Generic.Dictionary<int, bool> ExistsDataForecasts(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateIni) {

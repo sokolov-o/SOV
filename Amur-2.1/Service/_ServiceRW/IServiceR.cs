@@ -315,6 +315,9 @@ namespace SOV.Amur.Service
         #endregion
 
         #region DATA
+        [OperationContract]
+        Dictionary<int, DateTime[]> GetDateUTCPeriod4Catalogs(long hSvc, List<int> catalogIds);
+
         /// <summary>
         /// Существуют ли прогнозы от указанной даты (dateIni) для указанных кодов записей каталога данных (catalogId).
         /// </summary>

@@ -28,8 +28,9 @@ namespace Amur.Import
         static void Main(string[] args)
         {
             // SOV.2019
-            DateTime dateS = new DateTime(2019, 1, 1);
-            ImportAMSData(13/*Пыль*/, dateS, dateS.AddHours(24));
+            DateTime dateS = new DateTime(2019, 1, 20);
+
+            ImportAMSData(13/*Пыль*/, dateS, dateS.AddDays(10));
 
             // UpdateCurve(); // 2017
 
@@ -37,21 +38,38 @@ namespace Amur.Import
             Console.ReadLine();
         }
 
-        private static void ImportAMSData(int siteTypeId, DateTime dateS, DateTime dateF)
+        private static void ImportAMSData(int siteTypeId, DateTime? dateS = null, DateTime? dateF = null)
         {
             DateTime dateSS = DateTime.Now;
             Console.WriteLine("ImportAMSData started at {0}", dateSS);
 
-            // READ AMSDATA FROM PUGMS DB
-            AMSDataRepository amsDb = new AMSDataRepository(Amur.Import.Properties.Settings.Default.AMSDataConnectionString);
-            List<AMSData> amsDatas = amsDb.Select(AMSData.CrossSiteTypeId[siteTypeId], dateS, dateF);
-            Console.WriteLine("{0} AMS Data items readed.", amsDatas.Count);
-
-            // CONVERT AMSDATA 2 AMUR DATA VALUE
+            // AMUR 
 
             List<AmurServiceReference.Site> sites = aClient.GetSitesByType(aHandle, siteTypeId);
             Dictionary<int, int> siteUTSOffsets = new Dictionary<int, int>();
             List<AmurServiceReference.Catalog> catalogs = new List<Catalog>();
+            catalogs = aClient.GetCatalogList(aHandle, sites.Select(x => x.Id).ToList(), null, null, null, null, null);
+
+            // GET DATETIME PERIOD IMPORT
+
+            if (!dateS.HasValue)
+            {
+                Dictionary<int, List<DateTime>> catalogDates = aClient.GetDateUTCPeriod4Catalogs(aHandle, catalogs.Select(x => x.Id).ToList());
+                dateS = catalogDates.ElementAt(0).Value != null ? catalogDates.ElementAt(0).Value[1] : new DateTime(2019, 1, 1);
+                foreach (KeyValuePair<int, List<DateTime>> item in catalogDates)
+                {
+                    if (item.Value != null && item.Value[1] > dateS)
+                        dateS = item.Value[1];
+                }
+                dateF = ((DateTime)dateS).AddDays(10);
+            }
+            Console.WriteLine("Import date period: {0} - {1}", ((DateTime)dateS).ToString("yyyyMMdd HH:mm"), ((DateTime)dateF).ToString("yyyyMMdd HH:mm"));
+
+            // READ AMSDATA FROM PUGMS DB
+
+            AMSDataRepository amsDb = new AMSDataRepository(Amur.Import.Properties.Settings.Default.AMSDataConnectionString);
+            List<AMSData> amsDatas = amsDb.Select(AMSData.CrossSiteTypeId[siteTypeId], (DateTime)dateS, (DateTime)dateF);
+            Console.WriteLine("{0} AMS Data items readed.", amsDatas.Count);
 
             List<AmurServiceReference.DataValue> dataAmur = new List<AmurServiceReference.DataValue>();
             foreach (AMSData amsData in amsDatas)
@@ -99,6 +117,7 @@ namespace Amur.Import
 
                 // GET OR CREATE CATALOG
                 int[] varoff = AMSData.CrossVariableId.Keys.FirstOrDefault(x => AMSData.CrossVariableId[x] == amsData.VariableId);
+
                 AmurServiceReference.Catalog catalog = new Catalog()
                 {
                     SiteId = site.Id,
@@ -148,8 +167,19 @@ namespace Amur.Import
                 }
                 );
             }
-            if (dataAmur.Count > 0)
-                aClient.SaveDataValueList(aHandle, dataAmur, null);
+            int bufSize = 30000;
+            int iBufCount = dataAmur.Count / bufSize + (Math.IEEERemainder(dataAmur.Count, bufSize) == 0 ? 0 : 1);
+            for (int i = 0; i < iBufCount; i++)
+            {
+                //Console.WriteLine("j0={0} j1={1}", i * bufSize, ((i + 1) * bufSize <= dataAmur.Count ? (i + 1) * bufSize : dataAmur.Count));
+
+                List<AmurServiceReference.DataValue> data1 = new List<AmurServiceReference.DataValue>();
+                for (int j = i * bufSize; j < ((i + 1) * bufSize <= dataAmur.Count ? (i + 1) * bufSize : dataAmur.Count); j++)
+                {
+                    data1.Add(dataAmur[j]);
+                }
+                aClient.SaveDataValueList(aHandle, data1, null);
+            }
 
             Console.WriteLine("ImportAMSData ended at {0}, {1} min elapsed.", DateTime.Now, (DateTime.Now - dateSS).TotalMinutes);
         }

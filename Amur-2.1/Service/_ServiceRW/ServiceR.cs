@@ -638,5 +638,16 @@ namespace SOV.Amur.Service
         }
 
         #endregion PARSER
+
+        /// <summary>
+        /// Получить первую и последнюю даты записей данных для каждой записи каталога
+        /// </summary>
+        /// <param name="hSvc">Дескриптор сервиса.</param>
+        /// <param name="catalogIds">ID записей каталога.</param>
+        /// <returns></returns>
+        public Dictionary<int, DateTime[]> GetDateUTCPeriod4Catalogs(long hSvc, List<int> catalogIds)
+        {
+            return DataManagerData(hSvc).DataValueRepository.SelectDateUTCPeriod4Catalogs(catalogIds);
+        }
     }
 }
