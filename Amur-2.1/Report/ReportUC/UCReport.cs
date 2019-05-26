@@ -684,10 +684,10 @@ namespace SOV.Amur.Reports
             }
 
             JournalReport jr = new JournalReport();
-            List<DataValue> dataCol = dmd.DataValueRepository.SelectA(dateS, dateF, true, _dataFilter.CatalogFilter.Sites, new List<int>() { variable.Id }
+            List< DataValue> dataCol = dmd.DataValueRepository.SelectA(dateS, dateF, true, _dataFilter.CatalogFilter.Sites, new List<int>() { variable.Id }
                     , _dataFilter.CatalogFilter.OffsetTypes, _dataFilter.CatalogFilter.OffsetValue, true);
 
-            Dictionary<int, Catalog> ctlDic = dmm.CatalogRepository.Select(_dataFilter.CatalogFilter.Sites, new List<int>() { variable.Id },
+            Dictionary<int, Catalog> ctlDic = dmm.CatalogRepository.Select1(_dataFilter.CatalogFilter.Sites, new List<int>() { variable.Id },
                 null, null, _dataFilter.CatalogFilter.OffsetTypes, _dataFilter.CatalogFilter.OffsetValue).ToDictionary(t => t.Id);
             foreach (int siteId in _dataFilter.CatalogFilter.Sites)
             {

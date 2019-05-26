@@ -52,7 +52,7 @@ namespace SOV.Amur.DataP
                 Data.DataManager dmd = Data.DataManager.GetInstance();
                 Meta.DataManager dmm = Meta.DataManager.GetInstance();
                 // Получить записи каталогов для переменной и пунктов
-                List<Catalog> catalogs = dmm.CatalogRepository.Select(
+                List<Catalog> catalogs = dmm.CatalogRepository.Select1(
                     sitesId, new List<int> { varIni.Id },
                     new List<int> { methodId }, new List<int> { sourceId },
                     new List<int> { offsetTypeId }, offsetValue);
@@ -150,11 +150,11 @@ namespace SOV.Amur.DataP
                 throw new Exception("Не найдены переменные для прогностических Ta и Td, которые необходимы для расчёта дефицита влажности.");
 
             // Получить записи каталогов для переменных Ta и Td
-            List<Catalog> ctlTa = dmm.CatalogRepository.Select(
+            List<Catalog> ctlTa = dmm.CatalogRepository.Select1(
                 sitesId, new List<int> { varTa.Id },
                 new List<int> { methodId }, new List<int> { sourceId },
                 new List<int> { offsetId }, offsetValue);
-            List<Catalog> ctlTd = dmm.CatalogRepository.Select(
+            List<Catalog> ctlTd = dmm.CatalogRepository.Select1(
                 sitesId, new List<int> { varTd.Id },
                 new List<int> { methodId }, new List<int> { sourceId },
                 new List<int> { offsetId }, offsetValue);

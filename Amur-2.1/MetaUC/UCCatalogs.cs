@@ -280,7 +280,7 @@ namespace SOV.Amur.Meta
         {
             // SELECT CATALOGS
             CatalogFilter f = ucCatalogFilter.CatalogFilter;
-            List<Catalog> ctls = Meta.DataManager.GetInstance().CatalogRepository.Select(
+            List<Catalog> ctls = Meta.DataManager.GetInstance().CatalogRepository.Select1(
                 f.Sites,
                 f.Variables,
                 f.Methods,
