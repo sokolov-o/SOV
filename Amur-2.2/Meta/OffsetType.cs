@@ -20,20 +20,5 @@ namespace SOV.Amur.Meta
             Name = name;
             UnitId = unitId;
         }
-
-        public static List<Common.DicItem> ToList<T1>(List<OffsetType> items)
-        {
-            List<DicItem> ret = new List<DicItem>();
-            foreach (var item in items)
-            {
-                ret.Add(new DicItem(item.Id, item.Name));
-            }
-            return ret;
-        }
-        override public string ToString()
-        {
-            return Name + "/" + Id;
-        }
-
     }
 }

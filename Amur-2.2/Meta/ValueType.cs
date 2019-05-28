@@ -8,23 +8,11 @@ using System.Threading.Tasks;
 namespace SOV.Amur.Meta
 {
     [DataContract]
-    public class ValueType : SOV.Common.DicItem
+    public class ValueType : SOV.Common.IdNameDescription
     {
-        [DataMember]
-        public string NameEng { get { return NameShort; } set { NameShort = value; } }
-
-        public ValueType(int id, string name, string nameEng, string description = null)
-            : base(id, name, nameEng, description)
+        public ValueType(int id, string name, string description = null)
+            : base(id, name, description)
         {
-        }
-        public static List<Common.DicItem> ToList<T1>(List<ValueType> coll)
-        {
-            List<Common.DicItem> ret = new List<Common.DicItem>();
-            foreach (var item in coll)
-            {
-                ret.Add(new Common.DicItem(item.Id, item.Name, item.NameShort));
-            }
-            return ret;
         }
     }
 }

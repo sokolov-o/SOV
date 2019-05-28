@@ -25,17 +25,5 @@ namespace SOV.Amur.Meta
         {
             return Id;
         }
-
-        public static List<Common.DicItem> ToList<T1>(List<SiteType> coll)
-        {
-            List<Common.DicItem> ret = new List<Common.DicItem>();
-            foreach (var item in coll)
-            {
-                DicItem di = new Common.DicItem(item.Id, item.Name, item.NameShort);
-                di.Entity = item;
-                ret.Add(di);
-            }
-            return ret;
-        }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SOV.Common;
 using System.Runtime.Serialization;
 using SOV.Amur.Meta;
+using Newtonsoft.Json;
 
 namespace SOV.Amur.Meta
 {
@@ -110,36 +111,31 @@ namespace SOV.Amur.Meta
 
         public override string ToString()
         {
-            return
-                "SITEIDS=" + StrVia.ToString(Sites)
-                + ";VARIABLEIDS=" + StrVia.ToString(Variables)
-                + ";METHODIDS=" + StrVia.ToString(Methods)
-                + ";SOURCEIDS=" + StrVia.ToString(Sources)
-                + ";OFFSETTYPEIDS=" + StrVia.ToString(OffsetTypes)
-                + ";OFFSETVALUE=" + ((OffsetValue.HasValue) ? OffsetValue.ToString() : "")
-            ;
+            return JsonConvert.SerializeObject(this);
+            //return
+            //"SITEIDS=" + StrVia.ToString(Sites)
+            //+ ";VARIABLEIDS=" + StrVia.ToString(Variables)
+            //+ ";METHODIDS=" + StrVia.ToString(Methods)
+            //+ ";SOURCEIDS=" + StrVia.ToString(Sources)
+            //+ ";OFFSETTYPEIDS=" + StrVia.ToString(OffsetTypes)
+            //+ ";OFFSETVALUE=" + ((OffsetValue.HasValue) ? OffsetValue.ToString() : "")
+            //;
         }
         static public CatalogFilter Parse(string str)
         {
-            try
-            {
-                Dictionary<string, string> dic = StrVia.ToDictionary(str);
+            return (CatalogFilter)JsonConvert.DeserializeObject(str);
 
-                return
-                    new CatalogFilter(
-                        StrVia.ToListInt(dic["SITEIDS"]),
-                        StrVia.ToListInt(dic["VARIABLEIDS"]),
-                        StrVia.ToListInt(dic["METHODIDS"]),
-                        StrVia.ToListInt(dic["SOURCEIDS"]),
-                        StrVia.ToListInt(dic["OFFSETTYPEIDS"]),
-                        string.IsNullOrEmpty(dic["OFFSETVALUE"].Trim()) ? null : (double?)double.Parse(dic["OFFSETVALUE"])
-                    );
+            //Dictionary<string, string> dic = StrVia.ToDictionary(str);
 
-            }
-            catch
-            {
-                return new CatalogFilter();
-            }
+            //return
+            //    new CatalogFilter(
+            //        StrVia.ToListInt(dic["SITEIDS"]),
+            //        StrVia.ToListInt(dic["VARIABLEIDS"]),
+            //        StrVia.ToListInt(dic["METHODIDS"]),
+            //        StrVia.ToListInt(dic["SOURCEIDS"]),
+            //        StrVia.ToListInt(dic["OFFSETTYPEIDS"]),
+            //        string.IsNullOrEmpty(dic["OFFSETVALUE"].Trim()) ? null : (double?)double.Parse(dic["OFFSETVALUE"])
+            //    );
         }
 
         public CatalogFilter

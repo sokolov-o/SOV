@@ -26,20 +26,5 @@ namespace SOV.Amur.Meta
             Description = description;
             NameEng = nameEng;
         }
-
-        public static Common.DicItem ToDicItem(GeoType item)
-        {
-            return new Common.DicItem(item.Id, item.Name, item.NameEng, item.Description);
-        }
-        public static List<Common.DicItem> ToList<T1>(List<GeoType> coll)
-        {
-            List<Common.DicItem> ret = new List<Common.DicItem>();
-            if (coll != null)
-                foreach (var item in coll)
-                {
-                    ret.Add(ToDicItem(item));
-                }
-            return ret;
-        }
     }
 }

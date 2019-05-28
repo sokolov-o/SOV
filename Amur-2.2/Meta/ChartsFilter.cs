@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using SOV.Common;
 
 namespace SOV.Amur.Meta
@@ -17,41 +18,42 @@ namespace SOV.Amur.Meta
 
         public override string ToString()
         {
-            return "DATETIMEPERIOD=" + DateTimePeriod.ToString('/') + ";SITEGROUP=" + SiteGroup.ToString();
+            return JsonConvert.SerializeObject(this);
+            //return "DATETIMEPERIOD=" + DateTimePeriod.ToString('/') + ";SITEGROUP=" + SiteGroup.ToString();
         }
 
         static public ChartsFilter Parse(string df)
         {
             try
             {
-                if (!string.IsNullOrEmpty(df))
-                {
-                    Dictionary<string, string> dic = StrVia.ToDictionary(df);
-                    DateTimePeriod dtp;
-                    string ss;
+                if (string.IsNullOrEmpty(df)) return new ChartsFilter();
 
-                    if (dic.TryGetValue("DATESF", out ss))
-                    {
-                        string[] s = dic["DATESF"].Split(',');
-                        dtp = new DateTimePeriod(
-                            DateTime.Parse(s[0]),
-                            DateTime.Parse(s[1]),
-                            DateTimePeriod.Type.Period,
-                            7
-                        );
-                    }
-                    else
-                    {
-                        dtp = DateTimePeriod.Parse(dic["DATETIMEPERIOD"], '/');
-                    }
-                    return new ChartsFilter(
-                        dtp, 
-                        dic.ContainsKey("SITEGROUP") ? StrVia.ParseInt(dic["SITEGROUP"]) : null
-                    );
-                }
-                return new ChartsFilter();
+                return (ChartsFilter)JsonConvert.DeserializeObject(df);
+
+                //Dictionary<string, string> dic = StrVia.ToDictionary(df);
+                //DateTimePeriod dtp;
+                //string ss;
+
+                //if (dic.TryGetValue("DATESF", out ss))
+                //{
+                //    string[] s = dic["DATESF"].Split(',');
+                //    dtp = new DateTimePeriod(
+                //        DateTime.Parse(s[0]),
+                //        DateTime.Parse(s[1]),
+                //        DateTimePeriod.Type.Period,
+                //        7
+                //    );
+                //}
+                //else
+                //{
+                //    dtp = DateTimePeriod.Parse(dic["DATETIMEPERIOD"], '/');
+                //}
+                //return new ChartsFilter(
+                //    dtp,
+                //    dic.ContainsKey("SITEGROUP") ? StrVia.ParseInt(dic["SITEGROUP"]) : null
+                //);
             }
-            catch 
+            catch
             {
                 return new ChartsFilter();
             }

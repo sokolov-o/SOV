@@ -37,16 +37,6 @@ namespace SOV.Amur.Meta
             return Name + " : " + Id;
         }
 
-        public static List<Common.DicItem> ToList<T1>(List<Method> items)
-        {
-            List<DicItem> ret = new List<DicItem>();
-            if (items != null)
-                foreach (var item in items)
-                {
-                    ret.Add(new DicItem(item.Id, item.ToString()));
-                }
-            return ret;
-        }
         public string GetOutStoreParameter(string paramName, bool isThrowIfNotExists = false)
         {
             return GetMethodOutStoreParameter(MethodOutputStoreParameters, paramName, isThrowIfNotExists);

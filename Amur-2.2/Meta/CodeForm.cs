@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace SOV.Amur.Meta
 {
-    public class CodeForm: SOV.Common.DicItem
+    public class CodeForm: SOV.Common.IdName
     {
         public CodeForm(int id, string name)
-            : base(id, name)
         {
+            Id = id;
+            Name = name;
         }
     }
 }

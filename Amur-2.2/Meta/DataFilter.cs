@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SOV.Common;
+using Newtonsoft.Json;
+
 
 namespace SOV.Amur.Meta
 {
@@ -44,16 +46,17 @@ namespace SOV.Amur.Meta
 
         public override string ToString()
         {
-            return
-                  "DATETIMEPERIOD=" + DateTimePeriod.ToString('/')
-                + ";FLAGAQC=" + ((FlagAQC.HasValue) ? FlagAQC.ToString() : "")
-                + ";ISONEVALUE=" + IsActualValueOnly
-                + ";ISSELECTDELETED=" + IsSelectDeleted
-                + ";ISREFSITEDATA=" + IsRefSiteData
-                + ";IS_DATE_LOC=" + IsDateLOC
+            return JsonConvert.SerializeObject(this);
+            //return
+            //      "DATETIMEPERIOD=" + DateTimePeriod.ToString('/')
+            //    + ";FLAGAQC=" + ((FlagAQC.HasValue) ? FlagAQC.ToString() : "")
+            //    + ";ISONEVALUE=" + IsActualValueOnly
+            //    + ";ISSELECTDELETED=" + IsSelectDeleted
+            //    + ";ISREFSITEDATA=" + IsRefSiteData
+            //    + ";IS_DATE_LOC=" + IsDateLOC
 
-                + ";" + this.CatalogFilter.ToString()
-            ;
+            //    + ";" + this.CatalogFilter.ToString()
+            //;
         }
         static public DataFilter Parse(string df)
         {
@@ -61,35 +64,37 @@ namespace SOV.Amur.Meta
             {
                 if (!string.IsNullOrEmpty(df))
                 {
-                    Dictionary<string, string> dic = StrVia.ToDictionary(df);
-                    DateTimePeriod dtp;
-                    string ss;
+                    return (DataFilter)JsonConvert.DeserializeObject(df);
 
-                    if (dic.TryGetValue("DATESF", out ss))
-                    {
-                        string[] s = dic["DATESF"].Split(',');
-                        dtp = new DateTimePeriod(
-                            DateTime.Parse(s[0]),
-                            DateTime.Parse(s[1]),
-                            DateTimePeriod.Type.Period,
-                            7
-                        );
-                    }
-                    else
-                    {
-                        dtp = DateTimePeriod.Parse(dic["DATETIMEPERIOD"], '/');
-                    }
-                    return
-                        new DataFilter(
-                            dtp,
-                            string.IsNullOrEmpty(dic["FLAGAQC"].Trim()) ? null : (byte?)byte.Parse(dic["FLAGAQC"]),
-                            (dic["ISONEVALUE"].ToUpper() == "TRUE") ? true : false,
-                            (dic["ISSELECTDELETED"].ToUpper() == "TRUE") ? true : false,
-                            (dic["ISREFSITEDATA"].ToUpper() == "TRUE") ? true : false,
-                            (dic["IS_DATE_LOC"].ToUpper() == "TRUE") ? true : false,
+                    //Dictionary<string, string> dic = StrVia.ToDictionary(df);
+                    //DateTimePeriod dtp;
+                    //string ss;
 
-                            CatalogFilter.Parse(df)
-                        );
+                    //if (dic.TryGetValue("DATESF", out ss))
+                    //{
+                    //    string[] s = dic["DATESF"].Split(',');
+                    //    dtp = new DateTimePeriod(
+                    //        DateTime.Parse(s[0]),
+                    //        DateTime.Parse(s[1]),
+                    //        DateTimePeriod.Type.Period,
+                    //        7
+                    //    );
+                    //}
+                    //else
+                    //{
+                    //    dtp = DateTimePeriod.Parse(dic["DATETIMEPERIOD"], '/');
+                    //}
+                    //return
+                    //    new DataFilter(
+                    //        dtp,
+                    //        string.IsNullOrEmpty(dic["FLAGAQC"].Trim()) ? null : (byte?)byte.Parse(dic["FLAGAQC"]),
+                    //        (dic["ISONEVALUE"].ToUpper() == "TRUE") ? true : false,
+                    //        (dic["ISSELECTDELETED"].ToUpper() == "TRUE") ? true : false,
+                    //        (dic["ISREFSITEDATA"].ToUpper() == "TRUE") ? true : false,
+                    //        (dic["IS_DATE_LOC"].ToUpper() == "TRUE") ? true : false,
+
+                    //        CatalogFilter.Parse(df)
+                    //    );
                 }
                 return new DataFilter();
             }

@@ -8,24 +8,13 @@ using System.Threading.Tasks;
 namespace SOV.Amur.Meta
 {
     [DataContract]
-    public class VariableType : SOV.Common.DicItem
+    public class VariableType : SOV.Common.IdNameRE
     {
-        [DataMember]
-        public string NameEng { get; set; }
-
-        public VariableType(int id, string name, string nameShort, string nameEng, string description = null)
-            : base(id, name, nameShort, description)
+        public string Description { get; set; }
+        public VariableType(int id, string nameRus, string nameEng, string description = null)
+            : base(id, nameRus, nameEng)
         {
-            NameEng = nameEng;
-        }
-        public static List<Common.DicItem> ToList<T1>(List<VariableType> coll)
-        {
-            List<Common.DicItem> ret = new List<Common.DicItem>();
-            foreach (var item in coll)
-            {
-                ret.Add(new Common.DicItem(item.Id, item.Name, item.NameShort));
-            }
-            return ret;
+            Description = description;
         }
     }
 }

@@ -52,26 +52,5 @@ namespace SOV.Amur.Meta
         {
             return GetName(this, codeSide, siteTypes);
         }
-        public static List<DicItem> ToDicItemList(List<Site> sites, int codeSide, List<SiteType> siteTypes, Common.DicItem parent = null)
-        {
-            List<DicItem> ret = null;
-            if (sites != null)
-            {
-                ret = new List<DicItem>();
-                foreach (var site in sites)
-                {
-                    ret.Add(site.ToDicItem(codeSide, siteTypes, parent));
-                }
-            }
-            return ret;
-        }
-
-        public DicItem ToDicItem(int codeSide, List<SiteType> siteTypes, Common.DicItem parent = null)
-        {
-            DicItem ret = new DicItem(Id, GetName(this, codeSide, siteTypes));
-            ret.ParentDicItem = parent;
-            ret.Entity = this;
-            return ret;
-        }
     }
 }

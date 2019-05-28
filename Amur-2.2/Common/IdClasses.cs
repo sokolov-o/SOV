@@ -33,7 +33,16 @@ namespace SOV.Common
             return ret;
         }
     }
-
+    public class IdNameDescription : IdName
+    {
+        public string Description { get; set; }
+        public IdNameDescription(int id, string name, string description = null)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+        }
+    }
     [DataContract]
     public class IdName : IdClass
     {
@@ -184,27 +193,28 @@ namespace SOV.Common
         public string NameRus { get; set; }
         [DataMember]
         public string NameEng { get; set; }
-
-        public IdNameRE()
-        {
-            NameRus = null;
-            NameEng = null;
+        public IdNameRE(int id, string nameRus, string nameEng)
+               {
+            Id = id;
+            NameRus = nameRus;
+            NameEng = nameEng;
         }
-        public IdNames Clone()
+
+        public IdNames Clone(string add2Names)
         {
             return new IdNames()
             {
                 Id = -1,
-                NameRus = "#" + NameRus,
-                NameEng = "#" + NameRus,
-                RusEng = "#" + RusEng
+                NameRus = add2Names + NameRus,
+                NameEng = add2Names + NameEng,
+                RusEng = RusEng
             };
         }
         public IdNameRE(IdNames idNames)
         {
             Id = idNames.Id;
             NameRus = idNames.NameRus;
-            NameEng = idNames.NameEngShort;
+            NameEng = idNames.NameEng;
         }
         public IdNameRE(IdNameRE idNames)
         {
@@ -225,8 +235,8 @@ namespace SOV.Common
         public override string ToString()
         {
             return string.Format("{0}", RusEng == "rus"
-                ? base.ToString()
-                : string.IsNullOrEmpty(NameEng) ? NameRus : NameEng
+                ? NameRus
+                : string.IsNullOrEmpty(NameEng) ? "NAMEENG IS NULL" : NameEng
             );
         }
         static public Dictionary<string, object> GetFieldDictionary(IdNameRE item, bool withId)
