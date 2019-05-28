@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>SOV.Amur.Meta</AssemblyName>
+    <RootNamespace>SOV.Amur.Meta</RootNamespace>
+  </PropertyGroup>
+
+</Project>
