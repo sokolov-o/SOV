@@ -28,7 +28,7 @@ namespace SOV.SGMO
             {
                 EntityAttrValue eav = amurClient.client.GetSiteAttrValue(amurClient.h, siteIds[iSite], 1003, DateTime.Today);
                 if (eav == null || string.IsNullOrEmpty(eav.Value))
-                    throw new Exception("В БД Амур у пункта id={} отсутствует атрибут UTCOffset.");
+                    throw new Exception($"В БД Амур у пункта (id={siteIds[iSite]}) отсутствует атрибут UTCOffset."); 
                 siteUTCs.Add(int.Parse(eav.Value));
             }
 
@@ -40,12 +40,12 @@ namespace SOV.SGMO
 
             for (int iMethod = 0; iMethod < methods.Count; iMethod++)
             {
-                Console.WriteLine(string.Format("TrackForecast.GET: forecast data for method id={0}...", methods[iMethod].Name));
+                Console.WriteLine(string.Format("SiteForecast.GET: forecast data for method id={0}...", methods[iMethod].Name));
 
                 List<int> catalogIds = allCatalogs.FindAll(x => x.MethodId == methods[iMethod].Id).Select(x => x.Id).ToList();
                 if (catalogIds.Count == 0)
                 {
-                    Console.WriteLine(string.Format("** По данному треку для метода {0} отсутствуют записи каталога данных мобильного пункта.", methods[iMethod].Name));
+                    Console.WriteLine(string.Format($"** Для указанных пунктов и метода {0} отсутствуют записи каталога данных.", methods[iMethod].Name)) ;
                     continue;
                 }
 
@@ -75,27 +75,6 @@ namespace SOV.SGMO
                 }
             }
             return ret;
-        }
-        /// <summary>
-        /// Получить корневой маршрут с наследником (частью маршрута) за дату.
-        /// </summary>
-        /// <param name="parentTrackId"></param>
-        /// <param name="dateIni"></param>
-        /// <returns></returns>
-        static Track GetTrack(int parentTrackId, DateTime dateIni)
-        {
-            Track parentTrack = DataManager.GetInstance().TrackRepository.Select(parentTrackId);
-            parentTrack.Points = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(parentTrack.Id);
-
-            Track childTrack = DataManager.GetInstance().TrackRepository.SelectChilds(parentTrackId, dateIni);
-            if (childTrack == null)
-                throw new Exception(string.Format("Отсутствует часть трека за дату {1} для трека id=[{1}].", dateIni, parentTrackId));
-            childTrack.Points = DataManager.GetInstance().TrackPointsRepository.SelectByTrackId(childTrack.Id);
-            parentTrack.ChildTracks = new List<Track> { childTrack };
-
-            Console.WriteLine("Track [{0}], part for {1}. {2} points.", childTrack.Name, childTrack.DateSUTC, childTrack.Points.Count);
-
-            return parentTrack;
         }
     }
 }

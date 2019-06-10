@@ -36,13 +36,13 @@ namespace _TestWCFServiceField
 
             #endregion
 
-            DateTime dateIni = new DateTime(2019, 5, 20, 12, 0, 0); 
+            DateTime dateIni = new DateTime(2019, 5, 20, 12, 0, 0);
 
             // GET & PRINT FORECAST DATA FROM SERVICE
 
             try
             {
-                // GET & WRITE 2 DB TRACK FORECASTS
+                // GET TRACK FORECASTS
                 LogStarted("TrackForecast.Get");
                 List<SOV.SGMO.DataTrackFcs> dataTrackFcs = TrackForecast.Get(
                     4/*Тайвань - Корсаков, 2019*/,
@@ -72,33 +72,37 @@ namespace _TestWCFServiceField
                 // GET SITES FORECASTS
                 //GetSiteForecast(dateIni, leadTimes);
 
-                ////////
-                //////// GET FIELDS IN REGION
-                ////////
-                //////List<GeoRectangle> geoRects = new List<GeoRectangle>()
-                //////{
-                //////    new GeoRectangle()
-                //////    {
-                //////        NorthWest = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 60, LonGrd = 110 },
-                //////        SouthEast = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 30, LonGrd = 130 }
-                //////    }
-                ////// };
-                //////List<Catalog> catalogs = clientA.GetCatalogList(ha,
-                //////    new List<int>() { 10344 },  // Земной шар
-                //////    null,                       // All variables
-                //////    new List<int>() { 111 },    // GFS
-                //////    null,                       // All sources
-                //////    null,                       // All offset types
-                //////    null                        // All offset values
-                //////    );
-                //////FieldServiceReference.Method method = clientF.GetMethods(hf).FirstOrDefault(x => x.Id == catalogs[0].MethodId);
-                //////if (method == null)
-                //////    throw new Exception(string.Format("Запрошенный метод с кодом {0} не обслуживается сервисом."));
-                //////Varoff[] varoffs = catalogs.Select(x => new Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
-                //////Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/] dataF = clientF.GetFieldsInRectangles(hf, dateIni, method.Id, varoffs, leadTimeHours, geoRects);
-                //////PrintDataFields(dateIni, leadTimeHours, geoRects, catalogs, dataF);
-                //////dataF = clientF.GetFieldsInRectangles(hf, dateIni.AddDays(100), method.Id, varoffs, leadTimeHours, geoRects);
-                //////PrintDataFields(dateIni.AddDays(100), geoRects, catalogs, dataF);
+                //
+                // GET FIELDS IN REGION
+                //
+                GeoRectangle[] geoRects = new GeoRectangle[]
+                {
+                    new GeoRectangle()
+                    {
+                        NorthWest = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 60, LonGrd = 110 },
+                        SouthEast = new _TestWCFServiceField.FieldServiceReference.GeoPoint() { LatGrd = 30, LonGrd = 130 }
+                    }
+                 };
+                List<Catalog> catalogs = clientA.GetCatalogList(ha,
+                    new List<int>() { 10344 },  // Земной шар
+                    null,                       // All variables
+                    new List<int>() { 111 },    // GFS
+                    null,                       // All sources
+                    null,                       // All offset types
+                    null                        // All offset values
+                    );
+                FieldServiceReference.Method method = clientF.GetMethods(hf).FirstOrDefault(x => x.Id == catalogs[0].MethodId);
+                if (method == null)
+                    throw new Exception(string.Format($"Запрошенный метод с кодом {} не обслуживается сервисом."));
+
+                Varoff[] varoffs = catalogs.Select(x => new Varoff() { VariableId = x.VariableId, OffsetTypeId = x.OffsetTypeId, OffsetValue = x.OffsetValue }).ToArray();
+                double[] leadTimeHours = new double[] { 0, 6 };
+
+                Field[/*LeadTime index*/][/*Georectangle index*/][/*Catalog index*/] dataF = clientF.GetExtentForecast(hf, dateIni, leadTimeHours, method.Id, varoffs, geoRects);
+                PrintDataFields(dateIni, leadTimeHours, geoRects, catalogs, dataF);
+
+                //dataF = clientF.GetFieldsInRectangles(hf, dateIni.AddDays(100), method.Id, varoffs, leadTimeHours, geoRects);
+                //PrintDataFields(dateIni.AddDays(100), geoRects, catalogs, dataF);
             }
             catch (Exception ex)
             {
@@ -132,7 +136,7 @@ namespace _TestWCFServiceField
             PrintDataPoints(dateIni, catalogs, dataP);
         }
 
-        static void PrintDataFields(DateTime dateIni, double[] leadTimeHours, SOV.Geo.GeoRectangle[] grs, List<Catalog> catalogs, Field[][][] data)
+        static void PrintDataFields(DateTime dateIni, double[] leadTimeHours, GeoRectangle[] grs, List<Catalog> catalogs, Field[][][] data)
         {
             Console.WriteLine("\n-- Forecast as FIELD's from {0:yyyy.MM.dd HH}", dateIni);
 

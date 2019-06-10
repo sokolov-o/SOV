@@ -17,7 +17,7 @@ namespace SOV.SGMO
             client = new AmurServiceReference.ServiceClient();
             h = client.Open(user.Name, user.Password);
             if (h < 1)
-                throw new Exception(string.Format("Ошибка открытия сервиса AmurServiceReference. Возврат handle {0}.", h));
+                throw new Exception(string.Format($"Ошибка открытия сервиса AmurServiceReference. Возврат handle {h}."));
         }
     }
     class FieldServiceClient
@@ -30,7 +30,7 @@ namespace SOV.SGMO
             client = new FieldServiceReference.ServiceClient();
             h = client.Open(user.Name, user.Password);
             if (h < 1)
-                throw new Exception(string.Format("Ошибка открытия сервиса AmurServiceReference. Возврат handle {0}.", h));
+                throw new Exception(string.Format($"Ошибка открытия сервиса AmurServiceReference. Возврат handle {h}."));
         }
     }
 }

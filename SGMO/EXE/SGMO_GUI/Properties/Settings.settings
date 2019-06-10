@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ForeacstMethodsAvailable" Type="System.String" Scope="User">
-      <Value Profile="(Default)">112;113;1608;1609</Value>
+      <Value Profile="(Default)">111;112;113;1608;1609</Value>
     </Setting>
     <Setting Name="User" Type="System.String" Scope="User">
       <Value Profile="(Default)">OSokolov;qq</Value>
