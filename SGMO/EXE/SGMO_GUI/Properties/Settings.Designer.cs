@@ -25,7 +25,7 @@ namespace SOV.SGMO.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("111;112;113;1608;1609")]
+        [global::System.Configuration.DefaultSettingValueAttribute("111;112;113;1608;1609;1700;1701")]
         public string ForeacstMethodsAvailable {
             get {
                 return ((string)(this["ForeacstMethodsAvailable"]));

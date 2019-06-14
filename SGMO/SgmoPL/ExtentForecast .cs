@@ -10,17 +10,17 @@ using SOV.Amur.Meta;
 
 namespace SOV.SGMO
 {
-    public class AreaForecast
+    public class ExtentForecast
     {
         /// <summary>
         /// Get forecast for sites.
         /// </summary>
         /// <param name="user"></param>
-        /// <param name="areaSiteIds">Коды пунктов-площадей, по-которым осуществляется прогноз.</param>
+        /// <param name="extentSiteIds">Коды пунктов типа геообъект (площадь), по-которым осуществляется прогноз.</param>
         /// <param name="dateIniUTC">Исх. дата прогноза.</param>
         /// <param name="methodId">Код метода прогноза полей: GFS, WRF etc.</param>
         /// <returns></returns>
-        public static List<DataFcs> Get(User user, List<int> areaSiteIds, DateTime dateIniUTC, int methodId)
+        public static List<DataFcs> Get(User user, List<int> extentSiteIds, DateTime dateIniUTC, int methodId)
         {
             AmurServiceClient amurClient = new AmurServiceClient(user);
 
@@ -54,14 +54,14 @@ namespace SOV.SGMO
 
 
             List<Amur.Meta.Method> methods = amurClient.client.GetMethods(amurClient.h, methodIds);
-            List<Catalog> allCatalogs = amurClient.client.GetCatalogList(amurClient.h, areaSiteIds, null, methodIds, null, null, null);
+            List<Catalog> allCatalogs = amurClient.client.GetCatalogList(amurClient.h, extentSiteIds, null, methodIds, null, null, null);
 
             List<int> siteUTCOffsets = new List<int>();
-            for (int iSite = 0; iSite < areaSiteIds.Count; iSite++)
+            for (int iSite = 0; iSite < extentSiteIds.Count; iSite++)
             {
-                EntityAttrValue eav = amurClient.client.GetSiteAttrValue(amurClient.h, areaSiteIds[iSite], (int)EnumSiteAttrType.UTCOffset, DateTime.Today);
+                EntityAttrValue eav = amurClient.client.GetSiteAttrValue(amurClient.h, extentSiteIds[iSite], (int)EnumSiteAttrType.UTCOffset, DateTime.Today);
                 if (eav == null || string.IsNullOrEmpty(eav.Value))
-                    throw new Exception($"В БД Амур у пункта отсутствует атрибут UTCOffset (site.id = {areaSiteIds[iSite]}).");
+                    throw new Exception($"В БД Амур у пункта отсутствует атрибут UTCOffset (site.id = {extentSiteIds[iSite]}).");
                 siteUTCOffsets.Add(int.Parse(eav.Value));
             }
 
@@ -102,7 +102,7 @@ namespace SOV.SGMO
                             CatalogId = catalogIds[iCatalog],
                             LeadTime = kvp.Key,
                             Value = kvp.Value[iCatalog],
-                            UTCOffsetHours = siteUTCOffsets[areaSiteIds.IndexOf(siteId)]
+                            UTCOffsetHours = siteUTCOffsets[extentSiteIds.IndexOf(siteId)]
                         });
                     }
                     iPoint++;
