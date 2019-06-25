@@ -149,10 +149,6 @@
       <Project>{67779067-f033-4759-a94a-df236f999e26}</Project>
       <Name>SgmoDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SgmoPL\SgmoPL.csproj">
-      <Project>{5fabdf16-646a-4c5e-99ac-5deab96c1b29}</Project>
-      <Name>SgmoPL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\SgmoUC\SgmoUC.csproj">
       <Project>{74411a08-4e8b-463e-8343-108a41adddbf}</Project>
       <Name>SgmoUC</Name>
