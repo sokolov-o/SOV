@@ -41,7 +41,7 @@ namespace SOV.Grib
             public double Dx = double.NaN;
             public double Dy = double.NaN;
         }
-        public static Grid GetGrid(Grib2Record rec)
+        public static Grid GetGrid(Grib2Record rec)...
         {
             // TODO: было -1*GeoPoint.Grd2Min(rec.GDS.Dy)
             return new Grid(null,
@@ -50,29 +50,29 @@ namespace SOV.Grib
                 rec.GDS.Nx, GeoPoint.Grd2Min(rec.GDS.Lo1), GeoPoint.Grd2Min(rec.GDS.Dx),
                 "Grid from Grib2 file");
         }
-        /// <summary>
-        /// Проверка совместимости записей Grib2. ВНИМАНИЕ: без проверки совместимости сеток!
-        /// </summary>
-        /// <param name="rec1"></param>
-        /// <param name="rec2"></param>
-        /// <param name="grid"></param>
-        /// <returns></returns>
-        public static bool IsCompatible(Grib2Record rec1, Grib2Record rec2)
-        {
-            if (
-                    rec1.ID.Center_id == rec2.ID.Center_id &&
-                    rec1.Is.Discipline == rec2.Is.Discipline &&
-                    rec1.PDS.ParameterCategory == rec2.PDS.ParameterCategory &&
-                    rec1.PDS.ParameterNumber == rec2.PDS.ParameterNumber &&
-                    rec1.PDS.ProductDefinition == rec2.PDS.ProductDefinition &&
-                    rec1.PDS.TypeFirstFixedSurface == rec2.PDS.TypeFirstFixedSurface &&
-                    rec1.PDS.TypeSecondFixedSurface == rec2.PDS.TypeSecondFixedSurface &&
-                    rec1.PDS.ValueFirstFixedSurface == rec2.PDS.ValueFirstFixedSurface &&
-                    rec1.PDS.ValueSecondFixedSurface == rec2.PDS.ValueSecondFixedSurface
-                )
-                return true;
-            return false;
-        }
+        ///// <summary>
+        ///// Проверка совместимости записей Grib2. ВНИМАНИЕ: без проверки совместимости сеток!
+        ///// </summary>
+        ///// <param name="rec1"></param>
+        ///// <param name="rec2"></param>
+        ///// <param name="grid"></param>
+        ///// <returns></returns>
+        //public static bool IsCompatible(Grib2Record rec1, Grib2Record rec2)
+        //{
+        //    if (
+        //            rec1.ID.Center_id == rec2.ID.Center_id &&
+        //            rec1.Is.Discipline == rec2.Is.Discipline &&
+        //            rec1.PDS.ParameterCategory == rec2.PDS.ParameterCategory &&
+        //            rec1.PDS.ParameterNumber == rec2.PDS.ParameterNumber &&
+        //            rec1.PDS.ProductDefinition == rec2.PDS.ProductDefinition &&
+        //            rec1.PDS.TypeFirstFixedSurface == rec2.PDS.TypeFirstFixedSurface &&
+        //            rec1.PDS.TypeSecondFixedSurface == rec2.PDS.TypeSecondFixedSurface &&
+        //            rec1.PDS.ValueFirstFixedSurface == rec2.PDS.ValueFirstFixedSurface &&
+        //            rec1.PDS.ValueSecondFixedSurface == rec2.PDS.ValueSecondFixedSurface
+        //        )
+        //        return true;
+        //    return false;
+        //}
 
     }
 }

@@ -39,35 +39,64 @@ namespace SOV.DB
             IsFileZipped = int.Parse(isFileZipped) == 0 ? false : true;
         }
 
-        //////User _user;
-        //////double _gfsDxDy;
-        ///////// <summary>
-        ///////// Конструктор.
-        ///////// </summary>
-        ///////// <param name="gfsDxDy">Шаг сетки (град).</param>
-        ///////// <param name="user">Пользователь.</param>
-        //////public GfsRepository(double gfsDxDy, User user = null)
-        //////{
-        //////    _user = user;
-        //////    _gfsDxDy = gfsDxDy;
-        //////}
-
         /// <summary>
         /// GET GRIB2 FILE & Parse it.
         /// </summary>
         /// <param name="g2filter">Фильтр записей файла grib2</param>
         /// <param name="dateIni">Исх. дата прогноза.</param>
-        /// <param name="predictTime">Заблаговременность.</param>
+        /// <param name="leadTimeHour">Заблаговременность.</param>
         /// <returns>Данные или null, если файл не существует.</returns>
-        public Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] Select(List<Grib2Filter> g2filter, DateTime dateIni, int predictTime)
+        public Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] Select(List<Grib2Filter> grib2filters, DateTime dateIni, int leadTimeHour)
         {
             FileStream fs = null;
 
             try
             {
-                fs = OpenTempFileGrib(dateIni, predictTime);
-                return (fs == null) ? null : GetData(fs, g2filter);
+                fs = OpenTempFileGrib(dateIni, leadTimeHour);
+                //return (fs == null) ? null : GetData(fs, grib2filters);
+                if (fs == null)
+                {
+                    Console.WriteLine($"Отсутствует grib2-файл. DateIni = {dateIni}, LeadTimeHour = {leadTimeHour}.");
+                    return null;
+                }
 
+                Grib2Input gi = new Grib2Input(fs);
+
+                try
+                {
+                    gi.scan(false, false);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"ERROR scan GFS grib2 file. DateIni = {dateIni}, LeadTimeHour = {leadTimeHour}.", ex);
+                }
+
+                Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] ret = new Object[grib2filters.Count][];
+                for (int i = 0; i < gi.Records.Count; i++)
+                {
+                    Grib2Record rec = (Grib2Record)gi.Records[i];
+                    for (int j = 0; j < grib2filters.Count; j++)
+                    {
+                        if (grib2filters[j] != null)
+                        {
+                            if (grib2filters[j].Equal(rec))
+                            {
+                                // grib2 - file: more than one record founded.
+                                if (ret[j] != null)
+                                {
+
+                                }
+                                throw new Exception($"More one record founded in grib2-file. DateIni = {dateIni}, LeadTimeHour = {leadTimeHour}.");
+
+                                float[] data = (new Grib2Data(fs)).getData(rec.getGdsOffset(), rec.getPdsOffset());
+                                ret[j] = new Object[] { rec, grib2filters[j].AcceptAddMultiply2Value(data) };
+                            }
+                        }
+                        else
+                            ret[j] = null;
+                    }
+                }
+                return ret;
             }
             finally
             {
@@ -79,48 +108,6 @@ namespace SOV.DB
             }
         }
 
-        static Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] GetData(FileStream fs, List<Grib2Filter> grib2filters)
-        {
-            Grib2Input gi = new Grib2Input(fs);
-
-            try
-            {
-                gi.scan(false, false);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("ERROR scan GFS grib2 file.", ex);
-            }
-
-            Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] ret = new Object[grib2filters.Count][];
-            for (int i = 0; i < gi.Records.Count; i++)
-            {
-                Grib2Record rec = (Grib2Record)gi.Records[i];
-                for (int j = 0; j < grib2filters.Count; j++)
-                {
-                    if (grib2filters[j] != null)
-                    {
-                        if (grib2filters[j].Equal(rec))
-                        {
-                            if (ret[j] != null) throw new Exception("More one record founded in grib2-file.");
-
-                            float[] data = (new Grib2Data(fs)).getData(rec.getGdsOffset(), rec.getPdsOffset());
-                            ret[j] = new Object[] { rec, grib2filters[j].AcceptAddMultiply2Value(data) };
-                        }
-                    }
-                    else
-                        ret[j] = null;
-                }
-            }
-            return ret;
-        }
-        //////private string GetPath()
-        //////{
-        //////    if (_gfsDxDy == 0.5) return SOV.DB.Properties.Settings.Default.GFSFTPPath05full;
-        //////    if (_gfsDxDy == 0.25) return SOV.DB.Properties.Settings.Default.GFSFTPPath025;
-        //////    throw new Exception("Unknown GFS path for Dx = " + _gfsDxDy);
-        //////}
-
         /// <summary>
         /// Возвращает по дате название директория на ftp этой даты
         /// </summary>
@@ -128,10 +115,6 @@ namespace SOV.DB
         /// <returns></returns>
         string GetDirForDate(DateTime date)
         {
-            //if (_gfsDxDy == 0.5 || _gfsDxDy == 0.25)
-            //    return "gfs." + date.ToString("yyyyMMddHH");
-            //throw new Exception("Unknown GFS directory for date for Dx = " + _gfsDxDy);
-
             return string.Format(FileSubDirMask, date);
         }
         /// <summary>
@@ -142,19 +125,6 @@ namespace SOV.DB
         /// <returns></returns>
         string GetFileNameForDate(DateTime date, int leadTime)
         {
-            //if (_gfsDxDy == 0.5)
-            //{
-            //    if (date >= new DateTime(2015, 1, 14, 12, 0, 0))
-            //        return String.Format("gfs.t{0:D2}z.pgrb2.0p50.f{1:D3}", date.Hour, lag);
-            //    else
-            //        return String.Format("gfs.t{0:D2}z.pgrb2f{1:D2}", date.Hour, lag);
-            //}
-            //else if (_gfsDxDy == 0.25)
-            //{
-            //    return String.Format("gfs.t{0:D2}z.pgrb2.0p25.f{1:D3}", date.Hour, lag);
-            //}
-            //throw new Exception("Unknown GFS file name for date for Dx = " + _gfsDxDy);
-
             return String.Format(FileNameMask, date, leadTime);
         }
         /// <summary>
