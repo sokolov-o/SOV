@@ -5,43 +5,52 @@ namespace SOV.Grib
 {
     public class Grib2
     {
-        public IsSection Is;
-        public IDSection ID;
-        public PDSSection PDS;
-        public GDSSection GDS;
+        /// <summary>
+        /// TABLE 0 - Part 1
+        /// NATIONAL/INTERNATIONAL ORIGINATING CENTERS  (Assigned By The WMO)
+        /// (PDS Octet 5)
+        /// </summary>
+        public enum PDS_Centers
+        {
+            NOAA_FSL = 59 ююю// NOAA Forecast Systems Lab, Boulder CO
+        }
+        //public IsSection Is;
+        //public IDSection ID;
+        //public PDSSection PDS;
+        //public GDSSection GDS;
 
-        public class IsSection
-        {
-            public int IsDiscipline;
-        }
-        public class IDSection
-        {
-            public int Center_id;
-        }
-        public class PDSSection
-        {
-            public int ProductDefinition;
-            public int ParameterCategory;
-            public int ParameterNumber;
-            public int TypeFirstFixedSurface;
-            public int TypeSecondFixedSurface;
-            public float ValueFirstFixedSurface;
-            public float ValueSecondFixedSurface;
-        }
-        public class GDSSection
-        {
-            /// <summary>
-            /// Код типа сетки
-            /// </summary>
-            public int Gdtn = -1;
-            public int Ny = -1;
-            public int Nx = -1;
-            public double La1 = double.NaN;
-            public double Lo1 = double.NaN;
-            public double Dx = double.NaN;
-            public double Dy = double.NaN;
-        }
-        public static Grid GetGrid(Grib2Record rec)...
+        //public class IsSection
+        //{
+        //    public int IsDiscipline;
+        //}
+        //public class IDSection
+        //{
+        //    public int Center_id;
+        //}
+        //public class PDSSection
+        //{
+        //    public int ProductDefinition;
+        //    public int ParameterCategory;
+        //    public int ParameterNumber;
+        //    public int TypeFirstFixedSurface;
+        //    public int TypeSecondFixedSurface;
+        //    public float ValueFirstFixedSurface;
+        //    public float ValueSecondFixedSurface;
+        //}
+        //public class GDSSection
+        //{
+        //    /// <summary>
+        //    /// Код типа сетки
+        //    /// </summary>
+        //    public int Gdtn = -1;
+        //    public int Ny = -1;
+        //    public int Nx = -1;
+        //    public double La1 = double.NaN;
+        //    public double Lo1 = double.NaN;
+        //    public double Dx = double.NaN;
+        //    public double Dy = double.NaN;
+        //}
+        public static Grid GetGrid(Grib2Record rec)
         {
             // TODO: было -1*GeoPoint.Grd2Min(rec.GDS.Dy)
             return new Grid(null,

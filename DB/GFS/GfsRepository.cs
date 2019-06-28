@@ -77,19 +77,20 @@ namespace SOV.DB
                     Grib2Record rec = (Grib2Record)gi.Records[i];
                     for (int j = 0; j < grib2filters.Count; j++)
                     {
-                        if (grib2filters[j] != null)
+                        Grib2Filter gf = grib2filters[j];
+                        if (gf != null)
                         {
-                            if (grib2filters[j].Equal(rec))
+                            if (gf.Equal(rec))
                             {
                                 // grib2 - file: more than one record founded.
                                 if (ret[j] != null)
                                 {
-
+                                    if()
                                 }
                                 throw new Exception($"More one record founded in grib2-file. DateIni = {dateIni}, LeadTimeHour = {leadTimeHour}.");
 
                                 float[] data = (new Grib2Data(fs)).getData(rec.getGdsOffset(), rec.getPdsOffset());
-                                ret[j] = new Object[] { rec, grib2filters[j].AcceptAddMultiply2Value(data) };
+                                ret[j] = new Object[] { rec, gf.AcceptAddMultiply2Value(data) };
                             }
                         }
                         else
