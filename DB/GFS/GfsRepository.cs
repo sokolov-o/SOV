@@ -72,29 +72,26 @@ namespace SOV.DB
                 }
 
                 Object[/*grib2filter index*/][/*Grib2Record;float[] data*/] ret = new Object[grib2filters.Count][];
-                for (int i = 0; i < gi.Records.Count; i++)
+                for (int iRecord = 0; iRecord < gi.Records.Count; iRecord++)
                 {
-                    Grib2Record rec = (Grib2Record)gi.Records[i];
-                    for (int j = 0; j < grib2filters.Count; j++)
+                    Grib2Record rec = (Grib2Record)gi.Records[iRecord];
+                    for (int iFilter = 0; iFilter < grib2filters.Count; iFilter++)
                     {
-                        Grib2Filter gf = grib2filters[j];
+                        Grib2Filter gf = grib2filters[iFilter];
                         if (gf != null)
                         {
                             if (gf.Equal(rec))
                             {
                                 // grib2 - file: more than one record founded.
-                                if (ret[j] != null)
-                                {
-                                    if()
-                                }
-                                throw new Exception($"More one record founded in grib2-file. DateIni = {dateIni}, LeadTimeHour = {leadTimeHour}.");
+                                if (ret[iFilter] != null)
+                                    throw new Exception($"More than one record founded in grib2-file. DateIni = {dateIni}, LeadTimeHour = {leadTimeHour}.");
 
                                 float[] data = (new Grib2Data(fs)).getData(rec.getGdsOffset(), rec.getPdsOffset());
-                                ret[j] = new Object[] { rec, gf.AcceptAddMultiply2Value(data) };
+                                ret[iFilter] = new Object[] { rec, gf.AcceptAddMultiply2Value(data) };
                             }
                         }
                         else
-                            ret[j] = null;
+                            ret[iFilter] = null;
                     }
                 }
                 return ret;
@@ -107,6 +104,82 @@ namespace SOV.DB
                     File.Delete(fs.Name);
                 }
             }
+        }
+        /// <summary>
+        /// GET GRIB2 FILE records.
+        /// </summary>
+        /// <param name="grib2filters">Фильтр записей файла grib2</param>
+        /// <param name="dateIni">Исх. дата прогноза.</param>
+        /// <param name="leadTimeHour">Заблаговременность.</param>
+        /// <returns>Данные или null, если файл не существует.</returns>
+        public Grib2Record[/*grib2filter index*/] GetGrib2Records(List<Grib2Filter> grib2filters, DateTime dateIni, int leadTimeHour)
+        {
+            FileStream fs = null;
+
+            try
+            {
+                fs = OpenTempFileGrib(dateIni, leadTimeHour);
+                //return (fs == null) ? null : GetData(fs, grib2filters);
+                if (fs == null)
+                {
+                    Console.WriteLine($"Отсутствует grib2-файл. DateIni = {dateIni}, LeadTimeHour = {leadTimeHour}.");
+                    return null;
+                }
+
+                Grib2Input gi = new Grib2Input(fs);
+
+                try
+                {
+                    gi.scan(false, false);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"ERROR scan GFS grib2 file. DateIni = {dateIni}, LeadTimeHour = {leadTimeHour}.", ex);
+                }
+
+                Grib2Record[/*grib2filter index*/] ret = new Grib2Record[grib2filters.Count];
+                for (int iRecord = 0; iRecord < gi.Records.Count; iRecord++)
+                {
+                    Grib2Record rec = (Grib2Record)gi.Records[iRecord];
+                    for (int iFilter = 0; iFilter < grib2filters.Count; iFilter++)
+                    {
+                        Grib2Filter filter = grib2filters[iFilter];
+                        if (filter != null)
+                        {
+                            if (filter.Equal(rec))
+                            {
+                                if (!IsPrecipitation(filter))
+                                {
+                                    // TODO: добавить условие на сохранение записи с накоплением осадков от забл-ти 0.
+                                    if (ret[iFilter] == null) // && накопление от забл. 0
+                                    ret[iFilter] = rec;
+                                }
+                                else
+                                {
+                                    if (ret[iFilter] != null)
+                                        throw new Exception($"More than one record founded in grib2-file. DateIni = {dateIni}, LeadTimeHour = {leadTimeHour}.");
+                                    ret[iFilter] = rec;
+                                }
+                            }
+                        }
+                        else
+                            ret[iFilter] = null;
+                    }
+                }
+                return ret;
+            }
+            finally
+            {
+                if (fs != null)
+                {
+                    fs.Close();
+                    File.Delete(fs.Name);
+                }
+            }
+        }
+        public bool IsPrecipitation(Grib2Filter filter)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
