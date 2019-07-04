@@ -12,7 +12,7 @@ namespace SOV.Grib
         /// </summary>
         public enum PDS_Centers
         {
-            NOAA_FSL = 59 ююю// NOAA Forecast Systems Lab, Boulder CO
+            NOAA_FSL = 59 // NOAA Forecast Systems Lab, Boulder CO
         }
         //public IsSection Is;
         //public IDSection ID;
