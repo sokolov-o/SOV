@@ -465,9 +465,9 @@ namespace SOV.DB
             // CHECK INPUT
 
             if (dataFilter == null)
-                throw new Exception("Не определён фильтр при вызове метода чтения данных из полей GRIB2.");
+                throw new Exception("Не определён фильтр при вызове метода чтения{} данных из полей GRIB2.");
             if (dataFilter.GetType() != typeof(List<Grib2Filter>))
-                throw new Exception(string.Format("Указан фильтр типа {0}. Должен быть типа {1}.", dataFilter.GetType(), typeof(List<Grib2Filter>)));
+                throw new Exception($"Указан фильтр типа {dataFilter.GetType()}. Должен быть типа {typeof(List<Grib2Filter>)}.");
 
             // SCAN LEADTIMES
 
