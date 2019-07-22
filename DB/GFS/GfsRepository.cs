@@ -177,7 +177,7 @@ namespace SOV.DB
                 }
             }
         }
-        public bool IsPrecipitation(Grib2Filter filter)
+        bool IsPrecipitation(Grib2Filter filter)
         {
             throw new NotImplementedException();
         }
