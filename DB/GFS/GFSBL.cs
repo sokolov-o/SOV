@@ -12,9 +12,20 @@ using SOV.Grib;
 
 namespace SOV.DB
 {
-    public class GFS
+    /// <summary>
+    /// Конвертер для записей файла формата grib2 для модели GFS.
+    /// 
+    /// Почему не в классе Grib2? 
+    /// 1. Потому что может быть специфика файлов grib2 в GFS. Наверное...хотя не было пока замечено и можно эти методы перенести в класс Grib2.
+    /// 2. Тогда Grib2 должен знать о классах (например Field), знать о которых не его дело.
+    /// 
+    /// Поэтому, пусть будет здесь...
+    /// 
+    /// </summary>
+    static public class GFS
     {
         /// <summary>
+        /// В метаданные поля добавляется:
         /// 
         /// field.MetaInfo.Add("ID_RefTime", rec.ID.RefTime);
         /// field.MetaInfo.Add("PDS_TimeRangeUnit", rec.PDS.TimeRangeUnit);
@@ -23,7 +34,7 @@ namespace SOV.DB
         static internal Field ToField(Grib2Record rec, float[] data)
         {
             Grid grid = Grib2.GetGrid(rec);
-            // TODO: Несовпадение кол. точек сетки и возврата библиотеки Grib2! Решить по-другому.
+            // TODO: Несовпадение кол. точек сетки и возврата библиотеки Seaware.GribCS.Grib2! такой вот баг... Решить по-другому?
             //if (data.Length < grid.PointsQ)
             //    throw new Exception("(data1.Length != grid.PointsQ) : " + data.Length + "!=" + grid.PointsQ);
             double[] ddata = new double[grid.PointsQ];
@@ -39,6 +50,7 @@ namespace SOV.DB
             return field;
         }
         /// <summary>
+        /// В метаданные поля добавляется:
         /// 
         /// field.MetaInfo.Add("ID_RefTime", rec.ID.RefTime);
         /// field.MetaInfo.Add("PDS_TimeRangeUnit", rec.PDS.TimeRangeUnit);

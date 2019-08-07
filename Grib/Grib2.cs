@@ -14,42 +14,6 @@ namespace SOV.Grib
         {
             NOAA_FSL = 59 // NOAA Forecast Systems Lab, Boulder CO
         }
-        //public IsSection Is;
-        //public IDSection ID;
-        //public PDSSection PDS;
-        //public GDSSection GDS;
-
-        //public class IsSection
-        //{
-        //    public int IsDiscipline;
-        //}
-        //public class IDSection
-        //{
-        //    public int Center_id;
-        //}
-        //public class PDSSection
-        //{
-        //    public int ProductDefinition;
-        //    public int ParameterCategory;
-        //    public int ParameterNumber;
-        //    public int TypeFirstFixedSurface;
-        //    public int TypeSecondFixedSurface;
-        //    public float ValueFirstFixedSurface;
-        //    public float ValueSecondFixedSurface;
-        //}
-        //public class GDSSection
-        //{
-        //    /// <summary>
-        //    /// Код типа сетки
-        //    /// </summary>
-        //    public int Gdtn = -1;
-        //    public int Ny = -1;
-        //    public int Nx = -1;
-        //    public double La1 = double.NaN;
-        //    public double Lo1 = double.NaN;
-        //    public double Dx = double.NaN;
-        //    public double Dy = double.NaN;
-        //}
         public static Grid GetGrid(Grib2Record rec)
         {
             // TODO: было -1*GeoPoint.Grd2Min(rec.GDS.Dy)
@@ -59,29 +23,5 @@ namespace SOV.Grib
                 rec.GDS.Nx, GeoPoint.Grd2Min(rec.GDS.Lo1), GeoPoint.Grd2Min(rec.GDS.Dx),
                 "Grid from Grib2 file");
         }
-        ///// <summary>
-        ///// Проверка совместимости записей Grib2. ВНИМАНИЕ: без проверки совместимости сеток!
-        ///// </summary>
-        ///// <param name="rec1"></param>
-        ///// <param name="rec2"></param>
-        ///// <param name="grid"></param>
-        ///// <returns></returns>
-        //public static bool IsCompatible(Grib2Record rec1, Grib2Record rec2)
-        //{
-        //    if (
-        //            rec1.ID.Center_id == rec2.ID.Center_id &&
-        //            rec1.Is.Discipline == rec2.Is.Discipline &&
-        //            rec1.PDS.ParameterCategory == rec2.PDS.ParameterCategory &&
-        //            rec1.PDS.ParameterNumber == rec2.PDS.ParameterNumber &&
-        //            rec1.PDS.ProductDefinition == rec2.PDS.ProductDefinition &&
-        //            rec1.PDS.TypeFirstFixedSurface == rec2.PDS.TypeFirstFixedSurface &&
-        //            rec1.PDS.TypeSecondFixedSurface == rec2.PDS.TypeSecondFixedSurface &&
-        //            rec1.PDS.ValueFirstFixedSurface == rec2.PDS.ValueFirstFixedSurface &&
-        //            rec1.PDS.ValueSecondFixedSurface == rec2.PDS.ValueSecondFixedSurface
-        //        )
-        //        return true;
-        //    return false;
-        //}
-
     }
 }
