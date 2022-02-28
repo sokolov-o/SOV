@@ -17,10 +17,7 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Method", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class Method : SOV.Common.IdName, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+    public partial class Method : SOV.Amur.Importer.GISMeteo.AmurService.IdName {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
@@ -36,16 +33,6 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> SourceLegalEntityIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Description {
@@ -111,6 +98,61 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
                 }
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdClass", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNameRus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Addr))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.VariableVirtual))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Variable))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdName))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNameParent))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Site))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DicItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SampleMedium))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeneralCategory))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.ValueType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.VariableType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeoObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.OffsetType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Method))]
+    public partial class IdClass : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -124,15 +166,96 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdNameRus", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity))]
+    public partial class IdNameRus : SOV.Amur.Importer.GISMeteo.AmurService.IdClass {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameRusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameRusShortField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameRus {
+            get {
+                return this.NameRusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameRusField, value) != true)) {
+                    this.NameRusField = value;
+                    this.RaisePropertyChanged("NameRus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameRusShort {
+            get {
+                return this.NameRusShortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameRusShortField, value) != true)) {
+                    this.NameRusShortField = value;
+                    this.RaisePropertyChanged("NameRusShort");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdNames", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity))]
+    public partial class IdNames : SOV.Amur.Importer.GISMeteo.AmurService.IdNameRus {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameEngField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameEngShortField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameEng {
+            get {
+                return this.NameEngField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
+                    this.NameEngField = value;
+                    this.RaisePropertyChanged("NameEng");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameEngShort {
+            get {
+                return this.NameEngShortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameEngShortField, value) != true)) {
+                    this.NameEngShortField = value;
+                    this.RaisePropertyChanged("NameEngShort");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="LegalEntity", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdName))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdClass))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNameParent))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.DicItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Common.DicItem>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNames))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNameRus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdName))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdClass))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNameParent))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DicItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DicItem>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNameRus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Org))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Org>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Person))]
@@ -219,10 +342,7 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.AQCDataValue>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.AQCDataValue))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Reflection.MemberInfo))]
-    public partial class LegalEntity : SOV.Common.IdNames, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+    public partial class LegalEntity : SOV.Amur.Importer.GISMeteo.AmurService.IdNames {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AddrAddField;
@@ -250,16 +370,6 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WebSiteField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string AddrAdd {
@@ -377,13 +487,881 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
                 }
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Addr", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
+    [System.SerializableAttribute()]
+    public partial class Addr : SOV.Amur.Importer.GISMeteo.AmurService.IdClass {
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> ChildsField;
         
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameShortField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ParentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TypeIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> Childs {
+            get {
+                return this.ChildsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChildsField, value) != true)) {
+                    this.ChildsField = value;
+                    this.RaisePropertyChanged("Childs");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameShort {
+            get {
+                return this.NameShortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
+                    this.NameShortField = value;
+                    this.RaisePropertyChanged("NameShort");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ParentId {
+            get {
+                return this.ParentIdField;
+            }
+            set {
+                if ((this.ParentIdField.Equals(value) != true)) {
+                    this.ParentIdField = value;
+                    this.RaisePropertyChanged("ParentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TypeId {
+            get {
+                return this.TypeIdField;
+            }
+            set {
+                if ((this.TypeIdField.Equals(value) != true)) {
+                    this.TypeIdField = value;
+                    this.RaisePropertyChanged("TypeId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VariableVirtual", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Variable))]
+    public partial class VariableVirtual : SOV.Amur.Importer.GISMeteo.AmurService.IdClass {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DataTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GeneralCategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SampleMediumIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeSupportField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UnitIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int VariableTypeIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DataTypeId {
+            get {
+                return this.DataTypeIdField;
+            }
+            set {
+                if ((this.DataTypeIdField.Equals(value) != true)) {
+                    this.DataTypeIdField = value;
+                    this.RaisePropertyChanged("DataTypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int GeneralCategoryId {
+            get {
+                return this.GeneralCategoryIdField;
+            }
+            set {
+                if ((this.GeneralCategoryIdField.Equals(value) != true)) {
+                    this.GeneralCategoryIdField = value;
+                    this.RaisePropertyChanged("GeneralCategoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SampleMediumId {
+            get {
+                return this.SampleMediumIdField;
+            }
+            set {
+                if ((this.SampleMediumIdField.Equals(value) != true)) {
+                    this.SampleMediumIdField = value;
+                    this.RaisePropertyChanged("SampleMediumId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TimeId {
+            get {
+                return this.TimeIdField;
+            }
+            set {
+                if ((this.TimeIdField.Equals(value) != true)) {
+                    this.TimeIdField = value;
+                    this.RaisePropertyChanged("TimeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TimeSupport {
+            get {
+                return this.TimeSupportField;
+            }
+            set {
+                if ((this.TimeSupportField.Equals(value) != true)) {
+                    this.TimeSupportField = value;
+                    this.RaisePropertyChanged("TimeSupport");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UnitId {
+            get {
+                return this.UnitIdField;
+            }
+            set {
+                if ((this.UnitIdField.Equals(value) != true)) {
+                    this.UnitIdField = value;
+                    this.RaisePropertyChanged("UnitId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int VariableTypeId {
+            get {
+                return this.VariableTypeIdField;
+            }
+            set {
+                if ((this.VariableTypeIdField.Equals(value) != true)) {
+                    this.VariableTypeIdField = value;
+                    this.RaisePropertyChanged("VariableTypeId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Variable", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class Variable : SOV.Amur.Importer.GISMeteo.AmurService.VariableVirtual {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CodeErrDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CodeNoDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameCField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameEngField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameRusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ValueTypeIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CodeErrData {
+            get {
+                return this.CodeErrDataField;
+            }
+            set {
+                if ((this.CodeErrDataField.Equals(value) != true)) {
+                    this.CodeErrDataField = value;
+                    this.RaisePropertyChanged("CodeErrData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CodeNoData {
+            get {
+                return this.CodeNoDataField;
+            }
+            set {
+                if ((this.CodeNoDataField.Equals(value) != true)) {
+                    this.CodeNoDataField = value;
+                    this.RaisePropertyChanged("CodeNoData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameC {
+            get {
+                return this.NameCField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameCField, value) != true)) {
+                    this.NameCField = value;
+                    this.RaisePropertyChanged("NameC");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameEng {
+            get {
+                return this.NameEngField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
+                    this.NameEngField = value;
+                    this.RaisePropertyChanged("NameEng");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameRus {
+            get {
+                return this.NameRusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameRusField, value) != true)) {
+                    this.NameRusField = value;
+                    this.RaisePropertyChanged("NameRus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ValueTypeId {
+            get {
+                return this.ValueTypeIdField;
+            }
+            set {
+                if ((this.ValueTypeIdField.Equals(value) != true)) {
+                    this.ValueTypeIdField = value;
+                    this.RaisePropertyChanged("ValueTypeId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdName", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNameParent))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Site))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DicItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SampleMedium))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeneralCategory))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.ValueType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.VariableType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeoObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.OffsetType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Method))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdClass))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DicItem>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNames))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.IdNameRus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Org))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Org>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Person))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Person>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Addr))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Type))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Method>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.MethodForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteAttrType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SampleMedium>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Variable>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Variable))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.VariableVirtual))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeneralCategory>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeoType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeoType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.MeteoZone>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.MeteoZone))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.MethodForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.OffsetType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSite>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteXSite))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSiteType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteXSiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Unit>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Unit))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.ValueType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.VariableCode>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.VariableCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.VariableType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Catalog))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Catalog>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Curve))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataSource))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<double>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.Amur.Importer.GISMeteo.AmurService.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<double>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, SOV.Amur.Importer.GISMeteo.AmurService.DataSource>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<SOV.Amur.Importer.GISMeteo.AmurService.Catalog, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataValue>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SysObj))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SysParsersXSites>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SysParsersXSites))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SysParsersParams>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SysParsersParams))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.AQCDataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.AQCDataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Reflection.MemberInfo))]
+    public partial class IdName : SOV.Amur.Importer.GISMeteo.AmurService.IdClass {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private object EntityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public object Entity {
+            get {
+                return this.EntityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EntityField, value) != true)) {
+                    this.EntityField = value;
+                    this.RaisePropertyChanged("Entity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdNameParent", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Site))]
+    public partial class IdNameParent : SOV.Amur.Importer.GISMeteo.AmurService.IdName {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ParentIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ParentId {
+            get {
+                return this.ParentIdField;
+            }
+            set {
+                if ((this.ParentIdField.Equals(value) != true)) {
+                    this.ParentIdField = value;
+                    this.RaisePropertyChanged("ParentId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Site", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class Site : SOV.Amur.Importer.GISMeteo.AmurService.IdNameParent {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> AddrRegionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> LatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> LonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> OrgIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TypeIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> AddrRegionId {
+            get {
+                return this.AddrRegionIdField;
+            }
+            set {
+                if ((this.AddrRegionIdField.Equals(value) != true)) {
+                    this.AddrRegionIdField = value;
+                    this.RaisePropertyChanged("AddrRegionId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Lat {
+            get {
+                return this.LatField;
+            }
+            set {
+                if ((this.LatField.Equals(value) != true)) {
+                    this.LatField = value;
+                    this.RaisePropertyChanged("Lat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Lon {
+            get {
+                return this.LonField;
+            }
+            set {
+                if ((this.LonField.Equals(value) != true)) {
+                    this.LonField = value;
+                    this.RaisePropertyChanged("Lon");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> OrgId {
+            get {
+                return this.OrgIdField;
+            }
+            set {
+                if ((this.OrgIdField.Equals(value) != true)) {
+                    this.OrgIdField = value;
+                    this.RaisePropertyChanged("OrgId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TypeId {
+            get {
+                return this.TypeIdField;
+            }
+            set {
+                if ((this.TypeIdField.Equals(value) != true)) {
+                    this.TypeIdField = value;
+                    this.RaisePropertyChanged("TypeId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DicItem", Namespace="http://schemas.datacontract.org/2004/07/SOV.Common")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SampleMedium))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeneralCategory))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.ValueType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.VariableType))]
+    public partial class DicItem : SOV.Amur.Importer.GISMeteo.AmurService.IdName {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DicItem> ChildsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsSelectedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameShortField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SOV.Amur.Importer.GISMeteo.AmurService.DicItem ParentDicItemField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Type TypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DicItem> Childs {
+            get {
+                return this.ChildsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChildsField, value) != true)) {
+                    this.ChildsField = value;
+                    this.RaisePropertyChanged("Childs");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsSelected {
+            get {
+                return this.IsSelectedField;
+            }
+            set {
+                if ((this.IsSelectedField.Equals(value) != true)) {
+                    this.IsSelectedField = value;
+                    this.RaisePropertyChanged("IsSelected");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameShort {
+            get {
+                return this.NameShortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
+                    this.NameShortField = value;
+                    this.RaisePropertyChanged("NameShort");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SOV.Amur.Importer.GISMeteo.AmurService.DicItem ParentDicItem {
+            get {
+                return this.ParentDicItemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParentDicItemField, value) != true)) {
+                    this.ParentDicItemField = value;
+                    this.RaisePropertyChanged("ParentDicItem");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Type Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SampleMedium", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class SampleMedium : SOV.Amur.Importer.GISMeteo.AmurService.DicItem {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class DataType : SOV.Amur.Importer.GISMeteo.AmurService.DicItem {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GeneralCategory", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class GeneralCategory : SOV.Amur.Importer.GISMeteo.AmurService.DicItem {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ValueType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class ValueType : SOV.Amur.Importer.GISMeteo.AmurService.DicItem {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameEngField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameEng {
+            get {
+                return this.NameEngField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
+                    this.NameEngField = value;
+                    this.RaisePropertyChanged("NameEng");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VariableType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class VariableType : SOV.Amur.Importer.GISMeteo.AmurService.DicItem {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameEngField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameEng {
+            get {
+                return this.NameEngField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
+                    this.NameEngField = value;
+                    this.RaisePropertyChanged("NameEng");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GeoObject", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class GeoObject : SOV.Amur.Importer.GISMeteo.AmurService.IdName {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> FallIntoIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GeoTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<System.Collections.Generic.List<double>> Shape2DField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> FallIntoId {
+            get {
+                return this.FallIntoIdField;
+            }
+            set {
+                if ((this.FallIntoIdField.Equals(value) != true)) {
+                    this.FallIntoIdField = value;
+                    this.RaisePropertyChanged("FallIntoId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int GeoTypeId {
+            get {
+                return this.GeoTypeIdField;
+            }
+            set {
+                if ((this.GeoTypeIdField.Equals(value) != true)) {
+                    this.GeoTypeIdField = value;
+                    this.RaisePropertyChanged("GeoTypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderBy {
+            get {
+                return this.OrderByField;
+            }
+            set {
+                if ((this.OrderByField.Equals(value) != true)) {
+                    this.OrderByField = value;
+                    this.RaisePropertyChanged("OrderBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<System.Collections.Generic.List<double>> Shape2D {
+            get {
+                return this.Shape2DField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Shape2DField, value) != true)) {
+                    this.Shape2DField = value;
+                    this.RaisePropertyChanged("Shape2D");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SiteType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class SiteType : SOV.Amur.Importer.GISMeteo.AmurService.IdName {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameShortField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NameShort {
+            get {
+                return this.NameShortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
+                    this.NameShortField = value;
+                    this.RaisePropertyChanged("NameShort");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OffsetType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
+    [System.SerializableAttribute()]
+    public partial class OffsetType : SOV.Amur.Importer.GISMeteo.AmurService.IdName {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UnitIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UnitId {
+            get {
+                return this.UnitIdField;
+            }
+            set {
+                if ((this.UnitIdField.Equals(value) != true)) {
+                    this.UnitIdField = value;
+                    this.RaisePropertyChanged("UnitId");
+                }
             }
         }
     }
@@ -512,256 +1490,6 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Addr", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
-    [System.SerializableAttribute()]
-    public partial class Addr : SOV.Common.IdClass, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> ChildsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameShortField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> ParentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TypeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> Childs {
-            get {
-                return this.ChildsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChildsField, value) != true)) {
-                    this.ChildsField = value;
-                    this.RaisePropertyChanged("Childs");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameShort {
-            get {
-                return this.NameShortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
-                    this.NameShortField = value;
-                    this.RaisePropertyChanged("NameShort");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ParentId {
-            get {
-                return this.ParentIdField;
-            }
-            set {
-                if ((this.ParentIdField.Equals(value) != true)) {
-                    this.ParentIdField = value;
-                    this.RaisePropertyChanged("ParentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TypeId {
-            get {
-                return this.TypeIdField;
-            }
-            set {
-                if ((this.TypeIdField.Equals(value) != true)) {
-                    this.TypeIdField = value;
-                    this.RaisePropertyChanged("TypeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Site", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Site : SOV.Common.IdNameParent, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> AddrRegionIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> LatField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> LonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> OrgIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TypeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> AddrRegionId {
-            get {
-                return this.AddrRegionIdField;
-            }
-            set {
-                if ((this.AddrRegionIdField.Equals(value) != true)) {
-                    this.AddrRegionIdField = value;
-                    this.RaisePropertyChanged("AddrRegionId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Lat {
-            get {
-                return this.LatField;
-            }
-            set {
-                if ((this.LatField.Equals(value) != true)) {
-                    this.LatField = value;
-                    this.RaisePropertyChanged("Lat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Lon {
-            get {
-                return this.LonField;
-            }
-            set {
-                if ((this.LonField.Equals(value) != true)) {
-                    this.LonField = value;
-                    this.RaisePropertyChanged("Lon");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> OrgId {
-            get {
-                return this.OrgIdField;
-            }
-            set {
-                if ((this.OrgIdField.Equals(value) != true)) {
-                    this.OrgIdField = value;
-                    this.RaisePropertyChanged("OrgId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TypeId {
-            get {
-                return this.TypeIdField;
-            }
-            set {
-                if ((this.TypeIdField.Equals(value) != true)) {
-                    this.TypeIdField = value;
-                    this.RaisePropertyChanged("TypeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="MethodForecast", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class MethodForecast : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -871,99 +1599,6 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeoObject", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class GeoObject : SOV.Common.IdName, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> FallIntoIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GeoTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderByField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<System.Collections.Generic.List<double>> Shape2DField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> FallIntoId {
-            get {
-                return this.FallIntoIdField;
-            }
-            set {
-                if ((this.FallIntoIdField.Equals(value) != true)) {
-                    this.FallIntoIdField = value;
-                    this.RaisePropertyChanged("FallIntoId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GeoTypeId {
-            get {
-                return this.GeoTypeIdField;
-            }
-            set {
-                if ((this.GeoTypeIdField.Equals(value) != true)) {
-                    this.GeoTypeIdField = value;
-                    this.RaisePropertyChanged("GeoTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrderBy {
-            get {
-                return this.OrderByField;
-            }
-            set {
-                if ((this.OrderByField.Equals(value) != true)) {
-                    this.OrderByField = value;
-                    this.RaisePropertyChanged("OrderBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<System.Collections.Generic.List<double>> Shape2D {
-            get {
-                return this.Shape2DField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Shape2DField, value) != true)) {
-                    this.Shape2DField = value;
-                    this.RaisePropertyChanged("Shape2D");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SiteAttrType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class SiteAttrType : SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrType {
@@ -1034,35 +1669,6 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
                     this.NameField = value;
                     this.RaisePropertyChanged("Name");
                 }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SampleMedium", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class SampleMedium : SOV.Common.DicItem, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
             }
         }
         
@@ -1156,354 +1762,6 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
                     this.ValueField = value;
                     this.RaisePropertyChanged("Value");
                 }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SiteType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class SiteType : SOV.Common.IdName, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameShortField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameShort {
-            get {
-                return this.NameShortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameShortField, value) != true)) {
-                    this.NameShortField = value;
-                    this.RaisePropertyChanged("NameShort");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Variable", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class Variable : SOV.Amur.Importer.GISMeteo.AmurService.VariableVirtual {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double CodeErrDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double CodeNoDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameCField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameRusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ValueTypeIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double CodeErrData {
-            get {
-                return this.CodeErrDataField;
-            }
-            set {
-                if ((this.CodeErrDataField.Equals(value) != true)) {
-                    this.CodeErrDataField = value;
-                    this.RaisePropertyChanged("CodeErrData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double CodeNoData {
-            get {
-                return this.CodeNoDataField;
-            }
-            set {
-                if ((this.CodeNoDataField.Equals(value) != true)) {
-                    this.CodeNoDataField = value;
-                    this.RaisePropertyChanged("CodeNoData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameC {
-            get {
-                return this.NameCField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameCField, value) != true)) {
-                    this.NameCField = value;
-                    this.RaisePropertyChanged("NameC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
-            get {
-                return this.NameEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameRus {
-            get {
-                return this.NameRusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameRusField, value) != true)) {
-                    this.NameRusField = value;
-                    this.RaisePropertyChanged("NameRus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ValueTypeId {
-            get {
-                return this.ValueTypeIdField;
-            }
-            set {
-                if ((this.ValueTypeIdField.Equals(value) != true)) {
-                    this.ValueTypeIdField = value;
-                    this.RaisePropertyChanged("ValueTypeId");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableVirtual", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Variable))]
-    public partial class VariableVirtual : SOV.Common.IdClass, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DataTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GeneralCategoryIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SampleMediumIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TimeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TimeSupportField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UnitIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VariableTypeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DataTypeId {
-            get {
-                return this.DataTypeIdField;
-            }
-            set {
-                if ((this.DataTypeIdField.Equals(value) != true)) {
-                    this.DataTypeIdField = value;
-                    this.RaisePropertyChanged("DataTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GeneralCategoryId {
-            get {
-                return this.GeneralCategoryIdField;
-            }
-            set {
-                if ((this.GeneralCategoryIdField.Equals(value) != true)) {
-                    this.GeneralCategoryIdField = value;
-                    this.RaisePropertyChanged("GeneralCategoryId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SampleMediumId {
-            get {
-                return this.SampleMediumIdField;
-            }
-            set {
-                if ((this.SampleMediumIdField.Equals(value) != true)) {
-                    this.SampleMediumIdField = value;
-                    this.RaisePropertyChanged("SampleMediumId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TimeId {
-            get {
-                return this.TimeIdField;
-            }
-            set {
-                if ((this.TimeIdField.Equals(value) != true)) {
-                    this.TimeIdField = value;
-                    this.RaisePropertyChanged("TimeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TimeSupport {
-            get {
-                return this.TimeSupportField;
-            }
-            set {
-                if ((this.TimeSupportField.Equals(value) != true)) {
-                    this.TimeSupportField = value;
-                    this.RaisePropertyChanged("TimeSupport");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UnitId {
-            get {
-                return this.UnitIdField;
-            }
-            set {
-                if ((this.UnitIdField.Equals(value) != true)) {
-                    this.UnitIdField = value;
-                    this.RaisePropertyChanged("UnitId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VariableTypeId {
-            get {
-                return this.VariableTypeIdField;
-            }
-            set {
-                if ((this.VariableTypeIdField.Equals(value) != true)) {
-                    this.VariableTypeIdField = value;
-                    this.RaisePropertyChanged("VariableTypeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class DataType : SOV.Common.DicItem, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GeneralCategory", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class GeneralCategory : SOV.Common.DicItem, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
             }
         }
         
@@ -1673,51 +1931,6 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
                 if ((this.UTCHourDayStartField.Equals(value) != true)) {
                     this.UTCHourDayStartField = value;
                     this.RaisePropertyChanged("UTCHourDayStart");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OffsetType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class OffsetType : SOV.Common.IdName, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UnitIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UnitId {
-            get {
-                return this.UnitIdField;
-            }
-            set {
-                if ((this.UnitIdField.Equals(value) != true)) {
-                    this.UnitIdField = value;
-                    this.RaisePropertyChanged("UnitId");
                 }
             }
         }
@@ -2013,51 +2226,6 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ValueType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class ValueType : SOV.Common.DicItem, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
-            get {
-                return this.NameEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="VariableCode", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
     public partial class VariableCode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2151,51 +2319,6 @@ namespace SOV.Amur.Importer.GISMeteo.AmurService {
                 if ((this.VariableIdField.Equals(value) != true)) {
                     this.VariableIdField = value;
                     this.RaisePropertyChanged("VariableId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
-    [System.SerializableAttribute()]
-    public partial class VariableType : SOV.Common.DicItem, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameEngField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NameEng {
-            get {
-                return this.NameEngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameEngField, value) != true)) {
-                    this.NameEngField = value;
-                    this.RaisePropertyChanged("NameEng");
                 }
             }
         }
