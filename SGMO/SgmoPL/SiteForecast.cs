@@ -49,7 +49,8 @@ namespace SOV.SGMO
                     continue;
                 }
 
-                Dictionary<double/*leadTime*/, double[]/*Catalog index*/> fcsData = fieldClient.client.GetSitesForecast(fieldClient.h, dateIniUTC, null, catalogIds.ToArray());
+                Dictionary<double/*leadTime*/, double[]/*Catalog index*/> fcsData = fieldClient.client
+                    .GetSitesForecast(fieldClient.h, dateIniUTC, null, catalogIds.ToArray());
 
                 if (fcsData == null) { Console.WriteLine("* Отсутствуют прогнозы..."); continue; }
 
